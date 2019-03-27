@@ -98,26 +98,26 @@
         2.6、删除表
             drop table [if exists] tb_name1 [,tb_name2]......;
 ## 3、数据的完整性约束
-    3.1、定义实体完整性
-        3.1.1、主键约束
-            一个表必须要有一个主键，且唯一不为空
-        3.2.2、完整性约束的命名
-            constraint <约束名> {primary key(主键字段列表) | unique(候选键字段列表) |foreign key(外键字段列表) references tb_被参照的关系(表) (主键字段列表) | check(约束条件表达式)};
-    3.2、定义参照完整性
-        外键需存在或为空
-    3.3、用户定义完整性
-        MySQL支持的几种用户定义完整性约束：非空约束，check约束和触发器
-        check约束：
-            check(expr);
-    3.4、更新完整性约束
-        3.4.1、删除约束
-            alter table <表名> drop foreign key <外键约束名>;
-            alter table <表名> drop primary key;
-            alter table <表名> drop {约束名 | 候选键字段名};
-        3.4.2、添加约束
-            alter table <表名> add [constraint <约束名>] primary key(主键字段);
-            alter table <表名> add [constraint <约束名>] foreign key(外键字段名) references 被参照表(主键字段名);
-            alter table <表名> add [constraint <约束名>] unique key(字段名);
+        3.1、定义实体完整性
+            3.1.1、主键约束
+                一个表必须要有一个主键，且唯一不为空
+            3.2.2、完整性约束的命名
+                constraint <约束名> {primary key(主键字段列表) | unique(候选键字段列表) |foreign key(外键字段列表) references tb_被参照的关系(表) (主键字段列表) | check(约束条件表达式)};
+        3.2、定义参照完整性
+            外键需存在或为空
+        3.3、用户定义完整性
+            MySQL支持的几种用户定义完整性约束：非空约束，check约束和触发器
+            check约束：
+                check(expr);
+        3.4、更新完整性约束
+            3.4.1、删除约束
+                alter table <表名> drop foreign key <外键约束名>;
+                alter table <表名> drop primary key;
+                alter table <表名> drop {约束名 | 候选键字段名};
+            3.4.2、添加约束
+                alter table <表名> add [constraint <约束名>] primary key(主键字段);
+                alter table <表名> add [constraint <约束名>] foreign key(外键字段名) references 被参照表(主键字段名);
+                alter table <表名> add [constraint <约束名>] unique key(字段名);
 # 四、数据查询
 ## 1、select语句
         select [all | distinct | distinctrow] <目标表达式1>[,目标表达式2]...
@@ -387,4 +387,185 @@
             select sp_name([func_parameter[,...]]);
         2.3、删除存储函数
             drop function [if exists] sp_name;                
+# 十一、访问控制与安全管理
+
+## 1、用户账号与管理
+
+        1.1、创建用户账号
+            create user user_specification [,user_specification]...;
+            其中user_specification格式：
+                user [indentified by [password] 'password' | identified with 指定认证的插件名称 [as 'auth_string']];
+            # 例子：
+                create user 'zhangsan@localhost' identified by '123','lisi@localhost' identified by password 'password(字符串)返回的散列值';
+        1.2、删除用户
+            drop user user_name [,user_name]...;
+        1.3、修改用户账号
+            rename user old_name to new_name [,old_name to new_name]...;
+        1.4、修改用户密码
+            set password [for user] = {password('new_password') | 'encryted password(表示已被password加密的口令值)' }
+            # 如果不加for 则表示给当前用户改密码
+## 2、账号权限管理
+
+        2.1、权限的授予
+            grant priv_type [(column_list)] [,priv_type[(column_list)]]... on [object_type] priv_level to user_specification [,user_specifition]...
+                [require {none|ssl_option[[and]ssl_option]...}]
+                [with with_option...]
+            # priv_type
+                如：select、update、delete
+            # 其中object_type格式为：
+                table | function | procedure
+            # priv_level格式为：
+                * | *.* | db_name.tb_name | tb_name | db_name.routine_name
+            # user_specifition格式同上面
+                说明该语句同样可以用来创建用户
+            # with_option格式为：
+                grant option 
+                | max_queries_per_hour count    #每小时查询数据库的次数
+                | max_updates_per_hour count    #每小时可以修改数据库的次数
+                | max_connections_per_hour count    #每小时可以连接数据库的次数
+                | max_user_connections count    #同时连接数据库的最大用户数
+            例子：
+                grant select(studentNo, studentName) on db_school.tb_student to 'lisi@localhost' identifie by '123';
+                grant all on *.* to 'zhangsan@loclhost' identified by '123';
+                grant create user on *.* to 'zhangsan@loclhost' identified by '123';
+        2.2、权限的转移与限制
+            2.2.1、转移
+                with 子句指定为with grant option时，表示to 子句中所指定的所以用户都具有把自己所拥有的权限授予其他用户。
+                例子：
+                    grant select, update on db_school.tb_student to 'lisi@localhost' identified by '123' with grant option;
+            2.2.2、限制
+                with子句后面跟关键字
+                例子：
+                    grant delete on db_school.* to 'zhangsan@localhost' identified by '123' with MAX_QUERIES_PER_HOUR 1;
+        2.3、权限的撤销
+            # 回收某些特定的权限
+            revoke priv_type [(column_list)] [,priv_type[(column_list)]]... on [object_type] priv_level form user [,user]...;
+            或
+            # 回收特定用户的所有权限
+            revoke all privileges, grant option form user [,user]; 
+# 十二、备份与恢复
+
+## 1、使用sql语句备份和恢复表数据
+    
+        1.1、select into ... outfile语句导出备份
+           select * into outfile 'file_name ' [character set charset_name ] export_options | into dumpfile 'file_name';
+        # export_options格式：
+            [fields
+                [terminated by 'string']
+                [[optionally] enclosed by 'char']
+                [escaped by 'char']
+            ]
+            [lines terminated by 'string']
+        1.2、load data ...infile语句导入恢复
+            load data [low_priority | concurrent] [local] infile 'file_name.txt'
+                [replace | ignore]
+                into table tb_name
+                [fields
+                    [terminated by 'string']
+                    [[optionally] enclosed by 'char']
+                    [escaped by 'char']
+                ]   
+                [lines 
+                    [starting by 'string']
+                    [terminated by 'string']
+                ]     
+                [IGNORE number LINES]
+                [(col_name_or_user_var,...)]
+                [set col_name = expr, ...]]
+        例子：
+            # 导出
+                select * from db_school.tb_student into outfile 'C:\BACKUP\backupfiel.txt' fields terminated by ','optionally enclosed by '"' lines terminated by '?';
+            # 导出
+                load data infile 'C:\BACKUP\backupfiel.txt' into table db_school.tb_student_copy fields terminated by ',' optionally enclosed by '"' lines terminated by '?'
+## 2、使用MySQL客服端实用程序备份和恢复数据
+    
+        2.1、备份表
+            # 备份数据表
+            mysqldump [option] database [tables] > filename;
+            # 备份数据库    
+            mysqldump [option] database --database [option] DB1 [DB2 DB3...] > filename;
+            # 备份整个数据库系统
+            msyqldump [option] --all-database [option] > fielname;
+            # 例子：
+                mysqldump -hlocalhost -uroot -p123 db_school.tb_table > c:\backup\file.sql;
+                msyqldump -hlocalhost -uroot -p123 --database db_school > c:\backup\data.sql;
+                msyqldump -uroot -p123 --all-database > c:\backup\alldata.sql;
+        2.2、使用mysql命令恢复数据
+            mysql -uroot -p123 tb_student < c:\backup\tb_student.sql;
+        2.3、使用mysqlimport程序恢复数据
+            mysqlimport [option] database textfile...;
+            # option常用的有：
+                -d、--delete:在导入文本文件之前清空所有的数据行
+                -l、--lock-tables:在处理任何文本文件之前锁定所有的表，以保证所有的表在服务器上同步，但对于InnoDB类型的表则不必进行锁定
+                --low-priority、--local、--replace、--ignore:分别对于load data ... infile 语句中的low_priority、local、replace和ignore关键字
+            # 例子：
+                mysqlimport -uroot -p123 --low-priority --replace db_school c:\backup\tb_student.txt;
+## 3、二进制日志文件的使用
+    
+        3.1、查看二进制日志文件
+            msyqlbinlog [option] log_file... [> c:\backup\bin_log000001.txt];
+        3.2、使用二进制文件恢复数据
+            msyqlbinlog [option] log_file... | msyql [option]        
+            # 例子
+                msyqlbinlog bin_log0001 | mysql -uroot -p123;
+        3.3、删除二进制日志文件
+            # 清除所有日志文件
+            reset master;
+            # 删除指定的日志文件
+            purge {master | binary| logs to 'log_name':
+            #删除某个时间之前的所有日志文件
+            purge {master | binary| logs before 'date';
+# 十三、MySQL数据库的应用编程
+
+## 1、使用PHP进行MySQL数据库应用编程
+
+        1.1、mysql连接
+            # 非持久连接
+            mysql_connect([servername[, username[,password]]]);
+            # 持久连接
+            mysql_pconnect([servername[, username[,password]]]);
+            ps：如果msyql函数成功执行后连接成功，函数mysql_errno()和mysql_error会分别返回数值0和空字符串。
+        1.2、选择数据库
+            msyql_select_db(database[,connection])
+        1.3、执行数据库操作
+            msyql_query(query[,connection])
+            ps:sql语句是以字符串的形式提交，且不以分号作为结束符。
+        1.4、数据结果读取
+            mysql_fetch_array(data[,array_type])
+            # array_type有：
+                MYSQL_NUM:表示数值数组，功能与mysql_fetch_row(data)一样
+                MYSQL_ASSOC:表示关联数组，功能与mysql_fetch_assoc(data)一样
+                MYSQL_BOTH:表示同时产生关联数组和数字数组
+            mysql_fetch_row(data)
+            msyql_fetch_assoc(data)
+        1.5、读取结果数目
+            mysql_num_rows(data)
+        1.6、读取指定记录号的记录
+            # 在结果集中随意移动记录的指针，也就是将记录指针直接指向某个记录，其中0指示结果集中的第一条记录。
+            mysql_data_seek(data,row)
+        1.7、关闭数据库
+            msyql_close([content])
+        # 例子：
+            <? php
+                $con = mysql_connect('localhost:3306','root','123');
+                or die('数据库服务器连接失败！<br>’);
+                mysql_select_db('db01',$con) or die('数据库选择失败！<br>‘);
+                mysql_query("set names 'gbk'");
+                $sql = "select studentname from tb_student";
+                $sql = $sql."where studentNo = 200120";
+                $result = mysql_query($sql, $con);
+                if ($result){
+                    echo "学生查询成功！<br>"
+                    $array = mysql_fetch_array($result,MYSQL_NUM);
+                    if ($array){
+                        echo "读取到学生信息！<br>";
+                        echo "所查询的学生姓名为：".$array[0];
+                    }
+                    else echo "没有查询到学生信息！<br>";
+                }
+                else 
+                    echo "学生信息查询失败！<br>";
+            ?>
+        
+        
             
