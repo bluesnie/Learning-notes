@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="a823ed71-caa5-4cf5-a9b5-be8034167283" name="Default Changelist" comment="" />
+=======
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/MySQL/计算机二级MySQL.md" line="554" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b3a0790-e469-45b0-84a4-2ab0c8c75548" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL/计算机二级MySQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/计算机二级MySQL.md" afterDir="false" />
+    </list>
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +25,13 @@
         <entry file="file://$PROJECT_DIR$/MySQL/计算机二级MySQL.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
+<<<<<<< HEAD
               <first_editor />
+=======
+              <first_editor relative-caret-position="-8702">
+                <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              </first_editor>
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
               <second_editor />
             </state>
           </provider>
@@ -25,12 +42,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="620" />
     <option name="y" value="67" />
     <option name="width" value="1840" />
     <option name="height" value="1215" />
   </component>
+=======
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MySQL/计算机二级MySQL.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="width" value="1041" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -40,6 +73,7 @@
         <subPane>
           <expand>
             <path>
+<<<<<<< HEAD
               <item name="Learning-notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learning-notes" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -47,6 +81,10 @@
               <item name="Learning-notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learning-notes" type="462c0819:PsiDirectoryNode" />
               <item name="MySQL" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="学习笔记" type="b2602c69:ProjectViewProjectNode" />
+              <item name="学习笔记" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
             </path>
           </expand>
           <select />
@@ -58,11 +96,17 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\PycharmProjects\学习笔记\Learning-notes\MySQL" />
     </key>
+=======
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,6 +125,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="a823ed71-caa5-4cf5-a9b5-be8034167283" name="Default Changelist" comment="" />
       <created>1553677159274</created>
       <option name="number" value="Default" />
@@ -114,6 +159,28 @@
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+=======
+      <changelist id="6b3a0790-e469-45b0-84a4-2ab0c8c75548" name="Default Changelist" comment="" />
+      <created>1553606218971</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553606218971</updated>
+      <workItem from="1553606220390" duration="3681000" />
+      <workItem from="1553686585514" duration="8016000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11697000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25383994" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -121,25 +188,48 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
       <window_info anchor="right" id="SciView" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3587922" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2" />
     <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
+=======
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/MySQL/计算机二级MySQL.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
+<<<<<<< HEAD
           <first_editor />
+=======
+          <first_editor relative-caret-position="-8702">
+            <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          </first_editor>
+>>>>>>> 5ec3f78b73ef5ac0194e8d2c1dc6b90df93a41ce
           <second_editor />
         </state>
       </provider>
