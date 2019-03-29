@@ -263,7 +263,7 @@
                         begin
                             if year(curdate()) < 2013 then
                                 insert into tb_1 values('aa','aa','b');
-                            endif;
+                            end if;
                         end$$       
 ## 2、修改事件
     
@@ -300,19 +300,19 @@
                     if search_condition then statement_list
                         [elseif search_condition then statement_list]...
                         [else statement_list]
-                    endif;
+                    end if;
                     或
                     case case_vale
                         when when_value then statement_list
                         [when when_value then statement_list]
                         [else statement_list]
-                    endcase;
+                    end case;
                     或
                     case
                         when search_condition then statement_list
                         [when search_condition then statement_list]
                         [else statement_list]
-                    endcase;
+                    end case;
                 循环
                     [begin_label:]while search_condition do
                         statement_list
