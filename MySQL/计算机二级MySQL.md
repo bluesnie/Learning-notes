@@ -547,7 +547,7 @@
             msyql_close([content])
         # 例子：
             <? php
-                $con = mysql_connect('localhost:3306','root','123');
+                $con = mysql_connect('localhost:3306','root','123')
                 or die('数据库服务器连接失败！<br>’);
                 mysql_select_db('db01',$con) or die('数据库选择失败！<br>‘);
                 mysql_query("set names 'gbk'");
