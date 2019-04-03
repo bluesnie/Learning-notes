@@ -65,7 +65,7 @@
         DELETE /collection/resource：返回一个空文档
     
 
-## 10.Hypermedia API，RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么。
+## 10、Hypermedia API，RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么。
         
         {"link": {
           "rel":   "collection https://www.example.com/zoos",
