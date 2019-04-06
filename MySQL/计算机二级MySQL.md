@@ -263,7 +263,7 @@
                         begin
                             if year(curdate()) < 2013 then
                                 insert into tb_1 values('aa','aa','b');
-                            endif;
+                            end if;
                         end$$       
 ## 2、修改事件
     
@@ -300,42 +300,42 @@
                     if search_condition then statement_list
                         [elseif search_condition then statement_list]...
                         [else statement_list]
-                    endif;
+                    end if;
                     或
                     case case_vale
                         when when_value then statement_list
                         [when when_value then statement_list]
                         [else statement_list]
-                    endcase;
+                    end case;
                     或
                     case
                         when search_condition then statement_list
                         [when search_condition then statement_list]
                         [else statement_list]
-                    endcase;
+                    end case;
                 循环
                     [begin_label:]while search_condition do
                         statement_list
-                    end while[end_label]
+                    end while[end_label];
                     或
                     [begin_label:]repeat
                         statement_list
                     until search_condition
-                    end repeat[end_label]
+                    end repeat[end_label];
                     或
                     [begin_label:]loop
                         statement_list
-                    end loop[end_label]
+                    end loop[end_label];
             1.2.4、游标
                 # 声明游标
                     declare cursor_name cursor for select_statement;
                     # select_statement为一条select语句注意不能有into子句。
                 # 打开游标
-                    open cursor_name
+                    open cursor_name;
                 # 读取游标
-                    fetch cursor_name into var_name[,var_name]...
+                    fetch cursor_name into var_name[,var_name]...;
                 # 关闭游标
-                    close cursor_name
+                    close cursor_name;
                 # 例子:统计行数
                     delimiter $$
                     create procedure sp_sum(out rows int)
@@ -358,7 +358,7 @@
             call sp_name([parameter[,...]]);
             call sp_name[()];
         1.4、删除存储过程
-            drop procedure function [if exists] sp_name;
+            drop procedure [if exists] sp_name;
 ## 2、存储函数
     
         2.1、与存储过程的区别
@@ -547,7 +547,7 @@
             msyql_close([content])
         # 例子：
             <? php
-                $con = mysql_connect('localhost:3306','root','123');
+                $con = mysql_connect('localhost:3306','root','123')
                 or die('数据库服务器连接失败！<br>’);
                 mysql_select_db('db01',$con) or die('数据库选择失败！<br>‘);
                 mysql_query("set names 'gbk'");
