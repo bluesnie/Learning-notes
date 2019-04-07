@@ -805,3 +805,5 @@
                         
                 obj = Foo(123)
                 print(obj)
+
+[https://github.com/bluesnie/Learning-notes/blob/master/Python/Django-REST-framework.md#django%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F]: ./django生命周期
