@@ -17,7 +17,7 @@
             私有
             
         1.6、示意图
-   ![image]()
+   ![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407101329.png)
    
 # 2、Docker容器相关技术简介
 
@@ -52,17 +52,17 @@
 # 3、Docker客户端与守护进程
 
         1、客户端与守护进程通信
-![image]()
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407105316.png)
         
         2、Remote API与Docker守护进程进行通信
             RESTful 风格API
-![image]()
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407105239.png)
 
         3、连接方式
             unix://var/run/docker.sock(默认)
             tcp://host:port
             fd://sockerfd
-![image]()
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407105512.png)
 # 4、Docker守护进程的配置和操作
         
         1、查看守护进程
@@ -445,7 +445,7 @@
             更改docker守护进程的启动配置
                 /etc/default/docker 中添加DOCKER_OPS值 
                 DOCKER_OPS="-b=br0"  
-   ![image]()
+   ![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407165702.png)
        
         2、Docker容器的互联
         
@@ -472,7 +472,7 @@
             3.2、iptables
                 什么是iptables:
                     Iptables是Linux内核集成的包过滤防火墙系统，几乎所有的Linux发行版本都会包含IPtables的功能。
-   ![image]()
+   ![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407173519.png)
                 
                 表(table):上图中的nat、mangle、raw、filter...
                 链(chain):代表数据处理的不同环节
