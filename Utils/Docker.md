@@ -445,7 +445,7 @@
             更改docker守护进程的启动配置
                 /etc/default/docker 中添加DOCKER_OPS值 
                 DOCKER_OPS="-b=br0"  
-   ![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407165702.png)
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407165702.png)
        
         2、Docker容器的互联
         
@@ -472,7 +472,7 @@
             3.2、iptables
                 什么是iptables:
                     Iptables是Linux内核集成的包过滤防火墙系统，几乎所有的Linux发行版本都会包含IPtables的功能。
-   ![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407173519.png)
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190407173519.png)
                 
                 表(table):上图中的nat、mangle、raw、filter...
                 链(chain):代表数据处理的不同环节
@@ -501,7 +501,7 @@
             
             数据卷设计的目的，在于设计的永久化，他完全独立于容器的生存周期，因此，Docker不会再容器删除时删除其挂载的数据卷，
             也不会存在类似的垃圾收集机制，对容器引用的数据卷进行处理。
-![image]()
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190408103517.png)
         
         1、为容器添加数据卷
             docker run -v ~/container_data:/data -it ubuntu /bin/bash
@@ -516,10 +516,9 @@
             Dockerfile指令
             VOLUME["/data"]
             但是，利用这个镜像创建的容器构建的数据卷都是不一样的，则不能实现共享。
-
 # 15、Docker的数据卷容器
 
-![image]()
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190408104601.png)
 
         1、挂载数据卷容器的方法
             docker run --volumes-from [CONTAINER NAME]
@@ -542,12 +541,12 @@
             docker run --volumes-from [container name] -v $(pwd):/backup:wr ubuntu
             tar xvf/backup/backup.tar [container data volume]
             
-![image]()
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190408105802.png)
 
 17、Docker容器的跨主机连接
     
         1、使用网桥实现跨主机容器连接
-            
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190408112528.png)         
             1.1、环境准备
                 
                 Mac OS X + Parallels
