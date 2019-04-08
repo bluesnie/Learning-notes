@@ -494,7 +494,95 @@
             3.4、限制IP访问容器
                 sudo iptables -I DOCKER -s 禁止访问ip -d 目的ip -p TCP --dport 80 -j DROP
                  
+# 14、Docker容器的数据卷
+        
+        什么是数据卷：
+            数据卷是经过特殊设计的目录，可以绕过联合文件系统（UFS）,为一个或多个容器提供访问。
+            
+            数据卷设计的目的，在于设计的永久化，他完全独立于容器的生存周期，因此，Docker不会再容器删除时删除其挂载的数据卷，
+            也不会存在类似的垃圾收集机制，对容器引用的数据卷进行处理。
+![image]()
+        
+        1、为容器添加数据卷
+            docker run -v ~/container_data:/data -it ubuntu /bin/bash
+                ~/container_data：       本机目录
+                /data：                  容器目录
+            
+        2、为数据卷添加访问权限
+            docker run -v ~/container_data:/data:ro -it ubuntu /bin/bash
+                ro:  只读
+
+        3、使用Dockerfile构建包含数据卷的镜像
+            Dockerfile指令
+            VOLUME["/data"]
+            但是，利用这个镜像创建的容器构建的数据卷都是不一样的，则不能实现共享。
+
+# 15、Docker的数据卷容器
+
+![image]()
+
+        1、挂载数据卷容器的方法
+            docker run --volumes-from [CONTAINER NAME]
+            
+            即时删除了数据卷容器，挂载了这个数据卷容器的容器还是能正常使用。只要一个数据卷还在被使用就不会被删除。
+        
+# 16、Docker数据卷的备份和还原
+
+        1、数据备份方法
+            docker run --volumes-from [container name] -v $(pwd):/backup:wr ubuntu
+            tar cvf/backup/backup.tar [container data volume]
+                
+                $(pwd):备份文件存储的目录
+                /backup：容器中的目录
+                wr ：读写（默认）
+                [container data volume]：需要压缩的数据卷目录
+                tar cvf/backup/backup.tar [container data volume]：备份操作（压缩）
+                
+        2、数据还原方法
+            docker run --volumes-from [container name] -v $(pwd):/backup:wr ubuntu
+            tar xvf/backup/backup.tar [container data volume]
+            
+![image]()
+
+17、Docker容器的跨主机连接
     
+        1、使用网桥实现跨主机容器连接
+            
+            1.1、环境准备
+                
+                Mac OS X + Parallels
+                两台Ubuntu14.04虚拟机
+                安装网桥管理工具：
+                    apt-get install bridge-utils
+                ip地址：
+                    Host1:10.211.55.3
+                    Host2:10.211.55.5
+                修改/etc/network/interfaces文件
+                    auto bro
+                    iface bro inet static
+                    address 10.211.55.3
+                    netmask 255.255.255.0
+                    geteway 10.211.55.1
+                    bridge_ports eth0
+                
+                Docker设置
+                    修改/etc/default/docker文件
+                        -b指定使用自定义网桥
+                            -b=br0
+                        --fixed-cidr限制ip地址分配范围
+                            IP地址划分：
+                            Host1:10.211.55.64/26
+                                地址范围：10.211.55.65~10.211.55.126
+                            Host2:10.211.55.128/26
+                                地址范围：10.211.55.129~10.211.55.190
+        
+        2、使用Open vSwitch实现跨主机容器连接
+            
+        
+        3、使用Weave实现跨主机容器连接
+        
+        
+
     
                        
                         
