@@ -547,6 +547,7 @@
     
         1、使用网桥实现跨主机容器连接
 ![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/20190408112528.png)         
+            
             1.1、环境准备
                 
                 Mac OS X + Parallels
