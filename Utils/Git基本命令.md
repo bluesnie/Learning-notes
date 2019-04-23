@@ -174,5 +174,7 @@
 
         GitHub中的setting中的collaborator添加贡献者
     
-    
-                                
+## 详情图
+
+![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/git.png)
+                               
