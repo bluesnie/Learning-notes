@@ -38,11 +38,11 @@
 
 ## 7、查看提交日志
 
-        git log --oneline --decorate --all --10 --graph --author='作者' --index='文件名' --before='2019-3-1/1 week' 
+        git log --oneline --decorate --all -10 --graph --author='作者' --index='文件名' --before='2019-3-1/1 week' 
             --oneline:一行显示提交日志
             --decorate:显示详细
             --all:显示在所有分支上的提交
-            --10:显示数量
+            -10:显示数量
             --graph:显示分支信息
             --author:指定作者
             --grep:搜索某文件
