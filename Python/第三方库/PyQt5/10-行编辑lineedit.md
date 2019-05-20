@@ -3,6 +3,8 @@
 
 ## 行编辑
 
+![](./img/lineedit.png)
+
 ```python
 import sys
 from PyQt5.QtWidgets import QWidget, QApplication, QDialog, QVBoxLayout, QLabel, QGroupBox, QCheckBox, QHBoxLayout, QPushButton, QLineEdit

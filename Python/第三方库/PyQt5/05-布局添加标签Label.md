@@ -3,6 +3,8 @@
 
 ## 布局添加标签
 
+![](./img/label.png)
+
 ```python
 import sys
 from PyQt5.QtWidgets import QApplication, QDialog, QVBoxLayout, QLabel
