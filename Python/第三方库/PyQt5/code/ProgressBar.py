@@ -1,0 +1,88 @@
+# _*_ encoding:utf-8 _*_
+__author__ = 'nzb'
+__datetime__ = '2019/5/21 17:17'
+
+import sys
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QGroupBox, \
+    QHBoxLayout, QPushButton, QVBoxLayout, QSpinBox, QLCDNumber
+from PyQt5.QtWidgets import QDial, QProgressBar
+from PyQt5 import QtGui, QtCore
+from PyQt5.QtCore import Qt, QThread, pyqtSignal
+import time
+
+
+class MyThead(QThread):
+
+    change_value = pyqtSignal(int)
+
+    def run(self):
+        cnt = 0
+        while cnt < 100:
+            cnt += 1
+
+            time.sleep(0.3)
+            self.change_value.emit(cnt)
+
+
+class UI_demo(QWidget):
+    """用户界面"""
+    def __init__(self):
+        super().__init__()
+
+        # 窗口信息
+        self.title = 'PyQt5 ProgressBar'
+        self.left = 600
+        self.top = 200
+        self.width = 350
+        self.height = 100
+        self.iconName = '../img/home.ico'
+
+        self.initWindow()
+
+    def initWindow(self):
+
+        # 窗口信息
+        self.setWindowIcon(QtGui.QIcon(self.iconName))  # 图标设置
+        self.setGeometry(self.left, self.top, self.width, self.height)  # 大小位置设置
+        self.setWindowTitle(self.title)  # 窗口标题
+
+        # 生成进度条
+        self.initUI()
+
+        # 展示窗口
+        self.show()
+
+    def initUI(self):
+        """进度条"""
+        vbox = QVBoxLayout()
+        self.progressbar = QProgressBar()
+        self.progressbar.setMaximum(100)
+        # 设置进度条样式
+        self.progressbar.setStyleSheet('QProgressBar {border:2px solid grey; border-radius:8px; padding:1px}' 
+                                       'QProgressBar::chunk {background:green}')
+        # self.progressbar.setOrientation(Qt.Vertical)  # 垂直进度条
+        self.progressbar.setTextVisible(False)  # 数字显示不可见
+        vbox.addWidget(self.progressbar)
+
+        self.button = QPushButton("run progressbar")
+        self.button.clicked.connect(self.startProgressbar)
+        self.button.setStyleSheet('background-color:yellow')
+        vbox.addWidget(self.button)
+
+        self.setLayout(vbox)
+
+    def startProgressbar(self):
+        """开始进度条"""
+        self.thread = MyThead()
+        self.thread.change_value.connect(self.setProgressVal)
+        self.thread.start()
+
+    def setProgressVal(self, val):
+        """设置进度条的值"""
+        self.progressbar.setValue(val)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ex = UI_demo()
+    sys.exit(app.exec_())
