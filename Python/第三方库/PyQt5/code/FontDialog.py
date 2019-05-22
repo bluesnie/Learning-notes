@@ -1,9 +1,9 @@
 # _*_ encoding:utf-8 _*_
 __author__ = 'nzb'
-__datetime__ = '2019/5/21 17:53'
+__datetime__ = '2019/5/22 17:11'
 
 import sys
-from PyQt5.QtWidgets import QWidget, QApplication, QMainWindow, QAction
+from PyQt5.QtWidgets import  QApplication, QMainWindow, QAction, QTextEdit, QFontDialog
 from PyQt5 import QtGui,QtCore
 
 
@@ -13,10 +13,10 @@ class UI_demo(QMainWindow):
         super().__init__()
 
         # 窗口信息
-        self.title = 'PyQt5 MenuBar'
+        self.title = 'PyQt5 Font Dialog'
         self.left = 600
         self.top = 200
-        self.width = 440
+        self.width = 500
         self.height = 400
         self.iconName = '../img/home.ico'
 
@@ -32,6 +32,10 @@ class UI_demo(QMainWindow):
         # 生成菜单栏
         self.CreateMenu()
 
+        # 生成文档编辑
+
+        self.createEditor()
+
         # 展示窗口
         self.show()
 
@@ -45,15 +49,15 @@ class UI_demo(QMainWindow):
 
         copyAction = QAction(QtGui.QIcon(self.iconName), 'Copy', self)
         copyAction.setShortcut("Ctrl+C")
-        fileMenu.addAction(copyAction)
+        editMenu.addAction(copyAction)
 
         cutAction = QAction(QtGui.QIcon(self.iconName), 'Cut', self)
         cutAction.setShortcut("Ctrl+X")
-        fileMenu.addAction(cutAction)
+        editMenu.addAction(cutAction)
 
         saveAction = QAction(QtGui.QIcon(self.iconName), 'Save', self)
         saveAction.setShortcut("Ctrl+S")
-        fileMenu.addAction(saveAction)
+        editMenu.addAction(saveAction)
 
         exitAction = QAction(QtGui.QIcon('../img/Agt Stop.ico'), 'Exit', self)
         exitAction.setShortcut("Ctrl+E")
@@ -63,6 +67,11 @@ class UI_demo(QMainWindow):
         pasteAction = QAction(QtGui.QIcon('../img/Agt Stop.ico'), 'Paste', self)
         pasteAction.setShortcut("Ctrl+E")
         editMenu.addAction(pasteAction)
+
+        fontAction = QAction(QtGui.QIcon(self.iconName), "Font", self)
+        fontAction.setShortcut("Ctrl+F")
+        fontAction.triggered.connect(self.fontDialog)
+        viewMenu.addAction(fontAction)
 
         # 工具栏
         toolbar = self.addToolBar("Toolbar")
@@ -75,6 +84,18 @@ class UI_demo(QMainWindow):
     def exitWindow(self):
         """关闭窗口"""
         self.close()
+
+    def createEditor(self):
+        """文档编辑"""
+        self.textEdit = QTextEdit(self)
+        self.setCentralWidget(self.textEdit)
+
+    def fontDialog(self):
+        """字体对话框"""
+        font, ok = QFontDialog.getFont()
+
+        if ok:
+            self.textEdit.setFont(font)
 
 
 if __name__ == "__main__":

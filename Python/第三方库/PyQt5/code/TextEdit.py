@@ -1,9 +1,9 @@
 # _*_ encoding:utf-8 _*_
 __author__ = 'nzb'
-__datetime__ = '2019/5/21 17:53'
+__datetime__ = '2019/5/22 17:05'
 
 import sys
-from PyQt5.QtWidgets import QWidget, QApplication, QMainWindow, QAction
+from PyQt5.QtWidgets import QWidget, QApplication, QMainWindow, QAction, QTextEdit
 from PyQt5 import QtGui,QtCore
 
 
@@ -13,10 +13,10 @@ class UI_demo(QMainWindow):
         super().__init__()
 
         # 窗口信息
-        self.title = 'PyQt5 MenuBar'
+        self.title = 'PyQt5 TextEdit'
         self.left = 600
         self.top = 200
-        self.width = 440
+        self.width = 500
         self.height = 400
         self.iconName = '../img/home.ico'
 
@@ -31,6 +31,10 @@ class UI_demo(QMainWindow):
 
         # 生成菜单栏
         self.CreateMenu()
+
+        # 生成文档编辑
+
+        self.createEditor()
 
         # 展示窗口
         self.show()
@@ -75,6 +79,11 @@ class UI_demo(QMainWindow):
     def exitWindow(self):
         """关闭窗口"""
         self.close()
+
+    def createEditor(self):
+        """文档编辑"""
+        self.textEdit = QTextEdit(self)
+        self.setCentralWidget(self.textEdit)
 
 
 if __name__ == "__main__":
