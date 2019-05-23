@@ -1,0 +1,96 @@
+# _*_ encoding:utf-8 _*_
+__author__ = 'nzb'
+__datetime__ = '2019/5/23 14:55'
+
+from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QMessageBox, QInputDialog, QListWidget, QVBoxLayout, QPushButton, QHBoxLayout
+from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
+import sys
+
+
+class ProgrammingDialog(QDialog):
+
+    def __init__(self, name, prolist = None):
+        super(ProgrammingDialog, self).__init__()
+
+        self.setWindowTitle("PyQt5 simple List project")
+        self.setWindowIcon(QtGui.QIcon('../img/home.ico'))
+
+        self.name = name
+
+        self.list = QListWidget()
+
+        if prolist is not None:
+            self.list.addItems(prolist)
+            self.list.setCurrentRow(0)
+
+        vbox = QVBoxLayout()
+
+        for text, slot in (("Add", self.Add),
+                           ("Edit", self.Edit),
+                           ("Remove", self.Remove),
+                           ("Sort", self.Sort),
+                           ("Close", self.Close)):
+            button = QPushButton(text)
+            button.clicked.connect(slot)
+
+            vbox.addWidget(button)
+
+        hbox = QHBoxLayout()
+        hbox.addWidget(self.list)
+        hbox.addLayout(vbox)
+        self.setLayout(hbox)
+
+    def Add(self):
+        row = self.list.currentRow()
+        title = "Add {0}".format(self.name)
+        string, ok = QInputDialog.getText(self, title, title)
+
+        if ok and string is not None:
+            self.list.insertItem(row, string)
+
+    def Edit(self):
+        row = self.list.currentRow()
+        item = self.list.item(row)
+
+        if item is not None:
+            title = "Edit {0}".format(self.name)
+
+            string, ok = QInputDialog.getText(self, title, title,
+                                              QLineEdit.Normal, item.text())
+
+            if ok and string is not None:
+                item.setText(string)
+
+    def Remove(self):
+        row = self.list.currentRow()
+        item = self.list.item(row)
+
+        if item is None:
+            return
+        reply = QMessageBox.question(self, "Remove{0}".format(
+            self.name), "Remove{0} '{1}'?".format(
+            self.name, str(item.text())),
+                                     QMessageBox.Yes | QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            item = self.list.takeItem(row)
+
+            del item
+
+    def Sort(self):
+        self.list.sortItems()
+
+    def Close(self):
+        self.close()
+        # self.accept()
+
+
+if __name__ == '__main__':
+    programming = ["Python", "Java", "PHP", "C++"]
+    app = QApplication(sys.argv)
+    dialog = ProgrammingDialog("Language", programming)
+    dialog.exec_()
+
+
+
