@@ -1,6 +1,9 @@
 ###### datetime:2019/5/23 15:28
 ###### author:nzb
 
+##PyQt5关系图
+![](./img/PyQt5.png)
+
 ## [创建窗口](./01-窗口.md)
 ![](./img/mainwindow.png)
 

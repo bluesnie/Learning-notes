@@ -83,7 +83,11 @@
             --soft:软重置，不会影响工作区和暂存区的东西
             --hard:工作区和暂存区直接重置到指定的状态
             --mixed: 默认，会把暂存区重置到指定的状态，并把指针指到当前位置
-        
+            
+        git status 先看一下add 中的文件 
+        git reset HEAD 如果后面什么都不跟的话 就是上一次add 里面的全部撤销了 
+        git reset HEAD XXX/XXX/XXX.java 就是对某个文件进行撤销了
+                    
 ## 14、查看/创建/切换分支
 
         git branch -a               查看分支
@@ -138,6 +142,9 @@
 
         在项目根目录下创建.gitignore文件
         在.gitignore文件下添加忽略文件
+        
+        如果你不想推什么文件到git 可以运行这个命令：
+        git update-index --assume-unchanged xxx/xxx.py  
     
 ## 23、创建远程版本库
     
