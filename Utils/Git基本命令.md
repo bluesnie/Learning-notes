@@ -1,13 +1,13 @@
 # Git常用命令
 
-## 1、帮助信息
+## 帮助信息
 
         git help           显示常用的git 和使用简短说明
         git help -a       显示所有的命令
         git help -g       查看使用手册
         git help 命令 / git 命令 help     查看某命令的使用说明, F键下一页，B键上一页，Q退出
 
-## 2、git 配置（全局配置）
+## git 配置（全局配置）
     
         所有的配置都会保存到当前用户目录下的: .gitconfig 文件中
             git config --global user.name '名称'               配置用户名
@@ -16,27 +16,27 @@
             git config --unset --global user.name '名称'       重置信息
             git config --global corlor.ui true
 
-## 3、初始化项目
+## 初始化项目
 
         git init        初始化项目
     
-## 4、查看状态
+## 查看状态
     
         git status
             状态：
                 untracked:未跟踪的文件
                 modified: 修改后未添加提交的文件
         
-## 5、添加文件
+## 添加文件
     
         git add .或具体文件                      添加当前文件夹的文件或具体文件
 
-## 6、提交文件
+## 提交文件
     
         git commit -m '提交信息'                提交
         git commit -am '提交信息'               添加提交
 
-## 7、查看提交日志
+## 查看提交日志
 
         git log --oneline --decorate --all -10 --graph --author='作者' --index='文件名' --before='2019-3-1/1 week' 
             --oneline:一行显示提交日志
@@ -49,22 +49,22 @@
             --before:某时间之前
         
     
-## 8、查看文件修改前和修改后的区别
+## 查看文件修改前和修改后的区别
 
         git diff 文件名                        查看文件修改的区别，不指明文件则所以修改文件的区别
 
-## 9、Git跟踪rename文件/移动文件
+## Git跟踪rename文件/移动文件
 
         git mv 原文件名 新文件名                重命名/移动文件夹或文件名
         git add .
         git commit -m '信息'
     
-## 10、删除文件
+## 删除文件
 
         git rm 文件名1 文件名2 。。。    
         git rm -r 文件夹名                      递归删除  
     
-## 11、恢复文件
+## 恢复文件
 
         git checkout HEAD^ -- 需要恢复的文件名
             HEAD:最近的一次提交
@@ -73,11 +73,11 @@
             HEAD^^...:最近的一次提交的上n次提交
             --:当前分支
 
-## 12、恢复提交
+## 恢复提交
 
         git revert 提交号
 
-## 13、重置提交指针
+## 重置提交指针
 
         git reset 选项 提交号
             --soft:软重置，不会影响工作区和暂存区的东西
@@ -88,33 +88,33 @@
         git reset HEAD 如果后面什么都不跟的话 就是上一次add 里面的全部撤销了 
         git reset HEAD XXX/XXX/XXX.java 就是对某个文件进行撤销了
                     
-## 14、查看/创建/切换分支
+## 查看/创建/切换分支
 
         git branch -a               查看分支
         git branch -r               查看远程分支    
         git branch 分支名            创建分支  
         git checkout 分支名          切换分支
 
-## 15、查看两个分支之间的区别
+## 查看两个分支之间的区别
 
         git diff master..branch1 文件名   查看两个分支（文件）之间的区别，a表示两点左边的分支，b表示右边的分支
 
-## 16、合并分支
+## 合并分支
 
         git checkout master
         git merge 分支名    
     
-## 17、解决合并冲突
+## 解决合并冲突
 
         手动解决冲突
         Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 
-## 18、重命名/删除分支
+## 重命名/删除分支
 
         git branch -m 原分支名 新分支名
         git branch -d 分支名
 
-## 19、保存修改进度
+## 保存修改进度
 
         git stash save '描述信息'
         git stash list                  查看工作进度信息
@@ -123,7 +123,7 @@
         git shash drop 工作进度代号       删除工作进度
         git apply pop 工作进度代号        恢复工作进度同时删除
     
-## 20、添加别名
+## 添加别名
 
         git config --global alias.co(别名) checkout(命令)
         或
@@ -132,13 +132,13 @@
         保存退出
         source ~/.bash_profile或重启终端
 
-## 21、全局忽略跟踪文件
+## 全局忽略跟踪文件
 
         git config --global core.excludesfile ~/.gitignore_global
         告诉git全局范围中忽略的文件包含在.gitignore_global文件中
         编辑.gitignore_global需要忽略的文件
     
-## 22、项目级忽略文件
+## 项目级忽略文件
 
         在项目根目录下创建.gitignore文件
         在.gitignore文件下添加忽略文件
@@ -146,22 +146,33 @@
         如果你不想推什么文件到git 可以运行这个命令：
         git update-index --assume-unchanged xxx/xxx.py  
     
-## 23、创建远程版本库
+## 创建远程版本库
     
         git remote add origin 远程版本库url地址
         git remote -v                               查看远程库信息
         git remote rm                               移除远程库
     
-## 24、推送版本库
+## 推送版本库
 
         git push [-u] origin 分支名
             -u:跟踪远程分支的变化
+            
+## 修改远程仓库地址 
+    
+        1.修改命令
+            git remote origin set-url [url]
+        
+        2.先删后加
+            git remote rm origin
+            git remote add origin [url]
+        
+        3.直接修改config文件
 
-## 25、克隆版本库到本地
+## 克隆版本库到本地
 
         git clone 远程版本库url地址 目录名            克隆到指定目录下
 
-## 26、更新本地版本库
+## 更新本地版本库
 
         git fetch                                   拉取版本库
         git merge origin/master                     合并
@@ -169,15 +180,15 @@
         git pull = git fetch + git merge
         第一种比较安全
 
-## 27、基于版本库开发自己的版本库，fork到自己账户然后克隆到本地
+## 基于版本库开发自己的版本库，fork到自己账户然后克隆到本地
 
         git fork 远程版本库url地址
         
-## 28、添加pull request
+## 添加pull request
 
         git pull request
     
-## 29、添加贡献者
+## 添加贡献者
 
         GitHub中的setting中的collaborator添加贡献者
     
