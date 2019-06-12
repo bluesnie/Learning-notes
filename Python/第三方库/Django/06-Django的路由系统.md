@@ -124,6 +124,17 @@ Django settings.py配置文件中默认没有 APPEND_SLASH 这个参数，但 Dj
 ```python
     views.month_archive(request, year="2017", month="12")
 ```
+**区别**
+
+    分组匹配             --> 相当于给视图函数传递位置参数(*args)
+    分组命名匹配         --> 相当于给视图函数传递关键字参数(**kwargs)
+
+例子：
+
+    url(r'^articles/2003/$', views.special_case_2003),  分组匹配
+    
+    url(r'^articles/(?P<year>[0-9]{4})/$', views.year_archive),  分组命名匹配
+
 在实际应用中，使用分组命名匹配的方式可以让你的URLconf 更加明晰且不容易产生参数顺序问题的错误，但是有些开发人员则认为分组命名组语法太丑陋、繁琐。
 
 至于究竟应该使用哪一种，你可以根据自己的喜好来决定。
@@ -204,6 +215,8 @@ django.conf.urls.url() 函数可以接收一个可选的第三个参数，它是
 这个技术在Syndication 框架中使用，来传递元数据和选项给视图。
 
 ### 命名URL和URL反向解析
+    
+    本质就是给url匹配模式起别名，然后用别名通过reverse函数反向生成url，在HTML和视图函数中使用，就不会因为后期url的改变而出现404。
 
 在使用Django 项目时，一个常见的需求是获得URL的最终形式，以用于嵌入到生成的内容中（视图中和显示给用户的URL等）或者用于处理服务器端的导航（重定向等）。
 
