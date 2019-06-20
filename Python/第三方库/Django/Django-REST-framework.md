@@ -140,6 +140,7 @@
         6、djangorestframework
             5.1、如何验证（基于数据库实现用户认证）
             5.2、源码流程（面向对象回顾流程）
+![](./res/csrf_attack.png)
 
 # Django-Rest-framework组件
 ## 一、认证

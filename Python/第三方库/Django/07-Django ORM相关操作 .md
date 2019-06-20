@@ -17,7 +17,7 @@
      
     <4> exclude(**kwargs):     它包含了与所给筛选条件不匹配的对象
      
-    <5> values(*field):        返回一个ValueQuerySet——一个特殊的QuerySet，运行后得到的并不是一系列model的实例化对象，而是一个可迭代的字典序列
+    <5> values(*field):        返回一个ValueQuerySet——一个特殊的QuerySet，运行后得到的并不是一系列model的实例化对象，而是一个可迭代的字典序列，需要哪些字段就写进去。
      
     <6> values_list(*field):   它与values()非常相似，它返回的是一个元组序列，values返回的是一个字典序列
      
@@ -34,6 +34,10 @@
     <12> last():               返回最后一条记录
      
     <13> exists():             如果QuerySet包含数据，就返回True，否则返回False
+
+values()方法例子：
+
+![](./res/ORM_values.png)
 
 ##### 返回QuerySet对象的方法有
 
@@ -90,13 +94,17 @@
 
 ### ForeignKey操作
 
+![](./res/ForeignKey.png)
+
 #### 正向查找
 
 ##### 对象查找(跨表)
 
+    这是对对象进行操作，不能values()和values_list()
+    
 语法：
 
-对象.关联字段.字段
+**对象.关联字段.字段**
 
 示例：
 
@@ -106,13 +114,15 @@
 
 ##### 字段查找(跨表)
 
+    这是对QuerySet进行操作，可以 values()和values_list()
+
 语法：
 
-关联字段__字段
+**关联字段__字段**
 
 示例：
 
-    print(models.Book.objects.values_list("publisher__name"))
+    print(models.Book.objects.values_list("publisher__name"))  # 双下划线表示跨表
 
 #### 反向操作
 
@@ -120,23 +130,67 @@
 
 语法：
 
-obj.表名_set
+**obj.表名_set**
 
 示例：
 
     publisher_obj = models.Publisher.objects.first()  # 找到第一个出版社对象
     books = publisher_obj.book_set.all()  # 找到第一个出版社出版的所有书
     titles = books.values_list("title")  # 找到第一个出版社出版的所有书的书名
+    
+如果外键字段设置了：related_name：用于获取关联对象的关联管理器对象（反向查询），如果不允许反向，该属性应该被设置为`'+'`，或者以`'+'`结尾。
+    
+例子：
+
+    course = models.ForeignKey(Course, verbose_name=u'课程', on_delete=models.CASCADE, related_name='course')
+语法：
+
+    未设置：
+        **obj.表名_set**
+    设置：
+        **obj.course** 
 
 ##### 字段查找
 
 语法：
 
-表名__字段
-
+**表名__字段**
+  
 示例：
 
     titles = models.Publisher.objects.values_list("book__title")
+
+### OneToOneField
+    
+当一张表的某些字段查询的比较繁琐，另外一些字段查询的不是特别繁琐，把不怎么常用的字段单独拿出来做成一张表，然后用一对一关联起来。    
+
+优势：
+
+- 既保证数据能完整的保存下来，有能保证大部分的检索更快。
+
+用法：
+
+    OneToOneField(to="")
+
+例子：
+```python
+    作者
+    class Author(models.Model):
+        name = models.CharField(max_length=12)
+        age = models.IntegerField()
+        phone = models.IntegerField()
+        detail = models.OneToOneField(to="AuthorDetail")
+    
+        def __str__(self):
+            return self.name
+    
+    作者详情    
+    class AuthorDetail(models.Model):
+        爱好
+        hobby = models.CharField(max_length=32)
+        地址
+        addr = models.CharField(max_length=128)
+```
 
 ### ManyToManyField
 
@@ -232,6 +286,61 @@ ForeignKey字段没设置null=True时，
 
 - 对于所有类型的关联字段，add()、create()、remove()和clear(),set()都会马上更新数据库。换句话说，在关联的任何一端，都不需要再调用save()方法。
 
+#### 自己创建第三张表
+
+多对多的方式
+    
+- ORM自动创建第三种表
+
+- 自己创建第三张表，利用外键分别关联作者和书
+    
+    关联查询比较麻烦，因为没办法使用ORM提供的便利方法
+
+- 自己创建第三张表，使用ORM 的ManyToManyField() 
+
+    使用此种方式创建多对多表的时候，没有add()、remove()等方法
+    而是直接操作第三张表
+
+使用方法(依情况而定)：
+    
+1. 如果你第三张表没有额外的字段，就用第一种
+2. 如果你第三张表有额外的字段，就用第三种或第一种
+
+```python
+    # 作者
+    class Author(models.Model):
+        name = models.CharField(max_length=12)
+        age = models.IntegerField()
+        phone = models.IntegerField()
+        # 通过through="AuthorBook",through_fields=("author", "book") 来指定使用我创建的第三张表来构建多对多的关系，而不是django自动创建的
+        book = models.ManyToManyField(to="Book", through="AuthorBook", through_fields=("author", "book"))
+        # through_field中，第一个字段，多对多设置在哪一张表里，第三张表通过什么字段找到这张表，就把这个字段写在前面，有关联关系的才要写进去
+        detail = models.OneToOneField(to="AuthorDetail")
+    
+        def __str__(self):
+            return self.name
+            
+    # 书
+    class Book(models.Model):
+        name = models.CharField(max_length=50)
+        
+            
+    # 自己创建作者和书关联的第三张表
+    # 此时，在ORM层面 作者和书就没有多对多的关系了
+    class AuthorBook(models.Model):
+        # 作者id
+        author = models.ForeignKey(to="Author")
+        # 书id 
+        book = models.ForeignKey(to="Book")
+        # 其他字段
+        info = models.CharField(max_length=12)
+        
+        class Meta:
+            # 作者id和书id联合唯一
+            unique_together = ('author', 'book')
+       
+```
+
 ### 聚合查询和分组查询
 
 #### 聚合
@@ -275,7 +384,8 @@ aggregate()是QuerySet 的一个终止子句，意思是说，它返回一个包
 ORM查询:
 ```python
     from django.db.models import Avg
-    Employee.objects.values("dept").annotate(avg=Avg("salary").values(dept, "avg")
+    Employee.objects.values("dept").annotate(avg=Avg("salary").values("dept", "avg")
+    # values()就是取哪些字段，同时具有分组的作用。
 ```
 
 连表查询的分组：
@@ -288,6 +398,9 @@ SQL查询：
 ORM查询：
 ```python
     from django.db.models import Avg
+    
+    models.Employee.objects.values('dept_id').annotate(avg=Avg('salary')).values('dept__name', 'avg')
+    # 或
     models.Dept.objects.annotate(avg=Avg("employee__salary")).values("name", "avg")
 ```
 
@@ -362,7 +475,7 @@ Django 支持 F() 对象之间以及 F() 对象和常数之间的加减乘除和
 
 如果要修改char字段咋办？
 
-如：把所有书名后面加上(第一版)
+如：把所有书名后面加上：(第一版)
 
     >>> from django.db.models.functions import Concat
     >>> from django.db.models import Value
@@ -386,7 +499,7 @@ filter() 等方法中的关键字参数查询都是一起进行“AND” 的。 
     >>> models.Book.objects.filter(Q(author__name="小仙女") & ~Q(publish_date__year=2018)).values_list("title")
     <QuerySet [('番茄物语',)]>
     
-查询函数可以混合使用Q 对象和关键字参数。所有提供给查询函数的参数（关键字参数或Q 对象）都将"AND”在一起。但是，如果出现Q 对象，它必须位于所有关键字参数的前面。
+**查询函数可以混合使用Q 对象和关键字参数。所有提供给查询函数的参数（关键字参数或Q 对象）都将"AND”在一起。但是，如果出现Q 对象，它必须位于所有关键字参数的前面。**
 
 例如：查询出版年份是2017或2018，书名中带物语的所有书。
 
@@ -436,13 +549,317 @@ select_for_update(nowait=False, skip_locked=False)
 ```
 
 ### 其他鲜为人知的操作(了解为主)
+
 #### Django ORM执行原生SQL
+
+在模型查询API不够用的情况下，我们还可以使用原始的SQL语句进行查询。
+
+Django 提供两种方法使用原始SQL进行查询：一种是使用raw()方法，进行原始SQL查询并返回模型实例；另一种是完全避开模型层，直接执行自定义的SQL语句。
+
 ##### 执行原生查询
+
+raw()管理器方法用于原始的SQL查询，并返回模型的实例：
+
+注意：raw()语法查询必须包含主键。
+
+这个方法执行原始的SQL查询，并返回一个django.db.models.query.RawQuerySet 实例。 这个RawQuerySet 实例可以像一般的QuerySet那样，通过迭代来提供对象实例。
+
+举个例子：
+```python
+    class Person(models.Model):
+        first_name = models.CharField(...)
+        last_name = models.CharField(...)
+        birth_date = models.DateField(...)
+```
+可以像下面这样执行原生SQL语句
+
+    >>> for p in Person.objects.raw('SELECT * FROM myapp_person'):
+    ...     print(p)
+    
+raw()查询可以查询其他表的数据。
+
+举个例子：
+```python
+    ret = models.Student.objects.raw('select id, tname as hehe from app02_teacher')
+        for i in ret:
+            print(i.id, i.hehe)
+```
+
+raw()方法自动将查询字段映射到模型字段。还可以通过translations参数指定一个把查询的字段名和ORM对象实例的字段名互相对应的字典
+
+```python
+    d = {'tname': 'haha'}
+    ret = models.Student.objects.raw('select * from app02_teacher', translations=d)
+    for i in ret:
+        print(i.id, i.sname, i.haha)
+```
+
+原生SQL还可以使用参数，注意不要自己使用字符串格式化拼接SQL语句，防止SQL注入！
+```python
+    d = {'tname': 'haha'}
+    ret = models.Student.objects.raw('select * from app02_teacher where id > %s', translations=d, params=[1,])
+    for i in ret:
+        print(i.id, i.sname, i.haha)
+```
 
 ##### 直接执行自定义SQL
 
+有时候raw()方法并不十分好用，很多情况下我们不需要将查询结果映射成模型，或者我们需要执行DELETE、 INSERT以及UPDATE操作。在这些情况下，我们可以直接访问数据库，完全避开模型层。
+
+我们可以直接从django提供的接口中获取数据库连接，然后像使用pymysql模块一样操作数据库。
+```python
+    from django.db import connection, connections
+    cursor = connection.cursor()  # cursor = connections['default'].cursor()
+    cursor.execute("""SELECT * from auth_user where id = %s""", [1])
+    ret = cursor.fetchone()
+```
+
 #### QuerySet方法大全
+
+```python
+    ##################################################################
+    # PUBLIC METHODS THAT ALTER ATTRIBUTES AND RETURN A NEW QUERYSET #
+    ##################################################################
+    
+    def all(self)
+        # 获取所有的数据对象
+    
+    def filter(self, *args, **kwargs)
+        # 条件查询
+        # 条件可以是：参数，字典，Q
+    
+    def exclude(self, *args, **kwargs)
+        # 条件查询
+        # 条件可以是：参数，字典，Q
+    
+    def select_related(self, *fields)
+        性能相关：表之间进行join连表操作，一次性获取关联的数据。
+    
+        总结：
+        1. select_related主要针一对一和多对一关系进行优化。
+        2. select_related使用SQL的JOIN语句进行优化，通过减少SQL查询的次数来进行优化、提高性能。
+    
+    def prefetch_related(self, *lookups)
+        性能相关：多表连表操作时速度会慢，使用其执行多次SQL查询在Python代码中实现连表操作。
+    
+        总结：
+        1. 对于多对多字段（ManyToManyField）和一对多字段，可以使用prefetch_related()来进行优化。
+        2. prefetch_related()的优化方式是分别查询每个表，然后用Python处理他们之间的关系。
+    
+    def annotate(self, *args, **kwargs)
+        # 用于实现聚合group by查询
+    
+        from django.db.models import Count, Avg, Max, Min, Sum
+    
+        v = models.UserInfo.objects.values('u_id').annotate(uid=Count('u_id'))
+        # SELECT u_id, COUNT(ui) AS `uid` FROM UserInfo GROUP BY u_id
+    
+        v = models.UserInfo.objects.values('u_id').annotate(uid=Count('u_id')).filter(uid__gt=1)
+        # SELECT u_id, COUNT(ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) > 1
+    
+        v = models.UserInfo.objects.values('u_id').annotate(uid=Count('u_id',distinct=True)).filter(uid__gt=1)
+        # SELECT u_id, COUNT( DISTINCT ui_id) AS `uid` FROM UserInfo GROUP BY u_id having count(u_id) > 1
+    
+    def distinct(self, *field_names)
+        # 用于distinct去重
+        models.UserInfo.objects.values('nid').distinct()
+        # select distinct nid from userinfo
+    
+        注：只有在PostgreSQL中才能使用distinct进行去重
+    
+    def order_by(self, *field_names)
+        # 用于排序
+        models.UserInfo.objects.all().order_by('-id','age')
+    
+    def extra(self, select=None, where=None, params=None, tables=None, order_by=None, select_params=None)
+        # 构造额外的查询条件或者映射，如：子查询
+    
+        Entry.objects.extra(select={'new_id': "select col from sometable where othercol > %s"}, select_params=(1,))
+        Entry.objects.extra(where=['headline=%s'], params=['Lennon'])
+        Entry.objects.extra(where=["foo='a' OR bar = 'a'", "baz = 'a'"])
+        Entry.objects.extra(select={'new_id': "select id from tb where id > %s"}, select_params=(1,), order_by=['-nid'])
+    
+     def reverse(self):
+        # 倒序
+        models.UserInfo.objects.all().order_by('-nid').reverse()
+        # 注：如果存在order_by，reverse则是倒序，如果多个排序则一一倒序
+    
+    
+     def defer(self, *fields):
+        models.UserInfo.objects.defer('username','id')
+        或
+        models.UserInfo.objects.filter(...).defer('username','id')
+        #映射中排除某列数据
+    
+     def only(self, *fields):
+        #仅取某个表中的数据
+         models.UserInfo.objects.only('username','id')
+         或
+         models.UserInfo.objects.filter(...).only('username','id')
+    
+     def using(self, alias):
+         指定使用的数据库，参数为别名（setting中的设置）
+    
+    
+    ##################################################
+    # PUBLIC METHODS THAT RETURN A QUERYSET SUBCLASS #
+    ##################################################
+    
+    def raw(self, raw_query, params=None, translations=None, using=None):
+        # 执行原生SQL
+        models.UserInfo.objects.raw('select * from userinfo')
+    
+        # 如果SQL是其他表时，必须将名字设置为当前UserInfo对象的主键列名
+        models.UserInfo.objects.raw('select id as nid from 其他表')
+    
+        # 为原生SQL设置参数
+        models.UserInfo.objects.raw('select id as nid from userinfo where nid>%s', params=[12,])
+    
+        # 将获取的到列名转换为指定列名
+        name_map = {'first': 'first_name', 'last': 'last_name', 'bd': 'birth_date', 'pk': 'id'}
+        Person.objects.raw('SELECT * FROM some_other_table', translations=name_map)
+    
+        # 指定数据库
+        models.UserInfo.objects.raw('select * from userinfo', using="default")
+    
+        ################### 原生SQL ###################
+        from django.db import connection, connections
+        cursor = connection.cursor()  # cursor = connections['default'].cursor()
+        cursor.execute("""SELECT * from auth_user where id = %s""", [1])
+        row = cursor.fetchone() # fetchall()/fetchmany(..)
+    
+    
+    def values(self, *fields):
+        # 获取每行数据为字典格式
+    
+    def values_list(self, *fields, **kwargs):
+        # 获取每行数据为元祖
+    
+    def dates(self, field_name, kind, order='ASC'):
+        # 根据时间进行某一部分进行去重查找并截取指定内容
+        # kind只能是："year"（年）, "month"（年-月）, "day"（年-月-日）
+        # order只能是："ASC"  "DESC"
+        # 并获取转换后的时间
+            - year : 年-01-01
+            - month: 年-月-01
+            - day  : 年-月-日
+    
+        models.DatePlus.objects.dates('ctime','day','DESC')
+    
+    def datetimes(self, field_name, kind, order='ASC', tzinfo=None):
+        # 根据时间进行某一部分进行去重查找并截取指定内容，将时间转换为指定时区时间
+        # kind只能是 "year", "month", "day", "hour", "minute", "second"
+        # order只能是："ASC"  "DESC"
+        # tzinfo时区对象
+        models.DDD.objects.datetimes('ctime','hour',tzinfo=pytz.UTC)
+        models.DDD.objects.datetimes('ctime','hour',tzinfo=pytz.timezone('Asia/Shanghai'))
+    
+        """
+        pip3 install pytz
+        import pytz
+        pytz.all_timezones
+        pytz.timezone(‘Asia/Shanghai’)
+        """
+    
+    def none(self):
+        # 空QuerySet对象
+    
+    
+    ####################################
+    # METHODS THAT DO DATABASE QUERIES #
+    ####################################
+    
+    def aggregate(self, *args, **kwargs):
+       # 聚合函数，获取字典类型聚合结果
+       from django.db.models import Count, Avg, Max, Min, Sum
+       result = models.UserInfo.objects.aggregate(k=Count('u_id', distinct=True), n=Count('nid'))
+       ===> {'k': 3, 'n': 4}
+    
+    def count(self):
+       # 获取个数
+    
+    def get(self, *args, **kwargs):
+       # 获取单个对象
+    
+    def create(self, **kwargs):
+       # 创建对象
+    
+    def bulk_create(self, objs, batch_size=None):
+        # 批量插入
+        # batch_size表示一次插入的个数
+        objs = [
+            models.DDD(name='r11'),
+            models.DDD(name='r22')
+        ]
+        models.DDD.objects.bulk_create(objs, 10)
+    
+    def get_or_create(self, defaults=None, **kwargs):
+        # 如果存在，则获取，否则，创建
+        # defaults 指定创建时，其他字段的值
+        obj, created = models.UserInfo.objects.get_or_create(username='root1', defaults={'email': '1111111','u_id': 2, 't_id': 2})
+    
+    def update_or_create(self, defaults=None, **kwargs):
+        # 如果存在，则更新，否则，创建
+        # defaults 指定创建时或更新时的其他字段
+        obj, created = models.UserInfo.objects.update_or_create(username='root1', defaults={'email': '1111111','u_id': 2, 't_id': 1})
+    
+    def first(self):
+       # 获取第一个
+    
+    def last(self):
+       # 获取最后一个
+    
+    def in_bulk(self, id_list=None):
+       # 根据主键ID进行查找
+       id_list = [11,21,31]
+       models.DDD.objects.in_bulk(id_list)
+    
+    def delete(self):
+       # 删除
+    
+    def update(self, **kwargs):
+        # 更新
+    
+    def exists(self):
+       # 是否有结果
+```
 
 ### Django终端打印SQL语句
 
+在Django项目的settings.py文件中，在最后复制粘贴如下代码：
+```python
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console':{
+                'level':'DEBUG',
+                'class':'logging.StreamHandler',
+            },
+        },
+        'loggers': {
+            'django.db.backends': {
+                'handlers': ['console'],
+                'propagate': True,
+                'level':'DEBUG',
+            },
+        }
+    }
+```
+即为你的Django项目配置上一个名为django.db.backends的logger实例即可查看翻译后的SQL语句。 
+
 ### 在Python脚本中调用Django环境
+
+```python
+    import os
+    
+    if __name__ == '__main__':
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "BMS.settings")
+        import django
+        django.setup()
+    
+        from app01 import models
+    
+        books = models.Book.objects.all()
+        print(books)
+```
