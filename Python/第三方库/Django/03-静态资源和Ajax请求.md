@@ -427,6 +427,42 @@ XMLHttpRequest 是一个浏览器接口，通过它，我们可以使得 Javascr
 - 当input标签失去焦点后获取 username表单字段的值，向服务端发送AJAX请求；
 - django的视图函数中处理该请求，获取username值，判断该用户在数据库中是否被注册，如果被注册了就返回“该用户已被注册”，否则响应“该用户名可以注册”。
 
+### ajax中参数traditional的作用
+　　
+在使用ajax向后台传值的时候，有的时候一个字段需要传多个值，这种情况下会想到用数组形式来传，比如：
+```javascript
+    $.ajax({
+      type: "post",
+      async: true,
+      data: {
+        "records": ["123","456","789"]
+      },
+      url: "xxxxx",
+      error: function(request) {},
+      success: function(data) {}
+    });
+```
+
+但是通过测试很快就会发现java后台无法取到参数，因为jQuery需要调用jQuery.param序列化参数，jQuery.param(obj, traditional )默认情况下traditional为false，
+即jquery会深度序列化参数对象，以适应如PHP和Ruby on Rails框架，但servelt api无法处理，我们可以通过**设置traditional 为true阻止深度序列化**，然后序列化结果如下：
+
+    records: ["123", "456", "789"]    =>    records=123&p=456&p=789
+
+随即，我们就可以在后台通过request.getParameterValues()来获取参数的值数组了，如下：
+```javascript
+    $.ajax({
+      type: "post",
+      async: true,
+      traditional: true,  
+      data: {
+        "records": ["123","456","789"]
+      },
+      url: "xxxxx",
+      error: function(request) {},
+      success: function(data) {}
+    });
+```
+
 ### 序列化
 
 #### Django内置的serializers

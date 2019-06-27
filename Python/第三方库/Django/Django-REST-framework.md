@@ -724,7 +724,11 @@
             # 利用content-type实现一表对应多表
             
             # models.py
-            
+                
+                from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
+                from django.db import models
+                from django.contrib.contenttypes.models import ContentType
+                
                 class Course(models.Model):
                     """
                     普通课程
@@ -754,7 +758,7 @@
                     # object_id = models.CharField(verbose_name=u'关联表中的数据id')
                 
                     # 使用Django的组件content-type
-                    content_type = models.ForeignKey(ContentType, verbose_name=u'关联普通可或学位课表', on_delete=models.CASCADE)  # 11、12就是上面两个表
+                    content_type = models.ForeignKey(ContentType, verbose_name=u'关联普通课或学位课表', on_delete=models.CASCADE)  # 11、12就是上面两个表
                     object_id = models.IntegerField(verbose_name=u'关联表中的数据id')
                 
                     # 帮助你快速实现content-type操作
