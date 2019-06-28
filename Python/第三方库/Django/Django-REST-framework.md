@@ -169,6 +169,38 @@
             dispath -> 封装request -> 获取定义的认证类（全局/局部）,通过列表生成器创建对象 -> initial -> perform_authentication 
             -> request.user -> Request里的user方法 -> _authenticate -> 最后执行自定义的认证类里的authenticate方法
 
+        3、示例
+            
+            # 认证
+            # 访问进来第一步执行as_view()里面的view()里面的dispath,当前类没有找父类
+            class MyAuthentication(object):
+                """
+                认证源码流程
+                1.访问进来第一步执行dispath,当前类没有找父类
+                2.封装Request：               initialize_request(request, *args, **kwargs)
+                3.                            initial(request, *args, **kwargs)           #    这当中我们设置的raise异常都会在当前函数的下面捕获
+                4.                            perform_authentication(request)
+                5.                            request.user ————>去封装request的类里面找user()方法
+                6.user方法里面:                _authenticate()
+                7._authenticate()里面循环认证类的所有对象       调用每个对象的authenticate()方法就是我们自己定义的 MyAuthentication里面的 authenticate()
+                8.最后反射到我们定义的View的get,post等等方法执行里面逻辑。
+                """
+                def authenticate(self, request):
+                    token = request._request.GET.get('token')
+                    # 获取用户名和密码，去数据库校验
+                    if not token:
+                        raise exceptions.AuthenticationFailed('用户认证失败')
+                    # 返回元组（校验后的数据）
+                    return ("nzb", None)
+            
+                def authenticate_header(self, val):
+                    """
+                    认证失败给浏览器返回的响应头
+                    :param val:
+                    :return:
+                    """
+                    pass
+
 ## 二、权限
 
         问题：不同的视图不同的权限
