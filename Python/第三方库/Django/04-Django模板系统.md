@@ -289,8 +289,6 @@ for循环可用的一些参数：
 {% endfor %}
 </ul>
 
-
-
 ##### if判断
 
 if,elif和else
@@ -336,7 +334,6 @@ if语句支持 and 、or、==、>、<、!=、<=、>=、in、not in、is、is not
 ##### 注释
 
 {# ... #}
-
 
 ##### 注意事项
 
@@ -414,7 +411,6 @@ def xx(request):
 
 ##### {% static %}
 
-
 {% load static %}
 <img src="{% static "images/hi.jpg" %}" alt="Hi!" />
 
@@ -428,7 +424,6 @@ def xx(request):
     {% load static %}
     {% static "images/hi.jpg" as myphoto %}
     <img src="{{ myphoto }}"></img>
-
 
 ##### {% get_static_prefix %} 
 
