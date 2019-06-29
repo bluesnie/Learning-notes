@@ -230,7 +230,7 @@
 - 命名URL和URL反向解析
 - 命名空间模式
 
-#### [Django ORM相关操作](./Python/第三方库/Django/07-Django ORM相关操作.md)
+#### [Django ORM相关操作](./Python/第三方库/Django/07-Django-ORM相关操作.md)
 
 - 必知必会13方法：all() / filter() / get() / exclude() / values() / values_list() / order_by() / reverse() / distinct() / count() / first() / last() / exists()
 - 单表查询之神奇的双下划线
