@@ -311,6 +311,28 @@
  - Vue.js入门
  - Element的使用
  - Bootstrap的使用
+ 
+### [HTML5](./Web/HTML5)
+
+- HTML5元素
+- HTML5属性使用方法：`<h1>、<body>、<a>、class、id、style、title`等
+- HTML5格式化：`<b>、<em>、<i>、<small>、<strong>`等
+- HTML5样式：标签：`<style>、<link>` | 属性：`rel、type、margin`等
+- HTML5链接：属性：`name、href` 
+- HTML5表格：`<table>、<caption>、<th>、<tr>、<td>、<thead>、<tbody>、<tfoot>、<col>`
+- HTML5列表：标签：`<ol>、<ul>、<li>、<dl>、<dt>、<dd>` | 有序列表 / 无序列表 / 嵌套列表 /自定义列表
+- HTML5块：`<h1>、<p>、<ul>、<b>、<a>、<img>、<div>、<span>`
+- HTML5布局：`<div>、<table>`
+- HTML5表单：`<form>、<input>、<textarea>、<label>、<fieldset>、<legend>、<select>、<optgroup>、<option>、<button`
+- HTML5框架：`<frame>(已移除)、<frameset>(已移除)、<iframe>`
+- HTML5背景：Background / Bgcolor
+- [HTML5实体](https://baike.baidu.com/item/HTML%E5%AE%9E%E4%BD%93/9172201?fr=aladdin)
+- XHTML的规范化：什么是XHTML | 为什么使用 | 文档声明 | 文档类型 | 元素语法 | 属性语法规则
+- HTML5新特性：引入原生多媒体支持（audio和video标签）| 引入可编程内容（canvas标签）| 引入语义Web（article、aside、details、figure、footer、header、nav、section、summary等标签）
+    | 引入新的表单控件（日历、邮箱、搜索、滑条等）| 引入对离线存储更好的支持（localStorage和sessionStorage）| 引入对定位、拖放、WebSocket、后台任务等的支持
+- HTML5新增的主体结构元素：`<article>、<section>、<nav>、<aside>、<time>`
+- HTML5新增的非主体结构元素：`<header>、<footer>、<hgroup>、<address>`
+- 网页编码规则
 
 ### [RESTful规范](./Web/RESTful.md)
 
