@@ -811,8 +811,187 @@ HTML5中不能使用menu元素代替nav元素
     </body>
 ```
 
+## 表单新增元素与属性
 
+- 表单内元素的form属性
 
+    在Html4中，表单内的从属元素必须写在表单内部，而在HTML5中，可以把它们书写在页面的任何地方，然后为该元素指定一个form属性，属性值为该表单的id。
+    这样九可以声明该元素从属于指定表单了。 
+```html
+    <form id="myform">
+    </form>
+    <input type="text" form="myform"/>
+```
+
+- 表单内元素的formaction属性
+
+    在HTML4中，一个表单内的所有元素只能通过表单的action属性统一提交到另一个页面，而在HTML5中可以为所有的提交按钮。
+```html
+    <form id="myform" action="Index.aspx">
+        <input type="submit" value="提交到Index2" formaction="Index2.aspx"/>
+        <input type="submit" value="提交到Index3" formaction="Index3.aspx"/>
+    </form>
+```
+
+- 表单内元素的formmethod属性
+
+    在HTML4中，一个表单内只有一个action属性用来对表单内所有元素统一指定提交页面，所以每个表单内也只有一个method属性来统一指定提交方法。
+    在HTML5中，可以使用formmethod属性来对每个表单元素分别指定不同的提交方法。
+```html
+    <form id="myform" action="Index.aspx">
+        <input type="submit" value="Post提交" formmethod="POST"/>
+        <input type="submit" value="GET提交" formmethod="GET"/>
+    </form>
+```
+
+- 表单内元素的formenctype属性
+
+    在HTML4中，表单元素具有一个enctype属性，该属性用于指定在表单发送到服务器之前应该如何对表单内的数据进行编码。
+    - application/x-www-from-urlencoded：编码方式把表单数据转换成一个字符串形式?a=value1&b=value2&c=value3,然后把这个字符串价到提交的目标URL地址后面。
+    该属性为表单enctype属性的默认属性值。
+    - multipart/form-data:不对字符编码,在使用包含文件上传控件的表单时，必须使用该值。
+    - text/plain:对表单数据中的空格被转换为"+",但不对表单数据中的特殊字符进行编码。
+    
+    在HTML5中，可以使用formenctype属性对表单元素分别指定不同的编码方式。
+```html
+    <form id="myform" action="Index.aspx" method="Post">
+         文件:<input type="file" name="files"/>
+        <input type="submit" value="上传" formenctype="multipart/form-data" formaction="uploadFile.aspx"/>
+    </form>
+```
+
+- 表单内元素的formtarget属性
+
+    在HTML4中，表单元素具有一个target属性，该属性用于指定在何处打开表单提交后，所需要加载的页面。
+    - _blank:在新的浏览器窗口中打开。
+    - _self:默认值，在相同的框架中打开。
+    - _parent:在当前框架的父框架中打开。
+    - _top:在当前浏览器窗口中打开。
+    - framename:在指定的框架中打开。
+    
+    在HTML5中，可以对多个提交按钮分别使用formtarget属性来指定提交后在何处打开所需要加载的页面。
+```html
+    <form id="myform" action="Index.aspx">
+        <input type="submit" name="s1" value="1" formtarget="_bank" formaction="Index2.aspx"/>
+        <input type="submit" name="s2" value="2" formtarget="_top"/>
+    </form>
+```
+
+- 表单内元素的autofocus属性
+
+    文本框、选择框或按钮加上autofocus属性，当页面打开时，该控件自动获取光标焦点。一个页面上只能有一个控件具有autofocus属性。
+```html
+    <input type="text" autofocus />
+```
+
+- 表单内元素的required属性
+
+    HTML5中新增的required属性可以应用在大多数输入元素上，在提交时，将验证输入内容是否合法，如果不合法则不允许提交，同时在浏览器显示相应的提示信息。
+
+- 表单内元素的labels属性
+
+    在HTML5中，为所有可使用label的表单元素，定义一个labels属性，属性值为一个NodeList对象，代表该元素所绑定的标签元素构成的集合。
+```html
+    <script type="text/javascript">
+     var TxtName=document.getElementById("txt_name");
+     alert(TxtName.labels.length);
+    </script>
+    <form id="myform" action="Index.aspx">
+        <label id="label1" for="txt_name">名字:</label>
+        <input id="txt_name">
+    </form>
+```
+
+- 标签的control属性
+
+    在HTML5中，可以在标签内部放置一个表单元素，并且通过该标签的control属性来访问该表单元素。
+```html
+    <form action="" method="post">
+        <label id="label">
+            邮编:
+            <input type="text" name="text" value="" maxlength="6">
+            <small>请输入六位数字</small>
+        </label>
+            <input type="button" value="设置默认值" onclick="setValue()">
+    </form>
+    <script type="text/javascript">
+        function setValue(){
+            var label = document.getElementById('label');
+            var textbox = label.control;
+            textbox.value='10010';
+        }
+    </script>
+```
+
+- 文本框的placeholder属性
+
+    placeholder是指当文本框处于微输入状态时显示的输入提示。
+```html
+    <input type="text" placeholder="提示输入"/>
+```
+
+- 文本框的list属性
+
+     HTML5中,为`<input type="text">`增加了一个list属性，该属性的值为某个datalist的id。
+
+    datalist元素也是HTML5中新增的元素，该元素类似于选择框(Select元素),但是当用户想要设定的值不在选择列表之内时，允许自行输入。
+    datalist元素本身并不显示，而是当文本框获取焦点时以提示输入的方式显示。
+```html
+    <form>
+        <input type="text" name="seach" list="dataList1"/>
+        <datalist id="dataList1" style="display:none;">
+            <option value="你好">你好</option>
+            <option value="早上">早上</option>
+        </datalist>
+    </form>
+```
+
+- 文本框的AutoComplete属性
+
+    辅助输入所用的自动完成功能，时一个即节省输入时间又十分方便的功能。在HTML5之前，因为谁都可以看见输入的值，所以在安全方面存在缺陷。
+    对于autocomplete属性，可以指定"on"、"off"与""(不指定)这三种值。在不进行指定时，使用浏览器的默认值。把该属性设为on时，
+    可以显示指定候补输入的数据列表。使用datalist元素与list属性提供候补输入的数据列表，在执行自动完成时，
+    可以将该datalist元素中的数据作为候补输入的数据在文本框中自动显示。
+```html
+    <input type="text" autocomplete="on" list="greetings"/>
+```
+
+- 文本框的pattern属性
+
+     在HTML5中，对input元素使用pattern属性，并且将属性值设置某个格式的正则表达式时，在提交时会对这些进行检查，检查其内容是否符合给定格式。
+ ```html
+    <input type="text" pattern="[0-9][a-z]{3}" required="格式不符合"/>
+```
+
+- 文本框的SelectDirection属性
+
+    对input 元素和textarea 元素，HTML5增加了SelectionDirection属性。当用户在这两个元素中用户鼠标选取部分文字时，
+    可以使用属性来获取选取方向。正向选取:forward,反向选取为:backward。
+
+- 复选框的indeterminate属性
+
+    对复选框checkbox元素来说，过去只有选取与非选取两种状态。在HTML5中，可以在Javascript脚本代码中对该元素使用indeterminate属性，
+    以说明复选框处于"尚未明确是否选取的状态"。indeterminate属性为boolean 类型 当为true 时，浏览器中的复选框将显示为不明状态。
+    需要注意的时，indeterminate属性与checked属性时两种不同的属性。因此，在判断复选框时，应该现判断indeterminate属性值，然后在判断checked属性值。
+```html
+    <form>
+        <input type="checkbox" indeterminate id="cb">
+    </form>
+    <script>
+        var cb = document.getElementById('cb');
+        cb.indeterminate = true;
+    </script>
+```
+
+- image提交按钮的height属性与width属性
+
+    针对类型为image的input元素，HTML5新增了两个属性，height、width分别用来指定图片的高、宽。
+```html
+    <form>
+        <input type="text">
+        <input type="image" alt="图片" src="static/img/a5.jpg" width="30" height="30">
+    </form>
+```
 
 
 

@@ -1,0 +1,94 @@
+/*body{*/
+    /*background-color: gray;*/
+    /*background-image: url("../../res/Baidu.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: right top;*/
+    /*!*right和center,在页面右边和图片中间显示*!*/
+    /*background-attachment: fixed;*/
+    /*background-size: 500px 200px;*/
+/*}*/
+/*p{*/
+    /*width: 150px;*/
+    /*padding: 20px;*/
+    /*background-color: green;*/
+    /*color: red;*/
+    /*text-align: center;*/
+    /*text-transform: capitalize;*/
+    /*font-size: 30px;*/
+    /*font-family: 隶书;*/
+/*}*/
+/*h3{*/
+    /*text-indent: 3em;*/
+    /*text-shadow: 20px 20px 2px red;*/
+/*}*/
+/*a:link{*/
+    /*color: red;*/
+    /*background-color: #8a6d3b;*/
+/*}*/
+/*a:visited{*/
+    /*color: green;*/
+/*}*/
+/*a:hover{*/
+    /*color: blue;*/
+/*}*/
+/*a:active{*/
+    /*color: blue;*/
+/*}*/
+/*ul li{*/
+    /*list-style-type: square;*/
+/*}*/
+
+/*box.html*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.top{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+.top_content{
+    width: 75%;
+    height: 50px;
+    background-color: #8a6d3b;
+    margin: 0px auto;
+}
+.body{
+    margin: 20px auto;
+    width: 75%;
+    height: 1500px;
+    background-color: #9d9d9d;
+}
+.body_img{
+    width: 100%;
+    height: 500px;
+    background-color: #5bc0de;
+}
+.body_content{
+    width: 100%;
+    height: 1000px;
+    background-color: #985f0d;
+}
+.body_no{
+    width: 100%;
+    height: 40px;
+    background-color: #23527c;
+}
+.footing{
+    width: 75%;
+    height: 400px;
+    background-color: #a6e1ec;
+    margin: 0 auto;
+}
+.footing_content{
+    width: 100%;
+    height: 300px;
+    background-color: #245269;
+}
+.footing_subnav{
+    width: 100%;
+    height: 100px;
+    background-color: #555555;
+}
