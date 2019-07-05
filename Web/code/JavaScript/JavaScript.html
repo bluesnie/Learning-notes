@@ -58,20 +58,43 @@
 <!--</script>-->
 
 <!--文本改变事件-->
-<form>
-    <!--<input type="text" onchange="txtChange(this)">-->
-    <input type="text" onchange="alert('内容改变')">
-    <input type="text" onselect="textSelect(this)" onfocus="Focus(this)">
-</form>
+<!--<form>-->
+    <!--&lt;!&ndash;<input type="text" onchange="txtChange(this)">&ndash;&gt;-->
+    <!--<input type="text" onchange="alert('内容改变')">-->
+    <!--<input type="text" onselect="textSelect(this)" onfocus="Focus(this)">-->
+<!--</form>-->
+<!--<script>-->
+    <!--function txtChange(bg) {-->
+        <!--alert("Hello 内容改变了");-->
+    <!--}-->
+    <!--function textSelect(bg) {-->
+        <!--bg.style.background = "red";-->
+    <!--}-->
+    <!--function Focus(bg) {-->
+        <!--bg.style.backgroundColor='blue';-->
+    <!--}-->
+<!--</script>-->
+
+<!--浏览器对象-->
+
+<!--<script>-->
+    <!--document.write("宽度：" + window.innerWidth, " 高度：" + window.innerHeight)-->
+<!--</script>-->
+
+<!--计算器-->
+    <p id="ptime"></p>
+    <button onclick="stopTime()">停止</button>
 <script>
-    function txtChange(bg) {
-        alert("Hello 内容改变了");
+    var mytime = setInterval(function () {
+        getTime();
+    }, 1000);
+    function getTime() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("ptime").innerHTML = t;
     }
-    function textSelect(bg) {
-        bg.style.background = "red";
-    }
-    function Focus(bg) {
-        bg.style.backgroundColor='blue';
+    function stopTime() {
+        clearInterval(mytime);
     }
 </script>
 

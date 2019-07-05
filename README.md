@@ -347,9 +347,13 @@
 
 ### [JavaScript](./Web/JavaScript)
 
-- [基础导航](./Web/JavaScript/JavaScript.md)
+- [基础导航](./Web/JavaScript/JavaScript基础.md)
 - 语法与注释 | 变量和数据类型 | 运算符 | 分支结构 | 循环结构
-- 跳转语句 | 函数 | 局部变量和全局变量
+- 跳转语句 | 函数 | 局部变量和全局变量 | 异常捕获 | 事件 | DOM 
+- DOM操作HTML | DOM操作CSS | DOM Evenlistener：事件冒泡和事件捕获
+- [JavaScript对象](./Web/JavaScript/JavaScript对象.md)：对象 | String对象 | Date对象 | Array对象 | Math对象 | [JavaScript面向对象](./Web/JavaScript/JavaScript面向对象.md)
+- [DOM对象](./Web/JavaScript/JavaScript对象.md#DOM对象)：HTML DOM节点 | Document对象 | 元素对象 | 属性对象 | Console对象 | CSS样式声明对象 | DOM事件
+- [浏览器对象](./Web/JavaScript/JavaScript对象.md#浏览器对象)：Window对象 | History对象 | Location对象 | Screen对象
 
 ### [RESTful规范](./Web/RESTful.md)
 
