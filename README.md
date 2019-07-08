@@ -280,9 +280,9 @@
 - Django-Rest-framework组件:
     - [认证](./Python/第三方库/Django/Django-REST-framework.md#一认证)
     - [权限](./Python/第三方库/Django/Django-REST-framework.md#二权限)
-    - [频率控制(节流)](./Python/第三方库/Django/Django-REST-framework.md#三频率控制(节流))
-    - [版本(全局配置就行)](./Python/第三方库/Django/Django-REST-framework.md#四版本(全局配置就行))
-    - [解析器(全局配置就行)](./Python/第三方库/Django/Django-REST-framework.md#五解析器(全局配置就行))
+    - [频率控制(节流)](./Python/第三方库/Django/Django-REST-framework.md#三频率控制节流)
+    - [版本(全局配置就行)](./Python/第三方库/Django/Django-REST-framework.md#四版本全局配置就行)
+    - [解析器(全局配置就行)](./Python/第三方库/Django/Django-REST-framework.md#五解析器全局配置就行)
     - [序列化](./Python/第三方库/Django/Django-REST-framework.md#六序列化)
     - [分页](./Python/第三方库/Django/Django-REST-framework.md#七分页)
     - [视图](./Python/第三方库/Django/Django-REST-framework.md#八视图)
