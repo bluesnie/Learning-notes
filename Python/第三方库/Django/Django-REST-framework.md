@@ -747,7 +747,7 @@
         全局配置：
             'DEFAULT_RENDERER_CLASSES':['rest_framework.renderers.JSONRenderer','rest_framework.renderers.BrowsableAPIRenderer']
 
-## 十一、django组件：content-type
+## 十一、django组件content_type
         
         Django内置的一个组件，帮助开发者做连表操作。【混搭】
         models里定义的时候，实现一表对多表操作
