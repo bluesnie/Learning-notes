@@ -188,7 +188,7 @@
 - 关系型数据库配置
 - 管理后台的使用
 - [模型管理类详细配置](./Python/第三方库/Django/02-深入模型.md#模型管理类详细配置)
-- [Django xadmin开启excel导入功能](./Python/第三方库/Django/02-深入模型.md#Django xadmin开启excel导入功能)
+- [Django xadmin开启excel导入功能](./Python/第三方库/Django/02-深入模型.md#Django_xadmin开启excel导入功能)
 - [使用ORM完成对模型的CRUD操作](./Python/第三方库/Django/02-深入模型.md#使用ORM完成模型的CRUD操作)
 - Django模型最佳实践
 - [模型(字段)定义参考](./Python/第三方库/Django/02-深入模型.md#模型定义参考)
