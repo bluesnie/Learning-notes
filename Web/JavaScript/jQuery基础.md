@@ -1,7 +1,6 @@
 ###### datetime:2019/7/10 13:43
 ###### author:nzb
 
-
 ## jQuery简介
 
 jQuery 库可以通过一行简单的标记被添加到网页中。
@@ -273,7 +272,49 @@ jQueryObject.keypress( [[ data ,]  handler ] );
     });
 ```
 
-## JQuery HTML
+## jQuery - noConflict() 方法
+
+正如您已经了解到的，jQuery 使用 $ 符号作为 jQuery 的简写。
+
+如果其他 JavaScript 框架也使用 $ 符号作为简写怎么办？
+
+其他一些 JavaScript 框架包括：MooTools、Backbone、Sammy、Cappuccino、Knockout、JavaScript MVC、Google Web Toolkit、Google Closure、Ember、Batman 以及 Ext JS。
+
+其中某些框架也使用 $ 符号作为简写（就像 jQuery），如果您在用的两种不同的框架正在使用相同的简写符号，有可能导致脚本停止运行。
+
+jQuery 的团队考虑到了这个问题，并实现了 noConflict() 方法。
+
+noConflict() 方法会释放对 $ 标识符的控制，这样其他脚本就可以使用它了。
+
+当然，您仍然可以通过全名替代简写的方式来使用 jQuery：
+```javascript
+    $.noConflict();
+    jQuery(document).ready(function(){
+      jQuery("button").click(function(){
+        jQuery("p").text("jQuery 仍然在工作!");
+      });
+    });
+```
+您也可以创建自己的简写。noConflict() 可返回对 jQuery 的引用，您可以把它存入变量，以供稍后使用。请看这个例子：
+```javascript
+    var jq = $.noConflict();
+    jq(document).ready(function(){
+      jq("button").click(function(){
+        jq("p").text("jQuery 仍然在工作!");
+      });
+    });
+```
+如果你的 jQuery 代码块使用 $ 简写，并且您不愿意改变这个快捷方式，那么您可以把 $ 符号作为变量传递给 ready 方法。这样就可以在函数内使用 $ 符号了 - 而在函数外，依旧不得不使用 "jQuery"：
+```javascript
+    $.noConflict();
+    jQuery(document).ready(function($){
+      $("button").click(function(){
+        $("p").text("jQuery 仍然在工作!");
+      });
+    });
+```
+
+## jQuery HTML
 
 ### 获取内容和属性
 
@@ -497,6 +538,149 @@ jQuery 方法 attr()，也提供回调函数。回调函数有两个参数：被
     下面的例子删除 class="italic" 的所有 `<p>` 元素：
     ```javascript
         $("p").remove(".italic");
+    ```
+
+## jQuery CSS
+
+### CSS类和方法
+
+- jQuery 拥有若干进行 CSS 操作的方法。我们将学习下面这些：
+    - addClass() - 向被选元素添加一个或多个类
+    - removeClass() - 从被选元素删除一个或多个类
+    - toggleClass() - 对被选元素进行添加/删除类的切换操作
+    - css() - 设置或返回样式属性
+
+实例样式表
+```css
+.important
+{
+        font-weight:bold;
+        font-size:xx-large;
+}
+ 
+.blue
+{
+        color:blue;
+}
+```
+
+- addClass() 方法
+    ```javascript
+        $("button").click(function(){
+          $("h1,h2,p").addClass("blue");
+          $("div").addClass("important");
+        });
+
+    // 或规定多个类：
+        $("button").click(function(){
+            $("body div:first").addClass("important blue");
+        });
+    ```
+
+- removeClass() 方法
+    ```javascript
+        $("button").click(function(){
+          $("h1,h2,p").removeClass("blue");
+        });
+    ```
+
+- toggleClass() 方法
+
+    该方法对被选元素进行添加/删除类的切换操作：
+    ```javascript
+        $("button").click(function(){
+          $("h1,h2,p").toggleClass("blue");
+        });
+    ```
+
+- css() 方法
+
+    设置或返回被选元素的一个或多个样式属性。
+    
+    - 返回 CSS 属性
+    
+        如需返回指定的 CSS 属性的值，请使用如下语法：
+        ```javascript
+            css("propertyname");
+    
+            // 例
+            $("p").css("background-color");
+        ```
+    
+    - 设置 CSS 属性
+    
+        如需设置指定的 CSS 属性，请使用如下语法：
+        ```javascript
+            css("propertyname","value");
+
+            // 例
+            $("p").css("background-color","yellow");
+        ```
+        
+    - 设置多个 CSS 属性
+    
+        如需设置多个 CSS 属性，请使用如下语法：
+        ```javascript
+            css({"propertyname":"value","propertyname":"value",...});
+            
+            // 例
+            $("p").css({"background-color":"yellow","font-size":"200%"});
+        ```
+
+### CSS盒子模型(尺寸)
+
+- jQuery 提供多个处理尺寸的重要方法：
+    - width()
+    - height()
+    - innerWidth()
+    - innerHeight()
+    - outerWidth()
+    - outerHeight()
+    
+- jQuery尺寸
+
+    ![](../res/jQuery_box.png)
+
+- width() 和 height() 方法
+
+    width() 方法设置或返回元素的宽度（不包括内边距、边框或外边距）。
+    
+    height() 方法设置或返回元素的高度（不包括内边距、边框或外边距）。
+    ```javascript
+        $("button").click(function(){
+          var txt="";
+          txt+="div 的宽度是: " + $("#div1").width() + "</br>";
+          txt+="div 的高度是: " + $("#div1").height();
+          $("#div1").html(txt);
+        });
+    ```
+    
+- innerWidth() 和 innerHeight() 方法
+
+    innerWidth() 方法返回元素的宽度（包括内边距）。
+    
+    innerHeight() 方法返回元素的高度（包括内边距）。
+    ```javascript
+        $("button").click(function(){
+          var txt="";
+          txt+="div 宽度，包含内边距: " + $("#div1").innerWidth() + "</br>";
+            txt+="div 高度，包含内边距: " + $("#div1").innerHeight();
+          $("#div1").html(txt);
+        });
+    ```
+
+- outerWidth() 和 outerHeight() 方法
+
+    outerWidth() 方法返回元素的宽度（包括内边距和边框）。
+    
+    outerHeight() 方法返回元素的高度（包括内边距和边框）。
+    ```javascript
+        $("button").click(function(){
+          var txt="";
+          txt+="div 宽度，包含内边距和边框: " + $("#div1").outerWidth() + "</br>";
+          txt+="div 高度，包含内边距和边框: " + $("#div1").outerHeight();
+          $("#div1").html(txt);
+        });
     ```
 
 ## jQuery 效果
@@ -726,6 +910,153 @@ jQuery 方法 attr()，也提供回调函数。回调函数有两个参数：被
         });
     ```
 
+### 动画
+
+- animate() 方法
+
+    用于创建自定义动画。
+    
+    - 语法：
+        ```javascript
+            $(selector).animate({params},speed,callback);
+        ```
+        必需的 params 参数定义形成动画的 CSS 属性。
+        
+        可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+        
+        可选的 callback 参数是动画完成后所执行的函数名称。
+        
+        下面的例子演示 animate() 方法的简单应用。它把 `<div>` 元素往右边移动了 250 像素：
+        ```javascript
+            $("button").click(function(){
+              $("div").animate({left:'250px'});
+            });
+        ```
+    默认情况下，所有 HTML 元素都有一个静态位置，且无法移动。
+    
+    如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！
+
+    - 操作多个属性
+    
+        生成动画的过程中可同时使用多个属性：
+
+        实例
+        ```javascript
+            $("button").click(function(){
+              $("div").animate({
+                left:'250px',
+                opacity:'0.5',
+                height:'150px',
+                width:'150px'
+              });
+            });
+        ```
+    
+    - 使用相对值
+    
+        也可以定义相对值（该值相对于元素的当前值）。需要在值的前面加上 += 或 -=：
+        ```javascript
+            $("button").click(function(){
+              $("div").animate({
+                left:'250px',
+                height:'+=150px',
+                width:'+=150px'
+              });
+            });
+        ```
+        
+    - 使用预定义的值
+    
+        甚至可以把属性的动画值设置为 "show"、"hide" 或 "toggle"：
+        ```javascript
+            $("button").click(function(){
+              $("div").animate({
+                height:'toggle'
+              });
+            });
+        ```
+        
+    - 使用队列功能
+    
+        默认地，jQuery 提供针对动画的队列功能。
+
+        这意味着如果您在彼此之后编写多个 animate() 调用，jQuery 会创建包含这些方法调用的"内部"队列。然后逐一运行这些 animate 调用。
+        ```javascript
+            $("button").click(function(){
+              var div=$("div");
+              div.animate({height:'300px',opacity:'0.4'},"slow");
+              div.animate({width:'300px',opacity:'0.8'},"slow");
+              div.animate({height:'100px',opacity:'0.4'},"slow");
+              div.animate({width:'100px',opacity:'0.8'},"slow");
+            });
+
+            // 下面的例子把 <div> 元素往右边移动了 100 像素，然后增加文本的字号：
+            $("button").click(function(){
+                var div=$("div");
+                div.animate({left:'100px'},"slow");
+                div.animate({fontSize:'3em'},"slow");
+            });
+        ```
+    
+- 可以用 animate() 方法来操作所有 CSS 属性吗？
+   
+    是的，几乎可以！不过，需要记住一件重要的事情：当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。
+    
+    同时，色彩动画并不包含在核心 jQuery 库中。
+    
+    如果需要生成颜色动画，您需要从 [jquery.com](https://jquery.com/download/) 下载 [颜色动画](https://plugins.jquery.com/color/) 插件。
+
+### 停止动画
+
+- stop() 方法
+
+    用于停止动画或效果，在它们完成之前。
+    
+    stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。
+    
+    - 语法:
+        ```javascript
+            $(selector).stop(stopAll,goToEnd);
+        ```
+    可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。
+
+    可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。
+    
+    因此，默认地，stop() 会清除在被选元素上指定的当前动画。
+    
+    下面的例子演示 stop() 方法，不带参数：
+    ```javascript
+        $("#stop").click(function(){
+          $("#panel").stop();
+        });
+    ```
+
+- 动画队列停止动画测试，只停止当前正在进行的动画，停止当前动画后，队列中的下一个动画开始进行：
+    ```javascript
+        $(document).ready(function(){
+          $("#flip").click(function(){
+            $("#panel").slideDown(5000);
+            $("#panel").slideUp(5000);
+          });
+          $("#stop").click(function(){
+            $("#panel").stop();
+          });
+        });
+    ```
+
+- 可以在 stop() 中设置 stopAll 的参数为 true，这样就可以停止所有动画效果而不是只停止当前动画：
+    ```javascript
+        $(document).ready(function(){
+          $("#flip").click(function(){
+            $("#panel").slideDown(5000);
+            $("#panel").slideUp(5000);
+          });
+          $("#stop").click(function(){
+            $("#panel").stop(true);
+          });
+        });
+    ```
+
 ### Callback(回调) 方法
 
 Callback 函数在当前动画 100% 完成之后执行。
@@ -793,5 +1124,430 @@ Callback 函数在当前动画 100% 完成之后执行。
         });
     ```
 
+### 链(Chaining)
 
+通过 jQuery，可以把动作/方法链接在一起。
 
+Chaining 允许我们在一条语句中运行多个 jQuery 方法（在相同的元素上）。
+
+直到现在，我们都是一次写一条 jQuery 语句（一条接着另一条）。
+
+不过，有一种名为链接（chaining）的技术，允许我们在相同的元素上运行多条 jQuery 命令，一条接着另一条。
+
+**提示：** 这样的话，浏览器就不必多次查找相同的元素。
+
+如需链接一个动作，您只需简单地把该动作追加到之前的动作上。
+
+下面的例子把 css()、slideUp() 和 slideDown() 链接在一起。"p1" 元素首先会变为红色，然后向上滑动，再然后向下滑动：
+```javascript
+    $("#p1").css("color","red").slideUp(2000).slideDown(2000);
+```
+如果需要，我们也可以添加多个方法调用。
+
+提示：当进行链接时，代码行会变得很长。不过，jQuery 语法不是很严格；您可以按照希望的格式来写，包含换行和缩进。
+
+如下书写也可以很好地运行：
+```javascript
+    $("#p1").css("color","red")
+      .slideUp(2000)
+      .slideDown(2000);
+```
+
+## jQuery - AJAX 
+
+### 简介
+
+AJAX 是与服务器交换数据的技术，它在不重载全部页面的情况下，实现了对部分网页的更新。
+
+- 什么是 AJAX？
+
+    AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。
+    
+    简短地说，在不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示。
+    
+    使用 AJAX 的应用程序案例：谷歌地图、腾讯微博、优酷视频、人人网等等。
+    
+    您可以在 [jQuery Ajax 参考手册]()学会 jQuery Ajax 的具体应用。
+    
+    您可以在菜鸟教程中的 [AJAX 教程](https://www.runoob.com/ajax/ajax-tutorial.html)中学到更多有关 AJAX 的知识。
+
+- 关于 jQuery 与 AJAX
+
+    jQuery 提供多个与 AJAX 有关的方法。
+    
+    通过 jQuery AJAX 方法，您能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时您能够把这些外部数据直接载入网页的被选元素中。
+
+- 如果没有 jQuery，AJAX 编程还是有些难度的。
+
+    编写常规的 AJAX 代码并不容易，因为不同的浏览器对 AJAX 的实现并不相同。这意味着您必须编写额外的代码对浏览器进行测试。不过，jQuery 团队为我们解决了这个难题，我们只需要一行简单的代码，就可以实现 AJAX 功能。
+
+### AJAX load() 方法
+
+- jQuery load() 方法
+
+    jQuery load() 方法是简单但强大的 AJAX 方法。
+    
+    load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
+
+    - 语法:
+    ```javascript
+        $(selector).load(URL,data,callback);
+    ```
+    必需的 URL 参数规定您希望加载的 URL。
+
+    可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+    
+    可选的 callback 参数是 load() 方法完成后所执行的函数名称。
+    
+    这是示例文件（"demo_test.txt"）的内容：
+    ```text
+        <h2>jQuery AJAX 是个非常棒的功能！</h2>
+        <p id="p1">这是段落的一些文本。</p>
+    ```
+    下面的例子会把文件 "demo_test.txt" 的内容加载到指定的 `<div>` 元素中：
+    ```javascript
+        $("#div1").load("demo_test.txt");
+    ```
+    也可以把 jQuery 选择器添加到 URL 参数。
+
+    下面的例子把 "demo_test.txt" 文件中 id="p1" 的元素的内容，加载到指定的 `<div>` 元素中：
+    
+    实例
+    ```javascript
+        $("#div1").load("demo_test.txt #p1");
+    ```
+    可选的 callback 参数规定当 load() 方法完成后所要允许的回调函数。回调函数可以设置不同的参数：
+    - responseTxt - 包含调用成功时的结果内容
+    - statusTXT - 包含调用的状态
+    - xhr - 包含 XMLHttpRequest 对象
+    
+    下面的例子会在 load() 方法完成后显示一个提示框。如果 load() 方法已成功，则显示"外部内容加载成功！"，而如果失败，则显示错误消息：
+    ```javascript
+        $("button").click(function(){
+          $("#div1").load("demo_test.txt",function(responseTxt,statusTxt,xhr){
+            if(statusTxt=="success")
+              alert("外部内容加载成功!");
+            if(statusTxt=="error")
+              alert("Error: "+xhr.status+": "+xhr.statusText);
+          });
+        });
+    ```
+    为了避免多页面情形下的代码重复，可以利用 load() 方法，将重复的部分（例如导航栏）放入单独的文件，使用下列方法进行导入：
+    ```javascript
+        //1.当前文件中要插入的地方使用此结构：
+        <div class="include" file="***.html"></div>
+        
+        //2.***.html中放入内容，用html格式仅仅因为会有编辑器的书写辅助。。
+        
+        //3.代码：
+        $(".include").each(function() {
+            if (!!$(this).attr("file")) {
+                var $includeObj = $(this);
+                $(this).load($(this).attr("file"), function(html) {
+                    $includeObj.after(html).remove(); //加载的文件内容写入到当前标签后面并移除当前标签
+                })
+            }
+        });
+        或者在index文件里只写重复部分，剩下的一股脑放各自单独文件 load() 进来~
+    ```
+
+### AJAX get() 和 post() 方法
+
+jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST 请求从服务器请求数据。
+
+HTTP 请求：GET vs. POST
+
+两种在客户端和服务器端进行请求-响应的常用方法是：GET 和 POST。
+- GET - 从指定的资源请求数据
+- POST - 向指定的资源提交要处理的数据
+
+GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据。
+
+POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。
+
+- $.get() 方法
+
+    通过 HTTP GET 请求从服务器上请求数据。
+    - 语法：
+    ```javascript
+        $.get(URL,callback);
+    ```
+    必需的 URL 参数规定您希望请求的 URL。
+    
+    可选的 callback 参数是请求成功后所执行的函数名。
+    
+    下面的例子使用 $.get() 方法从服务器上的一个文件中取回数据：
+    ```javascript
+        $("button").click(function(){
+          $.get("demo_test.php",function(data,status){
+            alert("数据: " + data + "\n状态: " + status);
+          });
+        });
+    ```
+    $.get() 的第一个参数是我们希望请求的 URL（"demo_test.php"）。
+
+    第二个参数是回调函数。第一个回调参数存有被请求页面的内容，第二个回调参数存有请求的状态。
+    
+- $.post() 方法
+
+    通过 HTTP POST 请求向服务器提交数据。
+    - 语法:
+    ```javascript
+        $.post(URL,data,callback);
+    ```
+    必需的 URL 参数规定您希望请求的 URL。
+
+    可选的 data 参数规定连同请求发送的数据。
+    
+    可选的 callback 参数是请求成功后所执行的函数名。
+    
+    下面的例子使用 $.post() 连同请求一起发送数据：
+    ```javascript
+        $("button").click(function(){
+            $.post("/try/ajax/demo_test_post.php",
+            {
+                name:"菜鸟教程",
+                url:"http://www.runoob.com"
+            },
+                function(data,status){
+                alert("数据: \n" + data + "\n状态: " + status);
+            });
+        });
+    ```
+    $.post() 的第一个参数是我们希望请求的 URL ("demo_test_post.php")。
+
+    然后我们连同请求（name 和 url）一起发送数据。
+    
+    "demo_test_post.php" 中的 PHP 脚本读取这些参数，对它们进行处理，然后返回结果。
+    
+    第三个参数是回调函数。第一个回调参数存有被请求页面的内容，而第二个参数存有请求的状态。
+
+## jQuery 遍历
+
+### 祖先
+
+- 这些 jQuery 方法很有用，它们用于向上遍历 DOM 树：
+    - parent()
+    - parents()
+    - parentsUntil()
+
+- parent() 方法
+
+    parent() 方法返回被选元素的直接父元素。
+    
+    该方法只会向上一级对 DOM 树进行遍历。
+    
+    下面的例子返回每个 `<span>` 元素的的直接父元素：
+    ```javascript
+        $(document).ready(function(){
+          $("span").parent();
+        });
+    ```
+    
+- parents() 方法
+
+    parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (`<html>`)。
+
+    下面的例子返回所有 `<span>` 元素的所有祖先：
+    ```javascript
+        $(document).ready(function(){
+          $("span").parents();
+        });
+    ```
+    您也可以使用可选参数来过滤对祖先元素的搜索。
+
+    下面的例子返回所有 `<span>` 元素的所有祖先，并且它是 `<ul>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("span").parents("ul");
+        });
+    ```
+
+- parentsUntil() 方法
+
+    parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。
+
+    下面的例子返回介于 `<span>` 与 <div>` 元素之间的所有祖先元素：
+    ```javascript
+        $(document).ready(function(){
+          $("span").parentsUntil("div");
+        });
+    ```
+
+### 后代
+
+- 下面是两个用于向下遍历 DOM 树的 jQuery 方法：
+    - children()
+    - find()
+
+- children() 方法
+
+    children() 方法返回被选元素的所有直接子元素。
+    
+    该方法只会向下一级对 DOM 树进行遍历。
+    
+    下面的例子返回每个 `<div>` 元素的所有直接子元素：
+    ```javascript
+        $(document).ready(function(){
+          $("div").children();
+        });
+    ```
+    您也可以使用可选参数来过滤对子元素的搜索。
+    
+    下面的例子返回类名为 "1" 的所有 `<p>` 元素，并且它们是 `<div>` 的直接子元素：
+    ```javascript
+        $(document).ready(function(){
+          $("div").children("p.1");
+        });
+    ```
+
+- find() 方法
+
+    find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。
+
+    下面的例子返回属于 `<div>` 后代的所有 `<span>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("div").find("span");
+        });
+    ```
+    下面的例子返回 `<div>` 的所有后代：
+    ```javascript
+        $(document).ready(function(){
+          $("div").find("*");
+        });
+    ```
+
+### 同胞(siblings)
+
+- 有许多有用的方法让我们在 DOM 树进行水平遍历：
+    - siblings()
+    - next()
+    - nextAll()
+    - nextUntil()
+    - prev()
+    - prevAll()
+    - prevUntil()
+
+- siblings() 方法
+
+    siblings() 方法返回被选元素的所有同胞元素。
+    
+    下面的例子返回 `h2>` 的所有同胞元素：
+    ```javascript
+        $(document).ready(function(){
+          $("h2").siblings();
+        });
+    ```
+    您也可以使用可选参数来过滤对同胞元素的搜索。
+
+    下面的例子返回属于 `<h2>` 的同胞元素的所有 `<p>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("h2").siblings("p");
+        });
+    ```
+
+- next() 方法
+
+    next() 方法返回被选元素的下一个同胞元素。
+    
+    该方法只返回一个元素。
+    
+    下面的例子返回 `<h2>` 的下一个同胞元素：
+    ```javascript
+        $(document).ready(function(){
+          $("h2").next();
+        });
+    ```
+
+- nextAll() 方法
+
+    nextAll() 方法返回被选元素的所有跟随的同胞元素。
+    
+    下面的例子返回 `<h2>` 的所有跟随的同胞元素：
+    ```javascript
+        $(document).ready(function(){
+          $("h2").nextAll();
+        });
+    ```
+    
+- nextUntil() 方法
+
+    nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。
+    
+    下面的例子返回介于 `<h2>` 与 `<h6>` 元素之间的所有同胞元素：
+    ```javascript
+        $(document).ready(function(){
+          $("h2").nextUntil("h6");
+        });
+    ```
+
+- prev(), prevAll() & prevUntil() 方法
+
+    prev(), prevAll() 以及 prevUntil() 方法的工作方式与上面的方法类似，只不过方向相反而已：它们返回的是前面的同胞元素（在 DOM 树中沿着同胞之前元素遍历，而不是之后元素遍历）。
+
+### 过滤
+
+- 缩小搜索元素的范围
+
+    三个最基本的过滤方法是：first(), last() 和 eq()，它们允许您基于其在一组元素中的位置来选择一个特定的元素。
+    
+    其他过滤方法，比如 filter() 和 not() 允许您选取匹配或不匹配某项指定标准的元素。
+
+- first() 方法
+
+    first() 方法返回被选元素的首个元素。
+    
+    下面的例子选取首个 `<div>` 元素内部的第一个 `<p>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("div p").first();
+        });
+    ```
+
+- last() 方法
+
+    last() 方法返回被选元素的最后一个元素。
+    
+    下面的例子选择最后一个 `<div>` 元素中的最后一个 `<p>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("div p").last();
+        });
+    ```
+
+- eq() 方法
+
+    eq() 方法返回被选元素中带有指定索引号的元素。
+    
+    索引号从 0 开始，因此首个元素的索引号是 0 而不是 1。下面的例子选取第二个 `<p>` 元素（索引号 1）：
+    ```javascript
+        $(document).ready(function(){
+          $("p").eq(1);
+        });
+    ```
+
+- filter() 方法
+
+    filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+    
+    下面的例子返回带有类名 "url" 的所有 `<p>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("p").filter(".url");
+        });
+    ```
+
+- not() 方法
+
+    not() 方法返回不匹配标准的所有元素。
+    
+    提示：not() 方法与 filter() 相反。
+    
+    下面的例子返回不带有类名 "url" 的所有 `<p>` 元素：
+    ```javascript
+        $(document).ready(function(){
+          $("p").not(".url");
+        });
+    ```
