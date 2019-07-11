@@ -390,13 +390,13 @@
 
 - [jQuery方法大全](./Web/JavaScript/jQuery方法大全.md)
     - [选择器](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [事件方法](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [效果方法](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [HTML / CSS 方法](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [遍历方法](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [AJAX方法](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [杂项方法](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [属性](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [事件方法](./Web/JavaScript/jQuery方法大全.md#jquery-事件方法)
+    - [效果方法](./Web/JavaScript/jQuery方法大全.md#jquery-效果方法)
+    - [HTML / CSS 方法](./Web/JavaScript/jQuery方法大全.md#jquery-html--css-方法)
+    - [遍历方法](./Web/JavaScript/jQuery方法大全.md#jquery-遍历方法)
+    - [AJAX方法](./Web/JavaScript/jQuery方法大全.md#jquery-ajax-方法)
+    - [杂项方法](./Web/JavaScript/jQuery方法大全.md#jquery-杂项方法)
+    - [属性](./Web/JavaScript/jQuery方法大全.md#jquery-属性)
 
 ### [RESTful规范](./Web/RESTful.md)
 
