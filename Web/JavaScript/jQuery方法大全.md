@@ -361,7 +361,7 @@
 | deferred.then() | 当Deferred（延迟）对象解决，拒绝或仍在进行中时，调用添加处理程序 |
 | .promise() | 返回一个 Promise 对象，观察某种类型被绑定到集合的所有行动，是否已被加入到队列中 |
 
-## jQuery 属性
+## [jQuery 属性](https://www.runoob.com/jquery/jquery-ref-prop.html)
 
 | 方法 | 描述 |
 |----------|-----------|
