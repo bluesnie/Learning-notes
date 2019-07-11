@@ -550,7 +550,7 @@ select_for_update(nowait=False, skip_locked=False)
 
 ### 其他鲜为人知的操作(了解为主)
 
-#### Django ORM执行原生SQL
+#### Django_ORM执行原生SQL
 
 在模型查询API不够用的情况下，我们还可以使用原始的SQL语句进行查询。
 

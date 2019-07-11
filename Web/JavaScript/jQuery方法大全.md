@@ -1,7 +1,7 @@
 ###### datetime:2019/7/10 15:29
 ###### author:nzb
 
-## [jQuery 选择器](https://www.runoob.com/jquery/jquery-ref-selectors.html)
+## [选择器](https://www.runoob.com/jquery/jquery-ref-selectors.html)
 
 | 选择器 | 实例 | 选取 |
 |----------|-----------|-------------|
@@ -49,11 +49,11 @@
 | [attribute=value] | $("[href='default.htm']") | 所有带有 href 属性且值等于 "default.htm" 的元素 |
 | [attribute!=value] | $("[href!='default.htm']") | 所有带有 href 属性且值不等于 "default.htm" 的元素 |
 | [attribute$=value] | $("[href$='.jpg']") | 所有带有 href 属性且值以 ".jpg" 结尾的元素 |
-| [attribute|=value] | $("[title|='Tomorrow']") | 所有带有 title 属性且值等于 'Tomorrow' 或者以 'Tomorrow' 后跟连接符作为开头的字符串 |
+| [attribute&#124;=value] | $("[title&#124;='Tomorrow']") | 所有带有 title 属性且值等于 'Tomorrow' 或者以 'Tomorrow' 后跟连接符作为开头的字符串 |
 | [attribute^=value] | $("[title^='Tom']") | 所有带有 title 属性且值以 "Tom" 开头的元素 |
 | [attribute~=value] | $("[title~='hello']") | 所有带有 title 属性且值包含单词 "hello" 的元素 |
 | [attribute*=value] | $("[title*='hello']") | 所有带有 title 属性且值包含字符串 "hello" 的元素 |
-| [name=value][name2=value2] | $( "input[id][name$='man']" ) | 带有 id 属性，并且 name 属性以 man 结尾的输入框 |
+| [name=value]、[name2=value2] | $("input[id][name$='man']") | 带有 id 属性，并且 name 属性以 man 结尾的输入框 |
 |   |   |   |
 | :input | $(":input") | 所有 input 元素 |
 | :text | $(":text") | 所有带有 type="text" 的 input 元素 |

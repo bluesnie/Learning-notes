@@ -242,7 +242,7 @@
 - [聚合和分组查询](./Python/第三方库/Django/07-Django-ORM相关操作.md#聚合查询和分组查询)：aggregate() 
 - [F查询和Q查询](./Python/第三方库/Django/07-Django-ORM相关操作.md#F查询和Q查询)
 - [锁和事务](./Python/第三方库/Django/07-Django-ORM相关操作.md#锁和事务)：select_for_update(nowait=False, skip_locked=False)
-- [Django执行原生SQL](./Python/第三方库/Django/07-Django-ORM相关操作.md#Django ORM执行原生SQL)：raw()
+- [Django执行原生SQL](./Python/第三方库/Django/07-Django-ORM相关操作.md#Django_ORM执行原生SQL)：raw()
 - [Django方法大全](./Python/第三方库/Django/07-Django-ORM相关操作.md#QuerySet方法大全)
 - [Django终端打印SQL语句 / 在Python脚本中调用Django环境](./Python/第三方库/Django/07-Django-ORM相关操作.md#Django终端打印SQL语句)
 
@@ -376,6 +376,27 @@
 - [JavaScript对象](./Web/JavaScript/JavaScript对象.md)：对象 | String对象 | Date对象 | Array对象 | Math对象 | [JavaScript面向对象](./Web/JavaScript/JavaScript面向对象.md)
 - [DOM对象](./Web/JavaScript/JavaScript对象.md#DOM对象)：HTML DOM节点 | Document对象 | 元素对象 | 属性对象 | Console对象 | CSS样式声明对象 | DOM事件
 - [浏览器对象](./Web/JavaScript/JavaScript对象.md#浏览器对象)：Window对象 | History对象 | Location对象 | Screen对象
+
+#### [jQuery](./Web/JavaScript)
+
+- [JQuery基础](./Web/JavaScript/jQuery基础.md)
+    - 简介 | 语法 | noConflict()方法 | AJAX |
+    - [选择器](./Web/JavaScript/jQuery基础.md#选择器) ：元素选择器 / ID选择器 / 类选择器
+    - [事件](./Web/JavaScript/jQuery基础.md#事件) ： 鼠标事件 / 键盘事件 / 表单事件 / 文档/窗口事件
+    - [HTML](./Web/JavaScript/jQuery基础.md#HTML)  ：获取/设置内容和属性 / 添加/删除元素
+    - [CSS](./Web/JavaScript/jQuery基础.md#CSS)  ：CSS类和方法 / 盒子模型(尺寸)
+    - [效果](./Web/JavaScript/jQuery基础.md#效果)  ：隐藏和显示 / 淡入淡出 / 滑动 / 动画 / 停止动画 / 回调 / 链
+    - [遍历](./Web/JavaScript/jQuery基础.md#遍历)：祖先 / 后代 / 兄弟 / 过滤
+
+- [jQuery方法大全](./Web/JavaScript/jQuery方法大全.md)
+    - [选择器](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [事件方法](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [效果方法](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [HTML / CSS 方法](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [遍历方法](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [AJAX方法](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [杂项方法](./Web/JavaScript/jQuery方法大全.md#选择器)
+    - [属性](./Web/JavaScript/jQuery方法大全.md#选择器)
 
 ### [RESTful规范](./Web/RESTful.md)
 
