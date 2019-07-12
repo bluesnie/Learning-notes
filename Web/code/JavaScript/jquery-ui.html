@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-ui</title>
+    <script src="../static/jquery-3.4.1.min.js"></script>
+    <script src="../static/jquery-ui.min.js"></script>
+    <script src="../static/app.js"></script>
+    <link href="../static/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .ui-selected{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    原始：<button>百度</button>
+    <br />
+    jQuery UI:<a href="http://www.baidu.com" id="a-btn">百度</a>
+
+    <hr>
+    <h1 style="text-align:center;">交互</h1>
+    <hr>
+    <h4 style="text-align: center">拖动放置:drag/drop</h4>
+    <div id="div1" style="width: 100px;height: 100px; border: 2px solid red; float: left;"></div>
+    <div id="div2" style="width: 200px;height: 200px; border: 2px solid green; margin-left: 300px;"></div>
+
+    <hr>
+    <h4 style="text-align: center;">resizeable</h4>
+    <div id="div3" style="width: 50px;height: 50px;background-color: #46b8da"></div>
+
+    <hr>
+    <h4 style="text-align: center">selectable</h4>
+    <strong>你喜欢什么水果？</strong>
+    <ul id="select">
+        <li id="right">苹果</li>
+        <li>香蕉</li>
+        <li>桃子</li>
+    </ul>
+    <a href="#" id="btn">提交</a>
+
+
+    <hr>
+    <h4 style="text-align: center">sortable</h4>
+    <ul id="sortable">
+        <li id="right">苹果</li>
+        <li>香蕉</li>
+        <li>桃子</li>
+    </ul>
+
+    <hr>
+    <h1 style="text-align: center">小部件</h1>
+    <h4 style="text-align: center">accordion</h4>
+    <div id="accordion">
+        <h6>选项1</h6>
+            <div>hellohellohellohellohellohellohellohel
+                lohellohellohellohellohellohellohellohe
+                llohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohel
+                lohellohellohellohellohello</div>
+        <h6>选项2</h6>
+            <div>hellohellohellohellohellohellohelloh
+                ellohellohellohellohellohellohellohell
+                ohellohellohellohellohellohellohellohel
+                lohellohellohellohellohellohellohellohe
+                llohellohellohellohellohello</div>
+        <h6>选项3</h6>
+            <div>hellohellohellohellohellohellohellohe
+                llohellohellohellohellohellohellohello
+                hellohellohellohellohellohellohellohel
+                lohellohellohellohellohellohellohelloh
+                ellohellohellohellohellohello</div>
+    </div>
+
+    <hr>
+    <h4 style="text-align: center">autocomplete</h4>
+    <label for="tags">Tags:</label>
+    <input id="tags">
+
+    <hr>
+    <h4 style="text-align: center">datepicker</h4>
+    <p>Date:<input type="text" id="datepicker"></p>
+    <a href="#" id="date-btn">按钮</a>
+
+    <hr>
+    <h4 style="text-align: center">dialog</h4>
+    <div id="dialog-div">
+        <p>这是一个对话框</p>
+    </div>
+    <a id="dialog-btn">对话框</a>
+
+    <hr>
+    <h4 style="text-align: center">progressbar</h4>
+    <div id="pb"></div>
+</body>
+</html>
