@@ -398,6 +398,19 @@
     - [杂项方法](./Web/JavaScript/jQuery方法大全.md#jquery-杂项方法)
     - [属性](./Web/JavaScript/jQuery方法大全.md#jquery-属性)
 
+#### [jQuery-UI](./Web/JavaScript/jQuery-UI.md)
+
+- [特效（Effects）](./Web/JavaScript/jQuery-UI.md#特效effects)
+- [特效核心（Effects Core）](./Web/JavaScript/jQuery-UI.md#特效核心effects-core)
+- [交互（Interactions）](./Web/JavaScript/jQuery-UI.md#交互interactions)
+- [方法重载（Method Overrides）](./Web/JavaScript/jQuery-UI.md#方法重载method-overrides)
+- [方法（Methods）](./Web/JavaScript/jQuery-UI.md#方法methods)
+- [选择器（Selectors）](./Web/JavaScript/jQuery-UI.md#选择器selectors)
+- [主题（Theming）](./Web/JavaScript/jQuery-UI.md#主题theming)
+- [UI 核心（UI Core）](./Web/JavaScript/jQuery-UI.md#ui-核心ui-core)
+- [实用工具（Utilities）](./Web/JavaScript/jQuery-UI.md#实用工具utilities)
+- [小部件（Widgets）](./Web/JavaScript/jQuery-UI.md#小部件widgets)
+
 ### [RESTful规范](./Web/RESTful.md)
 
  - API与用户的通信协议 / 域名 / 版本 / 路径 / method / 过滤 

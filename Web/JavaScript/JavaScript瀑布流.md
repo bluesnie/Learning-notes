@@ -3,7 +3,7 @@
 
 ## JavaScript实现瀑布流效果
 
-![](../../res/waterfall效果图.png)
+![](../res/waterfall效果图.png)
 
 滚动条到底可以一直加载
 
