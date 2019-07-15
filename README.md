@@ -114,7 +114,7 @@
 
 - 属性 - 类属性 / 实例属性 / 属性访问器 / 属性修改器 / 属性删除器 / 使用\_\_slots\_\_
 - 类中的方法 - 实例方法 / 类方法 / 静态方法
-- 运算符重载 - \_\_add\_\_ / \_\_sub\_\_ / \_\_or\_\_ /\_\_getitem\_\_ / \_\_setitem\_\_ / \_\_len\_\_ / \_\_repr\_\_ / \_\_gt\_\_ / \_\_lt\_\_ / \_\_le\_\_ / \_\_ge\_\_ / \_\_eq\_\_ / \_\_ne\_\_ / \_\_contains\_\_ 
+- 运算符重载 - `\_\_add\_\_ / \_\_sub\_\_ / \_\_or\_\_ /\_\_getitem\_\_ / \_\_setitem\_\_ / \_\_len\_\_ / \_\_repr\_\_ / \_\_gt\_\_ / \_\_lt\_\_ / \_\_le\_\_ / \_\_ge\_\_ / \_\_eq\_\_ / \_\_ne\_\_ / \_\_contains\_\_` 
 - 类(的对象)之间的关系 - 关联 / 继承 / 依赖
 - 继承和多态 - 什么是继承 / 继承的语法 / 调用父类方法 / 方法重写 / 类型判定 / 多重继承 / 菱形继承(钻石继承)和C3算法
 - 综合案例 - 工资结算系统 / 图书自动折扣系统 / 自定义分数类
@@ -206,12 +206,12 @@
 #### [Django模板系统](./Python/第三方库/Django/04-Django模板系统.md)
 
 - 常见语法：变量相关用{{ }}， 逻辑相关用：{% %}
-- [过滤器](./Python/第三方库/Django/04-Django模板系统.md#Filters(过滤器))：default / length / filesizeformat / slice / date / safe / truncatechars / 
-         trunatewords / cut / join / timesince / timeuntil / 自定义filter
+- [过滤器](./Python/第三方库/Django/04-Django模板系统.md#Filters(过滤器))：`default / length / filesizeformat / slice / date / safe / truncatechars / 
+         trunatewords / cut / join / timesince / timeuntil / 自定义filter`
 - [Tags](./Python/第三方库/Django/04-Django模板系统.md#Tags)：for循环 / if判断 / with / csrf_token / 注释 / 注意事项 
 - [母版](./Python/第三方库/Django/04-Django模板系统.md#母版) / 继承母版 /  块(block) / 组件
-- [静态文件相关](./Python/第三方库/Django/04-Django模板系统.md#静态文件相关)：{% static %} / {% get_static_prefix %}
-- [simple_tag](./Python/第三方库/Django/04-Django模板系统.md#simple_tag) / inclusion_tag
+- [静态文件相关](./Python/第三方库/Django/04-Django模板系统.md#静态文件相关)：`{% static %} / {% get_static_prefix %}`
+- [simple_tag](./Python/第三方库/Django/04-Django模板系统.md#simple_tag) / `inclusion_tag`
 
 #### [Django的View(视图)](./Python/第三方库/Django/05-Django的View.md)
 
@@ -220,7 +220,7 @@
 - [给视图加装饰器](./Python/第三方库/Django/05-Django的View.md#给视图加装饰器)：使用装饰器装饰FBV / 使用装饰器装饰CBV
 - [Request对象](./Python/第三方库/Django/05-Django的View.md#Request对象和Response对象) / [Response对象](./Python/第三方库/Django/05-Django的View.md#Response对象)：方法 / 属性 / 使用
 - [JsonResponse对象](./Python/第三方库/Django/05-Django的View.md#JsonResponse对象)
-- Django shortcut functions：render() / redirect()
+- Django shortcut functions：`render() / redirect()`
 
 #### [Django的路由系统](./Python/第三方库/Django/06-Django的路由系统.md)
 
@@ -234,15 +234,15 @@
 
 #### [Django ORM相关操作](./Python/第三方库/Django/07-Django-ORM相关操作.md)
 
-- [必知必会13方法](./Python/第三方库/Django/07-Django-ORM相关操作.md#必知必会13条)：all() / filter() / get() / exclude() / values() / values_list() / order_by() / reverse() / distinct() / count() / first() / last() / exists()
+- [必知必会13方法](./Python/第三方库/Django/07-Django-ORM相关操作.md#必知必会13条)：`all() / filter() / get() / exclude() / values() / values_list() / order_by() / reverse() / distinct() / count() / first() / last() / exists()`
 - [单表查询之神奇的双下划线](./Python/第三方库/Django/07-Django-ORM相关操作.md#单表查询之神奇的双下划线)
 - [ForeignKey](./Python/第三方库/Django/07-Django-ORM相关操作.md#ForeignKey操作)：正向查找 / 反向查找
 - [OneToOneField](./Python/第三方库/Django/07-Django-ORM相关操作.md#OneToOneField)
-- [ManyToManyField](./Python/第三方库/Django/07-Django-ORM相关操作.md#ManyToManyField)：方法：create() / add() / set() / remove() / clear() / 自己创建第三张表
-- [聚合和分组查询](./Python/第三方库/Django/07-Django-ORM相关操作.md#聚合查询和分组查询)：aggregate() 
+- [ManyToManyField](./Python/第三方库/Django/07-Django-ORM相关操作.md#ManyToManyField)：方法：`create() / add() / set() / remove() / clear() ` 自己创建第三张表
+- [聚合和分组查询](./Python/第三方库/Django/07-Django-ORM相关操作.md#聚合查询和分组查询)：`aggregate()`
 - [F查询和Q查询](./Python/第三方库/Django/07-Django-ORM相关操作.md#F查询和Q查询)
-- [锁和事务](./Python/第三方库/Django/07-Django-ORM相关操作.md#锁和事务)：select_for_update(nowait=False, skip_locked=False)
-- [Django执行原生SQL](./Python/第三方库/Django/07-Django-ORM相关操作.md#Django_ORM执行原生SQL)：raw()
+- [锁和事务](./Python/第三方库/Django/07-Django-ORM相关操作.md#锁和事务)：`select_for_update(nowait=False, skip_locked=False)`
+- [Django执行原生SQL](./Python/第三方库/Django/07-Django-ORM相关操作.md#Django_ORM执行原生SQL)： `raw()`
 - [Django方法大全](./Python/第三方库/Django/07-Django-ORM相关操作.md#QuerySet方法大全)
 - [Django终端打印SQL语句 / 在Python脚本中调用Django环境](./Python/第三方库/Django/07-Django-ORM相关操作.md#Django终端打印SQL语句)
 
@@ -269,7 +269,7 @@
 #### [中间件](./Python/第三方库/Django/10-中间件.md)
 
 - 什么是中间件
-- 中间件：process_request / process_response / process_view / process_exception / process_template_response
+- 中间件：`process_request / process_response / process_view / process_exception / process_template_response`
 - Django框架内置的中间件
 - 自定义中间件及其应用场景
 
@@ -415,8 +415,8 @@
 
 - [模板语法](./Web/JavaScript/框架/Vue.js基础.md#模板语法)
     - [插值](./Web/JavaScript/框架/Vue.js基础.md#插值)
-    - [指令](./Web/JavaScript/框架/Vue.js基础.md#指令):v-cloak、v-text、v-html、v-bind、v-on、v-model
-    - [缩写](./Web/JavaScript/框架/Vue.js基础.md#缩写)：v-bind: ':'、v-on: '@'
+    - [指令](./Web/JavaScript/框架/Vue.js基础.md#指令):`v-cloak`、`v-text`、`v-html`、`v-bind`、`v-on`、`v-model`
+    - [缩写](./Web/JavaScript/框架/Vue.js基础.md#缩写)：`v-bind: ':'`、`v-on: '@'`
 - [Class 与 Style 绑定](./Web/JavaScript/框架/Vue.js基础.md#在Vue中使用样式)：使用class样式、使用内联样式
 
 ### [RESTful规范](./Web/RESTful.md)
