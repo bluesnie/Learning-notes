@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯</title>
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="浪起来" @click="lang">
+        <input type="button" value="别浪" @click="stop">
+        <h4>{{ msg }}</h4>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "猥琐发育，别浪~~~",
+                intervalId: null, //计时器ID
+            },
+            methods: {
+                lang(){
+                    // 第一种：构造函数保证函数里面的this相同
+                    if(this.intervalId != null) return; // 如果已开启返回
+                    this.intervalId = setInterval(() => {
+                        // console.log(this.msg);
+                        var start = this.msg.substring(0, 1);
+                        var end = this.msg.substring(1);
+                        this.msg = end + start;
+                    }, 400);
+
+                    // 第二种：声明一个变量保存this
+                    // var _this = this;
+                    // setInterval(function () {
+                    //     // console.log(this.msg);
+                    //     var start = _this.msg.substring(0, 1);
+                    //     var end = _this.msg.substring(1);
+                    //     _this.msg = end + start;
+                    // }, 400);
+                },
+                stop(){
+                    clearInterval(this.intervalId);  // 清除定时器
+                    this.intervalId = null;  // 每当清除定时器ID置为null
+                }
+            },
+        })
+    </script>
+</body>
+</html>

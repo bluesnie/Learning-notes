@@ -377,39 +377,39 @@
 - [DOM对象](./Web/JavaScript/JavaScript对象.md#DOM对象)：HTML DOM节点 | Document对象 | 元素对象 | 属性对象 | Console对象 | CSS样式声明对象 | DOM事件
 - [浏览器对象](./Web/JavaScript/JavaScript对象.md#浏览器对象)：Window对象 | History对象 | Location对象 | Screen对象
 
-#### [jQuery](./Web/JavaScript)
+#### [jQuery](./Web/JavaScript/框架)
 
-- [JQuery基础](./Web/JavaScript/jQuery基础.md)
+- [JQuery基础](./Web/JavaScript/框架/jQuery基础.md)
     - 简介 | 语法 | noConflict()方法 | AJAX |
-    - [选择器](./Web/JavaScript/jQuery基础.md#选择器) ：元素选择器 / ID选择器 / 类选择器
-    - [事件](./Web/JavaScript/jQuery基础.md#事件) ： 鼠标事件 / 键盘事件 / 表单事件 / 文档/窗口事件
-    - [HTML](./Web/JavaScript/jQuery基础.md#HTML)  ：获取/设置内容和属性 / 添加/删除元素
-    - [CSS](./Web/JavaScript/jQuery基础.md#CSS)  ：CSS类和方法 / 盒子模型(尺寸)
-    - [效果](./Web/JavaScript/jQuery基础.md#效果)  ：隐藏和显示 / 淡入淡出 / 滑动 / 动画 / 停止动画 / 回调 / 链
-    - [遍历](./Web/JavaScript/jQuery基础.md#遍历)：祖先 / 后代 / 兄弟 / 过滤
+    - [选择器](./Web/JavaScript/框架/jQuery基础.md#选择器) ：元素选择器 / ID选择器 / 类选择器
+    - [事件](./Web/JavaScript/框架/jQuery基础.md#事件) ： 鼠标事件 / 键盘事件 / 表单事件 / 文档/窗口事件
+    - [HTML](./Web/JavaScript/框架/jQuery基础.md#HTML)  ：获取/设置内容和属性 / 添加/删除元素
+    - [CSS](./Web/JavaScript/框架/jQuery基础.md#CSS)  ：CSS类和方法 / 盒子模型(尺寸)
+    - [效果](./Web/JavaScript/框架/jQuery基础.md#效果)  ：隐藏和显示 / 淡入淡出 / 滑动 / 动画 / 停止动画 / 回调 / 链
+    - [遍历](./Web/JavaScript/框架/jQuery基础.md#遍历)：祖先 / 后代 / 兄弟 / 过滤
 
-- [jQuery方法大全](./Web/JavaScript/jQuery方法大全.md)
-    - [选择器](./Web/JavaScript/jQuery方法大全.md#选择器)
-    - [事件方法](./Web/JavaScript/jQuery方法大全.md#jquery-事件方法)
-    - [效果方法](./Web/JavaScript/jQuery方法大全.md#jquery-效果方法)
-    - [HTML / CSS 方法](./Web/JavaScript/jQuery方法大全.md#jquery-html--css-方法)
-    - [遍历方法](./Web/JavaScript/jQuery方法大全.md#jquery-遍历方法)
-    - [AJAX方法](./Web/JavaScript/jQuery方法大全.md#jquery-ajax-方法)
-    - [杂项方法](./Web/JavaScript/jQuery方法大全.md#jquery-杂项方法)
-    - [属性](./Web/JavaScript/jQuery方法大全.md#jquery-属性)
+- [jQuery方法大全](./Web/JavaScript/框架/jQuery方法大全.md)
+    - [选择器](./Web/JavaScript/框架/jQuery方法大全.md#选择器)
+    - [事件方法](./Web/JavaScript/框架/jQuery方法大全.md#jquery-事件方法)
+    - [效果方法](./Web/JavaScript/框架/jQuery方法大全.md#jquery-效果方法)
+    - [HTML / CSS 方法](./Web/JavaScript/框架/jQuery方法大全.md#jquery-html--css-方法)
+    - [遍历方法](./Web/JavaScript/框架/jQuery方法大全.md#jquery-遍历方法)
+    - [AJAX方法](./Web/JavaScript/框架/jQuery方法大全.md#jquery-ajax-方法)
+    - [杂项方法](./Web/JavaScript/框架/jQuery方法大全.md#jquery-杂项方法)
+    - [属性](./Web/JavaScript/框架/jQuery方法大全.md#jquery-属性)
 
-#### [jQuery-UI](./Web/JavaScript/jQuery-UI.md)
+#### [jQuery-UI](./Web/JavaScript/框架/jQuery-UI.md)
 
-- [特效（Effects）](./Web/JavaScript/jQuery-UI.md#特效effects)
-- [特效核心（Effects Core）](./Web/JavaScript/jQuery-UI.md#特效核心effects-core)
-- [交互（Interactions）](./Web/JavaScript/jQuery-UI.md#交互interactions)
-- [方法重载（Method Overrides）](./Web/JavaScript/jQuery-UI.md#方法重载method-overrides)
-- [方法（Methods）](./Web/JavaScript/jQuery-UI.md#方法methods)
-- [选择器（Selectors）](./Web/JavaScript/jQuery-UI.md#选择器selectors)
-- [主题（Theming）](./Web/JavaScript/jQuery-UI.md#主题theming)
-- [UI 核心（UI Core）](./Web/JavaScript/jQuery-UI.md#ui-核心ui-core)
-- [实用工具（Utilities）](./Web/JavaScript/jQuery-UI.md#实用工具utilities)
-- [小部件（Widgets）](./Web/JavaScript/jQuery-UI.md#小部件widgets)
+- [特效（Effects）](./Web/JavaScript/框架/jQuery-UI.md#特效effects)
+- [特效核心（Effects Core）](./Web/JavaScript/框架/jQuery-UI.md#特效核心effects-core)
+- [交互（Interactions）](./Web/JavaScript/框架/jQuery-UI.md#交互interactions)
+- [方法重载（Method Overrides）](./Web/JavaScript/框架/jQuery-UI.md#方法重载method-overrides)
+- [方法（Methods）](./Web/JavaScript/框架/jQuery-UI.md#方法methods)
+- [选择器（Selectors）](./Web/JavaScript/框架/jQuery-UI.md#选择器selectors)
+- [主题（Theming）](./Web/JavaScript/框架/jQuery-UI.md#主题theming)
+- [UI 核心（UI Core）](./Web/JavaScript/框架/jQuery-UI.md#ui-核心ui-core)
+- [实用工具（Utilities）](./Web/JavaScript/框架/jQuery-UI.md#实用工具utilities)
+- [小部件（Widgets）](./Web/JavaScript/框架/jQuery-UI.md#小部件widgets)
 
 ### [RESTful规范](./Web/RESTful.md)
 

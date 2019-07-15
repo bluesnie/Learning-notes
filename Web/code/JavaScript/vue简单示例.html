@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础</title>
+    <!--1.导入Vue包-->
+    <script src="../static/vue.js"></script>
+</head>
+<body>
+    <!--将来new的Vue实例会控制这个元素的所有内容-->
+    <!--这个需要就是MVVM中V-->
+    <div id="app">
+        <p>{{ msg }}</p>
+    </div>
+    <script>
+        // 2.创建一个Vue示例
+        // 当我们导入包后，浏览器的内存中就多了一个Vue的构造函数
+        // 这个new出来的vm对象就是MVVM中的VM调度者
+        var vm = new Vue({
+            el: '#app',   // 表示element, 网页上需要控制的区域
+            // 这里的data就是MVVM中的M，用于保存页面的数据
+            data: {       // 存储需要的数据。
+                msg: "Hello world, I'm Vue.js!!!"   // 通过Vue指令，把数据渲染到页面，不需要再操作DOM元素。
+                // (前端Vue之类的框架，不提倡我们去手动操作DOM元素了)
+            }
+        })
+    </script>
+</body>
+</html>
