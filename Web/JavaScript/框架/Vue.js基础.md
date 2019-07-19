@@ -813,6 +813,259 @@ Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化�
 
 - 当一个 ViewModel 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何清理它们。
 
+## [自定义指令](https://cn.vuejs.org/v2/guide/custom-directive.html)
+
+### 简介
+
+除了核心功能默认内置的指令 (`v-model` 和 `v-show`)，Vue 也允许注册自定义指令。注意，在 Vue2.0 中，代码复用和抽象的主要形式是组件。
+然而，有的情况下，你仍然需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令。举个聚焦输入框的例子。
+
+当页面加载时，该元素将获得焦点 (注意：`autofocus` 在移动版 Safari 上不工作)。事实上，只要你在打开这个页面后还没点击过任何内容，
+这个输入框就应当还是处于聚焦状态。现在让我们用指令来实现这个功能：
+```javascript
+    // 注册一个全局自定义指令 `v-focus`
+    Vue.directive('focus', {
+      // 当被绑定的元素插入到 DOM 中时……
+      inserted: function (el) {
+        // 聚焦元素
+        el.focus()
+      }
+    })
+```
+如果想注册局部指令，组件中也接受一个 `directives` 的选项：
+```javascript
+    directives: {
+      focus: {
+        // 指令的定义
+        inserted: function (el) {
+          el.focus()
+        }
+      }
+    }
+```
+然后你可以在模板中任何元素上使用新的 `v-focus` 属性，如下：
+
+    <input v-focus>
+
+### 钩子函数
+
+一个指令定义对象可以提供如下几个钩子函数 (均为可选)：
+
+- `bind`：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。
+
+- `inserted`：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。
+
+- `update`：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。
+但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下)。
+
+- `componentUpdated`：指令所在组件的 VNode 及其子 VNode 全部更新后调用。
+
+- `unbind`：只调用一次，指令与元素解绑时调用。
+
+接下来我们来看一下钩子函数的参数 (即 `el`、`binding`、`vnode` 和 `oldVnode`)。
+
+### 钩子函数参数
+
+指令钩子函数会被传入以下参数：
+
+- `el`：指令所绑定的元素，可以用来直接操作 DOM 。
+- `binding`：一个对象，包含以下属性：
+    - `name`：指令名，不包括 `v-` 前缀。
+    - `value`：指令的绑定值，例如：`v-my-directive="1 + 1"` 中，绑定值为 `2`。
+    - `oldValue`：指令绑定的前一个值，仅在 `update` 和 `componentUpdated` 钩子中可用。无论值是否改变都可用。
+    - `expression`：字符串形式的指令表达式。例如 `v-my-directive="1 + 1"` 中，表达式为 `"1 + 1"`。
+    - `arg`：传给指令的参数，可选。例如 `v-my-directive:foo` 中，参数为 `"foo"`。
+    - `modifiers`：一个包含修饰符的对象。例如：`v-my-directive.foo.bar` 中，修饰符对象为 `{ foo: true, bar: true }`。
+- `vnode`：`Vue` 编译生成的虚拟节点。移步 [VNode API](https://cn.vuejs.org/v2/api/#VNode-%E6%8E%A5%E5%8F%A3) 来了解更多详情。
+- `oldVnode`：上一个虚拟节点，仅在 `update` 和 `componentUpdated` 钩子中可用。
+
+**注意**：除了 el 之外，其它参数都应该是只读的，切勿进行修改。如果需要在钩子之间共享数据，建议通过元素的 `dataset` 来进行。
+
+这是一个使用了这些属性的自定义钩子样例：
+
+```html
+    <div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
+    <script>
+        Vue.directive('demo', {
+          bind: function (el, binding, vnode) {
+            var s = JSON.stringify
+            el.innerHTML =
+              'name: '       + s(binding.name) + '<br>' +
+              'value: '      + s(binding.value) + '<br>' +
+              'expression: ' + s(binding.expression) + '<br>' +
+              'argument: '   + s(binding.arg) + '<br>' +
+              'modifiers: '  + s(binding.modifiers) + '<br>' +
+              'vnode keys: ' + Object.keys(vnode).join(', ')
+          }
+        })
+        
+        new Vue({
+          el: '#hook-arguments-example',
+          data: {
+            message: 'hello!'
+          }
+        })
+    </script>
+```
+结果：
+
+    name: "demo"
+    value: "hello!"
+    expression: "message"
+    argument: "foo"
+    modifiers: {"a":true,"b":true}
+    vnode keys: tag, data, children, text, elm, ns, context, fnContext, fnOptions,
+    fnScopeId, key, componentOptions, componentInstance, parent, raw, isStatic,
+    isRootInsert, isComment, isCloned, isOnce, asyncFactory, asyncMeta,
+    isAsyncPlaceholder
+
+### 动态指令参数
+
+指令的参数可以是动态的。例如，在 `v-mydirective:[argument]="value" `中，`argument` 参数可以根据组件实例数据进行更新！这使得自定义指令可以在应用中被灵活使用。
+
+例如你想要创建一个自定义指令，用来通过固定布局将元素固定在页面上。我们可以像这样创建一个通过指令值来更新竖直位置像素值的自定义指令：
+```html
+    <div id="baseexample">
+      <p>Scroll down the page</p>
+      <p v-pin="200">Stick me 200px from the top of the page</p>
+    </div>
+    <script>
+        Vue.directive('pin', {
+          bind: function (el, binding, vnode) {
+            el.style.position = 'fixed'
+            el.style.top = binding.value + 'px'
+          }
+        })
+        
+        new Vue({
+          el: '#baseexample'
+        })
+    </script>
+```
+这会把该元素固定在距离页面顶部 200 像素的位置。但如果场景是我们需要把元素固定在左侧而不是顶部又该怎么办呢？这时使用动态参数就可以非常方便地根据每个组件实例来进行更新。
+```html
+    <div id="dynamicexample">
+      <h3>Scroll down inside this section ↓</h3>
+      <p v-pin:[direction]="200">I am pinned onto the page at 200px to the left.</p>
+    </div>
+    <script>
+    Vue.directive('pin', {
+      bind: function (el, binding, vnode) {
+        el.style.position = 'fixed'
+        var s = (binding.arg == 'left' ? 'left' : 'top')
+        el.style[s] = binding.value + 'px'
+      }
+    })
+    
+    new Vue({
+      el: '#dynamicexample',
+      data: function () {
+        return {
+          direction: 'left'
+        }
+      }
+    })
+    </script>
+```
+这样这个自定义指令现在的灵活性就足以支持一些不同的用例了。
+
+### 函数简写
+
+在很多时候，你可能想在 `bind` 和 `update` 时触发相同行为，而不关心其它的钩子。比如这样写:
+```javascript
+    Vue.directive('color-swatch', function (el, binding) {
+      el.style.backgroundColor = binding.value
+    })
+```
+
+### 对象字面量
+
+如果指令需要多个值，可以传入一个 JavaScript 对象字面量。记住，指令函数能够接受所有合法的 JavaScript 表达式。
+```html
+    <div v-demo="{ color: 'white', text: 'hello!' }"></div>
+    <script>
+    Vue.directive('demo', function (el, binding) {
+      console.log(binding.value.color) // => "white"
+      console.log(binding.value.text)  // => "hello!"
+    })
+    </script>
+```
+
+## [vue实例的生命周期](https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
+
+- 什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！
+- 生命周期钩子：就是生命周期事件的别名而已；
+- 生命周期钩子 = 生命周期函数 = 生命周期事件
+- 主要的生命周期函数分类：
+- 创建期间的生命周期函数：
+    - `beforeCreate`：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性
+    - `created`：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板
+    - `beforeMount`：此时已经完成了模板的编译，但是还没有挂载到页面中
+    - `mounted`：此时，已经将编译好的模板，挂载到了页面指定的容器中显示
+- 运行期间的生命周期函数：
+    - `beforeUpdate`：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点
+    - `updated`：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！
+- 销毁期间的生命周期函数：
+    - `beforeDestroy`：实例销毁之前调用。在这一步，实例仍然完全可用。
+    - `destroyed`：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器
+
+![](../../res/lifecycle.png)
+
+## [vue-resource 实现 get, post, jsonp请求](https://github.com/pagekit/vue-resource)
+
+除了 vue-resource 之外，还可以使用 axios 的第三方包实现实现数据的请求
+- 之前的学习中，如何发起数据请求？
+- 常见的数据请求类型？ get post jsonp
+- 测试的URL请求资源地址：
+    - get请求地址： http://vue.studyit.io/api/getlunbo
+    - post请求地址：http://vue.studyit.io/api/post
+    - jsonp请求地址：http://vue.studyit.io/api/jsonp
+- JSONP的实现原理
+    - 由于浏览器的安全性限制，不允许AJAX访问 协议不同、域名不同、端口号不同的 数据接口，浏览器认为这种访问不安全；
+    - 可以通过动态创建script标签的形式，把script标签的src属性，指向数据接口的地址，因为script标签不存在跨域限制，这种数据获取方式，称作JSONP（注意：根据JSONP的实现原理，知晓，JSONP只支持Get请求）；
+    - 具体实现过程：
+        - 先在客户端定义一个回调方法，预定义对数据的操作；
+        - 再把这个回调方法的名称，通过URL传参的形式，提交到服务器的数据接口；
+        - 服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；
+        - 客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了；
+    - 带大家通过 Node.js ，来手动实现一个JSONP的请求例子；
+    ```javascript
+       const http = require('http');
+       // 导入解析 URL 地址的核心模块
+       const urlModule = require('url');
+    
+       const server = http.createServer();
+       // 监听 服务器的 request 请求事件，处理每个请求
+       server.on('request', (req, res) => {
+         const url = req.url;
+    
+         // 解析客户端请求的URL地址
+         var info = urlModule.parse(url, true);
+    
+         // 如果请求的 URL 地址是 /getjsonp ，则表示要获取JSONP类型的数据
+         if (info.pathname === '/getjsonp') {
+           // 获取客户端指定的回调函数的名称
+           var cbName = info.query.callback;
+           // 手动拼接要返回给客户端的数据对象
+           var data = {
+             name: 'zs',
+             age: 22,
+             gender: '男',
+             hobby: ['吃饭', '睡觉', '运动']
+           };
+           // 拼接出一个方法的调用，在调用这个方法的时候，把要发送给客户端的数据，序列化为字符串，作为参数传递给这个调用的方法：
+           var result = `${cbName}(${JSON.stringify(data)})`;
+           // 将拼接好的方法的调用，返回给客户端去解析执行
+           res.end(result);
+         } else {
+           res.end('404');
+         }
+       });
+    
+       server.listen(3000, () => {
+         console.log('server running at http://127.0.0.1:3000');
+    ```
+
 ## 案例
 
 [跑马灯](../../code/JavaScript/vue-跑马灯.html)

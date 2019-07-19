@@ -26,7 +26,7 @@
         <input type="button" value="添加" class="btn btn-primary" @click="add">
 
         <label>搜索：
-            <input type="text" class="form-control" v-model="keywords">
+            <input type="text" class="form-control" v-model="keywords" id="search" v-focus v-color="'green'">
         </label>
     </div>
     <div class="panel-body">
@@ -52,7 +52,7 @@
     </div>
 </div>
 <div id="app2">
-    <h1 :style="styleobj">{{dt | formateTime}}</h1>
+    <h1 :style="styleobj" v-color="'pink'">{{dt | formateTime}}</h1>
 </div>
 <script>
     // 全局过滤器
@@ -76,6 +76,29 @@
 
     // 全局自定义按键修饰符
     Vue.config.keyCodes.f2 = 113;
+
+    // 自定义指令
+    Vue.directive('focus', {
+        bind: function(el){
+            // el.focus()
+        },
+        inserted: function (el) {
+            el.focus()
+        },
+        update: function () {
+
+        }
+    });
+
+    Vue.directive('color', {
+        bind: function (el, binding) {
+            // el.style.color = 'red';
+            // console.log(binding.name);
+            // console.log(binding.value);
+            // console.log(binding.expression)
+            el.style.color = binding.value;
+        }
+    });
 
     var vm = new Vue({
         el: '#app',
@@ -154,6 +177,7 @@
            }
        }
     });
+
 </script>
 </body>
 </html>
