@@ -424,7 +424,7 @@
 - [事件处理](./Web/JavaScript/框架/Vue.js基础.md#事件处理)：监听事件、事件处理方法、内联处理器中的方法、事件修饰符、按键修饰符、系统修饰键
 - [自定义指令](./Web/JavaScript/框架/Vue.js基础.md#自定义指令)：简介、钩子函数参数、动态指令参数、函数简写、对象字面量
 - [vue实例的生命周期](./Web/JavaScript/框架/Vue.js基础.md#vue实例的生命周期)：生命周期钩子函数
-- [vue-resouce实现get、post、jsonp请求](./Web/JavaScript/框架/Vue.js基础.md#vue-resource_实现_get,_post,_jsonp请求)
+- [vue-resouce实现get、post、jsonp请求](./Web/JavaScript/框架/Vue.js基础.md#vue-resource-实现-get-post-jsonp请求)
 
 ### [RESTful规范](./Web/RESTful.md)
 
