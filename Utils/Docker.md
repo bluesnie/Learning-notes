@@ -209,6 +209,9 @@
             2.6、在运行中的容器内启动新进程
                 docker exec [-d] [-i] [-t] 容器名 [COMMAND] [ARG...]
                 
+                进入mysql容器：
+                docker exec -it 容器名 bash
+                
             2.7、停止守护式容器
                 docker stop 容器名
                 docker kill 容器名     
