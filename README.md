@@ -316,6 +316,7 @@
   - 在Python中操作MySQL
   - [计算机二级](./Database/MySQL/计算机二级MySQL.md)
   - [数据库三大范式](./Database/MySQL/数据库三大范式.md)
+  - [MySQL主从复制](./Database/MySQL/主从复制.md)
   
 ### [NoSQL入门](./Day36-40/39.NoSQL入门.md)
   - NoSQL概述
