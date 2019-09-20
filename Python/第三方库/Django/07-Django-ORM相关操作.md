@@ -445,6 +445,10 @@ ORM查询：
     >>> models.Author.objects.annotate(sum_price=Sum("book__price")).values("name", "sum_price")
     <QuerySet [{'name': '小精灵', 'sum_price': Decimal('9.90')}, {'name': '小仙女', 'sum_price': Decimal('29.80')}, {'name': '小魔女', 'sum_price': Decimal('9.90')}]>
 
+示例6：查询动态最多的组织并排序
+
+    >>> model.Organization.objects.filter(is_del=False, userdynamic__is_pass=2).annotate(dynamic_nums=Count('userdynamic__org')).order_by('-dynamic_nums').all()
+
 ### F查询和Q查询
 
 #### F查询
