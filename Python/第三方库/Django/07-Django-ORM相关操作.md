@@ -867,3 +867,4 @@ raw()方法自动将查询字段映射到模型字段。还可以通过translati
         books = models.Book.objects.all()
         print(books)
 ```
+##### PS:  BMS为项目名
