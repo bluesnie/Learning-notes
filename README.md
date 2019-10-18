@@ -196,7 +196,7 @@
 #### [静态资源和Ajax请求](./Python/第三方库/Django/03-静态资源和Ajax请求.md)
 
 - AJAX准备知识：JSON / AJAX简介
-- jQuery实现AJAX([ajax的data参数](./Python/第三方库/Django/03-静态资源和Ajax请求.md#$.ajax参数data))  /  [JS实现AJAX](./Python/第三方库/Django/03-静态资源和Ajax请求.md#JS实现AJAX)
+- jQuery实现AJAX([ajax的data参数](./Python/第三方库/Django/03-静态资源和Ajax请求.md#ajax参数data))  /  [JS实现AJAX](./Python/第三方库/Django/03-静态资源和Ajax请求.md#JS实现AJAX)
 - AJAX请求如何设置csrf_token
 - AJAX上传文件 / AJAX中参数traditional的作用
 - 序列化 / SweetAlter插件
