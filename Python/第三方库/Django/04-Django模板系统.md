@@ -499,4 +499,10 @@ templates/index.html
     </body>
     </html>
 
- 
+#### 模板中或序列化中choice类型字段的值
+```text
+    模板中
+    {{ obj.get_column_display }}
+    序列化中
+    column = serializers.CharField(source='get_column_display')
+```

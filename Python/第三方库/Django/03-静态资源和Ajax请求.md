@@ -272,6 +272,92 @@ data参数中的键值对，如果值值不为字符串，需要将其转换成�
       })
 ```
 
+##### $.ajax参数data
+- ajax有三种传递传递data的方式：
+    - 1、json格式
+    - 2、标准参数模式
+    - 3、json字符串格式
+    
+- 1.json对象格式：
+```text
+    {“username”:”chen”,”nickname”:”alien”}
+```
+```javascript
+    $.ajax({
+        type:"post",
+        url:"/test/saveUser",
+        data:{"username":"chen","nickname":"alien"},
+        dataType:"json", 	   //指定响应的data数据类型为JSON对象。
+        success: function(data){
+            console.log(data);
+        }
+    });
+```
+```text
+    - 如：当前的Ajax请求是一个POST请求，对请求体中的数据 使用默认的数据编码，格式如：key1 = value2&key2 = value2 a中的数据变成这样的格式：key1 = value2&key2 = value2 ，包装在Http请求体中传送给后台。
+    - dataType:"json"
+    - dataType:“json” ：用来指定服务器返回的data数据类型必须是JSON类型。然后jQuery就会把后端返回的json字符串尝试通过JSON.parse()解析为js对象。
+    - 如果不指定dataType，jQuery 将自动根据 HTTP 包的 MIME 信息来智能判断，若MIME信息的值为JSON，则jQuery会自动的把data数据转换成JS对象的json，接着Script把data传递给回调函数进行JS的脚本操作。
+```
+
+- 2、标准参数模式
+```text
+“username=Liudehua & age=50”
+```
+
+```javascript
+    $.ajax({
+        type:"post",
+        url:"/test/saveUser",
+        data:"username=chen&nickname=alien",
+        dataType:"json", 
+        success: function(data){
+            console.log(data);
+        }
+    });
+```
+```text
+ - $(“#form1”).serialize() 就是把表单的数据拼成这个格式（key1 = value2&key2 = value2）的字符串，然后放在Http请求体中传给后台！
+```
+
+- 3.json字符串 ————>只用于post请求
+```text
+    “{“username”:”chen”,”nickname”:”alien”}”————>JSON对象格式的字符串
+    JSON.stringify({“username”:”chen”,”nickname”:”alien”})————>把JSON对象转成JSON格式的字符串。
+```
+```javascript
+    $.ajax({
+        type:"post",
+        url:"/test/saveUser",
+        data:JSON.stringify({"username":"chen","nickname":"alien"}),
+        contentType:"json/application"
+        dataType:"json",
+        success: function(data){
+            console.log(data);
+        }
+    });
+```
+
+** 第三种这种方式不能用于 Get请求。
+    原因：
+    
+    1、因为此种方式发送的请求，后端必须得用@RequestBody进行接收，且接收的是Http请求体中的数据，Get请求没有请求体。
+    
+    2、而且此方式的Ajax 必须要添加 contentType:”json/application”这个字段信息。
+**
+
+###### 注意：
+
+- 1、若为GET请求，则会把data的数据 附加在 URL 后，
+    
+    格式如：localhost://findAll ? key1=value1&key2=value2
+    若为POST请求，则就会把data的数据 放在请求体中。
+    
+    格式如：key1 = value2&key2 = value2
+    
+- 2、dataType：指定服务器端返回的数据类型。
+    若不指定，且后端返回的是Json，前端就会自动识别返回的数据是JSON。
+
 ### JS实现AJAX
 
 ```javascript
