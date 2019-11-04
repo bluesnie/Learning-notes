@@ -308,7 +308,7 @@ key 所储存的值减去给定的减量值（decrement） 。
     
         因为hash是最接近关系数据库结果的数据类型，可以将数据库一条记录或程序中一个对象转换成hashmap存放在redis中
 
-###[Redis 列表(List)](https://www.runoob.com/redis/redis-lists.html)
+### [Redis 列表(List)](https://www.runoob.com/redis/redis-lists.html)
 
 ```text
     Redis列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）
