@@ -366,16 +366,203 @@ key 所储存的值减去给定的减量值（decrement） 。
 - `RPUSHX key value`
 为已存在的列表添加值
 
-- 应用场景
+- 应用场景(1、对数据量大的集合数据删减 2、任务队列 )
 
     - 对数据量大的集合数据删减：列表数据显示、关注列表、粉丝列表、留言评价等...分页、热点新闻(top)等。利用LANGE还可以很方便的实现分页的功能，在博客系统中，每片博文的评论也可以存入一个单独的list中。
+    - 任务队列(list通常用来实现一个消息队列，而且可以确保先后顺序，不必像MySQL那样需要通过ORDER BY 来进行排序)
+      
+      - 任务队列介绍(生产者和消费者模式)
+        
+        ```text
+            在处理Web客服端发送的命令请求时，某些操作的执行时间可能会比我们预期的更长一些，通过将待执行任务的相关信息放入队列里面，并在之后对队列进行处理，用户可以推迟执行那些需要一段时间才能完成的操作，这种将工作交给任务处理器来执行的做法被称为任务队列(task queue)
+            常用案例：订单系统的下单流程、用户系统登录注册短信等。
+        ```
+
+### [Redis 集合(Set)](https://www.runoob.com/redis/redis-sets.html)
+
+```text
+    Redis 的 Set 是 String 类型的无序集合。集合成员是唯一的，这就意味着集合中不能出现重复的数据。
+    
+    Redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。
+    
+    集合中最大的成员数为 232 - 1 (4294967295, 每个集合可存储40多亿个成员)。
+```
+
+- `SADD key member1 [member2]`
+向集合添加一个或多个成员
+
+- `SCARD key`
+获取集合的成员数
+
+- `SDIFF key1 [key2]`
+返回给定所有集合的差集
+
+- `SDIFFSTORE destination key1 [key2]`
+返回给定所有集合的差集并存储在 destination 中
+
+- `SINTER key1 [key2]`
+返回给定所有集合的交集
+
+- `SINTERSTORE destination key1 [key2]`
+返回给定所有集合的交集并存储在 destination 中
+
+- `SISMEMBER key member`
+判断 member 元素是否是集合 key 的成员
+
+- `SMEMBERS key`
+返回集合中的所有成员
+
+- `SMOVE source destination member`
+将 member 元素从 source 集合移动到 destination 集合
+
+- `SPOP key`
+移除并返回集合中的一个随机元素
+
+- `SRANDMEMBER key [count]`
+返回集合中一个或多个随机数
+
+- `SREM key member1 [member2]`
+移除集合中一个或多个成员
+
+- `SUNION key1 [key2]`
+返回所有给定集合的并集
+
+- `SUNIONSTORE destination key1 [key2]`
+所有给定集合的并集存储在 destination 集合中
+
+- `SSCAN key cursor [MATCH pattern] [COUNT count]`
+迭代集合中的元素
+
+- 应用场景
+    
+    常应用于：对两个集合间的数据[计算]进行交集、并集、差集运算 
+    - 1、以非常方便的实现如共同关注、共同喜好、二度好友等功能。对上面的所有集合操作，你还可以使用不同的命令选择将结果返回给客户端还是存储到一个新的集合中。
+    - 2、利用唯一性，可以统计访问网站的所有独立 IP
+
+### [Redis 有序集合(sorted set)](https://www.runoob.com/redis/redis-sorted-sets.html)
+
+```text
+    Redis 有序集合和集合一样也是string类型元素的集合,且不允许重复的成员。
+    
+    不同的是每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。
+    
+    有序集合的成员是唯一的,但分数(score)却可以重复。
+    
+    集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。 集合中最大的成员数为 232 - 1 (4294967295, 每个集合可存储40多亿个成员)。
+```
 
 
+- `ZADD key score1 member1 [score2 member2]`
+向有序集合添加一个或多个成员，或者更新已存在成员的分数
+
+- `ZCARD key`
+获取有序集合的成员数
+
+- `ZCOUNT key min max`
+计算在有序集合中指定区间分数的成员数
+
+- `ZINCRBY key increment member`
+有序集合中对指定成员的分数加上增量 increment
+
+- `ZINTERSTORE destination numkeys key [key ...]`
+计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中
+
+- `ZLEXCOUNT key min max`
+在有序集合中计算指定字典区间内成员数量
+
+- `ZRANGE key start stop [WITHSCORES]`
+通过索引区间返回有序集合指定区间内的成员
+
+- `ZRANGEBYLEX key min max [LIMIT offset count]`
+通过字典区间返回有序集合的成员
+
+- `ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT]`
+通过分数返回有序集合指定区间内的成员
+
+- `ZRANK key member`
+返回有序集合中指定成员的索引
+
+- `ZREM key member [member ...]`
+移除有序集合中的一个或多个成员
+
+- `ZREMRANGEBYLEX key min max`
+移除有序集合中给定的字典区间的所有成员
+
+- `ZREMRANGEBYRANK key start stop`
+移除有序集合中给定的排名区间的所有成员
+
+- `ZREMRANGEBYSCORE key min max`
+移除有序集合中给定的分数区间的所有成员
+
+- `ZREVRANGE key start stop [WITHSCORES]`
+返回有序集中指定区间内的成员，通过索引，分数从高到低
+
+- `ZREVRANGEBYSCORE key max min [WITHSCORES]`
+返回有序集中指定分数区间内的成员，分数从高到低排序
+
+- `ZREVRANK key member`
+返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序
+
+- `ZSCORE key member`
+返回有序集中，成员的分数值
+
+- `ZUNIONSTORE destination numkeys key [key ...]`
+计算给定的一个或多个有序集的并集，并存储在新的 key 中
+
+- `ZSCAN key cursor [MATCH pattern] [COUNT count]`
+迭代有序集合中的元素（包括元素成员和元素分值）
+
+- 应用场景
+
+    常应用于：排行榜 
+    - 比如twitter 的public timeline可以以发表时间作为score来存储，这样获取时就是自动按时间排好序的。
+    - 比如一个存储全班同学成绩的Sorted Set，其集合value可以是同学的学号，而score就可以是其考试得分，这样在数据插入集合的时候，就已经进行了天然的排序。
+    - 还可以用Sorted Set来做带权重的队列，比如普通消息的score为1，重要消息的score为2，然后工作线程可以选择按score的倒序来获取工作任务。让重要的任务优先执行。
+
+### [Redis 发布订阅](https://www.runoob.com/redis/redis-pub-sub.html)
+
+![](./res/redis-发布订阅.png)
 
 
+- `PSUBSCRIBE pattern [pattern ...]`
+订阅一个或多个符合给定模式的频道。
+
+- `SUBSCRIBE channel [channel ...]`
+订阅给定的一个或多个频道的信息。
+
+- `PUBLISH channel message`
+将信息发送到指定的频道。
+
+- `PUBSUB subcommand [argument [argument ...]]`
+查看订阅与发布系统状态。
 
 
+- `UNSUBSCRIBE [channel [channel ...]]`
+指退订给定的频道。
 
+- `PUNSUBSCRIBE [pattern [pattern ...]]`
+退订所有给定模式的频道。
 
+- 应用场景
+    
+    这一功能最明显的用法就是构建实时消息系统，比如普通的即时聊天，群聊等功能
+    - 在一个博客网站中，有100个粉丝订阅了你，当你发布新文章，就可以推送消息给粉丝们。
+    - 微信公众号模式
+
+### Redis多数据库
+
+```text
+    Redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0。
+    redis配置文件中下面的参数来控制数据库总数：
+        database 16  //(从0开始 1 2 3 …15)
+    
+    select 数据库//数据库的切换
+    
+    移动数据（将当前key移动另个库)
+    move key名称   数据库
+    数据库清空：
+        flushdb    //清除当前数据库的所有key
+        flushall   //清除整个Redis的数据库所有key
+```
 
 
