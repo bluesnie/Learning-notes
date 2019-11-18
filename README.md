@@ -327,7 +327,7 @@
 ### Redeis
   - [Redis安装与配置文件](./Database/NoSQL/02-Redis安装与配置文件.md)
   - [Redis基础](./Database/NoSQL/03-Redis基础.md)
-    - [Redis键](./Database/NoSQL/03-Redis基础.md#Redis键(key)) | [Redis字符串](./Database/NoSQL/03-Redis基础.md#redis-字符串string) 
+    - [Redis键](./Database/NoSQL/03-Redis基础.md#redis键key) | [Redis字符串](./Database/NoSQL/03-Redis基础.md#redis-字符串string) 
     | [Redis哈希](./Database/NoSQL/03-Redis基础.md#redis-哈希hash)
     | [Redis列表](./Database/NoSQL/03-Redis基础.md#redis-列表list)
     | [Redis集合](./Database/NoSQL/03-Redis基础.md#redis-集合set)
