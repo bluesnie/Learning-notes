@@ -12,7 +12,7 @@
     - 手机验证码
     - 限制网站访客访问频率(例如：1分钟最多访问10次)
 
-### Redis键(key)
+### [Redis键(key)](https://www.runoob.com/redis/redis-keys.html)
 
 - `DEL key`
 该命令用于在 key 存在时删除 key(所有类型都可以使用)。

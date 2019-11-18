@@ -318,10 +318,26 @@
   - [数据库三大范式](./Database/MySQL/数据库三大范式.md)
   - [MySQL主从复制](./Database/MySQL/主从复制.md)
   
+
 ### [NoSQL入门](./Day36-40/39.NoSQL入门.md)
   - NoSQL概述
   - Redis概述
   - Mongo概述
+
+### Redeis
+  - [Redis安装与配置文件](./Database/NoSQL/02-Redis安装与配置文件.md)
+  - [Redis基础](./Database/NoSQL/03-Redis基础.md)
+    - [Redis键](./Database/NoSQL/03-Redis基础.md#Redis键(key)) | [Redis字符串](./Database/NoSQL/03-Redis基础.md#redis-字符串string) 
+    | [Redis哈希](./Database/NoSQL/03-Redis基础.md#redis-哈希hash)
+    | [Redis列表](./Database/NoSQL/03-Redis基础.md#redis-列表list)
+    | [Redis集合](./Database/NoSQL/03-Redis基础.md#redis-集合set)
+    | [Redis有序集合](./Database/NoSQL/03-Redis基础.md#redis-有序集合sorted-set)
+    | [Redis发布订阅](./Database/NoSQL/03-Redis基础.md#redis-发布订阅)
+    - [Redis多数据库](./Database/NoSQL/03-Redis基础.md#redis多数据库)
+    | [Redis事务](./Database/NoSQL/03-Redis基础.md#redis-事务)
+    | [Redis数据淘汰策略](./Database/NoSQL/03-Redis基础.md#redis数据淘汰策略redisconf)
+    | [Redis持久化](./Database/NoSQL/03-Redis基础.md#redis持久化)
+    | [Redis缓存与数据库Mysql一致性方案](./Database/NoSQL/03-Redis基础.md#redis缓存与数据库mysql一致性方案)
 
 ## [Web前端](./Web/)
 
