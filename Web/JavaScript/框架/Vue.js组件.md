@@ -223,3 +223,192 @@ new Vue({
 如上所示，你会发现我们可以使用 `v-bind` 来动态传递 prop。这在你一开始不清楚要渲染的具体内容，比如[从一个 API 获取博文列表](https://jsfiddle.net/chrisvfritz/sbLgr0ad)的时候，是非常有用的。
 
 到目前为止，关于 prop 你需要了解的大概就这些了，如果你阅读完本页内容并掌握了它的内容，我们会推荐你再回来把 [prop](https://cn.vuejs.org/v2/guide/components-props.html) 读完。
+
+#### 单个根元素
+
+当构建一个 `<blog-post>` 组件时，你的模板最终会包含的东西远不止一个标题：
+```html
+<h3>{{ title }}</h3>
+```
+
+最最起码，你会包含这篇博文的正文：
+```html
+<h3>{{ title }}</h3>
+<div v-html="content"></div>
+```
+
+然而如果你在模板中尝试这样写，Vue 会显示一个错误，并解释道 every component must have a single root element (每个组件必须只有一个根元素)。你可以将模板的内容包裹在一个父元素内，来修复这个问题，例如：
+```html
+<div class="blog-post">
+  <h3>{{ title }}</h3>
+  <div v-html="content"></div>
+</div>
+```
+
+看起来当组件变得越来越复杂的时候，我们的博文不只需要标题和内容，还需要发布日期、评论等等。为每个相关的信息定义一个 prop 会变得很麻烦：
+```html
+<blog-post
+  v-for="post in posts"
+  v-bind:key="post.id"
+  v-bind:title="post.title"
+  v-bind:content="post.content"
+  v-bind:publishedAt="post.publishedAt"
+  v-bind:comments="post.comments"
+></blog-post>
+```
+
+所以是时候重构一下这个 `<blog-post>` 组件了，让它变成接受一个单独的 `post` prop：
+```html
+<blog-post
+  v-for="post in posts"
+  v-bind:key="post.id"
+  v-bind:post="post"
+></blog-post>
+Vue.component('blog-post', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <div v-html="post.content"></div>
+    </div>
+  `
+})
+```
+**注意**：上述的这个和一些接下来的示例使用了 JavaScript 的模板字符串来让多行的模板更易读。它们在 IE 下并没有被支持，所以如果你需要在不 (经过 Babel 或 TypeScript 之类的工具) 编译的情况下支持 IE，请使用折行转义字符取而代之。
+
+现在，不论何时为 `post` 对象添加一个新的属性，它都会自动地在 `<blog-post>` 内可用。
+
+#### 动态组件(组件切换)
+
+有点时候，在不同组件之间进行动态切换是非常有用的，比如在一个多标签的界面里：
+![](../../res/vue-动态组件.png)
+
+上述内容可以通过 Vue 的 `<component>` 元素加一个特殊的 `is` 特性来实现：
+```html
+<!-- 组件会在 `currentTabComponent` 改变时改变 -->
+<component v-bind:is="currentTabComponent"></component>
+```
+在上述示例中，`currentTabComponent` 可以包括
+
+- 已注册组件的名字，或
+- 一个组件的选项对象
+
+你可以在[这里](https://jsfiddle.net/chrisvfritz/o3nycadu/)查阅并体验完整的代码，或在[这个版本](https://jsfiddle.net/chrisvfritz/b2qj69o1/)了解绑定组件选项对象，而不是已注册组件名的示例。
+
+到目前为止，关于动态组件你需要了解的大概就这些了，如果你阅读完本页内容并掌握了它的内容，我们会推荐你再回来把[动态和异步组件](https://cn.vuejs.org/v2/guide/components-dynamic-async.html)读完。
+
+#### 多个组件的过渡动画
+
+多个组件的过渡简单很多 - 我们不需要使用 `key` 特性。相反，我们只需要使用[动态组件](https://cn.vuejs.org/v2/guide/components.html#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6)。
+其中mode="out-in"属性是先出后进
+```html
+<transition name="component-fade" mode="out-in">
+  <component v-bind:is="view"></component>
+</transition>
+```
+```javascript
+new Vue({
+  el: '#transition-components-demo',
+  data: {
+    view: 'v-a'
+  },
+  components: {
+    'v-a': {
+      template: '<div>Component A</div>'
+    },
+    'v-b': {
+      template: '<div>Component B</div>'
+    }
+  }
+})
+```
+```css
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for below version 2.1.8 */ {
+  opacity: 0;
+}
+```
+
+#### 组件传值
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lib/vue.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--父组件，可以在引用子组件的时候，通过属性绑定（v:bind）的形式，把需要传递给子组件的数据
+        传递到子组件内部-->
+        <com1 :parentmsg="msg">
+
+        </com1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                msg: '123父组件中的数据' 
+            },
+            methods: {
+                
+            },
+            components:{
+                'com1':{
+                    //子组件中，默认无法访问到父组件中的data和methods
+                    template: '<h1 @click="change"> 这是子组件 {{parentmsg}}</h1>',
+                    //注意，组件中的所有props中的数据都是通过父组件传递给子组件的
+                    //propes中的数据是只可读
+                    props: ['parentmsg'] ,// 把父组件传递过来的parentmsg属性， 数组中，定义一下，这样才能用这个数据,
+                    //注意子组件中的data数据，并不是通过父组件传递过来的，而是子组件字有的，比如：子组件通过Ajax请求回来的值，可以放到data中
+                    //dat a中的数据可读可写
+                    data(){
+                        return {
+                            title: '123',
+                            content: 'qqq'
+                        }
+                    },
+                    methods: {
+                        change(){
+                            this.parentmsg='被修改'
+                        }
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
