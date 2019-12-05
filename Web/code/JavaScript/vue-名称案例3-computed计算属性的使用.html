@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>名称案例-keyup实现</title>
+    <script src='../static/vue.js'></script>
+</head>
+<body>
+
+<div id='app'>
+    <input type="text" v-model="firstname"> +
+    <input type="text" v-model="lastname"> =
+    <input type="text" v-model="fullname">
+
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstname: '',
+            lastname: '',
+            //fullname: '',
+        },
+        methods: {},
+        computed: {// 计算属性； 特点：当计算属性中所以来的任何一个 data 属性改变之后，都会重新触发 本计算属性 的重新计算，从而更新 fullName 的值
+            //注意1：计算属性，在引用的时候，一定不要加()去调用,直接把他当做普通属性去使用
+            //注意2：只要计算属性，这个function内容，所用到的任何data中的数据发生了变化，就会立即重新计算这个属性的值
+            //注意3：计算属性的求值结果，会被存储起来，方便下次直接使用，如果计算属性方法中所有的数据都没发生改变，则不会重新对计算属性求值
+            'fullname': function(){
+                return this.firstname + '-' + this.lastname;
+            }
+        }
+    });
+</script>
+</body>
+</html>

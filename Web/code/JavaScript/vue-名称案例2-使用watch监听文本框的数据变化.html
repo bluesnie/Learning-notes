@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-名称案例2-使用watch监听文本框的数据变化</title>
+    <script src='../static/vue.js'></script>
+</head>
+<body>
+
+<div id='app'>
+    <input type="text" v-model="firstname"> +
+    <input type="text" v-model="lastname"> =
+    <input type="text" v-model="fullname">
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstname: '',
+            lastname: '',
+            fullname: '',
+        },
+        methods: {},
+        watch: {
+            //使用这个属性可以监听data中指定数据的变化，然后触发这个watch对应的function函数
+            'firstname': function (newVal, oldVal) {
+                //this.fullname = this.firstname + '' + this.lastname;
+                this.fullname = newVal + '' + this.lastname
+            },
+            'lastname': function (newVal, oldVal) {
+                this.fullname = this.firstname + '' + newVal
+            }
+        }
+    });
+</script>
+</body>
+</html>

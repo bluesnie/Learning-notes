@@ -332,7 +332,7 @@ new Vue({
 }
 ```
 
-#### 组件传值
+#### 父组件向子组件传值
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -388,22 +388,126 @@ new Vue({
 </html>
 ```
 
+#### 父组件把方法传递给子组件
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <!--父组件想子组件传递方法使用的是事件绑定机制: v-on 当我们自定义了一个事件属性之后，
+        子组件就能过通过某型方法，来调用传进去的这个方法了-->
+        <com2 @func="show">
+        </com2>
+    </div>
+    <template id='temp1'>
+        <div>
+            <h1>子组件</h1>
+            <input type="button" @click="myclick" value="这个是子组件的按钮，点击它，触发父组件传过来的func方法 ">
+        </div>
+    </template>
+    <script>
+        //定义了一个字面类型的组件模板对象
+        var com2 = {
+            template: '#temp1' ,
+            methods: {
+                myclick(){
+                    //当点击子组件方法的时候，如何拿到父组件传递过来的func方法
+                    //emit是触发的意思
+                    this.$emit('func', this.sonmsg)
+                }
+            },  
+            data() {
+                return {
+                    sonmsg: {
+                        name: 'aaa',
+                        age: 6
+                    }
+                 }
+            }
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                datamsgFromSon: null
+            },
+            methods: {
+                show(data){
+                   // console.log('调用了父组件身上的show方法'+data)
+                   console.log(data)
+                   this.datamsgFromSon = data
+                },
+            },
+            components:{
+                com2  
+            },
+        })
+    </script>
+</body>
+</html>
+```
 
+#### ref获取DOM元素和组件
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="获取元素" @click="getElement">
+        <h3 ref='myh3'>
+            哈哈哈  拉拉    
+        </h3>
+        <login ref="myLogin">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </login>
+    </div>
+    <script>
+        var login = {
+            template: '<h1> 登陆组件 </h1>',
+            data(){
+                return {
+                    msg: 'template msg'
+                }
+            },
+            methods: {
+                show(){
+                    console.log('调用了子组件的方法')
+                }
+            },
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: {
+            },
+            methods: {
+                getElement(){
+                    console.log(this.$refs.myh3.innerText)
+                    console.log(this.$refs.myLogin.msg)
+                    this.$refs.myLogin.show()
+                }
+            },
+            components:{
+                login
+            }
+        })
+    </script>
+</body>
+</html>
+```
 
 
 

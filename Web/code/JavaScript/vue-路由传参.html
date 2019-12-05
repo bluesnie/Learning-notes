@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue传参</title>
+    <script src='../static/vue.js'></script>
+    <script src="../static/vue-router.js"></script>
+</head>
+<body>
+
+<div id='app'>
+      <!--如果在路由中使用查询字符串，给路由传递参数，则不需要路由规则的path属性-->
+    <!--第一种传参-->
+    <!--<router-link to="/login?name=哈哈&id=10">登录</router-link>-->
+    <!--第二种传参-->
+    <router-link to="/login/10/ls">登录</router-link>
+    <router-link to="/register">注册</router-link>
+    <router-view></router-view>
+</div>
+
+<script>
+    var login = {
+        //第一种传参
+        // template: '<h1>登录-----{{$route.query.id}}----{{$route.query.name}}</h1>',
+        //第二种传参
+        template: '<h1>登录-----{{ $route.params.id}}-----{{ $route.params.name}}</h1>',
+        data(){
+            return {
+
+            }
+        },
+        created(){//组件生命周期钩子函数
+            console.log(this.$route);
+            console.log(this.$route.query.id);
+            console.log(this.$route.params.id);
+        }
+    }
+
+    var register = {
+        template: '<h1>注册</h1>',
+    }
+
+    var router = new VueRouter({
+        routes:[
+            //第二种传参
+            {path: '/login/:id/:name', component: login},
+            {path: '/register', component: register},
+        ]
+    })
+
+
+    var vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        router,
+    });
+</script>
+</body>
+</html>
