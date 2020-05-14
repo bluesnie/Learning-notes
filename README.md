@@ -290,11 +290,13 @@
     - [渲染器](./Python/第三方库/Django/Django-REST-framework.md#十渲染器)
     - [django组件：content-type](./Python/第三方库/Django/Django-REST-framework.md#十一django组件content_type)
     
+    
 ### [Django项目开发经验](./Python/第三方库/Django/Django开发经验)
 
 - [登录相关](./Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md)
 - [异常处理手柄](./Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md)
 - [过滤相关](./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md)
+- [存储类重写](./Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md)
 
 ### [PyQt5](./Python/第三方库/PyQt5)
 - [导航](./Python/第三方库/PyQt5/README.md)
