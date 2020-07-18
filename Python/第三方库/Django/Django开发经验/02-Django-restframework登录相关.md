@@ -96,7 +96,7 @@ def generate_user_token(user):
     """生成用户token"""
     user_model = get_user_model()
 
-    payload = payload_handler(user)
+    payload = custom_payload_handler(user)
     token = jwt_encode_handler(payload)
 
     return token
