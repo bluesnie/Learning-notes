@@ -62,6 +62,7 @@ JWT_AUTH = {
 ```python
 from django.contrib.auth import authenticate, get_user_model
 from rest_framework_jwt.utils import jwt_encode_handler
+from rest_framework_jwt.settings import api_settings
 
 
 def custom_payload_handler(user):
@@ -165,6 +166,7 @@ class PagePagination(LimitOffsetPagination):
 
 ```python
 from rest_framework_jwt.views import JSONWebTokenAPIView
+from rest_framework_jwt.settings import api_settings
 
 from utils import custom_jwt_response_payload_handler
 
