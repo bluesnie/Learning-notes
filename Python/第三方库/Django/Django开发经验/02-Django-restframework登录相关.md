@@ -166,6 +166,8 @@ class PagePagination(LimitOffsetPagination):
 ```python
 from rest_framework_jwt.views import JSONWebTokenAPIView
 
+from utils import custom_jwt_response_payload_handler
+
 class CustomLoginJSONWebToken(JSONWebTokenAPIView):
     """
     自定义登录
@@ -180,7 +182,7 @@ class CustomLoginJSONWebToken(JSONWebTokenAPIView):
             token = serializer.object.get('token')
             #　可自定义返回认证成功后的数据,settings中的JWT_AUTH中的JWT_RESPONSE_PAYLOAD_HANDLER设置
             # 这里还可以写需要的相应逻辑
-            response_data = jwt_response_payload_handler(token, user, request)
+            response_data = custom_jwt_response_payload_handler(token, user, request)
             response = Response(response_data)
             if api_settings.JWT_AUTH_COOKIE:
                 expiration = (datetime.utcnow() +
