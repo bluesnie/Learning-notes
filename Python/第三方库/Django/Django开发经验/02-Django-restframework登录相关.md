@@ -101,7 +101,7 @@ def generate_user_token(user):
 
     return token
 
-def custom_jwt_response_payload_handler(token, user=None, mark=None):
+def custom_jwt_response_payload_handler(token, user=None):
     """
     自定义jwt认证成功返回的数据
     :token  返回的jwt
