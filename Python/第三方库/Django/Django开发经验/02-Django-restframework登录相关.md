@@ -61,6 +61,7 @@ JWT_AUTH = {
 
 ```python
 from django.contrib.auth import authenticate, get_user_model
+from rest_framework_jwt.utils import jwt_encode_handler
 
 
 def custom_payload_handler(user):
