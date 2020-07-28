@@ -164,3 +164,40 @@ DEFAULT_FILE_STORAGE = 'utils.fastdfs.fdfs_storage.FastDFSStorage'
 FDFS_URL = 'http://img.example.com/'
 FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
 ```
+
+## 本地存储重命名
+
+- helper.py
+```python
+# 文件重命名
+@deconstructible
+class RenameFile(object):
+
+    def __init__(self, upload_to):
+
+        self.upload_to = upload_to
+
+    def __call__(self, instance, filename: str, *args, **kwargs) -> str:
+        filename_ext = filename.split('.')
+        if len(filename_ext) <= 1:
+            filename_ext = ''  # 没有扩展名的情况
+        else:
+            filename_ext = filename_ext[-1]
+        filename = '{name}.{ext}'.format(name=uuid.uuid4().hex[:16], ext=filename_ext)
+        upload_to = posixpath.join(self.upload_to, instance.stu.sno, datetime.datetime.now().strftime(constants.UPLOAD_DIR_FORMAT))
+
+        return posixpath.join(upload_to, filename)
+
+```
+
+- models.py
+```python
+class FeedBackFile(models.Model):
+    file = models.FileField(verbose_name="意见反馈举报附件", upload_to=RenameFile("upload/feedback/"))
+    create_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+
+    class Meta:
+        verbose_name = "意见反馈附件"
+        verbose_name_plural = verbose_name
+
+```
