@@ -61,6 +61,8 @@ JWT_AUTH = {
 
 ```python
 from django.contrib.auth import authenticate, get_user_model
+from rest_framework_jwt.utils import jwt_encode_handler
+from rest_framework_jwt.settings import api_settings
 
 
 def custom_payload_handler(user):
@@ -95,12 +97,12 @@ def generate_user_token(user):
     """生成用户token"""
     user_model = get_user_model()
 
-    payload = payload_handler(user)
+    payload = custom_payload_handler(user)
     token = jwt_encode_handler(payload)
 
     return token
 
-def custom_jwt_response_payload_handler(token, user=None, mark=None):
+def custom_jwt_response_payload_handler(token, user=None):
     """
     自定义jwt认证成功返回的数据
     :token  返回的jwt
@@ -164,6 +166,9 @@ class PagePagination(LimitOffsetPagination):
 
 ```python
 from rest_framework_jwt.views import JSONWebTokenAPIView
+from rest_framework_jwt.settings import api_settings
+
+from utils import custom_jwt_response_payload_handler
 
 class CustomLoginJSONWebToken(JSONWebTokenAPIView):
     """
@@ -179,7 +184,7 @@ class CustomLoginJSONWebToken(JSONWebTokenAPIView):
             token = serializer.object.get('token')
             #　可自定义返回认证成功后的数据,settings中的JWT_AUTH中的JWT_RESPONSE_PAYLOAD_HANDLER设置
             # 这里还可以写需要的相应逻辑
-            response_data = jwt_response_payload_handler(token, user, request)
+            response_data = custom_jwt_response_payload_handler(token, user, request)
             response = Response(response_data)
             if api_settings.JWT_AUTH_COOKIE:
                 expiration = (datetime.utcnow() +
