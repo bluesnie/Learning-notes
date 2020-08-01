@@ -348,6 +348,33 @@
     | [Redis持久化](./Database/NoSQL/03-Redis基础.md#redis持久化)
     | [Redis缓存与数据库Mysql一致性方案](./Database/NoSQL/03-Redis基础.md#redis缓存与数据库mysql一致性方案)
 
+## [数据分析](./MachineLearning/)
+
+### [数学基础](./MachineLearning/数学基础)
+    
+- [高等数学](./MachineLearning/数学基础/高等数学.pdf)
+- [概率论](./MachineLearning/数学基础/概率论.pdf)
+- [微积分](./MachineLearning/数学基础/微积分.pdf)
+- [SVD](./MachineLearning/数学基础/SVD.pdf)
+- [似然函数](./MachineLearning/数学基础/似然函数.pdf)
+- [后验概率估计](./MachineLearning/数学基础/后验概率估计.pdf)
+- [拉格朗日乘子法](./MachineLearning/数学基础/拉格朗日乘子法.pdf)
+- [核函数](./MachineLearning/数学基础/核函数.pdf)
+- [梯度](./MachineLearning/数学基础/梯度.pdf)
+- [概率分布与概率密度](./MachineLearning/数学基础/概率分布与概率密度.pdf)
+- [泰勒公式](./MachineLearning/数学基础/泰勒公式.pdf)
+- [激活函数](./MachineLearning/数学基础/激活函数.pdf)
+- [熵](./MachineLearning/数学基础/熵.pdf)
+- [特征值与特征向量](./MachineLearning/数学基础/特征值与特征向量.pdf)
+- [矩阵](./MachineLearning/数学基础/矩阵.pdf)
+
+### [数据分析库](./MachineLearning/MatplotlibNumpyPandas)
+    
+- [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
+- [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
+- [matplotlib基础](./MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md)
+
+
 ## [Web前端](./Web/)
 
 ### [Web前端入门](./Web/Web前端概述.md)
