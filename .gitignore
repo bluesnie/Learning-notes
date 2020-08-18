@@ -1,3 +1,6 @@
+# This is GitHub’s collection of .gitignore file templates.
+# https://github.com/github/gitignore
+
 # golang
 # Binaries for programs and plugins
 *.exe
