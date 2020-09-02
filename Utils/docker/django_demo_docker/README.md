@@ -56,6 +56,8 @@ myproject_docker # 项目根目录
  │   │   └── redis.conf # redis配置文件
  │   └── uwsgi # 挂载保存django+uwsgi容器内uwsgi日志
  ├── docker-compose.yml # 核心编排文件
+ ├── web-pc     # 前端项目文件夹
+ |   └── index.html # 首页
  └── myproject # 常规Django项目目录
     ├── Dockerfile # 构建Django+Uwsgi镜像的Dockerfile
     ├── apps # 存放Django项目的各个apps
@@ -81,74 +83,75 @@ docker-compose.yml的核心内容如下。我们定义了3个数据卷，用于�
     version: "3"
     
     volumes: # 自定义数据卷，位于宿主机/var/lib/docker/volumes内
-    myproject_db_vol: # 定义数据卷同步容器内mysql数据
-    myproject_redis_vol: # 定义数据卷同步redis容器内数据
-    myproject_media_vol: # 定义数据卷同步media文件夹数据
+        myproject_db_vol: # 定义数据卷同步容器内mysql数据
+        myproject_redis_vol: # 定义数据卷同步redis容器内数据
+        myproject_media_vol: # 定义数据卷同步media文件夹数据
     
     services:
-    redis:
-    image: redis:5
-    command: redis-server /etc/redis/redis.conf # 容器启动后启动redis服务器
-    volumes:
-       - myproject_redis_vol:/data # 通过挂载给redis数据备份
-       - ./compose/redis/redis.conf:/etc/redis/redis.conf # 挂载redis配置文件
-    ports:
-       - "6379:6379"
-     restart: always # always表容器运行发生错误时一直重启
-    
-    db:
-    image: mysql:5.7
-    environment:
-       - MYSQL_ROOT_PASSWORD=123456 # 数据库密码
-       - MYSQL_DATABASE=myproject # 数据库名称
-       - MYSQL_USER=dbuser # 数据库用户名
-       - MYSQL_PASSWORD=password # 用户密码
-    
-    volumes:
-       - myproject_db_vol:/var/lib/mysql:rw # 挂载数据库数据, 可读可写
-       - ./compose/mysql/conf/my.cnf:/etc/mysql/my.cnf # 挂载配置文件
-       - ./compose/mysql/init:/docker-entrypoint-initdb.d/ # 挂载数据初始化sql脚本
-    ports:
-       - "3306:3306" # 与配置文件保持一致
-     restart: always
-    
-    web:
-    build: ./myproject # 使用myproject目录下的Dockerfile
-    expose:
-       - "8000"
-    volumes:
-       - ./myproject:/var/www/html/myproject # 挂载项目代码
-       - myproject_media_vol:/var/www/html/myproject/media # 以数据卷挂载容器内用户上传媒体文件
-       - ./compose/uwsgi:/tmp # 挂载uwsgi日志
-    links:
-       - db
-       - redis
-    depends_on: # 依赖关系
-       - db
-       - redis
-    environment:
-       - DEBUG=False
-     restart: always
-    tty: true
-    stdin_open: true
-    
-    nginx:
-    build: ./compose/nginx
-    ports:
-       - "80:80"
-       - "443:443"
-    expose:
-       - "80"
-    volumes:
-       - ./myproject/static:/usr/share/nginx/html/static # 挂载静态文件
-       - ./compose/nginx/ssl:/usr/share/nginx/ssl # 挂载ssl证书目录
-       - ./compose/nginx/log:/var/log/nginx # 挂载日志
-       - myproject_media_vol:/usr/share/nginx/html/media # 挂载用户上传媒体文件
-    links:
-       - web
-    depends_on:
-       - web
-     restart: always
+        redis:
+            image: redis:5
+            command: redis-server /etc/redis/redis.conf # 容器启动后启动redis服务器
+            volumes:
+               - myproject_redis_vol:/data # 通过挂载给redis数据备份
+               - ./compose/redis/redis.conf:/etc/redis/redis.conf # 挂载redis配置文件
+            ports:
+               - "6379:6379"
+            restart: always # always表容器运行发生错误时一直重启
+        
+        db:
+            image: mysql:5.7
+            environment:
+               - MYSQL_ROOT_PASSWORD=123456 # 数据库密码
+               - MYSQL_DATABASE=myproject # 数据库名称
+               - MYSQL_USER=dbuser # 数据库用户名
+               - MYSQL_PASSWORD=password # 用户密码
+            
+            volumes:
+               - myproject_db_vol:/var/lib/mysql:rw # 挂载数据库数据, 可读可写
+               - ./compose/mysql/conf/my.cnf:/etc/mysql/my.cnf # 挂载配置文件
+               - ./compose/mysql/init:/docker-entrypoint-initdb.d/ # 挂载数据初始化sql脚本
+            ports:
+               - "3306:3306" # 与配置文件保持一致
+            restart: always
+        
+        web:
+            build: ./myproject # 使用myproject目录下的Dockerfile
+            expose:
+               - "8000"
+            volumes:
+               - ./myproject:/var/www/html/myproject # 挂载项目代码
+               - myproject_media_vol:/var/www/html/myproject/media # 以数据卷挂载容器内用户上传媒体文件
+               - ./compose/uwsgi:/tmp # 挂载uwsgi日志
+            links:
+               - db
+               - redis
+            depends_on: # 依赖关系
+               - db
+               - redis
+            environment:
+               - DEBUG=False
+             restart: always
+            tty: true
+            stdin_open: true
+        
+        nginx:
+            build: ./compose/nginx
+            ports:
+               - "80:80"
+               - "443:443"
+            expose:
+               - "80"
+            volumes:
+               - ./myproject/static:/usr/share/nginx/html/static # 挂载静态文件
+               - ./compose/nginx/ssl:/usr/share/nginx/ssl # 挂载ssl证书目录
+               - ./compose/nginx/log:/var/log/nginx # 挂载日志
+               - myproject_media_vol:/usr/share/nginx/html/media # 挂载用户上传媒体文件
+               - ./web-pc:/var/www/html/myproject-pc            # 挂载前端页面             
+            links:
+               - web
+            depends_on:
+               - web
+            restart: always
 ```
 
 ### 2.3、第二步：编写Web (Django+Uwsgi)镜像和容器所需文件
@@ -275,38 +278,42 @@ Nginx的配置文件如下所示
     # compose/nginx/nginx.conf
     
     upstream django {
-    ip_hash;
-    server web:8000; # Docker-compose web服务端口
+        ip_hash;
+        server web:8000; # Docker-compose web服务端口
     }
     
     server {
-    listen 80; # 监听80端口
-    server_name localhost; # 可以是nginx容器所在ip地址或127.0.0.1，不能写宿主机外网ip地址
-    
-    charset utf-8;
-    client_max_body_size 10M; # 限制用户上传文件大小
-    
-    location /static {
-        alias /usr/share/nginx/html/static; # 静态资源路径
-    }
-    
-    location /media {
-        alias /usr/share/nginx/html/media; # 媒体资源，用户上传文件路径
-    }
-    
-    location / {
-        include /etc/nginx/uwsgi_params;
-        uwsgi_pass django;
-        uwsgi_read_timeout 600;
-        uwsgi_connect_timeout 600;
-        uwsgi_send_timeout 600;
-    
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_redirect off;
-        proxy_set_header X-Real-IP  $remote_addr;
-        # proxy_pass http://django; # 使用uwsgi通信，而不是http，所以不使用proxy_pass。
-    }
+        listen 80; # 监听80端口
+        server_name localhost; # 可以是nginx容器所在ip地址或127.0.0.1，不能写宿主机外网ip地址
+        
+        charset utf-8;
+        client_max_body_size 10M; # 限制用户上传文件大小
+        
+        location /static {
+            alias /usr/share/nginx/html/static; # 静态资源路径
+        }
+        
+        location /media {
+            alias /usr/share/nginx/html/media; # 媒体资源，用户上传文件路径
+        }
+        
+        location /web-pc {
+            alias /var/www/html/myproject-pc;  # 前端文件
+        }
+        
+        location / {
+            include /etc/nginx/uwsgi_params;
+            uwsgi_pass django;
+            uwsgi_read_timeout 600;
+            uwsgi_connect_timeout 600;
+            uwsgi_send_timeout 600;
+        
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_redirect off;
+            proxy_set_header X-Real-IP  $remote_addr;
+            # proxy_pass http://django; # 使用uwsgi通信，而不是http，所以不使用proxy_pass。
+        }
     }
     
     access_log /var/log/nginx/access.log main;

@@ -499,6 +499,7 @@
 - 数据卷容器 / 数据卷的备份和还原
 - [Docker入门PDF](./Utils/docker/Docker入门教程.pdf)
 - [Docker部署Django Uwsgi+Nginx+MySQL+Redis](./Utils/docker/django_demo_docker/README.md)
+- [Docker简单部署Django的FastDFS](./Utils/docker/FastDFS.md)
 
 ### [Git](./Utils/Git基本命令.md)
 
