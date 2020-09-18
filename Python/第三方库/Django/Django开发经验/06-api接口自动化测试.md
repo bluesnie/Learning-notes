@@ -162,3 +162,4 @@ routes = [
         - 结果：`/api/sign/extra/`
     - detail=False：`reverse("sign-extra")`
         - 结果：`/api/sign/1/extra/`
+    - 如果测试的接口有用到其他表信息：比如用户表可以直接用表创建用户
