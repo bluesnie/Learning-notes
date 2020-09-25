@@ -83,9 +83,11 @@
             --soft:软重置，不会影响工作区和暂存区的东西
             --hard:工作区和暂存区直接重置到指定的状态
             --mixed: 默认，会把暂存区重置到指定的状态，并把指针指到当前位置
-            
+        
         git status 先看一下add 中的文件 
         git reset HEAD 如果后面什么都不跟的话 就是上一次add 里面的全部撤销了 
+        - HEAD^ 表示上一个版本，即上一次的commit，也可以写成HEAD~1
+        - 如果进行两次的commit，想要都撤回，可以使用HEAD~2
         git reset HEAD XXX/XXX/XXX.java 就是对某个文件进行撤销了
                     
 ## 查看/创建/切换分支
