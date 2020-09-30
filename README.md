@@ -3,6 +3,10 @@
 
 # 学习笔记
 
+## [算法](./Algorithm)
+
+- [算法图解](./Algorithm/算法图解.pdf)
+
 ## [Linux](./Linux)
 
 - [入门基础](./Linux/基础/Linux.html)
