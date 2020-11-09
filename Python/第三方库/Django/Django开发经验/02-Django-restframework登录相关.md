@@ -45,7 +45,8 @@ REST_FRAMEWORK = {
         
     ),
     # 获取用户的secret_key
-    'JWT_GET_USER_SECRET_KEY': 'utils.jwt_get_user_secret',
+    # 没用，需要也是放到下面的 JWT_AUTH 中，不设置是获取上面的 SECRET_KEY 用于签名加密（不能泄露）
+    # 'JWT_GET_USER_SECRET_KEY': 'utils.jwt_get_user_secret',
 
 }
 # jwt载荷中的有效期设置(from rest_framework_jwt)
@@ -360,7 +361,8 @@ class ValidTokenMiddleware(MiddlewareMixin):
                 data = json.dumps({"code": 10000, "errMsg": "用户未登录"})
                 return HttpResponse(data, content_type='application/json', status=400)
             # if user.user_jwt != data['token']:
-            decode_token = jwt_decode_handler(data['token'])        # 解析token，这里面就有获取用户的user_secret，所以需要重写jwt_get_secret_key
+             # 解析token，这里面就有获取用户的user_secret，~~所以需要重写jwt_get_secret_key（不需要）~~
+            decode_token = jwt_decode_handler(data['token'])       
             # print("------------请求时带的token：{0}".format(decode_token))
             if not user:
                 data = json.dumps({"code": 10000, "errMsg": "用户未登录"})
