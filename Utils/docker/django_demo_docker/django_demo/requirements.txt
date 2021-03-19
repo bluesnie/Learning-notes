@@ -21,7 +21,7 @@ django-redis==4.11.0
 django-reversion==3.0.7
 django-timezone-field==4.0
 djangogrpcframework==0.2
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 dnspython==1.16.0
 drf-yasg==1.17.1
