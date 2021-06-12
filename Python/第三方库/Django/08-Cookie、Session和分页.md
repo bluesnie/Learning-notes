@@ -631,22 +631,22 @@ CSRF Token相关装饰器在CBV只能加到dispatch方法上，或者加在视�
     </head>
     <body>
     <ul>
-        {% for item in posts %}
-            <li>{{ item }}</li>
-        {% endfor %}
+        { % for item in posts % }
+            <li>{ { item } }</li>
+        { % endfor % }
     </ul>
     
     <div class="pagination">
           <span class="step-links">
-            {% if posts.has_previous %}
-                <a href="?p={{ posts.previous_page_number }}">Previous</a>
-            {% endif %}
+            { % if posts.has_previous % }
+                <a href="?p={ { posts.previous_page_number } }">Previous</a>
+            { % endif % }
               <span class="current">
-                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                Page { { posts.number } } of { { posts.paginator.num_pages } }.
               </span>
-              {% if posts.has_next %}
-                  <a href="?p={{ posts.next_page_number }}">Next</a>
-              {% endif %}
+              { % if posts.has_next % }
+                  <a href="?p={ { posts.next_page_number } }">Next</a>
+              { % endif % }
           </span>
     
     </div>
@@ -723,16 +723,16 @@ def login(request: HttpRequest):
     return render(request, 'login.html', {'hint': hint})
 ```
 
-上面的代码中，我们设定了登录成功后会在session中保存用户的编号（`userid`）和用户名（`username`），页面会重定向到首页。接下来我们可以稍微对首页的代码进行调整，在页面的右上角显示出登录用户的用户名。我们将这段代码单独写成了一个名为header.html的HTML文件，首页中可以通过在`<body>`标签中添加`{% include 'header.html' %}`来包含这个页面，代码如下所示。
+上面的代码中，我们设定了登录成功后会在session中保存用户的编号（`userid`）和用户名（`username`），页面会重定向到首页。接下来我们可以稍微对首页的代码进行调整，在页面的右上角显示出登录用户的用户名。我们将这段代码单独写成了一个名为header.html的HTML文件，首页中可以通过在`<body>`标签中添加`{ % include 'header.html' % }`来包含这个页面，代码如下所示。
 
 ```HTML
 <div class="user">
-    {% if request.session.userid %}
-    <span>{{ request.session.username }}</span>
+    { % if request.session.userid % }
+    <span>{ { request.session.username } }</span>
     <a href="/logout">注销</a>
-    {% else %}
+    { % else % }
     <a href="/login">登录</a>&nbsp;&nbsp;
-    {% endif %}
+    { % endif % }
     <a href="/register">注册</a>
 </div>
 ```

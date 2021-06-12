@@ -452,7 +452,7 @@ data参数中的键值对，如果值值不为字符串，需要将其转换成�
 
 如果使用从cookie中取csrftoken的方式，需要确保cookie存在csrftoken值。
 
-如果你的视图渲染的HTML文件中没有包含 {% csrf_token %}，Django可能不会设置CSRFtoken的cookie。
+如果你的视图渲染的HTML文件中没有包含 { % csrf_token % }，Django可能不会设置CSRFtoken的cookie。
 
 这个时候需要使用ensure_csrf_cookie()装饰器强制设置Cookie。
 
@@ -723,16 +723,16 @@ def show_subjects(request):
     <h1>千锋互联所有学科信息</h1>
     <hr>
     <div id="container">
-        {% for subject in subjects %}
+        { % for subject in subjects % }
         <dl>
             <dt>
-                <a href="/teachers?sno={{ subject.no }}">
-                    {{ subject.name }}
+                <a href="/teachers?sno={ { subject.no } }">
+                    { { subject.name } }
                 </a>
             </dt>
-            <dd>{{ subject.intro }}</dd>
+            <dd>{ { subject.intro } }</dd>
         </dl>
-        {% endfor %}
+        { % endfor % }
     </div>
 </body>
 </html>
@@ -757,7 +757,7 @@ def show_teachers(request):
 
 ```HTML
 <!DOCTYPE html>
-{% load static %}
+{ % load static % }
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -765,33 +765,33 @@ def show_teachers(request):
     <style>/* 此处略去了层叠样式表的选择器 */</style>
 </head>
 <body>
-    <h1>{{ subject.name }}学科老师信息</h1>
+    <h1>{ { subject.name } }学科老师信息</h1>
     <hr>
-    {% if teachers %}
+    { % if teachers % }
     <div id="container">
-        {% for teacher in teachers %}
+        { % for teacher in teachers % }
         <div class="teacher">
             <div class="photo">
-                <img src="{% static teacher.photo %}" height="140" alt="">
+                <img src="{ % static teacher.photo % }" height="140" alt="">
             </div>
             <div class="info">
                 <div>
-                    <span><strong>姓名：{{ teacher.name }}</strong></span>
-                    <span>性别：{{ teacher.gender | yesno:'男,女' }}</span>
-                    <span>出生日期：{{ teacher.birth }}</span>
+                    <span><strong>姓名：{ { teacher.name } }</strong></span>
+                    <span>性别：{ { teacher.gender | yesno:'男,女' } }</span>
+                    <span>出生日期：{ { teacher.birth } }</span>
                 </div>
-                <div class="intro">{{ teacher.intro }}</div>
+                <div class="intro">{ { teacher.intro } }</div>
                 <div class="comment">
-                    <a href="">好评（{{ teacher.good_count }}）</a>
-                    <a href="">差评（{{ teacher.bad_count }}）</a>
+                    <a href="">好评（{ { teacher.good_count } }）</a>
+                    <a href="">差评（{ { teacher.bad_count } }）</a>
                 </div>
             </div>
         </div>
-        {% endfor %}
+        { % endfor % }
     </div>
-    {% else %}
+    { % else % }
     <h2>暂时没有该学科的老师信息</h2>
-    {% endif %}
+    { % endif % }
     <div class="back">
         <a href="/">&lt;&lt;&nbsp;返回学科</a>
     </div>
@@ -801,7 +801,7 @@ def show_teachers(request):
 
 ### 加载静态资源
 
-在上面的模板页面中，我们使用了`<img>`标签来加载老师的照片，其中使用了引用静态资源的模板指令`{% static %}`，要使用该指令，首先要使用`{% load static %}`指令来加载静态资源，我们将这段代码放在了页码开始的位置。在上面的项目中，我们将静态资源置于名为static的文件夹中，在该文件夹下又创建了三个文件夹：css、js和images，分别用来保存外部层叠样式表、外部JavaScript文件和图片资源。为了能够找到保存静态资源的文件夹，我们还需要修改Django项目的配置文件settings.py，如下所示：
+在上面的模板页面中，我们使用了`<img>`标签来加载老师的照片，其中使用了引用静态资源的模板指令`{ % static % }`，要使用该指令，首先要使用`{ % load static % }`指令来加载静态资源，我们将这段代码放在了页码开始的位置。在上面的项目中，我们将静态资源置于名为static的文件夹中，在该文件夹下又创建了三个文件夹：css、js和images，分别用来保存外部层叠样式表、外部JavaScript文件和图片资源。为了能够找到保存静态资源的文件夹，我们还需要修改Django项目的配置文件settings.py，如下所示：
 
 ```Python
 # 此处省略上面的代码
@@ -878,7 +878,7 @@ def praise_or_criticize(request):
 修改显示老师信息的模板页，引入jQuery库来实现事件处理、Ajax请求和DOM操作。
 
 ```HTML
-<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{ % static 'js/jquery.min.js' % }"></script>
 <script>
     $(() => {
         $('.comment>a').on('click', (evt) => {

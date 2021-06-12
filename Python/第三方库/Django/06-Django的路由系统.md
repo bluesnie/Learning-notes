@@ -256,7 +256,7 @@ Django 提供一个办法是让URL 映射是URL 设计唯一的地方。你填�
 
 在模板里面可以这样引用：
 ```python
-    {% url 'home' %}
+    { % url 'home' % }
 ```
 
 在views函数中可以这样引用：
@@ -284,12 +284,12 @@ Django 提供一个办法是让URL 映射是URL 设计唯一的地方。你填�
 
 你可以在模板的代码中使用下面的方法获得它们：
 ```html
-    <a href="{% url 'news-year-archive' 2012 %}">2012 Archive</a>
+    <a href="{ % url 'news-year-archive' 2012 % }">2012 Archive</a>
     
     <ul>
-    {% for yearvar in year_list %}
-    <li><a href="{% url 'news-year-archive' yearvar %}">{{ yearvar }} Archive</a></li>
-    {% endfor %}
+    { % for yearvar in year_list % }
+    <li><a href="{ % url 'news-year-archive' yearvar % }">{ { yearvar } } Archive</a></li>
+    { % endfor % }
     </ul>
 ```
 
@@ -362,7 +362,7 @@ app02中的urls.py
 
 模板中使用：
 
-    {% url 'app01:detail' pk=12 pp=99 %}
+    { % url 'app01:detail' pk=12 pp=99 % }
 
 views中的函数中使用
 

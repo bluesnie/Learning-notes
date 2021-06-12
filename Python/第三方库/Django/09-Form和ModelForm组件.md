@@ -49,7 +49,7 @@ Django form组件就实现了上面所述的功能。
     </head>
     <body>
     <form action="/reg/" method="post">
-        {% csrf_token %}
+        { % csrf_token % }
         <p>
             用户名:
             <input type="text" name="name">
@@ -60,7 +60,7 @@ Django form组件就实现了上面所述的功能。
         </p>
         <p>
             <input type="submit" value="注册">
-            <p style="color: red">{{ error_msg }}</p>
+            <p style="color: red">{ { error_msg } }</p>
         </p>
     </form>
     </body>
@@ -106,14 +106,14 @@ Django form组件就实现了上面所述的功能。
     </head>
     <body>
         <form action="/reg2/" method="post" novalidate autocomplete="off">
-            {% csrf_token %}
+            { % csrf_token % }
             <div>
-                <label for="{{ form_obj.name.id_for_label }}">{{ form_obj.name.label }}</label>
-                {{ form_obj.name }} {{ form_obj.name.errors.0 }}
+                <label for="{ { form_obj.name.id_for_label } }">{ { form_obj.name.label } }</label>
+                { { form_obj.name } } { { form_obj.name.errors.0 } }
             </div>
             <div>
-                <label for="{{ form_obj.pwd.id_for_label }}">{{ form_obj.pwd.label }}</label>
-                {{ form_obj.pwd }} {{ form_obj.pwd.errors.0 }}
+                <label for="{ { form_obj.pwd.id_for_label } }">{ { form_obj.pwd.label } }</label>
+                { { form_obj.pwd } } { { form_obj.pwd.errors.0 } }
             </div>
             <div>
                 <input type="submit" class="btn btn-success" value="注册">
@@ -564,31 +564,31 @@ Django form组件就实现了上面所述的功能。
     <div class="container">
       <div class="row">
         <form action="/login2/" method="post" novalidate class="form-horizontal">
-          {% csrf_token %}
+          { % csrf_token % }
           <div class="form-group">
-            <label for="{{ form_obj.username.id_for_label }}"
-                   class="col-md-2 control-label">{{ form_obj.username.label }}</label>
+            <label for="{ { form_obj.username.id_for_label } }"
+                   class="col-md-2 control-label">{ { form_obj.username.label } }</label>
             <div class="col-md-10">
-              {{ form_obj.username }}
-              <span class="help-block">{{ form_obj.username.errors.0 }}</span>
+              { { form_obj.username } }
+              <span class="help-block">{ { form_obj.username.errors.0 } }</span>
             </div>
           </div>
           <div class="form-group">
-            <label for="{{ form_obj.pwd.id_for_label }}" class="col-md-2 control-label">{{ form_obj.pwd.label }}</label>
+            <label for="{ { form_obj.pwd.id_for_label } }" class="col-md-2 control-label">{ { form_obj.pwd.label } }</label>
             <div class="col-md-10">
-              {{ form_obj.pwd }}
-              <span class="help-block">{{ form_obj.pwd.errors.0 }}</span>
+              { { form_obj.pwd } }
+              <span class="help-block">{ { form_obj.pwd.errors.0 } }</span>
             </div>
           </div>
           <div class="form-group">
-          <label class="col-md-2 control-label">{{ form_obj.gender.label }}</label>
+          <label class="col-md-2 control-label">{ { form_obj.gender.label } }</label>
             <div class="col-md-10">
               <div class="radio">
-                {% for radio in form_obj.gender %}
-                  <label for="{{ radio.id_for_label }}">
-                    {{ radio.tag }}{{ radio.choice_label }}
+                { % for radio in form_obj.gender % }
+                  <label for="{ { radio.id_for_label } }">
+                    { { radio.tag } }{ { radio.choice_label } }
                   </label>
-                {% endfor %}
+                { % endfor % }
               </div>
             </div>
           </div>
@@ -737,9 +737,9 @@ class User(models.Model):
 <body>
     <h1>用户注册</h1>
     <hr>
-    <p class="hint">{{ hint }}</p>
+    <p class="hint">{ { hint } }</p>
     <form action="/register/" method="post">
-        {% csrf_token %}
+        { % csrf_token % }
         <div class="input">
             <label for="username">用户名：</label>
             <input type="text" id="username" name="username">
@@ -762,7 +762,7 @@ class User(models.Model):
 </html>
 ```
 
-注意，在上面的表单中，我们使用了模板指令`{% csrf_token %}`为表单添加一个隐藏域（type属性值为hidden的input标签），它的作用是在表单中生成一个随机令牌（token）来防范[跨站请求伪造](<https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0>)（通常简称为CSRF），这也是Django在提交表单时的硬性要求，除非我们设置了免除CSRF令牌。下图是一个关于CSRF简单生动的例子，它来自于[维基百科](<https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5>)。
+注意，在上面的表单中，我们使用了模板指令`{ % csrf_token % }`为表单添加一个隐藏域（type属性值为hidden的input标签），它的作用是在表单中生成一个随机令牌（token）来防范[跨站请求伪造](<https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0>)（通常简称为CSRF），这也是Django在提交表单时的硬性要求，除非我们设置了免除CSRF令牌。下图是一个关于CSRF简单生动的例子，它来自于[维基百科](<https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5>)。
 
 ![](./res/CSRF.png)
 
@@ -852,9 +852,9 @@ urlpatterns = [
 <body>
     <h1>用户登录</h1>
     <hr>
-    <p class="hint">{{ hint }}</p>
+    <p class="hint">{ { hint } }</p>
     <form action="/login/" method="post">
-        {% csrf_token %}
+        { % csrf_token % }
         <div class="input">
             <label for="username">用户名：</label>
             <input type="text" id="username" name="username">

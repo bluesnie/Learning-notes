@@ -9,13 +9,13 @@
 
 只需要记两种特殊符号：
 
-{{  }}和 {% %}
+{ {  } }和 { % % }
 
-变量相关的用{{}}，逻辑相关的用{%%}。
+变量相关的用{ {} }，逻辑相关的用{ %% }。
 
 #### 变量
 
-在Django的模板语言中按此语法使用：{{ 变量名 }}。
+在Django的模板语言中按此语法使用：{ { 变量名 } }。
 
 当模版引擎遇到一个变量，它将计算这个变量，然后用结果替换掉它本身。 变量的命名包括任何字母数字以及下划线 ("_")的组合。 变量名称中不能有空格或标点符号。
 
@@ -55,30 +55,30 @@
 
     # 模板中支持的写法：
         {# 取l中的第一个参数 #}
-        {{ l.0 }}
+        { { l.0 } }
         {# 取字典中key的值 #}
-        {{ d.name }}
+        { { d.name } }
         {# 取对象的name属性 #}
-        {{ person_list.0.name }}
+        { { person_list.0.name } }
         {# .操作只能调用不带参数的方法 #}
-        {{ person_list.0.dream }}
+        { { person_list.0.dream } }
 ```
 
 #### Filters(过滤器)
 
 在Django的模板语言中，通过使用 过滤器 来改变变量的显示。
 
-过滤器的语法： {{ value|filter_name:参数 }}
+过滤器的语法： { { value|filter_name:参数 } }
 
 使用管道符"|"来应用过滤器。
 
-例如：{{ name|lower }}会将name变量应用lower过滤器之后再显示它的值。lower在这里的作用是将文本全都变成小写。
+例如：{ { name|lower } }会将name变量应用lower过滤器之后再显示它的值。lower在这里的作用是将文本全都变成小写。
 
 注意事项：
 
 过滤器支持“链式”操作。即一个过滤器的输出作为另一个过滤器的输入。
-过滤器可以接受参数，例如：{{ sss|truncatewords:30 }}，这将显示sss的前30个词。
-过滤器参数包含空格的话，必须用引号包裹起来。比如使用逗号和空格去连接一个列表中的元素，如：{{ list|join:', ' }}
+过滤器可以接受参数，例如：{ { sss|truncatewords:30 } }，这将显示sss的前30个词。
+过滤器参数包含空格的话，必须用引号包裹起来。比如使用逗号和空格去连接一个列表中的元素，如：{ { list|join:', ' } }
 '|'左右没有空格没有空格没有空格
  
 
@@ -88,13 +88,13 @@ Django的模板语言中提供了大约六十个内置过滤器。
 
 如果一个变量是false或者为空，使用给定的默认值。 否则，使用变量的值。
 
-{{ value|default:"nothing"}}
+{ { value|default:"nothing"} }
 
 ##### length
 
 返回值的长度，作用于字符串和列表。
 
-{{ value|length }}
+{ { value|length } }
 
 返回value的长度，如 value=['a', 'b', 'c', 'd']的话，就显示4.
 
@@ -102,20 +102,20 @@ Django的模板语言中提供了大约六十个内置过滤器。
 
 将值格式化为一个 “人类可读的” 文件尺寸 （例如 '13 KB', '4.1 MB', '102 bytes', 等等）。例如：
 
-{{ value|filesizeformat }}
+{ { value|filesizeformat } }
 如果 value 是 123456789，输出将会是 117.7 MB。
 
 ##### slice
 
 切片
 
-{{value|slice:"2:-1"}}
+{ {value|slice:"2:-1"} }
 
 ##### date
 
 格式化
 
-{{ value|date:"Y-m-d H:i:s"}}
+{ { value|date:"Y-m-d H:i:s"} }
  可用的参数：
 
 | 格式化字符|描述|示例输出|
@@ -169,7 +169,7 @@ Django的模板中会对HTML标签和JS等语法标签进行自动转义，原�
 
 value = "<a href='#'>点我</a>"
 
-{{ value|safe}}
+{ { value|safe} }
 
 ##### truncatechars
 
@@ -177,19 +177,19 @@ value = "<a href='#'>点我</a>"
 
 参数：截断的字符数
 
-{{ value|truncatechars:9}}
+{ { value|truncatechars:9} }
 
 ##### truncatewords
 
 在一定数量的字后截断字符串。
 
-{{ value|truncatewords:9}}
+{ { value|truncatewords:9} }
 
 ##### cut
 
 移除value中所有的与给出的变量相同的字符串
 
-{{ value|cut:' ' }}
+{ { value|cut:' ' } }
 如果value为'i love you'，那么将输出'iloveyou'.
 
 ##### join
@@ -202,16 +202,16 @@ value = "<a href='#'>点我</a>"
 
 采用一个可选参数，它是一个包含用作比较点的日期的变量（不带参数，比较点为现在）。 例如，如果blog_date是表示2006年6月1日午夜的日期实例，并且comment_date是2006年6月1日08:00的日期实例，则以下将返回“8小时”：
 
-{{ blog_date|timesince:comment_date }}
+{ { blog_date|timesince:comment_date } }
 分钟是所使用的最小单位，对于相对于比较点的未来的任何日期，将返回“0分钟”。
 
 ##### timeuntil
 
-似于timesince，除了它测量从现在开始直到给定日期或日期时间的时间。 例如，如果今天是2006年6月1日，而conference_date是保留2006年6月29日的日期实例，则{{ conference_date | timeuntil }}将返回“4周”。
+似于timesince，除了它测量从现在开始直到给定日期或日期时间的时间。 例如，如果今天是2006年6月1日，而conference_date是保留2006年6月29日的日期实例，则{ { conference_date | timeuntil } }将返回“4周”。
 
 使用可选参数，它是一个包含用作比较点的日期（而不是现在）的变量。 如果from_date包含2006年6月22日，则以下内容将返回“1周”：
 
-{{ conference_date|timeuntil:from_date }}
+{ { conference_date|timeuntil:from_date } }
 
 ##### 自定义filter
 
@@ -219,7 +219,7 @@ value = "<a href='#'>点我</a>"
     
 变量（输入）的值 - -不一定是一个字符串
 参数的值 - 这可以有一个默认值，或完全省略
-例如，在过滤器{{var | foo:'bar'}}中，过滤器foo将传递变量var和参数“bar”。
+例如，在过滤器{ {var | foo:'bar'} }中，过滤器foo将传递变量var和参数“bar”。
     
 自定义filter代码文件摆放位置：
 
@@ -249,11 +249,11 @@ value = "<a href='#'>点我</a>"
 使用自定义filter:
     
     {# 先导入我们自定义filter那个文件 #}
-    {% load app01_filters %}
+    { % load app01_filters % }
     
     {# 使用我们自定义的filter #}
-    {{ somevariable|cut:"0" }}
-    {{ d.name|addSB }}
+    { { somevariable|cut:"0" } }
+    { { d.name|addSB } }
 
 #### Tags
 
@@ -262,9 +262,9 @@ value = "<a href='#'>点我</a>"
 1. 普通for循环
 
 <ul>
-{% for user in user_list %}
-    <li>{{ user.name }}</li>
-{% endfor %}
+{ % for user in user_list % }
+    <li>{ { user.name } }</li>
+{ % endfor % }
 </ul>
 
 for循环可用的一些参数：
@@ -282,32 +282,32 @@ for循环可用的一些参数：
 2. for ... empty
 
 <ul>
-{% for user in user_list %}
-    <li>{{ user.name }}</li>
-{% empty %}
+{ % for user in user_list % }
+    <li>{ { user.name } }</li>
+{ % empty % }
     <li>空空如也</li>
-{% endfor %}
+{ % endfor % }
 </ul>
 
 ##### if判断
 
 if,elif和else
 
-    {% if user_list %}
-      用户人数：{{ user_list|length }}
-    {% elif black_list %}
-      黑名单数：{{ black_list|length }}
-    {% else %}
+    { % if user_list % }
+      用户人数：{ { user_list|length } }
+    { % elif black_list % }
+      黑名单数：{ { black_list|length } }
+    { % else % }
       没有用户
-    {% endif %}
+    { % endif % }
 
 当然也可以只有if和else
 
-    {% if user_list|length > 5 %}
+    { % if user_list|length > 5 % }
       七座豪华SUV
-    {% else %}
+    { % else % }
         黄包车
-    {% endif %}
+    { % endif % }
 if语句支持 and 、or、==、>、<、!=、<=、>=、in、not in、is、is not判断。
 
 ##### with
@@ -316,20 +316,20 @@ if语句支持 and 、or、==、>、<、!=、<=、>=、in、not in、is、is not
 
 注意等号左右不要加空格。
 
-{% with total=business.employees.count %}
-    {{ total }} employee{{ total|pluralize }}
-{% endwith %}
+{ % with total=business.employees.count % }
+    { { total } } employee{ { total|pluralize } }
+{ % endwith % }
 或
 
-{% with business.employees.count as total %}
-    {{ total }} employee{{ total|pluralize }}
-{% endwith %}
+{ % with business.employees.count as total % }
+    { { total } } employee{ { total|pluralize } }
+{ % endwith % }
 
 ##### csrf_token
 
 这个标签用于跨站请求伪造保护。
 
-在页面的form表单里面写上{% csrf_token %}
+在页面的form表单里面写上{ % csrf_token % }
 
 ##### 注释
 
@@ -339,9 +339,9 @@ if语句支持 and 、or、==、>、<、!=、<=、>=、in、not in、is、is not
 
 1. Django的模板语言不支持连续判断，即不支持以下写法：
 
-{% if a > b > c %}
+{ % if a > b > c % }
 ...
-{% endif %}
+{ % endif % }
  
 
 2. Django的模板语言中属性的优先级大于方法
@@ -351,7 +351,7 @@ def xx(request):
     return render(request, "xx.html", {"data": d})
 如上，我们在使用render方法渲染一个页面的时候，传的字典d有一个key是items并且还有默认的 d.items() 方法，此时在模板语言中:
 
-{{ data.items }}
+{ { data.items } }
 默认会取d的items key的值。
 
 #### 母版
@@ -364,21 +364,21 @@ def xx(request):
       <meta http-equiv="x-ua-compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Title</title>
-      {% block page-css %}
+      { % block page-css % }
       
-      {% endblock %}
+      { % endblock % }
     </head>
     <body>
     
     <h1>这是母板的标题</h1>
     
-    {% block page-main %}
+    { % block page-main % }
     
-    {% endblock %}
+    { % endblock % }
     <h1>母板底部内容</h1>
-    {% block page-js %}
+    { % block page-js % }
     
-    {% endblock %}
+    { % endblock % }
     </body>
     </html>
 ```
@@ -387,56 +387,56 @@ def xx(request):
 
 在子页面中在页面最上方使用下面的语法来继承母板。
 
-{% extends 'layouts.html' %}
+{ % extends 'layouts.html' % }
 
 #### 块(block)
 
-通过在母板中使用{% block  xxx %}来定义"块"。
+通过在母板中使用{ % block  xxx % }来定义"块"。
 
 在子页面中通过定义母板中的block名来对应替换母板中相应的内容。
 
-{% block page-main %}
+{ % block page-main % }
   <p>世情薄</p>
   <p>人情恶</p>
   <p>雨送黄昏花易落</p>
-{% endblock %}
+{ % endblock % }
 
 #### 组件
 
 可以将常用的页面内容如导航条，页尾信息等组件保存在单独的文件中，然后在需要使用的地方按如下语法导入即可。
 
-{% include 'navbar.html' %}
+{ % include 'navbar.html' % }
 
 #### 静态文件相关
 
-##### {% static %}
+##### { % static % }
 
-{% load static %}
-<img src="{% static "images/hi.jpg" %}" alt="Hi!" />
+{ % load static % }
+<img src="{ % static "images/hi.jpg" % }" alt="Hi!" />
 
 引用JS文件时使用：
 
-    {% load static %}
-    <script src="{% static "mytest.js" %}"></script>
+    { % load static % }
+    <script src="{ % static "mytest.js" % }"></script>
     
 某个文件多处被用到可以存为一个变量
 
-    {% load static %}
-    {% static "images/hi.jpg" as myphoto %}
-    <img src="{{ myphoto }}"></img>
+    { % load static % }
+    { % static "images/hi.jpg" as myphoto % }
+    <img src="{ { myphoto } }"></img>
 
-##### {% get_static_prefix %} 
+##### { % get_static_prefix % } 
 
-    {% load static %}
-    <img src="{% get_static_prefix %}images/hi.jpg" alt="Hi!" />
+    { % load static % }
+    <img src="{ % get_static_prefix % }images/hi.jpg" alt="Hi!" />
     
     或者
     
-    {% load static %}
-    {% get_static_prefix as STATIC_PREFIX %}
+    { % load static % }
+    { % get_static_prefix as STATIC_PREFIX % }
     
-    <img src="{{ STATIC_PREFIX }}images/hi.jpg" alt="Hi!" />
-    <img src="{{ STATIC_PREFIX }}images/hi2.jpg" alt="Hello!" />
+    <img src="{ { STATIC_PREFIX } }images/hi.jpg" alt="Hi!" />
+    <img src="{ { STATIC_PREFIX } }images/hi2.jpg" alt="Hello!" />
 
 #### simple_tag
 
@@ -450,10 +450,10 @@ def xx(request):
         
 使用自定义simple tag
 
-    {% load app01_demo %}
+    { % load app01_demo % }
     
     {# simple tag #}
-    {% plus "1" "2" "abc" %}
+    { % plus "1" "2" "abc" % }
 
 #### inclusion_tag
 
@@ -475,9 +475,9 @@ templatetags/my_inclusion.py
 templates/snippets/result.html
 
     <ul>
-      {% for choice in data %}
-        <li>{{ choice }}</li>
-      {% endfor %}
+      { % for choice in data % }
+        <li>{ { choice } }</li>
+      { % endfor % }
     </ul>
     
     
@@ -493,16 +493,16 @@ templates/index.html
     </head>
     <body>
     
-    {% load inclusion_tag_test %}
+    { % load inclusion_tag_test % }
     
-    {% show_results 10 %}
+    { % show_results 10 % }
     </body>
     </html>
 
 #### 模板中或序列化中choice类型字段的值
 ```text
     模板中
-    {{ obj.get_column_display }}
+    { { obj.get_column_display } }
     序列化中
     column = serializers.CharField(source='get_column_display')
 ```

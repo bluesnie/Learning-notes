@@ -202,12 +202,12 @@
 
 #### [Django模板系统](./第三方库/Django/04-Django模板系统.md)
 
-- 常见语法：变量相关用{{ }}， 逻辑相关用：{% %}
+- 常见语法：变量相关用{ { } }， 逻辑相关用：{ % % }
 - [过滤器](./第三方库/Django/04-Django模板系统.md#Filters(过滤器))：`default / length / filesizeformat / slice / date / safe / truncatechars / 
          trunatewords / cut / join / timesince / timeuntil / 自定义filter`
 - [Tags](./第三方库/Django/04-Django模板系统.md#Tags)：for循环 / if判断 / with / csrf_token / 注释 / 注意事项 
 - [母版](./第三方库/Django/04-Django模板系统.md#母版) / 继承母版 /  块(block) / 组件
-- [静态文件相关](./第三方库/Django/04-Django模板系统.md#静态文件相关)：`{% static %} / {% get_static_prefix %}`
+- [静态文件相关](./第三方库/Django/04-Django模板系统.md#静态文件相关)：`{ % static % } / { % get_static_prefix % }`
 - [simple_tag](./第三方库/Django/04-Django模板系统.md#simple_tag) / `inclusion_tag`
 
 #### [Django的View(视图)](./第三方库/Django/05-Django的View.md)
