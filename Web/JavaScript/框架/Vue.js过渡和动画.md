@@ -280,7 +280,7 @@ methods: {
   <button v-on:click="remove">Remove</button>
   <transition-group name="list" tag="p">
     <span v-for="item in items" v-bind:key="item" class="list-item">
-      {{ item }}
+      { { item } }
     </span>
   </transition-group>
 </div>
@@ -334,7 +334,7 @@ new Vue({
   <button v-on:click="shuffle">Shuffle</button>
   <transition-group name="flip-list" tag="ul">
     <li v-for="item in items" v-bind:key="item">
-      {{ item }}
+      { { item } }
     </li>
   </transition-group>
 </div>

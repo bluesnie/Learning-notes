@@ -23,7 +23,7 @@ Vue 也完全能够为复杂的单页应用提供驱动。
             <!--将来new的Vue实例会控制这个元素的所有内容-->
             <!--这个需要就是MVVM中V-->
             <div id="app">
-                <p>{{ msg }}</p>
+                <p>{ { msg } }</p>
             </div>
             <script>
                 // 2.创建一个Vue示例
@@ -56,18 +56,18 @@ Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM
 
     数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值：
     
-        <span>Message: {{ msg }}</span>
+        <span>Message: { { msg } }</span>
     Mustache 标签将会被替代为对应数据对象上 msg 属性的值。无论何时，绑定的数据对象上 msg 属性发生了改变，插值处的内容都会更新。
 
     通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定：
         
-        <span v-once>这个将不会改变: {{ msg }}</span>
+        <span v-once>这个将不会改变: { { msg } }</span>
 
 - 原始HTML
 
     双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令：
         
-        <p>Using mustaches: {{ rawHtml }}</p>
+        <p>Using mustaches: { { rawHtml } }</p>
         <p>Using v-html directive: <span v-html="rawHtml"></span></p>
         
     这个 span 的内容将会被替换成为属性值 rawHtml，直接作为 HTML——会忽略解析属性值中的数据绑定。注意，你不能使用 v-html 来复合局部模板，
@@ -89,20 +89,20 @@ Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM
 
     迄今为止，在我们的模板中，我们一直都只绑定简单的属性键值。但实际上，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。
 
-        {{ number + 1 }}
+        { { number + 1 } }
     
-        {{ ok ? 'YES' : 'NO' }}
+        { { ok ? 'YES' : 'NO' } }
         
-        {{ message.split('').reverse().join('') }}
+        { { message.split('').reverse().join('') } }
         
         <div v-bind:id="'list-' + id"></div>
     这些表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。
     
         <!-- 这是语句，不是表达式 -->
-        {{ var a = 1 }}
+        { { var a = 1 } }
         
         <!-- 流控制也不会生效，请使用三元表达式 -->
-        {{ if (ok) { return message } }}
+        { { if (ok) { return message } } }
     **注意**：模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 Math 和 Date 。你不应该在模板表达式中试图访问用户定义的全局变量。
 
 ### 指令
@@ -230,7 +230,7 @@ Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM
         ```html
             <div id="app">
                 <!--使用v-cloak能够解决插值表达式闪烁的问题-->
-                <p v-cloak>+++++{{ msg }}-----</p>
+                <p v-cloak>+++++{ { msg } }-----</p>
                 <h3 v-text="msg">======</h3>
                 <!--默认v-text是没有闪烁问题的-->
                 <!--v-text会覆盖元素中原本的内容，但是插值表达式只会替换自己的这个占位符，不会吧整个元素的内容清空-->
@@ -262,7 +262,7 @@ Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM
     - v-model：、实现双向数据绑定：
         ```html
             <div id="app">
-                <p>{{ message }}</p>
+                <p>{ { message } }</p>
                 <input v-model="message">
             </div>
                 
@@ -451,7 +451,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 ```html
     <ul id="example-2">
       <li v-for="(item, index) in items">
-        {{ parentMessage }} - {{ index }} - {{ item.message }}
+        { { parentMessage } } - { { index } } - { { item.message } }
       </li>
     </ul>
     <script>
@@ -474,7 +474,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 ```html
     <ul id="v-for-object" class="demo">
       <li v-for="value in object">
-        {{ value }}
+        { { value } }
       </li>
     </ul>
     <script>
@@ -494,13 +494,13 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 你也可以提供第二个的参数为 property 名称 (也就是键名)：
 ```html
     <div v-for="(value, name) in object">
-      {{ name }}: {{ value }}
+      { { name } }: { { value } }
     </div>
 ```
 还可以用第三个参数作为索引：
 ```html
     <div v-for="(value, name, index) in object">
-      {{ index }}. {{ name }}: {{ value }}
+      { { index } }. { { name } }: { { value } }
     </div>
 ```
 
@@ -510,7 +510,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
     <div id="app">
       <ul>
         <li v-for="n in 10">
-         {{ n }}
+         { { n } }
         </li>
       </ul>
     </div>
@@ -545,7 +545,7 @@ Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化�
 过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示：
 
     <!-- 在双花括号中 -->
-    {{ message | capitalize }}
+    { { message | capitalize } }
     
     <!-- 在 `v-bind` 中 -->
     <div v-bind:id="rawId | formatId"></div>
@@ -574,12 +574,12 @@ Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化�
 
 过滤器可以串联：
 
-    {{ message | filterA | filterB }}
+    { { message | filterA | filterB } }
 在这个例子中，filterA 被定义为接收单个参数的过滤器函数，表达式 message 的值将作为参数传入到函数中。然后继续调用同样被定义为接收单个参数的过滤器函数 filterB，将 filterA 的结果传递到 filterB 中。
 
 过滤器是 JavaScript 函数，因此可以接收参数：
 
-    {{ message | filterA('arg1', arg2) }}   
+    { { message | filterA('arg1', arg2) } }   
 这里，filterA 被定义为接收三个参数的过滤器函数。其中 message 的值作为第一个参数，普通字符串 'arg1' 作为第二个参数，表达式 arg2 的值作为第三个参数。
 
 ## [事件处理](https://cn.vuejs.org/v2/guide/events.html)
@@ -592,7 +592,7 @@ Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化�
 ```html
     <div id="example-1">
       <button v-on:click="counter += 1">Add 1</button>
-      <p>The button above has been clicked {{ counter }} times.</p>
+      <p>The button above has been clicked { { counter } } times.</p>
     </div>
     <script>
         var example1 = new Vue({
@@ -1114,7 +1114,7 @@ Github开源地址： https://github.com/axios/axios
           <div
            v-for="site in info"
          >
-            {{ site.name }}
+            { { site.name } }
           </div>
         </div>
         <script type = "text/javascript">

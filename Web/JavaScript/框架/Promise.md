@@ -578,9 +578,9 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
                 <tbody>
                     <!-- 5.  把books  中的数据渲染到页面上   -->
                     <tr :key='item.id' v-for='item in books'>
-                        <td>{{item.id}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.date }}</td>
+                        <td>{ {item.id} }</td>
+                        <td>{ {item.name} }</td>
+                        <td>{ {item.date } }</td>
                         <td>
                             <a href="">修改</a>
                             <span>|</span>

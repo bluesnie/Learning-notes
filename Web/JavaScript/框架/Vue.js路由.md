@@ -113,7 +113,7 @@ const router = new VueRouter({
 //重定向的目标也可以是一个命名的路由：
 const router = new VueRouter({
   routes: [
-    { path: '/a', redirect: { name: 'foo' }}
+    { path: '/a', redirect: { name: 'foo' } }
   ]
 })
 // 甚至是一个方法，动态返回重定向目标：
@@ -122,7 +122,7 @@ const router = new VueRouter({
     { path: '/a', redirect: to => {
       // 方法接收 目标路由 作为参数
       // return 重定向的 字符串路径/路径对象
-    }}
+    } }
   ]
 })
 ```
@@ -157,7 +157,7 @@ const router = new VueRouter({
 - 通过 this.$route.params来获取路由中的参数：
 ```javascript
 var register = Vue.extend({
-      template: '<h1>注册组件 --- {{this.$route.params.id}}</h1>'
+      template: '<h1>注册组件 --- { {this.$route.params.id} }</h1>'
     });
 
 ```
@@ -186,7 +186,7 @@ var register = Vue.extend({
 const User = {
   template: `
     <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
+      <h2>User { { $route.params.id } }</h2>
       <router-view></router-view>
     </div>
   `

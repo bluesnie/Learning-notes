@@ -22,7 +22,7 @@ Vue.component('button-counter', {
       count: 0
     }
   },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  template: '<button v-on:click="count++">You clicked me { { count } } times.</button>'
 })
 
 
@@ -188,7 +188,7 @@ Prop 是你可以在组件上注册的一些自定义特性。当一个值传递
 ```javascript
 Vue.component('blog-post', {
   props: ['title'],
-  template: '<h3>{{ title }}</h3>'
+  template: '<h3>{ { title } }</h3>'
 })
 ```
 一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。
@@ -228,19 +228,19 @@ new Vue({
 
 当构建一个 `<blog-post>` 组件时，你的模板最终会包含的东西远不止一个标题：
 ```html
-<h3>{{ title }}</h3>
+<h3>{ { title } }</h3>
 ```
 
 最最起码，你会包含这篇博文的正文：
 ```html
-<h3>{{ title }}</h3>
+<h3>{ { title } }</h3>
 <div v-html="content"></div>
 ```
 
 然而如果你在模板中尝试这样写，Vue 会显示一个错误，并解释道 every component must have a single root element (每个组件必须只有一个根元素)。你可以将模板的内容包裹在一个父元素内，来修复这个问题，例如：
 ```html
 <div class="blog-post">
-  <h3>{{ title }}</h3>
+  <h3>{ { title } }</h3>
   <div v-html="content"></div>
 </div>
 ```
@@ -268,7 +268,7 @@ Vue.component('blog-post', {
   props: ['post'],
   template: `
     <div class="blog-post">
-      <h3>{{ post.title }}</h3>
+      <h3>{ { post.title } }</h3>
       <div v-html="post.content"></div>
     </div>
   `
@@ -363,7 +363,7 @@ new Vue({
             components:{
                 'com1':{
                     //子组件中，默认无法访问到父组件中的data和methods
-                    template: '<h1 @click="change"> 这是子组件 {{parentmsg}}</h1>',
+                    template: '<h1 @click="change"> 这是子组件 { {parentmsg} }</h1>',
                     //注意，组件中的所有props中的数据都是通过父组件传递给子组件的
                     //propes中的数据是只可读
                     props: ['parentmsg'] ,// 把父组件传递过来的parentmsg属性， 数组中，定义一下，这样才能用这个数据,
