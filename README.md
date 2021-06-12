@@ -3,6 +3,8 @@
 
 > 笔记格式：`{ { } }` 写成 `{ { } }` ， `{ % % }` 写成 `{ %  % }`，空格隔开
 
+# [电子书](https://bluesnie.github.io/Learning-notes/)
+
 # 学习笔记
 
 ## [算法](./Algorithm)
