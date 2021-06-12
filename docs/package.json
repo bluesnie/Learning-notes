@@ -1,0 +1,19 @@
+{
+  "name": "learnignnotes",
+  "version": "1.0.0",
+  "description": "学习笔记",
+  "main": "index.js",
+  "scripts": {
+    "build": "gitbook build ./ ./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluesnie/Learning-notes.git"
+  },
+  "author": "nzb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bluesnie/Learning-notes/issues"
+  },
+  "homepage": "https://github.com/bluesnie/Learning-notes#readme"
+}

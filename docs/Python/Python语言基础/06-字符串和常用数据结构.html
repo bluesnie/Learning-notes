@@ -1,0 +1,4436 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>字符串和常用数据结构 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-面向对象编程基础.html" />
+    
+    
+    <link rel="prev" href="05-函数和模块的使用.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Algorithm</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Database</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" >
+            
+                <span>
+            
+                    
+                    Res
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../Database/MySQL/主从复制.html">
+            
+                <a href="../../Database/MySQL/主从复制.html">
+            
+                    
+                    主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../Database/MySQL/数据库三大范式.html">
+            
+                <a href="../../Database/MySQL/数据库三大范式.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../Database/MySQL/计算机二级MySQL.html">
+            
+                <a href="../../Database/MySQL/计算机二级MySQL.html">
+            
+                    
+                    计算机二级MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    NoSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Database/NoSQL/01-NoSql入门.html">
+            
+                <a href="../../Database/NoSQL/01-NoSql入门.html">
+            
+                    
+                    NoSql入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                <a href="../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                    
+                    Redis安装与配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Database/NoSQL/03-Redis基础.html">
+            
+                <a href="../../Database/NoSQL/03-Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" >
+            
+                <span>
+            
+                    
+                    Res
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">FinancialManagement</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../FinancialManagement/00-投资术语.html">
+            
+                <a href="../../FinancialManagement/00-投资术语.html">
+            
+                    
+                    投资术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../FinancialManagement/00-投资误区.html">
+            
+                <a href="../../FinancialManagement/00-投资误区.html">
+            
+                    
+                    投资误区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    书籍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                    基金全球配置大法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../../FinancialManagement/基金全球配置大法/01-全球配置.html">
+            
+                <a href="../../FinancialManagement/基金全球配置大法/01-全球配置.html">
+            
+                    
+                    全球配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../../FinancialManagement/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                    
+                    场外基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../../FinancialManagement/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                    
+                    场内基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../../FinancialManagement/基金全球配置大法/04-看懂股票行情.html">
+            
+                <a href="../../FinancialManagement/基金全球配置大法/04-看懂股票行情.html">
+            
+                    
+                    看懂股票行情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../../FinancialManagement/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                <a href="../../FinancialManagement/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                    
+                    基金套牢怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                    基金基础 货基债基股基
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../../FinancialManagement/基金基础-货基债基股基/01-纯债基金.html">
+            
+                <a href="../../FinancialManagement/基金基础-货基债基股基/01-纯债基金.html">
+            
+                    
+                    纯债基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../../FinancialManagement/基金基础-货基债基股基/02-股票型基金.html">
+            
+                <a href="../../FinancialManagement/基金基础-货基债基股基/02-股票型基金.html">
+            
+                    
+                    股票型基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../../FinancialManagement/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                <a href="../../FinancialManagement/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                    
+                    大数据指数基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../../FinancialManagement/基金基础-货基债基股基/04-ETF基金.html">
+            
+                <a href="../../FinancialManagement/基金基础-货基债基股基/04-ETF基金.html">
+            
+                    
+                    ETF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../../FinancialManagement/基金基础-货基债基股基/05-LOF基金.html">
+            
+                <a href="../../FinancialManagement/基金基础-货基债基股基/05-LOF基金.html">
+            
+                    
+                    LOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../../FinancialManagement/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                <a href="../../FinancialManagement/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                    
+                    四大行业指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <span>
+            
+                    
+                    基金定投
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../FinancialManagement/基金定投/01-基金定投.html">
+            
+                <a href="../../FinancialManagement/基金定投/01-基金定投.html">
+            
+                    
+                    基金定投
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" >
+            
+                <span>
+            
+                    
+                    基金进价 特种基金：分级基金QDII基金量化基金等
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                <a href="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                    
+                    分级基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" data-path="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                <a href="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                    
+                    避险基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.3" data-path="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                <a href="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                    
+                    量化基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.4" data-path="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                <a href="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                    
+                    QDII基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.5" data-path="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                <a href="../../FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                    
+                    FOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">GoLang</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    GoLang基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                <a href="../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                    
+                    GoLang发展史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../GoLang/GoLang基础/02-打印输出.html">
+            
+                <a href="../../GoLang/GoLang基础/02-打印输出.html">
+            
+                    
+                    打印输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                <a href="../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                    
+                    变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../GoLang/GoLang基础/04-数据类型.html">
+            
+                <a href="../../GoLang/GoLang基础/04-数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../GoLang/GoLang基础/05-运算符.html">
+            
+                <a href="../../GoLang/GoLang基础/05-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../GoLang/GoLang基础/06-流程控制.html">
+            
+                <a href="../../GoLang/GoLang基础/06-流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../../GoLang/GoLang基础/07-数组.html">
+            
+                <a href="../../GoLang/GoLang基础/07-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../../GoLang/GoLang基础/08-切片.html">
+            
+                <a href="../../GoLang/GoLang基础/08-切片.html">
+            
+                    
+                    切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../../GoLang/GoLang基础/09-map.html">
+            
+                <a href="../../GoLang/GoLang基础/09-map.html">
+            
+                    
+                    Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../../GoLang/GoLang基础/10-函数.html">
+            
+                <a href="../../GoLang/GoLang基础/10-函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                <a href="../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                    
+                    Time包日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.12" data-path="../../GoLang/GoLang基础/12-指针.html">
+            
+                <a href="../../GoLang/GoLang基础/12-指针.html">
+            
+                    
+                    指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.13" data-path="../../GoLang/GoLang基础/13-结构体.html">
+            
+                <a href="../../GoLang/GoLang基础/13-结构体.html">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.14" data-path="../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                <a href="../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                    
+                    GoMod及包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.15" >
+            
+                <span>
+            
+                    
+                    Imgs
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../InterviewPreparation/">
+            
+                <a href="../../InterviewPreparation/">
+            
+                    
+                    InterviewPreparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    20201027
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" >
+            
+                <span>
+            
+                    
+                    ClassicQuestion
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                <a href="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                    
+                    20201027
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" >
+            
+                <span>
+            
+                    
+                    Imgs
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">MachineLearning</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    MatplotlibNumpyPandas
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                    
+                    Pandas快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" >
+            
+                <span>
+            
+                    
+                    Imgs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" >
+            
+                <span>
+            
+                    
+                    Ipynb
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                    
+                    Matplotlib基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                    
+                    Numpy基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    Sklearn
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" >
+            
+                <span>
+            
+                    
+                    Data
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1.1" >
+            
+                <span>
+            
+                    
+                    Taitanic
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" >
+            
+                <span>
+            
+                    
+                    Imgs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" >
+            
+                <span>
+            
+                    
+                    Ipynb
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.3.1" >
+            
+                <span>
+            
+                    
+                    Example
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" >
+            
+                <span>
+            
+                    
+                    Source Zip
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <span>
+            
+                    
+                    数学基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PEP8.html">
+            
+                <a href="../PEP8.html">
+            
+                    
+                    PEP8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" >
+            
+                <span>
+            
+                    
+                    Python语言基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.6.1" data-path="00-初识Python.html">
+            
+                <a href="00-初识Python.html">
+            
+                    
+                    初识Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.2" data-path="01-语言元素.html">
+            
+                <a href="01-语言元素.html">
+            
+                    
+                    语言元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.3" data-path="02-分支结构.html">
+            
+                <a href="02-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.4" data-path="03-循环结构.html">
+            
+                <a href="03-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.5" data-path="04-练习.html">
+            
+                <a href="04-练习.html">
+            
+                    
+                    练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.6" data-path="05-函数和模块的使用.html">
+            
+                <a href="05-函数和模块的使用.html">
+            
+                    
+                    函数和模块的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.6.7" data-path="06-字符串和常用数据结构.html">
+            
+                <a href="06-字符串和常用数据结构.html">
+            
+                    
+                    字符串和常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.8" data-path="07-面向对象编程基础.html">
+            
+                <a href="07-面向对象编程基础.html">
+            
+                    
+                    面向对象编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.9" data-path="08-面向对象编程进阶.html">
+            
+                <a href="08-面向对象编程进阶.html">
+            
+                    
+                    面向对象编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.10" data-path="09-图形用户界面和游戏开发.html">
+            
+                <a href="09-图形用户界面和游戏开发.html">
+            
+                    
+                    图形用户界面和游戏开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.11" data-path="10-文件和异常.html">
+            
+                <a href="10-文件和异常.html">
+            
+                    
+                    文件和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.12" data-path="11-字符串和正则表达式.html">
+            
+                <a href="11-字符串和正则表达式.html">
+            
+                    
+                    字符串和正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.13" data-path="12-进程和线程.html">
+            
+                <a href="12-进程和线程.html">
+            
+                    
+                    进程和线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.14" data-path="13-网络编程入门.html">
+            
+                <a href="13-网络编程入门.html">
+            
+                    
+                    网络编程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.15" data-path="14-网络应用开发.html">
+            
+                <a href="14-网络应用开发.html">
+            
+                    
+                    网络应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.16" data-path="15-图像和办公文档处理.html">
+            
+                <a href="15-图像和办公文档处理.html">
+            
+                    
+                    图像和办公文档处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6.17" >
+            
+                <span>
+            
+                    
+                    Res
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" >
+            
+                <span>
+            
+                    
+                    Python语言进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.7.1" data-path="../Python语言进阶/01-常用数据结构和算法.html">
+            
+                <a href="../Python语言进阶/01-常用数据结构和算法.html">
+            
+                    
+                    常用数据结构和算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7.2" data-path="../Python语言进阶/02-函数的高级用法.html">
+            
+                <a href="../Python语言进阶/02-函数的高级用法.html">
+            
+                    
+                    函数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7.3" data-path="../Python语言进阶/03-面向对象高级知识.html">
+            
+                <a href="../Python语言进阶/03-面向对象高级知识.html">
+            
+                    
+                    面向对象高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7.4" data-path="../Python语言进阶/04-迭代器和生成器.html">
+            
+                <a href="../Python语言进阶/04-迭代器和生成器.html">
+            
+                    
+                    迭代器和生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7.5" data-path="../Python语言进阶/05-并发和异步编程.html">
+            
+                <a href="../Python语言进阶/05-并发和异步编程.html">
+            
+                    
+                    并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7.6" >
+            
+                <span>
+            
+                    
+                    Res
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" >
+            
+                <span>
+            
+                    
+                    第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.1" data-path="../第三方库/Django/01-快速上手.html">
+            
+                <a href="../第三方库/Django/01-快速上手.html">
+            
+                    
+                    快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.2" data-path="../第三方库/Django/02-深入模型.html">
+            
+                <a href="../第三方库/Django/02-深入模型.html">
+            
+                    
+                    深入模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.3" data-path="../第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                <a href="../第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                    
+                    静态资源和Ajax请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.4" data-path="../第三方库/Django/04-Django模板系统.html">
+            
+                <a href="../第三方库/Django/04-Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.5" data-path="../第三方库/Django/05-Django的View.html">
+            
+                <a href="../第三方库/Django/05-Django的View.html">
+            
+                    
+                    Django的View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.6" data-path="../第三方库/Django/06-Django的路由系统.html">
+            
+                <a href="../第三方库/Django/06-Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.7" data-path="../第三方库/Django/07-Django-ORM相关操作.html">
+            
+                <a href="../第三方库/Django/07-Django-ORM相关操作.html">
+            
+                    
+                    Django ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.8" data-path="../第三方库/Django/08-Cookie、Session和分页.html">
+            
+                <a href="../第三方库/Django/08-Cookie、Session和分页.html">
+            
+                    
+                    Cookie、Session和分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.9" data-path="../第三方库/Django/09-Form和ModelForm组件.html">
+            
+                <a href="../第三方库/Django/09-Form和ModelForm组件.html">
+            
+                    
+                    Form和ModelForm组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.10" data-path="../第三方库/Django/10-中间件.html">
+            
+                <a href="../第三方库/Django/10-中间件.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.11" data-path="../第三方库/Django/Django-REST-framework.html">
+            
+                <a href="../第三方库/Django/Django-REST-framework.html">
+            
+                    
+                    Django REST Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12" >
+            
+                <span>
+            
+                    
+                    Django开发经验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.12.1" data-path="../第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                <a href="../第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                    
+                    Django Restframework重写异常处理手柄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12.2" data-path="../第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                <a href="../第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                    
+                    Django Restframework登录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12.3" data-path="../第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                <a href="../第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                    
+                    Django Restframework过滤类相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12.4" data-path="../第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                <a href="../第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                    
+                    Django Fastdfs重写存储类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12.5" data-path="../第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                <a href="../第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                    
+                    Django Restframework序列化相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12.6" data-path="../第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                <a href="../第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                    
+                    Api接口自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.12.7" data-path="../第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                <a href="../第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                    
+                    为接口加速加缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13" >
+            
+                <span>
+            
+                    
+                    Code
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.1" >
+            
+                <span>
+            
+                    
+                    Car
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.1.1" >
+            
+                <span>
+            
+                    
+                    Car
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.1.2" >
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.1.2.1" >
+            
+                <span>
+            
+                    
+                    Migrations
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.1.3" >
+            
+                <span>
+            
+                    
+                    Static
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.1.3.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.1.4" >
+            
+                <span>
+            
+                    
+                    Templates
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.2" >
+            
+                <span>
+            
+                    
+                    Hellodjango
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.2.1" >
+            
+                <span>
+            
+                    
+                    Demo
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.2.1.1" >
+            
+                <span>
+            
+                    
+                    Migrations
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.2.2" >
+            
+                <span>
+            
+                    
+                    Hellodjango
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.2.3" >
+            
+                <span>
+            
+                    
+                    Static
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.2.3.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.2.3.2" >
+            
+                <span>
+            
+                    
+                    Js
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.2.4" >
+            
+                <span>
+            
+                    
+                    Templates
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.2.4.1" >
+            
+                <span>
+            
+                    
+                    Demo
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.3" >
+            
+                <span>
+            
+                    
+                    Oa
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.3.1" >
+            
+                <span>
+            
+                    
+                    Hrs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.3.1.1" >
+            
+                <span>
+            
+                    
+                    Migrations
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.3.2" >
+            
+                <span>
+            
+                    
+                    Oa
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.3.3" >
+            
+                <span>
+            
+                    
+                    Static
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.3.3.1" >
+            
+                <span>
+            
+                    
+                    Css
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.3.3.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.3.3.3" >
+            
+                <span>
+            
+                    
+                    Js
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.3.4" >
+            
+                <span>
+            
+                    
+                    Templates
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.4" >
+            
+                <span>
+            
+                    
+                    Shop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.4.1" >
+            
+                <span>
+            
+                    
+                    Cart
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.4.1.1" >
+            
+                <span>
+            
+                    
+                    Migrations
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.4.2" >
+            
+                <span>
+            
+                    
+                    Shop
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.4.3" >
+            
+                <span>
+            
+                    
+                    Static
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.4.3.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.4.4" >
+            
+                <span>
+            
+                    
+                    Templates
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.5" >
+            
+                <span>
+            
+                    
+                    Shop Origin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.5.1" >
+            
+                <span>
+            
+                    
+                    Cart
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.5.1.1" >
+            
+                <span>
+            
+                    
+                    Migrations
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.5.2" >
+            
+                <span>
+            
+                    
+                    Shop
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.5.3" >
+            
+                <span>
+            
+                    
+                    Static
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.1.13.5.3.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.13.5.4" >
+            
+                <span>
+            
+                    
+                    Templates
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.1.14" >
+            
+                <span>
+            
+                    
+                    Res
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2" data-path="../第三方库/PyQt5/">
+            
+                <a href="../第三方库/PyQt5/">
+            
+                    
+                    PyQt5
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.8.2.1" data-path="../第三方库/PyQt5/01-窗口.html">
+            
+                <a href="../第三方库/PyQt5/01-窗口.html">
+            
+                    
+                    窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.2" data-path="../第三方库/PyQt5/02-按钮.html">
+            
+                <a href="../第三方库/PyQt5/02-按钮.html">
+            
+                    
+                    按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.3" data-path="../第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                <a href="../第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                    
+                    垂直布局和水平布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.4" data-path="../第三方库/PyQt5/04-栅格布局.html">
+            
+                <a href="../第三方库/PyQt5/04-栅格布局.html">
+            
+                    
+                    栅格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.5" data-path="../第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                <a href="../第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                    
+                    布局添加标签Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.6" data-path="../第三方库/PyQt5/06-布局添加背景图.html">
+            
+                <a href="../第三方库/PyQt5/06-布局添加背景图.html">
+            
+                    
+                    布局添加背景图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.7" data-path="../第三方库/PyQt5/07-单选框.html">
+            
+                <a href="../第三方库/PyQt5/07-单选框.html">
+            
+                    
+                    单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.8" data-path="../第三方库/PyQt5/08-复选框.html">
+            
+                <a href="../第三方库/PyQt5/08-复选框.html">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.9" data-path="../第三方库/PyQt5/09-键盘提示.html">
+            
+                <a href="../第三方库/PyQt5/09-键盘提示.html">
+            
+                    
+                    键盘提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.10" data-path="../第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                <a href="../第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                    
+                    行编辑Lineedit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.11" data-path="../第三方库/PyQt5/11-按钮组.html">
+            
+                <a href="../第三方库/PyQt5/11-按钮组.html">
+            
+                    
+                    按钮组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.12" data-path="../第三方库/PyQt5/12-布局组.html">
+            
+                <a href="../第三方库/PyQt5/12-布局组.html">
+            
+                    
+                    布局组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.13" data-path="../第三方库/PyQt5/13-无边框窗口.html">
+            
+                <a href="../第三方库/PyQt5/13-无边框窗口.html">
+            
+                    
+                    无边框窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.14" data-path="../第三方库/PyQt5/14-框架qframe.html">
+            
+                <a href="../第三方库/PyQt5/14-框架qframe.html">
+            
+                    
+                    框架Qframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.15" data-path="../第三方库/PyQt5/15-分离器.html">
+            
+                <a href="../第三方库/PyQt5/15-分离器.html">
+            
+                    
+                    分离器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.16" data-path="../第三方库/PyQt5/16-滑动条.html">
+            
+                <a href="../第三方库/PyQt5/16-滑动条.html">
+            
+                    
+                    滑动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.17" data-path="../第三方库/PyQt5/17-滚动条.html">
+            
+                <a href="../第三方库/PyQt5/17-滚动条.html">
+            
+                    
+                    滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.18" data-path="../第三方库/PyQt5/18-刻度盘.html">
+            
+                <a href="../第三方库/PyQt5/18-刻度盘.html">
+            
+                    
+                    刻度盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.19" data-path="../第三方库/PyQt5/19-spinbox.html">
+            
+                <a href="../第三方库/PyQt5/19-spinbox.html">
+            
+                    
+                    Spinbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.20" data-path="../第三方库/PyQt5/20-生成随机数.html">
+            
+                <a href="../第三方库/PyQt5/20-生成随机数.html">
+            
+                    
+                    生成随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.21" data-path="../第三方库/PyQt5/21-进度条.html">
+            
+                <a href="../第三方库/PyQt5/21-进度条.html">
+            
+                    
+                    进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.22" data-path="../第三方库/PyQt5/22-工具框.html">
+            
+                <a href="../第三方库/PyQt5/22-工具框.html">
+            
+                    
+                    工具框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.23" data-path="../第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                <a href="../第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                    
+                    菜单栏工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.24" data-path="../第三方库/PyQt5/24-文档编辑框.html">
+            
+                <a href="../第三方库/PyQt5/24-文档编辑框.html">
+            
+                    
+                    文档编辑框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.25" data-path="../第三方库/PyQt5/25-字体文本框.html">
+            
+                <a href="../第三方库/PyQt5/25-字体文本框.html">
+            
+                    
+                    字体文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.26" data-path="../第三方库/PyQt5/26-颜色文本框.html">
+            
+                <a href="../第三方库/PyQt5/26-颜色文本框.html">
+            
+                    
+                    颜色文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.27" data-path="../第三方库/PyQt5/27-打印（文本框）.html">
+            
+                <a href="../第三方库/PyQt5/27-打印（文本框）.html">
+            
+                    
+                    打印（文本框）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.28" data-path="../第三方库/PyQt5/28-打印预览.html">
+            
+                <a href="../第三方库/PyQt5/28-打印预览.html">
+            
+                    
+                    打印预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.29" data-path="../第三方库/PyQt5/29-打印PDF.html">
+            
+                <a href="../第三方库/PyQt5/29-打印PDF.html">
+            
+                    
+                    打印PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.30" data-path="../第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                <a href="../第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                    
+                    消息框提示框（带选择的）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.31" data-path="../第三方库/PyQt5/31-右键菜单.html">
+            
+                <a href="../第三方库/PyQt5/31-右键菜单.html">
+            
+                    
+                    右键菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.32" data-path="../第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                <a href="../第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                    
+                    选项卡（单选下拉框和多选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.33" data-path="../第三方库/PyQt5/33-stack(堆叠">
+            
+                <span>
+            
+                    
+                    Stack(堆叠)小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.34" data-path="../第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                <a href="../第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                    
+                    可停靠的窗口小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.35" data-path="../第三方库/PyQt5/35-日历.html">
+            
+                <a href="../第三方库/PyQt5/35-日历.html">
+            
+                    
+                    日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.36" data-path="../第三方库/PyQt5/36-单选下拉框.html">
+            
+                <a href="../第三方库/PyQt5/36-单选下拉框.html">
+            
+                    
+                    单选下拉框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.37" data-path="../第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                <a href="../第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                    
+                    首字符模糊填充（查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.38" data-path="../第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                <a href="../第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                    
+                    打开更多的窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.39" data-path="../第三方库/PyQt5/39-时间编辑.html">
+            
+                <a href="../第三方库/PyQt5/39-时间编辑.html">
+            
+                    
+                    时间编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.40" data-path="../第三方库/PyQt5/40-列表部件.html">
+            
+                <a href="../第三方库/PyQt5/40-列表部件.html">
+            
+                    
+                    列表部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.41" data-path="../第三方库/PyQt5/41-列表部件小示例.html">
+            
+                <a href="../第三方库/PyQt5/41-列表部件小示例.html">
+            
+                    
+                    列表部件小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8.2.42" >
+            
+                <span>
+            
+                    
+                    Code
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Utils</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../Utils/Git基本命令.html">
+            
+                <a href="../../Utils/Git基本命令.html">
+            
+                    
+                    Git基本命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../Utils/Nginx.html">
+            
+                <a href="../../Utils/Nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.1" data-path="../../Utils/docker/Docker.html">
+            
+                <a href="../../Utils/docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.2" data-path="../../Utils/docker/FastDFS.html">
+            
+                <a href="../../Utils/docker/FastDFS.html">
+            
+                    
+                    FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3" data-path="../../Utils/docker/django_demo_docker/">
+            
+                <a href="../../Utils/docker/django_demo_docker/">
+            
+                    
+                    Django Demo Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.3.1" >
+            
+                <span>
+            
+                    
+                    Compose
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.3.1.1" >
+            
+                <span>
+            
+                    
+                    Mysql
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.3.1.1.1" >
+            
+                <span>
+            
+                    
+                    Conf
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3.1.1.2" >
+            
+                <span>
+            
+                    
+                    Init
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3.1.2" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3.1.3" >
+            
+                <span>
+            
+                    
+                    Redis
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3.2" >
+            
+                <span>
+            
+                    
+                    Django Demo
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.3.2.1" >
+            
+                <span>
+            
+                    
+                    Django Demo
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3.3" >
+            
+                <span>
+            
+                    
+                    Web Pc
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../Web/">
+            
+                <a href="../../Web/">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    Bootstrap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.5.1" data-path="../../Web/Bootstrap/01-Bootstrap4分页.html">
+            
+                <a href="../../Web/Bootstrap/01-Bootstrap4分页.html">
+            
+                    
+                    Bootstrap4分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.2" data-path="../../Web/Bootstrap/02-Bootstrap4-table.html">
+            
+                <a href="../../Web/Bootstrap/02-Bootstrap4-table.html">
+            
+                    
+                    Bootstrap4 Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" >
+            
+                <span>
+            
+                    
+                    CSS
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.6.1" data-path="../../Web/CSS/CSS.html">
+            
+                <a href="../../Web/CSS/CSS.html">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" >
+            
+                <span>
+            
+                    
+                    HTML5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.7.1" data-path="../../Web/HTML5/HTML5.html">
+            
+                <a href="../../Web/HTML5/HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.8.1" data-path="../../Web/JavaScript/JavaScript基础.html">
+            
+                <a href="../../Web/JavaScript/JavaScript基础.html">
+            
+                    
+                    JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.2" data-path="../../Web/JavaScript/JavaScript对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript对象.html">
+            
+                    
+                    JavaScript对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.3" data-path="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                <a href="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                    
+                    JavaScript瀑布流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.4" data-path="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                    
+                    JavaScript面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.8.5.1" data-path="../../Web/JavaScript/框架/Promise.html">
+            
+                <a href="../../Web/JavaScript/框架/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.2" data-path="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                    
+                    Vue.Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.3" data-path="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                    
+                    Vue.Js组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.4" data-path="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                    
+                    Vue.Js路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.5" data-path="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                    
+                    Vue.Js过渡和动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.6" data-path="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                    
+                    JQuery UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.7" data-path="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                    
+                    JQuery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8.5.8" data-path="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                    
+                    JQuery方法大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../../Web/RESTful.html">
+            
+                <a href="../../Web/RESTful.html">
+            
+                    
+                    RESTful
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../../Web/Web前端概述.html">
+            
+                <a href="../../Web/Web前端概述.html">
+            
+                    
+                    Web前端概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" >
+            
+                <span>
+            
+                    
+                    Code
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.11.1" >
+            
+                <span>
+            
+                    
+                    Bootstrap
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11.2" >
+            
+                <span>
+            
+                    
+                    CSS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11.3" >
+            
+                <span>
+            
+                    
+                    HTML5
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11.4" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11.5" >
+            
+                <span>
+            
+                    
+                    Static
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.11.5.1" >
+            
+                <span>
+            
+                    
+                    Bootstrap Table
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.12" >
+            
+                <span>
+            
+                    
+                    Res
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13" >
+            
+                <span>
+            
+                    
+                    Gitbook
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.13.1" >
+            
+                <span>
+            
+                    
+                    Fonts
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.13.1.1" >
+            
+                <span>
+            
+                    
+                    Fontawesome
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13.2" >
+            
+                <span>
+            
+                    
+                    Gitbook Plugin Fontsettings
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13.3" >
+            
+                <span>
+            
+                    
+                    Gitbook Plugin Sharing
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docs</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >字符串和常用数据结构</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h6 id="datetime2019514-957">datetime:2019/5/14 9:57</h6>
+<h6 id="authornzb">author:nzb</h6>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x5E38;&#x7528;&#x6570;&#x636E;&#x7ED3;&#x6784;">&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x5E38;&#x7528;&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
+<h3 id="&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;">&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x7B2C;&#x4E8C;&#x6B21;&#x4E16;&#x754C;&#x5927;&#x6218;&#x4FC3;&#x4F7F;&#x4E86;&#x73B0;&#x4EE3;&#x7535;&#x5B50;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x8BDE;&#x751F;&#xFF0C;&#x5F53;&#x521D;&#x7684;&#x60F3;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x7528;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x8BA1;&#x7B97;&#x5BFC;&#x5F39;&#x7684;&#x5F39;&#x9053;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x521A;&#x521A;&#x8BDE;&#x751F;&#x7684;&#x90A3;&#x4E2A;&#x5E74;&#x4EE3;&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x5904;&#x7406;&#x7684;&#x4FE1;&#x606F;&#x4E3B;&#x8981;&#x662F;&#x6570;&#x503C;&#xFF0C;&#x800C;&#x4E16;&#x754C;&#x4E0A;&#x7684;&#x7B2C;&#x4E00;&#x53F0;&#x7535;&#x5B50;&#x8BA1;&#x7B97;&#x673A;ENIAC&#x6BCF;&#x79D2;&#x949F;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x7EA6;5000&#x6B21;&#x6D6E;&#x70B9;&#x8FD0;&#x7B97;&#x3002;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#xFF0C;&#x867D;&#x7136;&#x5BF9;&#x6570;&#x503C;&#x8FD0;&#x7B97;&#x4ECD;&#x7136;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x60C5;&#x4E4B;&#x4E00;&#xFF0C;&#x4F46;&#x662F;&#x4ECA;&#x5929;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x5904;&#x7406;&#x5F97;&#x66F4;&#x591A;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x4EE5;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x800C;Python&#x8868;&#x793A;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x5F0F;&#x6211;&#x4EEC;&#x5728;&#x5F88;&#x65E9;&#x4EE5;&#x524D;&#x5C31;&#x8BF4;&#x8FC7;&#x4E86;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x3002;&#x6240;&#x8C13;<strong>&#x5B57;&#x7B26;&#x4E32;</strong>&#xFF0C;&#x5C31;&#x662F;&#x7531;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x7EC4;&#x6210;&#x7684;&#x6709;&#x9650;&#x5E8F;&#x5217;&#xFF0C;&#x4E00;&#x822C;&#x8BB0;&#x4E3A;<a href="https://wikimedia.org/api/rest_v1/media/math/render/svg/e29bf631b090323edd6889f810e6cff29538b161" target="_blank">$${\displaystyle s=a<em>{1}a</em>{2}\dots a_{n}(0\leq n \leq \infty)}$$</a>&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x4E86;&#x89E3;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    str1 = <span class="hljs-string">&apos;hello, world!&apos;</span>
+    <span class="hljs-comment"># &#x901A;&#x8FC7;len&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;</span>
+    print(len(str1))  <span class="hljs-comment"># 13</span>
+    <span class="hljs-comment"># &#x83B7;&#x5F97;&#x5B57;&#x7B26;&#x4E32;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x7684;&#x62F7;&#x8D1D;</span>
+    print(str1.capitalize())  <span class="hljs-comment"># Hello, world!</span>
+    <span class="hljs-comment"># &#x83B7;&#x5F97;&#x5B57;&#x7B26;&#x4E32;&#x53D8;&#x5927;&#x5199;&#x540E;&#x7684;&#x62F7;&#x8D1D;</span>
+    print(str1.upper())  <span class="hljs-comment"># HELLO, WORLD!</span>
+    <span class="hljs-comment"># &#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x67E5;&#x627E;&#x5B50;&#x4E32;&#x6240;&#x5728;&#x4F4D;&#x7F6E;</span>
+    print(str1.find(<span class="hljs-string">&apos;or&apos;</span>))  <span class="hljs-comment"># 8</span>
+    print(str1.find(<span class="hljs-string">&apos;shit&apos;</span>))  <span class="hljs-comment"># -1</span>
+    <span class="hljs-comment"># &#x4E0E;find&#x7C7B;&#x4F3C;&#x4F46;&#x627E;&#x4E0D;&#x5230;&#x5B50;&#x4E32;&#x65F6;&#x4F1A;&#x5F15;&#x53D1;&#x5F02;&#x5E38;</span>
+    <span class="hljs-comment"># print(str1.index(&apos;or&apos;))</span>
+    <span class="hljs-comment"># print(str1.index(&apos;shit&apos;))</span>
+    <span class="hljs-comment"># &#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x5934;</span>
+    print(str1.startswith(<span class="hljs-string">&apos;He&apos;</span>))  <span class="hljs-comment"># False</span>
+    print(str1.startswith(<span class="hljs-string">&apos;hel&apos;</span>))  <span class="hljs-comment"># True</span>
+    <span class="hljs-comment"># &#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7ED3;&#x5C3E;</span>
+    print(str1.endswith(<span class="hljs-string">&apos;!&apos;</span>))  <span class="hljs-comment"># True</span>
+    <span class="hljs-comment"># &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x5BBD;&#x5EA6;&#x5C45;&#x4E2D;&#x5E76;&#x5728;&#x4E24;&#x4FA7;&#x586B;&#x5145;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;</span>
+    print(str1.center(<span class="hljs-number">50</span>, <span class="hljs-string">&apos;*&apos;</span>))
+    <span class="hljs-comment"># &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x5BBD;&#x5EA6;&#x9760;&#x53F3;&#x653E;&#x7F6E;&#x5DE6;&#x4FA7;&#x586B;&#x5145;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;</span>
+    print(str1.rjust(<span class="hljs-number">50</span>, <span class="hljs-string">&apos; &apos;</span>))
+    str2 = <span class="hljs-string">&apos;abc123456&apos;</span>
+    <span class="hljs-comment"># &#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x53D6;&#x51FA;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x7684;&#x5B57;&#x7B26;(&#x4E0B;&#x6807;&#x8FD0;&#x7B97;)</span>
+    print(str2[<span class="hljs-number">2</span>])  <span class="hljs-comment"># c</span>
+    <span class="hljs-comment"># &#x5B57;&#x7B26;&#x4E32;&#x5207;&#x7247;(&#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x5F00;&#x59CB;&#x7D22;&#x5F15;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7ED3;&#x675F;&#x7D22;&#x5F15;)</span>
+    print(str2[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>])  <span class="hljs-comment"># c12</span>
+    print(str2[<span class="hljs-number">2</span>:])  <span class="hljs-comment"># c123456</span>
+    print(str2[<span class="hljs-number">2</span>::<span class="hljs-number">2</span>])  <span class="hljs-comment"># c246</span>
+    print(str2[::<span class="hljs-number">2</span>])  <span class="hljs-comment"># ac246</span>
+    print(str2[::<span class="hljs-number">-1</span>])  <span class="hljs-comment"># 654321cba</span>
+    print(str2[<span class="hljs-number">-3</span>:<span class="hljs-number">-1</span>])  <span class="hljs-comment"># 45</span>
+    <span class="hljs-comment"># &#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x7531;&#x6570;&#x5B57;&#x6784;&#x6210;</span>
+    print(str2.isdigit())  <span class="hljs-comment"># False</span>
+    <span class="hljs-comment"># &#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4EE5;&#x5B57;&#x6BCD;&#x6784;&#x6210;</span>
+    print(str2.isalpha())  <span class="hljs-comment"># False</span>
+    <span class="hljs-comment"># &#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4EE5;&#x6570;&#x5B57;&#x548C;&#x5B57;&#x6BCD;&#x6784;&#x6210;</span>
+    print(str2.isalnum())  <span class="hljs-comment"># True</span>
+    str3 = <span class="hljs-string">&apos;  jackfrued@126.com &apos;</span>
+    print(str3)
+    <span class="hljs-comment"># &#x83B7;&#x5F97;&#x5B57;&#x7B26;&#x4E32;&#x4FEE;&#x526A;&#x5DE6;&#x53F3;&#x4E24;&#x4FA7;&#x7A7A;&#x683C;&#x7684;&#x62F7;&#x8D1D;</span>
+    print(str3.strip())
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x9664;&#x4E86;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;Python&#x8FD8;&#x5185;&#x7F6E;&#x4E86;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4FDD;&#x5B58;&#x548C;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#xFF0C;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x73B0;&#x6709;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x6700;&#x5E38;&#x7528;&#x7684;&#x5305;&#x62EC;&#x5217;&#x8868;&#x3001;&#x5143;&#x7EC4;&#x3001;&#x96C6;&#x5408;&#x548C;&#x5B57;&#x5178;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x5217;&#x8868;">&#x4F7F;&#x7528;&#x5217;&#x8868;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5217;&#x8868;&#x3001;&#x4F7F;&#x7528;&#x4E0B;&#x6807;&#x8BBF;&#x95EE;&#x5217;&#x8868;&#x5143;&#x7D20;&#x4EE5;&#x53CA;&#x6DFB;&#x52A0;&#x548C;&#x5220;&#x9664;&#x5143;&#x7D20;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">100</span>]
+    print(list1)
+    list2 = [<span class="hljs-string">&apos;hello&apos;</span>] * <span class="hljs-number">5</span>
+    print(list2)
+    <span class="hljs-comment"># &#x8BA1;&#x7B97;&#x5217;&#x8868;&#x957F;&#x5EA6;(&#x5143;&#x7D20;&#x4E2A;&#x6570;)</span>
+    print(len(list1))
+    <span class="hljs-comment"># &#x4E0B;&#x6807;(&#x7D22;&#x5F15;)&#x8FD0;&#x7B97;</span>
+    print(list1[<span class="hljs-number">0</span>])
+    print(list1[<span class="hljs-number">4</span>])
+    <span class="hljs-comment"># print(list1[5])  # IndexError: list index out of range</span>
+    print(list1[<span class="hljs-number">-1</span>])
+    print(list1[<span class="hljs-number">-3</span>])
+    list1[<span class="hljs-number">2</span>] = <span class="hljs-number">300</span>
+    print(list1)
+    <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5143;&#x7D20;</span>
+    list1.append(<span class="hljs-number">200</span>)
+    list1.insert(<span class="hljs-number">1</span>, <span class="hljs-number">400</span>)
+    list1 += [<span class="hljs-number">1000</span>, <span class="hljs-number">2000</span>]
+    print(list1)
+    print(len(list1))
+    <span class="hljs-comment"># &#x5220;&#x9664;&#x5143;&#x7D20;</span>
+    list1.remove(<span class="hljs-number">3</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-number">1234</span> <span class="hljs-keyword">in</span> list1:
+        list1.remove(<span class="hljs-number">1234</span>)
+    <span class="hljs-keyword">del</span> list1[<span class="hljs-number">0</span>]
+    print(list1)
+    <span class="hljs-comment"># &#x6E05;&#x7A7A;&#x5217;&#x8868;&#x5143;&#x7D20;</span>
+    list1.clear()
+    print(list1)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x4E00;&#x6837;&#xFF0C;&#x5217;&#x8868;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#xFF0C;&#x901A;&#x8FC7;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5BF9;&#x5217;&#x8868;&#x7684;&#x590D;&#x5236;&#x6216;&#x8005;&#x5C06;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x53D6;&#x51FA;&#x6765;&#x521B;&#x5EFA;&#x51FA;&#x65B0;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    fruits = [<span class="hljs-string">&apos;grape&apos;</span>, <span class="hljs-string">&apos;apple&apos;</span>, <span class="hljs-string">&apos;strawberry&apos;</span>, <span class="hljs-string">&apos;waxberry&apos;</span>]
+    fruits += [<span class="hljs-string">&apos;pitaya&apos;</span>, <span class="hljs-string">&apos;pear&apos;</span>, <span class="hljs-string">&apos;mango&apos;</span>]
+    <span class="hljs-comment"># &#x5FAA;&#x73AF;&#x904D;&#x5386;&#x5217;&#x8868;&#x5143;&#x7D20;</span>
+    <span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> fruits:
+        print(fruit.title(), end=<span class="hljs-string">&apos; &apos;</span>)
+    print()
+    <span class="hljs-comment"># &#x5217;&#x8868;&#x5207;&#x7247;</span>
+    fruits2 = fruits[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]
+    print(fruits2)
+    <span class="hljs-comment"># fruit3 = fruits  # &#x6CA1;&#x6709;&#x590D;&#x5236;&#x5217;&#x8868;&#x53EA;&#x521B;&#x5EFA;&#x4E86;&#x65B0;&#x7684;&#x5F15;&#x7528;</span>
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B8C;&#x6574;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#x6765;&#x590D;&#x5236;&#x5217;&#x8868;</span>
+    fruits3 = fruits[:]
+    print(fruits3)
+    fruits4 = fruits[<span class="hljs-number">-3</span>:<span class="hljs-number">-1</span>]
+    print(fruits4)
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53CD;&#x5411;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#x6765;&#x83B7;&#x5F97;&#x5012;&#x8F6C;&#x540E;&#x7684;&#x5217;&#x8868;&#x7684;&#x62F7;&#x8D1D;</span>
+    fruits5 = fruits[::<span class="hljs-number">-1</span>]
+    print(fruits5)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;&#x5217;&#x8868;&#x7684;&#x6392;&#x5E8F;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    list1 = [<span class="hljs-string">&apos;orange&apos;</span>, <span class="hljs-string">&apos;apple&apos;</span>, <span class="hljs-string">&apos;zoo&apos;</span>, <span class="hljs-string">&apos;internationalization&apos;</span>, <span class="hljs-string">&apos;blueberry&apos;</span>]
+    list2 = sorted(list1)
+    <span class="hljs-comment"># sorted&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x62F7;&#x8D1D;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x4F20;&#x5165;&#x7684;&#x5217;&#x8868;</span>
+    <span class="hljs-comment"># &#x51FD;&#x6570;&#x7684;&#x8BBE;&#x8BA1;&#x5C31;&#x5E94;&#x8BE5;&#x50CF;sorted&#x51FD;&#x6570;&#x4E00;&#x6837;&#x5C3D;&#x53EF;&#x80FD;&#x4E0D;&#x4EA7;&#x751F;&#x526F;&#x4F5C;&#x7528;</span>
+    list3 = sorted(list1, reverse=<span class="hljs-keyword">True</span>)
+    <span class="hljs-comment"># &#x901A;&#x8FC7;key&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x6839;&#x636E;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x800C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x5B57;&#x6BCD;&#x8868;&#x987A;&#x5E8F;</span>
+    list4 = sorted(list1, key=len)
+    print(list1)
+    print(list2)
+    print(list3)
+    print(list4)
+    <span class="hljs-comment"># &#x7ED9;&#x5217;&#x8868;&#x5BF9;&#x8C61;&#x53D1;&#x51FA;&#x6392;&#x5E8F;&#x6D88;&#x606F;&#x76F4;&#x63A5;&#x5728;&#x5217;&#x8868;&#x5BF9;&#x8C61;&#x4E0A;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</span>
+    list1.sort(reverse=<span class="hljs-keyword">True</span>)
+    print(list1)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5217;&#x8868;&#x7684;&#x751F;&#x6210;&#x5F0F;&#x8BED;&#x6CD5;&#x6765;&#x521B;&#x5EFA;&#x5217;&#x8868;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">import</span> sys
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    f = [x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>)]
+    print(f)
+    f = [x + y <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-string">&apos;ABCDE&apos;</span> <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-string">&apos;1234567&apos;</span>]
+    print(f)
+    <span class="hljs-comment"># &#x7528;&#x5217;&#x8868;&#x7684;&#x751F;&#x6210;&#x8868;&#x8FBE;&#x5F0F;&#x8BED;&#x6CD5;&#x521B;&#x5EFA;&#x5217;&#x8868;&#x5BB9;&#x5668;</span>
+    <span class="hljs-comment"># &#x7528;&#x8FD9;&#x79CD;&#x8BED;&#x6CD5;&#x521B;&#x5EFA;&#x5217;&#x8868;&#x4E4B;&#x540E;&#x5143;&#x7D20;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x8017;&#x8D39;&#x8F83;&#x591A;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;</span>
+    f = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">1000</span>)]
+    print(sys.getsizeof(f))  <span class="hljs-comment"># &#x67E5;&#x770B;&#x5BF9;&#x8C61;&#x5360;&#x7528;&#x5185;&#x5B58;&#x7684;&#x5B57;&#x8282;&#x6570;</span>
+    print(f)
+    <span class="hljs-comment"># &#x8BF7;&#x6CE8;&#x610F;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x521B;&#x5EFA;&#x7684;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x5668;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment"># &#x901A;&#x8FC7;&#x751F;&#x6210;&#x5668;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x6570;&#x636E;&#x4F46;&#x5B83;&#x4E0D;&#x5360;&#x7528;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x95F4;&#x5B58;&#x50A8;&#x6570;&#x636E;</span>
+    <span class="hljs-comment"># &#x6BCF;&#x6B21;&#x9700;&#x8981;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x901A;&#x8FC7;&#x5185;&#x90E8;&#x7684;&#x8FD0;&#x7B97;&#x5F97;&#x5230;&#x6570;&#x636E;(&#x9700;&#x8981;&#x82B1;&#x8D39;&#x989D;&#x5916;&#x7684;&#x65F6;&#x95F4;)</span>
+    f = (x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">1000</span>))
+    print(sys.getsizeof(f))  <span class="hljs-comment"># &#x76F8;&#x6BD4;&#x751F;&#x6210;&#x5F0F;&#x751F;&#x6210;&#x5668;&#x4E0D;&#x5360;&#x7528;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x7A7A;&#x95F4;</span>
+    print(f)
+    <span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> f:
+        print(val)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x751F;&#x6210;&#x5668;&#x8BED;&#x6CD5;&#xFF0C;Python&#x4E2D;&#x8FD8;&#x6709;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x901A;&#x8FC7;<code>yield</code>&#x5173;&#x952E;&#x5B57;&#x5C06;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x51FD;&#x6570;&#x6539;&#x9020;&#x6210;&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x751F;&#x6210;<a href="https://zh.wikipedia.org/wiki/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97" target="_blank">&#x6590;&#x6CE2;&#x62C9;&#x5207;&#x6570;&#x5217;</a>&#x7684;&#x751F;&#x6210;&#x5668;&#x3002;&#x6240;&#x8C13;&#x6590;&#x6CE2;&#x62C9;&#x5207;&#x6570;&#x5217;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;<a href="https://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92" target="_blank">&#x9012;&#x5F52;</a>&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<p>$${\displaystyle F_{0}=0}$$</p>
+<p>$${\displaystyle F_{1}=1}$$</p>
+<p>$${\displaystyle F<em>{n}=F</em>{n-1}+F_{n-2} }({n}\geq{2})$$</p>
+<p><img src="res/fibonacci-blocks.png" alt=""></p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span>:</span>
+    a, b = <span class="hljs-number">0</span>, <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n):
+        a, b = b, a + b
+        <span class="hljs-keyword">yield</span> a
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">for</span> val <span class="hljs-keyword">in</span> fib(<span class="hljs-number">20</span>):
+        print(val)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x5143;&#x7EC4;">&#x4F7F;&#x7528;&#x5143;&#x7EC4;</h3>
+<p>Python &#x7684;&#x5143;&#x7EC4;&#x4E0E;&#x5217;&#x8868;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5143;&#x7EC4;&#x7684;&#x5143;&#x7D20;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#xFF0C;&#x5728;&#x524D;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4E0D;&#x6B62;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x8FC7;&#x5143;&#x7EC4;&#x4E86;&#x3002;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x8D77;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x548C;&#x5217;&#x8868;&#x4E00;&#x6837;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x591A;&#x6761;&#x6570;&#x636E;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x5143;&#x7EC4;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x5143;&#x7EC4;</span>
+    t = (<span class="hljs-string">&apos;&#x9A86;&#x660A;&apos;</span>, <span class="hljs-number">38</span>, <span class="hljs-keyword">True</span>, <span class="hljs-string">&apos;&#x56DB;&#x5DDD;&#x6210;&#x90FD;&apos;</span>)
+    print(t)
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;</span>
+    print(t[<span class="hljs-number">0</span>])
+    print(t[<span class="hljs-number">3</span>])
+    <span class="hljs-comment"># &#x904D;&#x5386;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x503C;</span>
+    <span class="hljs-keyword">for</span> member <span class="hljs-keyword">in</span> t:
+        print(member)
+    <span class="hljs-comment"># &#x91CD;&#x65B0;&#x7ED9;&#x5143;&#x7EC4;&#x8D4B;&#x503C;</span>
+    <span class="hljs-comment"># t[0] = &apos;&#x738B;&#x5927;&#x9524;&apos;  # TypeError</span>
+    <span class="hljs-comment"># &#x53D8;&#x91CF;t&#x91CD;&#x65B0;&#x5F15;&#x7528;&#x4E86;&#x65B0;&#x7684;&#x5143;&#x7EC4;&#x539F;&#x6765;&#x7684;&#x5143;&#x7EC4;&#x5C06;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;</span>
+    t = (<span class="hljs-string">&apos;&#x738B;&#x5927;&#x9524;&apos;</span>, <span class="hljs-number">20</span>, <span class="hljs-keyword">True</span>, <span class="hljs-string">&apos;&#x4E91;&#x5357;&#x6606;&#x660E;&apos;</span>)
+    print(t)
+    <span class="hljs-comment"># &#x5C06;&#x5143;&#x7EC4;&#x8F6C;&#x6362;&#x6210;&#x5217;&#x8868;</span>
+    person = list(t)
+    print(person)
+    <span class="hljs-comment"># &#x5217;&#x8868;&#x662F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x5B83;&#x7684;&#x5143;&#x7D20;&#x7684;</span>
+    person[<span class="hljs-number">0</span>] = <span class="hljs-string">&apos;&#x674E;&#x5C0F;&#x9F99;&apos;</span>
+    person[<span class="hljs-number">1</span>] = <span class="hljs-number">25</span>
+    print(person)
+    <span class="hljs-comment"># &#x5C06;&#x5217;&#x8868;&#x8F6C;&#x6362;&#x6210;&#x5143;&#x7EC4;</span>
+    fruits_list = [<span class="hljs-string">&apos;apple&apos;</span>, <span class="hljs-string">&apos;banana&apos;</span>, <span class="hljs-string">&apos;orange&apos;</span>]
+    fruits_tuple = tuple(fruits_list)
+    print(fruits_tuple)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x503C;&#x5F97;&#x63A2;&#x8BA8;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x5217;&#x8868;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x9700;&#x8981;&#x5143;&#x7EC4;&#x8FD9;&#x6837;&#x7684;&#x7C7B;&#x578B;&#x5462;&#xFF1F;</p>
+<ol>
+<li>&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;&#x7684;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x6211;&#x4EEC;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x5C24;&#x5176;&#x662F;<a href="https://zh.wikipedia.org/zh-hans/%E5%A4%9A%E7%BA%BF%E7%A8%8B" target="_blank">&#x591A;&#x7EBF;&#x7A0B;</a>&#x73AF;&#x5883;&#xFF08;&#x540E;&#x9762;&#x4F1A;&#x8BB2;&#x5230;&#xFF09;&#x4E2D;&#x53EF;&#x80FD;&#x66F4;&#x559C;&#x6B22;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x90A3;&#x4E9B;&#x4E0D;&#x53D8;&#x5BF9;&#x8C61;&#xFF08;&#x4E00;&#x65B9;&#x9762;&#x56E0;&#x4E3A;&#x5BF9;&#x8C61;&#x72B6;&#x6001;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x7531;&#x6B64;&#x5F15;&#x8D77;&#x7684;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x7A0B;&#x5E8F;&#x9519;&#x8BEF;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x53D8;&#x7684;&#x5BF9;&#x8C61;&#x8981;&#x6BD4;&#x53EF;&#x53D8;&#x7684;&#x5BF9;&#x8C61;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x7EF4;&#x62A4;&#xFF1B;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x80FD;&#x591F;&#x4FEE;&#x6539;&#x4E0D;&#x53D8;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x4E00;&#x4E2A;&#x4E0D;&#x53D8;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x5C31;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x7701;&#x6389;&#x5904;&#x7406;&#x540C;&#x6B65;&#x5316;&#x7684;&#x5F00;&#x9500;&#x3002;&#x4E00;&#x4E2A;&#x4E0D;&#x53D8;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x88AB;&#x5171;&#x4EAB;&#x8BBF;&#x95EE;&#xFF09;&#x3002;&#x6240;&#x4EE5;&#x7ED3;&#x8BBA;&#x5C31;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x5143;&#x7EC4;&#xFF0C;&#x5F53;&#x7136;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x8981;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;&#xFF0C;&#x4F7F;&#x7528;&#x5143;&#x7EC4;&#x4E5F;&#x662F;&#x4E0D;&#x9519;&#x7684;&#x9009;&#x62E9;&#x3002;</li>
+<li>&#x5143;&#x7EC4;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#x548C;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x4E0A;&#x9762;&#x90FD;&#x4F18;&#x4E8E;&#x5217;&#x8868;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;sys&#x6A21;&#x5757;&#x7684;getsizeof&#x51FD;&#x6570;&#x6765;&#x68C0;&#x67E5;&#x5B58;&#x50A8;&#x540C;&#x6837;&#x7684;&#x5143;&#x7D20;&#x7684;&#x5143;&#x7EC4;&#x548C;&#x5217;&#x8868;&#x5404;&#x81EA;&#x5360;&#x7528;&#x4E86;&#x591A;&#x5C11;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F88;&#x5BB9;&#x6613;&#x505A;&#x5230;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;ipython&#x4E2D;&#x4F7F;&#x7528;&#x9B54;&#x6CD5;&#x6307;&#x4EE4;%timeit&#x6765;&#x5206;&#x6790;&#x521B;&#x5EFA;&#x540C;&#x6837;&#x5185;&#x5BB9;&#x7684;&#x5143;&#x7EC4;&#x548C;&#x5217;&#x8868;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4E0B;&#x56FE;&#x662F;&#x6211;&#x7684;macOS&#x7CFB;&#x7EDF;&#x4E0A;&#x6D4B;&#x8BD5;&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+</ol>
+<p><img src="res/ipython-timeit.png" alt=""></p>
+<h3 id="&#x4F7F;&#x7528;&#x96C6;&#x5408;">&#x4F7F;&#x7528;&#x96C6;&#x5408;</h3>
+<p>Python&#x4E2D;&#x7684;&#x96C6;&#x5408;&#x8DDF;&#x6570;&#x5B66;&#x4E0A;&#x7684;&#x96C6;&#x5408;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4EA4;&#x96C6;&#x3001;&#x5E76;&#x96C6;&#x3001;&#x5DEE;&#x96C6;&#x7B49;&#x8FD0;&#x7B97;&#x3002;</p>
+<p><img src="res/python-set.png" alt=""></p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    set1 = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>}
+    print(set1)
+    print(<span class="hljs-string">&apos;Length =&apos;</span>, len(set1))
+    set2 = set(range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))
+    print(set2)
+    set1.add(<span class="hljs-number">4</span>)
+    set1.add(<span class="hljs-number">5</span>)
+    set2.update([<span class="hljs-number">11</span>, <span class="hljs-number">12</span>])
+    print(set1)
+    print(set2)
+    set2.discard(<span class="hljs-number">5</span>)
+    <span class="hljs-comment"># remove&#x7684;&#x5143;&#x7D20;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x4F1A;&#x5F15;&#x53D1;KeyError</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-number">4</span> <span class="hljs-keyword">in</span> set2:
+        set2.remove(<span class="hljs-number">4</span>)
+    print(set2)
+    <span class="hljs-comment"># &#x904D;&#x5386;&#x96C6;&#x5408;&#x5BB9;&#x5668;</span>
+    <span class="hljs-keyword">for</span> elem <span class="hljs-keyword">in</span> set2:
+        print(elem ** <span class="hljs-number">2</span>, end=<span class="hljs-string">&apos; &apos;</span>)
+    print()
+    <span class="hljs-comment"># &#x5C06;&#x5143;&#x7EC4;&#x8F6C;&#x6362;&#x6210;&#x96C6;&#x5408;</span>
+    set3 = set((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>))
+    print(set3.pop())
+    print(set3)
+    <span class="hljs-comment"># &#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;&#x3001;&#x5E76;&#x96C6;&#x3001;&#x5DEE;&#x96C6;&#x3001;&#x5BF9;&#x79F0;&#x5DEE;&#x8FD0;&#x7B97;</span>
+    print(set1 &amp; set2)
+    <span class="hljs-comment"># print(set1.intersection(set2))</span>
+    print(set1 | set2)
+    <span class="hljs-comment"># print(set1.union(set2))</span>
+    print(set1 - set2)
+    <span class="hljs-comment"># print(set1.difference(set2))</span>
+    print(set1 ^ set2)
+    <span class="hljs-comment"># print(set1.symmetric_difference(set2))</span>
+    <span class="hljs-comment"># &#x5224;&#x65AD;&#x5B50;&#x96C6;&#x548C;&#x8D85;&#x96C6;</span>
+    print(set2 &lt;= set1)
+    <span class="hljs-comment"># print(set2.issubset(set1))</span>
+    print(set3 &lt;= set1)
+    <span class="hljs-comment"># print(set3.issubset(set1))</span>
+    print(set1 &gt;= set2)
+    <span class="hljs-comment"># print(set1.issuperset(set2))</span>
+    print(set1 &gt;= set3)
+    <span class="hljs-comment"># print(set1.issuperset(set3))</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<blockquote>
+<p><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;Python&#x4E2D;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x4E3A;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x6216;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x81EA;&#x5B9A;&#x4E49;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x4F1A;&#x8BB2;&#x5230;&#xFF09;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6211;&#x4EEC;&#x5BF9;&#x96C6;&#x5408;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x96C6;&#x5408;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4F8B;&#x5982;<code>&amp;</code>&#x8FD0;&#x7B97;&#x7B26;&#x8DDF;intersection&#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x76F4;&#x89C2;&#x3002;</p>
+</blockquote>
+<h3 id="&#x4F7F;&#x7528;&#x5B57;&#x5178;">&#x4F7F;&#x7528;&#x5B57;&#x5178;</h3>
+<p>&#x5B57;&#x5178;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x53EF;&#x53D8;&#x5BB9;&#x5668;&#x6A21;&#x578B;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6211;&#x4EEC;&#x751F;&#x6D3B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x5178;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;&#x5217;&#x8868;&#x3001;&#x96C6;&#x5408;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5B57;&#x5178;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x952E;&#x548C;&#x4E00;&#x4E2A;&#x503C;&#x7EC4;&#x6210;&#x7684;&#x201C;&#x952E;&#x503C;&#x5BF9;&#x201D;&#xFF0C;&#x952E;&#x548C;&#x503C;&#x901A;&#x8FC7;&#x5192;&#x53F7;&#x5206;&#x5F00;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x5B57;&#x5178;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    scores = {<span class="hljs-string">&apos;&#x9A86;&#x660A;&apos;</span>: <span class="hljs-number">95</span>, <span class="hljs-string">&apos;&#x767D;&#x5143;&#x82B3;&apos;</span>: <span class="hljs-number">78</span>, <span class="hljs-string">&apos;&#x72C4;&#x4EC1;&#x6770;&apos;</span>: <span class="hljs-number">82</span>}
+    <span class="hljs-comment"># &#x901A;&#x8FC7;&#x952E;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5B57;&#x5178;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x503C;</span>
+    print(scores[<span class="hljs-string">&apos;&#x9A86;&#x660A;&apos;</span>])
+    print(scores[<span class="hljs-string">&apos;&#x72C4;&#x4EC1;&#x6770;&apos;</span>])
+    <span class="hljs-comment"># &#x5BF9;&#x5B57;&#x5178;&#x8FDB;&#x884C;&#x904D;&#x5386;(&#x904D;&#x5386;&#x7684;&#x5176;&#x5B9E;&#x662F;&#x952E;&#x518D;&#x901A;&#x8FC7;&#x952E;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x503C;)</span>
+    <span class="hljs-keyword">for</span> elem <span class="hljs-keyword">in</span> scores:
+        print(<span class="hljs-string">&apos;%s\t---&gt;\t%d&apos;</span> % (elem, scores[elem]))
+    <span class="hljs-comment"># &#x66F4;&#x65B0;&#x5B57;&#x5178;&#x4E2D;&#x7684;&#x5143;&#x7D20;</span>
+    scores[<span class="hljs-string">&apos;&#x767D;&#x5143;&#x82B3;&apos;</span>] = <span class="hljs-number">65</span>
+    scores[<span class="hljs-string">&apos;&#x8BF8;&#x845B;&#x738B;&#x6717;&apos;</span>] = <span class="hljs-number">71</span>
+    scores.update(&#x51B7;&#x9762;=<span class="hljs-number">67</span>, &#x65B9;&#x542F;&#x9E64;=<span class="hljs-number">85</span>)
+    print(scores)
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;&#x6B66;&#x5219;&#x5929;&apos;</span> <span class="hljs-keyword">in</span> scores:
+        print(scores[<span class="hljs-string">&apos;&#x6B66;&#x5219;&#x5929;&apos;</span>])
+    print(scores.get(<span class="hljs-string">&apos;&#x6B66;&#x5219;&#x5929;&apos;</span>))
+    <span class="hljs-comment"># get&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x901A;&#x8FC7;&#x952E;&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</span>
+    print(scores.get(<span class="hljs-string">&apos;&#x6B66;&#x5219;&#x5929;&apos;</span>, <span class="hljs-number">60</span>))
+    <span class="hljs-comment"># &#x5220;&#x9664;&#x5B57;&#x5178;&#x4E2D;&#x7684;&#x5143;&#x7D20;</span>
+    print(scores.popitem())
+    print(scores.popitem())
+    print(scores.pop(<span class="hljs-string">&apos;&#x9A86;&#x660A;&apos;</span>, <span class="hljs-number">100</span>))
+    <span class="hljs-comment"># &#x6E05;&#x7A7A;&#x5B57;&#x5178;</span>
+    scores.clear()
+    print(scores)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h3 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h3>
+<h4 id="&#x7EC3;&#x4E60;1&#xFF1A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x663E;&#x793A;&#x8DD1;&#x9A6C;&#x706F;&#x6587;&#x5B57;">&#x7EC3;&#x4E60;1&#xFF1A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x663E;&#x793A;&#x8DD1;&#x9A6C;&#x706F;&#x6587;&#x5B57;</h4>
+<pre><code class="lang-Python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> time
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    content = <span class="hljs-string">&apos;&#x5317;&#x4EAC;&#x6B22;&#x8FCE;&#x4F60;&#x4E3A;&#x4F60;&#x5F00;&#x5929;&#x8F9F;&#x5730;&#x2026;&#x2026;&#x2026;&#x2026;&apos;</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-comment"># &#x6E05;&#x7406;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x8F93;&#x51FA;</span>
+        os.system(<span class="hljs-string">&apos;cls&apos;</span>)  <span class="hljs-comment"># os.system(&apos;clear&apos;)</span>
+        print(content)
+        <span class="hljs-comment"># &#x4F11;&#x7720;200&#x6BEB;&#x79D2;</span>
+        time.sleep(<span class="hljs-number">0.2</span>)
+        content = content[<span class="hljs-number">1</span>:] + content[<span class="hljs-number">0</span>]
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;2&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4EA7;&#x751F;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x9A8C;&#x8BC1;&#x7801;&#x7531;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x6784;&#x6210;&#x3002;">&#x7EC3;&#x4E60;2&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4EA7;&#x751F;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x9A8C;&#x8BC1;&#x7801;&#x7531;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x6784;&#x6210;&#x3002;</h4>
+<pre><code class="lang-Python"><span class="hljs-keyword">import</span> random
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate_code</span><span class="hljs-params">(code_len=<span class="hljs-number">4</span>)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x9A8C;&#x8BC1;&#x7801;
+
+    :param code_len: &#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x957F;&#x5EA6;(&#x9ED8;&#x8BA4;4&#x4E2A;&#x5B57;&#x7B26;)
+
+    :return: &#x7531;&#x5927;&#x5C0F;&#x5199;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#x6784;&#x6210;&#x7684;&#x968F;&#x673A;&#x9A8C;&#x8BC1;&#x7801;
+    &quot;&quot;&quot;</span>
+    all_chars = <span class="hljs-string">&apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;</span>
+    last_pos = len(all_chars) - <span class="hljs-number">1</span>
+    code = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(code_len):
+        index = random.randint(<span class="hljs-number">0</span>, last_pos)
+        code += all_chars[index]
+    <span class="hljs-keyword">return</span> code
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;3&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x540E;&#x7F00;&#x540D;&#x3002;">&#x7EC3;&#x4E60;3&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x540E;&#x7F00;&#x540D;&#x3002;</h4>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_suffix</span><span class="hljs-params">(filename, has_dot=False)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x540E;&#x7F00;&#x540D;
+
+    :param filename: &#x6587;&#x4EF6;&#x540D;
+    :param has_dot: &#x8FD4;&#x56DE;&#x7684;&#x540E;&#x7F00;&#x540D;&#x662F;&#x5426;&#x9700;&#x8981;&#x5E26;&#x70B9;
+    :return: &#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x540D;
+    &quot;&quot;&quot;</span>
+    pos = filename.rfind(<span class="hljs-string">&apos;.&apos;</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; pos &lt; len(filename) - <span class="hljs-number">1</span>:
+        index = pos <span class="hljs-keyword">if</span> has_dot <span class="hljs-keyword">else</span> pos + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> filename[index:]
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&apos;</span>
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;4&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4F20;&#x5165;&#x7684;&#x5217;&#x8868;&#x4E2D;&#x6700;&#x5927;&#x548C;&#x7B2C;&#x4E8C;&#x5927;&#x7684;&#x5143;&#x7D20;&#x7684;&#x503C;&#x3002;">&#x7EC3;&#x4E60;4&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4F20;&#x5165;&#x7684;&#x5217;&#x8868;&#x4E2D;&#x6700;&#x5927;&#x548C;&#x7B2C;&#x4E8C;&#x5927;&#x7684;&#x5143;&#x7D20;&#x7684;&#x503C;&#x3002;</h4>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">max2</span><span class="hljs-params">(x)</span>:</span>
+    m1, m2 = (x[<span class="hljs-number">0</span>], x[<span class="hljs-number">1</span>]) <span class="hljs-keyword">if</span> x[<span class="hljs-number">0</span>] &gt; x[<span class="hljs-number">1</span>] <span class="hljs-keyword">else</span> (x[<span class="hljs-number">1</span>], x[<span class="hljs-number">0</span>])
+    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>, len(x)):
+        <span class="hljs-keyword">if</span> x[index] &gt; m1:
+            m2 = m1
+            m1 = x[index]
+        <span class="hljs-keyword">elif</span> x[index] &gt; m2:
+            m2 = x[index]
+    <span class="hljs-keyword">return</span> m1, m2
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;5&#xFF1A;&#x8BA1;&#x7B97;&#x6307;&#x5B9A;&#x7684;&#x5E74;&#x6708;&#x65E5;&#x662F;&#x8FD9;&#x4E00;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5929;">&#x7EC3;&#x4E60;5&#xFF1A;&#x8BA1;&#x7B97;&#x6307;&#x5B9A;&#x7684;&#x5E74;&#x6708;&#x65E5;&#x662F;&#x8FD9;&#x4E00;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5929;</h4>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_leap_year</span><span class="hljs-params">(year)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x5E74;&#x4EFD;&#x662F;&#x4E0D;&#x662F;&#x95F0;&#x5E74;
+
+    :param year: &#x5E74;&#x4EFD;
+    :return: &#x95F0;&#x5E74;&#x8FD4;&#x56DE;True&#x5E73;&#x5E74;&#x8FD4;&#x56DE;False
+    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> year % <span class="hljs-number">4</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> year % <span class="hljs-number">100</span> != <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> year % <span class="hljs-number">400</span> == <span class="hljs-number">0</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">which_day</span><span class="hljs-params">(year, month, date)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8BA1;&#x7B97;&#x4F20;&#x5165;&#x7684;&#x65E5;&#x671F;&#x662F;&#x8FD9;&#x4E00;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5929;
+
+    :param year: &#x5E74;
+    :param month: &#x6708;
+    :param date: &#x65E5;
+    :return: &#x7B2C;&#x51E0;&#x5929;
+    &quot;&quot;&quot;</span>
+    days_of_month = [
+        [<span class="hljs-number">31</span>, <span class="hljs-number">28</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>],
+        [<span class="hljs-number">31</span>, <span class="hljs-number">29</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>]
+    ][is_leap_year(year)]
+    total = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> range(month - <span class="hljs-number">1</span>):
+        total += days_of_month[index]
+    <span class="hljs-keyword">return</span> total + date
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    print(which_day(<span class="hljs-number">1980</span>, <span class="hljs-number">11</span>, <span class="hljs-number">28</span>))
+    print(which_day(<span class="hljs-number">1981</span>, <span class="hljs-number">12</span>, <span class="hljs-number">31</span>))
+    print(which_day(<span class="hljs-number">2018</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+    print(which_day(<span class="hljs-number">2016</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>))
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h4 id="&#x7EC3;&#x4E60;6&#xFF1A;&#x6253;&#x5370;&#x6768;&#x8F89;&#x4E09;&#x89D2;&#x3002;">&#x7EC3;&#x4E60;6&#xFF1A;&#x6253;&#x5370;<a href="https://zh.wikipedia.org/wiki/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2" target="_blank">&#x6768;&#x8F89;&#x4E09;&#x89D2;</a>&#x3002;</h4>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    num = int(input(<span class="hljs-string">&apos;Number of rows: &apos;</span>))
+    yh = [[]] * num
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> range(len(yh)):
+        yh[row] = [<span class="hljs-keyword">None</span>] * (row + <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> range(len(yh[row])):
+            <span class="hljs-keyword">if</span> col == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> col == row:
+                yh[row][col] = <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                yh[row][col] = yh[row - <span class="hljs-number">1</span>][col] + yh[row - <span class="hljs-number">1</span>][col - <span class="hljs-number">1</span>]
+            print(yh[row][col], end=<span class="hljs-string">&apos;\t&apos;</span>)
+        print()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h3 id="&#x7EFC;&#x5408;&#x6848;&#x4F8B;">&#x7EFC;&#x5408;&#x6848;&#x4F8B;</h3>
+<h4 id="&#x6848;&#x4F8B;1&#xFF1A;&#x53CC;&#x8272;&#x7403;&#x9009;&#x53F7;">&#x6848;&#x4F8B;1&#xFF1A;&#x53CC;&#x8272;&#x7403;&#x9009;&#x53F7;</h4>
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randrange, randint, sample
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">display</span><span class="hljs-params">(balls)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8F93;&#x51FA;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x53CC;&#x8272;&#x7403;&#x53F7;&#x7801;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">for</span> index, ball <span class="hljs-keyword">in</span> enumerate(balls):
+        <span class="hljs-keyword">if</span> index == len(balls) - <span class="hljs-number">1</span>:
+            print(<span class="hljs-string">&apos;|&apos;</span>, end=<span class="hljs-string">&apos; &apos;</span>)
+        print(<span class="hljs-string">&apos;%02d&apos;</span> % ball, end=<span class="hljs-string">&apos; &apos;</span>)
+    print()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">random_select</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x7EC4;&#x53F7;&#x7801;
+    &quot;&quot;&quot;</span>
+    red_balls = [x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">34</span>)]
+    selected_balls = []
+    selected_balls = sample(red_balls, <span class="hljs-number">6</span>)
+    selected_balls.sort()
+    selected_balls.append(randint(<span class="hljs-number">1</span>, <span class="hljs-number">16</span>))
+    <span class="hljs-keyword">return</span> selected_balls
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    n = int(input(<span class="hljs-string">&apos;&#x673A;&#x9009;&#x51E0;&#x6CE8;: &apos;</span>))
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n):
+        display(random_select())
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<blockquote>
+<p><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;&#x4E0A;&#x9762;&#x4F7F;&#x7528;random&#x6A21;&#x5757;&#x7684;sample&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9;&#x4E0D;&#x91CD;&#x590D;&#x7684;n&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+</blockquote>
+<h4 id="&#x7EFC;&#x5408;&#x6848;&#x4F8B;2&#xFF1A;&#x7EA6;&#x745F;&#x592B;&#x73AF;&#x95EE;&#x9898;">&#x7EFC;&#x5408;&#x6848;&#x4F8B;2&#xFF1A;<a href="https://zh.wikipedia.org/wiki/%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%96%AF%E9%97%AE%E9%A2%98" target="_blank">&#x7EA6;&#x745F;&#x592B;&#x73AF;&#x95EE;&#x9898;</a></h4>
+<pre><code class="lang-Python"><span class="hljs-string">&quot;&quot;&quot;
+&#x300A;&#x5E78;&#x8FD0;&#x7684;&#x57FA;&#x7763;&#x5F92;&#x300B;
+&#x6709;15&#x4E2A;&#x57FA;&#x7763;&#x5F92;&#x548C;15&#x4E2A;&#x975E;&#x57FA;&#x7763;&#x5F92;&#x5728;&#x6D77;&#x4E0A;&#x9047;&#x9669;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x8BA9;&#x4E00;&#x90E8;&#x5206;&#x4EBA;&#x6D3B;&#x4E0B;&#x6765;&#x4E0D;&#x5F97;&#x4E0D;&#x5C06;&#x5176;&#x4E2D;15&#x4E2A;&#x4EBA;&#x6254;&#x5230;&#x6D77;&#x91CC;&#x9762;&#x53BB;&#xFF0C;&#x6709;&#x4E2A;&#x4EBA;&#x60F3;&#x4E86;&#x4E2A;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x5927;&#x5BB6;&#x56F4;&#x6210;&#x4E00;&#x4E2A;&#x5708;&#xFF0C;&#x7531;&#x67D0;&#x4E2A;&#x4EBA;&#x5F00;&#x59CB;&#x4ECE;1&#x62A5;&#x6570;&#xFF0C;&#x62A5;&#x5230;9&#x7684;&#x4EBA;&#x5C31;&#x6254;&#x5230;&#x6D77;&#x91CC;&#x9762;&#xFF0C;&#x4ED6;&#x540E;&#x9762;&#x7684;&#x4EBA;&#x63A5;&#x7740;&#x4ECE;1&#x5F00;&#x59CB;&#x62A5;&#x6570;&#xFF0C;&#x62A5;&#x5230;9&#x7684;&#x4EBA;&#x7EE7;&#x7EED;&#x6254;&#x5230;&#x6D77;&#x91CC;&#x9762;&#xFF0C;&#x76F4;&#x5230;&#x6254;&#x6389;15&#x4E2A;&#x4EBA;&#x3002;&#x7531;&#x4E8E;&#x4E0A;&#x5E1D;&#x7684;&#x4FDD;&#x4F51;&#xFF0C;15&#x4E2A;&#x57FA;&#x7763;&#x5F92;&#x90FD;&#x5E78;&#x514D;&#x4E8E;&#x96BE;&#xFF0C;&#x95EE;&#x8FD9;&#x4E9B;&#x4EBA;&#x6700;&#x5F00;&#x59CB;&#x662F;&#x600E;&#x4E48;&#x7AD9;&#x7684;&#xFF0C;&#x54EA;&#x4E9B;&#x4F4D;&#x7F6E;&#x662F;&#x57FA;&#x7763;&#x5F92;&#x54EA;&#x4E9B;&#x4F4D;&#x7F6E;&#x662F;&#x975E;&#x57FA;&#x7763;&#x5F92;&#x3002;
+&quot;&quot;&quot;</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    persons = [<span class="hljs-keyword">True</span>] * <span class="hljs-number">30</span>
+    counter, index, number = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> counter &lt; <span class="hljs-number">15</span>:
+        <span class="hljs-keyword">if</span> persons[index]:
+            number += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">if</span> number == <span class="hljs-number">9</span>:
+                persons[index] = <span class="hljs-keyword">False</span>
+                counter += <span class="hljs-number">1</span>
+                number = <span class="hljs-number">0</span>
+        index += <span class="hljs-number">1</span>
+        index %= <span class="hljs-number">30</span>
+    <span class="hljs-keyword">for</span> person <span class="hljs-keyword">in</span> persons:
+        print(<span class="hljs-string">&apos;&#x57FA;&apos;</span> <span class="hljs-keyword">if</span> person <span class="hljs-keyword">else</span> <span class="hljs-string">&apos;&#x975E;&apos;</span>, end=<span class="hljs-string">&apos;&apos;</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h4 id="&#x7EFC;&#x5408;&#x6848;&#x4F8B;3&#xFF1A;&#x4E95;&#x5B57;&#x68CB;&#x6E38;&#x620F;">&#x7EFC;&#x5408;&#x6848;&#x4F8B;3&#xFF1A;<a href="https://zh.wikipedia.org/wiki/%E4%BA%95%E5%AD%97%E6%A3%8B" target="_blank">&#x4E95;&#x5B57;&#x68CB;</a>&#x6E38;&#x620F;</h4>
+<pre><code class="lang-Python"><span class="hljs-keyword">import</span> os
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_board</span><span class="hljs-params">(board)</span>:</span>
+    print(board[<span class="hljs-string">&apos;TL&apos;</span>] + <span class="hljs-string">&apos;|&apos;</span> + board[<span class="hljs-string">&apos;TM&apos;</span>] + <span class="hljs-string">&apos;|&apos;</span> + board[<span class="hljs-string">&apos;TR&apos;</span>])
+    print(<span class="hljs-string">&apos;-+-+-&apos;</span>)
+    print(board[<span class="hljs-string">&apos;ML&apos;</span>] + <span class="hljs-string">&apos;|&apos;</span> + board[<span class="hljs-string">&apos;MM&apos;</span>] + <span class="hljs-string">&apos;|&apos;</span> + board[<span class="hljs-string">&apos;MR&apos;</span>])
+    print(<span class="hljs-string">&apos;-+-+-&apos;</span>)
+    print(board[<span class="hljs-string">&apos;BL&apos;</span>] + <span class="hljs-string">&apos;|&apos;</span> + board[<span class="hljs-string">&apos;BM&apos;</span>] + <span class="hljs-string">&apos;|&apos;</span> + board[<span class="hljs-string">&apos;BR&apos;</span>])
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    init_board = {
+        <span class="hljs-string">&apos;TL&apos;</span>: <span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;TM&apos;</span>: <span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;TR&apos;</span>: <span class="hljs-string">&apos; &apos;</span>,
+        <span class="hljs-string">&apos;ML&apos;</span>: <span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;MM&apos;</span>: <span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;MR&apos;</span>: <span class="hljs-string">&apos; &apos;</span>,
+        <span class="hljs-string">&apos;BL&apos;</span>: <span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;BM&apos;</span>: <span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;BR&apos;</span>: <span class="hljs-string">&apos; &apos;</span>
+    }
+    begin = <span class="hljs-keyword">True</span>
+    <span class="hljs-keyword">while</span> begin:
+        curr_board = init_board.copy()
+        begin = <span class="hljs-keyword">False</span>
+        turn = <span class="hljs-string">&apos;x&apos;</span>
+        counter = <span class="hljs-number">0</span>
+        os.system(<span class="hljs-string">&apos;clear&apos;</span>)
+        print_board(curr_board)
+        <span class="hljs-keyword">while</span> counter &lt; <span class="hljs-number">9</span>:
+            move = input(<span class="hljs-string">&apos;&#x8F6E;&#x5230;%s&#x8D70;&#x68CB;, &#x8BF7;&#x8F93;&#x5165;&#x4F4D;&#x7F6E;: &apos;</span> % turn)
+            <span class="hljs-keyword">if</span> curr_board[move] == <span class="hljs-string">&apos; &apos;</span>:
+                counter += <span class="hljs-number">1</span>
+                curr_board[move] = turn
+                <span class="hljs-keyword">if</span> turn == <span class="hljs-string">&apos;x&apos;</span>:
+                    turn = <span class="hljs-string">&apos;o&apos;</span>
+                <span class="hljs-keyword">else</span>:
+                    turn = <span class="hljs-string">&apos;x&apos;</span>
+            os.system(<span class="hljs-string">&apos;clear&apos;</span>)
+            print_board(curr_board)
+        choice = input(<span class="hljs-string">&apos;&#x518D;&#x73A9;&#x4E00;&#x5C40;?(yes|no)&apos;</span>)
+        begin = choice == <span class="hljs-string">&apos;yes&apos;</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<blockquote>
+<p><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;&#x6700;&#x540E;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x6765;&#x81EA;<a href="https://item.jd.com/11943853.html" target="_blank">&#x300A;Python&#x7F16;&#x7A0B;&#x5FEB;&#x901F;&#x4E0A;&#x624B;:&#x8BA9;&#x7E41;&#x7410;&#x5DE5;&#x4F5C;&#x81EA;&#x52A8;&#x5316;&#x300B;</a>&#x4E00;&#x4E66;&#xFF08;&#x8FD9;&#x672C;&#x4E66;&#x5BF9;&#x6709;&#x7F16;&#x7A0B;&#x57FA;&#x7840;&#x60F3;&#x8FC5;&#x901F;&#x4F7F;&#x7528;Python&#x5C06;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#x8FD8;&#x662F;&#x4E0D;&#x9519;&#x7684;&#x9009;&#x62E9;&#xFF09;&#xFF0C;&#x5BF9;&#x4EE3;&#x7801;&#x505A;&#x4E86;&#x4E00;&#x70B9;&#x70B9;&#x7684;&#x8C03;&#x6574;&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-函数和模块的使用.html" class="navigation navigation-prev " aria-label="Previous page: 函数和模块的使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-面向对象编程基础.html" class="navigation navigation-next " aria-label="Next page: 面向对象编程基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"字符串和常用数据结构","level":"6.6.7","depth":2,"next":{"title":"面向对象编程基础","level":"6.6.8","depth":2,"path":"Python/Python语言基础/07-面向对象编程基础.md","ref":"Python/Python语言基础/07-面向对象编程基础.md","articles":[]},"previous":{"title":"函数和模块的使用","level":"6.6.6","depth":2,"path":"Python/Python语言基础/05-函数和模块的使用.md","ref":"Python/Python语言基础/05-函数和模块的使用.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["summary","expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"summary":{},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言基础/06-字符串和常用数据结构.md","mtime":"2021-06-12T09:04:07.878Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T10:29:47.343Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
