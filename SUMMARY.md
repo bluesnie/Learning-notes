@@ -59,7 +59,6 @@
     - [GoMod及包](GoLang/GoLang基础/14-GoMod及包.md)
 - [InterviewPreparation](InterviewPreparation/README.md)
 
-- [20201027]()
 - [ClassicQuestion]()
     - [20201027](InterviewPreparation/ClassicQuestion/20201027/README.md)
 
