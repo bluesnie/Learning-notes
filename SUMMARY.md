@@ -1,197 +1,200 @@
+###### datetime:2019/6/14 9:04
+###### author:nzb
 
-## Algorithm
+> 笔记格式：`{ { } }` 写成 `{ { } }` ， `{ % % }` 写成 `{ %  % }`，空格隔开
+> 
+> [gitbook 生成文档](https://github.com/bluesnie/git_test)
 
+# [电子书](https://bluesnie.github.io/Learning-notes/)
 
-## Database
+# 学习笔记
 
-- [MySQL]()
-    - [主从复制](Database/MySQL/主从复制.md)
-    - [数据库三大范式](Database/MySQL/数据库三大范式.md)
-    - [计算机二级MySQL](Database/MySQL/计算机二级MySQL.md)
-- [NoSQL]()
-    - [NoSql入门](Database/NoSQL/01-NoSql入门.md)
-    - [Redis安装与配置文件](Database/NoSQL/02-Redis安装与配置文件.md)
-    - [Redis基础](Database/NoSQL/03-Redis基础.md)
+## [算法](./Algorithm)
 
-## FinancialManagement
+- [算法图解](./Algorithm/算法图解.pdf)
 
-- [投资术语](FinancialManagement/00-投资术语.md)
-- [投资误区](FinancialManagement/00-投资误区.md)
-- [书籍]()
-- [基金全球配置大法]()
-    - [全球配置](FinancialManagement/基金全球配置大法/01-全球配置.md)
-    - [场外基金开户和买卖实操](FinancialManagement/基金全球配置大法/02-场外基金开户和买卖实操.md)
-    - [场内基金开户和买卖实操](FinancialManagement/基金全球配置大法/03-场内基金开户和买卖实操.md)
-    - [看懂股票行情](FinancialManagement/基金全球配置大法/04-看懂股票行情.md)
-    - [基金套牢怎么办](FinancialManagement/基金全球配置大法/05-基金套牢怎么办.md)
-- [基金基础 货基债基股基]()
-    - [纯债基金](FinancialManagement/基金基础-货基债基股基/01-纯债基金.md)
-    - [股票型基金](FinancialManagement/基金基础-货基债基股基/02-股票型基金.md)
-    - [大数据指数基金](FinancialManagement/基金基础-货基债基股基/03-大数据指数基金.md)
-    - [ETF基金](FinancialManagement/基金基础-货基债基股基/04-ETF基金.md)
-    - [LOF基金](FinancialManagement/基金基础-货基债基股基/05-LOF基金.md)
-    - [四大行业指数](FinancialManagement/基金基础-货基债基股基/06-四大行业指数.md)
-- [基金定投]()
-    - [基金定投](FinancialManagement/基金定投/01-基金定投.md)
-- [基金进价 特种基金：分级基金QDII基金量化基金等]()
-    - [分级基金](FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.md)
-    - [避险基金](FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.md)
-    - [量化基金](FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.md)
-    - [QDII基金](FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.md)
-    - [FOF基金](FinancialManagement/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.md)
+## [Linux](./Linux)
 
-## GoLang
+- [入门基础](./Linux/基础/Linux.html)
 
-- [GoLang基础]()
-    - [GoLang发展史](GoLang/GoLang基础/01-GoLang发展史.md)
-    - [打印输出](GoLang/GoLang基础/02-打印输出.md)
-    - [变量和常量](GoLang/GoLang基础/03-变量和常量.md)
-    - [数据类型](GoLang/GoLang基础/04-数据类型.md)
-    - [运算符](GoLang/GoLang基础/05-运算符.md)
-    - [流程控制](GoLang/GoLang基础/06-流程控制.md)
-    - [数组](GoLang/GoLang基础/07-数组.md)
-    - [切片](GoLang/GoLang基础/08-切片.md)
-    - [Map](GoLang/GoLang基础/09-map.md)
-    - [函数](GoLang/GoLang基础/10-函数.md)
-    - [Time包日期函数](GoLang/GoLang基础/11-time包日期函数.md)
-    - [指针](GoLang/GoLang基础/12-指针.md)
-    - [结构体](GoLang/GoLang基础/13-结构体.md)
-    - [GoMod及包](GoLang/GoLang基础/14-GoMod及包.md)
-- [InterviewPreparation](InterviewPreparation/README.md)
+## [Python](./Python)
 
-- [ClassicQuestion]()
-    - [20201027](InterviewPreparation/ClassicQuestion/20201027/README.md)
+### [Python语言基础](./Python/Python语言基础/)
 
-## Linux
+- [Python PEP8编码规范 ](./Python/PEP8.md) 
+| [初识Python](./Python/Python语言基础/00-初识Python.md)
+| [语言元素](./Python/Python语言基础/01-语言元素.md)
+- [分支结构](./Python/Python语言基础/02-分支结构.md)
+| [循环结构](./Python/Python语言基础/03-循环结构.md)
+| [构造程序逻辑](./Python/Python语言基础/04-练习.md)
+| [函数和模块的使用](./Python/Python语言基础/05-函数和模块的使用.md)
+- [字符串和常用数据结构](./Python/Python语言基础/06-字符串和常用数据结构.md)
+| [面向对象编程基础](./Python/Python语言基础/07-面向对象编程基础.md)
+| [面向对象编程进阶](./Python/Python语言基础/08-面向对象编程进阶.md)
+- [图形用户界面和游戏开发](./Python/Python语言基础/09-图形用户界面和游戏开发.md)
+| [文件和异常](./Python/Python语言基础/10-文件和异常.md)
+| [字符串和正则表达式](./Python/Python语言基础/11-字符串和正则表达式.md)
+- [进程和线程](./Python/Python语言基础/12-进程和线程.md)
+| [网络编程入门](./Python/Python语言基础/13-网络编程入门.md)
+| [网络应用开发](./Python/Python语言基础/14-网络应用开发.md)
+| [图像和文档处理](./Python/Python语言基础/15-图像和办公文档处理.md)
 
-- [基础]()
+### [Python语言进阶 ](./Python/Python语言进阶)
 
-## MachineLearning
+- [常用数据结构](./Python/Python语言进阶/01-常用数据结构和算法.md)
+- [函数的高级用法](./Python/Python语言进阶/02-函数的高级用法.md) - “一等公民” / 高阶函数 / Lambda函数 / 作用域和闭包 / 装饰器
+- [面向对象高级知识](./Python/Python语言进阶/03-面向对象高级知识.md) - “三大支柱” / 类与类之间的关系 / 垃圾回收 / 魔术属性和方法 / 混入 / 元类 / 面向对象设计原则 / GoF设计模式
+- [迭代器和生成器](./Python/Python语言进阶/04-迭代器和生成器.md) - 相关魔术方法 / 创建生成器的两种方式 / 
+- [并发和异步编程](./Python/Python语言进阶/05-并发和异步编程.md) - 多线程 / 多进程 / 异步IO / async和await
 
-- [MatplotlibNumpyPandas]()
-    - [Pandas快速入门](MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
-    - [Matplotlib基础](MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md)
-    - [Numpy基础](MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
-- [Python](Python/README.md)
+### [Python 第三方库](./Python/第三方库)
 
-- [PEP8](Python/PEP8.md)
-- [Python语言基础]()
-    - [初识Python](Python/Python语言基础/00-初识Python.md)
-    - [语言元素](Python/Python语言基础/01-语言元素.md)
-    - [分支结构](Python/Python语言基础/02-分支结构.md)
-    - [循环结构](Python/Python语言基础/03-循环结构.md)
-    - [练习](Python/Python语言基础/04-练习.md)
-    - [函数和模块的使用](Python/Python语言基础/05-函数和模块的使用.md)
-    - [字符串和常用数据结构](Python/Python语言基础/06-字符串和常用数据结构.md)
-    - [面向对象编程基础](Python/Python语言基础/07-面向对象编程基础.md)
-    - [面向对象编程进阶](Python/Python语言基础/08-面向对象编程进阶.md)
-    - [图形用户界面和游戏开发](Python/Python语言基础/09-图形用户界面和游戏开发.md)
-    - [文件和异常](Python/Python语言基础/10-文件和异常.md)
-    - [字符串和正则表达式](Python/Python语言基础/11-字符串和正则表达式.md)
-    - [进程和线程](Python/Python语言基础/12-进程和线程.md)
-    - [网络编程入门](Python/Python语言基础/13-网络编程入门.md)
-    - [网络应用开发](Python/Python语言基础/14-网络应用开发.md)
-    - [图像和办公文档处理](Python/Python语言基础/15-图像和办公文档处理.md)
-- [Python语言进阶]()
-    - [常用数据结构和算法](Python/Python语言进阶/01-常用数据结构和算法.md)
-    - [函数的高级用法](Python/Python语言进阶/02-函数的高级用法.md)
-    - [面向对象高级知识](Python/Python语言进阶/03-面向对象高级知识.md)
-    - [迭代器和生成器](Python/Python语言进阶/04-迭代器和生成器.md)
-    - [并发和异步编程](Python/Python语言进阶/05-并发和异步编程.md)
-- [第三方库]()
-    - [Django]()
-        - [快速上手](Python/第三方库/Django/01-快速上手.md)
-        - [深入模型](Python/第三方库/Django/02-深入模型.md)
-        - [静态资源和Ajax请求](Python/第三方库/Django/03-静态资源和Ajax请求.md)
-        - [Django模板系统](Python/第三方库/Django/04-Django模板系统.md)
-        - [Django的View](Python/第三方库/Django/05-Django的View.md)
-        - [Django的路由系统](Python/第三方库/Django/06-Django的路由系统.md)
-        - [Django ORM相关操作](Python/第三方库/Django/07-Django-ORM相关操作.md)
-        - [Cookie、Session和分页](Python/第三方库/Django/08-Cookie、Session和分页.md)
-        - [Form和ModelForm组件](Python/第三方库/Django/09-Form和ModelForm组件.md)
-        - [中间件](Python/第三方库/Django/10-中间件.md)
-        - [Django REST Framework](Python/第三方库/Django/Django-REST-framework.md)
-        - [Django开发经验]()
-            - [Django Restframework重写异常处理手柄](Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md)
-            - [Django Restframework登录相关](Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md)
-            - [Django Restframework过滤类相关](Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md)
-            - [Django Fastdfs重写存储类](Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md)
-            - [Django Restframework序列化相关](Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md)
-            - [Api接口自动化测试](Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md)
-            - [为接口加速加缓存](Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md)
-    - [PyQt5](Python/第三方库/PyQt5/README.md)
+#### [Django](./Python/第三方库/Django)
 
-        - [窗口](Python/第三方库/PyQt5/01-窗口.md)
-        - [按钮](Python/第三方库/PyQt5/02-按钮.md)
-        - [垂直布局和水平布局](Python/第三方库/PyQt5/03-垂直布局和水平布局.md)
-        - [栅格布局](Python/第三方库/PyQt5/04-栅格布局.md)
-        - [布局添加标签Label](Python/第三方库/PyQt5/05-布局添加标签Label.md)
-        - [布局添加背景图](Python/第三方库/PyQt5/06-布局添加背景图.md)
-        - [单选框](Python/第三方库/PyQt5/07-单选框.md)
-        - [复选框](Python/第三方库/PyQt5/08-复选框.md)
-        - [键盘提示](Python/第三方库/PyQt5/09-键盘提示.md)
-        - [行编辑Lineedit](Python/第三方库/PyQt5/10-行编辑lineedit.md)
-        - [按钮组](Python/第三方库/PyQt5/11-按钮组.md)
-        - [布局组](Python/第三方库/PyQt5/12-布局组.md)
-        - [无边框窗口](Python/第三方库/PyQt5/13-无边框窗口.md)
-        - [框架Qframe](Python/第三方库/PyQt5/14-框架qframe.md)
-        - [分离器](Python/第三方库/PyQt5/15-分离器.md)
-        - [滑动条](Python/第三方库/PyQt5/16-滑动条.md)
-        - [滚动条](Python/第三方库/PyQt5/17-滚动条.md)
-        - [刻度盘](Python/第三方库/PyQt5/18-刻度盘.md)
-        - [Spinbox](Python/第三方库/PyQt5/19-spinbox.md)
-        - [生成随机数](Python/第三方库/PyQt5/20-生成随机数.md)
-        - [进度条](Python/第三方库/PyQt5/21-进度条.md)
-        - [工具框](Python/第三方库/PyQt5/22-工具框.md)
-        - [菜单栏工具栏](Python/第三方库/PyQt5/23-菜单栏工具栏.md)
-        - [文档编辑框](Python/第三方库/PyQt5/24-文档编辑框.md)
-        - [字体文本框](Python/第三方库/PyQt5/25-字体文本框.md)
-        - [颜色文本框](Python/第三方库/PyQt5/26-颜色文本框.md)
-        - [打印（文本框）](Python/第三方库/PyQt5/27-打印（文本框）.md)
-        - [打印预览](Python/第三方库/PyQt5/28-打印预览.md)
-        - [打印PDF](Python/第三方库/PyQt5/29-打印PDF.md)
-        - [消息框提示框（带选择的）](Python/第三方库/PyQt5/30-消息框提示框（带选择的）.md)
-        - [右键菜单](Python/第三方库/PyQt5/31-右键菜单.md)
-        - [选项卡（单选下拉框和多选）](Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.md)
-        - [Stack(堆叠)小部件](Python/第三方库/PyQt5/33-stack(堆叠)小部件.md)
-        - [可停靠的窗口小部件](Python/第三方库/PyQt5/34-可停靠的窗口小部件.md)
-        - [日历](Python/第三方库/PyQt5/35-日历.md)
-        - [单选下拉框](Python/第三方库/PyQt5/36-单选下拉框.md)
-        - [首字符模糊填充（查询）](Python/第三方库/PyQt5/37-首字符模糊填充（查询）.md)
-        - [打开更多的窗口](Python/第三方库/PyQt5/38-打开更多的窗口.md)
-        - [时间编辑](Python/第三方库/PyQt5/39-时间编辑.md)
-        - [列表部件](Python/第三方库/PyQt5/40-列表部件.md)
-        - [列表部件小示例](Python/第三方库/PyQt5/41-列表部件小示例.md)
+- [快速上手](./Python/第三方库/Django/01-快速上手.md)
+| [深入模型](./Python/第三方库/Django/02-深入模型.md)
+| [静态资源和Ajax请求](./Python/第三方库/Django/03-静态资源和Ajax请求.md)
+| [Django模板系统](./Python/第三方库/Django/04-Django模板系统.md)
+- [Django的View(视图)](./Python/第三方库/Django/05-Django的View.md)
+| [Django的路由系统](./Python/第三方库/Django/06-Django的路由系统.md)
+| [Django ORM相关操作](./Python/第三方库/Django/07-Django-ORM相关操作.md)
+- [Cookie、Session和分页](./Python/第三方库/Django/08-Cookie、Session和分页.md)
+| [Form、ModelForm组件](./Python/第三方库/Django/09-Form和ModelForm组件.md)
+| [中间件](./Python/第三方库/Django/10-中间件.md)
 
-## Utils
+#### [Django-REST-framework](./Python/第三方库/Django/Django-REST-framework.md)
 
-- [Git基本命令](Utils/Git基本命令.md)
-- [Nginx](Utils/Nginx.md)
-- [Docker]()
-    - [Docker](Utils/docker/Docker.md)
-    - [FastDFS](Utils/docker/FastDFS.md)
-- [Web](Web/README.md)
+- [Django生命周期](./Python/第三方库/Django/Django-REST-framework.md#Django生命周期:(rest_framework))
+| [Django中间件](./Python/第三方库/Django/Django-REST-framework.md#中间件)
+- Django-Rest-framework组件:
+    - [认证](./Python/第三方库/Django/Django-REST-framework.md#一认证)
+    | [权限](./Python/第三方库/Django/Django-REST-framework.md#二权限)
+    | [频率控制(节流)](./Python/第三方库/Django/Django-REST-framework.md#三频率控制节流)
+    | [版本(全局配置就行)](./Python/第三方库/Django/Django-REST-framework.md#四版本全局配置就行)
+    | [解析器(全局配置就行)](./Python/第三方库/Django/Django-REST-framework.md#五解析器全局配置就行)
+    - [序列化](./Python/第三方库/Django/Django-REST-framework.md#六序列化)
+    | [分页](./Python/第三方库/Django/Django-REST-framework.md#七分页)
+    | [视图](./Python/第三方库/Django/Django-REST-framework.md#八视图)
+    | [路由](./Python/第三方库/Django/Django-REST-framework.md#九路由)
+    | [渲染器](./Python/第三方库/Django/Django-REST-framework.md#十渲染器)
+    | [django组件：content-type](./Python/第三方库/Django/Django-REST-framework.md#十一django组件content_type)
+      
 
-- [Bootstrap]()
-    - [Bootstrap4分页](Web/Bootstrap/01-Bootstrap4分页.md)
-    - [Bootstrap4 Table](Web/Bootstrap/02-Bootstrap4-table.md)
-- [CSS]()
-    - [CSS](Web/CSS/CSS.md)
-- [HTML5]()
-    - [HTML5](Web/HTML5/HTML5.md)
-- [JavaScript]()
-    - [JavaScript基础](Web/JavaScript/JavaScript基础.md)
-    - [JavaScript对象](Web/JavaScript/JavaScript对象.md)
-    - [JavaScript瀑布流](Web/JavaScript/JavaScript瀑布流.md)
-    - [JavaScript面向对象](Web/JavaScript/JavaScript面向对象.md)
-    - [框架]()
-        - [Promise](Web/JavaScript/框架/Promise.md)
-        - [Vue.Js基础](Web/JavaScript/框架/Vue.js基础.md)
-        - [Vue.Js组件](Web/JavaScript/框架/Vue.js组件.md)
-        - [Vue.Js路由](Web/JavaScript/框架/Vue.js路由.md)
-        - [Vue.Js过渡和动画](Web/JavaScript/框架/Vue.js过渡和动画.md)
-        - [JQuery UI](Web/JavaScript/框架/jQuery-UI.md)
-        - [JQuery基础](Web/JavaScript/框架/jQuery基础.md)
-        - [JQuery方法大全](Web/JavaScript/框架/jQuery方法大全.md)
-- [RESTful](Web/RESTful.md)
-- [Web前端概述](Web/Web前端概述.md)
+#### [Django项目开发经验](./Python/第三方库/Django/Django开发经验)
+
+- [登录相关](./Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md)
+| [异常处理手柄](./Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md)
+| [过滤相关](./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md)
+| [存储类重写](./Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md)
+| [序列化相关](./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md)
+| [自动化测试](./Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md)
+| [接口加速缓存](./Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md)
+
+#### [PyQt5](./Python/第三方库/PyQt5)
+- [导航](./Python/第三方库/PyQt5/README.md)
+- 窗口 / 按钮 / 垂直布局和水平布局 / 栅格布局 / 布局添加标签和背景图
+- 单选框 / 复选框 / 键盘提示 / 行编辑器 / 按钮组 / 布局组 / 无边框窗口
+-  框架 / 分离器 / 滑动条 / 滚动条 / 刻度盘 / 上下拨号 / 生成随机数 
+- 进度条 / 工具框 / 菜单栏工具栏 / 文档编辑框 / 字体文本框 / 颜色文本框
+- 打印 / 打印预览 / 打印PDF / 消息提示框 / 右键菜单 / 选项卡 / 堆叠小部件
+- 可停靠的窗口小部件 / 日历 / 单选下拉框 / 首字母模糊填充 / 打开更多窗口
+- 时间编辑 / 列表部件 / 
+
+## [数据库基础和进阶](./Database)
+
+### [关系型数据库MySQL](./Database/MySQL)
+  - 关系型数据库概述
+  - MySQL的安装和使用
+  - SQL的使用
+    - DDL - 数据定义语言 - create / drop / alter
+    - DML - 数据操作语言 - insert / delete / update / select
+    - DCL - 数据控制语言 - grant / revoke
+  - 相关知识
+    - 范式理论 - 设计二维表的指导思想
+    - 数据完整性
+    - 数据一致性
+  - 在Python中操作MySQL
+  - [计算机二级](./Database/MySQL/计算机二级MySQL.md)
+  | [数据库三大范式](./Database/MySQL/数据库三大范式.md)
+  | [MySQL主从复制](./Database/MySQL/主从复制.md)
+  
+
+### [NoSQL入门](./Day36-40/39.NoSQL入门.md)
+  - NoSQL概述
+  | Redis概述
+  | Mongo概述
+
+#### Redeis
+  - [Redis安装与配置文件](./Database/NoSQL/02-Redis安装与配置文件.md)
+  - [Redis基础](./Database/NoSQL/03-Redis基础.md)
+    - [Redis键](./Database/NoSQL/03-Redis基础.md#redis键key) 
+    | [Redis字符串](./Database/NoSQL/03-Redis基础.md#redis-字符串string) 
+    | [Redis哈希](./Database/NoSQL/03-Redis基础.md#redis-哈希hash)
+    | [Redis列表](./Database/NoSQL/03-Redis基础.md#redis-列表list)
+    | [Redis集合](./Database/NoSQL/03-Redis基础.md#redis-集合set)
+    | [Redis有序集合](./Database/NoSQL/03-Redis基础.md#redis-有序集合sorted-set)
+    | [Redis发布订阅](./Database/NoSQL/03-Redis基础.md#redis-发布订阅)
+    - [Redis多数据库](./Database/NoSQL/03-Redis基础.md#redis多数据库)
+    | [Redis事务](./Database/NoSQL/03-Redis基础.md#redis-事务)
+    | [Redis数据淘汰策略](./Database/NoSQL/03-Redis基础.md#redis数据淘汰策略redisconf)
+    | [Redis持久化](./Database/NoSQL/03-Redis基础.md#redis持久化)
+    | [Redis缓存与数据库Mysql一致性方案](./Database/NoSQL/03-Redis基础.md#redis缓存与数据库mysql一致性方案)
+
+## [数据分析](./MachineLearning/)
+
+### [数学基础](./MachineLearning/数学基础)
+    
+- [高等数学](./MachineLearning/数学基础/高等数学.pdf)
+| [概率论](./MachineLearning/数学基础/概率论.pdf)
+| [微积分](./MachineLearning/数学基础/微积分.pdf)
+| [SVD](./MachineLearning/数学基础/SVD.pdf)
+| [似然函数](./MachineLearning/数学基础/似然函数.pdf)
+| [后验概率估计](./MachineLearning/数学基础/后验概率估计.pdf)
+| [拉格朗日乘子法](./MachineLearning/数学基础/拉格朗日乘子法.pdf)
+| [核函数](./MachineLearning/数学基础/核函数.pdf)
+- [梯度](./MachineLearning/数学基础/梯度.pdf)
+| [概率分布与概率密度](./MachineLearning/数学基础/概率分布与概率密度.pdf)
+| [泰勒公式](./MachineLearning/数学基础/泰勒公式.pdf)
+| [激活函数](./MachineLearning/数学基础/激活函数.pdf)
+| [熵](./MachineLearning/数学基础/熵.pdf)
+| [特征值与特征向量](./MachineLearning/数学基础/特征值与特征向量.pdf)
+| [矩阵](./MachineLearning/数学基础/矩阵.pdf)
+
+### [数据分析库](./MachineLearning/MatplotlibNumpyPandas)
+    
+- [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
+| [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
+| [matplotlib基础](./MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md)
+
+## [Web前端](./Web/)
+
+- [Web前端入门](./Web/Web前端概述.md)
+| [HTML5](./Web/HTML5)
+| [CSS](./Web/CSS)
+| [JavaScript](./Web/JavaScript)
+- [jQuery](./Web/JavaScript/框架)
+| [jQuery-UI](./Web/JavaScript/框架/jQuery-UI.md)
+| [Vue.js](./Web/JavaScript/框架)
+| [RESTful规范](./Web/RESTful.md)
+
+## [工具](./Utils/)
+
+### [Docker](./Utils/docker/Docker.md)
+
+- 基本组成 / 容器相关技术简介 / 客户端与守护进程 / 守护进程的配置和操作
+- 远程访问 / 容器 / 容器中部署静态网站 / 查看和删除镜像 / 获取和推送镜像
+- 构建镜像 / DockerFile指令 / 构建过程 / 容器的网络连接 / 容器的数据卷
+- 数据卷容器 / 数据卷的备份和还原
+- [Docker入门PDF](./Utils/docker/Docker入门教程.pdf)
+- [Docker部署Django Uwsgi+Nginx+MySQL+Redis](./Utils/docker/django_demo_docker/README.md)
+- [Docker简单部署Django的FastDFS](./Utils/docker/FastDFS.md)
+
+### [Git](./Utils/Git基本命令.md)
+
+- 帮助信息 / git配置(全局配置) / 初始化项目 / 查看状态 / 添加文件 / 提交文件 / 查看提交日志
+- 查看文件修改前后的区别 / git跟踪rename文件和移动文件 / 删除文件 / 恢复文件 / 恢复提交 
+- 重置提交指针 / 查看、创建、切换分支 / 查看两个分支的区别 / 合并分支 / 解决合并冲突 / 重命名和删除分支
+- 保存修改进度 / 添加别名 / 全局忽略跟踪文件 / 项目级忽略文件 / 创建远程版本库 / 推送版本库
+- 修改远程仓库地址 / 克隆版本库到本地 / 更新本地版本库 / 基于版本库开发自己的版本库 / 添加pull request / 添加贡献者
+
+### [Nginx](./Utils/Nginx.md)

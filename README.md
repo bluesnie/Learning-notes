@@ -2,6 +2,8 @@
 ###### author:nzb
 
 > 笔记格式：`{ { } }` 写成 `{ { } }` ， `{ % % }` 写成 `{ %  % }`，空格隔开
+> 
+> [gitbook 生成文档](https://github.com/bluesnie/git_test)
 
 # [电子书](https://bluesnie.github.io/Learning-notes/)
 
