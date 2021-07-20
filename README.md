@@ -4,6 +4,8 @@
 > 笔记格式：`{ { } }` 写成 `{ { } }` ， `{ % % }` 写成 `{ %  % }`，空格隔开
 > 
 > [gitbook 生成文档](https://github.com/bluesnie/git_test)
+> 
+> 注意：SUMMARY.md 目录中有的 markdown 才会转成静态 html, 并且才能全局搜索得到
 
 # [电子书](https://bluesnie.github.io/Learning-notes/)
 

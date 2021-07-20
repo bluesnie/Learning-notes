@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "summary",
     "expandable-chapters",
     "-lunr",
     "-search",
