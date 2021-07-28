@@ -5,7 +5,7 @@
 > 笔记格式：`{ { } }` 写成 `{ { } }` ， `{ % % }` 写成 `{ % % }`，空格隔开
 >
 > [gitbook 生成文档](https://github.com/bluesnie/git_test)
-> 
+>
 > 注意：SUMMARY.md 目录中有的 markdown 才会转成静态 html, 并且才能全局搜索得到
 
 ## 算法
@@ -110,7 +110,12 @@
         - [时间编辑](Python/第三方库/PyQt5/39-时间编辑.md)
         - [列表部件](Python/第三方库/PyQt5/40-列表部件.md)
         - [列表部件小示例](Python/第三方库/PyQt5/41-列表部件小示例.md)
-    
+    - PySide
+        - [Qt简介](./Python/第三方库/PySide/01-Qt简介.md)
+        - [界面设计师QtDesigner](./Python/第三方库/PySide/02-界面设计师QtDesigner.md)
+        - [发布程序](./Python/第三方库/PySide/03-发布程序.md)
+        - [常用控件:按钮、单行多行文本框、文本框浏览框、表情](./Python/第三方库/PySide/04-常用控件1.md)
+
 ## GoLang
 
 - GoLang基础
@@ -135,7 +140,7 @@
     - [计算机二级](./Database/MySQL/计算机二级MySQL.md)
     - [数据库三大范式](./Database/MySQL/数据库三大范式.md)
     - [MySQL主从复制](./Database/MySQL/主从复制.md)
-    
+
 - NoSQL
     - [NoSql入门](Database/NoSQL/01-NoSql入门.md)
 
