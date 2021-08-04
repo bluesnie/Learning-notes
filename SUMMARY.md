@@ -114,7 +114,10 @@
         - [Qt简介](./Python/第三方库/PySide/01-Qt简介.md)
         - [界面设计师QtDesigner](./Python/第三方库/PySide/02-界面设计师QtDesigner.md)
         - [发布程序](./Python/第三方库/PySide/03-发布程序.md)
-        - [常用控件:按钮、单行多行文本框、文本框浏览框、表情](./Python/第三方库/PySide/04-常用控件1.md)
+        - [常用控件1](./Python/第三方库/PySide/04-常用控件1.md)
+        - [常用控件2](./Python/第三方库/PySide/05-常用控件2.md)
+        - [常用控件3](./Python/第三方库/PySide/06-常用控件3.md)
+        - [常用控件4](./Python/第三方库/PySide/07-常用控件4.md)
 
 ## GoLang
 
