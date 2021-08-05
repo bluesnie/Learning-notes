@@ -196,6 +196,7 @@
 
 - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
   | [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
+  | [pandas连接合并追加](./MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.md)
   | [matplotlib基础](./MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md)
 
 ## [Web前端](./Web/)
