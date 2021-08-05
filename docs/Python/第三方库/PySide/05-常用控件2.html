@@ -2049,7 +2049,20 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2.3" data-path="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+        <li class="chapter " data-level="6.2.3" data-path="../../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                    
+                    pandas连接合并追加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
             
                 <a href="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
             
@@ -2529,17 +2542,16 @@
 </code></pre>
 <p>&#x5982;&#x60F3;&#x8BA9; &#x8868;&#x683C;&#x63A7;&#x4EF6;&#x5BBD;&#x5EA6; &#x968F;&#x7740;&#x7236;&#x7A97;&#x53E3;&#x7684;&#x7F29;&#x653E;&#x81EA;&#x52A8;&#x7F29;&#x653E;&#xFF0C;&#x53EF;&#x4EE5; &#x5728; &#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668; &#x4E2D; &#x52FE;&#x9009; <code>HorizontalHeaderStretchLastSection</code><br>&#x6216;&#x8005;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x4EE3;&#x7801;<br><code>table.horizontalHeader().setStretchLastSection(True)</code></p>
 </li>
-<li>&#x4FE1;&#x53F7;&#xFF1A;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x6539;&#x52A8;<br>&#x5F53;&#x7528;&#x6237;&#x4FEE;&#x6539;&#x4E86;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA; <code>cellChanged</code> &#x4FE1;&#x53F7;&#xFF0C;&#x5E76;&#x4E14;&#x643A;&#x5E26;&#x53C2;&#x6570;&#x6307;&#x660E;&#x8BE5;&#x5355;&#x5143;&#x683C;&#x7684;&#x884C;&#x53F7;&#x548C;&#x5217;&#x53F7;&#x3002; &#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5BF9;&#x8BE5;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x3002;<br>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;
-```python<pre><code>def __init__(self):
-# &#x6307;&#x5B9A;&#x5355;&#x5143;&#x683C;&#x6539;&#x52A8;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;
-self.ui.table.cellChanged.connect(self.cfgItemChanged)
-</code></pre></li>
+<li>&#x4FE1;&#x53F7;&#xFF1A;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x6539;&#x52A8;<br>&#x5F53;&#x7528;&#x6237;&#x4FEE;&#x6539;&#x4E86;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA; <code>cellChanged</code> &#x4FE1;&#x53F7;&#xFF0C;&#x5E76;&#x4E14;&#x643A;&#x5E26;&#x53C2;&#x6570;&#x6307;&#x660E;&#x8BE5;&#x5355;&#x5143;&#x683C;&#x7684;&#x884C;&#x53F7;&#x548C;&#x5217;&#x53F7;&#x3002; &#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5BF9;&#x8BE5;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;&#x3002;<br>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;<pre><code class="lang-python">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+    <span class="hljs-comment"># &#x6307;&#x5B9A;&#x5355;&#x5143;&#x683C;&#x6539;&#x52A8;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;</span>
+    self.ui.table.cellChanged.connect(self.cfgItemChanged)
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cfgItemChanged</span><span class="hljs-params">(self, row, column)</span>:</span>
+      <span class="hljs-comment"># &#x83B7;&#x53D6;&#x66F4;&#x6539;&#x5185;&#x5BB9;</span>
+      cfgName = self.ui.table.item(row, <span class="hljs-number">0</span>).text()  <span class="hljs-comment"># &#x9996;&#x5217;&#x4E3A;&#x914D;&#x7F6E;&#x540D;&#x79F0;</span>
+      cfgValue = self.ui.table.item(row, column).text()
+</code></pre>
+</li>
 </ul>
-<pre><code>def cfgItemChanged(self, row, column):
-    # &#x83B7;&#x53D6;&#x66F4;&#x6539;&#x5185;&#x5BB9;
-    cfgName = self.ui.table.item(row, 0).text()  # &#x9996;&#x5217;&#x4E3A;&#x914D;&#x7F6E;&#x540D;&#x79F0;
-    cfgValue = self.ui.table.item(row, column).text()
-</code></pre><p>  ```</p>
 
                                 
                                 </section>
@@ -2583,7 +2595,7 @@ self.ui.table.cellChanged.connect(self.cfgItemChanged)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常用控件2","level":"3.3.4.5","depth":3,"next":{"title":"常用控件3","level":"3.3.4.6","depth":3,"path":"Python/第三方库/PySide/06-常用控件3.md","ref":"./Python/第三方库/PySide/06-常用控件3.md","articles":[]},"previous":{"title":"常用控件1","level":"3.3.4.4","depth":3,"path":"Python/第三方库/PySide/04-常用控件1.md","ref":"./Python/第三方库/PySide/04-常用控件1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/PySide/05-常用控件2.md","mtime":"2021-08-04T06:54:46.323Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-04T08:00:12.534Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常用控件2","level":"3.3.4.5","depth":3,"next":{"title":"常用控件3","level":"3.3.4.6","depth":3,"path":"Python/第三方库/PySide/06-常用控件3.md","ref":"./Python/第三方库/PySide/06-常用控件3.md","articles":[]},"previous":{"title":"常用控件1","level":"3.3.4.4","depth":3,"path":"Python/第三方库/PySide/04-常用控件1.md","ref":"./Python/第三方库/PySide/04-常用控件1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/PySide/05-常用控件2.md","mtime":"2021-08-04T08:35:28.370Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-05T03:36:28.325Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
