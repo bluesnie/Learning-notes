@@ -41,6 +41,7 @@
   | [网络编程入门](./Python/Python语言基础/13-网络编程入门.md)
   | [网络应用开发](./Python/Python语言基础/14-网络应用开发.md)
   | [图像和文档处理](./Python/Python语言基础/15-图像和办公文档处理.md)
+  | [logging日志模块](./Python/Python语言基础/16-logging日志模块.md)
 
 ### [Python语言进阶 ](./Python/Python语言进阶)
 
@@ -49,6 +50,7 @@
 - [面向对象高级知识](./Python/Python语言进阶/03-面向对象高级知识.md) - “三大支柱” / 类与类之间的关系 / 垃圾回收 / 魔术属性和方法 / 混入 / 元类 / 面向对象设计原则 / GoF设计模式
 - [迭代器和生成器](./Python/Python语言进阶/04-迭代器和生成器.md) - 相关魔术方法 / 创建生成器的两种方式 /
 - [并发和异步编程](./Python/Python语言进阶/05-并发和异步编程.md) - 多线程 / 多进程 / 异步IO / async和await
+- [asynico异步编程](./Python/Python语言进阶/06-asyncio异步编程.md)
 
 ### [Python 第三方库](./Python/第三方库)
 

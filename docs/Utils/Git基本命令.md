@@ -206,5 +206,5 @@
     
 ## 详情图
 
-![image](https://github.com/bluesnie/Learning-notes/blob/master/Utils/img/git.png)
+![image](./docker/img/git.png)
                                

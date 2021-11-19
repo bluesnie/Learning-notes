@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="06-asyncio异步编程.html" />
+    
     
     <link rel="prev" href="04-迭代器和生成器.html" />
     
@@ -381,6 +383,19 @@
             
         </li>
     
+        <li class="chapter " data-level="3.1.18" data-path="../Python语言基础/16-logging日志模块.html">
+            
+                <a href="../Python语言基础/16-logging日志模块.html">
+            
+                    
+                    logging日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -458,6 +473,19 @@
             
                     
                     并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="06-asyncio异步编程.html">
+            
+                <a href="06-asyncio异步编程.html">
+            
+                    
+                    asynico异步编程
             
                 </a>
             
@@ -2512,20 +2540,16 @@
 <p>   Python&#x4E2D;&#x5B9E;&#x73B0;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x6848;&#xFF1A;&#x591A;&#x7EBF;&#x7A0B;&#x3001;&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x5F02;&#x6B65;I/O&#x3002;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x7684;&#x597D;&#x5904;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x63D0;&#x5347;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x6548;&#x7387;&#x4EE5;&#x53CA;&#x6539;&#x5584;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#xFF1B;&#x574F;&#x5904;&#x5728;&#x4E8E;&#x5E76;&#x53D1;&#x7684;&#x7A0B;&#x5E8F;&#x4E0D;&#x5BB9;&#x6613;&#x5F00;&#x53D1;&#x548C;&#x8C03;&#x8BD5;&#xFF0C;&#x540C;&#x65F6;&#x5BF9;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x6765;&#x8BF4;&#x5B83;&#x5E76;&#x4E0D;&#x53CB;&#x597D;&#x3002;</p>
 <ul>
 <li><p>&#x591A;&#x7EBF;&#x7A0B;&#xFF1A;Python&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;Thread&#x7C7B;&#x5E76;&#x8F85;&#x4EE5;Lock&#x3001;Condition&#x3001;Event&#x3001;Semaphore&#x548C;Barrier&#x3002;Python&#x4E2D;&#x6709;GIL&#x6765;&#x9632;&#x6B62;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x6267;&#x884C;&#x672C;&#x5730;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x9501;&#x5BF9;&#x4E8E;CPython&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;CPython&#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x5E76;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;GIL&#x7684;&#x5B58;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x4E0D;&#x80FD;&#x53D1;&#x6325;CPU&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;&#x3002;</p>
-<p>```Python
-&quot;&quot;&quot;
-&#x9762;&#x8BD5;&#x9898;&#xFF1A;&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;&#x7684;&#x533A;&#x522B;&#x548C;&#x8054;&#x7CFB;&#xFF1F;
-&#x8FDB;&#x7A0B; - &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D; - &#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;
-&#x7EBF;&#x7A0B; - &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;CPU&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;
-&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#xFF08;concurrent programming&#xFF09;</p>
-<ol>
-<li>&#x63D0;&#x5347;&#x6267;&#x884C;&#x6027;&#x80FD; - &#x8BA9;&#x7A0B;&#x5E8F;&#x4E2D;&#x6CA1;&#x6709;&#x56E0;&#x679C;&#x5173;&#x7CFB;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x5E76;&#x53D1;&#x7684;&#x6267;&#x884C;</li>
-<li>&#x6539;&#x5584;&#x7528;&#x6237;&#x4F53;&#x9A8C; - &#x8BA9;&#x8017;&#x65F6;&#x95F4;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x7A0B;&#x5E8F;&#x7684;&#x5047;&#x6B7B;
-&quot;&quot;&quot;
-import glob
+<p>```Python</p>
+<h1 id="&#x9762;&#x8BD5;&#x9898;&#xFF1A;&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;&#x7684;&#x533A;&#x522B;&#x548C;&#x8054;&#x7CFB;&#xFF1F;">&#x9762;&#x8BD5;&#x9898;&#xFF1A;&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;&#x7684;&#x533A;&#x522B;&#x548C;&#x8054;&#x7CFB;&#xFF1F;</h1>
+<h1 id="&#x8FDB;&#x7A0B;---&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;---&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;">&#x8FDB;&#x7A0B; - &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x5185;&#x5B58;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D; - &#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;</h1>
+<h1 id="&#x7EBF;&#x7A0B;---&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;cpu&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;">&#x7EBF;&#x7A0B; - &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;CPU&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;</h1>
+<h1 id="&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#xFF08;concurrent-programming&#xFF09;">&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#xFF08;concurrent programming&#xFF09;</h1>
+<h1 id="1-&#x63D0;&#x5347;&#x6267;&#x884C;&#x6027;&#x80FD;---&#x8BA9;&#x7A0B;&#x5E8F;&#x4E2D;&#x6CA1;&#x6709;&#x56E0;&#x679C;&#x5173;&#x7CFB;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x5E76;&#x53D1;&#x7684;&#x6267;&#x884C;">1. &#x63D0;&#x5347;&#x6267;&#x884C;&#x6027;&#x80FD; - &#x8BA9;&#x7A0B;&#x5E8F;&#x4E2D;&#x6CA1;&#x6709;&#x56E0;&#x679C;&#x5173;&#x7CFB;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x5E76;&#x53D1;&#x7684;&#x6267;&#x884C;</h1>
+<h1 id="2-&#x6539;&#x5584;&#x7528;&#x6237;&#x4F53;&#x9A8C;---&#x8BA9;&#x8017;&#x65F6;&#x95F4;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x7A0B;&#x5E8F;&#x7684;&#x5047;&#x6B7B;">2. &#x6539;&#x5584;&#x7528;&#x6237;&#x4F53;&#x9A8C; - &#x8BA9;&#x8017;&#x65F6;&#x95F4;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x7A0B;&#x5E8F;&#x7684;&#x5047;&#x6B7B;</h1>
+<p>import glob
 import os
-import threading</li>
-</ol>
+import threading</p>
 <p>from PIL import Image</p>
 <p>PREFIX = &apos;thumbnails&apos;</p>
 </li>
@@ -2560,11 +2584,9 @@ import threading</li>
  &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x8D44;&#x6E90;&#x7684;&#x60C5;&#x51B5;
 
  ```Python
- &quot;&quot;&quot;
- &#x591A;&#x7EBF;&#x7A0B;&#x7A0B;&#x5E8F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7ADE;&#x4E89;&#x8D44;&#x6E90;&#x5904;&#x7406;&#x8D77;&#x6765;&#x901A;&#x5E38;&#x4E5F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;
- &#x5F53;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x4E34;&#x754C;&#x8D44;&#x6E90;&#x7684;&#x65F6;&#x5019;&#x5982;&#x679C;&#x7F3A;&#x4E4F;&#x5FC5;&#x8981;&#x7684;&#x4FDD;&#x62A4;&#x63AA;&#x65BD;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x9519;&#x4E71;
- &#x8BF4;&#x660E;&#xFF1A;&#x4E34;&#x754C;&#x8D44;&#x6E90;&#x5C31;&#x662F;&#x88AB;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x7684;&#x8D44;&#x6E90;
- &quot;&quot;&quot;
+ # &#x591A;&#x7EBF;&#x7A0B;&#x7A0B;&#x5E8F;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7ADE;&#x4E89;&#x8D44;&#x6E90;&#x5904;&#x7406;&#x8D77;&#x6765;&#x901A;&#x5E38;&#x4E5F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;
+ # &#x5F53;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x4E34;&#x754C;&#x8D44;&#x6E90;&#x7684;&#x65F6;&#x5019;&#x5982;&#x679C;&#x7F3A;&#x4E4F;&#x5FC5;&#x8981;&#x7684;&#x4FDD;&#x62A4;&#x63AA;&#x65BD;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x9519;&#x4E71;
+ # &#x8BF4;&#x660E;&#xFF1A;&#x4E34;&#x754C;&#x8D44;&#x6E90;&#x5C31;&#x662F;&#x88AB;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x7684;&#x8D44;&#x6E90;
  import time
  import threading
 
@@ -2630,11 +2652,9 @@ import threading</li>
  &#x4FEE;&#x6539;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x542F;&#x52A8;5&#x4E2A;&#x7EBF;&#x7A0B;&#x5411;&#x8D26;&#x6237;&#x4E2D;&#x5B58;&#x94B1;&#xFF0C;5&#x4E2A;&#x7EBF;&#x7A0B;&#x4ECE;&#x8D26;&#x6237;&#x4E2D;&#x53D6;&#x94B1;&#xFF0C;&#x53D6;&#x94B1;&#x65F6;&#x5982;&#x679C;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#x5C31;&#x6682;&#x505C;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x7B49;&#x5F85;&#x3002;&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x4E0A;&#x8FF0;&#x76EE;&#x6807;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x5B58;&#x94B1;&#x548C;&#x53D6;&#x94B1;&#x7684;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#xFF0C;&#x5728;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#x65F6;&#x53D6;&#x94B1;&#x7684;&#x7EBF;&#x7A0B;&#x6682;&#x505C;&#x5E76;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x800C;&#x5B58;&#x94B1;&#x7684;&#x7EBF;&#x7A0B;&#x5C06;&#x94B1;&#x5B58;&#x5165;&#x540E;&#x8981;&#x901A;&#x77E5;&#x53D6;&#x94B1;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F7F;&#x5176;&#x4ECE;&#x6682;&#x505C;&#x72B6;&#x6001;&#x88AB;&#x5524;&#x9192;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;`threading`&#x6A21;&#x5757;&#x7684;Condition&#x6765;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;&#x9501;&#x6765;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;
 
  ```Python
- &quot;&quot;&quot;
- &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x4E00;&#x4E2A;&#x8D44;&#x6E90; - &#x4FDD;&#x62A4;&#x4E34;&#x754C;&#x8D44;&#x6E90; - &#x9501;&#xFF08;Lock/RLock&#xFF09;
- &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#xFF08;&#x7EBF;&#x7A0B;&#x6570;&gt;&#x8D44;&#x6E90;&#x6570;&#xFF09; - &#x4FE1;&#x53F7;&#x91CF;&#xFF08;Semaphore&#xFF09;
- &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x8C03;&#x5EA6; - &#x6682;&#x505C;&#x7EBF;&#x7A0B;&#x6267;&#x884C;/&#x5524;&#x9192;&#x7B49;&#x5F85;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B; - Condition
- &quot;&quot;&quot;
+ # &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x4E00;&#x4E2A;&#x8D44;&#x6E90; - &#x4FDD;&#x62A4;&#x4E34;&#x754C;&#x8D44;&#x6E90; - &#x9501;&#xFF08;Lock/RLock&#xFF09;
+ # &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7ADE;&#x4E89;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#xFF08;&#x7EBF;&#x7A0B;&#x6570;&gt;&#x8D44;&#x6E90;&#x6570;&#xFF09; - &#x4FE1;&#x53F7;&#x91CF;&#xFF08;Semaphore&#xFF09;
+ # &#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x8C03;&#x5EA6; - &#x6682;&#x505C;&#x7EBF;&#x7A0B;&#x6267;&#x884C;/&#x5524;&#x9192;&#x7B49;&#x5F85;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B; - Condition
  from concurrent.futures import ThreadPoolExecutor
  from random import randint
  from time import sleep
@@ -2699,19 +2719,17 @@ import threading</li>
  ```
 </code></pre><ul>
 <li><p>&#x591A;&#x8FDB;&#x7A0B;&#xFF1A;&#x591A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x7684;&#x89E3;&#x51B3;GIL&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x8FDB;&#x7A0B;&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#x662F;Process&#xFF0C;&#x5176;&#x4ED6;&#x8F85;&#x52A9;&#x7684;&#x7C7B;&#x8DDF;threading&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x7C7B;&#x4F3C;&#xFF0C;&#x8FDB;&#x7A0B;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7BA1;&#x9053;&#x3001;&#x5957;&#x63A5;&#x5B57;&#x7B49;&#xFF0C;&#x5728;multiprocessing&#x6A21;&#x5757;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;Queue&#x7C7B;&#xFF0C;&#x5B83;&#x57FA;&#x4E8E;&#x7BA1;&#x9053;&#x548C;&#x9501;&#x673A;&#x5236;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x7684;&#x961F;&#x5217;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E0A;&#x5173;&#x4E8E;&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x3002;</p>
-<p>```Python
-&quot;&quot;&quot;
-&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x4F7F;&#x7528;
-&#x591A;&#x7EBF;&#x7A0B;&#x56E0;&#x4E3A;GIL&#x7684;&#x5B58;&#x5728;&#x4E0D;&#x80FD;&#x591F;&#x53D1;&#x6325;CPU&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;
-&#x5BF9;&#x4E8E;&#x8BA1;&#x7B97;&#x5BC6;&#x96C6;&#x578B;&#x4EFB;&#x52A1;&#x5E94;&#x8BE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;
-time python3 example22.py
-real    0m11.512s
-user    0m39.319s
-sys     0m0.169s
-&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x540E;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x4E3A;11.512&#x79D2;&#xFF0C;&#x800C;&#x7528;&#x6237;&#x65F6;&#x95F4;39.319&#x79D2;&#x7EA6;&#x4E3A;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7684;4&#x500D;
-&#x8FD9;&#x5C31;&#x8BC1;&#x660E;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;CPU&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x914D;&#x7F6E;&#x4E86;4&#x6838;&#x7684;CPU
-&quot;&quot;&quot;
-import concurrent.futures
+<p>```Python</p>
+<h1 id="&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x4F7F;&#x7528;">&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x8FDB;&#x7A0B;&#x6C60;&#x7684;&#x4F7F;&#x7528;</h1>
+<h1 id="&#x591A;&#x7EBF;&#x7A0B;&#x56E0;&#x4E3A;gil&#x7684;&#x5B58;&#x5728;&#x4E0D;&#x80FD;&#x591F;&#x53D1;&#x6325;cpu&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;">&#x591A;&#x7EBF;&#x7A0B;&#x56E0;&#x4E3A;GIL&#x7684;&#x5B58;&#x5728;&#x4E0D;&#x80FD;&#x591F;&#x53D1;&#x6325;CPU&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;</h1>
+<h1 id="&#x5BF9;&#x4E8E;&#x8BA1;&#x7B97;&#x5BC6;&#x96C6;&#x578B;&#x4EFB;&#x52A1;&#x5E94;&#x8BE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;">&#x5BF9;&#x4E8E;&#x8BA1;&#x7B97;&#x5BC6;&#x96C6;&#x578B;&#x4EFB;&#x52A1;&#x5E94;&#x8BE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;</h1>
+<h1 id="time-python3-example22py">time python3 example22.py</h1>
+<h1 id="real----0m11512s">real    0m11.512s</h1>
+<h1 id="user----0m39319s">user    0m39.319s</h1>
+<h1 id="sys-----0m0169s">sys     0m0.169s</h1>
+<h1 id="&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x540E;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x4E3A;11512&#x79D2;&#xFF0C;&#x800C;&#x7528;&#x6237;&#x65F6;&#x95F4;39319&#x79D2;&#x7EA6;&#x4E3A;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7684;4&#x500D;">&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x540E;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x4E3A;11.512&#x79D2;&#xFF0C;&#x800C;&#x7528;&#x6237;&#x65F6;&#x95F4;39.319&#x79D2;&#x7EA6;&#x4E3A;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7684;4&#x500D;</h1>
+<h1 id="&#x8FD9;&#x5C31;&#x8BC1;&#x660E;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;cpu&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x914D;&#x7F6E;&#x4E86;4&#x6838;&#x7684;cpu">&#x8FD9;&#x5C31;&#x8BC1;&#x660E;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x591A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;CPU&#x7684;&#x591A;&#x6838;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x914D;&#x7F6E;&#x4E86;4&#x6838;&#x7684;CPU</h1>
+<p>import concurrent.futures
 import math</p>
 <p>PRIMES = [</p>
 <pre><code>1116281,
@@ -2767,11 +2785,9 @@ import math</p>
  &gt; 3. &#x7A0B;&#x5E8F;&#x5728;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x65B9;&#x9762;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x9650;&#x5236;&#x4E14;&#x4E0D;&#x5F3A;&#x4F9D;&#x8D56;&#x4E8E;I/O&#x64CD;&#x4F5C;&#xFF08;&#x5982;&#xFF1A;&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#x3001;&#x5957;&#x63A5;&#x5B57;&#x7B49;&#xFF09;&#x3002;
 </code></pre><ul>
 <li><p>&#x5F02;&#x6B65;&#x5904;&#x7406;&#xFF1A;&#x4ECE;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x7684;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x6311;&#x9009;&#x4EFB;&#x52A1;&#xFF0C;&#x8BE5;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x4EE5;&#x4EA4;&#x53C9;&#x7684;&#x5F62;&#x5F0F;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x4EFB;&#x52A1;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4EFB;&#x52A1;&#x5C06;&#x4EE5;&#x67D0;&#x79CD;&#x987A;&#x5E8F;&#x53BB;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x53D6;&#x51B3;&#x4E8E;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x613F;&#x610F;&#x5C06;CPU&#x5904;&#x7406;&#x65F6;&#x95F4;&#x8BA9;&#x4F4D;&#x7ED9;&#x53E6;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x3002;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x901A;&#x5E38;&#x901A;&#x8FC7;&#x591A;&#x4EFB;&#x52A1;&#x534F;&#x4F5C;&#x5904;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x7531;&#x4E8E;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x548C;&#x987A;&#x5E8F;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x56DE;&#x8C03;&#x5F0F;&#x7F16;&#x7A0B;&#x6216;&#x8005;<code>future</code>&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x3002;Python 3&#x901A;&#x8FC7;<code>asyncio</code>&#x6A21;&#x5757;&#x548C;<code>await</code>&#x548C;<code>async</code>&#x5173;&#x952E;&#x5B57;&#xFF08;&#x5728;Python 3.7&#x4E2D;&#x6B63;&#x5F0F;&#x88AB;&#x5217;&#x4E3A;&#x5173;&#x952E;&#x5B57;&#xFF09;&#x6765;&#x652F;&#x6301;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x3002;</p>
-<p>```Python
-&quot;&quot;&quot;
-&#x5F02;&#x6B65;I/O - async / await
-&quot;&quot;&quot;
-import asyncio</p>
+<p>```Python</p>
+<h1 id="&#x5F02;&#x6B65;io---async--await">&#x5F02;&#x6B65;I/O - async / await</h1>
+<p>import asyncio</p>
 </li>
 </ul>
 <pre><code> def num_generator(m, n):
@@ -2894,10 +2910,14 @@ import asyncio</p>
 
             
                 
-                <a href="04-迭代器和生成器.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 迭代器和生成器">
+                <a href="04-迭代器和生成器.html" class="navigation navigation-prev " aria-label="Previous page: 迭代器和生成器">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="06-asyncio异步编程.html" class="navigation navigation-next " aria-label="Next page: asynico异步编程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -2906,7 +2926,7 @@ import asyncio</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"并发和异步编程","level":"3.2.5","depth":2,"next":{"title":"Python 第三方库","level":"3.3","depth":1,"ref":"","articles":[{"title":"Django","level":"3.3.1","depth":2,"ref":"","articles":[{"title":"快速上手","level":"3.3.1.1","depth":3,"path":"Python/第三方库/Django/01-快速上手.md","ref":"./Python/第三方库/Django/01-快速上手.md","articles":[]},{"title":"深入模型","level":"3.3.1.2","depth":3,"path":"Python/第三方库/Django/02-深入模型.md","ref":"./Python/第三方库/Django/02-深入模型.md","articles":[]},{"title":"静态资源和Ajax请求","level":"3.3.1.3","depth":3,"path":"Python/第三方库/Django/03-静态资源和Ajax请求.md","ref":"./Python/第三方库/Django/03-静态资源和Ajax请求.md","articles":[]},{"title":"Django模板系统","level":"3.3.1.4","depth":3,"path":"Python/第三方库/Django/04-Django模板系统.md","ref":"./Python/第三方库/Django/04-Django模板系统.md","articles":[]},{"title":"Django的View(视图)","level":"3.3.1.5","depth":3,"path":"Python/第三方库/Django/05-Django的View.md","ref":"./Python/第三方库/Django/05-Django的View.md","articles":[]},{"title":"Django的路由系统","level":"3.3.1.6","depth":3,"path":"Python/第三方库/Django/06-Django的路由系统.md","ref":"./Python/第三方库/Django/06-Django的路由系统.md","articles":[]},{"title":"Django ORM相关操作","level":"3.3.1.7","depth":3,"path":"Python/第三方库/Django/07-Django-ORM相关操作.md","ref":"./Python/第三方库/Django/07-Django-ORM相关操作.md","articles":[]},{"title":"Cookie、Session和分页","level":"3.3.1.8","depth":3,"path":"Python/第三方库/Django/08-Cookie、Session和分页.md","ref":"./Python/第三方库/Django/08-Cookie、Session和分页.md","articles":[]},{"title":"Form、ModelForm组件","level":"3.3.1.9","depth":3,"path":"Python/第三方库/Django/09-Form和ModelForm组件.md","ref":"./Python/第三方库/Django/09-Form和ModelForm组件.md","articles":[]},{"title":"中间件","level":"3.3.1.10","depth":3,"path":"Python/第三方库/Django/10-中间件.md","ref":"./Python/第三方库/Django/10-中间件.md","articles":[]},{"title":"Django-REST-framework","level":"3.3.1.11","depth":3,"path":"Python/第三方库/Django/Django-REST-framework.md","ref":"./Python/第三方库/Django/Django-REST-framework.md","articles":[]}]},{"title":"Django项目开发经验","level":"3.3.2","depth":2,"ref":"","articles":[{"title":"登录相关","level":"3.3.2.1","depth":3,"path":"Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md","ref":"./Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md","articles":[]},{"title":"异常处理手柄","level":"3.3.2.2","depth":3,"path":"Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md","ref":"./Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md","articles":[]},{"title":"过滤相关","level":"3.3.2.3","depth":3,"path":"Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","ref":"./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","articles":[]},{"title":"存储类重写","level":"3.3.2.4","depth":3,"path":"Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md","ref":"./Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md","articles":[]},{"title":"序列化相关","level":"3.3.2.5","depth":3,"path":"Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","ref":"./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","articles":[]},{"title":"自动化测试","level":"3.3.2.6","depth":3,"path":"Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md","ref":"./Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md","articles":[]},{"title":"接口加速缓存","level":"3.3.2.7","depth":3,"path":"Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md","ref":"./Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md","articles":[]}]},{"title":"PyQt5","level":"3.3.3","depth":2,"ref":"","articles":[{"title":"导航","level":"3.3.3.1","depth":3,"path":"Python/第三方库/PyQt5/README.md","ref":"./Python/第三方库/PyQt5/README.md","articles":[]},{"title":"窗口","level":"3.3.3.2","depth":3,"path":"Python/第三方库/PyQt5/01-窗口.md","ref":"Python/第三方库/PyQt5/01-窗口.md","articles":[]},{"title":"按钮","level":"3.3.3.3","depth":3,"path":"Python/第三方库/PyQt5/02-按钮.md","ref":"Python/第三方库/PyQt5/02-按钮.md","articles":[]},{"title":"垂直布局和水平布局","level":"3.3.3.4","depth":3,"path":"Python/第三方库/PyQt5/03-垂直布局和水平布局.md","ref":"Python/第三方库/PyQt5/03-垂直布局和水平布局.md","articles":[]},{"title":"栅格布局","level":"3.3.3.5","depth":3,"path":"Python/第三方库/PyQt5/04-栅格布局.md","ref":"Python/第三方库/PyQt5/04-栅格布局.md","articles":[]},{"title":"布局添加标签Label","level":"3.3.3.6","depth":3,"path":"Python/第三方库/PyQt5/05-布局添加标签Label.md","ref":"Python/第三方库/PyQt5/05-布局添加标签Label.md","articles":[]},{"title":"布局添加背景图","level":"3.3.3.7","depth":3,"path":"Python/第三方库/PyQt5/06-布局添加背景图.md","ref":"Python/第三方库/PyQt5/06-布局添加背景图.md","articles":[]},{"title":"单选框","level":"3.3.3.8","depth":3,"path":"Python/第三方库/PyQt5/07-单选框.md","ref":"Python/第三方库/PyQt5/07-单选框.md","articles":[]},{"title":"复选框","level":"3.3.3.9","depth":3,"path":"Python/第三方库/PyQt5/08-复选框.md","ref":"Python/第三方库/PyQt5/08-复选框.md","articles":[]},{"title":"键盘提示","level":"3.3.3.10","depth":3,"path":"Python/第三方库/PyQt5/09-键盘提示.md","ref":"Python/第三方库/PyQt5/09-键盘提示.md","articles":[]},{"title":"行编辑Lineedit","level":"3.3.3.11","depth":3,"path":"Python/第三方库/PyQt5/10-行编辑lineedit.md","ref":"Python/第三方库/PyQt5/10-行编辑lineedit.md","articles":[]},{"title":"按钮组","level":"3.3.3.12","depth":3,"path":"Python/第三方库/PyQt5/11-按钮组.md","ref":"Python/第三方库/PyQt5/11-按钮组.md","articles":[]},{"title":"布局组","level":"3.3.3.13","depth":3,"path":"Python/第三方库/PyQt5/12-布局组.md","ref":"Python/第三方库/PyQt5/12-布局组.md","articles":[]},{"title":"无边框窗口","level":"3.3.3.14","depth":3,"path":"Python/第三方库/PyQt5/13-无边框窗口.md","ref":"Python/第三方库/PyQt5/13-无边框窗口.md","articles":[]},{"title":"框架Qframe","level":"3.3.3.15","depth":3,"path":"Python/第三方库/PyQt5/14-框架qframe.md","ref":"Python/第三方库/PyQt5/14-框架qframe.md","articles":[]},{"title":"分离器","level":"3.3.3.16","depth":3,"path":"Python/第三方库/PyQt5/15-分离器.md","ref":"Python/第三方库/PyQt5/15-分离器.md","articles":[]},{"title":"滑动条","level":"3.3.3.17","depth":3,"path":"Python/第三方库/PyQt5/16-滑动条.md","ref":"Python/第三方库/PyQt5/16-滑动条.md","articles":[]},{"title":"滚动条","level":"3.3.3.18","depth":3,"path":"Python/第三方库/PyQt5/17-滚动条.md","ref":"Python/第三方库/PyQt5/17-滚动条.md","articles":[]},{"title":"刻度盘","level":"3.3.3.19","depth":3,"path":"Python/第三方库/PyQt5/18-刻度盘.md","ref":"Python/第三方库/PyQt5/18-刻度盘.md","articles":[]},{"title":"Spinbox","level":"3.3.3.20","depth":3,"path":"Python/第三方库/PyQt5/19-spinbox.md","ref":"Python/第三方库/PyQt5/19-spinbox.md","articles":[]},{"title":"生成随机数","level":"3.3.3.21","depth":3,"path":"Python/第三方库/PyQt5/20-生成随机数.md","ref":"Python/第三方库/PyQt5/20-生成随机数.md","articles":[]},{"title":"进度条","level":"3.3.3.22","depth":3,"path":"Python/第三方库/PyQt5/21-进度条.md","ref":"Python/第三方库/PyQt5/21-进度条.md","articles":[]},{"title":"工具框","level":"3.3.3.23","depth":3,"path":"Python/第三方库/PyQt5/22-工具框.md","ref":"Python/第三方库/PyQt5/22-工具框.md","articles":[]},{"title":"菜单栏工具栏","level":"3.3.3.24","depth":3,"path":"Python/第三方库/PyQt5/23-菜单栏工具栏.md","ref":"Python/第三方库/PyQt5/23-菜单栏工具栏.md","articles":[]},{"title":"文档编辑框","level":"3.3.3.25","depth":3,"path":"Python/第三方库/PyQt5/24-文档编辑框.md","ref":"Python/第三方库/PyQt5/24-文档编辑框.md","articles":[]},{"title":"字体文本框","level":"3.3.3.26","depth":3,"path":"Python/第三方库/PyQt5/25-字体文本框.md","ref":"Python/第三方库/PyQt5/25-字体文本框.md","articles":[]},{"title":"颜色文本框","level":"3.3.3.27","depth":3,"path":"Python/第三方库/PyQt5/26-颜色文本框.md","ref":"Python/第三方库/PyQt5/26-颜色文本框.md","articles":[]},{"title":"打印（文本框）","level":"3.3.3.28","depth":3,"path":"Python/第三方库/PyQt5/27-打印（文本框）.md","ref":"Python/第三方库/PyQt5/27-打印（文本框）.md","articles":[]},{"title":"打印预览","level":"3.3.3.29","depth":3,"path":"Python/第三方库/PyQt5/28-打印预览.md","ref":"Python/第三方库/PyQt5/28-打印预览.md","articles":[]},{"title":"打印PDF","level":"3.3.3.30","depth":3,"path":"Python/第三方库/PyQt5/29-打印PDF.md","ref":"Python/第三方库/PyQt5/29-打印PDF.md","articles":[]},{"title":"消息框提示框（带选择的）","level":"3.3.3.31","depth":3,"path":"Python/第三方库/PyQt5/30-消息框提示框（带选择的）.md","ref":"Python/第三方库/PyQt5/30-消息框提示框（带选择的）.md","articles":[]},{"title":"右键菜单","level":"3.3.3.32","depth":3,"path":"Python/第三方库/PyQt5/31-右键菜单.md","ref":"Python/第三方库/PyQt5/31-右键菜单.md","articles":[]},{"title":"选项卡（单选下拉框和多选）","level":"3.3.3.33","depth":3,"path":"Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.md","ref":"Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.md","articles":[]},{"title":"Stack(堆叠)小部件","level":"3.3.3.34","depth":3,"path":"Python/第三方库/PyQt5/33-stack(堆叠","ref":"Python/第三方库/PyQt5/33-stack(堆叠","articles":[]},{"title":"可停靠的窗口小部件","level":"3.3.3.35","depth":3,"path":"Python/第三方库/PyQt5/34-可停靠的窗口小部件.md","ref":"Python/第三方库/PyQt5/34-可停靠的窗口小部件.md","articles":[]},{"title":"日历","level":"3.3.3.36","depth":3,"path":"Python/第三方库/PyQt5/35-日历.md","ref":"Python/第三方库/PyQt5/35-日历.md","articles":[]},{"title":"单选下拉框","level":"3.3.3.37","depth":3,"path":"Python/第三方库/PyQt5/36-单选下拉框.md","ref":"Python/第三方库/PyQt5/36-单选下拉框.md","articles":[]},{"title":"首字符模糊填充（查询）","level":"3.3.3.38","depth":3,"path":"Python/第三方库/PyQt5/37-首字符模糊填充（查询）.md","ref":"Python/第三方库/PyQt5/37-首字符模糊填充（查询）.md","articles":[]},{"title":"打开更多的窗口","level":"3.3.3.39","depth":3,"path":"Python/第三方库/PyQt5/38-打开更多的窗口.md","ref":"Python/第三方库/PyQt5/38-打开更多的窗口.md","articles":[]},{"title":"时间编辑","level":"3.3.3.40","depth":3,"path":"Python/第三方库/PyQt5/39-时间编辑.md","ref":"Python/第三方库/PyQt5/39-时间编辑.md","articles":[]},{"title":"列表部件","level":"3.3.3.41","depth":3,"path":"Python/第三方库/PyQt5/40-列表部件.md","ref":"Python/第三方库/PyQt5/40-列表部件.md","articles":[]},{"title":"列表部件小示例","level":"3.3.3.42","depth":3,"path":"Python/第三方库/PyQt5/41-列表部件小示例.md","ref":"Python/第三方库/PyQt5/41-列表部件小示例.md","articles":[]}]},{"title":"PySide","level":"3.3.4","depth":2,"ref":"","articles":[{"title":"Qt简介","level":"3.3.4.1","depth":3,"path":"Python/第三方库/PySide/01-Qt简介.md","ref":"./Python/第三方库/PySide/01-Qt简介.md","articles":[]},{"title":"界面设计师QtDesigner","level":"3.3.4.2","depth":3,"path":"Python/第三方库/PySide/02-界面设计师QtDesigner.md","ref":"./Python/第三方库/PySide/02-界面设计师QtDesigner.md","articles":[]},{"title":"发布程序","level":"3.3.4.3","depth":3,"path":"Python/第三方库/PySide/03-发布程序.md","ref":"./Python/第三方库/PySide/03-发布程序.md","articles":[]},{"title":"常用控件1","level":"3.3.4.4","depth":3,"path":"Python/第三方库/PySide/04-常用控件1.md","ref":"./Python/第三方库/PySide/04-常用控件1.md","articles":[]},{"title":"常用控件2","level":"3.3.4.5","depth":3,"path":"Python/第三方库/PySide/05-常用控件2.md","ref":"./Python/第三方库/PySide/05-常用控件2.md","articles":[]},{"title":"常用控件3","level":"3.3.4.6","depth":3,"path":"Python/第三方库/PySide/06-常用控件3.md","ref":"./Python/第三方库/PySide/06-常用控件3.md","articles":[]},{"title":"常用控件4","level":"3.3.4.7","depth":3,"path":"Python/第三方库/PySide/07-常用控件4.md","ref":"./Python/第三方库/PySide/07-常用控件4.md","articles":[]}]}]},"previous":{"title":"迭代器和生成器","level":"3.2.4","depth":2,"path":"Python/Python语言进阶/04-迭代器和生成器.md","ref":"./Python/Python语言进阶/04-迭代器和生成器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/05-并发和异步编程.md","mtime":"2021-07-20T02:04:05.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-19T11:16:54.955Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"并发和异步编程","level":"3.2.5","depth":2,"next":{"title":"asynico异步编程","level":"3.2.6","depth":2,"path":"Python/Python语言进阶/06-asyncio异步编程.md","ref":"./Python/Python语言进阶/06-asyncio异步编程.md","articles":[]},"previous":{"title":"迭代器和生成器","level":"3.2.4","depth":2,"path":"Python/Python语言进阶/04-迭代器和生成器.md","ref":"./Python/Python语言进阶/04-迭代器和生成器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/05-并发和异步编程.md","mtime":"2021-11-12T02:54:50.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T09:02:44.156Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

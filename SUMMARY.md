@@ -36,6 +36,7 @@
     - [网络编程入门](./Python/Python语言基础/13-网络编程入门.md)
     - [网络应用开发](./Python/Python语言基础/14-网络应用开发.md)
     - [图像和文档处理](./Python/Python语言基础/15-图像和办公文档处理.md)
+    - [logging日志模块](./Python/Python语言基础/16-logging日志模块.md)
 
 - Python语言进阶
     - [常用数据结构](./Python/Python语言进阶/01-常用数据结构和算法.md)
@@ -43,6 +44,7 @@
     - [面向对象高级知识](./Python/Python语言进阶/03-面向对象高级知识.md)
     - [迭代器和生成器](./Python/Python语言进阶/04-迭代器和生成器.md)
     - [并发和异步编程](./Python/Python语言进阶/05-并发和异步编程.md)
+    - [asynico异步编程](./Python/Python语言进阶/06-asyncio异步编程.md)
 
 - Python 第三方库
     - Django
