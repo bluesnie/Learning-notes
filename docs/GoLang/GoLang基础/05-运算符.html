@@ -1667,6 +1667,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.1.15" data-path="15-接口.html">
+            
+                <a href="15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2568,6 +2581,10 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>fmt.Println(-10 % 3)   // &#x7ED3;&#x679C;&#x662F; -1</p>
+<p>fmt.Println(10 % -3)   // &#x7ED3;&#x679C;&#x662F; 1</p>
+</blockquote>
 <h3 id="12&#x3001;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">1.2&#x3001;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
 <ul>
 <li><p><code>++</code> &#x548C; <code>--</code>&#x5728;go&#x8BED;&#x8A00;&#x4E2D;&#x4E0D;&#x662F;&#x8FD0;&#x7B97;&#x7B26;</p>
@@ -2629,7 +2646,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="3&#x3001;&#x5173;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;">3&#x3001;&#x5173;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</h2>
+<h2 id="3&#x3001;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;">3&#x3001;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</h2>
 <table>
 <thead>
 <tr>
@@ -2652,33 +2669,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="4&#x3001;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;">4&#x3001;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x8FD0;&#x7B97;&#x7B26;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">&amp;&amp;</td>
-<td style="text-align:left">&#x903B;&#x8F91; AND &#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x8FB9;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x90FD;&#x662F;True&#xFF0C;&#x5219;&#x4E3A;True&#xFF0C;&#x5426;&#x5219;&#x4E3A;False</td>
-</tr>
-<tr>
-<td style="text-align:left">||</td>
-<td style="text-align:left">&#x903B;&#x8F91; OR &#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x8FB9;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x6709;&#x4E00;&#x4E2A;&#x662F;True&#xFF0C;&#x5219;&#x4E3A;True&#xFF0C;&#x5426;&#x5219;&#x4E3A;False</td>
-</tr>
-<tr>
-<td style="text-align:left">!</td>
-<td style="text-align:left">&#x903B;&#x8F91; NOT &#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E3A;True&#xFF0C;&#x5219;&#x4E3A;False&#xFF0C;&#x5426;&#x5219;&#x4E3A;True</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>&#x77ED;&#x8DEF;&#x7528;&#x6CD5;&#xFF0C;&#x903B;&#x8F91;&#x4E0E;&#x524D;&#x9762;&#x4E3A;False&#x540E;&#x9762;&#x7684;&#x5C31;&#x4E0D;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x903B;&#x8F91;&#x6216;&#x524D;&#x9762;&#x7684;&#x4E3A;True&#x540E;&#x9762;&#x7684;&#x4E5F;&#x4E0D;&#x6267;&#x884C;&#x4E86;</li>
-</ul>
-<h2 id="5&#x3001;&#x8D4B;&#x503C;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;">5&#x3001;&#x8D4B;&#x503C;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</h2>
+<blockquote>
+<p>&#x77ED;&#x8DEF;&#x7528;&#x6CD5;&#xFF0C;&#x903B;&#x8F91;&#x4E0E;&#x524D;&#x9762;&#x4E3A;False&#x540E;&#x9762;&#x7684;&#x5C31;&#x4E0D;&#x6267;&#x884C;&#x4E86;&#xFF0C;&#x903B;&#x8F91;&#x6216;&#x524D;&#x9762;&#x7684;&#x4E3A;True&#x540E;&#x9762;&#x7684;&#x4E5F;&#x4E0D;&#x6267;&#x884C;&#x4E86;</p>
+</blockquote>
+<h2 id="4&#x3001;&#x8D4B;&#x503C;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;">4&#x3001;&#x8D4B;&#x503C;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</h2>
 <table>
 <thead>
 <tr>
@@ -2710,6 +2704,38 @@
 <tr>
 <td style="text-align:left">%=</td>
 <td style="text-align:left">&#x6C42;&#x4F59;&#x540E;&#x518D;&#x8D4B;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5&#x3001;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;">5&#x3001;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;</h2>
+<p>&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;&#x5BF9;&#x6574;&#x6570;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8FD0;&#x7B97;&#x7B26;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;&#x7684;&#x4E24;&#x6570;&#x5404;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x8FDB;&#x4F4D;&#x76F8;&#x4E0E;&#x3002;&#xFF08;&#x4E24;&#x4F4D;&#x5747;&#x4E3A;1&#x624D;&#x4E3A;1&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">|</td>
+<td style="text-align:left">&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;&#x7684;&#x4E24;&#x6570;&#x5404;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x8FDB;&#x4F4D;&#x76F8;&#x6216;&#x3002;&#xFF08;&#x4E24;&#x4F4D;&#x6709;&#x4E00;&#x4E2A;&#x4E3A;1&#x5C31;&#x4E3A;1&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;&#x7684;&#x4E24;&#x6570;&#x5404;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x8FDB;&#x4F4D;&#x76F8;&#x5F02;&#x6216;&#xFF0C;&#x5F53;&#x4E24;&#x5BF9;&#x5E94;&#x7684;&#x4E8C;&#x8FDB;&#x4F4D;&#x76F8;&#x5F02;&#x65F6;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;1,&#x3002;&#xFF08;&#x4E24;&#x4F4D;&#x4E0D;&#x4E00;&#x6837;&#x5219;&#x4E3A;1&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&lt;</td>
+<td style="text-align:left">&#x5DE6;&#x79FB;n&#x4F4D;&#x5C31;&#x662F;&#x4E58;&#x4EE5;2&#x7684;n&#x6B21;&#x65B9;&#x3002;&#x201C;a&lt;&lt;b&#x201D;&#x662F;&#x628A;a&#x7684;&#x5404;&#x4E8C;&#x8FDB;&#x4F4D;&#x5168;&#x90E8;&#x5DE6;&#x79FB;b&#x4F4D;&#xFF0C;&#x9AD8;&#x4F4D;&#x4E22;&#x5F03;&#xFF0C;&#x4F4E;&#x4F4D;&#x8865;0&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;&gt;</td>
+<td style="text-align:left">&#x5DE6;&#x79FB;n&#x4F4D;&#x5C31;&#x662F;&#x9664;&#x4EE5;2&#x7684;n&#x6B21;&#x65B9;&#x3002;&#x201C;a&gt;&gt;b&#x201D;&#x662F;&#x628A;a&#x7684;&#x5404;&#x4E8C;&#x8FDB;&#x4F4D;&#x5168;&#x90E8;&#x53F3;&#x79FB;b&#x4F4D;&#x3002;</td>
 </tr>
 </tbody>
 </table>
@@ -2756,7 +2782,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"运算符","level":"4.1.5","depth":2,"next":{"title":"流程控制","level":"4.1.6","depth":2,"path":"GoLang/GoLang基础/06-流程控制.md","ref":"./GoLang/GoLang基础/06-流程控制.md","articles":[]},"previous":{"title":"数据类型","level":"4.1.4","depth":2,"path":"GoLang/GoLang基础/04-数据类型.md","ref":"./GoLang/GoLang基础/04-数据类型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/05-运算符.md","mtime":"2021-07-20T02:04:04.486Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T09:02:44.156Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"运算符","level":"4.1.5","depth":2,"next":{"title":"流程控制","level":"4.1.6","depth":2,"path":"GoLang/GoLang基础/06-流程控制.md","ref":"./GoLang/GoLang基础/06-流程控制.md","articles":[]},"previous":{"title":"数据类型","level":"4.1.4","depth":2,"path":"GoLang/GoLang基础/04-数据类型.md","ref":"./GoLang/GoLang基础/04-数据类型.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/05-运算符.md","mtime":"2021-11-27T07:41:42.839Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-02T13:57:00.915Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

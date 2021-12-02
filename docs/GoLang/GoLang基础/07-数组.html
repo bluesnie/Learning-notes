@@ -1667,6 +1667,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.1.15" data-path="15-接口.html">
+            
+                <a href="15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2538,7 +2551,7 @@
 <h6 id="authornzb">author:nzb</h6>
 <h1 id="go&#x7684;&#x6570;&#x7EC4;"><a href="https://www.runoob.com/go/go-arrays.html" target="_blank">Go&#x7684;&#x6570;&#x7EC4;</a></h1>
 <h2 id="1&#x3001;array&#x6570;&#x7EC4;&#x4ECB;&#x7ECD;">1&#x3001;Array&#x6570;&#x7EC4;&#x4ECB;&#x7ECD;</h2>
-<p>&#x6570;&#x7EC4;&#x662F;&#x6307;&#x4E00;&#x7CFB;&#x5217;&#x540C;&#x4E00;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x96C6;&#x5408;&#x3002;&#x6570;&#x7EC4;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x88AB;&#x79F0;&#x4E3A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#xFF08;element&#xFF09;&#xFF0C;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F;&#x610F;&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;int&#x3001;string&#x7B49;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5305;&#x542B;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x88AB;&#x79F0;&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x5728;Golang&#x4E2D;&#x6570;&#x7EC4;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x56FA;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x662F;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;[5]int&#x548C;[10]int&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x3002;Golang&#x4E2D;&#x6570;&#x7EC4;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x7279;&#x70B9;&#x662F;&#x5360;&#x7528;&#x5185;&#x5B58;&#x7684;&#x8FDE;&#x7EED;&#x6027;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;&#x88AB;&#x5206;&#x914D;&#x5230;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E2D;&#x7684;&#xFF0C;&#x56E0;&#x800C;&#x7D22;&#x5F15;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;&#x3002;</p>
+<p>&#x6570;&#x7EC4;&#x662F;&#x6307;&#x4E00;&#x7CFB;&#x5217;&#x540C;&#x4E00;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x96C6;&#x5408;&#x3002;&#x6570;&#x7EC4;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x88AB;&#x79F0;&#x4E3A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#xFF08;element&#xFF09;&#xFF0C;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F;&#x610F;&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;int&#x3001;string&#x7B49;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5305;&#x542B;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x88AB;&#x79F0;&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x5728;Golang&#x4E2D;&#x6570;&#x7EC4;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x56FA;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;<strong>&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x662F;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x90E8;&#x5206;</strong>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;[5]int&#x548C;[10]int&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x3002;Golang&#x4E2D;&#x6570;&#x7EC4;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x7279;&#x70B9;&#x662F;&#x5360;&#x7528;&#x5185;&#x5B58;&#x7684;&#x8FDE;&#x7EED;&#x6027;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;&#x88AB;&#x5206;&#x914D;&#x5230;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E2D;&#x7684;&#xFF0C;&#x56E0;&#x800C;&#x7D22;&#x5F15;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;&#x3002;</p>
 <p>&#x548C;&#x6570;&#x7EC4;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x578B;&#x662F;Slice&#xFF08;&#x5207;&#x7247;&#xFF09;&#xFF0C;Slice&#x662F;&#x53EF;&#x4EE5;&#x589E;&#x957F;&#x548C;&#x6536;&#x7F29;&#x7684;&#x52A8;&#x6001;&#x5E8F;&#x5217;&#xFF0C;&#x529F;&#x80FD;&#x4E5F;&#x66F4;&#x7075;&#x6D3B;&#xFF0C;&#x4F46;&#x662F;&#x60F3;&#x8981;&#x7406;&#x89E3;slice&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x8BDD;&#x9700;&#x8981;&#x5148;&#x7406;&#x89E3;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x8282;&#x4E3B;&#x8981;&#x4E3A;&#x5927;&#x5BB6;&#x8BB2;&#x89E3;&#x6570;&#x7EC4;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
 <h2 id="2&#x3001;&#x6570;&#x7EC4;&#x5B9A;&#x4E49;">2&#x3001;&#x6570;&#x7EC4;&#x5B9A;&#x4E49;</h2>
 <pre><code class="lang-bash">    var variable_name [SIZE] variable_<span class="hljs-built_in">type</span>
@@ -2548,35 +2561,45 @@
     <span class="hljs-keyword">var</span> arr1 [<span class="hljs-number">3</span>]<span class="hljs-keyword">int</span>
     <span class="hljs-keyword">var</span> arr2 [<span class="hljs-number">4</span>]<span class="hljs-keyword">string</span>
     fmt.Printf(<span class="hljs-string">&quot;%T, %T \n&quot;</span>, arr1, arr2)
-
-    <span class="hljs-comment">// &#x6570;&#x7EC4;&#x7684;&#x521D;&#x59CB;&#x5316; &#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;</span>
-    <span class="hljs-keyword">var</span> arr3 [<span class="hljs-number">3</span>]<span class="hljs-keyword">int</span>
-    arr3[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>
-    arr3[<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>
-    arr3[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>
-    fmt.Println(arr3)
-
-    <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;</span>
-    <span class="hljs-keyword">var</span> arr4 = [<span class="hljs-number">4</span>]<span class="hljs-keyword">int</span> {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>}
-    fmt.Println(arr4)
-
-    <span class="hljs-comment">// &#x7B2C;&#x4E09;&#x79CD;&#x6570;&#x7EC4;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#xFF0C;&#x81EA;&#x52A8;&#x63A8;&#x65AD;&#x6570;&#x7EC4;&#x957F;&#x5EA6;</span>
-    <span class="hljs-keyword">var</span> arr5 = [...]<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>}
-    fmt.Println(arr5)
-
-    <span class="hljs-comment">// &#x7B2C;&#x56DB;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6307;&#x5B9A;&#x4E0B;&#x6807;</span>
-    a := [...]<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>:<span class="hljs-number">1</span>, <span class="hljs-number">3</span>:<span class="hljs-number">5</span>}
-    fmt.Println(a)
 </code></pre>
+<ul>
+<li><p>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-go">  <span class="hljs-keyword">var</span> arr3 [<span class="hljs-number">3</span>]<span class="hljs-keyword">int</span>
+  arr3[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>
+  arr3[<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>
+  arr3[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>
+  fmt.Println(arr3)
+</code></pre>
+</li>
+<li><p>&#x7B2C;&#x4E8C;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-go">  <span class="hljs-keyword">var</span> arr4 = [<span class="hljs-number">4</span>]<span class="hljs-keyword">int</span> {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>}
+  fmt.Println(arr4)
+</code></pre>
+</li>
+<li><p>&#x7B2C;&#x4E09;&#x79CD;&#x6570;&#x7EC4;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#xFF0C;&#x81EA;&#x52A8;&#x63A8;&#x65AD;&#x6570;&#x7EC4;&#x957F;&#x5EA6;</p>
+<pre><code class="lang-go">  <span class="hljs-keyword">var</span> arr5 = [...]<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>}
+  fmt.Println(arr5)
+</code></pre>
+</li>
+<li><p>&#x7B2C;&#x56DB;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6307;&#x5B9A;&#x4E0B;&#x6807;</p>
+<pre><code class="lang-go">  a := [...]<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>:<span class="hljs-number">1</span>, <span class="hljs-number">3</span>:<span class="hljs-number">5</span>}
+  fmt.Println(a)
+</code></pre>
+</li>
+</ul>
 <h2 id="3&#x3001;&#x904D;&#x5386;&#x6570;&#x7EC4;">3&#x3001;&#x904D;&#x5386;&#x6570;&#x7EC4;</h2>
-<p>&#x65B9;&#x6CD5;1</p>
+<ul>
+<li>&#x65B9;&#x6CD5;1</li>
+</ul>
 <pre><code class="lang-go">    <span class="hljs-comment">// &#x7B2C;&#x56DB;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6307;&#x5B9A;&#x4E0B;&#x6807;</span>
     a := [...]<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>:<span class="hljs-number">1</span>, <span class="hljs-number">3</span>:<span class="hljs-number">5</span>}
     <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(a); i++ {
         fmt.Print(a[i], <span class="hljs-string">&quot; &quot;</span>)
     }
 </code></pre>
-<p>&#x65B9;&#x6CD5;2</p>
+<ul>
+<li>&#x65B9;&#x6CD5;2</li>
+</ul>
 <pre><code class="lang-go">    <span class="hljs-comment">// &#x7B2C;&#x56DB;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6307;&#x5B9A;&#x4E0B;&#x6807;</span>
     a := [...]<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>:<span class="hljs-number">1</span>, <span class="hljs-number">3</span>:<span class="hljs-number">5</span>}
     <span class="hljs-keyword">for</span> _, value := <span class="hljs-keyword">range</span> a {
@@ -2786,7 +2809,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数组","level":"4.1.7","depth":2,"next":{"title":"切片","level":"4.1.8","depth":2,"path":"GoLang/GoLang基础/08-切片.md","ref":"./GoLang/GoLang基础/08-切片.md","articles":[]},"previous":{"title":"流程控制","level":"4.1.6","depth":2,"path":"GoLang/GoLang基础/06-流程控制.md","ref":"./GoLang/GoLang基础/06-流程控制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/07-数组.md","mtime":"2021-07-20T02:04:04.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T09:02:44.156Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数组","level":"4.1.7","depth":2,"next":{"title":"切片","level":"4.1.8","depth":2,"path":"GoLang/GoLang基础/08-切片.md","ref":"./GoLang/GoLang基础/08-切片.md","articles":[]},"previous":{"title":"流程控制","level":"4.1.6","depth":2,"path":"GoLang/GoLang基础/06-流程控制.md","ref":"./GoLang/GoLang基础/06-流程控制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/07-数组.md","mtime":"2021-11-27T09:00:31.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-02T13:57:00.915Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

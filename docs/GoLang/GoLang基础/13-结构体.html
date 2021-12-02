@@ -1667,6 +1667,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.1.15" data-path="15-接口.html">
+            
+                <a href="15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2542,7 +2555,7 @@
 <p>Golang&#x4E2D;&#x7684;&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x88C5;&#x793A;&#x4E00;&#x4E9B;&#x4E8B;&#x7269;&#x7684;&#x57FA;&#x672C;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x6211;&#x4EEC;&#x60F3;&#x8868;&#x8FBE;&#x4E00;&#x4E2A;&#x4E8B;&#x7269;&#x7684;&#x5168;&#x90E8;&#x6216;&#x90E8;&#x5206;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x518D;&#x7528;&#x5355;&#x4E00;&#x7684;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5C31;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#x4E86;&#xFF0C;Golang&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C01;&#x88C5;&#x591A;&#x4E2A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EB;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x82F1;&#x6587;&#x540D;&#x79F0;struct&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;struct&#x6765;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x578B;&#x4E86;&#x3002;</p>
 <h2 id="2&#x3001;type&#x5173;&#x952E;&#x5B57;">2&#x3001;Type&#x5173;&#x952E;&#x5B57;</h2>
 <p>Golang&#x4E2D;&#x901A;&#x8FC7;type&#x5173;&#x952E;&#x8BCD;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x6570;&#x7EC4;&#x548C;&#x7ED3;&#x6784;&#x4F53;&#x90FD;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x548C;Java&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;</p>
-<h3 id="21&#x3001;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;">2.1&#x3001;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;</h3>
+<h3 id="21&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;">2.1&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;</h3>
 <p>&#x5728;Go&#x8BED;&#x8A00;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5982;string&#x3001;&#x6574;&#x578B;&#x3001;&#x6D6E;&#x70B9;&#x578B;&#x3001;&#x5E03;&#x5C14;&#x7B49;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;Go&#x8BED;&#x8A00;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;type&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x3002;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> myInt <span class="hljs-keyword">int</span>
 </code></pre>
@@ -2577,9 +2590,33 @@ func main() {
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> <span class="hljs-keyword">byte</span> = <span class="hljs-keyword">uint8</span>
 <span class="hljs-keyword">type</span> <span class="hljs-keyword">rune</span> = <span class="hljs-keyword">int32</span>
 </code></pre>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-text">type myInt int              // &#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;
+type myFloat = float64      // &#x7C7B;&#x578B;&#x522B;&#x540D;
+
+func main(){
+    var a myInt = 10
+    fmt.Printf(&quot;%v %T&quot;, a, a)   // 10  main.myInt
+
+    var b myFloat = 12.3
+    fmt.Printf(&quot;%v %T&quot;, b, b)   // 12.3  float64s
+}
+</code></pre>
 <h2 id="3&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;">3&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x548C;&#x521D;&#x59CB;&#x5316;</h2>
 <h3 id="31&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B9A;&#x4E49;">3.1&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B9A;&#x4E49;</h3>
 <p>&#x4F7F;&#x7528;type  &#x548C; struct&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-text">type &#x7C7B;&#x578B;&#x540D; struct {
+    &#x5B57;&#x6BB5;&#x540D;  &#x5B57;&#x6BB5;&#x7C7B;&#x578B;
+    &#x5B57;&#x6BB5;&#x540D;  &#x5B57;&#x6BB5;&#x7C7B;&#x578B;
+    ...
+}
+</code></pre>
+<p>&#x5176;&#x4E2D;</p>
+<ul>
+<li>&#x7C7B;&#x578B;&#x540D;&#xFF1A;&#x8868;&#x793A;&#x81EA;&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5305;&#x5185;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x3002;</li>
+<li>&#x5B57;&#x6BB5;&#x540D;&#xFF1A;&#x8868;&#x793A;&#x7ED3;&#x6784;&#x4F53;&#x5B57;&#x6BB5;&#x540D;&#x3002;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#x3002;</li>
+<li>&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#xFF1A;&#x8868;&#x793A;&#x7ED3;&#x6784;&#x4F53;&#x5B57;&#x6BB5;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x3002;</li>
+</ul>
 <pre><code class="lang-go"><span class="hljs-comment">/**
     &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4EBA;&#x7ED3;&#x6784;&#x4F53;
  */</span>
@@ -2608,7 +2645,7 @@ func main() {
 }
 </code></pre>
 <h3 id="32&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;1">3.2&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;1</h3>
-<p>&#x521A;&#x521A;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#x7528;&#x5230;&#x4E86;&#xFF1A;var person Person</p>
+<p>&#x521A;&#x521A;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#x7528;&#x5230;&#x4E86;&#xFF1A;<code>var person Person</code></p>
 <pre><code class="lang-go"><span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;</span>
 <span class="hljs-keyword">var</span> person Person
 person.name = <span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>
@@ -2616,7 +2653,7 @@ person.age = <span class="hljs-number">20</span>
 person.sex = <span class="hljs-string">&quot;&#x7537;&quot;</span>
 </code></pre>
 <h3 id="33&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;2">3.3&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;2</h3>
-<p>&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x4F7F;&#x7528;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x901A;&#x8FC7;new&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4E0B;</p>
+<p>&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x4F7F;&#x7528;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x901A;&#x8FC7;<code>new</code>&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4E0B;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">var</span> person2 = <span class="hljs-built_in">new</span>(Person)
 person2.name = <span class="hljs-string">&quot;&#x674E;&#x56DB;&quot;</span>
 person2.age = <span class="hljs-number">30</span>
@@ -2632,7 +2669,7 @@ fmt.Printf(<span class="hljs-string">&quot;%#v&quot;</span>, person2)
 (*person2).name = <span class="hljs-string">&quot;&#x674E;&#x56DB;&quot;</span>
 </code></pre>
 <h3 id="34&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;3">3.4&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;3</h3>
-<p>&#x4F7F;&#x7528;&amp;&#x5BF9;&#x7ED3;&#x6784;&#x4F53;&#x8FDB;&#x884C;&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5BF9;&#x8BE5;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21;new&#x5B9E;&#x4F8B;&#x5316;&#x64CD;&#x4F5C;</p>
+<p>&#x4F7F;&#x7528;<code>&amp;</code>&#x5BF9;&#x7ED3;&#x6784;&#x4F53;&#x8FDB;&#x884C;&#x53D6;&#x5730;&#x5740;&#x64CD;&#x4F5C;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5BF9;&#x8BE5;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21;new&#x5B9E;&#x4F8B;&#x5316;&#x64CD;&#x4F5C;</p>
 <pre><code class="lang-go"><span class="hljs-comment">// &#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x5B9E;&#x4F8B;&#x5316;</span>
 <span class="hljs-keyword">var</span> person3 = &amp;Person{}
 person3.name = <span class="hljs-string">&quot;&#x8D75;&#x56DB;&quot;</span>
@@ -2641,7 +2678,7 @@ person3.sex = <span class="hljs-string">&quot;&#x7537;&quot;</span>
 fmt.Printf(<span class="hljs-string">&quot;%#v&quot;</span>, person3)
 </code></pre>
 <h3 id="35&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;4">3.5&#x3001;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;4</h3>
-<p>&#x4F7F;&#x7528;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x503C;</p>
+<p>&#x4F7F;&#x7528;<code>&#x952E;&#x503C;&#x5BF9;</code>&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x503C;</p>
 <pre><code class="lang-go"><span class="hljs-comment">// &#x7B2C;&#x56DB;&#x79CD;&#x65B9;&#x5F0F;&#x521D;&#x59CB;&#x5316;</span>
 <span class="hljs-keyword">var</span> person4 = Person{
     name: <span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>,
@@ -2724,7 +2761,9 @@ fmt.Println(person6)
 <pre><code class="lang-bash"> &#x59D3;&#x540D;: &#x5F20;&#x4E09; &#x5E74;&#x9F84;: 18 &#x6027;&#x522B;: &#x5973;
  &#x59D3;&#x540D;: &#x674E;&#x56DB; &#x5E74;&#x9F84;: 18 &#x6027;&#x522B;: &#x7537;
 </code></pre>
+<blockquote>
 <p>&#x6CE8;&#x610F;&#xFF0C;&#x56E0;&#x4E3A;&#x7ED3;&#x6784;&#x4F53;&#x662F;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;&#x4F20;&#x5165;&#x7684;&#x6307;&#x9488;(&#x4FEE;&#x6539;&#x7684;&#x662F;&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x7684;&#x5C5E;&#x6027;)</p>
+</blockquote>
 <pre><code class="lang-go"><span class="hljs-keyword">func</span> (p *Person) SetInfo(name <span class="hljs-keyword">string</span>, age <span class="hljs-keyword">int</span>, sex <span class="hljs-keyword">string</span>)  {
     p.name = name
     p.age = age
@@ -2732,7 +2771,7 @@ fmt.Println(person6)
 }
 </code></pre>
 <ul>
-<li>&#x4E0D;&#x4F20;&#x6307;&#x9488;(&#x4FEE;&#x6539;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x90FD;&#x4E00;&#x6837;)<pre><code class="lang-go"><span class="hljs-keyword">func</span> (p Person) SetInfo(name <span class="hljs-keyword">string</span>, age <span class="hljs-keyword">int</span>, sex <span class="hljs-keyword">string</span>)  {
+<li>&#x4E0D;&#x4F20;&#x6307;&#x9488;(&#x4FEE;&#x6539;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5C5E;&#x6027;p&#xFF0C;&#x4E0D;&#x662F;&#x4FEE;&#x6539;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x4F8B;&#x7684;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x90FD;&#x4E00;&#x6837;)<pre><code class="lang-go"><span class="hljs-keyword">func</span> (p Person) SetInfo(name <span class="hljs-keyword">string</span>, age <span class="hljs-keyword">int</span>, sex <span class="hljs-keyword">string</span>)  {
   p.name = name
   p.age = age
   p.sex = sex
@@ -2759,9 +2798,12 @@ fmt.Println(person6)
     a.PrintInfo()
 }
 </code></pre>
+<blockquote>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x975E;&#x672C;&#x5730;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x7ED9;&#x522B;&#x7684;&#x5305;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x3002;</p>
+</blockquote>
 <h2 id="6&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x533F;&#x540D;&#x5B57;&#x6BB5;">6&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x533F;&#x540D;&#x5B57;&#x6BB5;</h2>
-<p>&#x7ED3;&#x6784;&#x4F53;&#x5141;&#x8BB8;&#x5176;&#x6210;&#x5458;&#x5B57;&#x6BB5;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x6CA1;&#x6709;&#x5B57;&#x6BB5;&#x540D;&#x800C;&#x53EA;&#x6709;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x79CD;&#x6CA1;&#x6709;&#x540D;&#x5B57;&#x7684;&#x5B57;&#x6BB5;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x533F;&#x540D;&#x5B57;&#x6BB5;</p>
-<p>&#x533F;&#x540D;&#x5B57;&#x6BB5;&#x9ED8;&#x8BA4;&#x91C7;&#x7528;&#x7C7B;&#x578B;&#x540D;&#x4F5C;&#x4E3A;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x8981;&#x6C42;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x540C;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x533F;&#x540D;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x4E00;&#x4E2A;</p>
+<p>&#x7ED3;&#x6784;&#x4F53;&#x5141;&#x8BB8;&#x5176;&#x6210;&#x5458;&#x5B57;&#x6BB5;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x6CA1;&#x6709;&#x5B57;&#x6BB5;&#x540D;&#x800C;&#x53EA;&#x6709;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x79CD;&#x6CA1;&#x6709;&#x540D;&#x5B57;&#x7684;&#x5B57;&#x6BB5;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x533F;&#x540D;&#x5B57;&#x6BB5;</strong></p>
+<p><strong>&#x533F;&#x540D;&#x5B57;&#x6BB5;&#x9ED8;&#x8BA4;&#x91C7;&#x7528;&#x7C7B;&#x578B;&#x540D;&#x4F5C;&#x4E3A;&#x5B57;&#x6BB5;&#x540D;</strong>&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x8981;&#x6C42;&#x5B57;&#x6BB5;&#x540D;&#x79F0;<strong>&#x5FC5;&#x987B;&#x552F;&#x4E00;</strong>&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x540C;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x533F;&#x540D;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x4E00;&#x4E2A;</p>
 <pre><code class="lang-go"><span class="hljs-comment">/**
     &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4EBA;&#x7ED3;&#x6784;&#x4F53;
  */</span>
@@ -2779,7 +2821,7 @@ fmt.Println(person6)
 }
 </code></pre>
 <p>&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5207;&#x7247;&#x3001;Map &#x4EE5;&#x53CA;&#x7ED3;&#x6784;&#x4F53;</p>
-<p>&#x5982;&#x679C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x7C7B;&#x4F3C;&#x662F;&#xFF1A;&#x6307;&#x9488;&#x3001;slice&#x3001;&#x548C; map &#x7684;&#x96F6;&#x503C;&#x90FD;&#x662F;nil&#xFF0C;&#x5373;&#x8FD8;&#x6CA1;&#x6709;&#x5206;&#x914D;&#x7A7A;&#x95F4;</p>
+<p>&#x5982;&#x679C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x662F;&#xFF1A;&#x6307;&#x9488;&#x3001;slice&#x3001;&#x548C; map &#x7684;&#x96F6;&#x503C;&#x90FD;&#x662F;nil&#xFF0C;&#x5373;&#x8FD8;&#x6CA1;&#x6709;&#x5206;&#x914D;&#x7A7A;&#x95F4;</p>
 <p>&#x5982;&#x679C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x9700;&#x8981;&#x5148;make&#xFF0C;&#x624D;&#x80FD;&#x4F7F;&#x7528;</p>
 <pre><code class="lang-go"><span class="hljs-comment">/**
     &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4EBA;&#x7ED3;&#x6784;&#x4F53;
@@ -2846,50 +2888,87 @@ fmt.Println(person6)
 </code></pre>
 <h2 id="7&#x3001;&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x51B2;&#x7A81;">7&#x3001;&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x51B2;&#x7A81;</h2>
 <p>&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x4F53;&#x5185;&#x90E8;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x6B67;&#x4E49;&#xFF0C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7684;&#x5185;&#x5D4C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x7236;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x5B57;&#x6BB5; &#x548C; &#x5B50;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x76F8;&#x4F3C;&#xFF09;</p>
-<p>&#x9ED8;&#x8BA4;&#x4F1A;&#x4ECE;&#x7236;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5BFB;&#x627E;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#x7684;&#x8BDD;&#xFF0C;&#x518D;&#x53BB;&#x5B50;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5728;&#x627E;</p>
+<p><strong>&#x9ED8;&#x8BA4;&#x4F1A;&#x4ECE;&#x7236;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5BFB;&#x627E;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#x7684;&#x8BDD;&#xFF0C;&#x518D;&#x53BB;&#x5B50;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5728;&#x627E;(&#x53EF;&#x83B7;&#x53D6;&#x503C;&#x548C;&#x8BBE;&#x7F6E;&#x503C;)</strong></p>
 <p>&#x5982;&#x679C;&#x5B50;&#x7C7B;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#xFF0C;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x7740;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x7A0B;&#x5E8F;&#x4E0D;&#x77E5;&#x9053;&#x4FEE;&#x6539;&#x90A3;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x4E3A;&#x51C6;&#x3002;</p>
 <h2 id="8&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EE7;&#x627F;">8&#x3001;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EE7;&#x627F;</h2>
-<p>&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5D4C;&#x5957;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5206;&#x522B;&#x662F;Animal &#x548C; Dog&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;Dog&#x7ED3;&#x6784;&#x4F53; &#x7EE7;&#x627F;&#x4E8E; Animal&#x7ED3;&#x6784;&#x4F53;</p>
-<pre><code class="lang-go"><span class="hljs-comment">// &#x7528;&#x6237;&#x7ED3;&#x6784;&#x4F53;</span>
-<span class="hljs-keyword">type</span> Animal <span class="hljs-keyword">struct</span> {
-    name <span class="hljs-keyword">string</span>
+<p>&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5D4C;&#x5957;&#xFF0C;&#x53EF;<strong>&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x4F53;&#x6216;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;</strong>&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5206;&#x522B;&#x662F;Animal &#x548C; Dog&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;Dog&#x7ED3;&#x6784;&#x4F53; &#x7EE7;&#x627F;&#x4E8E; Animal&#x7ED3;&#x6784;&#x4F53;</p>
+<ul>
+<li>&#x7EE7;&#x627F;-&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x4F53;
+```go
+// &#x7528;&#x6237;&#x7ED3;&#x6784;&#x4F53;
+type Animal struct {
+  name string
 }
-<span class="hljs-keyword">func</span> (a Animal) run() {
-    fmt.Printf(<span class="hljs-string">&quot;%v &#x5728;&#x8FD0;&#x52A8; \n&quot;</span>, a.name)
+func (a Animal) run() {
+  fmt.Printf(&quot;%v &#x5728;&#x8FD0;&#x52A8; \n&quot;, a.name)
 }
-<span class="hljs-comment">// &#x5B50;&#x7ED3;&#x6784;&#x4F53;</span>
-<span class="hljs-keyword">type</span> Dog <span class="hljs-keyword">struct</span> {
-    age <span class="hljs-keyword">int</span>
-    <span class="hljs-comment">// &#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4F53;&#x5D4C;&#x5957;&#xFF0C;&#x5B8C;&#x6210;&#x7EE7;&#x627F;</span>
-    Animal
+// &#x5B50;&#x7ED3;&#x6784;&#x4F53;
+type Dog struct {
+  age int
+  // &#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4F53;&#x5D4C;&#x5957;&#xFF0C;&#x5B8C;&#x6210;&#x7EE7;&#x627F;
+  Animal
 }
-<span class="hljs-keyword">func</span> (dog Dog) wang()  {
-    fmt.Printf(<span class="hljs-string">&quot;%v &#x5728;&#x6C6A;&#x6C6A;&#x6C6A; \n&quot;</span>, dog.name)
-}
-
-<span class="hljs-keyword">func</span> main() {
-    <span class="hljs-keyword">var</span> dog = Dog{
-        age: <span class="hljs-number">10</span>,
+func (dog Dog) wang()  {
+  fmt.Printf(&quot;%v &#x5728;&#x6C6A;&#x6C6A;&#x6C6A; \n&quot;, dog.name)
+}</li>
+</ul>
+<p>func main() {
+    var dog = Dog{
+        age: 10,
         Animal: Animal{
-            name: <span class="hljs-string">&quot;&#x963F;&#x5E15;&#x5947;&quot;</span>,
+            name: &quot;&#x963F;&#x5E15;&#x5947;&quot;,
         },
     }
     dog.run();
     dog.wang();
-}
-</code></pre>
-<p>&#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x53D1;&#x73B0;Dog&#x62E5;&#x6709;&#x4E86;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-bash">&#x963F;&#x5E15;&#x5947; &#x5728;&#x8FD0;&#x52A8; 
+}</p>
+<pre><code>
+&#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x53D1;&#x73B0;Dog&#x62E5;&#x6709;&#x4E86;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;
+
+```bash
+&#x963F;&#x5E15;&#x5947; &#x5728;&#x8FD0;&#x52A8; 
 &#x963F;&#x5E15;&#x5947; &#x5728;&#x6C6A;&#x6C6A;&#x6C6A;
-</code></pre>
-<h2 id="9&#x3001;go&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x548C;json&#x76F8;&#x4E92;&#x8F6C;&#x6362;">9&#x3001;Go&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x548C;Json&#x76F8;&#x4E92;&#x8F6C;&#x6362;</h2>
-<p>JSON&#xFF08;JavaScript Object Notation&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;&#x3002;&#x6613;&#x4E8E;&#x4EBA;&#x9605;&#x8BFB;&#x548C;&#x7F16;&#x5199;&#x3002;&#x540C;&#x65F6;&#x4E5F;&#x6613;&#x4E8E;&#x673A;&#x5668;&#x89E3;&#x6790;&#x548C;&#x751F;&#x6210;&#x3002;RESTfull Api&#x63A5;&#x53E3;&#x4E2D;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;json&#x6570;&#x636E;&#x3002;</p>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>,
-    <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">15</span>
+</code></pre><ul>
+<li>&#x7EE7;&#x627F;-&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;
+```go
+// &#x7528;&#x6237;&#x7ED3;&#x6784;&#x4F53;
+type Animal struct {
+  name string
 }
-</code></pre>
-<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;Golang&#x8981;&#x7ED9;App&#x6216;&#x8005;&#x5C0F;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;Api&#x63A5;&#x53E3;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x6D89;&#x53CA;&#x5230;&#x7ED3;&#x6784;&#x4F53;&#x548C;Json&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;
+func (a Animal) run() {
+  fmt.Printf(&quot;%v &#x5728;&#x8FD0;&#x52A8; \n&quot;, a.name)
+}
+// &#x5B50;&#x7ED3;&#x6784;&#x4F53;
+type Dog struct {
+  age int
+  // &#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4F53;&#x5D4C;&#x5957;&#xFF0C;&#x5B8C;&#x6210;&#x7EE7;&#x627F;
+  *Animal     // &#x8FD9;&#x8FB9;&#x7EE7;&#x627F;&#x7684;&#x662F;&#x6307;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;
+}
+func (dog Dog) wang()  {
+  fmt.Printf(&quot;%v &#x5728;&#x6C6A;&#x6C6A;&#x6C6A; \n&quot;, dog.name)
+}</li>
+</ul>
+<p>func main() {
+    var dog = Dog{
+        age: 10,
+        Animal: &amp;Animal{   // &#x56E0;&#x4E3A;&#x4EC0;&#x4E48;&#x7EE7;&#x627F;&#x7684;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x8FB9;&#x9700;&#x8981;&#x4F20;&#x6307;&#x9488;
+            name: &quot;&#x963F;&#x5E15;&#x5947;&quot;,
+        },
+    }
+    dog.run();
+    dog.wang();
+}</p>
+<pre><code>
+## 9&#x3001;Go&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x548C;Json&#x76F8;&#x4E92;&#x8F6C;&#x6362;
+
+JSON&#xFF08;JavaScript Object Notation&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;&#x3002;&#x6613;&#x4E8E;&#x4EBA;&#x9605;&#x8BFB;&#x548C;&#x7F16;&#x5199;&#x3002;&#x540C;&#x65F6;&#x4E5F;&#x6613;&#x4E8E;&#x673A;&#x5668;&#x89E3;&#x6790;&#x548C;&#x751F;&#x6210;&#x3002;RESTfull Api&#x63A5;&#x53E3;&#x4E2D;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;json&#x6570;&#x636E;&#x3002;
+
+```json
+{
+    &quot;name&quot;: &quot;&#x5F20;&#x4E09;&quot;,
+    &quot;age&quot;: 15
+}
+</code></pre><p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;Golang&#x8981;&#x7ED9;App&#x6216;&#x8005;&#x5C0F;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;Api&#x63A5;&#x53E3;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x6D89;&#x53CA;&#x5230;&#x7ED3;&#x6784;&#x4F53;&#x548C;Json&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;
 Golang JSON&#x5E8F;&#x5217;&#x5316;&#x662F;&#x6307;&#x628A;&#x7ED3;&#x6784;&#x4F53;&#x6570;&#x636E;&#x8F6C;&#x5316;&#x6210;JSON&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;Golang JSON&#x7684;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x662F;&#x6307;&#x628A;JSON&#x6570;&#x636E;&#x8F6C;&#x5316;&#x6210;Golang&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x5BF9;&#x8C61;</p>
 <p>Golang&#x4E2D;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x201C;encoding/json&#x201D;&#x5305;&#x4E2D;&#x7684; json.Marshal() &#x548C; son.Unmarshal()</p>
 <pre><code class="lang-go"><span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5B66;&#x751F;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x6CE8;&#x610F;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x5FC5;&#x987B;&#x5927;&#x5199;&#xFF0C;&#x4EE3;&#x8868;&#x516C;&#x6709;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x65E0;&#x6CD5;&#x8F6C;&#x6362;</span>
@@ -2924,7 +3003,7 @@ Golang JSON&#x5E8F;&#x5217;&#x5316;&#x662F;&#x6307;&#x628A;&#x7ED3;&#x6784;&#x4F
     <span class="hljs-comment">// Json&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x7ED3;&#x6784;&#x4F53;</span>
     <span class="hljs-keyword">var</span> str = <span class="hljs-string">`{&quot;ID&quot;:&quot;12&quot;,&quot;Gender&quot;:&quot;&#x7537;&quot;,&quot;Name&quot;:&quot;&#x674E;&#x56DB;&quot;,&quot;Sno&quot;:&quot;s001&quot;}`</span>
     <span class="hljs-keyword">var</span> s2 = Student{}
-    <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x9700;&#x8981;&#x4F20;&#x5165;byte&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7B2C;&#x4E8C;&#x53C2;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;&#x8F6C;&#x6362;&#x7684;&#x5730;&#x5740;</span>
+    <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x9700;&#x8981;&#x4F20;&#x5165;byte&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7B2C;&#x4E8C;&#x53C2;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;&#x8F6C;&#x6362;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x56E0;&#x4E3A;&#x9700;&#x8981;&#x4FEE;&#x6539; s2 &#x7684;&#x5C5E;&#x6027;</span>
     err := json.Unmarshal([]<span class="hljs-keyword">byte</span>(str), &amp;s2)
     <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
         fmt.Printf(<span class="hljs-string">&quot;&#x8F6C;&#x6362;&#x5931;&#x8D25; \n&quot;</span>)
@@ -3057,7 +3136,7 @@ Golang JSON&#x5E8F;&#x5217;&#x5316;&#x662F;&#x6307;&#x628A;&#x7ED3;&#x6784;&#x4F
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"结构体","level":"4.1.13","depth":2,"next":{"title":"GoMod及包","level":"4.1.14","depth":2,"path":"GoLang/GoLang基础/14-GoMod及包.md","ref":"./GoLang/GoLang基础/14-GoMod及包.md","articles":[]},"previous":{"title":"指针","level":"4.1.12","depth":2,"path":"GoLang/GoLang基础/12-指针.md","ref":"./GoLang/GoLang基础/12-指针.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/13-结构体.md","mtime":"2021-07-20T02:04:04.489Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T09:02:44.156Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"结构体","level":"4.1.13","depth":2,"next":{"title":"GoMod及包","level":"4.1.14","depth":2,"path":"GoLang/GoLang基础/14-GoMod及包.md","ref":"./GoLang/GoLang基础/14-GoMod及包.md","articles":[]},"previous":{"title":"指针","level":"4.1.12","depth":2,"path":"GoLang/GoLang基础/12-指针.md","ref":"./GoLang/GoLang基础/12-指针.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/13-结构体.md","mtime":"2021-11-30T06:07:37.831Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-02T13:57:00.915Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>变量和常量 · GitBook</title>
+        <title>接口 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="04-数据类型.html" />
     
-    
-    <link rel="prev" href="02-打印输出.html" />
+    <link rel="prev" href="14-GoMod及包.html" />
     
 
     </head>
@@ -1511,7 +1509,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.1.3" data-path="03-变量和常量.html">
+        <li class="chapter " data-level="4.1.3" data-path="03-变量和常量.html">
             
                 <a href="03-变量和常量.html">
             
@@ -1667,7 +1665,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.15" data-path="15-接口.html">
+        <li class="chapter active" data-level="4.1.15" data-path="15-接口.html">
             
                 <a href="15-接口.html">
             
@@ -2532,7 +2530,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >变量和常量</a>
+        <a href="../.." >接口</a>
     </h1>
 </div>
 
@@ -2547,164 +2545,405 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h6 id="datetime2020818-1057">datetime:2020/8/18 10:57</h6>
+                                <h6 id="datetime20211202-1455">datetime:2021/12/02 14:55</h6>
 <h6 id="authornzb">author:nzb</h6>
-<h1 id="go&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x5E38;&#x91CF;">Go&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x5E38;&#x91CF;</h1>
-<h2 id="1&#x3001;go&#x8BED;&#x8A00;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;">1&#x3001;Go&#x8BED;&#x8A00;&#x4E2D;&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;</h2>
-<p>Go&#x8BED;&#x8A00;&#x53D8;&#x91CF;&#x662F;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x3001;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;&#xFF0C;&#x5176;&#x4E2D;&#x9996;&#x4E2A;&#x5B57;&#x7B26;&#x4E0D;&#x80FD;&#x4E3A;&#x6570;&#x5B57;&#x3002;Go&#x8BED;&#x8A00;&#x4E2D;&#x5173;&#x952E;&#x5B57;&#x548C;&#x4FDD;&#x7559;&#x5B57;&#x90FD;&#x4E0D;&#x80FD;&#x7528;&#x4F5C;&#x53D8;&#x91CF;&#x540D;</p>
-<p>Go&#x8BED;&#x8A00;&#x4E2D;&#x53D8;&#x91CF;&#x9700;&#x8981;&#x58F0;&#x660E;&#x540E;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x540C;&#x4E00;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x4E0D;&#x652F;&#x6301;&#x91CD;&#x590D;&#x58F0;&#x660E;&#x3002;&#x5E76;&#x4E14;Go&#x8BED;&#x8A00;&#x7684;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x540E;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x3002;</p>
-<p>&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x540E;&#xFF0C;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x662F;&#x7A7A;</p>
-<h2 id="11&#x3001;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;">1.1&#x3001;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</h2>
+<h1 id="go&#x4E2D;&#x7684;&#x63A5;&#x53E3;">Go&#x4E2D;&#x7684;&#x63A5;&#x53E3;</h1>
+<h2 id="&#x63A5;&#x53E3;&#x7684;&#x4ECB;&#x7ECD;">&#x63A5;&#x53E3;&#x7684;&#x4ECB;&#x7ECD;</h2>
+<p>&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x624B;&#x673A;&#x3001;&#x76F8;&#x673A;&#x3001;U&#x76D8;&#x90FD;&#x53EF;&#x4EE5;&#x548C;&#x7535;&#x8111;&#x7684;USB&#x63A5;&#x53E3;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x6CE8;usb&#x5361;&#x69FD;&#x5927;&#x5C0F;&#x662F;&#x5426;&#x4E00;&#x6837;&#xFF0C;&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x7684;USB&#x63A5;&#x53E3;&#x90FD;&#x662F;&#x6309;&#x7167;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#x6765;&#x8BBE;&#x8BA1;&#x7684;&#x3002;
+<img src="imgs/image-20200722201435128.png" alt=""></p>
+<p>Golang&#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x662F;&#x4E00;&#x79CD;&#x62BD;&#x8C61;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;Golang&#x4E2D;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x89C4;&#x8303;&#xFF0C;&#x53EA;&#x5B9A;&#x4E49;&#x89C4;&#x8303;&#x4E0D;&#x5B9E;&#x73B0;&#x3002;&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x8303;&#x7531;&#x5177;&#x4F53;&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x901A;&#x4FD7;&#x7684;&#x8BB2;&#x63A5;&#x53E3;&#x5C31;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#xFF0C;&#x5B83;&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x89C4;&#x8303;&#x8FDB;&#x884C;&#x7EA6;&#x5B9A;&#xFF0C;&#x7EA6;&#x5B9A;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x5F97;&#x6309;&#x7167;&#x63A5;&#x53E3;&#x7684;&#x89C4;&#x8303;&#x3002;</p>
+<h2 id="go&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;">Go&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;</h2>
+<p>&#x5728;Golang&#x4E2D;&#x63A5;&#x53E3;&#xFF08;interface&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x79CD;&#x62BD;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x63A5;&#x53E3;&#xFF08;interface&#xFF09;&#x662F;&#x4E00;&#x7EC4;&#x51FD;&#x6570;method&#x7684;&#x96C6;&#x5408;&#xFF0C;Golang&#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x5728;Golang&#x4E2D;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x90FD;&#x6CA1;&#x6709;&#x65B9;&#x6CD5;&#x4F53;&#xFF0C;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x89C4;&#x8303;&#xFF0C;&#x53EA;&#x5B9A;&#x4E49;&#x89C4;&#x8303;&#x4E0D;&#x5B9E;&#x73B0;&#x3002;&#x63A5;&#x53E3;&#x4F53;&#x73B0;&#x4E86;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#x591A;&#x6001;&#x548C;&#x9AD8;&#x5185;&#x805A;&#x4F4E;&#x8026;&#x5408;&#x7684;&#x601D;&#x60F3;N
+Golang&#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x793A;&#x5B9E;&#x73B0;&#x3002;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x542B;&#x6709;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x3002;</p>
+<p>Golang&#x4E2D;&#x6BCF;&#x4E2A;&#x63A5;&#x53E3;&#x7531;&#x6570;&#x4E2A;&#x65B9;&#x6CD5;&#x7EC4;&#x6210;&#xFF0C;&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-text">type &#x63A5;&#x53E3;&#x540D; interface {
+    &#x65B9;&#x6CD5;&#x540D;1 (&#x53C2;&#x6570;&#x5217;&#x8868;1) &#x8FD4;&#x56DE;&#x503C;&#x5217;&#x8868;1
+    &#x65B9;&#x6CD5;&#x540D;2 (&#x53C2;&#x6570;&#x5217;&#x8868;2) &#x8FD4;&#x56DE;&#x503C;&#x5217;&#x8868;2
+}
+</code></pre>
 <ul>
-<li><p>&#x65B9;&#x5F0F;1</p>
-<pre><code class="lang-go">  <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;zhangsan&quot;</span>
+<li><strong>&#x63A5;&#x53E3;&#x540D;</strong>&#xFF1A;&#x4F7F;&#x7528;type&#x5C06;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x540D;&#x3002;Go&#x8BED;&#x8A00;&#x7684;&#x63A5;&#x53E3;&#x5728;&#x547D;&#x540D;&#x65F6;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x5728;&#x5355;&#x8BCD;&#x540E;&#x9762;&#x6DFB;&#x52A0;er&#xFF0C;&#x5982;&#x6709;&#x5199;&#x64CD;&#x4F5C;&#x7684;&#x63A5;&#x53E3;&#x53EB;Writer&#xFF0C;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x529F;&#x80FD;&#x7684;&#x63A5;&#x53E3;&#x53EB;Stringer&#x7B49;&#xFF0C;&#x63A5;&#x53E3;&#x540D;&#x6700;&#x597D;&#x7A81;&#x51FA;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x578B;&#x542B;&#x4E49;&#x3002;</li>
+<li><strong>&#x65B9;&#x6CD5;&#x540D;</strong>&#xFF1A;&#x5F53;&#x65B9;&#x6CD5;&#x540D;&#x9996;&#x5B57;&#x6BCD;&#x662F;&#x5927;&#x5199;&#x4E14;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x540D;&#x9996;&#x5B57;&#x6BCD;&#x4E5F;&#x662F;&#x5927;&#x5199;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x88AB;&#x63A5;&#x53E3;&#x6240;&#x5728;&#x7684;&#x5305;&#xFF08;package&#xFF09;&#x4E4B;&#x5916;&#x7684;&#x4EE3;&#x7801;&#x8BBF;&#x95EE;&#x3002;</li>
+<li><strong>&#x53C2;&#x6570;&#x5217;&#x8868;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x5217;&#x8868;</strong>&#xFF1A;&#x53C2;&#x6570;&#x5217;&#x8868;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x53D8;&#x91CF;&#x540D;&#x662F;&#x53EF;&#x4EE5;&#x7701;&#x7565;</li>
+</ul>
+<p>&#x6F14;&#x793A;&#xFF1A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Usber&#x63A5;&#x53E3;&#x8BA9;Phone &#x548C; Camera&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;</p>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Usber&#x63A5;&#x53E3;&#xFF0C;&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x5C31;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-text">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Usber&#x63A5;&#x53E3;
+type Usber interface {
+    start()
+    stop()
+}
 </code></pre>
-</li>
-<li><p>&#x65B9;&#x5F0F;2&#xFF1A;&#x5E26;&#x7C7B;&#x578B;</p>
-<pre><code class="lang-go">  <span class="hljs-keyword">var</span> name <span class="hljs-keyword">string</span> = <span class="hljs-string">&quot;zhangsan&quot;</span>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x6709;&#x65B9;&#x6CD5;&#x7684;&#x8BDD;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4F53;&#x6216;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;</p>
+</blockquote>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Phone&#x7684;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;</p>
+<pre><code class="lang-text">// &#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;&#x6765;&#x5B9E;&#x73B0; &#x63A5;&#x53E3;
+type Phone struct {
+    Name string
+}
+// &#x624B;&#x673A;&#x8981;&#x5B9E;&#x73B0;Usber&#x63A5;&#x53E3;&#x7684;&#x8BDD;&#xFF0C;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;usb&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;
+func (p Phone) start()  {
+    fmt.Println(p.Name, &quot;&#x542F;&#x52A8;&quot;)
+}
+func (p Phone) stop()  {
+    fmt.Println(p.Name, &quot;&#x5173;&#x95ED;&quot;)
+}
+func main() {
+    var phone Usber = Phone{
+        &quot;&#x4E09;&#x661F;&#x624B;&#x673A;&quot;,
+    }
+    phone.start()
+    phone.stop()
+}
 </code></pre>
-</li>
-<li><p>&#x65B9;&#x5F0F;3&#xFF1A;&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</p>
-<p>  &#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x7B80;&#x7565;&#x7684; := &#x65B9;&#x5F0F;&#x58F0;&#x660E;&#x5E76;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;</p>
-<p>  &#x6CE8;&#x610F;&#xFF1A;<strong>&#x77ED;&#x53D8;&#x91CF;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x58F0;&#x660E;</strong></p>
-<pre><code class="lang-go">  &#x53D8;&#x91CF;&#x540D; := &#x8868;&#x8FBE;&#x5F0F;
+<p>&#x6211;&#x4EEC;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Camera&#x7ED3;&#x6784;&#x4F53;</p>
+<pre><code class="lang-text">// &#x4F7F;&#x7528;&#x76F8;&#x673A;&#x7ED3;&#x6784;&#x4F53;&#x6765;&#x5B9E;&#x73B0; &#x63A5;&#x53E3;
+type Camera struct {
+    Name string
+}
+// &#x76F8;&#x673A;&#x8981;&#x5B9E;&#x73B0;Usber&#x63A5;&#x53E3;&#x7684;&#x8BDD;&#xFF0C;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;usb&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;
+func (p Camera) start()  {
+    fmt.Println(p.Name, &quot;&#x542F;&#x52A8;&quot;)
+}
+func (p Camera) stop()  {
+    fmt.Println(p.Name, &quot;&#x5173;&#x95ED;&quot;)
+}
+func main() {
+    var camera Usber = Camera{
+        &quot;&#x4F73;&#x80FD;&quot;,
+    }
+    camera.start()
+    camera.stop()
+}
 </code></pre>
-</li>
-<li><p>&#x65B9;&#x5F0F;4&#xFF1A;&#x58F0;&#x660E;&#x591A;&#x4E2A;&#x53D8;&#x91CF;</p>
-<p>  &#x7C7B;&#x578B;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x53D8;&#x91CF;</p>
-<pre><code class="lang-go">  <span class="hljs-keyword">var</span> &#x53D8;&#x91CF;&#x540D;&#x79F0;&#xFF0C; &#x53D8;&#x91CF;&#x540D;&#x79F0; &#x7C7B;&#x578B;
-  a, b, c := <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&quot;3&quot;</span>
-</code></pre>
-<p>  &#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x53D8;&#x91CF;</p>
-<pre><code class="lang-go">  <span class="hljs-keyword">var</span> (
-      &#x53D8;&#x91CF;&#x540D;&#x79F0; &#x7C7B;&#x578B;
-      &#x53D8;&#x91CF;&#x540D;&#x79F0; &#x7C7B;&#x578B;
-  )
-</code></pre>
-</li>
-<li><p>&#x533F;&#x540D;&#x53D8;&#x91CF;</p>
-<p>  &#x5728;&#x4F7F;&#x7528;&#x591A;&#x91CD;&#x8D4B;&#x503C;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5FFD;&#x7565;&#x67D0;&#x4E2A;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x533F;&#x540D;&#x53D8;&#x91CF;&#xFF08;anonymous variable&#xFF09;</p>
-<p>  &#x533F;&#x540D;&#x53D8;&#x91CF;&#x7528;&#x4E00;&#x4E2A;&#x4E0B;&#x5212;&#x7EBF;&#x201C;_&#x201D;&#x8868;&#x793A;</p>
-<pre><code class="lang-go">  <span class="hljs-keyword">func</span> Getuser(){
-      <span class="hljs-keyword">return</span> username, age
-  }
+<p>&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7535;&#x8111;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x7535;&#x8111;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;Usber&#x7684;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x7136;&#x540E;&#x8BA9;&#x5176;&#x5DE5;&#x4F5C;</p>
+<pre><code class="lang-text">// &#x7535;&#x8111;
+type Computer struct {
 
-  <span class="hljs-keyword">var</span> username, _ = Getuser()
+}
+
+// &#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;Usber&#x63A5;&#x53E3;&#x7684; &#x7ED3;&#x6784;&#x4F53;
+func (computer Computer) Startup(usb Usber)  {
+    usb.start()
+}
+
+// &#x5173;&#x95ED;
+func (computer Computer) Shutdown (usb Usber)  {
+    usb.stop()
+}
 </code></pre>
-</li>
-<li><p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;</p>
+<p>&#x6700;&#x540E;&#x6211;&#x4EEC;&#x5728;main&#x4E2D;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-text">func main() {
+    var camera interfaceDemo.Camera = interfaceDemo.Camera{
+        &quot;&#x4F73;&#x80FD;&quot;,
+    }
+    var phone interfaceDemo.Phone = interfaceDemo.Phone{
+        &quot;&#x82F9;&#x679C;&quot;,
+    }
+
+    var computer interfaceDemo.Computer = interfaceDemo.Computer{}
+    computer.Startup(camera)
+    computer.Startup(phone)
+    computer.Shutdown(camera)
+    computer.Shutdown(phone)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-text">&#x4F73;&#x80FD; &#x542F;&#x52A8;
+&#x82F9;&#x679C; &#x542F;&#x52A8;
+&#x4F73;&#x80FD; &#x5173;&#x95ED;
+&#x82F9;&#x679C; &#x5173;&#x95ED;
+</code></pre>
+<h2 id="&#x7A7A;&#x63A5;&#x53E3;&#xFF08;object&#x7C7B;&#x578B;&#xFF09;">&#x7A7A;&#x63A5;&#x53E3;&#xFF08;Object&#x7C7B;&#x578B;&#xFF09;</h2>
+<p>Golang&#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x4E0D;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;&#x5C31;&#x662F;&#x7A7A;&#x63A5;&#x53E3;&#x3002;&#x7A7A;&#x63A5;&#x53E3;&#x8868;&#x793A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7EA6;&#x675F;&#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x90FD;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7A7A;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x7A7A;&#x63A5;&#x53E3;&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#x7528;&#x7684;&#x662F;&#x975E;&#x5E38;&#x591A;&#x7684;&#xFF0C;&#x7528;&#x7A7A;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x8868;&#x793A;<strong>&#x4EFB;&#x610F;&#x6570;&#x636E;&#x7C7B;&#x578B;</strong>&#x3002;</p>
+<pre><code class="lang-text">// &#x7A7A;&#x63A5;&#x53E3;&#x8868;&#x793A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7EA6;&#x675F;&#xFF0C;&#x4EFB;&#x610F;&#x7684;&#x7C7B;&#x578B;&#x90FD;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7A7A;&#x63A5;&#x53E3;
+type EmptyA interface {
+
+}
+
+func main() {
+    var a EmptyA
+    var str = &quot;&#x4F60;&#x597D;golang&quot;
+    // &#x8BA9;&#x5B57;&#x7B26;&#x4E32;&#x5B9E;&#x73B0;A&#x63A5;&#x53E3;
+    a = str
+    fmt.Println(a)
+}
+</code></pre>
+<p>&#x540C;&#x65F6;golang&#x4E2D;&#x7A7A;&#x63A5;&#x53E3;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F53;&#x505A;&#x7C7B;&#x578B;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x3002;&#x76F8;&#x5F53;&#x4E8E;Java&#x4E2D;&#x7684;Object&#x7C7B;&#x578B;</p>
+<pre><code class="lang-text">var a interface{}
+a = 20
+a = &quot;hello&quot;
+a = true
+</code></pre>
+<p>&#x7A7A;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x7A7A;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;</p>
+<pre><code class="lang-text">// &#x7A7A;&#x63A5;&#x53E3;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;
+func show(a interface{}) {
+    fmt.println(a)
+}
+</code></pre>
+<h3 id="map&#x7684;&#x503C;&#x5B9E;&#x73B0;&#x7A7A;&#x63A5;&#x53E3;">map&#x7684;&#x503C;&#x5B9E;&#x73B0;&#x7A7A;&#x63A5;&#x53E3;</h3>
+<p>&#x4F7F;&#x7528;&#x7A7A;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4EFB;&#x610F;&#x503C;&#x7684;&#x5B57;&#x5178;</p>
+<pre><code class="lang-text">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x503C;&#x4E3A;&#x7A7A;&#x63A5;&#x53E3;&#x7C7B;&#x578B;
+var studentInfo = make(map[string]interface{})
+studentInfo[&quot;userName&quot;] = &quot;&#x5F20;&#x4E09;&quot;
+studentInfo[&quot;age&quot;] = 15
+studentInfo[&quot;isWork&quot;] = true
+</code></pre>
+<h3 id="slice&#x5207;&#x7247;&#x5B9E;&#x73B0;&#x7A7A;&#x63A5;&#x53E3;">slice&#x5207;&#x7247;&#x5B9E;&#x73B0;&#x7A7A;&#x63A5;&#x53E3;</h3>
+<pre><code class="lang-text">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7A7A;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x7684;&#x5207;&#x7247;
+var slice = make([]interface{}, 4, 4)
+slice[0] = &quot;&#x5F20;&#x4E09;&quot;
+slice[1] = 1
+slice[2] = true
+</code></pre>
+<h2 id="&#x7C7B;&#x578B;&#x65AD;&#x8A00;">&#x7C7B;&#x578B;&#x65AD;&#x8A00;</h2>
+<p>&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x503C;&#xFF08;&#x7B80;&#x79F0;&#x63A5;&#x53E3;&#x503C;&#xFF09;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x548C;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#x7684;&#x3002;&#x8FD9;&#x4E24;&#x90E8;&#x5206;&#x5206;&#x522B;&#x79F0;&#x4E3A;&#x63A5;&#x53E3;&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x548C;&#x52A8;&#x6001;&#x503C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5224;&#x65AD;&#x7A7A;&#x63A5;&#x53E3;&#x4E2D;&#x503C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-text">x.(T)
+</code></pre>
 <ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-go">      <span class="hljs-keyword">package</span> main
-
-      <span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
-
-      <span class="hljs-keyword">func</span> main() {
-          <span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>
-          fmt.Printf(<span class="hljs-string">&quot;%d\n&quot;</span>, a)
-
-          <span class="hljs-keyword">var</span> name1 = <span class="hljs-string">&quot;zhangsan&quot;</span>
-          <span class="hljs-keyword">var</span> name2 <span class="hljs-keyword">string</span> = <span class="hljs-string">&quot;lishi&quot;</span>
-          name3 := <span class="hljs-string">&quot;wangwu&quot;</span>
-
-          fmt.Println(name1)
-          fmt.Println(name2)
-          fmt.Println(name3)
-          fmt.Printf(<span class="hljs-string">&quot;name1=%v, name2=%v, name3=%v&quot;</span>, name1, name2, name3)
-
-          <span class="hljs-keyword">var</span> b, c <span class="hljs-keyword">string</span>
-
-          b = <span class="hljs-string">&quot;b&quot;</span>
-          c = <span class="hljs-string">&quot;c&quot;</span>
-
-          fmt.Printf(<span class="hljs-string">&quot;\nb=%v, c=%v\n&quot;</span>, b, c)
-
-          <span class="hljs-keyword">var</span> (
-              d <span class="hljs-keyword">int</span>
-              e <span class="hljs-keyword">string</span>
-              f <span class="hljs-keyword">bool</span>
-          )
-
-          d = <span class="hljs-number">100</span>
-          e = <span class="hljs-string">&quot;string&quot;</span>
-          f = <span class="hljs-literal">true</span>
-
-          <span class="hljs-comment">//var (</span>
-          <span class="hljs-comment">//    d int = 1</span>
-          <span class="hljs-comment">//    e string = &apos;e&apos;</span>
-          <span class="hljs-comment">//    f bool = false</span>
-          <span class="hljs-comment">//)</span>
-
-          fmt.Printf(<span class="hljs-string">&quot;d=%v, e=%v, f=%v\n&quot;</span>, d, e, f)
-      }
-</code></pre>
-</li>
-<li><p>&#x8F93;&#x51FA;</p>
-<pre><code class="lang-go">  <span class="hljs-number">10</span>
-  zhangsan
-  lishi
-  wangwu
-  name1=zhangsan, name2=lishi, name3=wangwu
-  b=b, c=c
-  d=<span class="hljs-number">100</span>, e=<span class="hljs-keyword">string</span>, f=<span class="hljs-literal">true</span>
-</code></pre>
-</li>
+<li>x&#xFF1A;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x4E3A;interface{}&#x7684;&#x53D8;&#x91CF;</li>
+<li>T&#xFF1A;&#x8868;&#x793A;&#x65AD;&#x8A00;x&#x53EF;&#x80FD;&#x662F;&#x7684;&#x7C7B;&#x578B;</li>
 </ul>
-</li>
-</ul>
-<h2 id="2&#x3001;&#x5E38;&#x91CF;">2&#x3001;&#x5E38;&#x91CF;</h2>
-<h2 id="21&#x3001;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;">2.1&#x3001;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;</h2>
-<p>&#x76F8;&#x5BF9;&#x4E8E;&#x53D8;&#x91CF;&#xFF0C;&#x5E38;&#x91CF;&#x662F;&#x6052;&#x5B9A;&#x4E0D;&#x53D8;&#x7684;&#x503C;&#xFF0C;&#x591A;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x7684;&#x90A3;&#x4E9B;&#x503C;&#x3002;&#x5E38;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x548C;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x628A;var&#x6362;&#x6210;&#x4E86;const&#xFF0C;<strong>&#x5E38;&#x91CF;&#x5728;&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x5019;&#x5FC5;&#x987B;&#x8D4B;&#x503C;</strong>&#x3002;</p>
-<pre><code class="lang-go">    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E86;&#x5E38;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x7ACB;&#x5373;&#x4F7F;&#x7528;</span>
-    <span class="hljs-keyword">const</span> pi = <span class="hljs-number">3.14</span>
+<p>&#x8BE5;&#x8BED;&#x6CD5;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;x&#x8F6C;&#x5316;&#x4E3A;T&#x7C7B;&#x578B;&#x540E;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x82E5;&#x4E3A;true&#x5219;&#x8868;&#x793A;&#x65AD;&#x8A00;&#x6210;&#x529F;&#xFF0C;&#x4E3A;false&#x5219;&#x8868;&#x793A;&#x65AD;&#x8A00;&#x5931;&#x8D25;</p>
+<pre><code class="lang-text">// &#x7C7B;&#x578B;&#x65AD;&#x8A00;
+var a interface{}
+a = &quot;132&quot;
+value, isString := a.(string)
+if isString {
+    fmt.Println(&quot;&#x662F;String&#x7C7B;&#x578B;, &#x503C;&#x4E3A;&#xFF1A;&quot;, value)
+} else {
+    fmt.Println(&quot;&#x65AD;&#x8A00;&#x5931;&#x8D25;&quot;)
+}
+</code></pre>
+<p>&#x6216;&#x8005;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x80FD;&#x4F20;&#x5165;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-text">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4EFB;&#x610F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;
+func Print(x interface{})  {
+    if _,ok := x.(string); ok {
+        fmt.Println(&quot;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x662F;string&#x7C7B;&#x578B;&quot;)
+    } else if _, ok := x.(int); ok {
+        fmt.Println(&quot;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x662F;int&#x7C7B;&#x578B;&quot;)
+    } else {
+        fmt.Println(&quot;&#x4F20;&#x5165;&#x5176;&#x5B83;&#x7C7B;&#x578B;&quot;)
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x65AD;&#x8A00;&#x591A;&#x6B21;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x5199;&#x5F88;&#x591A;if&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;switch&#x8BED;&#x53E5;&#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A; <code>&#x7C7B;&#x578B;.(type)</code> &#x53EA;&#x80FD;&#x7ED3;&#x5408;switch&#x8BED;&#x53E5;&#x4F7F;&#x7528;</p>
+</blockquote>
+<pre><code class="lang-text">func Print2(x interface{})  {
+    switch x.(type) {
+    case int:
+        fmt.Println(&quot;int&#x7C7B;&#x578B;&quot;)
+    case string:
+        fmt.Println(&quot;string&#x7C7B;&#x578B;&quot;)
+    case bool:
+        fmt.Println(&quot;bool&#x7C7B;&#x578B;&quot;)
+    default:
+        fmt.Println(&quot;&#x5176;&#x5B83;&#x7C7B;&#x578B;&quot;)
+    }
+}
+</code></pre>
+<h2 id="&#x7ED3;&#x6784;&#x4F53;&#x63A5;&#x6536;&#x8005;">&#x7ED3;&#x6784;&#x4F53;&#x63A5;&#x6536;&#x8005;</h2>
+<h3 id="&#x503C;&#x63A5;&#x6536;&#x8005;">&#x503C;&#x63A5;&#x6536;&#x8005;</h3>
+<p>&#x5982;&#x679C;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x503C;&#x63A5;&#x6536;&#x8005;&#xFF0C;&#x90A3;&#x4E48;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x503C;&#x7C7B;&#x578B;&#x548C;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x90FD;&#x53EF;&#x4EE5;&#x8D4B;&#x503C;&#x7ED9;&#x63A5;&#x53E3;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-text">package main
 
-    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x5E38;&#x91CF;</span>
-    <span class="hljs-keyword">const</span>(
-        A = <span class="hljs-string">&quot;A&quot;</span>
-        B = <span class="hljs-string">&quot;B&quot;</span>
-    )
+import &quot;fmt&quot;
 
-    <span class="hljs-comment">// const&#x540C;&#x65F6;&#x58F0;&#x660E;&#x591A;&#x4E2A;&#x5E38;&#x91CF;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x7701;&#x7565;&#x4E86;&#x503C;&#x8868;&#x793A;&#x548C;&#x4E0A;&#x9762;&#x4E00;&#x884C;&#x7684;&#x503C;&#x76F8;&#x540C;</span>
-    <span class="hljs-keyword">const</span>(
-        A = <span class="hljs-string">&quot;A&quot;</span>
-        B
-        C
-    )
+    type Usber interface {
+        start()
+        stop()
+    }
+
+    type Phone struct {
+        Name string
+    }
+
+    func (p Phone) start() {            // &#x503C;&#x63A5;&#x6536;&#x8005;
+        fmt.Println(p.Name, &quot;&#x542F;&#x52A8;&quot;)
+    }
+
+    func (p Phone) stop() {
+        fmt.Println(p.Name, &quot;&#x5173;&#x673A;&quot;)
+    }
+
+func main() {
+    var p1 = Phone{                 // &#x7ED3;&#x6784;&#x4F53;&#x503C;&#x7C7B;&#x578B;
+        Name: &quot;&#x534E;&#x4E3A;&#x624B;&#x673A;&quot;,
+    }
+    var p2 Usber = p1  // &#x8868;&#x793A;&#x8BA9; Phone &#x5B9E;&#x73B0; Usb &#x7684;&#x63A5;&#x53E3;
+    p2.start()
+
+    var p3 = &amp;Phone{                // &#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#x7C7B;&#x578B;
+        Name: &quot;&#x5C0F;&#x7C73;&#x624B;&#x673A;&quot;,
+    }
+    var p4 Usber = p3
+    p4.start()
+}
 </code></pre>
-<h2 id="22&#x3001;-const&#x5E38;&#x91CF;&#x7ED3;&#x5408;iota&#x7684;&#x4F7F;&#x7528;">2.2&#x3001; Const&#x5E38;&#x91CF;&#x7ED3;&#x5408;iota&#x7684;&#x4F7F;&#x7528;</h2>
-<p>iota&#x662F;golang &#x8BED;&#x8A00;&#x7684;&#x5E38;&#x91CF;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x53EA;&#x80FD;&#x5728;&#x5E38;&#x91CF;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;</p>
-<p>iota&#x5728;const&#x5173;&#x952E;&#x5B57;&#x51FA;&#x73B0;&#x65F6;&#x5C06;&#x88AB;&#x91CD;&#x7F6E;&#x4E3A;0&#xFF08;const&#x5185;&#x90E8;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x4E4B;&#x524D;&#xFF09;&#xFF0C;const&#x4E2D;&#x6BCF;&#x65B0;&#x589E;&#x4E00;&#x884C;&#x5E38;&#x91CF;&#x58F0;&#x660E;&#x5C06;&#x4F7F;iota&#x8BA1;&#x6570;&#x4E00;&#x6B21;&#xFF08;iota&#x53EF;&#x7406;&#x89E3;&#x4E3A;const&#x8BED;&#x53E5;&#x5757;&#x4E2D;&#x7684;&#x884C;&#x7D22;&#x5F15;&#xFF09;&#x3002;</p>
-<p>&#x6BCF;&#x6B21;const&#x51FA;&#x73B0;&#xFF0C;&#x90FD;&#x4F1A;&#x8BA9;iota&#x521D;&#x59CB;&#x5316;&#x4E3A;0&#x3010;&#x81EA;&#x589E;&#x957F;&#x3011;</p>
-<pre><code class="lang-go">    <span class="hljs-keyword">const</span> a = <span class="hljs-literal">iota</span> <span class="hljs-comment">// a = 0</span>
-    <span class="hljs-keyword">const</span> (
-        b = <span class="hljs-literal">iota</span> <span class="hljs-comment">// b=0</span>
-        c        <span class="hljs-comment">// c = 1</span>
-        d        <span class="hljs-comment">// d = 2</span>
-    )
+<h3 id="&#x6307;&#x9488;&#x63A5;&#x6536;&#x8005;">&#x6307;&#x9488;&#x63A5;&#x6536;&#x8005;</h3>
+<p>&#x5982;&#x679C;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x6307;&#x9488;&#x63A5;&#x6536;&#x8005;&#xFF0C;&#x90A3;&#x4E48;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x90FD;&#x53EF;&#x4EE5;&#x8D4B;&#x503C;&#x7ED9;&#x63A5;&#x53E3;&#x53D8;&#x91CF;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x6307;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x8D4B;&#x503C;&#x7ED9;&#x63A5;&#x53E3;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-text">package main
+
+import &quot;fmt&quot;
+
+    type Usber interface {
+        start()
+        stop()
+    }
+
+    type Phone struct {
+        Name string
+    }
+
+    func (p *Phone) start() {            // &#x6307;&#x9488;&#x63A5;&#x6536;&#x8005;
+        fmt.Println(p.Name, &quot;&#x542F;&#x52A8;&quot;)
+    }
+
+    func (p *Phone) stop() {
+        fmt.Println(p.Name, &quot;&#x5173;&#x673A;&quot;)
+    }
+
+func main() {
+    /*
+    &#x9519;&#x8BEF;&#x5199;&#x6CD5;
+    var p1 = Phone{                 // &#x7ED3;&#x6784;&#x4F53;&#x503C;&#x7C7B;&#x578B;
+        Name: &quot;&#x534E;&#x4E3A;&#x624B;&#x673A;&quot;,
+    }
+    var p2 Usber = p1               // Phone does not implement Usber (start method has pointer receiver)
+    p2.start()
+    */
+    var p3 = &amp;Phone{                // &#x7ED3;&#x6784;&#x4F53;&#x6307;&#x9488;&#x7C7B;&#x578B;
+        Name: &quot;&#x5C0F;&#x7C73;&#x624B;&#x673A;&quot;,
+    }
+    var p4 Usber = p3
+    p4.start()
+}
 </code></pre>
-<p>const  iota&#x4F7F;&#x7528;_&#x8DF3;&#x8FC7;&#x67D0;&#x4E9B;&#x503C;</p>
-<pre><code class="lang-go">    <span class="hljs-keyword">const</span> (
-        b = <span class="hljs-literal">iota</span> <span class="hljs-comment">// b=0</span>
-        _
-        d        <span class="hljs-comment">// d = 2</span>
-    )
+<h2 id="&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x63A5;&#x53E3;">&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x63A5;&#x53E3;</h2>
+<p>&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x80FD;&#x5C31;&#x540C;&#x65F6;&#x7528;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x63A5;&#x53D7;</p>
+<pre><code class="lang-text">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Animal&#x7684;&#x63A5;&#x53E3;&#xFF0C;Animal&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x522B;&#x662F;setName &#x548C; getName&#xFF0C;&#x5206;&#x522B;&#x8BA9;DOg&#x7ED3;&#x6784;&#x4F53;&#x548C;Cat&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x73B0;
+type Animal interface {
+    SetName(string)
+}
+
+// &#x63A5;&#x53E3;2
+type Animal2 interface {
+    GetName()string
+}
+
+type Dog struct {
+    Name string
+}
+
+func (d *Dog) SetName(name string)  {
+    d.Name = name
+}
+func (d Dog)GetName()string {
+    return d.Name
+}
+
+func main() {
+    var dog = &amp;Dog{
+        &quot;&#x5C0F;&#x9ED1;&quot;,
+    }
+    // &#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;
+    var d1 Animal = dog
+    var d2 Animal2 = dog
+    d1.SetName(&quot;&#x5C0F;&#x9E21;&quot;)
+    fmt.Println(d2.GetName())
+}
 </code></pre>
-<p>&#x591A;&#x4E2A;&#x8D4B;&#x503C;</p>
-<pre><code class="lang-go">    <span class="hljs-keyword">const</span> (
-        n1, n2 = <span class="hljs-literal">iota</span> + <span class="hljs-number">1</span>, <span class="hljs-literal">iota</span> + <span class="hljs-number">2</span> <span class="hljs-comment">//1 2</span>
-        n3, n4                      <span class="hljs-comment">// 2 3</span>
-        n5, n6                      <span class="hljs-comment">//3 4</span>
-    )
+<h2 id="&#x63A5;&#x53E3;&#x5D4C;&#x5957;">&#x63A5;&#x53E3;&#x5D4C;&#x5957;</h2>
+<p>&#x5728;golang&#x4E2D;&#xFF0C;&#x5141;&#x8BB8;&#x63A5;&#x53E3;&#x5D4C;&#x5957;&#x63A5;&#x53E3;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Animal1 &#x548C; Animal2 &#x63A5;&#x53E3;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;Animal&#x63A5;&#x53D7;&#x521A;&#x521A;&#x7684;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x5D4C;&#x5957;&#x3002;</p>
+<pre><code class="lang-text">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Animal&#x7684;&#x63A5;&#x53E3;&#xFF0C;Animal&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x522B;&#x662F;setName &#x548C; getName&#xFF0C;&#x5206;&#x522B;&#x8BA9;DOg&#x7ED3;&#x6784;&#x4F53;&#x548C;Cat&#x7ED3;&#x6784;&#x4F53;&#x5B9E;&#x73B0;
+type Animal1 interface {
+    SetName(string)
+}
+
+// &#x63A5;&#x53E3;2
+type Animal2 interface {
+    GetName()string
+}
+
+type Animal interface {
+    Animal1
+    Animal2
+}
+
+type Dog struct {
+    Name string
+}
+
+func (d *Dog) SetName(name string)  {
+    d.Name = name
+}
+func (d Dog)GetName()string {
+    return d.Name
+}
+
+func main() {
+    var dog = &amp;Dog{
+        &quot;&#x5C0F;&#x9ED1;&quot;,
+    }
+    // &#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;
+    var d Animal = dog
+    d.SetName(&quot;&#x5C0F;&#x9E21;&quot;)
+    fmt.Println(d.GetName())
+}
 </code></pre>
-<h2 id="3&#x3001;go&#x8BED;&#x8A00;&#x53D8;&#x91CF;&#x3001;&#x5E38;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;">3&#x3001;Go&#x8BED;&#x8A00;&#x53D8;&#x91CF;&#x3001;&#x5E38;&#x91CF;&#x547D;&#x540D;&#x89C4;&#x5219;</h2>
-<ul>
-<li>&#x53D8;&#x91CF;&#x540D;&#x5FC5;&#x987B;&#x6709;&#x6570;&#x5B57;&#x3001;&#x5B57;&#x6BCD;&#x3001;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;</li>
-<li>&#x6807;&#x8BC6;&#x7B26;&#x4E0D;&#x80FD;&#x662F;&#x6570;&#x5B57;</li>
-<li>&#x6807;&#x8BC6;&#x7B26;&#x4E0D;&#x80FD;&#x662F;&#x4FDD;&#x7559;&#x5B57;&#x548C;&#x5173;&#x952E;&#x5B57;</li>
-<li>&#x53D8;&#x91CF;&#x7684;&#x540D;&#x5B57;&#x662F;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;</li>
-<li>&#x6807;&#x8BC6;&#x7B26;&#xFF08;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#xFF09;&#x4E00;&#x5B9A;&#x8981;&#x89C1;&#x540D;&#x601D;&#x610F;&#xFF1A;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x5EFA;&#x8BAE;&#x7528;&#x540D;&#x8BCD;&#xFF0C;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x5EFA;&#x8BAE;&#x7528;&#x52A8;&#x8BCD;</li>
-<li>&#x53D8;&#x91CF;&#x547D;&#x540D;&#x4E00;&#x822C;&#x91C7;&#x7528;&#x9A7C;&#x5CF0;&#x5F0F;&#x3002;</li>
-</ul>
+<h2 id="golang&#x4E2D;&#x7A7A;&#x63A5;&#x53E3;&#x548C;&#x7C7B;&#x578B;&#x65AD;&#x8A00;">Golang&#x4E2D;&#x7A7A;&#x63A5;&#x53E3;&#x548C;&#x7C7B;&#x578B;&#x65AD;&#x8A00;</h2>
+<pre><code class="lang-text">package main
+
+import &quot;fmt&quot;
+
+type Address struct {
+    Name string
+    Phone int
+}
+
+func main() {
+// golang&#x4E2D;&#x7A7A;&#x63A5;&#x53E3;&#x548C;&#x7C7B;&#x578B;&#x65AD;&#x8A00;
+    var userInfo = make(map[string]interface{})
+    userInfo[&quot;userName&quot;] = &quot;zhangsan&quot;
+    userInfo[&quot;age&quot;] = 10
+    userInfo[&quot;hobby&quot;] = []string{&quot;&#x5403;&#x996D;&quot;, &quot;&#x7761;&#x89C9;&quot;}
+    fmt.Println(userInfo[&quot;userName&quot;])
+    fmt.Println(userInfo[&quot;age&quot;])
+    fmt.Println(userInfo[&quot;hobby&quot;])
+    // &#x4F46;&#x662F;&#x6211;&#x4EEC;&#x7A7A;&#x63A5;&#x53E3;&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#xFF1F;&#x53D1;&#x73B0; userInfo[&quot;hobby&quot;][0]  &#x8FD9;&#x6837;&#x505A;&#x4E0D;&#x884C;
+    // fmt.Println(userInfo[&quot;hobby&quot;][0])        // invalid operation: userInfo[&quot;hobby&quot;][0] (index of type interface {})
+
+    var address = Address{
+        Name: &quot;&#x674E;&#x56DB;&quot;,
+        Phone: 110,
+    }
+    userInfo[&quot;address&quot;] = address
+    fmt.Println(address.Name)
+    fmt.Println(userInfo[&quot;address&quot;])            // {&#x674E;&#x56DB; 110}
+    // fmt.Println(userInfo[&quot;address&quot;].Name)    //userInfo[&quot;address&quot;].Name undefined (type interface {} has no field or method Name)
+
+    // &#x53EF;&#x901A;&#x8FC7;&#x65AD;&#x8A00;&#x83B7;&#x53D6;
+    hobby2, _ := userInfo[&quot;hobby&quot;].([]string)
+    fmt.Println(hobby2[1])
+
+    address2, _ := userInfo[&quot;address&quot;].(Address)
+    fmt.Println(address2.Name)
+}
+</code></pre>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x7A7A;&#x63A5;&#x53E3;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x4E86;</p>
+<pre><code class="lang-text">// &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x4E86;
+hobbyValue,ok := userInfo[&quot;hobby&quot;].([]string)
+if ok {
+    fmt.Println(hobbyValue[0])
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#x8FD4;&#x56DE;&#x6765;&#x7684;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x89D2;&#x6807;&#x83B7;&#x53D6;&#x4E86;&#x3002;</p>
 
                                 
                                 </section>
@@ -2732,14 +2971,10 @@
 
             
                 
-                <a href="02-打印输出.html" class="navigation navigation-prev " aria-label="Previous page: 打印输出">
+                <a href="14-GoMod及包.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: GoMod及包">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="04-数据类型.html" class="navigation navigation-next " aria-label="Next page: 数据类型">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2748,7 +2983,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"变量和常量","level":"4.1.3","depth":2,"next":{"title":"数据类型","level":"4.1.4","depth":2,"path":"GoLang/GoLang基础/04-数据类型.md","ref":"./GoLang/GoLang基础/04-数据类型.md","articles":[]},"previous":{"title":"打印输出","level":"4.1.2","depth":2,"path":"GoLang/GoLang基础/02-打印输出.md","ref":"./GoLang/GoLang基础/02-打印输出.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/03-变量和常量.md","mtime":"2021-07-20T02:04:04.485Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-02T13:57:00.915Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"接口","level":"4.1.15","depth":2,"next":{"title":"MySQL","level":"5.1","depth":1,"ref":"","articles":[{"title":"计算机二级","level":"5.1.1","depth":2,"path":"Database/MySQL/计算机二级MySQL.md","ref":"./Database/MySQL/计算机二级MySQL.md","articles":[]},{"title":"数据库三大范式","level":"5.1.2","depth":2,"path":"Database/MySQL/数据库三大范式.md","ref":"./Database/MySQL/数据库三大范式.md","articles":[]},{"title":"MySQL主从复制","level":"5.1.3","depth":2,"path":"Database/MySQL/主从复制.md","ref":"./Database/MySQL/主从复制.md","articles":[]}]},"previous":{"title":"GoMod及包","level":"4.1.14","depth":2,"path":"GoLang/GoLang基础/14-GoMod及包.md","ref":"./GoLang/GoLang基础/14-GoMod及包.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/15-接口.md","mtime":"2021-12-02T13:46:38.402Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-02T13:57:00.915Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

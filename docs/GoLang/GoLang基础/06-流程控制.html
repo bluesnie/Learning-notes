@@ -1667,6 +1667,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.1.15" data-path="15-接口.html">
+            
+                <a href="15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2562,7 +2575,9 @@
 <p>if&#x7684;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;&#x662F; num2&#x662F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</p>
 <pre><code class="lang-go">    <span class="hljs-keyword">if</span> num2:= <span class="hljs-number">10</span>; num2&gt;=<span class="hljs-number">10</span> {
         fmt.Println(<span class="hljs-string">&quot;hello &gt;=10&quot;</span>)
+        fmt.Println(num2)            <span class="hljs-comment">// &#x53EF;&#x6253;&#x5370;</span>
     }
+    fmt.Println(num2)            <span class="hljs-comment">// &#x62A5;&#x9519;&#xFF0C;&#x56E0;&#x4E3A; num2 &#x662F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</span>
 </code></pre>
 <p>if &#x8BED;&#x53E5;&#x5D4C;&#x5957;</p>
 <pre><code class="lang-go">    <span class="hljs-keyword">if</span> &#x5E03;&#x5C14;&#x8868;&#x8FBE;&#x5F0F; <span class="hljs-number">1</span> {
@@ -2573,6 +2588,10 @@
     }
 </code></pre>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x4EE5;&#x540C;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x5728; if &#x8BED;&#x53E5;&#x4E2D;&#x5D4C;&#x5957; else if...else &#x8BED;&#x53E5;</p>
+<blockquote>
+<p>1&#x3001;if &#x540E;&#x7684; &#x5927;&#x62EC;&#x53F7; <code>{}</code>&#x4E0D;&#x80FD;&#x7701;&#x7565;</p>
+<p>2&#x3001;<code>{</code>&#x5FC5;&#x987B;&#x7D27;&#x6328;&#x7740;&#x6761;&#x4EF6;</p>
+</blockquote>
 <h3 id="12&#x3001;switch-case">1.2&#x3001;switch case</h3>
 <p>&#x4F7F;&#x7528;switch&#x8BED;&#x53E5;&#x53EF;&#x65B9;&#x4FBF;&#x7684;&#x5BF9;&#x5927;&#x91CF;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x5224;&#x65AD;</p>
 <p>switch &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; case &#x6700;&#x540E;&#x81EA;&#x5E26; break &#x8BED;&#x53E5;&#xFF0C;&#x5339;&#x914D;&#x6210;&#x529F;&#x540E;&#x5C31;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x5176;&#x4ED6; case&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6267;&#x884C;&#x540E;&#x9762;&#x7684; case&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; fallthrough &#x3002;</p>
@@ -2670,11 +2689,48 @@
 <pre><code>    for &#x521D;&#x59CB;&#x8BED;&#x53E5;; &#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;; &#x7ED3;&#x675F;&#x8BED;&#x53E5; {
         &#x5FAA;&#x73AF;&#x4F53;
     }
-</code></pre><p>&#x548C; C &#x7684; while &#x4E00;&#x6837;&#xFF1A;</p>
-<pre><code class="lang-go">    <span class="hljs-keyword">for</span> condition { }
+</code></pre><ul>
+<li><p>&#x7B2C;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-go">  <span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span> ; i &lt;= <span class="hljs-number">10</span>; i++ {
+      fmt.Println(i)
+  }
 </code></pre>
-<p>&#x548C; C &#x7684; for(;;) &#x4E00;&#x6837;&#xFF1A;</p>
-<pre><code class="lang-go">   <span class="hljs-keyword">for</span> { }
+</li>
+<li><p>&#x7B2C;&#x4E8C;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;&#x548C; C &#x7684; while &#x4E00;&#x6837;&#xFF1A;</p>
+</li>
+</ul>
+<pre><code class="lang-go">    <span class="hljs-keyword">for</span> condition { }
+
+    &#x793A;&#x4F8B;&#xFF1A;
+    i := <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> ; i &lt;= <span class="hljs-number">10</span>; i++ {
+        fmt.Println(i)
+    }
+</code></pre>
+<ul>
+<li>&#x7B2C;&#x4E09;&#x79CD;&#x5199;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-go">    i := <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> i &lt;= <span class="hljs-number">10</span>{
+        fmt.Println(i)
+        i++
+    }
+</code></pre>
+<ul>
+<li>&#x7B2C;&#x56DB;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;&#x548C; C &#x7684; for(;;) &#x4E00;&#x6837;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-go">   <span class="hljs-keyword">for</span> { } 
+
+   &#x793A;&#x4F8B;&#xFF1A;
+   i := <span class="hljs-number">1</span>
+   <span class="hljs-keyword">for</span> {
+        <span class="hljs-keyword">if</span> i &lt;= <span class="hljs-number">10</span>{
+            fmt.Println(i)
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">break</span>
+        }
+        i++
+   }
 </code></pre>
 <p>&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE;true&#x65F6;&#x5FAA;&#x73AF;&#x4F53;&#x4E0D;&#x505C;&#x5730;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#xFF0C;&#x76F4;&#x5230;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE;false&#x65F6;&#x81EA;&#x52A8;&#x9000;&#x51FA;&#x5FAA;&#x73AF;</p>
 <p>&#x5B9E;&#x4F8B;&#xFF1A;&#x6253;&#x5370;1 ~ 10</p>
@@ -2896,7 +2952,7 @@ lable3:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"流程控制","level":"4.1.6","depth":2,"next":{"title":"数组","level":"4.1.7","depth":2,"path":"GoLang/GoLang基础/07-数组.md","ref":"./GoLang/GoLang基础/07-数组.md","articles":[]},"previous":{"title":"运算符","level":"4.1.5","depth":2,"path":"GoLang/GoLang基础/05-运算符.md","ref":"./GoLang/GoLang基础/05-运算符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/06-流程控制.md","mtime":"2021-07-20T02:04:04.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T09:02:44.156Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"流程控制","level":"4.1.6","depth":2,"next":{"title":"数组","level":"4.1.7","depth":2,"path":"GoLang/GoLang基础/07-数组.md","ref":"./GoLang/GoLang基础/07-数组.md","articles":[]},"previous":{"title":"运算符","level":"4.1.5","depth":2,"path":"GoLang/GoLang基础/05-运算符.md","ref":"./GoLang/GoLang基础/05-运算符.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/06-流程控制.md","mtime":"2021-11-27T08:05:31.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-02T13:57:00.915Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
