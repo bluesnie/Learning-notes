@@ -91,7 +91,7 @@ fmt.Println(userInfo2)
 我们想要在切片里面存放一系列用户的信息，这时候我们就可以定义一个元素为map类型的切片
 
 ```go
-// 切片在中存放map
+// 切片中存放map
 var userInfoList = make([]map[string]string, 3, 3)
 var user = map[string]string{
     "userName": "张安",
@@ -120,7 +120,7 @@ for _, item := range userInfoList {
 我们可以在map中存储切片
 
 ```go
-// 将map类型的值
+// 将map类型的值定义为切片
 var userinfo = make(map[string][]string)
 userinfo["hobby"] = []string {"吃饭", "睡觉", "敲代码"}
 fmt.Println(userinfo)
@@ -128,7 +128,7 @@ fmt.Println(userinfo)
 
 ## 7、示例
 
-统计字符串中单词出现的次数
+- 统计字符串中单词出现的次数
 
 ```go
 // 写一个程序，统计一个字符串中每个单词出现的次数。比如 "how do you do"
@@ -140,6 +140,31 @@ for _, item := range array {
     countMap[item]++
 }
 fmt.Println(countMap)
+```
+
+- 升序输出 map 的值
+```go
+map1 := make(map[int]int, 10)
+map1[10] = 100
+map1[1] = 13
+map1[4] = 56
+map1[8] = 90
+map1[12] = 43
+map1[7] = 32
+
+// 1、把 map 的 key 升序放入切片
+keySlice []int
+for k, _ := range map1{
+    keySlice = append(keySlice, k)
+}
+fmt.Println(keySlice)
+// 2、升序
+sort.Ints(keySlice)
+fmt.Println(keySlice)
+// 3、输出
+for _, v := range keySlice{
+    fmt.Printf("key=%v, value=%v", v, map1[v])
+}
 ```
 
 
