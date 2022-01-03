@@ -9,7 +9,7 @@ colorama==0.4.3
 coreapi==2.3.3
 coreschema==0.0.4
 defusedxml==0.6.0
-Django==2.2.13
+Django==2.2.25
 django-allauth==0.42.0
 django-celery==3.3.1
 django-celery-beat==2.0.0
