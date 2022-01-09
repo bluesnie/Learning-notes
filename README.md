@@ -18,7 +18,7 @@
 
 ## [Linux](./Linux)
 
-- [入门基础](./Linux/基础/Linux.html)
+- [入门基础](./Linux/Linux.md)
 
 ## [Python](./Python)
 
@@ -233,7 +233,9 @@
 - 保存修改进度 / 添加别名 / 全局忽略跟踪文件 / 项目级忽略文件 / 创建远程版本库 / 推送版本库
 - 修改远程仓库地址 / 克隆版本库到本地 / 更新本地版本库 / 基于版本库开发自己的版本库 / 添加pull request / 添加贡献者
 
-### [Nginx](./Utils/Nginx.md)
+### [Nginx](Utils/Nginx/Nginx基础.md)
+- [基础](Utils/Nginx/Nginx基础.md)
+- [进阶](Utils/Nginx/Nginx进阶.md)
 
 ### [面试](InterviewPreparation/README.md)
 

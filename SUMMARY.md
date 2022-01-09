@@ -14,7 +14,7 @@
 
 ## Linux
 
-- [入门基础](./Linux/基础/Linux.pdf)
+- [入门基础](./Linux/Linux.md)
 
 ## Python
 
@@ -206,7 +206,9 @@
     - [Docker](./Utils/docker/Docker.md)
     - [FastDFS](Utils/docker/FastDFS.md)
 - [Git](./Utils/Git基本命令.md)
-- [Nginx](./Utils/Nginx.md)
+- Nginx
+    - [Nginx基础](Utils/Nginx/Nginx基础.md)
+    - [Nginx进阶](Utils/Nginx/Nginx进阶.md)
 - [面试题](InterviewPreparation/ClassicQuestion/20201027/README.md)
 
 ## 投资
