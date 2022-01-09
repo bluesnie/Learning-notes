@@ -166,7 +166,7 @@
 ## Utils
 
 - [Git基本命令](Utils/Git基本命令.md)
-- [Nginx](Utils/Nginx.md)
+- [Nginx](Utils/Nginx/Nginx.md)
 - [Docker]()
     - [Docker](Utils/docker/Docker.md)
     - [FastDFS](Utils/docker/FastDFS.md)
