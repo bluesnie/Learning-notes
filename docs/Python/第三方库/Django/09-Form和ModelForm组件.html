@@ -1,0 +1,3743 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Form、ModelForm组件 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="10-中间件.html" />
+    
+    
+    <link rel="prev" href="08-Cookie、Session和分页.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">算法</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Algorithm/算法图解.pdf">
+            
+                <span>
+            
+                    
+                    算法图解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../Linux/Linux.html">
+            
+                <a href="../../../Linux/Linux.html">
+            
+                    
+                    入门基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Python</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Python语言基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../PEP8.html">
+            
+                <a href="../../PEP8.html">
+            
+                    
+                    Python PEP8编码规范 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Python语言基础/00-初识Python.html">
+            
+                <a href="../../Python语言基础/00-初识Python.html">
+            
+                    
+                    初识Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Python语言基础/01-语言元素.html">
+            
+                <a href="../../Python语言基础/01-语言元素.html">
+            
+                    
+                    语言元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Python语言基础/02-分支结构.html">
+            
+                <a href="../../Python语言基础/02-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../Python语言基础/03-循环结构.html">
+            
+                <a href="../../Python语言基础/03-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../Python语言基础/04-练习.html">
+            
+                <a href="../../Python语言基础/04-练习.html">
+            
+                    
+                    构造程序逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../Python语言基础/05-函数和模块的使用.html">
+            
+                <a href="../../Python语言基础/05-函数和模块的使用.html">
+            
+                    
+                    函数和模块的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../../Python语言基础/06-字符串和常用数据结构.html">
+            
+                <a href="../../Python语言基础/06-字符串和常用数据结构.html">
+            
+                    
+                    字符串和常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../../Python语言基础/07-面向对象编程基础.html">
+            
+                <a href="../../Python语言基础/07-面向对象编程基础.html">
+            
+                    
+                    面向对象编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../../Python语言基础/08-面向对象编程进阶.html">
+            
+                <a href="../../Python语言基础/08-面向对象编程进阶.html">
+            
+                    
+                    面向对象编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../../Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                <a href="../../Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                    
+                    图形用户界面和游戏开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../../Python语言基础/10-文件和异常.html">
+            
+                <a href="../../Python语言基础/10-文件和异常.html">
+            
+                    
+                    文件和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../../Python语言基础/11-字符串和正则表达式.html">
+            
+                <a href="../../Python语言基础/11-字符串和正则表达式.html">
+            
+                    
+                    字符串和正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../../Python语言基础/12-进程和线程.html">
+            
+                <a href="../../Python语言基础/12-进程和线程.html">
+            
+                    
+                    进程和线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../../Python语言基础/13-网络编程入门.html">
+            
+                <a href="../../Python语言基础/13-网络编程入门.html">
+            
+                    
+                    网络编程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../../Python语言基础/14-网络应用开发.html">
+            
+                <a href="../../Python语言基础/14-网络应用开发.html">
+            
+                    
+                    网络应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../../Python语言基础/15-图像和办公文档处理.html">
+            
+                <a href="../../Python语言基础/15-图像和办公文档处理.html">
+            
+                    
+                    图像和文档处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../../Python语言基础/16-logging日志模块.html">
+            
+                <a href="../../Python语言基础/16-logging日志模块.html">
+            
+                    
+                    logging日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Python语言进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../Python语言进阶/01-常用数据结构和算法.html">
+            
+                <a href="../../Python语言进阶/01-常用数据结构和算法.html">
+            
+                    
+                    常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../Python语言进阶/02-函数的高级用法.html">
+            
+                <a href="../../Python语言进阶/02-函数的高级用法.html">
+            
+                    
+                    函数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../Python语言进阶/03-面向对象高级知识.html">
+            
+                <a href="../../Python语言进阶/03-面向对象高级知识.html">
+            
+                    
+                    面向对象高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../Python语言进阶/04-迭代器和生成器.html">
+            
+                <a href="../../Python语言进阶/04-迭代器和生成器.html">
+            
+                    
+                    迭代器和生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../Python语言进阶/05-并发和异步编程.html">
+            
+                <a href="../../Python语言进阶/05-并发和异步编程.html">
+            
+                    
+                    并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../Python语言进阶/06-asyncio异步编程.html">
+            
+                <a href="../../Python语言进阶/06-asyncio异步编程.html">
+            
+                    
+                    asynico异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Python 第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="01-快速上手.html">
+            
+                <a href="01-快速上手.html">
+            
+                    
+                    快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.2" data-path="02-深入模型.html">
+            
+                <a href="02-深入模型.html">
+            
+                    
+                    深入模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.3" data-path="03-静态资源和Ajax请求.html">
+            
+                <a href="03-静态资源和Ajax请求.html">
+            
+                    
+                    静态资源和Ajax请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.4" data-path="04-Django模板系统.html">
+            
+                <a href="04-Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.5" data-path="05-Django的View.html">
+            
+                <a href="05-Django的View.html">
+            
+                    
+                    Django的View(视图)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.6" data-path="06-Django的路由系统.html">
+            
+                <a href="06-Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.7" data-path="07-Django-ORM相关操作.html">
+            
+                <a href="07-Django-ORM相关操作.html">
+            
+                    
+                    Django ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.8" data-path="08-Cookie、Session和分页.html">
+            
+                <a href="08-Cookie、Session和分页.html">
+            
+                    
+                    Cookie、Session和分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3.1.9" data-path="09-Form和ModelForm组件.html">
+            
+                <a href="09-Form和ModelForm组件.html">
+            
+                    
+                    Form、ModelForm组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.10" data-path="10-中间件.html">
+            
+                <a href="10-中间件.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.11" data-path="Django-REST-framework.html">
+            
+                <a href="Django-REST-framework.html">
+            
+                    
+                    Django-REST-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" >
+            
+                <span>
+            
+                    
+                    Django项目开发经验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="Django开发经验/02-Django-restframework登录相关.html">
+            
+                <a href="Django开发经验/02-Django-restframework登录相关.html">
+            
+                    
+                    登录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                <a href="Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                    
+                    异常处理手柄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                <a href="Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                    
+                    过滤相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.4" data-path="Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                <a href="Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                    
+                    存储类重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.5" data-path="Django开发经验/05-Django-restframework序列化相关.html">
+            
+                <a href="Django开发经验/05-Django-restframework序列化相关.html">
+            
+                    
+                    序列化相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.6" data-path="Django开发经验/06-api接口自动化测试.html">
+            
+                <a href="Django开发经验/06-api接口自动化测试.html">
+            
+                    
+                    自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.7" data-path="Django开发经验/07-为接口加速加缓存.html">
+            
+                <a href="Django开发经验/07-为接口加速加缓存.html">
+            
+                    
+                    接口加速缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" >
+            
+                <span>
+            
+                    
+                    PyQt5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.3.1" data-path="../PyQt5/">
+            
+                <a href="../PyQt5/">
+            
+                    
+                    导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.2" data-path="../PyQt5/01-窗口.html">
+            
+                <a href="../PyQt5/01-窗口.html">
+            
+                    
+                    窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.3" data-path="../PyQt5/02-按钮.html">
+            
+                <a href="../PyQt5/02-按钮.html">
+            
+                    
+                    按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.4" data-path="../PyQt5/03-垂直布局和水平布局.html">
+            
+                <a href="../PyQt5/03-垂直布局和水平布局.html">
+            
+                    
+                    垂直布局和水平布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.5" data-path="../PyQt5/04-栅格布局.html">
+            
+                <a href="../PyQt5/04-栅格布局.html">
+            
+                    
+                    栅格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.6" data-path="../PyQt5/05-布局添加标签Label.html">
+            
+                <a href="../PyQt5/05-布局添加标签Label.html">
+            
+                    
+                    布局添加标签Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.7" data-path="../PyQt5/06-布局添加背景图.html">
+            
+                <a href="../PyQt5/06-布局添加背景图.html">
+            
+                    
+                    布局添加背景图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.8" data-path="../PyQt5/07-单选框.html">
+            
+                <a href="../PyQt5/07-单选框.html">
+            
+                    
+                    单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.9" data-path="../PyQt5/08-复选框.html">
+            
+                <a href="../PyQt5/08-复选框.html">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.10" data-path="../PyQt5/09-键盘提示.html">
+            
+                <a href="../PyQt5/09-键盘提示.html">
+            
+                    
+                    键盘提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.11" data-path="../PyQt5/10-行编辑lineedit.html">
+            
+                <a href="../PyQt5/10-行编辑lineedit.html">
+            
+                    
+                    行编辑Lineedit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.12" data-path="../PyQt5/11-按钮组.html">
+            
+                <a href="../PyQt5/11-按钮组.html">
+            
+                    
+                    按钮组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.13" data-path="../PyQt5/12-布局组.html">
+            
+                <a href="../PyQt5/12-布局组.html">
+            
+                    
+                    布局组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.14" data-path="../PyQt5/13-无边框窗口.html">
+            
+                <a href="../PyQt5/13-无边框窗口.html">
+            
+                    
+                    无边框窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.15" data-path="../PyQt5/14-框架qframe.html">
+            
+                <a href="../PyQt5/14-框架qframe.html">
+            
+                    
+                    框架Qframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.16" data-path="../PyQt5/15-分离器.html">
+            
+                <a href="../PyQt5/15-分离器.html">
+            
+                    
+                    分离器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.17" data-path="../PyQt5/16-滑动条.html">
+            
+                <a href="../PyQt5/16-滑动条.html">
+            
+                    
+                    滑动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.18" data-path="../PyQt5/17-滚动条.html">
+            
+                <a href="../PyQt5/17-滚动条.html">
+            
+                    
+                    滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.19" data-path="../PyQt5/18-刻度盘.html">
+            
+                <a href="../PyQt5/18-刻度盘.html">
+            
+                    
+                    刻度盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.20" data-path="../PyQt5/19-spinbox.html">
+            
+                <a href="../PyQt5/19-spinbox.html">
+            
+                    
+                    Spinbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.21" data-path="../PyQt5/20-生成随机数.html">
+            
+                <a href="../PyQt5/20-生成随机数.html">
+            
+                    
+                    生成随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.22" data-path="../PyQt5/21-进度条.html">
+            
+                <a href="../PyQt5/21-进度条.html">
+            
+                    
+                    进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.23" data-path="../PyQt5/22-工具框.html">
+            
+                <a href="../PyQt5/22-工具框.html">
+            
+                    
+                    工具框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.24" data-path="../PyQt5/23-菜单栏工具栏.html">
+            
+                <a href="../PyQt5/23-菜单栏工具栏.html">
+            
+                    
+                    菜单栏工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.25" data-path="../PyQt5/24-文档编辑框.html">
+            
+                <a href="../PyQt5/24-文档编辑框.html">
+            
+                    
+                    文档编辑框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.26" data-path="../PyQt5/25-字体文本框.html">
+            
+                <a href="../PyQt5/25-字体文本框.html">
+            
+                    
+                    字体文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.27" data-path="../PyQt5/26-颜色文本框.html">
+            
+                <a href="../PyQt5/26-颜色文本框.html">
+            
+                    
+                    颜色文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.28" data-path="../PyQt5/27-打印（文本框）.html">
+            
+                <a href="../PyQt5/27-打印（文本框）.html">
+            
+                    
+                    打印（文本框）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.29" data-path="../PyQt5/28-打印预览.html">
+            
+                <a href="../PyQt5/28-打印预览.html">
+            
+                    
+                    打印预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.30" data-path="../PyQt5/29-打印PDF.html">
+            
+                <a href="../PyQt5/29-打印PDF.html">
+            
+                    
+                    打印PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.31" data-path="../PyQt5/30-消息框提示框（带选择的）.html">
+            
+                <a href="../PyQt5/30-消息框提示框（带选择的）.html">
+            
+                    
+                    消息框提示框（带选择的）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.32" data-path="../PyQt5/31-右键菜单.html">
+            
+                <a href="../PyQt5/31-右键菜单.html">
+            
+                    
+                    右键菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.33" data-path="../PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                <a href="../PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                    
+                    选项卡（单选下拉框和多选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.34" data-path="../PyQt5/33-stack(堆叠">
+            
+                <span>
+            
+                    
+                    Stack(堆叠)小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.35" data-path="../PyQt5/34-可停靠的窗口小部件.html">
+            
+                <a href="../PyQt5/34-可停靠的窗口小部件.html">
+            
+                    
+                    可停靠的窗口小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.36" data-path="../PyQt5/35-日历.html">
+            
+                <a href="../PyQt5/35-日历.html">
+            
+                    
+                    日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.37" data-path="../PyQt5/36-单选下拉框.html">
+            
+                <a href="../PyQt5/36-单选下拉框.html">
+            
+                    
+                    单选下拉框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.38" data-path="../PyQt5/37-首字符模糊填充（查询）.html">
+            
+                <a href="../PyQt5/37-首字符模糊填充（查询）.html">
+            
+                    
+                    首字符模糊填充（查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.39" data-path="../PyQt5/38-打开更多的窗口.html">
+            
+                <a href="../PyQt5/38-打开更多的窗口.html">
+            
+                    
+                    打开更多的窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.40" data-path="../PyQt5/39-时间编辑.html">
+            
+                <a href="../PyQt5/39-时间编辑.html">
+            
+                    
+                    时间编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.41" data-path="../PyQt5/40-列表部件.html">
+            
+                <a href="../PyQt5/40-列表部件.html">
+            
+                    
+                    列表部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.42" data-path="../PyQt5/41-列表部件小示例.html">
+            
+                <a href="../PyQt5/41-列表部件小示例.html">
+            
+                    
+                    列表部件小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" >
+            
+                <span>
+            
+                    
+                    PySide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.4.1" data-path="../PySide/01-Qt简介.html">
+            
+                <a href="../PySide/01-Qt简介.html">
+            
+                    
+                    Qt简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.2" data-path="../PySide/02-界面设计师QtDesigner.html">
+            
+                <a href="../PySide/02-界面设计师QtDesigner.html">
+            
+                    
+                    界面设计师QtDesigner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.3" data-path="../PySide/03-发布程序.html">
+            
+                <a href="../PySide/03-发布程序.html">
+            
+                    
+                    发布程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.4" data-path="../PySide/04-常用控件1.html">
+            
+                <a href="../PySide/04-常用控件1.html">
+            
+                    
+                    常用控件1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.5" data-path="../PySide/05-常用控件2.html">
+            
+                <a href="../PySide/05-常用控件2.html">
+            
+                    
+                    常用控件2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.6" data-path="../PySide/06-常用控件3.html">
+            
+                <a href="../PySide/06-常用控件3.html">
+            
+                    
+                    常用控件3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.7" data-path="../PySide/07-常用控件4.html">
+            
+                <a href="../PySide/07-常用控件4.html">
+            
+                    
+                    常用控件4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">GoLang</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    GoLang基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                <a href="../../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                    
+                    GoLang发展史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../../GoLang/GoLang基础/02-打印输出.html">
+            
+                <a href="../../../GoLang/GoLang基础/02-打印输出.html">
+            
+                    
+                    打印输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                <a href="../../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                    
+                    变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../../GoLang/GoLang基础/04-数据类型.html">
+            
+                <a href="../../../GoLang/GoLang基础/04-数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../../GoLang/GoLang基础/05-运算符.html">
+            
+                <a href="../../../GoLang/GoLang基础/05-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../../GoLang/GoLang基础/06-流程控制.html">
+            
+                <a href="../../../GoLang/GoLang基础/06-流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../../../GoLang/GoLang基础/07-数组.html">
+            
+                <a href="../../../GoLang/GoLang基础/07-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../../../GoLang/GoLang基础/08-切片.html">
+            
+                <a href="../../../GoLang/GoLang基础/08-切片.html">
+            
+                    
+                    切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../../../GoLang/GoLang基础/09-map.html">
+            
+                <a href="../../../GoLang/GoLang基础/09-map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../../../GoLang/GoLang基础/10-函数.html">
+            
+                <a href="../../../GoLang/GoLang基础/10-函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="../../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                <a href="../../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                    
+                    time包日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.12" data-path="../../../GoLang/GoLang基础/12-指针.html">
+            
+                <a href="../../../GoLang/GoLang基础/12-指针.html">
+            
+                    
+                    指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.13" data-path="../../../GoLang/GoLang基础/13-结构体.html">
+            
+                <a href="../../../GoLang/GoLang基础/13-结构体.html">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.14" data-path="../../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                <a href="../../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                    
+                    GoMod及包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.15" data-path="../../../GoLang/GoLang基础/15-接口.html">
+            
+                <a href="../../../GoLang/GoLang基础/15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.16" data-path="../../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                <a href="../../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.17" data-path="../../../GoLang/GoLang基础/17-反射.html">
+            
+                <a href="../../../GoLang/GoLang基础/17-反射.html">
+            
+                    
+                    反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.18" data-path="../../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                <a href="../../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                    
+                    文件和目录操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库基础和进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../../Database/MySQL/计算机二级MySQL.html">
+            
+                <a href="../../../Database/MySQL/计算机二级MySQL.html">
+            
+                    
+                    计算机二级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../../Database/MySQL/数据库三大范式.html">
+            
+                <a href="../../../Database/MySQL/数据库三大范式.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../../Database/MySQL/主从复制.html">
+            
+                <a href="../../../Database/MySQL/主从复制.html">
+            
+                    
+                    MySQL主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    NoSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../../Database/NoSQL/01-NoSql入门.html">
+            
+                <a href="../../../Database/NoSQL/01-NoSql入门.html">
+            
+                    
+                    NoSql入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    Redeis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                <a href="../../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                    
+                    Redis安装与配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="../../../Database/NoSQL/03-Redis基础.html">
+            
+                <a href="../../../Database/NoSQL/03-Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据分析</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    数学基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../../MachineLearning/数学基础/高等数学.pdf">
+            
+                <span>
+            
+                    
+                    高等数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../../MachineLearning/数学基础/概率论.pdf">
+            
+                <span>
+            
+                    
+                    概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../../MachineLearning/数学基础/微积分.pdf">
+            
+                <span>
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../../MachineLearning/数学基础/SVD.pdf">
+            
+                <span>
+            
+                    
+                    SVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../../MachineLearning/数学基础/似然函数.pdf">
+            
+                <span>
+            
+                    
+                    似然函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../../MachineLearning/数学基础/后验概率估计.pdf">
+            
+                <span>
+            
+                    
+                    后验概率估计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../../../MachineLearning/数学基础/拉格朗日乘子法.pdf">
+            
+                <span>
+            
+                    
+                    拉格朗日乘子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../../../MachineLearning/数学基础/核函数.pdf">
+            
+                <span>
+            
+                    
+                    核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../../../MachineLearning/数学基础/梯度.pdf">
+            
+                <span>
+            
+                    
+                    梯度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../../../MachineLearning/数学基础/概率分布与概率密度.pdf">
+            
+                <span>
+            
+                    
+                    概率分布与概率密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../../../MachineLearning/数学基础/泰勒公式.pdf">
+            
+                <span>
+            
+                    
+                    泰勒公式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.12" data-path="../../../MachineLearning/数学基础/激活函数.pdf">
+            
+                <span>
+            
+                    
+                    激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.13" data-path="../../../MachineLearning/数学基础/熵.pdf">
+            
+                <span>
+            
+                    
+                    熵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.14" data-path="../../../MachineLearning/数学基础/特征值与特征向量.pdf">
+            
+                <span>
+            
+                    
+                    特征值与特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.15" data-path="../../../MachineLearning/数学基础/矩阵.pdf">
+            
+                <span>
+            
+                    
+                    矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    数据分析库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                    
+                    numpy基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                    
+                    pandas基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                    
+                    pandas连接合并追加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                    
+                    matplotlib基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Web前端</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../../Web/Web前端概述.html">
+            
+                <a href="../../../Web/Web前端概述.html">
+            
+                    
+                    Web前端入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../../Web/HTML5/HTML5.html">
+            
+                <a href="../../../Web/HTML5/HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../../Web/CSS/CSS.html">
+            
+                <a href="../../../Web/CSS/CSS.html">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="../../../Web/JavaScript/JavaScript基础.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript基础.html">
+            
+                    
+                    JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" data-path="../../../Web/JavaScript/JavaScript对象.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript对象.html">
+            
+                    
+                    JavaScript对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" data-path="../../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                    
+                    JavaScript瀑布流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.4" data-path="../../../Web/JavaScript/JavaScript面向对象.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript面向对象.html">
+            
+                    
+                    JavaScript面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.5.1" data-path="../../../Web/JavaScript/框架/Promise.html">
+            
+                <a href="../../../Web/JavaScript/框架/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.2" data-path="../../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                    
+                    Vue.Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.3" data-path="../../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                    
+                    Vue.Js组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.4" data-path="../../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                    
+                    Vue.Js路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.5" data-path="../../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                    
+                    Vue.Js过渡和动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.6" data-path="../../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                <a href="../../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                    
+                    JQuery UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.7" data-path="../../../Web/JavaScript/框架/jQuery基础.html">
+            
+                <a href="../../../Web/JavaScript/框架/jQuery基础.html">
+            
+                    
+                    JQuery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.8" data-path="../../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                <a href="../../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                    
+                    JQuery方法大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../../Web/RESTful.html">
+            
+                <a href="../../../Web/RESTful.html">
+            
+                    
+                    RESTful规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工具</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../../Utils/docker/Docker.html">
+            
+                <a href="../../../Utils/docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../../Utils/docker/FastDFS.html">
+            
+                <a href="../../../Utils/docker/FastDFS.html">
+            
+                    
+                    FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../../Utils/Git基本命令.html">
+            
+                <a href="../../../Utils/Git基本命令.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../../../Utils/Nginx/Nginx基础.html">
+            
+                <a href="../../../Utils/Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../../../Utils/Nginx/Nginx进阶.html">
+            
+                <a href="../../../Utils/Nginx/Nginx进阶.html">
+            
+                    
+                    Nginx进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                <a href="../../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">投资</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    股票
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                <a href="../../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                    
+                    股票市场常用名词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Form、ModelForm组件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h6 id="datetime2019627-1007">datetime:2019/6/27 10:07</h6>
+<h6 id="authornzb">author:nzb</h6>
+<h2 id="form&#x548C;modelform&#x7EC4;&#x4EF6;">Form&#x548C;ModelForm&#x7EC4;&#x4EF6;</h2>
+<h3 id="form&#x4ECB;&#x7ECD;">Form&#x4ECB;&#x7ECD;</h3>
+<p>&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x5728;HTML&#x9875;&#x9762;&#x4E2D;&#x5229;&#x7528;form&#x8868;&#x5355;&#x5411;&#x540E;&#x7AEF;&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x5199;&#x4E00;&#x4E9B;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6807;&#x7B7E;&#x5E76;&#x4E14;&#x7528;form&#x6807;&#x7B7E;&#x628A;&#x5B83;&#x4EEC;&#x5305;&#x8D77;&#x6765;&#x3002;</p>
+<p>&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x5728;&#x597D;&#x591A;&#x573A;&#x666F;&#x4E0B;&#x90FD;&#x9700;&#x8981;&#x5BF9;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x505A;&#x6821;&#x9A8C;&#xFF0C;&#x6BD4;&#x5982;&#x6821;&#x9A8C;&#x7528;&#x6237;&#x662F;&#x5426;&#x8F93;&#x5165;&#xFF0C;&#x8F93;&#x5165;&#x7684;&#x957F;&#x5EA6;&#x548C;&#x683C;&#x5F0F;&#x7B49;&#x6B63;&#x4E0D;&#x6B63;&#x786E;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5185;&#x5BB9;&#x6709;&#x9519;&#x8BEF;&#x5C31;&#x9700;&#x8981;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;.&#x3002;</p>
+<p>Django form&#x7EC4;&#x4EF6;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x4E0A;&#x9762;&#x6240;&#x8FF0;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;form&#x7EC4;&#x4EF6;&#x7684;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x5982;&#x4E0B;:</p>
+<ul>
+<li>&#x751F;&#x6210;&#x9875;&#x9762;&#x53EF;&#x7528;&#x7684;HTML&#x6807;&#x7B7E;</li>
+<li>&#x5BF9;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6821;&#x9A8C;</li>
+<li>&#x4FDD;&#x7559;&#x4E0A;&#x6B21;&#x8F93;&#x5165;&#x5185;&#x5BB9;</li>
+</ul>
+<h4 id="&#x666E;&#x901A;&#x65B9;&#x5F0F;&#x624B;&#x5199;&#x6CE8;&#x518C;&#x529F;&#x80FD;">&#x666E;&#x901A;&#x65B9;&#x5F0F;&#x624B;&#x5199;&#x6CE8;&#x518C;&#x529F;&#x80FD;</h4>
+<h5 id="viewspy">views.py</h5>
+<pre><code class="lang-python">    <span class="hljs-comment"># &#x6CE8;&#x518C;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">register</span><span class="hljs-params">(request)</span>:</span>
+        error_msg = <span class="hljs-string">&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:
+            username = request.POST.get(<span class="hljs-string">&quot;name&quot;</span>)
+            pwd = request.POST.get(<span class="hljs-string">&quot;pwd&quot;</span>)
+            <span class="hljs-comment"># &#x5BF9;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&#x505A;&#x6821;&#x9A8C;</span>
+            <span class="hljs-keyword">if</span> len(username) &lt; <span class="hljs-number">6</span>:
+                <span class="hljs-comment"># &#x7528;&#x6237;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;6&#x4F4D;</span>
+                error_msg = <span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&#x957F;&#x5EA6;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E;6&#x4F4D;&quot;</span>
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-comment"># &#x5C06;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;</span>
+                <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&quot;&#x6CE8;&#x518C;&#x6210;&#x529F;&quot;</span>)
+        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;register.html&quot;</span>, {<span class="hljs-string">&quot;error_msg&quot;</span>: error_msg})
+</code></pre>
+<h5 id="loginhtml">login.html</h5>
+<pre><code class="lang-python">    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&#x6CE8;&#x518C;&#x9875;&#x9762;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;form action=&quot;/reg/&quot; method=&quot;post&quot;&gt;
+        { % csrf_token % }
+        &lt;p&gt;
+            &#x7528;&#x6237;&#x540D;:
+            &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &#x5BC6;&#x7801;&#xFF1A;
+            &lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;&#x6CE8;&#x518C;&quot;&gt;
+            &lt;p style=&quot;color: red&quot;&gt;{ { error_msg } }&lt;/p&gt;
+        &lt;/p&gt;
+    &lt;/form&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+<h4 id="&#x4F7F;&#x7528;form&#x7EC4;&#x4EF6;&#x5B9E;&#x73B0;&#x6CE8;&#x518C;&#x529F;&#x80FD;">&#x4F7F;&#x7528;form&#x7EC4;&#x4EF6;&#x5B9E;&#x73B0;&#x6CE8;&#x518C;&#x529F;&#x80FD;</h4>
+<h5 id="viewspy">views.py</h5>
+<p>&#x5148;&#x5B9A;&#x4E49;&#x597D;&#x4E00;&#x4E2A;RegForm&#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-python">    <span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+
+    <span class="hljs-comment"># &#x6309;&#x7167;Django form&#x7EC4;&#x4EF6;&#x7684;&#x8981;&#x6C42;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        name = forms.CharField(label=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>)
+        pwd = forms.CharField(label=<span class="hljs-string">&quot;&#x5BC6;&#x7801;&quot;</span>)
+</code></pre>
+<p>&#x518D;&#x5199;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-python">    <span class="hljs-comment"># &#x4F7F;&#x7528;form&#x7EC4;&#x4EF6;&#x5B9E;&#x73B0;&#x6CE8;&#x518C;&#x65B9;&#x5F0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">register2</span><span class="hljs-params">(request)</span>:</span>
+        form_obj = RegForm()
+        <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:
+            <span class="hljs-comment"># &#x5B9E;&#x4F8B;&#x5316;form&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x628A;post&#x63D0;&#x4EA4;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#x76F4;&#x63A5;&#x4F20;&#x8FDB;&#x53BB;</span>
+            form_obj = RegForm(request.POST)
+            <span class="hljs-comment"># &#x8C03;&#x7528;form_obj&#x6821;&#x9A8C;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;</span>
+            <span class="hljs-keyword">if</span> form_obj.is_valid():
+                <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&quot;&#x6CE8;&#x518C;&#x6210;&#x529F;&quot;</span>)
+        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;register2.html&quot;</span>, {<span class="hljs-string">&quot;form_obj&quot;</span>: form_obj})
+</code></pre>
+<h5 id="login2html">login2.html</h5>
+<pre><code class="lang-python">    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&#x6CE8;&#x518C;2&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form action=&quot;/reg2/&quot; method=&quot;post&quot; novalidate autocomplete=&quot;off&quot;&gt;
+            { % csrf_token % }
+            &lt;div&gt;
+                &lt;label for=&quot;{ { form_obj.name.id_for_label } }&quot;&gt;{ { form_obj.name.label } }&lt;/label&gt;
+                { { form_obj.name } } { { form_obj.name.errors.0 } }
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;{ { form_obj.pwd.id_for_label } }&quot;&gt;{ { form_obj.pwd.label } }&lt;/label&gt;
+                { { form_obj.pwd } } { { form_obj.pwd.errors.0 } }
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;submit&quot; class=&quot;btn btn-success&quot; value=&quot;&#x6CE8;&#x518C;&quot;&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+<p>&#x770B;&#x7F51;&#x9875;&#x6548;&#x679C;&#x53D1;&#x73B0; &#x4E5F;&#x9A8C;&#x8BC1;&#x4E86;form&#x7684;&#x529F;&#x80FD;&#xFF1A;</p>
+<ul>
+<li>&#x524D;&#x7AEF;&#x9875;&#x9762;&#x662F;form&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x751F;&#x6210;&#x7684;                                       --&gt;&#x751F;&#x6210;HTML&#x6807;&#x7B7E;&#x529F;&#x80FD;</li>
+<li>&#x5F53;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x4E3A;&#x7A7A;&#x6216;&#x8F93;&#x9519;&#x4E4B;&#x540E; &#x9875;&#x9762;&#x90FD;&#x4F1A;&#x63D0;&#x793A;                        --&gt;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x6821;&#x9A8C;&#x529F;&#x80FD;</li>
+<li>&#x5F53;&#x7528;&#x6237;&#x8F93;&#x9519;&#x4E4B;&#x540E; &#x518D;&#x6B21;&#x8F93;&#x5165; &#x4E0A;&#x6B21;&#x7684;&#x5185;&#x5BB9;&#x8FD8;&#x4FDD;&#x7559;&#x5728;input&#x6846;                    --&gt;&#x4FDD;&#x7559;&#x4E0A;&#x6B21;&#x8F93;&#x5165;&#x5185;&#x5BB9;</li>
+</ul>
+<h3 id="form&#x90A3;&#x4E9B;&#x4E8B;">Form&#x90A3;&#x4E9B;&#x4E8B;</h3>
+<h4 id="&#x5E38;&#x7528;&#x5B57;&#x6BB5;&#x4E0E;&#x63D2;&#x4EF6;">&#x5E38;&#x7528;&#x5B57;&#x6BB5;&#x4E0E;&#x63D2;&#x4EF6;</h4>
+<p>&#x521B;&#x5EFA;Form&#x7C7B;&#x65F6;&#xFF0C;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x5230; &#x3010;&#x5B57;&#x6BB5;&#x3011; &#x548C; &#x3010;&#x63D2;&#x4EF6;&#x3011;&#xFF0C;&#x5B57;&#x6BB5;&#x7528;&#x4E8E;&#x5BF9;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x7684;&#x9A8C;&#x8BC1;&#xFF0C;&#x63D2;&#x4EF6;&#x7528;&#x4E8E;&#x81EA;&#x52A8;&#x751F;&#x6210;HTML;</p>
+<h5 id="initial">initial</h5>
+<p>&#x521D;&#x59CB;&#x503C;&#xFF0C;input&#x6846;&#x91CC;&#x9762;&#x7684;&#x521D;&#x59CB;&#x503C;&#x3002;</p>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        username = forms.CharField(
+            min_length=<span class="hljs-number">8</span>,
+            label=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>,
+            initial=<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>  **<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;**</span>
+        )
+        pwd = forms.CharField(min_length=<span class="hljs-number">6</span>, label=<span class="hljs-string">&quot;&#x5BC6;&#x7801;&quot;</span>)
+</code></pre>
+<h5 id="errormessages">error_messages</h5>
+<p>&#x91CD;&#x5199;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        username = forms.CharField(
+            min_length=<span class="hljs-number">8</span>,
+            label=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>,
+            initial=<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>,
+            error_messages={
+                <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-string">&quot;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;</span>,
+                <span class="hljs-string">&quot;invalid&quot;</span>: <span class="hljs-string">&quot;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;</span>,
+                <span class="hljs-string">&quot;min_length&quot;</span>: <span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&#x6700;&#x77ED;8&#x4F4D;&quot;</span>
+            },
+            widget=forms.widgets.TextInput(attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;c1&apos;</span>}, render_value=<span class="hljs-keyword">True</span>)
+        )
+        pwd = forms.CharField(min_length=<span class="hljs-number">6</span>, label=<span class="hljs-string">&quot;&#x5BC6;&#x7801;&quot;</span>)
+</code></pre>
+<h5 id="password">password</h5>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        ...
+        pwd = forms.CharField(
+            min_length=<span class="hljs-number">6</span>,
+            label=<span class="hljs-string">&quot;&#x5BC6;&#x7801;&quot;</span>,
+            widget=forms.widgets.PasswordInput(
+                            attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;c1&apos;</span>},  <span class="hljs-comment"># **&#x6807;&#x7B7E;&#x5C5E;&#x6027;**</span>
+                            render_value=<span class="hljs-keyword">True</span>)      <span class="hljs-comment"># **&#x8868;&#x5355;&#x503C;&#x662F;&#x5426;&#x8FD4;&#x56DE;**</span>
+        )
+</code></pre>
+<h5 id="radioselect">radioSelect</h5>
+<p>&#x5355;radio&#x503C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        username = forms.CharField(
+            min_length=<span class="hljs-number">8</span>,
+            label=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>,
+            initial=<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>,
+            error_messages={
+                <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-string">&quot;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;</span>,
+                <span class="hljs-string">&quot;invalid&quot;</span>: <span class="hljs-string">&quot;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;</span>,
+                <span class="hljs-string">&quot;min_length&quot;</span>: <span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&#x6700;&#x77ED;8&#x4F4D;&quot;</span>
+            }
+        )
+        pwd = forms.CharField(min_length=<span class="hljs-number">6</span>, label=<span class="hljs-string">&quot;&#x5BC6;&#x7801;&quot;</span>)
+        gender = forms.ChoiceField(
+            choices=((<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x7537;&quot;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x5973;&quot;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&quot;&#x4FDD;&#x5BC6;&quot;</span>)),
+            label=<span class="hljs-string">&quot;&#x6027;&#x522B;&quot;</span>,
+            initial=<span class="hljs-number">3</span>,
+            widget=forms.widgets.RadioSelect()
+        )
+</code></pre>
+<h5 id="&#x5355;&#x9009;select">&#x5355;&#x9009;Select</h5>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        ...
+        hobby = forms.ChoiceField(
+            choices=((<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x7BEE;&#x7403;&quot;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x8DB3;&#x7403;&quot;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&quot;&#x53CC;&#x8272;&#x7403;&quot;</span>), ),
+            label=<span class="hljs-string">&quot;&#x7231;&#x597D;&quot;</span>,
+            initial=<span class="hljs-number">3</span>,
+            widget=forms.widgets.Select()
+        )
+</code></pre>
+<h5 id="&#x591A;&#x9009;select">&#x591A;&#x9009;Select</h5>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        ...
+        hobby = forms.MultipleChoiceField(
+            choices=((<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x7BEE;&#x7403;&quot;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x8DB3;&#x7403;&quot;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&quot;&#x53CC;&#x8272;&#x7403;&quot;</span>), ),
+            label=<span class="hljs-string">&quot;&#x7231;&#x597D;&quot;</span>,
+            initial=[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>],
+            widget=forms.widgets.SelectMultiple()
+        )
+</code></pre>
+<h5 id="&#x5355;&#x9009;checkbox">&#x5355;&#x9009;checkbox</h5>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        ...
+        keep = forms.ChoiceField(
+            label=<span class="hljs-string">&quot;&#x662F;&#x5426;&#x8BB0;&#x4F4F;&#x5BC6;&#x7801;&quot;</span>,
+            initial=<span class="hljs-string">&quot;checked&quot;</span>,
+            widget=forms.widgets.CheckboxInput()
+        )
+</code></pre>
+<h5 id="&#x591A;&#x9009;checkbox">&#x591A;&#x9009;checkbox</h5>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        ...
+        hobby = forms.MultipleChoiceField(
+            choices=((<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x7BEE;&#x7403;&quot;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x8DB3;&#x7403;&quot;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&quot;&#x53CC;&#x8272;&#x7403;&quot;</span>),),
+            label=<span class="hljs-string">&quot;&#x7231;&#x597D;&quot;</span>,
+            initial=[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>],
+            widget=forms.widgets.CheckboxSelectMultiple()
+        )
+</code></pre>
+<h5 id="choice&#x5B57;&#x6BB5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">choice&#x5B57;&#x6BB5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h5>
+<p>&#x5728;&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x6807;&#x7B7E;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;choices&#x7684;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x662F;&#x9759;&#x6001;&#x5B57;&#x6BB5;<strong>&#x83B7;&#x53D6;&#x7684;&#x503C;&#x65E0;&#x6CD5;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;</strong>&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x5199;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;choice&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;</p>
+<pre><code class="lang-python">    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> Form
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> widgets
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> fields
+
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span><span class="hljs-params">(Form)</span>:</span>
+
+        user = fields.ChoiceField(
+            <span class="hljs-comment"># choices=((1, &apos;&#x4E0A;&#x6D77;&apos;), (2, &apos;&#x5317;&#x4EAC;&apos;),),</span>
+            initial=<span class="hljs-number">2</span>,
+            widget=widgets.Select
+        )
+
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, *args, **kwargs)</span>:</span>
+            super(MyForm,self).__init__(*args, **kwargs)
+            <span class="hljs-comment"># self.fields[&apos;user&apos;].choices = ((1, &apos;&#x4E0A;&#x6D77;&apos;), (2, &apos;&#x5317;&#x4EAC;&apos;),)</span>
+            <span class="hljs-comment"># &#x6216;</span>
+            self.fields[<span class="hljs-string">&apos;user&apos;</span>].choices = models.Classes.objects.all().values_list(<span class="hljs-string">&apos;id&apos;</span>,<span class="hljs-string">&apos;caption&apos;</span>)
+</code></pre>
+<p>&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;</p>
+<pre><code class="lang-python">    <span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> fields
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> models <span class="hljs-keyword">as</span> form_model
+
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FInfo</span><span class="hljs-params">(forms.Form)</span>:</span>
+        authors = form_model.ModelMultipleChoiceField(queryset=models.NNewType.objects.all())  <span class="hljs-comment"># &#x591A;&#x9009;</span>
+        <span class="hljs-comment"># authors = form_model.ModelChoiceField(queryset=models.NNewType.objects.all())  # &#x5355;&#x9009;</span>
+</code></pre>
+<h4 id="django-form&#x6240;&#x6709;&#x5185;&#x7F6E;&#x5B57;&#x6BB5;">Django Form&#x6240;&#x6709;&#x5185;&#x7F6E;&#x5B57;&#x6BB5;</h4>
+<pre><code>Field
+    required=True,               &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A;
+    widget=None,                 HTML&#x63D2;&#x4EF6;
+    label=None,                  &#x7528;&#x4E8E;&#x751F;&#x6210;Label&#x6807;&#x7B7E;&#x6216;&#x663E;&#x793A;&#x5185;&#x5BB9;
+    initial=None,                &#x521D;&#x59CB;&#x503C;
+    help_text=&apos;&apos;,                &#x5E2E;&#x52A9;&#x4FE1;&#x606F;(&#x5728;&#x6807;&#x7B7E;&#x65C1;&#x8FB9;&#x663E;&#x793A;)
+    error_messages=None,         &#x9519;&#x8BEF;&#x4FE1;&#x606F; {&apos;required&apos;: &apos;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&apos;, &apos;invalid&apos;: &apos;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&apos;}
+    validators=[],               &#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x89C4;&#x5219;
+    localize=False,              &#x662F;&#x5426;&#x652F;&#x6301;&#x672C;&#x5730;&#x5316;
+    disabled=False,              &#x662F;&#x5426;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;
+    label_suffix=None            Label&#x5185;&#x5BB9;&#x540E;&#x7F00;
+
+
+CharField(Field)
+    max_length=None,             &#x6700;&#x5927;&#x957F;&#x5EA6;
+    min_length=None,             &#x6700;&#x5C0F;&#x957F;&#x5EA6;
+    strip=True                   &#x662F;&#x5426;&#x79FB;&#x9664;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7A7A;&#x767D;
+
+IntegerField(Field)
+    max_value=None,              &#x6700;&#x5927;&#x503C;
+    min_value=None,              &#x6700;&#x5C0F;&#x503C;
+
+FloatField(IntegerField)
+    ...
+
+DecimalField(IntegerField)
+    max_value=None,              &#x6700;&#x5927;&#x503C;
+    min_value=None,              &#x6700;&#x5C0F;&#x503C;
+    max_digits=None,             &#x603B;&#x957F;&#x5EA6;
+    decimal_places=None,         &#x5C0F;&#x6570;&#x4F4D;&#x957F;&#x5EA6;
+
+BaseTemporalField(Field)
+    input_formats=None          &#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x5316;   
+
+DateField(BaseTemporalField)    &#x683C;&#x5F0F;&#xFF1A;2015-09-01
+TimeField(BaseTemporalField)    &#x683C;&#x5F0F;&#xFF1A;11:12
+DateTimeField(BaseTemporalField)&#x683C;&#x5F0F;&#xFF1A;2015-09-01 11:12
+
+DurationField(Field)            &#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF1A;%d %H:%M:%S.%f
+    ...
+
+RegexField(CharField)
+    regex,                      &#x81EA;&#x5B9A;&#x5236;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;
+    max_length=None,            &#x6700;&#x5927;&#x957F;&#x5EA6;
+    min_length=None,            &#x6700;&#x5C0F;&#x957F;&#x5EA6;
+    error_message=None,         &#x5FFD;&#x7565;&#xFF0C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4F7F;&#x7528; error_messages={&apos;invalid&apos;: &apos;...&apos;}
+
+EmailField(CharField)      
+    ...
+
+FileField(Field)
+    allow_empty_file=False     &#x662F;&#x5426;&#x5141;&#x8BB8;&#x7A7A;&#x6587;&#x4EF6;
+
+ImageField(FileField)      
+    ...
+    &#x6CE8;&#xFF1A;&#x9700;&#x8981;PIL&#x6A21;&#x5757;&#xFF0C;pip3 install Pillow
+    &#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x5B57;&#x5178;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E24;&#x70B9;&#xFF1A;
+        - form&#x8868;&#x5355;&#x4E2D; enctype=&quot;multipart/form-data&quot;
+        - view&#x51FD;&#x6570;&#x4E2D; obj = MyForm(request.POST, request.FILES)
+
+URLField(Field)
+    ...
+
+
+BooleanField(Field)  
+    ...
+
+NullBooleanField(BooleanField)
+    ...
+
+ChoiceField(Field)
+    ...
+    choices=(),                &#x9009;&#x9879;&#xFF0C;&#x5982;&#xFF1A;choices = ((0,&apos;&#x4E0A;&#x6D77;&apos;),(1,&apos;&#x5317;&#x4EAC;&apos;),)
+    required=True,             &#x662F;&#x5426;&#x5FC5;&#x586B;
+    widget=None,               &#x63D2;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;select&#x63D2;&#x4EF6;
+    label=None,                Label&#x5185;&#x5BB9;
+    initial=None,              &#x521D;&#x59CB;&#x503C;
+    help_text=&apos;&apos;,              &#x5E2E;&#x52A9;&#x63D0;&#x793A;
+
+
+ModelChoiceField(ChoiceField)
+    ...                        django.forms.models.ModelChoiceField
+    queryset,                  # &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;
+    empty_label=&quot;---------&quot;,   # &#x9ED8;&#x8BA4;&#x7A7A;&#x663E;&#x793A;&#x5185;&#x5BB9;
+    to_field_name=None,        # HTML&#x4E2D;value&#x7684;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x6BB5;
+    limit_choices_to=None      # ModelForm&#x4E2D;&#x5BF9;queryset&#x4E8C;&#x6B21;&#x7B5B;&#x9009;
+
+ModelMultipleChoiceField(ModelChoiceField)
+    ...                        django.forms.models.ModelMultipleChoiceField
+
+
+
+TypedChoiceField(ChoiceField)
+    coerce = lambda val: val   &#x5BF9;&#x9009;&#x4E2D;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x8F6C;&#x6362;
+    empty_value= &apos;&apos;            &#x7A7A;&#x503C;&#x7684;&#x9ED8;&#x8BA4;&#x503C;
+
+MultipleChoiceField(ChoiceField)
+    ...
+
+TypedMultipleChoiceField(MultipleChoiceField)
+    coerce = lambda val: val   &#x5BF9;&#x9009;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x8F6C;&#x6362;
+    empty_value= &apos;&apos;            &#x7A7A;&#x503C;&#x7684;&#x9ED8;&#x8BA4;&#x503C;
+
+ComboField(Field)
+    fields=()                  &#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x9A8C;&#x8BC1;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;&#x5373;&#x9A8C;&#x8BC1;&#x6700;&#x5927;&#x957F;&#x5EA6;20&#xFF0C;&#x53C8;&#x9A8C;&#x8BC1;&#x90AE;&#x7BB1;&#x683C;&#x5F0F;
+                               fields.ComboField(fields=[fields.CharField(max_length=20), fields.EmailField(),])
+
+MultiValueField(Field)
+    PS: &#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x5B50;&#x7C7B;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x805A;&#x5408;&#x591A;&#x4E2A;&#x5B57;&#x5178;&#x53BB;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x8981;&#x914D;&#x5408;MultiWidget&#x4F7F;&#x7528;
+
+SplitDateTimeField(MultiValueField)
+    input_date_formats=None,   &#x683C;&#x5F0F;&#x5217;&#x8868;&#xFF1A;[&apos;%Y--%m--%d&apos;, &apos;%m%d/%Y&apos;, &apos;%m/%d/%y&apos;]
+    input_time_formats=None    &#x683C;&#x5F0F;&#x5217;&#x8868;&#xFF1A;[&apos;%H:%M:%S&apos;, &apos;%H:%M:%S.%f&apos;, &apos;%H:%M&apos;]
+
+FilePathField(ChoiceField)     &#x6587;&#x4EF6;&#x9009;&#x9879;&#xFF0C;&#x76EE;&#x5F55;&#x4E0B;&#x6587;&#x4EF6;&#x663E;&#x793A;&#x5728;&#x9875;&#x9762;&#x4E2D;
+    path,                      &#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;
+    match=None,                &#x6B63;&#x5219;&#x5339;&#x914D;
+    recursive=False,           &#x9012;&#x5F52;&#x4E0B;&#x9762;&#x7684;&#x6587;&#x4EF6;&#x5939;
+    allow_files=True,          &#x5141;&#x8BB8;&#x6587;&#x4EF6;
+    allow_folders=False,       &#x5141;&#x8BB8;&#x6587;&#x4EF6;&#x5939;
+    required=True,
+    widget=None,
+    label=None,
+    initial=None,
+    help_text=&apos;&apos;
+
+GenericIPAddressField
+    protocol=&apos;both&apos;,           both,ipv4,ipv6&#x652F;&#x6301;&#x7684;IP&#x683C;&#x5F0F;
+    unpack_ipv4=False          &#x89E3;&#x6790;ipv4&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x662F;::ffff:192.0.2.1&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x89E3;&#x6790;&#x4E3A;192.0.2.1&#xFF0C; PS&#xFF1A;protocol&#x5FC5;&#x987B;&#x4E3A;both&#x624D;&#x80FD;&#x542F;&#x7528;
+
+SlugField(CharField)           &#x6570;&#x5B57;&#xFF0C;&#x5B57;&#x6BCD;&#xFF0C;&#x4E0B;&#x5212;&#x7EBF;&#xFF0C;&#x51CF;&#x53F7;&#xFF08;&#x8FDE;&#x5B57;&#x7B26;&#xFF09;
+    ...
+
+UUIDField(CharField)           uuid&#x7C7B;&#x578B;
+</code></pre><h4 id="&#x5B57;&#x6BB5;&#x6821;&#x9A8C;">&#x5B57;&#x6BB5;&#x6821;&#x9A8C;</h4>
+<h5 id="regexvalidator&#x9A8C;&#x8BC1;&#x5668;">RegexValidator&#x9A8C;&#x8BC1;&#x5668;</h5>
+<pre><code class="lang-python">    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> Form
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> widgets
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> fields
+    <span class="hljs-keyword">from</span> django.core.validators <span class="hljs-keyword">import</span> RegexValidator
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyForm</span><span class="hljs-params">(Form)</span>:</span>
+        user = fields.CharField(
+            validators=[RegexValidator(<span class="hljs-string">r&apos;^[0-9]+$&apos;</span>, <span class="hljs-string">&apos;&#x8BF7;&#x8F93;&#x5165;&#x6570;&#x5B57;&apos;</span>), RegexValidator(<span class="hljs-string">r&apos;^159[0-9]+$&apos;</span>, <span class="hljs-string">&apos;&#x6570;&#x5B57;&#x5FC5;&#x987B;&#x4EE5;159&#x5F00;&#x5934;&apos;</span>)],
+        )
+</code></pre>
+<h5 id="&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x51FD;&#x6570;">&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x51FD;&#x6570;</h5>
+<pre><code class="lang-python">    <span class="hljs-keyword">import</span> re
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> Form
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> widgets
+    <span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> fields
+    <span class="hljs-keyword">from</span> django.core.exceptions <span class="hljs-keyword">import</span> ValidationError
+
+
+    <span class="hljs-comment"># &#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x89C4;&#x5219;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mobile_validate</span><span class="hljs-params">(value)</span>:</span>
+        mobile_re = re.compile(<span class="hljs-string">r&apos;^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$&apos;</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> mobile_re.match(value):
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x624B;&#x673A;&#x53F7;&#x7801;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&apos;</span>)
+
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PublishForm</span><span class="hljs-params">(Form)</span>:</span>
+
+
+        title = fields.CharField(max_length=<span class="hljs-number">20</span>,
+                                min_length=<span class="hljs-number">5</span>,
+                                error_messages={<span class="hljs-string">&apos;required&apos;</span>: <span class="hljs-string">&apos;&#x6807;&#x9898;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&apos;</span>,
+                                                <span class="hljs-string">&apos;min_length&apos;</span>: <span class="hljs-string">&apos;&#x6807;&#x9898;&#x6700;&#x5C11;&#x4E3A;5&#x4E2A;&#x5B57;&#x7B26;&apos;</span>,
+                                                <span class="hljs-string">&apos;max_length&apos;</span>: <span class="hljs-string">&apos;&#x6807;&#x9898;&#x6700;&#x591A;&#x4E3A;20&#x4E2A;&#x5B57;&#x7B26;&apos;</span>},
+                                widget=widgets.TextInput(attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&quot;form-control&quot;</span>,
+                                                              <span class="hljs-string">&apos;placeholder&apos;</span>: <span class="hljs-string">&apos;&#x6807;&#x9898;5-20&#x4E2A;&#x5B57;&#x7B26;&apos;</span>}))
+
+
+        <span class="hljs-comment"># &#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x89C4;&#x5219;</span>
+        phone = fields.CharField(validators=[mobile_validate, ],
+                                error_messages={<span class="hljs-string">&apos;required&apos;</span>: <span class="hljs-string">&apos;&#x624B;&#x673A;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&apos;</span>},
+                                widget=widgets.TextInput(attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&quot;form-control&quot;</span>,
+                                                              <span class="hljs-string">&apos;placeholder&apos;</span>: <span class="hljs-string">u&apos;&#x624B;&#x673A;&#x53F7;&#x7801;&apos;</span>}))
+
+        email = fields.EmailField(required=<span class="hljs-keyword">False</span>,
+                                error_messages={<span class="hljs-string">&apos;required&apos;</span>: <span class="hljs-string">u&apos;&#x90AE;&#x7BB1;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&apos;</span>,<span class="hljs-string">&apos;invalid&apos;</span>: <span class="hljs-string">u&apos;&#x90AE;&#x7BB1;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&apos;</span>},
+                                widget=widgets.TextInput(attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&quot;form-control&quot;</span>, <span class="hljs-string">&apos;placeholder&apos;</span>: <span class="hljs-string">u&apos;&#x90AE;&#x7BB1;&apos;</span>}))
+</code></pre>
+<h4 id="hook&#x65B9;&#x6CD5;">Hook&#x65B9;&#x6CD5;</h4>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;Form&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9A8C;&#x8BC1;&#x529F;&#x80FD;&#x3002;</p>
+<h5 id="&#x5C40;&#x90E8;&#x94A9;&#x5B50;">&#x5C40;&#x90E8;&#x94A9;&#x5B50;</h5>
+<p>&#x6211;&#x4EEC;&#x5728;Fom&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49; clean_&#x5B57;&#x6BB5;&#x540D;() &#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x5BF9;&#x7279;&#x5B9A;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        username = forms.CharField(
+            min_length=<span class="hljs-number">8</span>,
+            label=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>,
+            initial=<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>,
+            error_messages={
+                <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-string">&quot;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;</span>,
+                <span class="hljs-string">&quot;invalid&quot;</span>: <span class="hljs-string">&quot;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;</span>,
+                <span class="hljs-string">&quot;min_length&quot;</span>: <span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&#x6700;&#x77ED;8&#x4F4D;&quot;</span>
+            },
+            widget=forms.widgets.TextInput(attrs={<span class="hljs-string">&quot;class&quot;</span>: <span class="hljs-string">&quot;form-control&quot;</span>})
+        )
+        ...
+        <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x5C40;&#x90E8;&#x94A9;&#x5B50;&#xFF0C;&#x7528;&#x6765;&#x6821;&#x9A8C;username&#x5B57;&#x6BB5;</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_username</span><span class="hljs-params">(self)</span>:</span>
+            value = self.cleaned_data.get(<span class="hljs-string">&quot;username&quot;</span>)
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;666&quot;</span> <span class="hljs-keyword">in</span> value:
+                <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&quot;&#x5149;&#x558A;666&#x662F;&#x4E0D;&#x884C;&#x7684;&quot;</span>)
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-keyword">return</span> value
+</code></pre>
+<h5 id="&#x5168;&#x5C40;&#x94A9;&#x5B50;">&#x5168;&#x5C40;&#x94A9;&#x5B50;</h5>
+<p>&#x6211;&#x4EEC;&#x5728;Fom&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49; clean() &#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x5BF9;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x5168;&#x5C40;&#x6821;&#x9A8C;&#x3002;</p>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        ...
+        password = forms.CharField(
+            min_length=<span class="hljs-number">6</span>,
+            label=<span class="hljs-string">&quot;&#x5BC6;&#x7801;&quot;</span>,
+            widget=forms.widgets.PasswordInput(attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;form-control&apos;</span>}, render_value=<span class="hljs-keyword">True</span>)
+        )
+        re_password = forms.CharField(
+            min_length=<span class="hljs-number">6</span>,
+            label=<span class="hljs-string">&quot;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&quot;</span>,
+            widget=forms.widgets.PasswordInput(attrs={<span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;form-control&apos;</span>}, render_value=<span class="hljs-keyword">True</span>)
+        )
+        ...
+        <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x7684;&#x94A9;&#x5B50;&#xFF0C;&#x7528;&#x6765;&#x6821;&#x9A8C;&#x5BC6;&#x7801;&#x548C;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x76F8;&#x540C;</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean</span><span class="hljs-params">(self)</span>:</span>
+            password_value = self.cleaned_data.get(<span class="hljs-string">&apos;password&apos;</span>)
+            re_password_value = self.cleaned_data.get(<span class="hljs-string">&apos;re_password&apos;</span>)
+            <span class="hljs-keyword">if</span> password_value == re_password_value:
+                <span class="hljs-keyword">return</span> self.cleaned_data
+            <span class="hljs-keyword">else</span>:
+                self.add_error(<span class="hljs-string">&apos;re_password&apos;</span>, <span class="hljs-string">&apos;&#x4E24;&#x6B21;&#x5BC6;&#x7801;&#x4E0D;&#x4E00;&#x81F4;&apos;</span>)
+                <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x4E24;&#x6B21;&#x5BC6;&#x7801;&#x4E0D;&#x4E00;&#x81F4;&apos;</span>)
+</code></pre>
+<h4 id="&#x8865;&#x5145;&#x8FDB;&#x9636;">&#x8865;&#x5145;&#x8FDB;&#x9636;</h4>
+<h5 id="&#x5E94;&#x7528;bootstrap&#x6837;&#x5F0F;">&#x5E94;&#x7528;Bootstrap&#x6837;&#x5F0F;</h5>
+<pre><code class="lang-html">    <span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;x-ua-compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/static/bootstrap/css/bootstrap.min.css&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>login<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/login2/&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">novalidate</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-horizontal&quot;</span>&gt;</span>
+          { % csrf_token % }
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;{ { form_obj.username.id_for_label } }&quot;</span>
+                   <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-2 control-label&quot;</span>&gt;</span>{ { form_obj.username.label } }<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-10&quot;</span>&gt;</span>
+              { { form_obj.username } }
+              <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-block&quot;</span>&gt;</span>{ { form_obj.username.errors.0 } }<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;{ { form_obj.pwd.id_for_label } }&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-2 control-label&quot;</span>&gt;</span>{ { form_obj.pwd.label } }<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-10&quot;</span>&gt;</span>
+              { { form_obj.pwd } }
+              <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help-block&quot;</span>&gt;</span>{ { form_obj.pwd.errors.0 } }<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-2 control-label&quot;</span>&gt;</span>{ { form_obj.gender.label } }<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-10&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;radio&quot;</span>&gt;</span>
+                { % for radio in form_obj.gender % }
+                  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;{ { radio.id_for_label } }&quot;</span>&gt;</span>
+                    { { radio.tag } }{ { radio.choice_label } }
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                { % endfor % }
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-md-offset-2 col-md-10&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-default&quot;</span>&gt;</span>&#x6CE8;&#x518C;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/static/jquery-3.2.1.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/static/bootstrap/js/bootstrap.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h5 id="&#x6279;&#x91CF;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;">&#x6279;&#x91CF;&#x6DFB;&#x52A0;&#x6837;&#x5F0F;</h5>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+        username = forms.CharField(
+            min_length=<span class="hljs-number">8</span>,
+            label=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>,
+            initial=<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>,
+            error_messages={
+                <span class="hljs-string">&quot;required&quot;</span>: <span class="hljs-string">&quot;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;</span>,
+                <span class="hljs-string">&quot;invalid&quot;</span>: <span class="hljs-string">&quot;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;</span>,
+                <span class="hljs-string">&quot;min_length&quot;</span>: <span class="hljs-string">&quot;&#x7528;&#x6237;&#x540D;&#x6700;&#x77ED;8&#x4F4D;&quot;</span>
+            }
+        ...
+
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, *args, **kwargs)</span>:</span>
+            super(LoginForm, self).__init__(*args, **kwargs)
+            <span class="hljs-keyword">for</span> field <span class="hljs-keyword">in</span> iter(self.fields):
+                self.fields[field].widget.attrs.update({
+                    <span class="hljs-string">&apos;class&apos;</span>: <span class="hljs-string">&apos;form-control&apos;</span>
+                })
+</code></pre>
+<h3 id="modelform">ModelForm</h3>
+<p>&#x901A;&#x5E38;&#x5728;Django&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x7684;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x4E0E;Django &#x7684;&#x6A21;&#x578B;&#x7D27;&#x5BC6;&#x6620;&#x5C04;&#x7684;&#x8868;&#x5355;&#x3002; &#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x4F60;&#x4E5F;&#x8BB8;&#x4F1A;&#x6709;&#x4E2A;Book &#x6A21;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x8FD8;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;form&#x8868;&#x5355;&#x7528;&#x6765;&#x6DFB;&#x52A0;&#x548C;&#x7F16;&#x8F91;&#x4E66;&#x7C4D;&#x4FE1;&#x606F;&#x5230;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#x4E2D;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;form&#x8868;&#x5355;&#x4E2D;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x5C06;&#x662F;&#x5197;&#x4F59;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5728;&#x6A21;&#x578B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x90A3;&#x4E9B;&#x5B57;&#x6BB5;&#x3002;</p>
+<p>&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;Django &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8F85;&#x52A9;&#x7C7B;&#x6765;&#x8BA9;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;Django &#x7684;&#x6A21;&#x578B;&#x521B;&#x5EFA;Form&#xFF0C;&#x8FD9;&#x5C31;&#x662F;ModelForm&#x3002;</p>
+<h4 id="modelform&#x5B9A;&#x4E49;">ModelForm&#x5B9A;&#x4E49;</h4>
+<p>form&#x4E0E;model&#x7684;&#x7EC8;&#x6781;&#x7ED3;&#x5408;&#x3002;</p>
+<pre><code class="lang-python">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookForm</span><span class="hljs-params">(forms.ModelForm)</span>:</span>
+
+        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+            model = models.Book
+            fields = <span class="hljs-string">&quot;__all__&quot;</span>
+            labels = {
+                <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#x4E66;&#x540D;&quot;</span>,
+                <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-string">&quot;&#x4EF7;&#x683C;&quot;</span>
+            }
+            widgets = {
+                <span class="hljs-string">&quot;password&quot;</span>: forms.widgets.PasswordInput(attrs={<span class="hljs-string">&quot;class&quot;</span>: <span class="hljs-string">&quot;c1&quot;</span>}),
+            }
+</code></pre>
+<h5 id="class-meta&#x4E0B;&#x5E38;&#x7528;&#x53C2;&#x6570;">class Meta&#x4E0B;&#x5E38;&#x7528;&#x53C2;&#x6570;</h5>
+<pre><code class="lang-python">    model = models.Book  <span class="hljs-comment"># &#x5BF9;&#x5E94;&#x7684;Model&#x4E2D;&#x7684;&#x7C7B;</span>
+    fields = <span class="hljs-string">&quot;__all__&quot;</span>  <span class="hljs-comment"># &#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x679C;&#x662F;__all__,&#x5C31;&#x662F;&#x8868;&#x793A;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x5B57;&#x6BB5;</span>
+    exclude = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x6392;&#x9664;&#x7684;&#x5B57;&#x6BB5;</span>
+    labels = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x63D0;&#x793A;&#x4FE1;&#x606F;</span>
+    help_texts = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x5E2E;&#x52A9;&#x63D0;&#x793A;&#x4FE1;&#x606F;</span>
+    widgets = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;</span>
+    error_messages = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</span>
+</code></pre>
+<h5 id="modelform&#x7684;&#x9A8C;&#x8BC1;">ModelForm&#x7684;&#x9A8C;&#x8BC1;</h5>
+<p>&#x4E0E;&#x666E;&#x901A;&#x7684;Form&#x8868;&#x5355;&#x9A8C;&#x8BC1;&#x7C7B;&#x578B;&#x7C7B;&#x4F3C;&#xFF0C;ModelForm&#x8868;&#x5355;&#x7684;&#x9A8C;&#x8BC1;&#x5728;&#x8C03;&#x7528;is_valid() &#x6216;&#x8BBF;&#x95EE;errors &#x5C5E;&#x6027;&#x65F6;&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x4F7F;&#x7528;Form&#x7C7B;&#x4E00;&#x6837;&#x81EA;&#x5B9A;&#x4E49;&#x5C40;&#x90E8;&#x94A9;&#x5B50;&#x65B9;&#x6CD5;&#x548C;&#x5168;&#x5C40;&#x94A9;&#x5B50;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x91CD;&#x5199;&#x5177;&#x4F53;&#x5B57;&#x6BB5;&#x5E76;&#x8BBE;&#x7F6E;validators&#x5C5E;&#x6027;&#x7684;&#x8BDD;&#xFF0C;ModelForm&#x662F;&#x6309;&#x7167;&#x6A21;&#x578B;&#x4E2D;&#x5B57;&#x6BB5;&#x7684;validators&#x6765;&#x6821;&#x9A8C;&#x7684;&#x3002;</p>
+<h5 id="save&#x65B9;&#x6CD5;">save()&#x65B9;&#x6CD5;</h5>
+<p>&#x6BCF;&#x4E2A;ModelForm&#x8FD8;&#x5177;&#x6709;&#x4E00;&#x4E2A;save()&#x65B9;&#x6CD5;&#x3002; &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6839;&#x636E;&#x8868;&#x5355;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x5E76;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;&#x3002; 
+ModelForm&#x7684;&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x73B0;&#x6709;&#x7684;&#x6A21;&#x578B;&#x5B9E;&#x4F8B;&#x4F5C;&#x4E3A;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;instance&#xFF1B;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x6B64;&#x529F;&#x80FD;&#xFF0C;&#x5219;save()&#x5C06;&#x66F4;&#x65B0;&#x8BE5;&#x5B9E;&#x4F8B;&#x3002; 
+&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#xFF0C;save() &#x5C06;&#x521B;&#x5EFA;&#x6A21;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code>&gt;&gt;&gt; from myapp.models import Book
+&gt;&gt;&gt; from myapp.forms import BookForm
+
+# &#x6839;&#x636E;POST&#x6570;&#x636E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;form&#x5BF9;&#x8C61;
+&gt;&gt;&gt; form_obj = BookForm(request.POST)
+
+# &#x521B;&#x5EFA;&#x4E66;&#x7C4D;&#x5BF9;&#x8C61;
+&gt;&gt;&gt; new_ book = form_obj.save()
+
+# &#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x4E66;&#x7C4D;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;form&#x5BF9;&#x8C61;
+&gt;&gt;&gt; edit_obj = Book.objects.get(id=1)
+# &#x4F7F;&#x7528;POST&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E66;&#x7C4D;&#x5BF9;&#x8C61;
+&gt;&gt;&gt; form_obj = BookForm(request.POST, instance=edit_obj)
+&gt;&gt;&gt; form_obj.save()
+</code></pre><h2 id="&#x8868;&#x5355;&#x7684;&#x5E94;&#x7528;100&#x5929;">&#x8868;&#x5355;&#x7684;&#x5E94;&#x7528;(100&#x5929;)</h2>
+<p>&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x6765;&#x5B8C;&#x6210;&#x4E0A;&#x4E00;&#x7AE0;&#x8282;&#x4E2D;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5B9E;&#x73B0;&#x201C;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x201D;&#x548C;&#x201C;&#x7528;&#x6237;&#x767B;&#x5F55;&#x201D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5E76;&#x9650;&#x5236;&#x53EA;&#x6709;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x624D;&#x80FD;&#x4E3A;&#x8001;&#x5E08;&#x6295;&#x7968;&#x3002;Django&#x6846;&#x67B6;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x8868;&#x5355;&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x800C;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x6A21;&#x578B;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(models.Model)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7528;&#x6237;&quot;&quot;&quot;</span>
+    no = models.AutoField(primary_key=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&apos;&#x7F16;&#x53F7;&apos;</span>)
+    username = models.CharField(max_length=<span class="hljs-number">20</span>, unique=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&apos;</span>)
+    password = models.CharField(max_length=<span class="hljs-number">32</span>, verbose_name=<span class="hljs-string">&apos;&#x5BC6;&#x7801;&apos;</span>)
+    regdate = models.DateTimeField(auto_now_add=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&apos;&#x6CE8;&#x518C;&#x65F6;&#x95F4;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        db_table = <span class="hljs-string">&apos;tb_user&apos;</span>
+        verbose_name_plural = <span class="hljs-string">&apos;&#x7528;&#x6237;&apos;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x751F;&#x6210;&#x8FC1;&#x79FB;&#x548C;&#x6267;&#x884C;&#x8FC1;&#x79FB;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;&#x7528;&#x6237;&#x8868;&#x3002;</p>
+<pre><code class="lang-Shell">(venv)$ python manage.py makemigrations vote
+...
+(venv)$ python manage.py migrate
+...
+</code></pre>
+<p>&#x5B9A;&#x5236;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x6CE8;&#x518C;&#x6A21;&#x677F;&#x9875;&#x9762;&#x3002;</p>
+<pre><code class="lang-HTML"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x7528;&#x6237;&#x6CE8;&#x518C;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* &#x6B64;&#x5904;&#x7701;&#x7565;&#x5C42;&#x53E0;&#x6837;&#x5F0F;&#x8868;&#x9009;&#x62E9;&#x5668; */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#x7528;&#x6237;&#x6CE8;&#x518C;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hint&quot;</span>&gt;</span>{ { hint } }<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/register/&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+        { % csrf_token % }
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>&#x7528;&#x6237;&#x540D;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;repassword&quot;</span>&gt;</span>&#x786E;&#x8BA4;&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;repassword&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;repassword&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x6CE8;&#x518C;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x91CD;&#x7F6E;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/login&quot;</span>&gt;</span>&#x8FD4;&#x56DE;&#x767B;&#x5F55;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x8868;&#x5355;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x6A21;&#x677F;&#x6307;&#x4EE4;<code>{ % csrf_token % }</code>&#x4E3A;&#x8868;&#x5355;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x57DF;&#xFF08;type&#x5C5E;&#x6027;&#x503C;&#x4E3A;hidden&#x7684;input&#x6807;&#x7B7E;&#xFF09;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x8868;&#x5355;&#x4E2D;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x4EE4;&#x724C;&#xFF08;token&#xFF09;&#x6765;&#x9632;&#x8303;<a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0" target="_blank">&#x8DE8;&#x7AD9;&#x8BF7;&#x6C42;&#x4F2A;&#x9020;</a>&#xFF08;&#x901A;&#x5E38;&#x7B80;&#x79F0;&#x4E3A;CSRF&#xFF09;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;Django&#x5728;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x65F6;&#x7684;&#x786C;&#x6027;&#x8981;&#x6C42;&#xFF0C;&#x9664;&#x975E;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x4E86;&#x514D;&#x9664;CSRF&#x4EE4;&#x724C;&#x3002;&#x4E0B;&#x56FE;&#x662F;&#x4E00;&#x4E2A;&#x5173;&#x4E8E;CSRF&#x7B80;&#x5355;&#x751F;&#x52A8;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5B83;&#x6765;&#x81EA;&#x4E8E;<a href="https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5" target="_blank">&#x7EF4;&#x57FA;&#x767E;&#x79D1;</a>&#x3002;</p>
+<p><img src="res/CSRF.png" alt=""></p>
+<p>&#x7528;&#x6237;&#x5728;&#x63D0;&#x4EA4;&#x6CE8;&#x518C;&#x8868;&#x5355;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x5BF9;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x7684;&#x7F51;&#x7AD9;&#x8981;&#x6C42;&#x7528;&#x6237;&#x540D;&#x5FC5;&#x987B;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x3001;&#x4E0B;&#x5212;&#x7EBF;&#x6784;&#x6210;&#x4E14;&#x957F;&#x5EA6;&#x5728;4-20&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#xFF0C;&#x5BC6;&#x7801;&#x7684;&#x957F;&#x5EA6;&#x4E3A;8-20&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&#x5FC5;&#x987B;&#x8DDF;&#x5BC6;&#x7801;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x8FD9;&#x4E9B;&#x9A8C;&#x8BC1;&#x64CD;&#x4F5C;&#x9996;&#x5148;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x7684;JavaScript&#x4EE3;&#x7801;&#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x5373;&#x4FBF;&#x5982;&#x6B64;&#xFF0C;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4ECD;&#x7136;&#x8981;&#x5BF9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x518D;&#x6B21;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#x6765;&#x907F;&#x514D;&#x5C06;&#x65E0;&#x6548;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4EA4;&#x7ED9;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x4F1A;&#x7981;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x7684;JavaScript&#x529F;&#x80FD;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x7ED5;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8F93;&#x5165;&#x68C0;&#x67E5;&#x5C06;&#x6CE8;&#x518C;&#x6570;&#x636E;&#x63D0;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x7528;&#x6237;&#x8F93;&#x5165;&#x68C0;&#x67E5;&#x4ECD;&#x7136;&#x662F;&#x5FC5;&#x8981;&#x7684;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;Django&#x6846;&#x67B6;&#x5C01;&#x88C5;&#x7684;&#x8868;&#x5355;&#x529F;&#x80FD;&#x6765;&#x5BF9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6709;&#x6548;&#x6027;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#xFF0C;&#x867D;&#x7136;Django&#x5C01;&#x88C5;&#x7684;&#x8868;&#x5355;&#x8FD8;&#x80FD;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B9A;&#x5236;&#x51FA;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x8868;&#x5355;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x8FD9;&#x663E;&#x7136;&#x662F;&#x4E00;&#x79CD;&#x7075;&#x6D3B;&#x6027;&#x5F88;&#x5DEE;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x57FA;&#x672C;&#x4E0D;&#x8003;&#x8651;&#xFF0C;&#x6240;&#x4EE5;&#x8868;&#x5355;&#x4E3B;&#x8981;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x5728;&#x4E8E;&#x6570;&#x636E;&#x9A8C;&#x8BC1;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x505A;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre><code class="lang-Python">USERNAME_PATTERN = re.compile(<span class="hljs-string">r&apos;\w{4,20}&apos;</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterForm</span><span class="hljs-params">(forms.ModelForm)</span>:</span>
+    repassword = forms.CharField(min_length=<span class="hljs-number">8</span>, max_length=<span class="hljs-number">20</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_username</span><span class="hljs-params">(self)</span>:</span>
+        username = self.cleaned_data[<span class="hljs-string">&apos;username&apos;</span>]
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> USERNAME_PATTERN.fullmatch(username):
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;&#x6784;&#x6210;&#x4E14;&#x957F;&#x5EA6;&#x4E3A;4-20&#x4E2A;&#x5B57;&#x7B26;&apos;</span>)
+        <span class="hljs-keyword">return</span> username
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_password</span><span class="hljs-params">(self)</span>:</span>
+        password = self.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>]
+        <span class="hljs-keyword">if</span> len(password) &lt; <span class="hljs-number">8</span> <span class="hljs-keyword">or</span> len(password) &gt; <span class="hljs-number">20</span>:
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x65E0;&#x6548;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x5BC6;&#x7801;&#x957F;&#x5EA6;&#x4E3A;8-20&#x4E2A;&#x5B57;&#x7B26;&apos;</span>)
+        <span class="hljs-keyword">return</span> to_md5_hex(self.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>])
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_repassword</span><span class="hljs-params">(self)</span>:</span>
+        repassword = to_md5_hex(self.cleaned_data[<span class="hljs-string">&apos;repassword&apos;</span>])
+        <span class="hljs-keyword">if</span> repassword != self.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>]:
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x5BC6;&#x7801;&#x548C;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&#x4E0D;&#x4E00;&#x81F4;&apos;</span>)
+        <span class="hljs-keyword">return</span> repassword
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        model = User
+        exclude = (<span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-string">&apos;regdate&apos;</span>)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x4E0E;User&#x6A21;&#x578B;&#x7ED1;&#x5B9A;&#x7684;&#x8868;&#x5355;&#xFF08;&#x7EE7;&#x627F;&#x81EA;ModelForm&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x6392;&#x9664;&#x4E86;&#x7528;&#x6237;&#x7F16;&#x53F7;&#xFF08;no&#xFF09;&#x548C;&#x6CE8;&#x518C;&#x65E5;&#x671F;&#xFF08;regdate&#xFF09;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;repassword&#x5C5E;&#x6027;&#x7528;&#x6765;&#x63A5;&#x6536;&#x4ECE;&#x7528;&#x6237;&#x8868;&#x5355;&#x4F20;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7684;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x5B9A;&#x4E49;User&#x6A21;&#x578B;&#x65F6;&#x5DF2;&#x7ECF;&#x5BF9;&#x7528;&#x6237;&#x540D;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x4E86;&#x9650;&#x5236;&#xFF0C;&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x53C8;&#x5BF9;&#x786E;&#x8BA4;&#x5BC6;&#x7801;&#x7684;&#x6700;&#x5C0F;&#x548C;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x4E86;&#x9650;&#x5236;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x90FD;&#x4E0D;&#x8DB3;&#x4EE5;&#x5B8C;&#x6210;&#x6211;&#x4EEC;&#x5BF9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x9A8C;&#x8BC1;&#x3002;&#x4E0A;&#x9762;&#x4EE5;<code>clean_</code>&#x6253;&#x5934;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x9A8C;&#x8BC1;&#x89C4;&#x5219;&#x3002;&#x5F88;&#x660E;&#x663E;&#xFF0C;<code>clean_username</code>&#x662F;&#x5BF9;&#x7528;&#x6237;&#x540D;&#x7684;&#x68C0;&#x67E5;&#xFF0C;&#x800C;<code>clean_password</code>&#x662F;&#x5BF9;&#x5BC6;&#x7801;&#x7684;&#x68C0;&#x67E5;&#x3002;&#x7531;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x4E8C;&#x7EF4;&#x8868;&#x4E2D;&#x4E0D;&#x5E94;&#x8BE5;&#x4FDD;&#x5B58;&#x5BC6;&#x7801;&#x7684;&#x539F;&#x6587;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x5BC6;&#x7801;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;MD5&#x6458;&#x8981;&#x5904;&#x7406;&#xFF0C;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x5982;&#x679C;&#x53EA;&#x505A;&#x51FA;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;&#x8FD8;&#x4E0D;&#x592A;&#x591F;&#xFF0C;&#x56E0;&#x4E3A;&#x5373;&#x4FBF;&#x4F7F;&#x7528;&#x4E86;&#x6458;&#x8981;&#xFF0C;&#x4ECD;&#x7136;&#x6709;&#x5229;&#x7528;&#x5F69;&#x8679;&#x8868;&#x53CD;&#x5411;&#x67E5;&#x8BE2;&#x7834;&#x89E3;&#x7528;&#x6237;&#x5BC6;&#x7801;&#x7684;&#x98CE;&#x9669;&#xFF0C;&#x5982;&#x4F55;&#x505A;&#x5F97;&#x66F4;&#x597D;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x7684;&#x5185;&#x5BB9;&#x4E2D;&#x8BB2;&#x5230;&#x3002;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x751F;&#x6210;MD5&#x6458;&#x8981;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">to_md5_hex</span><span class="hljs-params">(message)</span>:</span>
+    <span class="hljs-keyword">return</span> hashlib.md5(message.encode()).hexdigest()
+</code></pre>
+<p>&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">register</span><span class="hljs-params">(request)</span>:</span>
+    page, hint = <span class="hljs-string">&apos;register.html&apos;</span>, <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&apos;POST&apos;</span>:
+        form = RegisterForm(request.POST)
+        <span class="hljs-keyword">if</span> form.is_valid():
+            form.save()
+            page = <span class="hljs-string">&apos;login.html&apos;</span>
+            hint = <span class="hljs-string">&apos;&#x6CE8;&#x518C;&#x6210;&#x529F;&#xFF0C;&#x8BF7;&#x767B;&#x5F55;&apos;</span>
+        <span class="hljs-keyword">else</span>:
+            hint = <span class="hljs-string">&apos;&#x8BF7;&#x8F93;&#x5165;&#x6709;&#x6548;&#x7684;&#x6CE8;&#x518C;&#x4FE1;&#x606F;&apos;</span>
+    <span class="hljs-keyword">return</span> render(request, page, {<span class="hljs-string">&apos;hint&apos;</span>: hint})
+</code></pre>
+<p>&#x5982;&#x679C;&#x7528;&#x6237;&#x53D1;&#x8D77;GET&#x8BF7;&#x6C42;&#xFF0C;&#x5C06;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;&#x6CE8;&#x518C;&#x7684;&#x9875;&#x9762;&#xFF1B;&#x5982;&#x679C;&#x7528;&#x6237;&#x4EE5;POST&#x65B9;&#x5F0F;&#x63D0;&#x4EA4;&#x6CE8;&#x518C;&#x8868;&#x5355;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x518C;&#x8868;&#x5355;&#x5BF9;&#x8C61;&#x5E76;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8868;&#x5355;&#x5BF9;&#x8C61;&#x7684;<code>is_valid</code>&#x65B9;&#x6CD5;&#x5BF9;&#x8868;&#x5355;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;True&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;False&#xFF1B;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;RegisterForm&#x7EE7;&#x627F;&#x81EA;ModelForm&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x8868;&#x5355;&#x5BF9;&#x8C61;&#x7684;<code>save</code>&#x65B9;&#x6CD5;&#x6765;&#x4FDD;&#x5B58;&#x6A21;&#x578B;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x6CE8;&#x518C;&#x8BF7;&#x6C42;&#x7684;URL&#x914D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+
+<span class="hljs-keyword">from</span> vote <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+    path(<span class="hljs-string">&apos;register/&apos;</span>, views.register, name=<span class="hljs-string">&apos;register&apos;</span>),
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+]
+</code></pre>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;<code>path</code>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;name&#x53C2;&#x6570;&#x7ED9;URL&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x9006;&#x5411;&#x89E3;&#x6790;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x53EF;&#x4EE5;&#x4ECE;&#x540E;&#x9762;&#x7ED9;&#x7684;&#x540D;&#x5B57;&#x9006;&#x5411;&#x89E3;&#x6790;&#x51FA;&#x5BF9;&#x5E94;&#x7684;URL&#x3002;</p>
+</blockquote>
+<p>&#x6211;&#x4EEC;&#x518D;&#x6765;&#x5B9A;&#x5236;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x767B;&#x5F55;&#x9875;&#x3002;</p>
+<pre><code class="lang-HTML"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x7528;&#x6237;&#x767B;&#x5F55;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-comment">/* &#x6B64;&#x5904;&#x7701;&#x7565;&#x5C42;&#x53E0;&#x6837;&#x5F0F;&#x8868;&#x9009;&#x62E9;&#x5668; */</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#x7528;&#x6237;&#x767B;&#x5F55;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hint&quot;</span>&gt;</span>{ { hint } }<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/login/&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+        { % csrf_token % }
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>&#x7528;&#x6237;&#x540D;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input captcha&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;captcha&quot;</span>&gt;</span>&#x9A8C;&#x8BC1;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;captcha&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;captcha&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/captcha/&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;120&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x767B;&#x5F55;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x91CD;&#x7F6E;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/register&quot;</span>&gt;</span>&#x6CE8;&#x518C;&#x65B0;&#x7528;&#x6237;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x767B;&#x5F55;&#x9875;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6C42;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x9A8C;&#x8BC1;&#x7801;&#x5168;&#x79F0;&#x662F;<strong>&#x5168;&#x81EA;&#x52A8;&#x533A;&#x5206;&#x8BA1;&#x7B97;&#x673A;&#x548C;&#x4EBA;&#x7C7B;&#x7684;&#x516C;&#x5F00;&#x56FE;&#x7075;&#x6D4B;&#x8BD5;</strong>&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x6765;&#x533A;&#x5206;&#x7CFB;&#x7EDF;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x8FD8;&#x662F;&#x4EBA;&#x7C7B;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x5C31;&#x662F;&#x7A0B;&#x5E8F;&#x51FA;&#x4E00;&#x4E2A;&#x53EA;&#x6709;&#x4EBA;&#x7C7B;&#x80FD;&#x591F;&#x56DE;&#x7B54;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7531;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x8005;&#x6765;&#x89E3;&#x7B54;&#xFF0C;&#x7531;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x7406;&#x8BBA;&#x4E0A;&#x65E0;&#x6CD5;&#x89E3;&#x7B54;&#x7A0B;&#x5E8F;&#x63D0;&#x51FA;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x56DE;&#x7B54;&#x51FA;&#x95EE;&#x9898;&#x7684;&#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4EBA;&#x7C7B;&#x3002;&#x5927;&#x591A;&#x6570;&#x7684;&#x7F51;&#x7AD9;&#x90FD;&#x4F7F;&#x7528;&#x4E86;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x6280;&#x672F;&#x6765;&#x9632;&#x8303;&#x7528;&#x7A0B;&#x5E8F;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x6216;&#x6A21;&#x62DF;&#x7528;&#x6237;&#x767B;&#x5F55;&#xFF08;&#x66B4;&#x529B;&#x7834;&#x89E3;&#x7528;&#x6237;&#x5BC6;&#x7801;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x9A8C;&#x8BC1;&#x7801;&#x5177;&#x6709;&#x4E00;&#x6B21;&#x6D88;&#x8D39;&#x6027;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x56FE;&#x7075;&#x6D4B;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;&#x662F;&#x4E0D;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x6CE8;&#x518C;&#x6216;&#x767B;&#x5F55;&#x7684;&#x3002;</p>
+<p>&#x5728;Python&#x7A0B;&#x5E8F;&#x4E2D;&#x751F;&#x6210;&#x9A8C;&#x8BC1;&#x7801;&#x5E76;&#x4E0D;&#x7B97;&#x7279;&#x522B;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x4E09;&#x65B9;&#x5E93;Pillow&#x7684;&#x652F;&#x6301;&#xFF08;PIL&#x7684;&#x5206;&#x652F;&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x5BF9;&#x9A8C;&#x8BC1;&#x7801;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;&#x3001;&#x626D;&#x66F2;&#x3001;&#x62C9;&#x4F38;&#x4EE5;&#x53CA;&#x52A0;&#x5165;&#x5E72;&#x6270;&#x4FE1;&#x606F;&#x6765;&#x9632;&#x8303;&#x90A3;&#x4E9B;&#x7528;OCR&#xFF08;&#x5149;&#x5B66;&#x6587;&#x5B57;&#x8BC6;&#x522B;&#xFF09;&#x7834;&#x89E3;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C01;&#x88C5;&#x4E86;&#x751F;&#x6210;&#x9A8C;&#x8BC1;&#x7801;&#x56FE;&#x7247;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x6765;&#x751F;&#x6210;&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;&#xFF0C;&#x4E0D;&#x8981;&#x201C;&#x91CD;&#x590D;&#x53D1;&#x660E;&#x8F6E;&#x5B50;&#x201D;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-string">&quot;&quot;&quot;
+&#x56FE;&#x7247;&#x9A8C;&#x8BC1;&#x7801;
+&quot;&quot;&quot;</span>
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> random
+
+<span class="hljs-keyword">from</span> io <span class="hljs-keyword">import</span> BytesIO
+
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> ImageFilter
+<span class="hljs-keyword">from</span> PIL.ImageDraw <span class="hljs-keyword">import</span> Draw
+<span class="hljs-keyword">from</span> PIL.ImageFont <span class="hljs-keyword">import</span> truetype
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bezier</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.tsequence = tuple([t / <span class="hljs-number">20.0</span> <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(<span class="hljs-number">21</span>)])
+        self.beziers = {}
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_bezier</span><span class="hljs-params">(self, n)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x7ED8;&#x5236;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-keyword">return</span> self.beziers[n]
+        <span class="hljs-keyword">except</span> KeyError:
+            combinations = pascal_row(n - <span class="hljs-number">1</span>)
+            result = []
+            <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> self.tsequence:
+                tpowers = (t ** i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n))
+                upowers = ((<span class="hljs-number">1</span> - t) ** i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n - <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>))
+                coefs = [c * a * b <span class="hljs-keyword">for</span> c, a, b <span class="hljs-keyword">in</span> zip(combinations,
+                                                      tpowers, upowers)]
+                result.append(coefs)
+            self.beziers[n] = result
+            <span class="hljs-keyword">return</span> result
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Captcha</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x9A8C;&#x8BC1;&#x7801;&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, width, height, fonts=None, color=None)</span>:</span>
+        self._image = <span class="hljs-keyword">None</span>
+        self._fonts = fonts <span class="hljs-keyword">if</span> fonts <span class="hljs-keyword">else</span> \
+            [os.path.join(os.path.dirname(__file__), <span class="hljs-string">&apos;fonts&apos;</span>, font)
+             <span class="hljs-keyword">for</span> font <span class="hljs-keyword">in</span> [<span class="hljs-string">&apos;ArialRB.ttf&apos;</span>, <span class="hljs-string">&apos;ArialNI.ttf&apos;</span>, <span class="hljs-string">&apos;Georgia.ttf&apos;</span>, <span class="hljs-string">&apos;Kongxin.ttf&apos;</span>]]
+        self._color = color <span class="hljs-keyword">if</span> color <span class="hljs-keyword">else</span> random_color(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, random.randint(<span class="hljs-number">220</span>, <span class="hljs-number">255</span>))
+        self._width, self._height = width, height
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">instance</span><span class="hljs-params">(cls, width=<span class="hljs-number">200</span>, height=<span class="hljs-number">75</span>)</span>:</span>
+        prop_name = f<span class="hljs-string">&apos;_instance_{width}_{height}&apos;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> hasattr(cls, prop_name):
+            setattr(cls, prop_name, cls(width, height))
+        <span class="hljs-keyword">return</span> getattr(cls, prop_name)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">background</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x7ED8;&#x5236;&#x80CC;&#x666F;&quot;&quot;&quot;</span>
+        Draw(self._image).rectangle([(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), self._image.size],
+                                    fill=random_color(<span class="hljs-number">230</span>, <span class="hljs-number">255</span>))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">smooth</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5E73;&#x6ED1;&#x56FE;&#x50CF;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self._image.filter(ImageFilter.SMOOTH)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">curve</span><span class="hljs-params">(self, width=<span class="hljs-number">4</span>, number=<span class="hljs-number">6</span>, color=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x7ED8;&#x5236;&#x66F2;&#x7EBF;&quot;&quot;&quot;</span>
+        dx, height = self._image.size
+        dx /= number
+        path = [(dx * i, random.randint(<span class="hljs-number">0</span>, height))
+                <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, number)]
+        bcoefs = Bezier().make_bezier(number - <span class="hljs-number">1</span>)
+        points = []
+        <span class="hljs-keyword">for</span> coefs <span class="hljs-keyword">in</span> bcoefs:
+            points.append(tuple(sum([coef * p <span class="hljs-keyword">for</span> coef, p <span class="hljs-keyword">in</span> zip(coefs, ps)])
+                                <span class="hljs-keyword">for</span> ps <span class="hljs-keyword">in</span> zip(*path)))
+        Draw(self._image).line(points, fill=color <span class="hljs-keyword">if</span> color <span class="hljs-keyword">else</span> self._color, width=width)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">noise</span><span class="hljs-params">(self, number=<span class="hljs-number">50</span>, level=<span class="hljs-number">2</span>, color=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x7ED8;&#x5236;&#x6270;&#x7801;&quot;&quot;&quot;</span>
+        width, height = self._image.size
+        dx, dy = width / <span class="hljs-number">10</span>, height / <span class="hljs-number">10</span>
+        width, height = width - dx, height - dy
+        draw = Draw(self._image)
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(number):
+            x = int(random.uniform(dx, width))
+            y = int(random.uniform(dy, height))
+            draw.line(((x, y), (x + level, y)),
+                      fill=color <span class="hljs-keyword">if</span> color <span class="hljs-keyword">else</span> self._color, width=level)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">text</span><span class="hljs-params">(self, captcha_text, fonts, font_sizes=None, drawings=None, squeeze_factor=<span class="hljs-number">0.75</span>, color=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x7ED8;&#x5236;&#x6587;&#x672C;&quot;&quot;&quot;</span>
+        color = color <span class="hljs-keyword">if</span> color <span class="hljs-keyword">else</span> self._color
+        fonts = tuple([truetype(name, size)
+                       <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> fonts
+                       <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> font_sizes <span class="hljs-keyword">or</span> (<span class="hljs-number">65</span>, <span class="hljs-number">70</span>, <span class="hljs-number">75</span>)])
+        draw = Draw(self._image)
+        char_images = []
+        <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> captcha_text:
+            font = random.choice(fonts)
+            c_width, c_height = draw.textsize(c, font=font)
+            char_image = Image.new(<span class="hljs-string">&apos;RGB&apos;</span>, (c_width, c_height), (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>))
+            char_draw = Draw(char_image)
+            char_draw.text((<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), c, font=font, fill=color)
+            char_image = char_image.crop(char_image.getbbox())
+            <span class="hljs-keyword">for</span> drawing <span class="hljs-keyword">in</span> drawings:
+                d = getattr(self, drawing)
+                char_image = d(char_image)
+            char_images.append(char_image)
+        width, height = self._image.size
+        offset = int((width - sum(int(i.size[<span class="hljs-number">0</span>] * squeeze_factor)
+                                  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> char_images[:<span class="hljs-number">-1</span>]) -
+                      char_images[<span class="hljs-number">-1</span>].size[<span class="hljs-number">0</span>]) / <span class="hljs-number">2</span>)
+        <span class="hljs-keyword">for</span> char_image <span class="hljs-keyword">in</span> char_images:
+            c_width, c_height = char_image.size
+            mask = char_image.convert(<span class="hljs-string">&apos;L&apos;</span>).point(<span class="hljs-keyword">lambda</span> i: i * <span class="hljs-number">1.97</span>)
+            self._image.paste(char_image,
+                        (offset, int((height - c_height) / <span class="hljs-number">2</span>)),
+                        mask)
+            offset += int(c_width * squeeze_factor)
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">warp</span><span class="hljs-params">(image, dx_factor=<span class="hljs-number">0.3</span>, dy_factor=<span class="hljs-number">0.3</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x56FE;&#x50CF;&#x626D;&#x66F2;&quot;&quot;&quot;</span>
+        width, height = image.size
+        dx = width * dx_factor
+        dy = height * dy_factor
+        x1 = int(random.uniform(-dx, dx))
+        y1 = int(random.uniform(-dy, dy))
+        x2 = int(random.uniform(-dx, dx))
+        y2 = int(random.uniform(-dy, dy))
+        warp_image = Image.new(
+            <span class="hljs-string">&apos;RGB&apos;</span>,
+            (width + abs(x1) + abs(x2), height + abs(y1) + abs(y2)))
+        warp_image.paste(image, (abs(x1), abs(y1)))
+        width2, height2 = warp_image.size
+        <span class="hljs-keyword">return</span> warp_image.transform(
+            (width, height),
+            Image.QUAD,
+            (x1, y1, -x1, height2 - y2, width2 + x2, height2 + y2, width2 - x2, -y1))
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">offset</span><span class="hljs-params">(image, dx_factor=<span class="hljs-number">0.1</span>, dy_factor=<span class="hljs-number">0.2</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x56FE;&#x50CF;&#x504F;&#x79FB;&quot;&quot;&quot;</span>
+        width, height = image.size
+        dx = int(random.random() * width * dx_factor)
+        dy = int(random.random() * height * dy_factor)
+        offset_image = Image.new(<span class="hljs-string">&apos;RGB&apos;</span>, (width + dx, height + dy))
+        offset_image.paste(image, (dx, dy))
+        <span class="hljs-keyword">return</span> offset_image
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rotate</span><span class="hljs-params">(image, angle=<span class="hljs-number">25</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x56FE;&#x50CF;&#x65CB;&#x8F6C;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> image.rotate(random.uniform(-angle, angle),
+                            Image.BILINEAR, expand=<span class="hljs-number">1</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate</span><span class="hljs-params">(self, captcha_text=<span class="hljs-string">&apos;&apos;</span>, fmt=<span class="hljs-string">&apos;PNG&apos;</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x751F;&#x6210;&#x9A8C;&#x8BC1;&#x7801;(&#x6587;&#x5B57;&#x548C;&#x56FE;&#x7247;)&quot;&quot;&quot;</span>
+        self._image = Image.new(<span class="hljs-string">&apos;RGB&apos;</span>, (self._width, self._height), (<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>))
+        self.background()
+        self.text(captcha_text, self._fonts,
+                  drawings=[<span class="hljs-string">&apos;warp&apos;</span>, <span class="hljs-string">&apos;rotate&apos;</span>, <span class="hljs-string">&apos;offset&apos;</span>])
+        self.curve()
+        self.noise()
+        self.smooth()
+        image_bytes = BytesIO()
+        self._image.save(image_bytes, format=fmt)
+        <span class="hljs-keyword">return</span> image_bytes.getvalue()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pascal_row</span><span class="hljs-params">(n=<span class="hljs-number">0</span>)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x751F;&#x6210;Pascal&#x4E09;&#x89D2;&#x7B2C;n&#x884C;&quot;&quot;&quot;</span>
+    result = [<span class="hljs-number">1</span>]
+    x, numerator = <span class="hljs-number">1</span>, n
+    <span class="hljs-keyword">for</span> denominator <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, n // <span class="hljs-number">2</span> + <span class="hljs-number">1</span>):
+        x *= numerator
+        x /= denominator
+        result.append(x)
+        numerator -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span> n &amp; <span class="hljs-number">1</span> == <span class="hljs-number">0</span>:
+        result.extend(reversed(result[:<span class="hljs-number">-1</span>]))
+    <span class="hljs-keyword">else</span>:
+        result.extend(reversed(result))
+    <span class="hljs-keyword">return</span> result
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">random_color</span><span class="hljs-params">(start=<span class="hljs-number">0</span>, end=<span class="hljs-number">255</span>, opacity=<span class="hljs-number">255</span>)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x83B7;&#x5F97;&#x968F;&#x673A;&#x989C;&#x8272;&quot;&quot;&quot;</span>
+    red = random.randint(start, end)
+    green = random.randint(start, end)
+    blue = random.randint(start, end)
+    <span class="hljs-keyword">if</span> opacity <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        <span class="hljs-keyword">return</span> red, green, blue
+    <span class="hljs-keyword">return</span> red, green, blue, opacity
+</code></pre>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5728;&#x751F;&#x6210;&#x9A8C;&#x8BC1;&#x7801;&#x56FE;&#x7247;&#x65F6;&#x7528;&#x5230;&#x4E86;&#x4E09;&#x79CD;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5B57;&#x4F53;&#x6587;&#x4EF6;&#x5230;&#x5E94;&#x7528;&#x76EE;&#x5F55;&#x4E0B;&#x7684;fonts&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+</blockquote>
+<p>&#x4E0B;&#x9762;&#x7684;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x7528;&#x6765;&#x751F;&#x6210;&#x9A8C;&#x8BC1;&#x7801;&#x5E76;&#x901A;&#x8FC7;HttpResponse&#x5BF9;&#x8C61;&#x8F93;&#x51FA;&#x5230;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-Python">ALL_CHARS = <span class="hljs-string">&apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_captcha_text</span><span class="hljs-params">(length=<span class="hljs-number">4</span>)</span>:</span>
+    selected_chars = random.choices(ALL_CHARS, k=length)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&apos;</span>.join(selected_chars)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_captcha</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x83B7;&#x5F97;&#x9A8C;&#x8BC1;&#x7801;&quot;&quot;&quot;</span>
+    captcha_text = get_captcha_text()
+    image = Captcha.instance().generate(captcha_text)
+    <span class="hljs-keyword">return</span> HttpResponse(image, content_type=<span class="hljs-string">&apos;image/png&apos;</span>)
+</code></pre>
+<p>&#x751F;&#x6210;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="res/captcha.png" alt=""></p>
+<p>&#x4E3A;&#x4E86;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x7684;&#x767B;&#x5F55;&#x8868;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x5B9A;&#x4E49;&#x4E2A;&#x8868;&#x5355;&#x7C7B;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginForm</span><span class="hljs-params">(forms.Form)</span>:</span>
+    username = forms.CharField(min_length=<span class="hljs-number">4</span>, max_length=<span class="hljs-number">20</span>)
+    password = forms.CharField(min_length=<span class="hljs-number">8</span>, max_length=<span class="hljs-number">20</span>)
+    captcha = forms.CharField(min_length=<span class="hljs-number">4</span>, max_length=<span class="hljs-number">4</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_username</span><span class="hljs-params">(self)</span>:</span>
+        username = self.cleaned_data[<span class="hljs-string">&apos;username&apos;</span>]
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> USERNAME_PATTERN.fullmatch(username):
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x65E0;&#x6548;&#x7684;&#x7528;&#x6237;&#x540D;&apos;</span>)
+        <span class="hljs-keyword">return</span> username
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_password</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> to_md5_hex(self.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>])
+</code></pre>
+<p>&#x8DDF;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x518C;&#x8868;&#x5355;&#x7C7B;&#x7565;&#x6709;&#x533A;&#x522B;&#xFF0C;&#x767B;&#x5F55;&#x8868;&#x5355;&#x7C7B;&#x76F4;&#x63A5;&#x7EE7;&#x627F;&#x81EA;Form&#x6CA1;&#x6709;&#x8DDF;&#x6A21;&#x578B;&#x7ED1;&#x5B9A;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x4E2A;&#x5B57;&#x6BB5;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x767B;&#x5F55;&#x8868;&#x5355;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x540D;&#x3001;&#x5BC6;&#x7801;&#x548C;&#x9A8C;&#x8BC1;&#x7801;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x5904;&#x7406;&#x7528;&#x6237;&#x767B;&#x5F55;&#x7684;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">login</span><span class="hljs-params">(request)</span>:</span>
+    hint = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&apos;POST&apos;</span>:
+        form = LoginForm(request.POST)
+        <span class="hljs-keyword">if</span> form.is_valid():
+            username = form.cleaned_data[<span class="hljs-string">&apos;username&apos;</span>]
+            password = form.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>]
+            user = User.objects.filter(username=username, password=password).first()
+            <span class="hljs-keyword">if</span> user:
+                <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&apos;/&apos;</span>)
+            <span class="hljs-keyword">else</span>:
+                hint = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;&apos;</span>
+        <span class="hljs-keyword">else</span>:
+            hint = <span class="hljs-string">&apos;&#x8BF7;&#x8F93;&#x5165;&#x6709;&#x6548;&#x7684;&#x767B;&#x5F55;&#x4FE1;&#x606F;&apos;</span>
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;login.html&apos;</span>, {<span class="hljs-string">&apos;hint&apos;</span>: hint})
+</code></pre>
+<p>&#x6620;&#x5C04;URL&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+
+<span class="hljs-keyword">from</span> vote <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+    path(<span class="hljs-string">&apos;login/&apos;</span>, views.login, name=<span class="hljs-string">&apos;login&apos;</span>),
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+]
+</code></pre>
+<p>&#x9700;&#x8981;&#x6307;&#x51FA;&#xFF0C;&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x7528;&#x6237;&#x767B;&#x5F55;&#x6210;&#x529F;&#x65F6;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x9996;&#x9875;&#xFF0C;&#x800C;&#x4E14;&#x5728;&#x7528;&#x6237;&#x767B;&#x5F55;&#x65F6;&#x5E76;&#x6CA1;&#x6709;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF0C;&#x8FD9;&#x4E9B;&#x6211;&#x4EEC;&#x7559;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x518D;&#x4E3A;&#x5927;&#x5BB6;&#x8BB2;&#x89E3;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5728;Django&#x81EA;&#x5E26;&#x7684;&#x7BA1;&#x7406;&#x540E;&#x53F0;&#x4E2D;&#x8FDB;&#x884C;&#x8868;&#x5355;&#x9A8C;&#x8BC1;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;admin.py&#x7684;&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x7C7B;&#x4E2D;&#x6307;&#x5B9A;<code>form</code>&#x5C5E;&#x6027;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8868;&#x5355;&#x5373;&#x53EF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-Python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserForm</span><span class="hljs-params">(forms.ModelForm)</span>:</span>
+    password = forms.CharField(min_length=<span class="hljs-number">8</span>, max_length=<span class="hljs-number">20</span>,
+                               widget=forms.PasswordInput, label=<span class="hljs-string">&apos;&#x5BC6;&#x7801;&apos;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_username</span><span class="hljs-params">(self)</span>:</span>
+        username = self.cleaned_data[<span class="hljs-string">&apos;username&apos;</span>]
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> USERNAME_PATTERN.fullmatch(username):
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&#x7531;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x548C;&#x4E0B;&#x5212;&#x7EBF;&#x6784;&#x6210;&#x4E14;&#x957F;&#x5EA6;&#x4E3A;4-20&#x4E2A;&#x5B57;&#x7B26;&apos;</span>)
+        <span class="hljs-keyword">return</span> username
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clean_password</span><span class="hljs-params">(self)</span>:</span>
+        password = self.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>]
+        <span class="hljs-keyword">return</span> to_md5_hex(self.cleaned_data[<span class="hljs-string">&apos;password&apos;</span>])
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        model = User
+        exclude = (<span class="hljs-string">&apos;no&apos;</span>, )
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserAdmin</span><span class="hljs-params">(admin.ModelAdmin)</span>:</span>
+    list_display = (<span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-string">&apos;username&apos;</span>, <span class="hljs-string">&apos;password&apos;</span>, <span class="hljs-string">&apos;email&apos;</span>, <span class="hljs-string">&apos;tel&apos;</span>)
+    ordering = (<span class="hljs-string">&apos;no&apos;</span>, )
+    form = UserForm
+    list_per_page = <span class="hljs-number">10</span>
+
+
+admin.site.register(User, UserAdmin)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="08-Cookie、Session和分页.html" class="navigation navigation-prev " aria-label="Previous page: Cookie、Session和分页">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="10-中间件.html" class="navigation navigation-next " aria-label="Next page: 中间件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Form、ModelForm组件","level":"3.3.1.9","depth":3,"next":{"title":"中间件","level":"3.3.1.10","depth":3,"path":"Python/第三方库/Django/10-中间件.md","ref":"./Python/第三方库/Django/10-中间件.md","articles":[]},"previous":{"title":"Cookie、Session和分页","level":"3.3.1.8","depth":3,"path":"Python/第三方库/Django/08-Cookie、Session和分页.md","ref":"./Python/第三方库/Django/08-Cookie、Session和分页.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/09-Form和ModelForm组件.md","mtime":"2021-07-20T02:04:05.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-09T08:57:08.752Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

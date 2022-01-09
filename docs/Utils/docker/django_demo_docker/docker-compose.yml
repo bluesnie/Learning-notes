@@ -1,0 +1,76 @@
+# 3个数据卷，用于挂载各个容器内动态生成的数据，比如MySQL的存储数据，
+# redis生成的快照和django容器中用户上传的媒体资源与文件。
+# 这样即使删除容器，容器内产生的数据也不会丢失。
+# 4项容器服务，别名分别为redis, db, nginx和web，
+# 特别注意不要有多余空格
+
+version: "3"
+
+volumes:                      # 自定义数据卷，位于宿主机/var/lib/docker/volumes内
+  django_demo_db_vol:         # 定义数据卷同步容器内mysql数据
+  django_demo_redis_vol:      # 定义数据卷同步容器内redis数据
+  django_demo_media_vol:      # 定义数据卷同步容器内media数据
+
+services:
+  redis:
+    image: redis:5            # 版本为5的redis镜像
+    command: redis-server /etc/redis/redis.conf     # 容器启动后启动redis服务器
+    volumes:
+      - django_demo_redis_vol:/data                # 通过挂载给redis数据备份
+      - ./compose/redis/redis.conf:/etc/redis/redis.conf    # 挂载redis配置文件
+    ports:
+      - "6380:6379"
+    restart: always           # always表示容器运行发生错误时一直重启
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=654321   # 数据库密码（可能是root）
+      - MYSQL_DATABASE=django_demo   # 数据库名称
+      - MYSQL_USER=nzb               # 数据库用户名
+      - MYSQL_PASSWORD=123456        # 用户密码
+    volumes:
+      - django_demo_db_vol:/var/lib/mysql:rw             # 挂载数据库数据，可读可写
+      - ./compose/mysql/conf/my.conf:/etc/mysql/my.conf   # 挂载配置文件
+      - ./compose/mysql/init:/docker-entrypoint-initdb.d  # 挂载数据初始化sql脚本
+    ports:
+      - "3306:3306"                                       # 与配置文件保持一直
+    restart: always
+
+  web:
+    build: ./django_demo                                  # 使用django_demo命令下的Dockerfile
+    expose:
+      - "8000"
+    volumes:
+      - ./django_demo:/opt/python_project/django_demo     # 挂载项目代码
+      - django_demo_media_vol:/opt/python_project/django_demo/media  # 以数据卷挂载容器内用户上传媒体文件
+      - ./compose/uwsgi:/tmp                              # 挂载uwsgi
+    links:
+      - db
+      - redis
+    depends_on:   # 依赖关系
+      - db
+      - redis
+    environment:
+      - DEBUG=False
+    restart: always
+    tty: true
+    stdin_open: true
+
+  nginx:
+    build: ./compose/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    expose:
+      - "80"
+    volumes:
+      - ./django_demo/static:/usr/share/nginx/html/static     # 挂载静态文件
+      - ./compose/nginx/ssl:/usr/share/nginx/ssl              # 挂载ssl证书目录
+      - ./compose/nginx/log:/var/log/nginx                    # 挂载日志
+      - django_demo_media_vol:/usr/share/nginx/html/media     # 挂载用户上传媒体文件
+    links:
+      - web
+    depends_on:
+      - web
+    restart: always
