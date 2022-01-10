@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-resource</title>
+    <script src='../static/vue.js'></script>
+    <script src="../static/vue-resource.js"></script>
+</head>
+<body>
+
+<div id='app'>
+    <input type="button" value="get请求" @click="getinfo">
+    <input type="button" value="post请求" @click="postinfo">
+    <input type="button" value="jsonp请求" @click="jsonp">
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            getinfo(){
+                this.$http.get('http://127.0.0.1:8000/act/index').then(function (result) {
+                    console.log(result.body)
+                })
+            },
+            postinfo(){
+                this.$http.post('http://127.0.0.1:8000/act/status/', {}, {emulateJSON:true}).then(result => {
+                    console.log(result.body)
+                })
+            },
+            jsonp(){
+                this.$http.jsonp('http://vue.studyit.io/api/jsonp').then(result => {
+                    console.log(result.body)
+                })
+            },
+
+        },
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src='../static/vue.js'></script>
+</head>
+<body>
+    <div id='app'>
+        // 迭代数组
+        <p v-for="(item, index) in list">{{index}}---->{{item}}</p>
+        <p v-for="(item, index) in list1">索引：{{index}}------>ID：{{item.id}}---->名字：{{item.name}}</p>
+        // 迭代对象
+        <p v-for="(val, key, index) in object">索引：{{index}}----&ndash;&gt;键名：{{key}}---->键值：{{val}}</p>
+        // 迭代数字
+        <p v-for="count in 10">{{count}}</p>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: [1, 2, 3, 4, 5, 6],
+                list1: [
+                    {id:1, name: 'foo'},
+                    {id:2, name: 'foo1'},
+                    {id:3, name: 'foo2'},
+                    {id:4, name: 'foo3'},
+                ],
+                object:{
+                    name: 'nzb',
+                    age: 22,
+                    gender:'male'
+                },
+            },
+            methods: {},
+        });
+    </script>
+</body>
+</html>

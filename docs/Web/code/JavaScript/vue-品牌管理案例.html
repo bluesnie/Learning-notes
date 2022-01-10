@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌管理案例</title>
+    <script src='../static/vue.js'></script>
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/bootstrap-theme.min.css">
+    <style>
+    </style>
+</head>
+<body>
+<div class="panel panel-primary" id="app">
+    <div class="panel-heading">
+        <h3 class="panel-title">品牌管理</h3>
+    </div>
+    <div class="panel-body form-inline">
+        <label>ID:
+            <input type="text" class="form-control" v-model="id">
+        </label>
+
+        <label>Name:
+            <input type="text" class="form-control" v-model="name" @keyup.f2="add">
+        </label>
+
+        <input type="button" value="添加" class="btn btn-primary" @click="add">
+
+        <label>搜索：
+            <input type="text" class="form-control" v-model="keywords" id="search" v-focus v-color="'green'">
+        </label>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Ctime</th>
+                <th>Opetation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="item in search(keywords)" :key="item.id">
+                <td>{{item.id}}</td>
+                <td v-text="item.name"></td>
+                <!--<td>{{item.name | nameFormate('100万', '贵不贵')}}</td>-->
+                <td>{{item.ctime | formateTime('YYYY-MM-DD')}}</td>
+                <td><a href="#" @click.prevent="del(item.id)">删除</a></td>   <!--  点击事件.prevent阻止冒泡，传id -->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="app2">
+    <h1 :style="styleobj" v-color="'pink'">{{dt | formateTime}}</h1>
+</div>
+<script>
+    // 全局过滤器
+    Vue.filter('formateTime', function (value, pattern='') {
+        var dt = new Date(value);
+
+        var y = dt.getFullYear();
+        // var m = dt.getMonth().padStart('') + 1;
+        var m = (dt.getMonth() + 1).toString().padStart(2, '0');
+        var d = dt.getDate().toString().padStart(2, '0');
+
+        if(pattern.toLowerCase() ==='yyyy-mm-dd'){
+            return `${y}-${m}-${d}`  // 占位符
+        }else {
+            var hh = dt.getHours().toString().padStart(2, '0');
+            var mm = dt.getMinutes().toString().padStart(2, '0');
+            var ss = dt.getSeconds().toString().padStart(2, '0');
+            return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+        }
+    });
+
+    // 全局自定义按键修饰符
+    Vue.config.keyCodes.f2 = 113;
+
+    // 自定义指令
+    Vue.directive('focus', {
+        bind: function(el){
+            // el.focus()
+        },
+        inserted: function (el) {
+            el.focus()
+        },
+        update: function () {
+
+        }
+    });
+
+    Vue.directive('color', {
+        bind: function (el, binding) {
+            // el.style.color = 'red';
+            // console.log(binding.name);
+            // console.log(binding.value);
+            // console.log(binding.expression)
+            el.style.color = binding.value;
+        }
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            id: '',
+            name:'',
+            keywords:'',  // 搜索关键字
+            list: [
+                {id:1, name:'宝马', ctime: new Date()},
+                {id:2, name:'奔驰', ctime: new Date()},
+            ]
+        },
+        methods: {
+            add(){
+                // console.log(id, name)
+                var car = {id:parseInt(this.id), name:this.name, ctime: new Date().toLocaleDateString()};
+                this.list.push(car);
+                this.id = this.name = '';
+            },
+            del(id){
+                // 第一种删除方法
+                // this.list.some((item, i) => {
+                //     if(item.id == id){
+                //         this.list.splice(i, 1);  // 从当前删，删除一个
+                //         return true;   // 终止循环
+                //     }
+                // })
+
+                // 第二种删除
+                var index = this.list.findIndex(item => {
+                    if(item.id == id){
+                        return true;
+                    }
+                });
+                this.list.splice(index, 1)
+            },
+            search(keywords){
+                var newList = [];
+                // 第一种遍历
+                // this.list.forEach(item => {
+                    // 第一种匹配
+                    // if(item.name.indexOf(keywords) != -1){
+                    //     newList.push(item)
+                    // }
+                    // 第二种匹配
+                    // if(item.name.includes(keywords)){
+                    //     newList.push(item)
+                    // }
+                // });
+                // return newList ;
+                // 第二种遍历
+                return this.list.filter(item => {
+                    if(item.name.indexOf(keywords) != -1){
+                        return item;
+                    }
+                });
+            }
+        },
+        filters:{
+            // formateTime: function (value) {
+            //     return value.toLocaleTimeString()
+            // },
+            nameFormate: function (value, arg1, arg2) {
+                return value + arg1 + arg2;
+            }
+        }
+    });
+
+    var vm2 = new Vue({
+       el: '#app2',
+       data: {
+           dt: new Date(),
+           styleobj:{
+               color:'red',
+               fontFamily:'italic'
+           }
+       }
+    });
+
+</script>
+</body>
+</html>

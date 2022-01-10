@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue中class样式</title>
+    <script src='../static/vue.js'></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .thin{
+            font-weight: 200;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .active{
+            letter-spacing: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <!--这里的class需要使用v-bind做数据绑定-->
+        <!--<h1 :class="['red', 'thin', 'italic']">这是一个很大的h1</h1>-->
+        <!--在数组中使用三元表达式-->
+        <!--<h1 :class="['red', 'thin', 'italic', flag?'active':'']" @mouseover="active">这是一个很大的h1</h1>-->
+        <!--在数组中使用对象代替三元表达式-->
+        <!--<h1 :class="['red', 'thin', 'italic', {'active':flag} ]" >这是一个很大的h1</h1>-->
+
+        <h1 :class="classObj" >这是一个很大的h1</h1>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true,
+                classObj: {red:true, thin:true, italic:true, active:false},
+
+            },
+            methods: {
+                // active(){
+                //     this.flag = true;
+                // }
+            },
+        });
+    </script>
+</body>
+</html>

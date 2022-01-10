@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if 和 v-show</title>
+    <script src='../static/vue.js'></script>
+</head>
+<body>
+
+    <div id='app'>
+        <!--<input type="button" @click="toggle" value="toggle">-->
+        <input type="button" @click="flag=!flag" value="toggle">
+
+        <h3 v-if="flag">这是一个v-if控制的元素</h3>  // v-if删除或创建元素,有较高的切换性能消耗
+        <h3 v-show="flag">这是一个v-show控制的元素</h3> // v-show切换样式,有较高的初始渲染消耗
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true,
+            },
+            methods: {
+                // toggle(){
+                //     this.flag = !this.flag
+                // }
+            },
+        });
+    </script>
+</body>
+</html>

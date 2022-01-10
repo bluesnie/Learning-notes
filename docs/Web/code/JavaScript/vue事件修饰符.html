@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='../static/vue.js'></script>
+    <style type="text/css">
+        .inner{
+            background-color: #46b8da;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <div class="inner" @click.self="divclick"> <!-- .self只有点击当前元素时才会触发函数，自己不会被冒泡影响但是不会阻止其他元素的冒泡-->
+            <input type="button" value="阻止冒泡" @click.stop="btnclick">  <!-- .stop阻止冒泡 -->
+            <input type="button" value="捕获" @click.capture="btnclick">  <!-- .capture触发捕获 -->
+            <a href="http://www.baidu.com" @click.prevent.stop.once="noredirect">百度一下</a>  <!-- .prevent阻止默认行为 .once只触发一次函数-->
+        </div>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                divclick(){
+                    console.log('div');
+                },
+                btnclick(){
+                    console.log('btn')
+                },
+                noredirect(){
+                    console.log('a')
+                }
+            },
+        });
+    </script>
+</body>
+</html>

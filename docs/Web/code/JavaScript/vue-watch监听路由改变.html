@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-watch监听路由改变</title>
+    <script src='../static/vue.js'></script>
+    <script src='../static/vue-router.js'></script>
+</head>
+<body>
+
+<div id="app">
+    <router-link to="/login">登录</router-link>
+    <router-link to="/register">注册</router-link>
+
+    <router-view></router-view>
+  </div>
+
+  <script>
+    var login = Vue.extend({
+      template: '<h1>登录组件</h1>'
+    });
+
+    var register = Vue.extend({
+      template: '<h1>注册组件</h1>'
+    });
+
+    var router = new VueRouter({
+      routes: [
+        { path: "/login", component: login },
+        { path: "/register", component: register }
+      ]
+    });
+
+    // 创建 Vue 实例，得到 ViewModel
+    var vm = new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      router: router,
+      watch: {
+        '$route': function (newVal, oldVal) {
+          console.log(this.$route.path);
+          if (newVal.path === '/login') {
+            console.log('这是登录组件');
+          }else if(newVal.path === '/register'){
+              console.log('这是注册组件');
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

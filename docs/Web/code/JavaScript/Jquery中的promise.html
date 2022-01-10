@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery中的promise</title>
+    <script src="../static/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<input type="button" value="获取数据" id="btn">
+    <script>
+        $(function () {
+            $("#btn").on("click", function () {
+                $.ajax({
+                    url: './data.json',
+                    type: 'get',
+                    dataType: 'json',
+                    //常见用法
+                    // success: function (data) {
+                    //     console.log(data)
+                    // }
+                })  //promise用法
+                    .then(function (data) {
+                        console.log("promise后数据", data)
+                    })
+            })
+        })
+    </script>
+</body>
+</html>

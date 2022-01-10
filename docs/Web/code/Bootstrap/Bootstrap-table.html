@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap-table</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
+
+
+</head>
+<body style="padding-left: 50px">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>第一种</h1>
+            <div class="row">
+
+                <p>只是用到table标签</p>
+            </div>
+            <div class="row">
+                <table id="mytable" data-toggle="table"
+                       data-url="/test" data-method="post"
+                       data-query-params="queryParams" data-toolbar="#toolbar"
+                       data-search="true" data-show-refresh="true"
+                       data-show-toggle="true" data-show-columns="true"
+                       data-page-list="[2,4,8,16,ALL]" data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th width="70" data-field="id">id</th>
+                        <th width="70" data-field="studentId">studentId</th>
+                        <th width="94" data-field="password">password</th>
+                    </thead>
+                </table>
+            </div>
+            <!-- 注意：data-url的路径和data-method是controller层的@PostMapping -->
+
+        </div>
+
+        <div class="col-lg-12">
+            <div class="row">
+                <h1>第二种：</h1>
+            </div>
+            <p>2.1:用到table和js没有翻页</p>
+            <div class="row">
+
+                <table id="data-table1"></table>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <p>2.2:用到table 和 js 可以翻页的</p>
+            <div class="row">
+
+                <table id="data-table2"></table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
+
+<script>
+    // 2.1没有翻页的
+    var $table = $('#data-table1');
+    $table.bootstrapTable({
+        url: '/test',
+        columns: [{
+            field: 'id',
+            title: 'id'
+        }, {
+            field: 'name',
+            title: 'name'
+        }, {
+            field: 'phone',
+            title: 'phone'
+        }]
+    });
+</script>
+
+<script>
+    //2.2可以翻页的
+    var $table = $('#data-table2');
+    //查询参数(会拼接到URL上)
+    let myparam = null;
+    var queryParams = function (params) {
+        return {offset: params.offset, limit: params.limit, myparam: myparam}
+    };
+    /**
+     * 初始化Table
+     */
+    //先销毁表格
+    $table.bootstrapTable('destroy');
+    //初始化表格
+    $table.bootstrapTable({
+        //表格参数
+        //请求地址,此处数据为本地加载
+
+        // 第一种请求
+        url: '/test',
+        //请求方式
+        method: "get",
+        //请求内容类型
+        contentType: "application/x-www-form-urlencoded",
+
+        // 第二种请求
+        //ajax请求
+        ajax: function (request) {
+            $.ajax({
+                // type: "GET",
+                type: "POST",
+                url: "/test",
+                //contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({"username": "chen", "nickname": "alien"}),  //详情见ajax笔记
+                success: function (ret) {
+                    request.success({
+                        row: ret
+                    });
+                    $table.bootstrapTable('load', ret);
+                },
+                error: function () {
+                    alert("请刷新.....");
+                }
+            });
+        },
+
+        //数据类型
+        dataType: "json",
+        //table高度：如果没有设置，表格自动根据记录条数觉得表格高度
+        //height: '582',
+        //是否显示行间隔色
+        striped: true,
+        //是否启用排序
+        sortable: true,
+        //排序方式
+        sortOrder: "asc",
+        //是否使用缓存
+        cache: false,
+        //每行的唯一标识
+        uniqueId: "id",
+        //指定工具栏
+        toolbar: "#toolbar",
+        //显示刷新按钮
+        showRefresh: false,
+        //切换显示样式
+        showToggle: false,
+        //默认显示详细视图
+        cardView: false,
+        //是否显示搜索
+        search: true,
+        //是否显示分页
+        pagination: true,
+        //是否启用点击选中行
+        clickToSelect: true,
+        //最少要显示的列数
+        minimumCountColumns: 2,
+        //显示隐藏列
+        showColumns: false,
+        //cell没有值时显示
+        undefinedText: '-',
+        //分页方式：client客户端分页，server服务端分页
+        /*	              指定。注意，这两种后台传过来的json数据格式也不一样
+         client : 正常的json array格式 [{},{},{}]
+         server： {“total”:0,”rows”:[]} 其中total表示查询的所有数据条数，后面的rows是指当前页面展示的数据量。*/
+        sidePagination: "client",
+        //每页的记录行数
+        pageSize: 10,
+        //初始化加载第1页，默认第1页
+        pageNumber: 1,
+        //可供选择的每页的行数
+        pageList: "[10, 20, 50, 80, 100]",
+        paginationFirstText: "首页",
+        paginationPreText: "上一页",
+        paginationNextText: "下一页",
+        paginationLastText: "末页",
+        //按钮样式
+        buttonsClass: 'btn',
+        //分页器class
+        iconSize: 'pager',
+        //查询条件
+        queryParams: queryParams,
+        //列参数
+        //表头
+        columns: [
+            {
+                title: '选择',
+                checkbox: true,
+                align: 'center' // 居中显示
+            }, {
+                field: 'id',
+                title: 'id'
+            }, {
+                field: 'name',
+                title: 'name'
+            }, {
+                field: 'phone',
+                title: 'phone'
+            }, {
+                field: 'grade',
+                title: 'grade'
+            }, {
+                field: 'college',
+                title: 'college'
+            }, {
+                field: 'operation',
+                title: '操作',
+                formatter: function (value, row, index) {
+                    return `<button data-whatever='${row.id}' class='audit btn btn-primary' style="width:100px" data-toggle="modal" data-target="#exampleModal" onclick="GetInfo(${row.id})"
+                                    style='margin:0 3%;height:30px' title='审核'><i class="fa fa-list-ul"></i>审核</button>`;
+                }
+            }
+        ],
+        onLoadSuccess: function (res) {//可不写
+            //加载成功时
+            console.log(res);
+        }, onLoadError: function (statusCode) {
+            return "加载失败了"
+        }, formatLoadingMessage: function () {
+            //正在加载
+            return "拼命加载中...";
+        }, formatNoMatches: function () {
+            //没有匹配的结果
+            return '无符合条件的记录';
+        }
+
+    });
+
+    // 获取表格所有已经勾选的行数据，为一个对象数组
+    var selects = $table.bootstrapTable('getSelections');
+
+    //刷新
+    $("#btnRefresh").on('click', function () {
+        $table.bootstrapTable('refresh');
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js过渡和动画</title>
+    <script src="../static/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            /*transition: opacity .5s;*/
+            transition: all .5s ease;
+        }
+
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+            transform: translateX(150px);
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <!-- 第一种实现方式 -->
+    <button v-on:click="show = !show">
+        Toggle
+    </button>
+    <!-- 点击按钮，隐藏显示Hello World -->
+    <!-- 1.使用transition元素，把需要被动画控制的元素，包裹起来  -->
+    <!-- transition元素是Vue官方提供的 -->
+    <transition name="fade">
+        <p v-if="show">Hello World!</p>
+    </transition>
+
+    <!-- 第二种实现方式：自定义类：使用第三方类库 -->
+    <button v-on:click="show2 = !show2">
+        Toggle
+    </button>
+    <!-- 使用第三方类库Animate.css -->
+    <!-- 使用:duration="毫秒值"，来统一设置入场和离场时的动画时长 -->
+    <!-- 使用:duration="{enter: 200, leave: 400}"分别设置入场和离场时长 -->
+    <transition enter-active-class="bounceIn" leave-active-class="bounceOut" :duration="{enter: 200, leave: 400}">
+        <p v-if="show2">Animate.css</p>
+    </transition>
+</div>
+<!-- 第三中实现方式：JavaScript钩子 -->
+    <!--Velocity 和 jQuery.animate 的工作方式类似，也是用来实现 JavaScript 动画的一个很棒的选择-->
+    <div id="example-4">
+        <button @click="show = !show">
+            Toggle
+        </button>
+        <transition
+                v-on:before-enter="beforeEnter"
+                v-on:enter="enter"
+                v-on:leave="leave"
+                v-bind:css="false"
+        >
+            <p v-if="show">
+                Demo
+            </p>
+        </transition>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script>
+    new Vue({
+        el: "#demo",
+        data: {
+            show: true,
+            show2: true
+        },
+        methods: {},
+    });
+    new Vue({
+        el: '#example-4',
+        data: {
+            show: false
+        },
+        methods: {
+            // 注意：动画钩子函数的第一个参数：el，表示要执行动画的那个DOM元素，是个原生的JS DOM对象
+            // 大家可以认为：el是通过document.getElenmentById("")方式获取到的元素JS DOM对象
+            beforeEnter: function (el) {
+                // beforeEnter表示动画入场之前，此时，动画尚未开始，可以在beforeEnter中设置元素开始动画之前的起始样式
+                el.style.opacity = 0;
+                el.style.transformOrigin = 'left'
+            },
+            enter: function (el, done) {
+                Velocity(el, {opacity: 1, fontSize: '1.4em'}, {duration: 300})
+                Velocity(el, {fontSize: '1em'}, {complete: done})
+            },
+            leave: function (el, done) {
+                Velocity(el, {translateX: '15px', rotateZ: '50deg'}, {duration: 600})
+                Velocity(el, {rotateZ: '100deg'}, {loop: 2});
+                Velocity(el, {
+                    rotateZ: '45deg',
+                    translateY: '30px',
+                    translateX: '30px',
+                    opacity: 0
+                }, {complete: done})
+            }
+        }
+    })
+</script>
+</html>

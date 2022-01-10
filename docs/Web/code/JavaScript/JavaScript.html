@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <!--<script src="myjs.js"></script>-->
+</head>
+<body>
+
+<p id="pid">wwww</p>
+<script>
+    document.getElementById('pid').innerHTML="hello world";
+</script>
+
+
+<!--异常捕获-->
+<!--<script>-->
+    <!--function demo() {-->
+        <!--try {-->
+            <!--alert(str);-->
+        <!--} catch (e) {-->
+            <!--alert(e);-->
+        <!--}-->
+    <!--}-->
+    <!--demo();-->
+<!--</script>-->
+
+
+
+<!--<form>-->
+    <!--<input type="text" id="txt">-->
+    <!--<button onclick="demo()">提交</button>-->
+<!--</form>-->
+<!--<script>-->
+    <!--function demo() {-->
+        <!--try{-->
+            <!--var e = document.getElementById("txt").value;-->
+            <!--if(e==""){-->
+                <!--throw "请输入";-->
+            <!--}-->
+        <!--}catch (e) {-->
+            <!--alert(e)-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
+<!--鼠标事件-->
+<!--<div class="div" style="width: 100px;height: 100px; background-color: #46b8da" onmouseover="onOver(this)" onmouseout="onOut(this)">-->
+
+<!--</div>-->
+<!--<script>-->
+    <!--function onOver(ooj) {-->
+        <!--ooj.innerHTML = "Hello";-->
+    <!--}-->
+    <!--function onOut(ooj) {-->
+        <!--ooj.innerHTML = "World";-->
+    <!--}-->
+<!--</script>-->
+
+<!--文本改变事件-->
+<!--<form>-->
+    <!--&lt;!&ndash;<input type="text" onchange="txtChange(this)">&ndash;&gt;-->
+    <!--<input type="text" onchange="alert('内容改变')">-->
+    <!--<input type="text" onselect="textSelect(this)" onfocus="Focus(this)">-->
+<!--</form>-->
+<!--<script>-->
+    <!--function txtChange(bg) {-->
+        <!--alert("Hello 内容改变了");-->
+    <!--}-->
+    <!--function textSelect(bg) {-->
+        <!--bg.style.background = "red";-->
+    <!--}-->
+    <!--function Focus(bg) {-->
+        <!--bg.style.backgroundColor='blue';-->
+    <!--}-->
+<!--</script>-->
+
+<!--浏览器对象-->
+
+<!--<script>-->
+    <!--document.write("宽度：" + window.innerWidth, " 高度：" + window.innerHeight)-->
+<!--</script>-->
+
+<!--计算器-->
+    <p id="ptime"></p>
+    <button onclick="stopTime()">停止</button>
+<script>
+    var mytime = setInterval(function () {
+        getTime();
+    }, 1000);
+    function getTime() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("ptime").innerHTML = t;
+    }
+    function stopTime() {
+        clearInterval(mytime);
+    }
+</script>
+
+</body>
+</html>
