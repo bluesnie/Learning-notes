@@ -1,0 +1,3385 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Go2新特性简明教程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-Go-Protobuf简明教程.html" />
+    
+    
+    <link rel="prev" href="02-Go-Gin-简明教程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">算法</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Algorithm/算法图解.pdf">
+            
+                <span>
+            
+                    
+                    算法图解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../Linux/Linux.html">
+            
+                <a href="../../Linux/Linux.html">
+            
+                    
+                    入门基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Python</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Python语言基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Python/PEP8.html">
+            
+                <a href="../../Python/PEP8.html">
+            
+                    
+                    Python PEP8编码规范 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Python/Python语言基础/00-初识Python.html">
+            
+                <a href="../../Python/Python语言基础/00-初识Python.html">
+            
+                    
+                    初识Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Python/Python语言基础/01-语言元素.html">
+            
+                <a href="../../Python/Python语言基础/01-语言元素.html">
+            
+                    
+                    语言元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Python/Python语言基础/02-分支结构.html">
+            
+                <a href="../../Python/Python语言基础/02-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../Python/Python语言基础/03-循环结构.html">
+            
+                <a href="../../Python/Python语言基础/03-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../Python/Python语言基础/04-练习.html">
+            
+                <a href="../../Python/Python语言基础/04-练习.html">
+            
+                    
+                    构造程序逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../Python/Python语言基础/05-函数和模块的使用.html">
+            
+                <a href="../../Python/Python语言基础/05-函数和模块的使用.html">
+            
+                    
+                    函数和模块的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../../Python/Python语言基础/06-字符串和常用数据结构.html">
+            
+                <a href="../../Python/Python语言基础/06-字符串和常用数据结构.html">
+            
+                    
+                    字符串和常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../../Python/Python语言基础/07-面向对象编程基础.html">
+            
+                <a href="../../Python/Python语言基础/07-面向对象编程基础.html">
+            
+                    
+                    面向对象编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../../Python/Python语言基础/08-面向对象编程进阶.html">
+            
+                <a href="../../Python/Python语言基础/08-面向对象编程进阶.html">
+            
+                    
+                    面向对象编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../../Python/Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                <a href="../../Python/Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                    
+                    图形用户界面和游戏开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../../Python/Python语言基础/10-文件和异常.html">
+            
+                <a href="../../Python/Python语言基础/10-文件和异常.html">
+            
+                    
+                    文件和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../../Python/Python语言基础/11-字符串和正则表达式.html">
+            
+                <a href="../../Python/Python语言基础/11-字符串和正则表达式.html">
+            
+                    
+                    字符串和正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../../Python/Python语言基础/12-进程和线程.html">
+            
+                <a href="../../Python/Python语言基础/12-进程和线程.html">
+            
+                    
+                    进程和线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../../Python/Python语言基础/13-网络编程入门.html">
+            
+                <a href="../../Python/Python语言基础/13-网络编程入门.html">
+            
+                    
+                    网络编程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../../Python/Python语言基础/14-网络应用开发.html">
+            
+                <a href="../../Python/Python语言基础/14-网络应用开发.html">
+            
+                    
+                    网络应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../../Python/Python语言基础/15-图像和办公文档处理.html">
+            
+                <a href="../../Python/Python语言基础/15-图像和办公文档处理.html">
+            
+                    
+                    图像和文档处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../../Python/Python语言基础/16-logging日志模块.html">
+            
+                <a href="../../Python/Python语言基础/16-logging日志模块.html">
+            
+                    
+                    logging日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Python语言进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../Python/Python语言进阶/01-常用数据结构和算法.html">
+            
+                <a href="../../Python/Python语言进阶/01-常用数据结构和算法.html">
+            
+                    
+                    常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../Python/Python语言进阶/02-函数的高级用法.html">
+            
+                <a href="../../Python/Python语言进阶/02-函数的高级用法.html">
+            
+                    
+                    函数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../Python/Python语言进阶/03-面向对象高级知识.html">
+            
+                <a href="../../Python/Python语言进阶/03-面向对象高级知识.html">
+            
+                    
+                    面向对象高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../Python/Python语言进阶/04-迭代器和生成器.html">
+            
+                <a href="../../Python/Python语言进阶/04-迭代器和生成器.html">
+            
+                    
+                    迭代器和生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../Python/Python语言进阶/05-并发和异步编程.html">
+            
+                <a href="../../Python/Python语言进阶/05-并发和异步编程.html">
+            
+                    
+                    并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../Python/Python语言进阶/06-asyncio异步编程.html">
+            
+                <a href="../../Python/Python语言进阶/06-asyncio异步编程.html">
+            
+                    
+                    asynico异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Python 第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../Python/第三方库/Django/01-快速上手.html">
+            
+                <a href="../../Python/第三方库/Django/01-快速上手.html">
+            
+                    
+                    快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.2" data-path="../../Python/第三方库/Django/02-深入模型.html">
+            
+                <a href="../../Python/第三方库/Django/02-深入模型.html">
+            
+                    
+                    深入模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.3" data-path="../../Python/第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                <a href="../../Python/第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                    
+                    静态资源和Ajax请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.4" data-path="../../Python/第三方库/Django/04-Django模板系统.html">
+            
+                <a href="../../Python/第三方库/Django/04-Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.5" data-path="../../Python/第三方库/Django/05-Django的View.html">
+            
+                <a href="../../Python/第三方库/Django/05-Django的View.html">
+            
+                    
+                    Django的View(视图)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.6" data-path="../../Python/第三方库/Django/06-Django的路由系统.html">
+            
+                <a href="../../Python/第三方库/Django/06-Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.7" data-path="../../Python/第三方库/Django/07-Django-ORM相关操作.html">
+            
+                <a href="../../Python/第三方库/Django/07-Django-ORM相关操作.html">
+            
+                    
+                    Django ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.8" data-path="../../Python/第三方库/Django/08-Cookie、Session和分页.html">
+            
+                <a href="../../Python/第三方库/Django/08-Cookie、Session和分页.html">
+            
+                    
+                    Cookie、Session和分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.9" data-path="../../Python/第三方库/Django/09-Form和ModelForm组件.html">
+            
+                <a href="../../Python/第三方库/Django/09-Form和ModelForm组件.html">
+            
+                    
+                    Form、ModelForm组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.10" data-path="../../Python/第三方库/Django/10-中间件.html">
+            
+                <a href="../../Python/第三方库/Django/10-中间件.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.11" data-path="../../Python/第三方库/Django/Django-REST-framework.html">
+            
+                <a href="../../Python/第三方库/Django/Django-REST-framework.html">
+            
+                    
+                    Django-REST-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" >
+            
+                <span>
+            
+                    
+                    Django项目开发经验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                    
+                    登录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                    
+                    异常处理手柄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                    
+                    过滤相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.4" data-path="../../Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                    
+                    存储类重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.5" data-path="../../Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                    
+                    序列化相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.6" data-path="../../Python/第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                    
+                    自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.7" data-path="../../Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                    
+                    接口加速缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" >
+            
+                <span>
+            
+                    
+                    PyQt5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.3.1" data-path="../../Python/第三方库/PyQt5/">
+            
+                <a href="../../Python/第三方库/PyQt5/">
+            
+                    
+                    导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.2" data-path="../../Python/第三方库/PyQt5/01-窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/01-窗口.html">
+            
+                    
+                    窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.3" data-path="../../Python/第三方库/PyQt5/02-按钮.html">
+            
+                <a href="../../Python/第三方库/PyQt5/02-按钮.html">
+            
+                    
+                    按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.4" data-path="../../Python/第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                <a href="../../Python/第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                    
+                    垂直布局和水平布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.5" data-path="../../Python/第三方库/PyQt5/04-栅格布局.html">
+            
+                <a href="../../Python/第三方库/PyQt5/04-栅格布局.html">
+            
+                    
+                    栅格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.6" data-path="../../Python/第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                <a href="../../Python/第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                    
+                    布局添加标签Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.7" data-path="../../Python/第三方库/PyQt5/06-布局添加背景图.html">
+            
+                <a href="../../Python/第三方库/PyQt5/06-布局添加背景图.html">
+            
+                    
+                    布局添加背景图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.8" data-path="../../Python/第三方库/PyQt5/07-单选框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/07-单选框.html">
+            
+                    
+                    单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.9" data-path="../../Python/第三方库/PyQt5/08-复选框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/08-复选框.html">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.10" data-path="../../Python/第三方库/PyQt5/09-键盘提示.html">
+            
+                <a href="../../Python/第三方库/PyQt5/09-键盘提示.html">
+            
+                    
+                    键盘提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.11" data-path="../../Python/第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                <a href="../../Python/第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                    
+                    行编辑Lineedit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.12" data-path="../../Python/第三方库/PyQt5/11-按钮组.html">
+            
+                <a href="../../Python/第三方库/PyQt5/11-按钮组.html">
+            
+                    
+                    按钮组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.13" data-path="../../Python/第三方库/PyQt5/12-布局组.html">
+            
+                <a href="../../Python/第三方库/PyQt5/12-布局组.html">
+            
+                    
+                    布局组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.14" data-path="../../Python/第三方库/PyQt5/13-无边框窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/13-无边框窗口.html">
+            
+                    
+                    无边框窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.15" data-path="../../Python/第三方库/PyQt5/14-框架qframe.html">
+            
+                <a href="../../Python/第三方库/PyQt5/14-框架qframe.html">
+            
+                    
+                    框架Qframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.16" data-path="../../Python/第三方库/PyQt5/15-分离器.html">
+            
+                <a href="../../Python/第三方库/PyQt5/15-分离器.html">
+            
+                    
+                    分离器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.17" data-path="../../Python/第三方库/PyQt5/16-滑动条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/16-滑动条.html">
+            
+                    
+                    滑动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.18" data-path="../../Python/第三方库/PyQt5/17-滚动条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/17-滚动条.html">
+            
+                    
+                    滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.19" data-path="../../Python/第三方库/PyQt5/18-刻度盘.html">
+            
+                <a href="../../Python/第三方库/PyQt5/18-刻度盘.html">
+            
+                    
+                    刻度盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.20" data-path="../../Python/第三方库/PyQt5/19-spinbox.html">
+            
+                <a href="../../Python/第三方库/PyQt5/19-spinbox.html">
+            
+                    
+                    Spinbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.21" data-path="../../Python/第三方库/PyQt5/20-生成随机数.html">
+            
+                <a href="../../Python/第三方库/PyQt5/20-生成随机数.html">
+            
+                    
+                    生成随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.22" data-path="../../Python/第三方库/PyQt5/21-进度条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/21-进度条.html">
+            
+                    
+                    进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.23" data-path="../../Python/第三方库/PyQt5/22-工具框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/22-工具框.html">
+            
+                    
+                    工具框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.24" data-path="../../Python/第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                <a href="../../Python/第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                    
+                    菜单栏工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.25" data-path="../../Python/第三方库/PyQt5/24-文档编辑框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/24-文档编辑框.html">
+            
+                    
+                    文档编辑框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.26" data-path="../../Python/第三方库/PyQt5/25-字体文本框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/25-字体文本框.html">
+            
+                    
+                    字体文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.27" data-path="../../Python/第三方库/PyQt5/26-颜色文本框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/26-颜色文本框.html">
+            
+                    
+                    颜色文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.28" data-path="../../Python/第三方库/PyQt5/27-打印（文本框）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/27-打印（文本框）.html">
+            
+                    
+                    打印（文本框）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.29" data-path="../../Python/第三方库/PyQt5/28-打印预览.html">
+            
+                <a href="../../Python/第三方库/PyQt5/28-打印预览.html">
+            
+                    
+                    打印预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.30" data-path="../../Python/第三方库/PyQt5/29-打印PDF.html">
+            
+                <a href="../../Python/第三方库/PyQt5/29-打印PDF.html">
+            
+                    
+                    打印PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.31" data-path="../../Python/第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                    
+                    消息框提示框（带选择的）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.32" data-path="../../Python/第三方库/PyQt5/31-右键菜单.html">
+            
+                <a href="../../Python/第三方库/PyQt5/31-右键菜单.html">
+            
+                    
+                    右键菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.33" data-path="../../Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                    
+                    选项卡（单选下拉框和多选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.34" data-path="../../Python/第三方库/PyQt5/33-stack(堆叠">
+            
+                <span>
+            
+                    
+                    Stack(堆叠)小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.35" data-path="../../Python/第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                <a href="../../Python/第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                    
+                    可停靠的窗口小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.36" data-path="../../Python/第三方库/PyQt5/35-日历.html">
+            
+                <a href="../../Python/第三方库/PyQt5/35-日历.html">
+            
+                    
+                    日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.37" data-path="../../Python/第三方库/PyQt5/36-单选下拉框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/36-单选下拉框.html">
+            
+                    
+                    单选下拉框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.38" data-path="../../Python/第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                    
+                    首字符模糊填充（查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.39" data-path="../../Python/第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                    
+                    打开更多的窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.40" data-path="../../Python/第三方库/PyQt5/39-时间编辑.html">
+            
+                <a href="../../Python/第三方库/PyQt5/39-时间编辑.html">
+            
+                    
+                    时间编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.41" data-path="../../Python/第三方库/PyQt5/40-列表部件.html">
+            
+                <a href="../../Python/第三方库/PyQt5/40-列表部件.html">
+            
+                    
+                    列表部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.42" data-path="../../Python/第三方库/PyQt5/41-列表部件小示例.html">
+            
+                <a href="../../Python/第三方库/PyQt5/41-列表部件小示例.html">
+            
+                    
+                    列表部件小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" >
+            
+                <span>
+            
+                    
+                    PySide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.4.1" data-path="../../Python/第三方库/PySide/01-Qt简介.html">
+            
+                <a href="../../Python/第三方库/PySide/01-Qt简介.html">
+            
+                    
+                    Qt简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.2" data-path="../../Python/第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                <a href="../../Python/第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                    
+                    界面设计师QtDesigner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.3" data-path="../../Python/第三方库/PySide/03-发布程序.html">
+            
+                <a href="../../Python/第三方库/PySide/03-发布程序.html">
+            
+                    
+                    发布程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.4" data-path="../../Python/第三方库/PySide/04-常用控件1.html">
+            
+                <a href="../../Python/第三方库/PySide/04-常用控件1.html">
+            
+                    
+                    常用控件1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.5" data-path="../../Python/第三方库/PySide/05-常用控件2.html">
+            
+                <a href="../../Python/第三方库/PySide/05-常用控件2.html">
+            
+                    
+                    常用控件2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.6" data-path="../../Python/第三方库/PySide/06-常用控件3.html">
+            
+                <a href="../../Python/第三方库/PySide/06-常用控件3.html">
+            
+                    
+                    常用控件3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.7" data-path="../../Python/第三方库/PySide/07-常用控件4.html">
+            
+                <a href="../../Python/第三方库/PySide/07-常用控件4.html">
+            
+                    
+                    常用控件4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">GoLang</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    GoLang简明教程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="01-Go语言简明教程.html">
+            
+                <a href="01-Go语言简明教程.html">
+            
+                    
+                    Go语言简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="02-Go-Gin-简明教程.html">
+            
+                <a href="02-Go-Gin-简明教程.html">
+            
+                    
+                    Gin-简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.3" data-path="03-Go2新特性简明教程.html">
+            
+                <a href="03-Go2新特性简明教程.html">
+            
+                    
+                    Go2新特性简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="04-Go-Protobuf简明教程.html">
+            
+                <a href="04-Go-Protobuf简明教程.html">
+            
+                    
+                    Protobuf简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="05-Go-RPC&TLS鉴权简明教程.html">
+            
+                <a href="05-Go-RPC&TLS鉴权简明教程.html">
+            
+                    
+                    RPC&TLS鉴权简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="06-Go-WebAssembly(Wasm">
+            
+                <span>
+            
+                    
+                    WebAssembly(Wasm)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    GoLang基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../GoLang基础/01-GoLang发展史.html">
+            
+                <a href="../GoLang基础/01-GoLang发展史.html">
+            
+                    
+                    GoLang发展史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../GoLang基础/02-打印输出.html">
+            
+                <a href="../GoLang基础/02-打印输出.html">
+            
+                    
+                    打印输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../GoLang基础/03-变量和常量.html">
+            
+                <a href="../GoLang基础/03-变量和常量.html">
+            
+                    
+                    变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../GoLang基础/04-数据类型.html">
+            
+                <a href="../GoLang基础/04-数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../GoLang基础/05-运算符.html">
+            
+                <a href="../GoLang基础/05-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../GoLang基础/06-流程控制.html">
+            
+                <a href="../GoLang基础/06-流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="../GoLang基础/07-数组.html">
+            
+                <a href="../GoLang基础/07-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.8" data-path="../GoLang基础/08-切片.html">
+            
+                <a href="../GoLang基础/08-切片.html">
+            
+                    
+                    切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.9" data-path="../GoLang基础/09-map.html">
+            
+                <a href="../GoLang基础/09-map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.10" data-path="../GoLang基础/10-函数.html">
+            
+                <a href="../GoLang基础/10-函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.11" data-path="../GoLang基础/11-time包日期函数.html">
+            
+                <a href="../GoLang基础/11-time包日期函数.html">
+            
+                    
+                    time包日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.12" data-path="../GoLang基础/12-指针.html">
+            
+                <a href="../GoLang基础/12-指针.html">
+            
+                    
+                    指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.13" data-path="../GoLang基础/13-结构体.html">
+            
+                <a href="../GoLang基础/13-结构体.html">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.14" data-path="../GoLang基础/14-GoMod及包.html">
+            
+                <a href="../GoLang基础/14-GoMod及包.html">
+            
+                    
+                    GoMod及包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.15" data-path="../GoLang基础/15-接口.html">
+            
+                <a href="../GoLang基础/15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.16" data-path="../GoLang基础/16-goroutine实现并行和并发.html">
+            
+                <a href="../GoLang基础/16-goroutine实现并行和并发.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.17" data-path="../GoLang基础/17-反射.html">
+            
+                <a href="../GoLang基础/17-反射.html">
+            
+                    
+                    反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.18" data-path="../GoLang基础/18-文件和目录操作.html">
+            
+                <a href="../GoLang基础/18-文件和目录操作.html">
+            
+                    
+                    文件和目录操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    7daysGoLang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../7daysGoLang/">
+            
+                <a href="../7daysGoLang/">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库基础和进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../Database/MySQL/计算机二级MySQL.html">
+            
+                <a href="../../Database/MySQL/计算机二级MySQL.html">
+            
+                    
+                    计算机二级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../Database/MySQL/数据库三大范式.html">
+            
+                <a href="../../Database/MySQL/数据库三大范式.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../Database/MySQL/主从复制.html">
+            
+                <a href="../../Database/MySQL/主从复制.html">
+            
+                    
+                    MySQL主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    NoSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../Database/NoSQL/01-NoSql入门.html">
+            
+                <a href="../../Database/NoSQL/01-NoSql入门.html">
+            
+                    
+                    NoSql入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    Redeis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                <a href="../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                    
+                    Redis安装与配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="../../Database/NoSQL/03-Redis基础.html">
+            
+                <a href="../../Database/NoSQL/03-Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据分析</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    数学基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../MachineLearning/数学基础/高等数学.pdf">
+            
+                <span>
+            
+                    
+                    高等数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../MachineLearning/数学基础/概率论.pdf">
+            
+                <span>
+            
+                    
+                    概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../MachineLearning/数学基础/微积分.pdf">
+            
+                <span>
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../MachineLearning/数学基础/SVD.pdf">
+            
+                <span>
+            
+                    
+                    SVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../MachineLearning/数学基础/似然函数.pdf">
+            
+                <span>
+            
+                    
+                    似然函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../MachineLearning/数学基础/后验概率估计.pdf">
+            
+                <span>
+            
+                    
+                    后验概率估计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../../MachineLearning/数学基础/拉格朗日乘子法.pdf">
+            
+                <span>
+            
+                    
+                    拉格朗日乘子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../../MachineLearning/数学基础/核函数.pdf">
+            
+                <span>
+            
+                    
+                    核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../../MachineLearning/数学基础/梯度.pdf">
+            
+                <span>
+            
+                    
+                    梯度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../../MachineLearning/数学基础/概率分布与概率密度.pdf">
+            
+                <span>
+            
+                    
+                    概率分布与概率密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../../MachineLearning/数学基础/泰勒公式.pdf">
+            
+                <span>
+            
+                    
+                    泰勒公式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.12" data-path="../../MachineLearning/数学基础/激活函数.pdf">
+            
+                <span>
+            
+                    
+                    激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.13" data-path="../../MachineLearning/数学基础/熵.pdf">
+            
+                <span>
+            
+                    
+                    熵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.14" data-path="../../MachineLearning/数学基础/特征值与特征向量.pdf">
+            
+                <span>
+            
+                    
+                    特征值与特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.15" data-path="../../MachineLearning/数学基础/矩阵.pdf">
+            
+                <span>
+            
+                    
+                    矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    数据分析库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                    
+                    numpy基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                    
+                    pandas基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                    
+                    pandas连接合并追加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                    
+                    matplotlib基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Web前端</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../Web/Web前端概述.html">
+            
+                <a href="../../Web/Web前端概述.html">
+            
+                    
+                    Web前端入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../Web/HTML5/HTML5.html">
+            
+                <a href="../../Web/HTML5/HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../Web/CSS/CSS.html">
+            
+                <a href="../../Web/CSS/CSS.html">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="../../Web/JavaScript/JavaScript基础.html">
+            
+                <a href="../../Web/JavaScript/JavaScript基础.html">
+            
+                    
+                    JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" data-path="../../Web/JavaScript/JavaScript对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript对象.html">
+            
+                    
+                    JavaScript对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" data-path="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                <a href="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                    
+                    JavaScript瀑布流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.4" data-path="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                    
+                    JavaScript面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.5.1" data-path="../../Web/JavaScript/框架/Promise.html">
+            
+                <a href="../../Web/JavaScript/框架/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.2" data-path="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                    
+                    Vue.Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.3" data-path="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                    
+                    Vue.Js组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.4" data-path="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                    
+                    Vue.Js路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.5" data-path="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                    
+                    Vue.Js过渡和动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.6" data-path="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                    
+                    JQuery UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.7" data-path="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                    
+                    JQuery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.8" data-path="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                    
+                    JQuery方法大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../Web/RESTful.html">
+            
+                <a href="../../Web/RESTful.html">
+            
+                    
+                    RESTful规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工具</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../Utils/docker/Docker.html">
+            
+                <a href="../../Utils/docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../Utils/docker/FastDFS.html">
+            
+                <a href="../../Utils/docker/FastDFS.html">
+            
+                    
+                    FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../Utils/Git基本命令.html">
+            
+                <a href="../../Utils/Git基本命令.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../../Utils/Nginx/Nginx基础.html">
+            
+                <a href="../../Utils/Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../../Utils/Nginx/Nginx进阶.html">
+            
+                <a href="../../Utils/Nginx/Nginx进阶.html">
+            
+                    
+                    Nginx进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                <a href="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">理财</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    基金
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" >
+            
+                <span>
+            
+                    
+                    基金基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1.1" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                    
+                    纯债基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.2" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                    
+                    股票型基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.3" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                    
+                    大数据指数基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.4" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                    
+                    ETF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.5" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                    
+                    LOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.6" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                    
+                    四大行业指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" >
+            
+                <span>
+            
+                    
+                    基金进价
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.2.1" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                    
+                    分级基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.2" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                    
+                    避险基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.3" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                    
+                    量化基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.4" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                    
+                    QDII基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.5" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                    
+                    FOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" >
+            
+                <span>
+            
+                    
+                    其他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.3.1" data-path="../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                <a href="../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                    
+                    基金定投
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.2" data-path="../../FinancialManagement/基金/00-投资术语.html">
+            
+                <a href="../../FinancialManagement/基金/00-投资术语.html">
+            
+                    
+                    基金投资术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.3" data-path="../../FinancialManagement/基金/00-投资误区.html">
+            
+                <a href="../../FinancialManagement/基金/00-投资误区.html">
+            
+                    
+                    投资误区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.4" data-path="../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                    
+                    全球配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.5" data-path="../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                    
+                    场外基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.6" data-path="../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                    
+                    场内基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.7" data-path="../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                    
+                    看懂股票行情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.8" data-path="../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                    
+                    基金套牢怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    股票
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                <a href="../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                    
+                    股票市场常用名称解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" >
+            
+                <span>
+            
+                    
+                    看盘
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.2.1" data-path="../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                <a href="../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                    
+                    早盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.2" data-path="../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                <a href="../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                    
+                    盘后
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.3" data-path="../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                <a href="../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                    
+                    大盘分时图分析技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.4" data-path="../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                <a href="../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                    
+                    K线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Go2新特性简明教程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h6 id="datetime2022116-1133">datetime:2022/1/16 11:33</h6>
+<h6 id="authornzb">author:nzb</h6>
+<h1 id="go2-&#x65B0;&#x7279;&#x6027;&#x7B80;&#x660E;&#x6559;&#x7A0B;">Go2 &#x65B0;&#x7279;&#x6027;&#x7B80;&#x660E;&#x6559;&#x7A0B;</h1>
+<h2 id="go-&#x7684;&#x6F14;&#x8FDB;">Go &#x7684;&#x6F14;&#x8FDB;</h2>
+<p>Go&#x8BED;&#x8A00;/golang &#x8BDE;&#x751F;&#x4E8E;2007&#x5E74;&#xFF0C;&#x7ECF;&#x8FC7;12&#x5E74;&#x7684;&#x53D1;&#x5C55;&#xFF0C;Go&#x9010;&#x6E10;&#x6210;&#x4E3A;&#x4E86;&#x4E91;&#x8BA1;&#x7B97;&#x9886;&#x57DF;&#x65B0;&#x4E00;&#x4EE3;&#x7684;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x3002;Go&#x8BED;&#x8A00;&#x5728;&#x727A;&#x7272;&#x5F88;&#x5C11;&#x6027;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BED;&#x6CD5;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x3002;&#x6211;&#x662F;Python&#x7684;&#x91CD;&#x5EA6;&#x7528;&#x6237;&#xFF0C;&#x5728;&#x5B66;&#x4E60;Go&#x65F6;&#xFF0C;&#x5374;&#x6709;&#x4E00;&#x79CD;&#x5728;&#x5B66;&#x4E60;Python&#x7684;&#x611F;&#x89C9;&#x3002;&#x5E76;&#x975E;&#x8BED;&#x6CD5;&#x76F8;&#x4F3C;&#xFF0C;&#x800C;&#x662F;Go&#x8BED;&#x8A00;&#x4F5C;&#x4E3A;&#x4E00;&#x95E8;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#xFF0C;&#x7ADF;&#x7136;&#x80FD;&#x591F;&#x50CF;Python&#x4E00;&#x6837;&#xFF0C;&#x5C11;&#x91CF;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x4E8B;&#x60C5;&#x3002;Go&#x8BED;&#x8A00;&#x4EFF;&#x4F5B;&#x662F;C&#x548C;Python&#x7684;&#x7ED3;&#x5408;&#x4F53;&#x3002;</p>
+<p>Go&#x662F;&#x5982;&#x4F55;&#x706B;&#x8D77;&#x6765;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x89C9;&#x5F97;&#x6709;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x9664;&#x4E86;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x6027;&#x80FD;&#x597D;&#xFF0C;&#x8BED;&#x6CD5;&#x7B80;&#x5355;&#xFF0C;&#x6613;&#x4E0A;&#x624B;&#x5916;&#x3002;Go&#x8BED;&#x8A00;&#x539F;&#x751F;&#x652F;&#x6301; <code>Goroutine</code> &#x548C; <code>Channel</code>&#xFF0C;&#x6781;&#x5927;&#x5730;&#x964D;&#x4F4E;&#x4E86;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;&#x7F16;&#x7A0B;&#xFF0C;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x5C24;&#x5176;&#x91CD;&#x8981;&#xFF0C;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;C++&#xFF0C;Java&#x7B49;&#x8BED;&#x8A00;&#x7684;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x63A7;&#x5236;&#x903B;&#x8F91;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6740;&#x624B;&#x7EA7;&#x5E94;&#x7528;Docker&#x7684;&#x51FA;&#x73B0;&#x8D77;&#x5230;&#x4E86;&#x5F88;&#x5927;&#x7684;&#x63A8;&#x52A8;&#x4F5C;&#x7528;&#x3002;</p>
+<p>Go&#x8BED;&#x8A00;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x4EE4;&#x4EBA;&#x8BDF;&#x75C5;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4F8B;&#x5982;&#x5305;&#x7BA1;&#x7406;&#x673A;&#x5236;&#xFF0C;Go&#x76F4;&#x5230;v1.6&#x624D;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x4E86;vendor&#x673A;&#x5236;&#xFF0C;vendor&#x673A;&#x5236;&#x975E;&#x5E38;&#x7B80;&#x964B;&#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x5C31;&#x662F;&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x589E;&#x52A0;&#x4E00;&#x4E2A;vendor&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x653E;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x3002;vendor&#x673A;&#x5236;&#x662F;&#x6CA1;&#x6709;&#x7248;&#x672C;&#x6982;&#x5FF5;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;vendor&#x76EE;&#x5F55;&#x5D4C;&#x5957;&#x7684;&#x95EE;&#x9898;&#x4EE5;&#x53CA;&#x540C;&#x540D;&#x5305;&#x51FD;&#x6570;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x3002;&#x540E;&#x6765;&#x793E;&#x533A;&#x6D8C;&#x73B0;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x4EC5;&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x5C31;&#x6709;15&#x79CD;&#x4E4B;&#x591A;&#xFF0C;&#x5E94;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#x7684;&#xFF0C;&#x5982;dep&#x3001;govendor&#x3002;&#x76F4;&#x5230;v1.11&#xFF0C;&#x5B98;&#x65B9;&#x589E;&#x52A0;&#x4E86;Go modules&#x673A;&#x5236;&#xFF0C;&#x624D;&#x7B97;&#x8F83;&#x4E3A;&#x5B8C;&#x6574;&#x5730;&#x89E3;&#x51B3;&#x4E86;&#x5305;&#x7BA1;&#x7406;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>Go2 &#x53EF;&#x4EE5;&#x8BF4;&#x662F;Go&#x8BED;&#x8A00;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x91CC;&#x7A0B;&#x7891;&#xFF0C;Go1 &#x76EE;&#x524D;&#x867D;&#x7136;&#x5DF2;&#x7ECF;&#x5230;&#x4E86;1.12&#x7248;&#x672C;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x6BCF;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5F88;&#x5C11;&#x6D89;&#x53CA;&#x8BED;&#x6CD5;&#x5C42;&#x9762;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x800C;&#x4E14;&#x6BCF;&#x4E2A;&#x7248;&#x672C;&#x90FD;&#x662F;&#x5411;&#x524D;&#x517C;&#x5BB9;&#x7684;&#x3002;&#x8F83;&#x5927;&#x7684;&#x6539;&#x52A8;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>Go1.2 &#x5207;&#x7247;&#x64CD;&#x4F5C;</li>
+</ul>
+<pre><code class="lang-text">var a = make([]int, 10)
+var b = a[i:j:k]
+</code></pre>
+<ul>
+<li>Go1.4 for&#x8BED;&#x8A00;&#x52A0;&#x5F3A;
+```text
+// &lt;= 1.3
+for i, v := range x {
+  // ...
+}</li>
+</ul>
+<p>for i := range x {
+    // ...
+}</p>
+<p>// 1.4 &#x65B0;&#x589E;
+var times [5][0]int</p>
+<p>for i := 0; i &lt; len(times); i++ {
+    // ...
+}</p>
+<p>for _ = range times {
+    // ...
+}</p>
+<pre><code>- Go1.9 &#x7C7B;&#x578B;&#x522B;&#x540D;
+```text
+type T1 = T2
+</code></pre><h2 id="go-2-&#x8BBE;&#x8BA1;&#x8349;&#x6848;">Go 2 &#x8BBE;&#x8BA1;&#x8349;&#x6848;</h2>
+<p>&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x5B8C;&#x5584;Go&#x8BED;&#x8A00;&#xFF0C;&#x63D0;&#x4F9B;&#x66F4;&#x597D;&#x7684;&#x4F53;&#x9A8C;&#x3002;Go&#x8BED;&#x8A00;&#x793E;&#x533A;&#x76EE;&#x524D;&#x53D1;&#x5E03;&#x4E86;&#x4E09;&#x7C7B;&#x91CD;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#x8349;&#x6848;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x9519;&#x8BEF;&#x5904;&#x7406;(Error handling)&#x3001;&#x9519;&#x8BEF;&#x503C;(Error values)&#x3001;&#x6CDB;&#x578B;(Generics)&#xFF0C;&#x8FD9;&#x51E0;&#x4E2A;&#x8349;&#x6848;&#x4EE3;&#x8868;&#x4E86;&#x793E;&#x533A;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x5B8C;&#x5584;&#x65B9;&#x5411;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x6700;&#x7EC8;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="&#x9519;&#x8BEF;&#x5904;&#x7406;error-handling">&#x9519;&#x8BEF;&#x5904;&#x7406;(Error Handling)</h3>
+<p>Go1 &#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5F3A;&#x8FEB;&#x8C03;&#x7528;&#x8005;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x5BFC;&#x81F4;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x5927;&#x91CF;&#x7684; <code>if</code> &#x5224;&#x65AD;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-text">func CopyFile(src, dst string) {
+    r := os.Open(src)
+    defer r.Close()
+
+    w := os.Create(dst)
+    io.Copy(w, r)
+    w.Close()
+}
+</code></pre>
+<p>IO&#x64CD;&#x4F5C;&#x5BB9;&#x6613;&#x5F15;&#x53D1;&#x9519;&#x8BEF;&#xFF0C;&#x6587;&#x4EF6;&#x6253;&#x5F00;&#x5931;&#x8D25;&#xFF0C;&#x521B;&#x5EFA;&#x5931;&#x8D25;&#xFF0C;&#x62F7;&#x8D1D;&#x5931;&#x8D25;&#x7B49;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5B8C;&#x6574;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF0C;&#x4EE3;&#x7801;&#x5C06;&#x53D8;&#x6210;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-text">func CopyFile(src, dst string) error {
+    r, err := os.Open(src)
+    if err != nil {
+        return err
+    }
+    defer r.Close()
+
+    w, err := os.Create(dst)
+    if err != nil {
+        return err
+    }
+    defer w.Close()
+
+    if _, err := io.Copy(w, r); err != nil {
+        return err
+    }
+    if err := w.Close(); err != nil {
+        return err
+    }
+}
+</code></pre>
+<p>&#x770B;&#x4F3C;&#x903B;&#x8F91;&#x6E05;&#x6670;&#xFF0C;&#x4F46;&#x4E0D;&#x591F;&#x4F18;&#x96C5;&#xFF0C;&#x5145;&#x65A5;&#x4E86;&#x5927;&#x91CF;&#x91CD;&#x590D;&#x7684;&#x903B;&#x8F91;&#x3002;&#x8FD9;&#x662F;Go&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x7684;&#x7F3A;&#x9677;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x56E0;&#x4E3A;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x7684;&#x7E41;&#x7410;&#xFF0C;&#x5F88;&#x591A;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x5F00;&#x53D1;&#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x5F88;&#x5C11;&#x53BB;&#x68C0;&#x67E5;&#x5E76;&#x5904;&#x7406;&#x9519;&#x8BEF;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x5065;&#x58EE;&#x6027;&#x5F97;&#x4E0D;&#x5230;&#x4FDD;&#x8BC1;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;Go2 &#x53D1;&#x5E03;&#x4E86;&#x4E00;&#x4E2A;&#x8BBE;&#x8BA1;&#x8349;&#x6848;&#x4F9B;&#x793E;&#x533A;&#x8BA8;&#x8BBA;&#xFF0C;Go2&#x5C06;&#x4F1A;&#x5B8C;&#x5584;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7684;&#x8BED;&#x6CD5;&#x5C06;&#x4F1A;&#x7B80;&#x6D01;&#x5F88;&#x591A;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x63D0;&#x6848;&#x5F15;&#x5165;&#x4E86;<code>handle err</code>&#x548C;<code>check</code>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-text">func CopyFile(src, dst string) error {
+    handle err {
+        return fmt.Errorf(&quot;copy %s %s: %v&quot;, src, dst, err)
+    }
+    r := check os.Open(src)
+    defer r.Close()
+
+    w := check os.Create(dst)
+    check io.Copy(w, r)
+    check w.Close()
+}
+</code></pre>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528;&#x88AB;Java&#x3001;Python&#x7B49;&#x8BED;&#x8A00;&#x91C7;&#x7528;&#x7684;<code>try</code>&#x5173;&#x952E;&#x5B57;&#x5462;&#xFF1F;&#x6BD4;&#x5982;&#x5199;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-text">data := try parseHexdump(string(hex))
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5199;&#x6CD5;&#x770B;&#x4F3C;&#x548C;&#x8C10;&#xFF0C;&#x4F46;try&#x5173;&#x952E;&#x5B57;&#x76F4;&#x63A5;&#x5E94;&#x7528;&#x5728; error values &#x65F6;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x5C31;&#x6CA1;&#x90A3;&#x4E48;&#x597D;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-text">data, err := parseHexdump(string(hex))
+if err == ErrBadHex {
+    ... special handling ...
+}
+try err
+</code></pre>
+<p>&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#xFF0C;<code>check err</code>&#x663E;&#x7136;&#x6BD4;<code>try err</code>&#x66F4;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<h3 id="&#x9519;&#x8BEF;&#x503C;error-values">&#x9519;&#x8BEF;&#x503C;(Error values)</h3>
+<p>&#x540C;&#x6837;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x8BBE;&#x8BA1;&#x5F97;&#x8F83;&#x4E3A;&#x7B80;&#x964B;&#xFF0C;Go&#x8BED;&#x8A00;&#x5BF9;<code>Error values</code>&#x652F;&#x6301;&#x6709;&#x9650;&#x3002;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x4E86;<code>error</code>&#x63A5;&#x53E3;&#xFF0C;&#x90FD;&#x662F;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x3002;&#x7531;&#x4E8E;&#x7F3A;&#x5C11;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5728;&#x5404;&#x79CD;&#x5E93;&#x5F53;&#x4E2D;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x4EE5;&#x53CA;&#x4EA7;&#x751F;&#x4E86;&#x54EA;&#x7C7B;&#x9519;&#x8BEF;&#x7684;&#x65B9;&#x5F0F;&#x591A;&#x79CD;&#x591A;&#x6837;&#xFF0C;&#x4F8B;&#x5982;<code>io.EOF</code>&#xFF0C;<code>os.IsNotExist</code>&#xFF0C;<code>err.Error()</code>&#x7B49;&#xFF0C;&#x3002;&#x53E6;&#x5916;&#xFF0C;Go&#x8BED;&#x8A00;&#x76EE;&#x524D;&#x6CA1;&#x6709;&#x673A;&#x5236;&#x8FFD;&#x6EAF;&#x5230;&#x5B8C;&#x6574;&#x7684;&#x9519;&#x8BEF;&#x94FE;&#x6761;&#x3002;&#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code class="lang-text">func funcB() error {
+    if v, err := funcA(); if err != nil {
+        return fmt.Errorf(&quot;connect to db: %v&quot;, err)
+    }
+}
+func funcC() error {
+    v, err := funcB()
+    if err != nil {
+        return fmt.Errorf(&quot;write users database: %v&quot;, err)
+    }
+}
+</code></pre>
+<p><code>funcC</code>&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-text">write users database: connect to db: open /etc/xx.conf: permission denied
+</code></pre>
+<p>&#x6BCF;&#x4E00;&#x5C42;&#xFF0C;&#x7528;&#x989D;&#x5916;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x662F;&#x76EE;&#x524D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x9664;&#x4E86;&#x901A;&#x8FC7;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#xFF0C;&#x5F88;&#x96BE;&#x8FD8;&#x539F;&#x51FA;&#x5B8C;&#x6574;&#x7684;&#x9519;&#x8BEF;&#x94FE;&#x6761;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;Error values&#x7F3A;&#x5C11;&#x6807;&#x51C6;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6709;2&#x4E2A;&#x63D0;&#x6848;&#xFF0C;&#x5206;&#x522B;&#x9488;&#x5BF9;<code>Error inspection</code>&#x548C;<code>Error formatting</code>&#x3002;</p>
+<ul>
+<li>&#x9488;&#x5BF9; Error inspection &#xFF0C;&#x4E3A;error&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63A5;&#x53E3;<code>Unwrap</code>&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x94FE;&#x4E0A;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;
+```text
+package errors</li>
+</ul>
+<p>type Wrapper interface {
+    Unwrap() error
+}</p>
+<pre><code>&#x4F8B;&#x5982;&#xFF0C;
+```text
+// WriteError &#x5B9E;&#x73B0; Unwrap &#x63A5;&#x53E3;
+func (e *WriteError) Unwrap() error { return e.Err }
+</code></pre><ul>
+<li>&#x9488;&#x5BF9; Error format&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63A5;&#x53E3;Format&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
+```text
+package errors</li>
+</ul>
+<p>type Formatter interface {
+    Format(p Printer) (next error)
+}</p>
+<pre><code>&#x4F8B;&#x5982;&#xFF0C;
+```text
+func (e *WriteError) Format(p errors.Printer) (next error) {
+    p.Printf(&quot;write %s database&quot;, e.Database)
+    if p.Detail() {
+        p.Printf(&quot;more detail here&quot;)
+    }
+    return e.Err
+}
+</code></pre><h3 id="&#x6CDB;&#x578B;generics">&#x6CDB;&#x578B;(Generics)</h3>
+<p>Go&#x8BED;&#x8A00;&#x5F53;&#x524D;&#x53EF;&#x4F7F;&#x7528;<code>inferface{}</code>&#xFF0C;&#x5141;&#x8BB8;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x4F46;&#x8FD9;&#x8FC7;&#x4E8E;&#x7075;&#x6D3B;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x540E;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF0C;&#x8FDB;&#x800C;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x6B65;&#x7684;&#x5904;&#x7406;&#x3002;&#x5BF9;&#x6BD4;C++/Java&#x7684;&#x6807;&#x51C6;&#x5BB9;&#x5668;&#xFF0C;Go&#x8BED;&#x8A00;&#x5728;&#x6CDB;&#x578B;&#x65B9;&#x9762;&#x6709;&#x5F88;&#x5927;&#x4E0D;&#x8DB3;&#xFF0C;&#x56E0;&#x6B64;&#x9488;&#x5BF9;&#x6CDB;&#x578B;&#x7684;&#x63D0;&#x6848;&#x5373;&#x5E0C;&#x671B;&#x5F25;&#x8865;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4E0D;&#x8DB3;&#x3002;&#x63D0;&#x6848;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
+<pre><code class="lang-text">type List(type T) []T
+// &#x8FD4;&#x56DE;map&#x7684;&#x952E;
+func Keys(type K, V)(m map[K]V) []K
+// &#x53BB;&#x91CD;&#x8FC7;&#x6EE4;
+func Uniq(&lt;-chan T) &lt;-chan T
+// &#x5408;&#x5E76;
+func Merge(chans ...&lt;-chan T) &lt;-chan T
+// &#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x6392;&#x5E8F;&#x51FD;&#x6570;&#x6392;&#x5E8F;
+func SortSlice(data []T, less func(x, y T) bool)
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;map&#x5BF9;&#x8C61;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x952E;&#xFF0C;&#x800C;&#x5E0C;&#x671B;&#x8FD9;&#x4E2A;&#x952E;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code class="lang-text">var ints List(int)
+keysA := Keys(int, string)(map[int]string{1:&quot;one&quot;, 2: &quot;two&quot;})
+keysB := Keys(string, string)(map[string]string{&quot;name&quot;:&quot;geektutu&quot;, &quot;age&quot;: &quot;twenty&quot;})
+// [1, 2]
+</code></pre>
+<h2 id="go-2-&#x65B0;&#x7279;&#x6027;">Go 2 &#x65B0;&#x7279;&#x6027;</h2>
+<p>Go2&#x8FD8;&#x672A;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#xFF0C;&#x53D1;&#x5E03;&#x540E;&#x66F4;&#x65B0;</p>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/golang/go/wiki/Go2" target="_blank">Go2 wiki - Github</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-Go-Gin-简明教程.html" class="navigation navigation-prev " aria-label="Previous page: Gin-简明教程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-Go-Protobuf简明教程.html" class="navigation navigation-next " aria-label="Next page: Protobuf简明教程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Go2新特性简明教程","level":"4.1.3","depth":2,"next":{"title":"Protobuf简明教程","level":"4.1.4","depth":2,"path":"GoLang/Go简明教程/04-Go-Protobuf简明教程.md","ref":"GoLang/Go简明教程/04-Go-Protobuf简明教程.md","articles":[]},"previous":{"title":"Gin-简明教程","level":"4.1.2","depth":2,"path":"GoLang/Go简明教程/02-Go-Gin-简明教程.md","ref":"GoLang/Go简明教程/02-Go-Gin-简明教程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/Go简明教程/03-Go2新特性简明教程.md","mtime":"2022-01-16T03:42:11.150Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-31T02:20:10.407Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
