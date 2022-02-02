@@ -124,7 +124,7 @@
 - [Go2新特性简明教程](GoLang/Go简明教程/03-Go2新特性简明教程.md)
 - [Protobuf简明教程](GoLang/Go简明教程/04-Go-Protobuf简明教程.md)
 - [RPC&TLS鉴权简明教程](GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.md)
-- [WebAssembly(Wasm)简明教程](GoLang/Go简明教程/06-Go-WebAssembly(Wasm)简明教程.md)
+- [WebAssembly(Wasm)简明教程](GoLang/Go简明教程/06-Go-WebAssembly简明教程.md)
 
 ### [GoLang基础](./GoLang/GoLang基础)
 
