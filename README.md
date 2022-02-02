@@ -19,6 +19,23 @@
 ## [Linux](./Linux)
 
 - [入门基础](./Linux/Linux.md)
+    - [Linux系统简介](Linux/基础/01-Linux系统简介.md)
+    - [Linux系统安装](Linux/基础/02-Linux系统安装.md)
+    - [Linux使用注意事项](Linux/基础/03-Linux使用注意事项-新手必看.md)
+    - [Linux各目录的作用](Linux/基础/04-Linux各目录的作用.md)
+    - [服务器注意事项](Linux/基础/05-服务器注意事项.md)
+    - [Linux常用命令](Linux/基础/06-Linux常用命令.md)
+    - [强大的文本编辑器Vim](Linux/基础/07-强大的文本编辑器Vim.md)
+    - [Linux软件包管理](Linux/基础/08-Linux软件包管理.md)
+    - [Linux中的用户管理](Linux/基础/09-Linux中的用户管理.md)
+    - [Linux权限管理](Linux/基础/10-Linux权限管理.md)
+    - [Linux的文件系统管理](Linux/基础/11-Linux的文件系统管理.md)
+    - [Shell](Linux/基础/12-Shell.md)
+    - [Linux的服务管理](Linux/基础/13-Linux的服务管理.md)
+    - [Linux系统管理](Linux/基础/14-Linux系统管理.md)
+    - [Linux日志管理](Linux/基础/15-Linux日志管理.md)
+    - [Linux启动管理](Linux/基础/16-Linux启动管理.md)
+    - [Linux备份与恢复](Linux/基础/17-Linux备份与恢复.md)
 
 ## [Python](./Python)
 
@@ -125,6 +142,10 @@
 - [Protobuf简明教程](GoLang/Go简明教程/04-Go-Protobuf简明教程.md)
 - [RPC&TLS鉴权简明教程](GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.md)
 - [WebAssembly(Wasm)简明教程](GoLang/Go简明教程/06-Go-WebAssembly简明教程.md)
+- [Test单元测试简明教程](GoLang/Go简明教程/07-Go-Test单元测试简明教程.md)
+- [Mock(gomock)简明教程](GoLang/Go简明教程/08-Go-Mock(gomock)简明教程.md)
+- [Mmap-文件内存映射简明教程](GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.md)
+- [Context并发编程简明教程](GoLang/Go简明教程/10-Go-Context并发编程简明教程.md)
 
 ### [GoLang基础](./GoLang/GoLang基础)
 
