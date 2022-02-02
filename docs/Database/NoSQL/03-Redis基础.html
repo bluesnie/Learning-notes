@@ -1,0 +1,4212 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redis基础 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="02-Redis安装与配置文件.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">算法</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Algorithm/算法图解.pdf">
+            
+                <span>
+            
+                    
+                    算法图解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../Linux/Linux.html">
+            
+                <a href="../../Linux/Linux.html">
+            
+                    
+                    入门基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../Linux/基础/01-Linux系统简介.html">
+            
+                <a href="../../Linux/基础/01-Linux系统简介.html">
+            
+                    
+                    Linux系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../Linux/基础/02-Linux系统安装.html">
+            
+                <a href="../../Linux/基础/02-Linux系统安装.html">
+            
+                    
+                    Linux系统安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../Linux/基础/03-Linux使用注意事项-新手必看.html">
+            
+                <a href="../../Linux/基础/03-Linux使用注意事项-新手必看.html">
+            
+                    
+                    Linux使用注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../Linux/基础/04-Linux各目录的作用.html">
+            
+                <a href="../../Linux/基础/04-Linux各目录的作用.html">
+            
+                    
+                    Linux各目录的作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../Linux/基础/05-服务器注意事项.html">
+            
+                <a href="../../Linux/基础/05-服务器注意事项.html">
+            
+                    
+                    服务器注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../Linux/基础/06-Linux常用命令.html">
+            
+                <a href="../../Linux/基础/06-Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../Linux/基础/07-强大的文本编辑器Vim.html">
+            
+                <a href="../../Linux/基础/07-强大的文本编辑器Vim.html">
+            
+                    
+                    强大的文本编辑器Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../Linux/基础/08-Linux软件包管理.html">
+            
+                <a href="../../Linux/基础/08-Linux软件包管理.html">
+            
+                    
+                    Linux软件包管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../Linux/基础/09-Linux中的用户管理.html">
+            
+                <a href="../../Linux/基础/09-Linux中的用户管理.html">
+            
+                    
+                    Linux中的用户管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../Linux/基础/10-Linux权限管理.html">
+            
+                <a href="../../Linux/基础/10-Linux权限管理.html">
+            
+                    
+                    Linux权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../Linux/基础/11-Linux的文件系统管理.html">
+            
+                <a href="../../Linux/基础/11-Linux的文件系统管理.html">
+            
+                    
+                    Linux的文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../../Linux/基础/12-Shell.html">
+            
+                <a href="../../Linux/基础/12-Shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../../Linux/基础/13-Linux的服务管理.html">
+            
+                <a href="../../Linux/基础/13-Linux的服务管理.html">
+            
+                    
+                    Linux的服务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="../../Linux/基础/14-Linux系统管理.html">
+            
+                <a href="../../Linux/基础/14-Linux系统管理.html">
+            
+                    
+                    Linux系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="../../Linux/基础/15-Linux日志管理.html">
+            
+                <a href="../../Linux/基础/15-Linux日志管理.html">
+            
+                    
+                    Linux日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="../../Linux/基础/16-Linux启动管理.html">
+            
+                <a href="../../Linux/基础/16-Linux启动管理.html">
+            
+                    
+                    Linux启动管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="../../Linux/基础/17-Linux备份与恢复.html">
+            
+                <a href="../../Linux/基础/17-Linux备份与恢复.html">
+            
+                    
+                    Linux备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Python</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Python语言基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Python/PEP8.html">
+            
+                <a href="../../Python/PEP8.html">
+            
+                    
+                    Python PEP8编码规范 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Python/Python语言基础/00-初识Python.html">
+            
+                <a href="../../Python/Python语言基础/00-初识Python.html">
+            
+                    
+                    初识Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Python/Python语言基础/01-语言元素.html">
+            
+                <a href="../../Python/Python语言基础/01-语言元素.html">
+            
+                    
+                    语言元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Python/Python语言基础/02-分支结构.html">
+            
+                <a href="../../Python/Python语言基础/02-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../Python/Python语言基础/03-循环结构.html">
+            
+                <a href="../../Python/Python语言基础/03-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../Python/Python语言基础/04-练习.html">
+            
+                <a href="../../Python/Python语言基础/04-练习.html">
+            
+                    
+                    构造程序逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../Python/Python语言基础/05-函数和模块的使用.html">
+            
+                <a href="../../Python/Python语言基础/05-函数和模块的使用.html">
+            
+                    
+                    函数和模块的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../../Python/Python语言基础/06-字符串和常用数据结构.html">
+            
+                <a href="../../Python/Python语言基础/06-字符串和常用数据结构.html">
+            
+                    
+                    字符串和常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../../Python/Python语言基础/07-面向对象编程基础.html">
+            
+                <a href="../../Python/Python语言基础/07-面向对象编程基础.html">
+            
+                    
+                    面向对象编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../../Python/Python语言基础/08-面向对象编程进阶.html">
+            
+                <a href="../../Python/Python语言基础/08-面向对象编程进阶.html">
+            
+                    
+                    面向对象编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../../Python/Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                <a href="../../Python/Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                    
+                    图形用户界面和游戏开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../../Python/Python语言基础/10-文件和异常.html">
+            
+                <a href="../../Python/Python语言基础/10-文件和异常.html">
+            
+                    
+                    文件和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../../Python/Python语言基础/11-字符串和正则表达式.html">
+            
+                <a href="../../Python/Python语言基础/11-字符串和正则表达式.html">
+            
+                    
+                    字符串和正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../../Python/Python语言基础/12-进程和线程.html">
+            
+                <a href="../../Python/Python语言基础/12-进程和线程.html">
+            
+                    
+                    进程和线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../../Python/Python语言基础/13-网络编程入门.html">
+            
+                <a href="../../Python/Python语言基础/13-网络编程入门.html">
+            
+                    
+                    网络编程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../../Python/Python语言基础/14-网络应用开发.html">
+            
+                <a href="../../Python/Python语言基础/14-网络应用开发.html">
+            
+                    
+                    网络应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../../Python/Python语言基础/15-图像和办公文档处理.html">
+            
+                <a href="../../Python/Python语言基础/15-图像和办公文档处理.html">
+            
+                    
+                    图像和文档处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../../Python/Python语言基础/16-logging日志模块.html">
+            
+                <a href="../../Python/Python语言基础/16-logging日志模块.html">
+            
+                    
+                    logging日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Python语言进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../Python/Python语言进阶/01-常用数据结构和算法.html">
+            
+                <a href="../../Python/Python语言进阶/01-常用数据结构和算法.html">
+            
+                    
+                    常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../Python/Python语言进阶/02-函数的高级用法.html">
+            
+                <a href="../../Python/Python语言进阶/02-函数的高级用法.html">
+            
+                    
+                    函数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../Python/Python语言进阶/03-面向对象高级知识.html">
+            
+                <a href="../../Python/Python语言进阶/03-面向对象高级知识.html">
+            
+                    
+                    面向对象高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../Python/Python语言进阶/04-迭代器和生成器.html">
+            
+                <a href="../../Python/Python语言进阶/04-迭代器和生成器.html">
+            
+                    
+                    迭代器和生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../Python/Python语言进阶/05-并发和异步编程.html">
+            
+                <a href="../../Python/Python语言进阶/05-并发和异步编程.html">
+            
+                    
+                    并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../Python/Python语言进阶/06-asyncio异步编程.html">
+            
+                <a href="../../Python/Python语言进阶/06-asyncio异步编程.html">
+            
+                    
+                    asynico异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Python 第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../Python/第三方库/Django/01-快速上手.html">
+            
+                <a href="../../Python/第三方库/Django/01-快速上手.html">
+            
+                    
+                    快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.2" data-path="../../Python/第三方库/Django/02-深入模型.html">
+            
+                <a href="../../Python/第三方库/Django/02-深入模型.html">
+            
+                    
+                    深入模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.3" data-path="../../Python/第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                <a href="../../Python/第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                    
+                    静态资源和Ajax请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.4" data-path="../../Python/第三方库/Django/04-Django模板系统.html">
+            
+                <a href="../../Python/第三方库/Django/04-Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.5" data-path="../../Python/第三方库/Django/05-Django的View.html">
+            
+                <a href="../../Python/第三方库/Django/05-Django的View.html">
+            
+                    
+                    Django的View(视图)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.6" data-path="../../Python/第三方库/Django/06-Django的路由系统.html">
+            
+                <a href="../../Python/第三方库/Django/06-Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.7" data-path="../../Python/第三方库/Django/07-Django-ORM相关操作.html">
+            
+                <a href="../../Python/第三方库/Django/07-Django-ORM相关操作.html">
+            
+                    
+                    Django ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.8" data-path="../../Python/第三方库/Django/08-Cookie、Session和分页.html">
+            
+                <a href="../../Python/第三方库/Django/08-Cookie、Session和分页.html">
+            
+                    
+                    Cookie、Session和分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.9" data-path="../../Python/第三方库/Django/09-Form和ModelForm组件.html">
+            
+                <a href="../../Python/第三方库/Django/09-Form和ModelForm组件.html">
+            
+                    
+                    Form、ModelForm组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.10" data-path="../../Python/第三方库/Django/10-中间件.html">
+            
+                <a href="../../Python/第三方库/Django/10-中间件.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.11" data-path="../../Python/第三方库/Django/Django-REST-framework.html">
+            
+                <a href="../../Python/第三方库/Django/Django-REST-framework.html">
+            
+                    
+                    Django-REST-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" >
+            
+                <span>
+            
+                    
+                    Django项目开发经验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                    
+                    登录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                    
+                    异常处理手柄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                    
+                    过滤相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.4" data-path="../../Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                    
+                    存储类重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.5" data-path="../../Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                    
+                    序列化相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.6" data-path="../../Python/第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                    
+                    自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.7" data-path="../../Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                    
+                    接口加速缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" >
+            
+                <span>
+            
+                    
+                    PyQt5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.3.1" data-path="../../Python/第三方库/PyQt5/">
+            
+                <a href="../../Python/第三方库/PyQt5/">
+            
+                    
+                    导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.2" data-path="../../Python/第三方库/PyQt5/01-窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/01-窗口.html">
+            
+                    
+                    窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.3" data-path="../../Python/第三方库/PyQt5/02-按钮.html">
+            
+                <a href="../../Python/第三方库/PyQt5/02-按钮.html">
+            
+                    
+                    按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.4" data-path="../../Python/第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                <a href="../../Python/第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                    
+                    垂直布局和水平布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.5" data-path="../../Python/第三方库/PyQt5/04-栅格布局.html">
+            
+                <a href="../../Python/第三方库/PyQt5/04-栅格布局.html">
+            
+                    
+                    栅格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.6" data-path="../../Python/第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                <a href="../../Python/第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                    
+                    布局添加标签Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.7" data-path="../../Python/第三方库/PyQt5/06-布局添加背景图.html">
+            
+                <a href="../../Python/第三方库/PyQt5/06-布局添加背景图.html">
+            
+                    
+                    布局添加背景图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.8" data-path="../../Python/第三方库/PyQt5/07-单选框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/07-单选框.html">
+            
+                    
+                    单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.9" data-path="../../Python/第三方库/PyQt5/08-复选框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/08-复选框.html">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.10" data-path="../../Python/第三方库/PyQt5/09-键盘提示.html">
+            
+                <a href="../../Python/第三方库/PyQt5/09-键盘提示.html">
+            
+                    
+                    键盘提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.11" data-path="../../Python/第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                <a href="../../Python/第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                    
+                    行编辑Lineedit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.12" data-path="../../Python/第三方库/PyQt5/11-按钮组.html">
+            
+                <a href="../../Python/第三方库/PyQt5/11-按钮组.html">
+            
+                    
+                    按钮组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.13" data-path="../../Python/第三方库/PyQt5/12-布局组.html">
+            
+                <a href="../../Python/第三方库/PyQt5/12-布局组.html">
+            
+                    
+                    布局组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.14" data-path="../../Python/第三方库/PyQt5/13-无边框窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/13-无边框窗口.html">
+            
+                    
+                    无边框窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.15" data-path="../../Python/第三方库/PyQt5/14-框架qframe.html">
+            
+                <a href="../../Python/第三方库/PyQt5/14-框架qframe.html">
+            
+                    
+                    框架Qframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.16" data-path="../../Python/第三方库/PyQt5/15-分离器.html">
+            
+                <a href="../../Python/第三方库/PyQt5/15-分离器.html">
+            
+                    
+                    分离器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.17" data-path="../../Python/第三方库/PyQt5/16-滑动条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/16-滑动条.html">
+            
+                    
+                    滑动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.18" data-path="../../Python/第三方库/PyQt5/17-滚动条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/17-滚动条.html">
+            
+                    
+                    滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.19" data-path="../../Python/第三方库/PyQt5/18-刻度盘.html">
+            
+                <a href="../../Python/第三方库/PyQt5/18-刻度盘.html">
+            
+                    
+                    刻度盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.20" data-path="../../Python/第三方库/PyQt5/19-spinbox.html">
+            
+                <a href="../../Python/第三方库/PyQt5/19-spinbox.html">
+            
+                    
+                    Spinbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.21" data-path="../../Python/第三方库/PyQt5/20-生成随机数.html">
+            
+                <a href="../../Python/第三方库/PyQt5/20-生成随机数.html">
+            
+                    
+                    生成随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.22" data-path="../../Python/第三方库/PyQt5/21-进度条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/21-进度条.html">
+            
+                    
+                    进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.23" data-path="../../Python/第三方库/PyQt5/22-工具框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/22-工具框.html">
+            
+                    
+                    工具框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.24" data-path="../../Python/第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                <a href="../../Python/第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                    
+                    菜单栏工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.25" data-path="../../Python/第三方库/PyQt5/24-文档编辑框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/24-文档编辑框.html">
+            
+                    
+                    文档编辑框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.26" data-path="../../Python/第三方库/PyQt5/25-字体文本框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/25-字体文本框.html">
+            
+                    
+                    字体文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.27" data-path="../../Python/第三方库/PyQt5/26-颜色文本框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/26-颜色文本框.html">
+            
+                    
+                    颜色文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.28" data-path="../../Python/第三方库/PyQt5/27-打印（文本框）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/27-打印（文本框）.html">
+            
+                    
+                    打印（文本框）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.29" data-path="../../Python/第三方库/PyQt5/28-打印预览.html">
+            
+                <a href="../../Python/第三方库/PyQt5/28-打印预览.html">
+            
+                    
+                    打印预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.30" data-path="../../Python/第三方库/PyQt5/29-打印PDF.html">
+            
+                <a href="../../Python/第三方库/PyQt5/29-打印PDF.html">
+            
+                    
+                    打印PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.31" data-path="../../Python/第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                    
+                    消息框提示框（带选择的）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.32" data-path="../../Python/第三方库/PyQt5/31-右键菜单.html">
+            
+                <a href="../../Python/第三方库/PyQt5/31-右键菜单.html">
+            
+                    
+                    右键菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.33" data-path="../../Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                    
+                    选项卡（单选下拉框和多选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.34" data-path="../../Python/第三方库/PyQt5/33-stack(堆叠">
+            
+                <span>
+            
+                    
+                    Stack(堆叠)小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.35" data-path="../../Python/第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                <a href="../../Python/第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                    
+                    可停靠的窗口小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.36" data-path="../../Python/第三方库/PyQt5/35-日历.html">
+            
+                <a href="../../Python/第三方库/PyQt5/35-日历.html">
+            
+                    
+                    日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.37" data-path="../../Python/第三方库/PyQt5/36-单选下拉框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/36-单选下拉框.html">
+            
+                    
+                    单选下拉框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.38" data-path="../../Python/第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                    
+                    首字符模糊填充（查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.39" data-path="../../Python/第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                    
+                    打开更多的窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.40" data-path="../../Python/第三方库/PyQt5/39-时间编辑.html">
+            
+                <a href="../../Python/第三方库/PyQt5/39-时间编辑.html">
+            
+                    
+                    时间编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.41" data-path="../../Python/第三方库/PyQt5/40-列表部件.html">
+            
+                <a href="../../Python/第三方库/PyQt5/40-列表部件.html">
+            
+                    
+                    列表部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.42" data-path="../../Python/第三方库/PyQt5/41-列表部件小示例.html">
+            
+                <a href="../../Python/第三方库/PyQt5/41-列表部件小示例.html">
+            
+                    
+                    列表部件小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" >
+            
+                <span>
+            
+                    
+                    PySide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.4.1" data-path="../../Python/第三方库/PySide/01-Qt简介.html">
+            
+                <a href="../../Python/第三方库/PySide/01-Qt简介.html">
+            
+                    
+                    Qt简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.2" data-path="../../Python/第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                <a href="../../Python/第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                    
+                    界面设计师QtDesigner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.3" data-path="../../Python/第三方库/PySide/03-发布程序.html">
+            
+                <a href="../../Python/第三方库/PySide/03-发布程序.html">
+            
+                    
+                    发布程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.4" data-path="../../Python/第三方库/PySide/04-常用控件1.html">
+            
+                <a href="../../Python/第三方库/PySide/04-常用控件1.html">
+            
+                    
+                    常用控件1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.5" data-path="../../Python/第三方库/PySide/05-常用控件2.html">
+            
+                <a href="../../Python/第三方库/PySide/05-常用控件2.html">
+            
+                    
+                    常用控件2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.6" data-path="../../Python/第三方库/PySide/06-常用控件3.html">
+            
+                <a href="../../Python/第三方库/PySide/06-常用控件3.html">
+            
+                    
+                    常用控件3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.7" data-path="../../Python/第三方库/PySide/07-常用控件4.html">
+            
+                <a href="../../Python/第三方库/PySide/07-常用控件4.html">
+            
+                    
+                    常用控件4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">GoLang</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    GoLang简明教程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../GoLang/Go简明教程/01-Go语言简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/01-Go语言简明教程.html">
+            
+                    
+                    Go语言简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../GoLang/Go简明教程/02-Go-Gin-简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/02-Go-Gin-简明教程.html">
+            
+                    
+                    Gin-简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../GoLang/Go简明教程/03-Go2新特性简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/03-Go2新特性简明教程.html">
+            
+                    
+                    Go2新特性简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../GoLang/Go简明教程/04-Go-Protobuf简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/04-Go-Protobuf简明教程.html">
+            
+                    
+                    Protobuf简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.html">
+            
+                    
+                    RPC&TLS鉴权简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../GoLang/Go简明教程/06-Go-WebAssembly简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/06-Go-WebAssembly简明教程.html">
+            
+                    
+                    WebAssembly(Wasm)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../../GoLang/Go简明教程/07-Go-Test单元测试简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/07-Go-Test单元测试简明教程.html">
+            
+                    
+                    Test单元测试简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../../GoLang/Go简明教程/08-Go-Mock(gomock">
+            
+                <span>
+            
+                    
+                    Mock(gomock)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../../GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.html">
+            
+                    
+                    Mmap-文件内存映射简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../../GoLang/Go简明教程/10-Go-Context并发编程简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/10-Go-Context并发编程简明教程.html">
+            
+                    
+                    Context并发编程简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    GoLang基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                <a href="../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                    
+                    GoLang发展史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../../GoLang/GoLang基础/02-打印输出.html">
+            
+                <a href="../../GoLang/GoLang基础/02-打印输出.html">
+            
+                    
+                    打印输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                <a href="../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                    
+                    变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../../GoLang/GoLang基础/04-数据类型.html">
+            
+                <a href="../../GoLang/GoLang基础/04-数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../../GoLang/GoLang基础/05-运算符.html">
+            
+                <a href="../../GoLang/GoLang基础/05-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../../GoLang/GoLang基础/06-流程控制.html">
+            
+                <a href="../../GoLang/GoLang基础/06-流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="../../GoLang/GoLang基础/07-数组.html">
+            
+                <a href="../../GoLang/GoLang基础/07-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.8" data-path="../../GoLang/GoLang基础/08-切片.html">
+            
+                <a href="../../GoLang/GoLang基础/08-切片.html">
+            
+                    
+                    切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.9" data-path="../../GoLang/GoLang基础/09-map.html">
+            
+                <a href="../../GoLang/GoLang基础/09-map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.10" data-path="../../GoLang/GoLang基础/10-函数.html">
+            
+                <a href="../../GoLang/GoLang基础/10-函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.11" data-path="../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                <a href="../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                    
+                    time包日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.12" data-path="../../GoLang/GoLang基础/12-指针.html">
+            
+                <a href="../../GoLang/GoLang基础/12-指针.html">
+            
+                    
+                    指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.13" data-path="../../GoLang/GoLang基础/13-结构体.html">
+            
+                <a href="../../GoLang/GoLang基础/13-结构体.html">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.14" data-path="../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                <a href="../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                    
+                    GoMod及包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.15" data-path="../../GoLang/GoLang基础/15-接口.html">
+            
+                <a href="../../GoLang/GoLang基础/15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.16" data-path="../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                <a href="../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.17" data-path="../../GoLang/GoLang基础/17-反射.html">
+            
+                <a href="../../GoLang/GoLang基础/17-反射.html">
+            
+                    
+                    反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.18" data-path="../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                <a href="../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                    
+                    文件和目录操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    7daysGoLang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../GoLang/7daysGoLang/">
+            
+                <a href="../../GoLang/7daysGoLang/">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库基础和进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../MySQL/计算机二级MySQL.html">
+            
+                <a href="../MySQL/计算机二级MySQL.html">
+            
+                    
+                    计算机二级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../MySQL/数据库三大范式.html">
+            
+                <a href="../MySQL/数据库三大范式.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../MySQL/主从复制.html">
+            
+                <a href="../MySQL/主从复制.html">
+            
+                    
+                    MySQL主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    NoSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="01-NoSql入门.html">
+            
+                <a href="01-NoSql入门.html">
+            
+                    
+                    NoSql入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    Redeis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="02-Redis安装与配置文件.html">
+            
+                <a href="02-Redis安装与配置文件.html">
+            
+                    
+                    Redis安装与配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.3.2" data-path="03-Redis基础.html">
+            
+                <a href="03-Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据分析</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    数学基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../MachineLearning/数学基础/高等数学.pdf">
+            
+                <span>
+            
+                    
+                    高等数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../MachineLearning/数学基础/概率论.pdf">
+            
+                <span>
+            
+                    
+                    概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../MachineLearning/数学基础/微积分.pdf">
+            
+                <span>
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../MachineLearning/数学基础/SVD.pdf">
+            
+                <span>
+            
+                    
+                    SVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../MachineLearning/数学基础/似然函数.pdf">
+            
+                <span>
+            
+                    
+                    似然函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../MachineLearning/数学基础/后验概率估计.pdf">
+            
+                <span>
+            
+                    
+                    后验概率估计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../../MachineLearning/数学基础/拉格朗日乘子法.pdf">
+            
+                <span>
+            
+                    
+                    拉格朗日乘子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../../MachineLearning/数学基础/核函数.pdf">
+            
+                <span>
+            
+                    
+                    核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../../MachineLearning/数学基础/梯度.pdf">
+            
+                <span>
+            
+                    
+                    梯度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../../MachineLearning/数学基础/概率分布与概率密度.pdf">
+            
+                <span>
+            
+                    
+                    概率分布与概率密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../../MachineLearning/数学基础/泰勒公式.pdf">
+            
+                <span>
+            
+                    
+                    泰勒公式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.12" data-path="../../MachineLearning/数学基础/激活函数.pdf">
+            
+                <span>
+            
+                    
+                    激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.13" data-path="../../MachineLearning/数学基础/熵.pdf">
+            
+                <span>
+            
+                    
+                    熵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.14" data-path="../../MachineLearning/数学基础/特征值与特征向量.pdf">
+            
+                <span>
+            
+                    
+                    特征值与特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.15" data-path="../../MachineLearning/数学基础/矩阵.pdf">
+            
+                <span>
+            
+                    
+                    矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    数据分析库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                    
+                    numpy基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                    
+                    pandas基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                    
+                    pandas连接合并追加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                    
+                    matplotlib基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Web前端</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../Web/Web前端概述.html">
+            
+                <a href="../../Web/Web前端概述.html">
+            
+                    
+                    Web前端入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../Web/HTML5/HTML5.html">
+            
+                <a href="../../Web/HTML5/HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../Web/CSS/CSS.html">
+            
+                <a href="../../Web/CSS/CSS.html">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="../../Web/JavaScript/JavaScript基础.html">
+            
+                <a href="../../Web/JavaScript/JavaScript基础.html">
+            
+                    
+                    JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" data-path="../../Web/JavaScript/JavaScript对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript对象.html">
+            
+                    
+                    JavaScript对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" data-path="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                <a href="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                    
+                    JavaScript瀑布流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.4" data-path="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                    
+                    JavaScript面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.5.1" data-path="../../Web/JavaScript/框架/Promise.html">
+            
+                <a href="../../Web/JavaScript/框架/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.2" data-path="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                    
+                    Vue.Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.3" data-path="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                    
+                    Vue.Js组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.4" data-path="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                    
+                    Vue.Js路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.5" data-path="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                    
+                    Vue.Js过渡和动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.6" data-path="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                    
+                    JQuery UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.7" data-path="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                    
+                    JQuery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.8" data-path="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                    
+                    JQuery方法大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../Web/RESTful.html">
+            
+                <a href="../../Web/RESTful.html">
+            
+                    
+                    RESTful规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工具</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../Utils/docker/Docker.html">
+            
+                <a href="../../Utils/docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../Utils/docker/FastDFS.html">
+            
+                <a href="../../Utils/docker/FastDFS.html">
+            
+                    
+                    FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../Utils/Git基本命令.html">
+            
+                <a href="../../Utils/Git基本命令.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../../Utils/Nginx/Nginx基础.html">
+            
+                <a href="../../Utils/Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../../Utils/Nginx/Nginx进阶.html">
+            
+                <a href="../../Utils/Nginx/Nginx进阶.html">
+            
+                    
+                    Nginx进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                <a href="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">理财</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    基金
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" >
+            
+                <span>
+            
+                    
+                    基金基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1.1" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                    
+                    纯债基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.2" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                    
+                    股票型基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.3" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                    
+                    大数据指数基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.4" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                    
+                    ETF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.5" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                    
+                    LOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.6" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                    
+                    四大行业指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" >
+            
+                <span>
+            
+                    
+                    基金进价
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.2.1" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                    
+                    分级基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.2" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                    
+                    避险基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.3" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                    
+                    量化基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.4" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                    
+                    QDII基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.5" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                    
+                    FOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" >
+            
+                <span>
+            
+                    
+                    其他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.3.1" data-path="../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                <a href="../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                    
+                    基金定投
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.2" data-path="../../FinancialManagement/基金/00-投资术语.html">
+            
+                <a href="../../FinancialManagement/基金/00-投资术语.html">
+            
+                    
+                    基金投资术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.3" data-path="../../FinancialManagement/基金/00-投资误区.html">
+            
+                <a href="../../FinancialManagement/基金/00-投资误区.html">
+            
+                    
+                    投资误区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.4" data-path="../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                    
+                    全球配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.5" data-path="../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                    
+                    场外基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.6" data-path="../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                    
+                    场内基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.7" data-path="../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                    
+                    看懂股票行情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.8" data-path="../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                    
+                    基金套牢怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    股票
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                <a href="../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                    
+                    股票市场常用名称解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" >
+            
+                <span>
+            
+                    
+                    看盘
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.2.1" data-path="../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                <a href="../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                    
+                    早盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.2" data-path="../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                <a href="../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                    
+                    盘后
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.3" data-path="../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                <a href="../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                    
+                    大盘分时图分析技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.4" data-path="../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                <a href="../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                    
+                    K线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Redis基础</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h6 id="datetime20191031-1602">datetime:2019/10/31 16:02</h6>
+<h6 id="authornzb">author:nzb</h6>
+<h2 id="redis&#x57FA;&#x7840;">Redis&#x57FA;&#x7840;</h2>
+<h3 id="&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5E94;&#x7528;&#x573A;&#x666F;</h3>
+<ul>
+<li><p>EXPIRE key seconds</p>
+<ul>
+<li>&#x9650;&#x65F6;&#x7684;&#x4F18;&#x60E0;&#x6D3B;&#x52A8;&#x4FE1;&#x606F;</li>
+<li>&#x7F51;&#x7AD9;&#x6570;&#x636E;&#x7F13;&#x5B58;(&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x5B9A;&#x65F6;&#x66F4;&#x65B0;&#x7684;&#x6570;&#x636E;,&#x4F8B;&#x5982;:&#x79EF;&#x5206;&#x6392;&#x884C;&#x699C;)</li>
+<li>&#x624B;&#x673A;&#x9A8C;&#x8BC1;&#x7801;</li>
+<li>&#x9650;&#x5236;&#x7F51;&#x7AD9;&#x8BBF;&#x5BA2;&#x8BBF;&#x95EE;&#x9891;&#x7387;(&#x4F8B;&#x5982;&#xFF1A;1&#x5206;&#x949F;&#x6700;&#x591A;&#x8BBF;&#x95EE;10&#x6B21;)</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis&#x952E;key"><a href="https://www.runoob.com/redis/redis-keys.html" target="_blank">Redis&#x952E;(key)</a></h3>
+<ul>
+<li><p><code>DEL key</code>
+&#x8BE5;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5728; key &#x5B58;&#x5728;&#x65F6;&#x5220;&#x9664; key(&#x6240;&#x6709;&#x7C7B;&#x578B;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;)&#x3002;</p>
+</li>
+<li><p><code>DUMP key</code>
+&#x5E8F;&#x5217;&#x5316;&#x7ED9;&#x5B9A; key &#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p><code>EXISTS key</code>
+&#x68C0;&#x67E5;&#x7ED9;&#x5B9A; key &#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p><code>EXPIRE key seconds</code>
+&#x4E3A;&#x7ED9;&#x5B9A; key &#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x4EE5;&#x79D2;&#x8BA1;&#x3002;</p>
+</li>
+<li><p><code>EXPIREAT key timestamp</code>
+EXPIREAT &#x7684;&#x4F5C;&#x7528;&#x548C; EXPIRE &#x7C7B;&#x4F3C;&#xFF0C;&#x90FD;&#x7528;&#x4E8E;&#x4E3A; key &#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x3002; &#x4E0D;&#x540C;&#x5728;&#x4E8E; EXPIREAT &#x547D;&#x4EE4;&#x63A5;&#x53D7;&#x7684;&#x65F6;&#x95F4;&#x53C2;&#x6570;&#x662F; UNIX &#x65F6;&#x95F4;&#x6233;(unix timestamp)&#x3002;</p>
+</li>
+<li><p><code>PEXPIRE key milliseconds</code>
+&#x8BBE;&#x7F6E; key &#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x4EE5;&#x6BEB;&#x79D2;&#x8BA1;&#x3002;</p>
+</li>
+<li><p><code>PEXPIREAT key milliseconds-timestamp</code>
+&#x8BBE;&#x7F6E; key &#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x6233;(unix timestamp) &#x4EE5;&#x6BEB;&#x79D2;&#x8BA1;</p>
+</li>
+<li><p><code>KEYS pattern</code>
+&#x67E5;&#x627E;&#x6240;&#x6709;&#x7B26;&#x5408;&#x7ED9;&#x5B9A;&#x6A21;&#x5F0F;( pattern)&#x7684; key &#x3002;</p>
+</li>
+<li><p><code>MOVE key db</code>
+&#x5C06;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684; key &#x79FB;&#x52A8;&#x5230;&#x7ED9;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5E93; db &#x5F53;&#x4E2D;&#x3002;</p>
+<p>  &#x793A;&#x4F8B;&#xFF1A;
+  ```text</p>
+<pre><code>  # key &#x5B58;&#x5728;&#x4E8E;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;
+
+  redis&gt; SELECT 0                             # redis&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93; 0&#xFF0C;&#x4E3A;&#x4E86;&#x6E05;&#x6670;&#x8D77;&#x89C1;&#xFF0C;&#x8FD9;&#x91CC;&#x518D;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x4E00;&#x6B21;&#x3002;
+  OK
+
+  redis&gt; SET song &quot;secret base - Zone&quot;
+  OK
+
+  redis&gt; MOVE song 1                          # &#x5C06; song &#x79FB;&#x52A8;&#x5230;&#x6570;&#x636E;&#x5E93; 1
+  (integer) 1
+
+  redis&gt; EXISTS song                          # song &#x5DF2;&#x7ECF;&#x88AB;&#x79FB;&#x8D70;
+  (integer) 0
+
+  redis&gt; SELECT 1                             # &#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93; 1
+  OK
+
+  redis:1&gt; EXISTS song                        # &#x8BC1;&#x5B9E; song &#x88AB;&#x79FB;&#x5230;&#x4E86;&#x6570;&#x636E;&#x5E93; 1 (&#x6CE8;&#x610F;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x53D8;&#x6210;&#x4E86;&quot;redis:1&quot;&#xFF0C;&#x8868;&#x660E;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93; 1)
+  (integer) 1
+</code></pre></li>
+</ul>
+<pre><code>    # &#x5F53; key &#x4E0D;&#x5B58;&#x5728;&#x7684;&#x65F6;&#x5019;
+
+    redis:1&gt; EXISTS fake_key
+    (integer) 0
+
+    redis:1&gt; MOVE fake_key 0                    # &#x8BD5;&#x56FE;&#x4ECE;&#x6570;&#x636E;&#x5E93; 1 &#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684; key &#x5230;&#x6570;&#x636E;&#x5E93; 0&#xFF0C;&#x5931;&#x8D25;
+    (integer) 0
+
+    redis:1&gt; select 0                           # &#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;0
+    OK
+
+    redis&gt; EXISTS fake_key                      # &#x8BC1;&#x5B9E; fake_key &#x4E0D;&#x5B58;&#x5728;
+    (integer) 0
+
+
+    # &#x5F53;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x548C;&#x76EE;&#x6807;&#x6570;&#x636E;&#x5E93;&#x6709;&#x76F8;&#x540C;&#x7684; key &#x65F6;
+
+    redis&gt; SELECT 0                             # &#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;0
+    OK
+    redis&gt; SET favorite_fruit &quot;banana&quot;
+    OK
+
+    redis&gt; SELECT 1                             # &#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;1
+    OK
+    redis:1&gt; SET favorite_fruit &quot;apple&quot;
+    OK
+
+    redis:1&gt; SELECT 0                           # &#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;0&#xFF0C;&#x5E76;&#x8BD5;&#x56FE;&#x5C06; favorite_fruit &#x79FB;&#x52A8;&#x5230;&#x6570;&#x636E;&#x5E93; 1
+    OK
+
+    redis&gt; MOVE favorite_fruit 1                # &#x56E0;&#x4E3A;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x6709;&#x76F8;&#x540C;&#x7684; key&#xFF0C;MOVE &#x5931;&#x8D25;
+    (integer) 0
+
+    redis&gt; GET favorite_fruit                   # &#x6570;&#x636E;&#x5E93; 0 &#x7684; favorite_fruit &#x6CA1;&#x53D8;
+    &quot;banana&quot;
+
+    redis&gt; SELECT 1
+    OK
+
+    redis:1&gt; GET favorite_fruit                 # &#x6570;&#x636E;&#x5E93; 1 &#x7684; favorite_fruit &#x4E5F;&#x662F;
+    &quot;apple&quot;
+```
+</code></pre><ul>
+<li><p><code>PERSIST key</code>
+&#x79FB;&#x9664; key &#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;key &#x5C06;&#x6301;&#x4E45;&#x4FDD;&#x6301;&#x3002;</p>
+<p>  &#x793A;&#x4F8B;</p>
+<pre><code class="lang-text">      redis&gt; SET mykey &quot;Hello&quot;
+      OK
+
+      redis&gt; EXPIRE mykey 10  # &#x4E3A; key &#x8BBE;&#x7F6E;&#x751F;&#x5B58;&#x65F6;&#x95F4;
+      (integer) 1
+
+      redis&gt; TTL mykey
+      (integer) 10
+
+      redis&gt; PERSIST mykey    # &#x79FB;&#x9664; key &#x7684;&#x751F;&#x5B58;&#x65F6;&#x95F4;
+      (integer) 1
+
+      redis&gt; TTL mykey
+      (integer) -1
+</code></pre>
+</li>
+<li><p><code>PTTL key</code>
+&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x8FD4;&#x56DE; key &#x7684;&#x5269;&#x4F59;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x3002;</p>
+</li>
+<li><p><code>TTL key</code>
+&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A; key &#x7684;&#x5269;&#x4F59;&#x751F;&#x5B58;&#x65F6;&#x95F4;(TTL, time to live)&#x3002;</p>
+<p>  &#x793A;&#x4F8B;
+  ```text</p>
+<pre><code>  # &#x4E0D;&#x5B58;&#x5728;&#x7684; key
+
+  redis&gt; FLUSHDB
+  OK
+
+  redis&gt; TTL key
+  (integer) -2
+</code></pre></li>
+</ul>
+<pre><code>    # key &#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5269;&#x4F59;&#x751F;&#x5B58;&#x65F6;&#x95F4;
+
+    redis&gt; SET key value
+    OK
+
+    redis&gt; TTL key
+    (integer) -1
+
+
+    # &#x6709;&#x5269;&#x4F59;&#x751F;&#x5B58;&#x65F6;&#x95F4;&#x7684; key
+
+    redis&gt; EXPIRE key 10086
+    (integer) 1
+
+    redis&gt; TTL key
+    (integer) 10084
+```
+</code></pre><ul>
+<li><p><code>RANDOMKEY</code>
+&#x4ECE;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x968F;&#x673A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; key &#x3002;</p>
+</li>
+<li><p><code>RENAME key newkey</code>
+&#x4FEE;&#x6539; key &#x7684;&#x540D;&#x79F0;</p>
+</li>
+<li><p><code>RENAMENX key newkey</code>
+&#x4EC5;&#x5F53; newkey &#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x5C06; key &#x6539;&#x540D;&#x4E3A; newkey &#x3002;</p>
+</li>
+<li><p><code>TYPE key</code>
+&#x8FD4;&#x56DE; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x3002;     </p>
+</li>
+<li><p>key&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;</p>
+<p>  redis &#x5355;&#x4E2A;key&#x5B58;&#x5165;512M&#x5927;&#x5C0F;</p>
+<ul>
+<li>key&#x4E0D;&#x8981;&#x592A;&#x957F;&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x8D85;&#x8FC7;1024&#x5B57;&#x8282;&#xFF0C;&#x8FD9;&#x4E0D;&#x4EC5;&#x6D88;&#x8017;&#x5185;&#x5B58;&#xFF0C;&#x800C;&#x4E14;&#x964D;&#x4F4E;&#x67E5;&#x627E;&#x7684;&#x6548;&#x7387;</li>
+<li>key&#x4E5F;&#x4E0D;&#x8981;&#x592A;&#x77ED;&#xFF0C;&#x592A;&#x77ED;&#x7684;&#x8BDD;&#xFF0C;key&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x4F1A;&#x964D;&#x4F4E;</li>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;key&#x6700;&#x597D;&#x4F7F;&#x7528;&#x7EDF;&#x4E00;&#x7684;&#x547D;&#x540D;&#x6A21;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;user:123:password(&#x63A8;&#x8350;&quot;:&quot;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&quot;_&quot;&#xFF0C;&#x56E0;&#x4E3A;&#x7A0B;&#x5E8F;&#x91CC;&#x9762;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x4EE5;&#x4E0B;&#x5212;&#x7EBF;&#x8FDE;&#x63A5;&#x7684;)</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-&#x5B57;&#x7B26;&#x4E32;string"><a href="https://www.runoob.com/redis/redis-strings.html" target="_blank">Redis &#x5B57;&#x7B26;&#x4E32;(String)</a></h3>
+<ul>
+<li><p><code>SET key value</code>
+SET &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x7ED9;&#x5B9A; key &#x7684;&#x503C;&#x3002;&#x5982;&#x679C; key &#x5DF2;&#x7ECF;&#x5B58;&#x50A8;&#x5176;&#x4ED6;&#x503C;&#xFF0C; SET &#x5C31;&#x8986;&#x5199;&#x65E7;&#x503C;&#xFF0C;&#x4E14;&#x65E0;&#x89C6;&#x7C7B;&#x578B;&#x3002;</p>
+</li>
+<li><p><code>GET key</code>
+Get &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x6307;&#x5B9A; key &#x7684;&#x503C;&#x3002;&#x5982;&#x679C; key &#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x8FD4;&#x56DE; nil &#x3002;&#x5982;&#x679C;key &#x50A8;&#x5B58;&#x7684;&#x503C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p><code>SETNX key value</code><br>&#x53EA;&#x6709;&#x5728; key &#x4E0D;&#x5B58;&#x5728;&#x65F6;&#x8BBE;&#x7F6E; key &#x7684;&#x503C;&#x3002;&#x5E94;&#x7528;&#x4E8E;&#x89E3;&#x51B3;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x65B9;&#x6848;&#x4E4B;&#x4E00;</p>
+</li>
+<li><p><code>INCR key</code>
+&#x5C06; key &#x4E2D;&#x50A8;&#x5B58;&#x7684;&#x6570;&#x5B57;&#x503C;&#x589E;&#x4E00;&#x3002;</p>
+</li>
+<li><p><code>INCRBY key increment</code>
+&#x5C06; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x503C;&#x52A0;&#x4E0A;&#x7ED9;&#x5B9A;&#x7684;&#x589E;&#x91CF;&#x503C;&#xFF08;increment&#xFF09; &#x3002;</p>
+</li>
+<li><p><code>DECR key</code>
+&#x5C06; key &#x4E2D;&#x50A8;&#x5B58;&#x7684;&#x6570;&#x5B57;&#x503C;&#x51CF;&#x4E00;&#x3002;</p>
+</li>
+<li><p><code>DECRBY key decrement</code>
+key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x503C;&#x51CF;&#x53BB;&#x7ED9;&#x5B9A;&#x7684;&#x51CF;&#x91CF;&#x503C;&#xFF08;decrement&#xFF09; &#x3002;</p>
+</li>
+<li><p><code>INCRBYFLOAT key increment</code>
+&#x5C06; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x503C;&#x52A0;&#x4E0A;&#x7ED9;&#x5B9A;&#x7684;&#x6D6E;&#x70B9;&#x589E;&#x91CF;&#x503C;&#xFF08;increment&#xFF09; &#x3002;</p>
+</li>
+<li><p><code>APPEND key value</code>
+&#x5982;&#x679C; key &#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5E76;&#x4E14;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C; APPEND &#x547D;&#x4EE4;&#x5C06;&#x6307;&#x5B9A;&#x7684; value &#x8FFD;&#x52A0;&#x5230;&#x8BE5; key &#x539F;&#x6765;&#x503C;&#xFF08;value&#xFF09;&#x7684;&#x672B;&#x5C3E;&#x3002;</p>
+</li>
+<li><p><code>GETRANGE key start end</code>
+&#x8FD4;&#x56DE; key &#x4E2D;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x7684;&#x5B50;&#x5B57;&#x7B26;</p>
+</li>
+<li><p><code>GETSET key value</code>
+&#x5C06;&#x7ED9;&#x5B9A; key &#x7684;&#x503C;&#x8BBE;&#x4E3A; value &#xFF0C;&#x5E76;&#x8FD4;&#x56DE; key &#x7684;&#x65E7;&#x503C;(old value)&#x3002;</p>
+</li>
+<li><p><code>GETBIT key offset</code>
+&#x5BF9; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF0C;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x504F;&#x79FB;&#x91CF;&#x4E0A;&#x7684;&#x4F4D;(bit)&#x3002;</p>
+</li>
+<li><p><code>MGET key1 [key2..]</code>
+&#x83B7;&#x53D6;&#x6240;&#x6709;(&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;)&#x7ED9;&#x5B9A; key &#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p><code>SETBIT key offset value</code>
+&#x5BF9; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF0C;&#x8BBE;&#x7F6E;&#x6216;&#x6E05;&#x9664;&#x6307;&#x5B9A;&#x504F;&#x79FB;&#x91CF;&#x4E0A;&#x7684;&#x4F4D;(bit)&#x3002;</p>
+</li>
+<li><p><code>SETEX key seconds value</code>
+&#x5C06;&#x503C; value &#x5173;&#x8054;&#x5230; key &#xFF0C;&#x5E76;&#x5C06; key &#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x8BBE;&#x4E3A; seconds (&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;)&#x3002;</p>
+</li>
+<li><p><code>SETRANGE key offset value</code>
+&#x7528; value &#x53C2;&#x6570;&#x8986;&#x5199;&#x7ED9;&#x5B9A; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF0C;&#x4ECE;&#x504F;&#x79FB;&#x91CF; offset &#x5F00;&#x59CB;&#x3002;</p>
+</li>
+<li><p><code>STRLEN key</code>
+&#x8FD4;&#x56DE; key &#x6240;&#x50A8;&#x5B58;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x7684;&#x957F;&#x5EA6;&#x3002;</p>
+</li>
+<li><p><code>MSET key value [key value ...]</code>
+&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; key-value &#x5BF9;&#x3002;</p>
+</li>
+<li><p><code>MSETNX key value [key value ...]</code>
+&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; key-value &#x5BF9;&#xFF0C;&#x5F53;&#x4E14;&#x4EC5;&#x5F53;&#x6240;&#x6709;&#x7ED9;&#x5B9A; key &#x90FD;&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p><code>PSETEX key milliseconds value</code>
+&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x548C; SETEX &#x547D;&#x4EE4;&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x5B83;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x8BBE;&#x7F6E; key &#x7684;&#x751F;&#x5B58;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x50CF; SETEX &#x547D;&#x4EE4;&#x90A3;&#x6837;&#xFF0C;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x3002;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+<ul>
+<li>String&#x901A;&#x5E38;&#x5E94;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;json&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;</li>
+<li>&#x56E0;String&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x6240;&#x6709;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x5B58;&#x50A8;</li>
+<li>&#x8BA1;&#x7B97;&#x5668;(&#x901A;&#x5E38;key-value&#x7F13;&#x5B58;&#x4E00;&#x6837;&#xFF0C;&#x5E38;&#x89C4;&#x8BA1;&#x6570;&#xFF1A;&#x5FAE;&#x535A;&#x6570;&#xFF0C;&#x7C89;&#x4E1D;&#x6570;) INCR&#x7B49;&#x6307;&#x4EE4;&#x5C31;&#x5177;&#x6709;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x6240;&#x6709;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5229;&#x7528;redis&#x7684;INCR&#x3001;INCRBY&#x3001;DECR&#x3001;DECRBY&#x7B49;&#x6307;&#x4EE4;&#x6765;&#x5B9E;&#x73B0;&#x539F;&#x5B50;&#x8BA1;&#x6570;&#x7684;&#x6548;&#x679C;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-&#x54C8;&#x5E0C;hash"><a href="https://www.runoob.com/redis/redis-hashes.html" target="_blank">Redis &#x54C8;&#x5E0C;(Hash)</a></h3>
+<pre><code class="lang-text">    Redis hash &#x662F;&#x4E00;&#x4E2A; string &#x7C7B;&#x578B;&#x7684; field &#x548C; value &#x7684;&#x6620;&#x5C04;&#x8868;&#xFF0C;hash &#x7279;&#x522B;&#x9002;&#x5408;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x3002;
+
+    Redis &#x4E2D;&#x6BCF;&#x4E2A; hash &#x53EF;&#x4EE5;&#x5B58;&#x50A8; 232 - 1 &#x952E;&#x503C;&#x5BF9;&#xFF08;40&#x591A;&#x4EBF;&#xFF09;&#x3002;
+</code></pre>
+<ul>
+<li><p><code>HDEL key field1 [field2]</code>
+&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x5B57;&#x6BB5;</p>
+</li>
+<li><p><code>HEXISTS key field</code>
+&#x67E5;&#x770B;&#x54C8;&#x5E0C;&#x8868; key &#x4E2D;&#xFF0C;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p><code>HGET key field</code>
+&#x83B7;&#x53D6;&#x5B58;&#x50A8;&#x5728;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p><code>HGETALL key</code>
+&#x83B7;&#x53D6;&#x5728;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x6307;&#x5B9A; key &#x7684;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x548C;&#x503C;</p>
+</li>
+<li><p><code>HINCRBY key field increment</code>
+&#x4E3A;&#x54C8;&#x5E0C;&#x8868; key &#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x6574;&#x6570;&#x503C;&#x52A0;&#x4E0A;&#x589E;&#x91CF; increment &#x3002;</p>
+</li>
+<li><p><code>HINCRBYFLOAT key field increment</code>
+&#x4E3A;&#x54C8;&#x5E0C;&#x8868; key &#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x503C;&#x52A0;&#x4E0A;&#x589E;&#x91CF; increment &#x3002;</p>
+</li>
+<li><p><code>HKEYS key</code>
+&#x83B7;&#x53D6;&#x6240;&#x6709;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;</p>
+</li>
+<li><p><code>HLEN key</code>
+&#x83B7;&#x53D6;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x91CF;</p>
+</li>
+<li><p><code>HMGET key field1 [field2]</code>
+&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7ED9;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x503C;</p>
+</li>
+<li><p><code>HMSET key field1 value1 [field2 value2 ]</code>
+&#x540C;&#x65F6;&#x5C06;&#x591A;&#x4E2A; field-value (&#x57DF;-&#x503C;)&#x5BF9;&#x8BBE;&#x7F6E;&#x5230;&#x54C8;&#x5E0C;&#x8868; key &#x4E2D;&#x3002;</p>
+</li>
+<li><p><code>HSET key field value</code>
+&#x5C06;&#x54C8;&#x5E0C;&#x8868; key &#x4E2D;&#x7684;&#x5B57;&#x6BB5; field &#x7684;&#x503C;&#x8BBE;&#x4E3A; value &#x3002;</p>
+</li>
+<li><p><code>HSETNX key field value</code>
+&#x53EA;&#x6709;&#x5728;&#x5B57;&#x6BB5; field &#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x54C8;&#x5E0C;&#x8868;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p><code>HVALS key</code>
+&#x83B7;&#x53D6;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x503C;</p>
+</li>
+<li><p><code>HSCAN key cursor [MATCH pattern] [COUNT count]</code>
+&#x8FED;&#x4EE3;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x3002;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+<ul>
+<li>&#x5E38;&#x7528;&#x4E0E;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</li>
+<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x7528;String&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1F;</p>
+<p>  &#x56E0;&#x4E3A;hash&#x662F;&#x6700;&#x63A5;&#x8FD1;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x6216;&#x7A0B;&#x5E8F;&#x4E2D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x6210;hashmap&#x5B58;&#x653E;&#x5728;redis&#x4E2D;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-&#x5217;&#x8868;list"><a href="https://www.runoob.com/redis/redis-lists.html" target="_blank">Redis &#x5217;&#x8868;(List)</a></h3>
+<pre><code class="lang-text">    Redis&#x5217;&#x8868;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;&#xFF0C;&#x6309;&#x7167;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x5217;&#x8868;&#x7684;&#x5934;&#x90E8;&#xFF08;&#x5DE6;&#x8FB9;&#xFF09;&#x6216;&#x8005;&#x5C3E;&#x90E8;&#xFF08;&#x53F3;&#x8FB9;&#xFF09;
+
+    &#x4E00;&#x4E2A;&#x5217;&#x8868;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x5305;&#x542B; 232 - 1 &#x4E2A;&#x5143;&#x7D20; (4294967295, &#x6BCF;&#x4E2A;&#x5217;&#x8868;&#x8D85;&#x8FC7;40&#x4EBF;&#x4E2A;&#x5143;&#x7D20;)&#x3002;
+</code></pre>
+<ul>
+<li><p><code>BLPOP key1 [key2 ] timeout</code>
+&#x79FB;&#x51FA;&#x5E76;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C; &#x5982;&#x679C;&#x5217;&#x8868;&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x4F1A;&#x963B;&#x585E;&#x5217;&#x8868;&#x76F4;&#x5230;&#x7B49;&#x5F85;&#x8D85;&#x65F6;&#x6216;&#x53D1;&#x73B0;&#x53EF;&#x5F39;&#x51FA;&#x5143;&#x7D20;&#x4E3A;&#x6B62;&#x3002;</p>
+</li>
+<li><p><code>BRPOP key1 [key2 ] timeout</code>
+&#x79FB;&#x51FA;&#x5E76;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C; &#x5982;&#x679C;&#x5217;&#x8868;&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x4F1A;&#x963B;&#x585E;&#x5217;&#x8868;&#x76F4;&#x5230;&#x7B49;&#x5F85;&#x8D85;&#x65F6;&#x6216;&#x53D1;&#x73B0;&#x53EF;&#x5F39;&#x51FA;&#x5143;&#x7D20;&#x4E3A;&#x6B62;&#x3002;</p>
+</li>
+<li><p><code>BRPOPLPUSH source destination timeout</code>
+&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5C06;&#x5F39;&#x51FA;&#x7684;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x5E76;&#x8FD4;&#x56DE;&#x5B83;&#xFF1B; &#x5982;&#x679C;&#x5217;&#x8868;&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x4F1A;&#x963B;&#x585E;&#x5217;&#x8868;&#x76F4;&#x5230;&#x7B49;&#x5F85;&#x8D85;&#x65F6;&#x6216;&#x53D1;&#x73B0;&#x53EF;&#x5F39;&#x51FA;&#x5143;&#x7D20;&#x4E3A;&#x6B62;&#x3002;</p>
+</li>
+<li><p><code>LINDEX key index</code>
+&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>LINSERT key BEFORE|AFTER pivot value</code>
+&#x5728;&#x5217;&#x8868;&#x7684;&#x5143;&#x7D20;&#x524D;&#x6216;&#x8005;&#x540E;&#x63D2;&#x5165;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>LLEN key</code>
+&#x83B7;&#x53D6;&#x5217;&#x8868;&#x957F;&#x5EA6;</p>
+</li>
+<li><p><code>LPOP key</code>
+&#x79FB;&#x51FA;&#x5E76;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>LPUSH key value1 [value2]</code>
+&#x5C06;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x503C;&#x63D2;&#x5165;&#x5230;&#x5217;&#x8868;&#x5934;&#x90E8;</p>
+</li>
+<li><p><code>LPUSHX key value</code>
+&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x63D2;&#x5165;&#x5230;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5217;&#x8868;&#x5934;&#x90E8;</p>
+</li>
+<li><p><code>LRANGE key start stop</code>
+&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x5185;&#x7684;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>LREM key count value</code>
+&#x79FB;&#x9664;&#x5217;&#x8868;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>LSET key index value</code>
+&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x8BBE;&#x7F6E;&#x5217;&#x8868;&#x5143;&#x7D20;&#x7684;&#x503C;</p>
+</li>
+<li><p><code>LTRIM key start stop</code>
+&#x5BF9;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x4FEE;&#x526A;(trim)&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8BA9;&#x5217;&#x8868;&#x53EA;&#x4FDD;&#x7559;&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x5185;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E0D;&#x5728;&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x4E4B;&#x5185;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x5C06;&#x88AB;&#x5220;&#x9664;&#x3002;</p>
+</li>
+<li><p><code>RPOP key</code>
+&#x79FB;&#x9664;&#x5217;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x79FB;&#x9664;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+</li>
+<li><p><code>RPOPLPUSH source destination</code>
+&#x79FB;&#x9664;&#x5217;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5C06;&#x8BE5;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x5E76;&#x8FD4;&#x56DE;</p>
+</li>
+<li><p><code>RPUSH key value1 [value2]</code>
+&#x5728;&#x5217;&#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x503C;</p>
+</li>
+<li><p><code>RPUSHX key value</code>
+&#x4E3A;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5217;&#x8868;&#x6DFB;&#x52A0;&#x503C;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;(1&#x3001;&#x5BF9;&#x6570;&#x636E;&#x91CF;&#x5927;&#x7684;&#x96C6;&#x5408;&#x6570;&#x636E;&#x5220;&#x51CF; 2&#x3001;&#x4EFB;&#x52A1;&#x961F;&#x5217; )</p>
+<ul>
+<li>&#x5BF9;&#x6570;&#x636E;&#x91CF;&#x5927;&#x7684;&#x96C6;&#x5408;&#x6570;&#x636E;&#x5220;&#x51CF;&#xFF1A;&#x5217;&#x8868;&#x6570;&#x636E;&#x663E;&#x793A;&#x3001;&#x5173;&#x6CE8;&#x5217;&#x8868;&#x3001;&#x7C89;&#x4E1D;&#x5217;&#x8868;&#x3001;&#x7559;&#x8A00;&#x8BC4;&#x4EF7;&#x7B49;...&#x5206;&#x9875;&#x3001;&#x70ED;&#x70B9;&#x65B0;&#x95FB;(top)&#x7B49;&#x3002;&#x5229;&#x7528;LANGE&#x8FD8;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x535A;&#x5BA2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x6BCF;&#x7247;&#x535A;&#x6587;&#x7684;&#x8BC4;&#x8BBA;&#x4E5F;&#x53EF;&#x4EE5;&#x5B58;&#x5165;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;list&#x4E2D;&#x3002;</li>
+<li><p>&#x4EFB;&#x52A1;&#x961F;&#x5217;(list&#x901A;&#x5E38;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x5148;&#x540E;&#x987A;&#x5E8F;&#xFF0C;&#x4E0D;&#x5FC5;&#x50CF;MySQL&#x90A3;&#x6837;&#x9700;&#x8981;&#x901A;&#x8FC7;ORDER BY &#x6765;&#x8FDB;&#x884C;&#x6392;&#x5E8F;)</p>
+<ul>
+<li><p>&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4ECB;&#x7ECD;(&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;)</p>
+<pre><code class="lang-text">    &#x5728;&#x5904;&#x7406;Web&#x5BA2;&#x670D;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x4F1A;&#x6BD4;&#x6211;&#x4EEC;&#x9884;&#x671F;&#x7684;&#x66F4;&#x957F;&#x4E00;&#x4E9B;&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x5F85;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x653E;&#x5165;&#x961F;&#x5217;&#x91CC;&#x9762;&#xFF0C;&#x5E76;&#x5728;&#x4E4B;&#x540E;&#x5BF9;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x63A8;&#x8FDF;&#x6267;&#x884C;&#x90A3;&#x4E9B;&#x9700;&#x8981;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x624D;&#x80FD;&#x5B8C;&#x6210;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x79CD;&#x5C06;&#x5DE5;&#x4F5C;&#x4EA4;&#x7ED9;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x5668;&#x6765;&#x6267;&#x884C;&#x7684;&#x505A;&#x6CD5;&#x88AB;&#x79F0;&#x4E3A;&#x4EFB;&#x52A1;&#x961F;&#x5217;(task queue)
+    &#x5E38;&#x7528;&#x6848;&#x4F8B;&#xFF1A;&#x8BA2;&#x5355;&#x7CFB;&#x7EDF;&#x7684;&#x4E0B;&#x5355;&#x6D41;&#x7A0B;&#x3001;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#x767B;&#x5F55;&#x6CE8;&#x518C;&#x77ED;&#x4FE1;&#x7B49;&#x3002;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-&#x96C6;&#x5408;set"><a href="https://www.runoob.com/redis/redis-sets.html" target="_blank">Redis &#x96C6;&#x5408;(Set)</a></h3>
+<pre><code class="lang-text">    Redis &#x7684; Set &#x662F; String &#x7C7B;&#x578B;&#x7684;&#x65E0;&#x5E8F;&#x96C6;&#x5408;&#x3002;&#x96C6;&#x5408;&#x6210;&#x5458;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x96C6;&#x5408;&#x4E2D;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x91CD;&#x590D;&#x7684;&#x6570;&#x636E;&#x3002;
+
+    Redis &#x4E2D;&#x96C6;&#x5408;&#x662F;&#x901A;&#x8FC7;&#x54C8;&#x5E0C;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x67E5;&#x627E;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x662F; O(1)&#x3002;
+
+    &#x96C6;&#x5408;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x6210;&#x5458;&#x6570;&#x4E3A; 232 - 1 (4294967295, &#x6BCF;&#x4E2A;&#x96C6;&#x5408;&#x53EF;&#x5B58;&#x50A8;40&#x591A;&#x4EBF;&#x4E2A;&#x6210;&#x5458;)&#x3002;
+</code></pre>
+<ul>
+<li><p><code>SADD key member1 [member2]</code>
+&#x5411;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>SCARD key</code>
+&#x83B7;&#x53D6;&#x96C6;&#x5408;&#x7684;&#x6210;&#x5458;&#x6570;</p>
+</li>
+<li><p><code>SDIFF key1 [key2]</code>
+&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x5DEE;&#x96C6;</p>
+</li>
+<li><p><code>SDIFFSTORE destination key1 [key2]</code>
+&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x5DEE;&#x96C6;&#x5E76;&#x5B58;&#x50A8;&#x5728; destination &#x4E2D;</p>
+</li>
+<li><p><code>SINTER key1 [key2]</code>
+&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;</p>
+</li>
+<li><p><code>SINTERSTORE destination key1 [key2]</code>
+&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6240;&#x6709;&#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;&#x5E76;&#x5B58;&#x50A8;&#x5728; destination &#x4E2D;</p>
+</li>
+<li><p><code>SISMEMBER key member</code>
+&#x5224;&#x65AD; member &#x5143;&#x7D20;&#x662F;&#x5426;&#x662F;&#x96C6;&#x5408; key &#x7684;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>SMEMBERS key</code>
+&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>SMOVE source destination member</code>
+&#x5C06; member &#x5143;&#x7D20;&#x4ECE; source &#x96C6;&#x5408;&#x79FB;&#x52A8;&#x5230; destination &#x96C6;&#x5408;</p>
+</li>
+<li><p><code>SPOP key</code>
+&#x79FB;&#x9664;&#x5E76;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>SRANDMEMBER key [count]</code>
+&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x968F;&#x673A;&#x6570;</p>
+</li>
+<li><p><code>SREM key member1 [member2]</code>
+&#x79FB;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>SUNION key1 [key2]</code>
+&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x7ED9;&#x5B9A;&#x96C6;&#x5408;&#x7684;&#x5E76;&#x96C6;</p>
+</li>
+<li><p><code>SUNIONSTORE destination key1 [key2]</code>
+&#x6240;&#x6709;&#x7ED9;&#x5B9A;&#x96C6;&#x5408;&#x7684;&#x5E76;&#x96C6;&#x5B58;&#x50A8;&#x5728; destination &#x96C6;&#x5408;&#x4E2D;</p>
+</li>
+<li><p><code>SSCAN key cursor [MATCH pattern] [COUNT count]</code>
+&#x8FED;&#x4EE3;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5143;&#x7D20;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+<p>  &#x5E38;&#x5E94;&#x7528;&#x4E8E;&#xFF1A;&#x5BF9;&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x95F4;&#x7684;&#x6570;&#x636E;[&#x8BA1;&#x7B97;]&#x8FDB;&#x884C;&#x4EA4;&#x96C6;&#x3001;&#x5E76;&#x96C6;&#x3001;&#x5DEE;&#x96C6;&#x8FD0;&#x7B97; </p>
+<ul>
+<li>1&#x3001;&#x4EE5;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x5171;&#x540C;&#x5173;&#x6CE8;&#x3001;&#x5171;&#x540C;&#x559C;&#x597D;&#x3001;&#x4E8C;&#x5EA6;&#x597D;&#x53CB;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5BF9;&#x4E0A;&#x9762;&#x7684;&#x6240;&#x6709;&#x96C6;&#x5408;&#x64CD;&#x4F5C;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x9009;&#x62E9;&#x5C06;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x8FD8;&#x662F;&#x5B58;&#x50A8;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x96C6;&#x5408;&#x4E2D;&#x3002;</li>
+<li>2&#x3001;&#x5229;&#x7528;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x7EDF;&#x8BA1;&#x8BBF;&#x95EE;&#x7F51;&#x7AD9;&#x7684;&#x6240;&#x6709;&#x72EC;&#x7ACB; IP</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-&#x6709;&#x5E8F;&#x96C6;&#x5408;sorted-set"><a href="https://www.runoob.com/redis/redis-sorted-sets.html" target="_blank">Redis &#x6709;&#x5E8F;&#x96C6;&#x5408;(sorted set)</a></h3>
+<pre><code class="lang-text">    Redis &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x548C;&#x96C6;&#x5408;&#x4E00;&#x6837;&#x4E5F;&#x662F;string&#x7C7B;&#x578B;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408;,&#x4E14;&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x7684;&#x6210;&#x5458;&#x3002;
+
+    &#x4E0D;&#x540C;&#x7684;&#x662F;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x5173;&#x8054;&#x4E00;&#x4E2A;double&#x7C7B;&#x578B;&#x7684;&#x5206;&#x6570;&#x3002;redis&#x6B63;&#x662F;&#x901A;&#x8FC7;&#x5206;&#x6570;&#x6765;&#x4E3A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x8FDB;&#x884C;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x6392;&#x5E8F;&#x3002;
+
+    &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x6210;&#x5458;&#x662F;&#x552F;&#x4E00;&#x7684;,&#x4F46;&#x5206;&#x6570;(score)&#x5374;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x3002;
+
+    &#x96C6;&#x5408;&#x662F;&#x901A;&#x8FC7;&#x54C8;&#x5E0C;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x67E5;&#x627E;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x662F;O(1)&#x3002; &#x96C6;&#x5408;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x6210;&#x5458;&#x6570;&#x4E3A; 232 - 1 (4294967295, &#x6BCF;&#x4E2A;&#x96C6;&#x5408;&#x53EF;&#x5B58;&#x50A8;40&#x591A;&#x4EBF;&#x4E2A;&#x6210;&#x5458;)&#x3002;
+</code></pre>
+<ul>
+<li><p><code>ZADD key score1 member1 [score2 member2]</code>
+&#x5411;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6210;&#x5458;&#xFF0C;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x5DF2;&#x5B58;&#x5728;&#x6210;&#x5458;&#x7684;&#x5206;&#x6570;</p>
+</li>
+<li><p><code>ZCARD key</code>
+&#x83B7;&#x53D6;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x6210;&#x5458;&#x6570;</p>
+</li>
+<li><p><code>ZCOUNT key min max</code>
+&#x8BA1;&#x7B97;&#x5728;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x5206;&#x6570;&#x7684;&#x6210;&#x5458;&#x6570;</p>
+</li>
+<li><p><code>ZINCRBY key increment member</code>
+&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x5BF9;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x7684;&#x5206;&#x6570;&#x52A0;&#x4E0A;&#x589E;&#x91CF; increment</p>
+</li>
+<li><p><code>ZINTERSTORE destination numkeys key [key ...]</code>
+&#x8BA1;&#x7B97;&#x7ED9;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6709;&#x5E8F;&#x96C6;&#x7684;&#x4EA4;&#x96C6;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x96C6;&#x5B58;&#x50A8;&#x5728;&#x65B0;&#x7684;&#x6709;&#x5E8F;&#x96C6;&#x5408; key &#x4E2D;</p>
+</li>
+<li><p><code>ZLEXCOUNT key min max</code>
+&#x5728;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x8BA1;&#x7B97;&#x6307;&#x5B9A;&#x5B57;&#x5178;&#x533A;&#x95F4;&#x5185;&#x6210;&#x5458;&#x6570;&#x91CF;</p>
+</li>
+<li><p><code>ZRANGE key start stop [WITHSCORES]</code>
+&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x533A;&#x95F4;&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x5185;&#x7684;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZRANGEBYLEX key min max [LIMIT offset count]</code>
+&#x901A;&#x8FC7;&#x5B57;&#x5178;&#x533A;&#x95F4;&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT]</code>
+&#x901A;&#x8FC7;&#x5206;&#x6570;&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x5185;&#x7684;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZRANK key member</code>
+&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x7684;&#x7D22;&#x5F15;</p>
+</li>
+<li><p><code>ZREM key member [member ...]</code>
+&#x79FB;&#x9664;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZREMRANGEBYLEX key min max</code>
+&#x79FB;&#x9664;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x7ED9;&#x5B9A;&#x7684;&#x5B57;&#x5178;&#x533A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZREMRANGEBYRANK key start stop</code>
+&#x79FB;&#x9664;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x7ED9;&#x5B9A;&#x7684;&#x6392;&#x540D;&#x533A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZREMRANGEBYSCORE key min max</code>
+&#x79FB;&#x9664;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x7ED9;&#x5B9A;&#x7684;&#x5206;&#x6570;&#x533A;&#x95F4;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;</p>
+</li>
+<li><p><code>ZREVRANGE key start stop [WITHSCORES]</code>
+&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x4E2D;&#x6307;&#x5B9A;&#x533A;&#x95F4;&#x5185;&#x7684;&#x6210;&#x5458;&#xFF0C;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#xFF0C;&#x5206;&#x6570;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;</p>
+</li>
+<li><p><code>ZREVRANGEBYSCORE key max min [WITHSCORES]</code>
+&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x4E2D;&#x6307;&#x5B9A;&#x5206;&#x6570;&#x533A;&#x95F4;&#x5185;&#x7684;&#x6210;&#x5458;&#xFF0C;&#x5206;&#x6570;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x6392;&#x5E8F;</p>
+</li>
+<li><p><code>ZREVRANK key member</code>
+&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x7684;&#x6392;&#x540D;&#xFF0C;&#x6709;&#x5E8F;&#x96C6;&#x6210;&#x5458;&#x6309;&#x5206;&#x6570;&#x503C;&#x9012;&#x51CF;(&#x4ECE;&#x5927;&#x5230;&#x5C0F;)&#x6392;&#x5E8F;</p>
+</li>
+<li><p><code>ZSCORE key member</code>
+&#x8FD4;&#x56DE;&#x6709;&#x5E8F;&#x96C6;&#x4E2D;&#xFF0C;&#x6210;&#x5458;&#x7684;&#x5206;&#x6570;&#x503C;</p>
+</li>
+<li><p><code>ZUNIONSTORE destination numkeys key [key ...]</code>
+&#x8BA1;&#x7B97;&#x7ED9;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6709;&#x5E8F;&#x96C6;&#x7684;&#x5E76;&#x96C6;&#xFF0C;&#x5E76;&#x5B58;&#x50A8;&#x5728;&#x65B0;&#x7684; key &#x4E2D;</p>
+</li>
+<li><p><code>ZSCAN key cursor [MATCH pattern] [COUNT count]</code>
+&#x8FED;&#x4EE3;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF08;&#x5305;&#x62EC;&#x5143;&#x7D20;&#x6210;&#x5458;&#x548C;&#x5143;&#x7D20;&#x5206;&#x503C;&#xFF09;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+<p>  &#x5E38;&#x5E94;&#x7528;&#x4E8E;&#xFF1A;&#x6392;&#x884C;&#x699C; </p>
+<ul>
+<li>&#x6BD4;&#x5982;twitter &#x7684;public timeline&#x53EF;&#x4EE5;&#x4EE5;&#x53D1;&#x8868;&#x65F6;&#x95F4;&#x4F5C;&#x4E3A;score&#x6765;&#x5B58;&#x50A8;&#xFF0C;&#x8FD9;&#x6837;&#x83B7;&#x53D6;&#x65F6;&#x5C31;&#x662F;&#x81EA;&#x52A8;&#x6309;&#x65F6;&#x95F4;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x3002;</li>
+<li>&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5168;&#x73ED;&#x540C;&#x5B66;&#x6210;&#x7EE9;&#x7684;Sorted Set&#xFF0C;&#x5176;&#x96C6;&#x5408;value&#x53EF;&#x4EE5;&#x662F;&#x540C;&#x5B66;&#x7684;&#x5B66;&#x53F7;&#xFF0C;&#x800C;score&#x5C31;&#x53EF;&#x4EE5;&#x662F;&#x5176;&#x8003;&#x8BD5;&#x5F97;&#x5206;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x6570;&#x636E;&#x63D2;&#x5165;&#x96C6;&#x5408;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x5DF2;&#x7ECF;&#x8FDB;&#x884C;&#x4E86;&#x5929;&#x7136;&#x7684;&#x6392;&#x5E8F;&#x3002;</li>
+<li>&#x8FD8;&#x53EF;&#x4EE5;&#x7528;Sorted Set&#x6765;&#x505A;&#x5E26;&#x6743;&#x91CD;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x6BD4;&#x5982;&#x666E;&#x901A;&#x6D88;&#x606F;&#x7684;score&#x4E3A;1&#xFF0C;&#x91CD;&#x8981;&#x6D88;&#x606F;&#x7684;score&#x4E3A;2&#xFF0C;&#x7136;&#x540E;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6309;score&#x7684;&#x5012;&#x5E8F;&#x6765;&#x83B7;&#x53D6;&#x5DE5;&#x4F5C;&#x4EFB;&#x52A1;&#x3002;&#x8BA9;&#x91CD;&#x8981;&#x7684;&#x4EFB;&#x52A1;&#x4F18;&#x5148;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis-&#x53D1;&#x5E03;&#x8BA2;&#x9605;"><a href="https://www.runoob.com/redis/redis-pub-sub.html" target="_blank">Redis &#x53D1;&#x5E03;&#x8BA2;&#x9605;</a></h3>
+<p><img src="res/redis-&#x53D1;&#x5E03;&#x8BA2;&#x9605;.png" alt=""></p>
+<ul>
+<li><p><code>PSUBSCRIBE pattern [pattern ...]</code>
+&#x8BA2;&#x9605;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7B26;&#x5408;&#x7ED9;&#x5B9A;&#x6A21;&#x5F0F;&#x7684;&#x9891;&#x9053;&#x3002;</p>
+</li>
+<li><p><code>SUBSCRIBE channel [channel ...]</code>
+&#x8BA2;&#x9605;&#x7ED9;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9891;&#x9053;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+<li><p><code>PUBLISH channel message</code>
+&#x5C06;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x9891;&#x9053;&#x3002;</p>
+</li>
+<li><p><code>PUBSUB subcommand [argument [argument ...]]</code>
+&#x67E5;&#x770B;&#x8BA2;&#x9605;&#x4E0E;&#x53D1;&#x5E03;&#x7CFB;&#x7EDF;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+</ul>
+<ul>
+<li><p><code>UNSUBSCRIBE [channel [channel ...]]</code>
+&#x6307;&#x9000;&#x8BA2;&#x7ED9;&#x5B9A;&#x7684;&#x9891;&#x9053;&#x3002;</p>
+</li>
+<li><p><code>PUNSUBSCRIBE [pattern [pattern ...]]</code>
+&#x9000;&#x8BA2;&#x6240;&#x6709;&#x7ED9;&#x5B9A;&#x6A21;&#x5F0F;&#x7684;&#x9891;&#x9053;&#x3002;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+<p>  &#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x6700;&#x660E;&#x663E;&#x7684;&#x7528;&#x6CD5;&#x5C31;&#x662F;&#x6784;&#x5EFA;&#x5B9E;&#x65F6;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;&#x666E;&#x901A;&#x7684;&#x5373;&#x65F6;&#x804A;&#x5929;&#xFF0C;&#x7FA4;&#x804A;&#x7B49;&#x529F;&#x80FD;</p>
+<ul>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x7F51;&#x7AD9;&#x4E2D;&#xFF0C;&#x6709;100&#x4E2A;&#x7C89;&#x4E1D;&#x8BA2;&#x9605;&#x4E86;&#x4F60;&#xFF0C;&#x5F53;&#x4F60;&#x53D1;&#x5E03;&#x65B0;&#x6587;&#x7AE0;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x7C89;&#x4E1D;&#x4EEC;&#x3002;</li>
+<li>&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x6A21;&#x5F0F;</li>
+</ul>
+</li>
+</ul>
+<h3 id="redis&#x591A;&#x6570;&#x636E;&#x5E93;">Redis&#x591A;&#x6570;&#x636E;&#x5E93;</h3>
+<pre><code class="lang-text">    Redis&#x4E0B;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x7D22;&#x5F15;&#x6807;&#x8BC6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5230;&#x6570;&#x636E;&#x5E93;0&#x3002;
+    redis&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4E0B;&#x9762;&#x7684;&#x53C2;&#x6570;&#x6765;&#x63A7;&#x5236;&#x6570;&#x636E;&#x5E93;&#x603B;&#x6570;&#xFF1A;
+        database 16  //(&#x4ECE;0&#x5F00;&#x59CB; 1 2 3 &#x2026;15)
+
+    select &#x6570;&#x636E;&#x5E93;//&#x6570;&#x636E;&#x5E93;&#x7684;&#x5207;&#x6362;
+
+    &#x79FB;&#x52A8;&#x6570;&#x636E;&#xFF08;&#x5C06;&#x5F53;&#x524D;key&#x79FB;&#x52A8;&#x53E6;&#x4E2A;&#x5E93;)
+    move key&#x540D;&#x79F0;   &#x6570;&#x636E;&#x5E93;
+    &#x6570;&#x636E;&#x5E93;&#x6E05;&#x7A7A;&#xFF1A;
+        flushdb    //&#x6E05;&#x9664;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6240;&#x6709;key
+        flushall   //&#x6E05;&#x9664;&#x6574;&#x4E2A;Redis&#x7684;&#x6570;&#x636E;&#x5E93;&#x6240;&#x6709;key
+</code></pre>
+<h3 id="redis-&#x4E8B;&#x52A1;"><a href="https://www.runoob.com/redis/redis-transactions.html" target="_blank">Redis &#x4E8B;&#x52A1;</a></h3>
+<pre><code class="lang-text">    Redis &#x4E8B;&#x52A1;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C; &#x5E76;&#x4E14;&#x5E26;&#x6709;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x4FDD;&#x8BC1;&#xFF1A;
+
+        &#x6279;&#x91CF;&#x64CD;&#x4F5C;&#x5728;&#x53D1;&#x9001; EXEC &#x547D;&#x4EE4;&#x524D;&#x88AB;&#x653E;&#x5165;&#x961F;&#x5217;&#x7F13;&#x5B58;&#x3002;
+        &#x6536;&#x5230; EXEC &#x547D;&#x4EE4;&#x540E;&#x8FDB;&#x5165;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x4E8B;&#x52A1;&#x4E2D;&#x4EFB;&#x610F;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#xFF0C;&#x5176;&#x4F59;&#x7684;&#x547D;&#x4EE4;&#x4F9D;&#x7136;&#x88AB;&#x6267;&#x884C;&#x3002;
+        &#x5728;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#xFF0C;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x7684;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x4E0D;&#x4F1A;&#x63D2;&#x5165;&#x5230;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5E8F;&#x5217;&#x4E2D;&#x3002;
+
+    &#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4ECE;&#x5F00;&#x59CB;&#x5230;&#x6267;&#x884C;&#x4F1A;&#x7ECF;&#x5386;&#x4EE5;&#x4E0B;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#xFF1A;
+
+        &#x5F00;&#x59CB;&#x4E8B;&#x52A1;&#x3002;
+        &#x547D;&#x4EE4;&#x5165;&#x961F;&#x3002;
+        &#x6267;&#x884C;&#x4E8B;&#x52A1;&#x3002;
+</code></pre>
+<pre><code class="lang-text">    &#x5355;&#x4E2A; Redis &#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684;&#xFF0C;&#x4F46; Redis &#x6CA1;&#x6709;&#x5728;&#x4E8B;&#x52A1;&#x4E0A;&#x589E;&#x52A0;&#x4EFB;&#x4F55;&#x7EF4;&#x6301;&#x539F;&#x5B50;&#x6027;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x6240;&#x4EE5; Redis &#x4E8B;&#x52A1;&#x7684;&#x6267;&#x884C;&#x5E76;&#x4E0D;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684;&#x3002;
+
+    &#x4E8B;&#x52A1;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x4E2A;&#x6253;&#x5305;&#x7684;&#x6279;&#x91CF;&#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x4F46;&#x6279;&#x91CF;&#x6307;&#x4EE4;&#x5E76;&#x975E;&#x539F;&#x5B50;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E2D;&#x95F4;&#x67D0;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x5931;&#x8D25;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x524D;&#x9762;&#x5DF2;&#x505A;&#x6307;&#x4EE4;&#x7684;&#x56DE;&#x6EDA;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x540E;&#x7EED;&#x7684;&#x6307;&#x4EE4;&#x4E0D;&#x505A;&#x3002;
+</code></pre>
+<ul>
+<li><p><code>DISCARD</code>
+&#x53D6;&#x6D88;&#x4E8B;&#x52A1;&#xFF0C;&#x653E;&#x5F03;&#x6267;&#x884C;&#x4E8B;&#x52A1;&#x5757;&#x5185;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+<li><p><code>EXEC</code>
+&#x6267;&#x884C;&#x6240;&#x6709;&#x4E8B;&#x52A1;&#x5757;&#x5185;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+<li><p><code>MULTI</code>
+&#x6807;&#x8BB0;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x5757;&#x7684;&#x5F00;&#x59CB;&#x3002;</p>
+</li>
+<li><p><code>UNWATCH</code>
+&#x53D6;&#x6D88; WATCH &#x547D;&#x4EE4;&#x5BF9;&#x6240;&#x6709; key &#x7684;&#x76D1;&#x89C6;&#x3002;</p>
+</li>
+<li><p><code>WATCH key [key ...]</code>
+&#x76D1;&#x89C6;&#x4E00;&#x4E2A;(&#x6216;&#x591A;&#x4E2A;) key &#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x8FD9;&#x4E2A;(&#x6216;&#x8FD9;&#x4E9B;) key &#x88AB;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x6240;&#x6539;&#x52A8;&#xFF0C;&#x90A3;&#x4E48;&#x4E8B;&#x52A1;&#x5C06;&#x88AB;&#x6253;&#x65AD;&#x3002;</p>
+</li>
+</ul>
+<p><img src="res/Redis-&#x4E8B;&#x52A1;&#x9519;&#x8BEF;.png" alt="">
+<img src="res/Redis-&#x4E8B;&#x52A1;&#x9519;&#x8BEF;&#x793A;&#x4F8B;1.png" alt="">
+<img src="res/Redis-&#x4E8B;&#x52A1;&#x9519;&#x8BEF;&#x793A;&#x4F8B;2.png" alt="">
+<img src="res/Redis-&#x4E8B;&#x52A1;&#x9519;&#x8BEF;&#x793A;&#x4F8B;3.png" alt="">
+<img src="res/Redis-&#x4E8B;&#x52A1;&#x9519;&#x8BEF;&#x793A;&#x4F8B;4.png" alt=""></p>
+<h3 id="redis&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;redisconf">Redis&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;redis.conf</h3>
+<pre><code class="lang-text">    Redis&#x5B98;&#x65B9;&#x7ED9;&#x7684;&#x8B66;&#x544A;&#xFF0C;&#x5F53;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x65F6;&#xFF0C;Redis&#x4F1A;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x6DD8;&#x6C70;&#x90E8;&#x5206;Keys&#xFF0C;&#x4EE5;&#x4FDD;&#x8BC1;&#x5199;&#x5165;&#x6210;&#x529F;&#x3002;&#x5F53;&#x65E0;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x65F6;&#x6216;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x9002;&#x5408;&#x6DD8;&#x6C70;&#x7684;Key&#x65F6;&#xFF0C;Redis&#x76F4;&#x63A5;&#x8FD4;&#x56DE;out of memory&#x9519;&#x8BEF;&#x3002;
+
+    &#x6700;&#x5927;&#x7F13;&#x5B58;&#x914D;&#x7F6E;
+    &#x5728; redis &#x4E2D;&#xFF0C;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x5927;&#x5C0F;
+                 maxmemory  512G
+
+    redis &#x63D0;&#x4F9B;6&#x79CD;&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#xFF1A;
+    volatile-lru&#xFF1A;&#x4ECE;&#x5DF2;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6311;&#x9009;&#x6700;&#x8FD1;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x6DD8;&#x6C70;
+    volatile-lfu&#xFF1A;&#x4ECE;&#x5DF2;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x7684;Keys&#x4E2D;&#xFF0C;&#x5220;&#x9664;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x4F7F;&#x7528;&#x6B21;&#x6570;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#x7684;
+    volatile-ttl&#xFF1A;&#x4ECE;&#x5DF2;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6311;&#x9009;&#x6700;&#x8FD1;&#x5C06;&#x8981;&#x8FC7;&#x671F;&#x7684;&#x6570;&#x636E;&#x6DD8;&#x6C70;
+    volatile-random&#xFF1A;&#x4ECE;&#x5DF2;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x968F;&#x673A;&#x9009;&#x62E9;&#x6570;&#x636E;&#x6DD8;&#x6C70;
+    allkeys-lru&#xFF1A;&#x4ECE;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6311;&#x9009;&#x6700;&#x8FD1;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x6DD8;&#x6C70;
+    allkeys-lfu&#xFF1A;&#x4ECE;&#x6240;&#x6709;Keys&#x4E2D;&#xFF0C;&#x5220;&#x9664;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x4F7F;&#x7528;&#x6B21;&#x6570;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#x7684;
+    allkeys-random&#xFF1A;&#x4ECE;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x968F;&#x673A;&#x9009;&#x62E9;&#x6570;&#x636E;&#x6DD8;&#x6C70;
+    no-enviction&#xFF08;&#x9A71;&#x9010;&#xFF09;&#xFF1A;&#x7981;&#x6B62;&#x9A71;&#x9010;&#x6570;&#x636E;(&#x4E0D;&#x91C7;&#x7528;&#x4EFB;&#x4F55;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x3002;&#x9ED8;&#x8BA4;&#x5373;&#x4E3A;&#x6B64;&#x914D;&#x7F6E;),&#x9488;&#x5BF9;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;
+
+    &#x5EFA;&#x8BAE;&#xFF1A;&#x4E86;&#x89E3;&#x4E86;Redis&#x7684;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x5E73;&#x65F6;&#x4F7F;&#x7528;&#x65F6;&#x5E94;&#x5C3D;&#x91CF;&#x4E3B;&#x52A8;&#x8BBE;&#x7F6E;/&#x66F4;&#x65B0;key&#x7684;expire&#x65F6;&#x95F4;&#xFF0C;&#x4E3B;&#x52A8;&#x5254;&#x9664;&#x4E0D;&#x6D3B;&#x8DC3;&#x7684;&#x65E7;&#x6570;&#x636E;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x63D0;&#x5347;&#x67E5;&#x8BE2;&#x6027;&#x80FD;
+</code></pre>
+<h3 id="redis&#x6301;&#x4E45;&#x5316;">Redis&#x6301;&#x4E45;&#x5316;</h3>
+<pre><code class="lang-text">    &#x6570;&#x636E;&#x5B58;&#x653E;&#x4E8E;&#xFF1A;
+    &#x5185;&#x5B58;&#xFF1A;&#x9AD8;&#x6548;&#x3001;&#x65AD;&#x7535;&#xFF08;&#x5173;&#x673A;&#xFF09;&#x5185;&#x5B58;&#x6570;&#x636E;&#x4F1A;&#x4E22;&#x5931;
+    &#x786C;&#x76D8;&#xFF1A;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#x6162;&#x4E8E;&#x5185;&#x5B58;&#xFF0C;&#x65AD;&#x7535;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x4E22;&#x5931;
+</code></pre>
+<ul>
+<li><p>RDB </p>
+<p>  RDB&#xFF1A;&#x662F;redis&#x7684;&#x9ED8;&#x8BA4;&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#x3002;     RDB&#x76F8;&#x5F53;&#x4E8E;&#x7167;&#x5FEB;&#x7167;&#xFF0C;&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x4E00;&#x79CD;&#x72B6;&#x6001;&#x3002;</p>
+<p>  &#x51E0;&#x5341;G&#x6570;&#x636E; --&gt;  &#x51E0;KB&#x5FEB;&#x7167;</p>
+<p>  &#x5FEB;&#x7167;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x5C31;&#x662F;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x6570;&#x636E;&#x4EE5;&#x5FEB;&#x7167;&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x5165;&#x5230;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;,&#x9ED8;&#x8BA4;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4E3A;dump.rdb&#x3002;</p>
+<p>  &#x4F18;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x5FEB;&#x7167;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x6781;&#x5FEB;&#x3001;&#x8FD8;&#x539F;&#x6570;&#x636E;&#x6781;&#x5FEB;</li>
+<li>&#x9002;&#x7528;&#x4E8E;&#x707E;&#x96BE;&#x5907;&#x4EFD;</li>
+<li><p>&#x7F3A;&#x70B9;&#xFF1A;&#x5C0F;&#x5185;&#x5B58;&#x673A;&#x5668;&#x4E0D;&#x9002;&#x5408;&#x4F7F;&#x7528;,RDB&#x673A;&#x5236;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x5C31;&#x4F1A;&#x7167;&#x5FEB;&#x7167;</p>
+<p>&#x5FEB;&#x7167;&#x6761;&#x4EF6;&#xFF1A;</p>
+</li>
+<li>1&#x3001;&#x670D;&#x52A1;&#x5668;&#x6B63;&#x5E38;&#x5173;&#x95ED;&#x65F6;  ./bin/redis-cli shutdown</li>
+<li><p>2&#x3001;key&#x6EE1;&#x8DB3;&#x4E00;&#x5B9A;&#x6761;&#x4EF6;&#xFF0C;&#x4F1A;&#x8FDB;&#x884C;&#x5FEB;&#x7167;</p>
+<ul>
+<li><p>save 900 1     //&#x6BCF;900&#x79D2;&#xFF08;15&#x5206;&#x949F;&#xFF09;&#x81F3;&#x5C11;1&#x4E2A;key&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4EA7;&#x751F;&#x5FEB;&#x7167;</p>
+</li>
+<li><p>save 300 10   //&#x6BCF;300&#x79D2;&#xFF08;5&#x5206;&#x949F;&#xFF09;&#x81F3;&#x5C11;10&#x4E2A;key&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4EA7;&#x751F;&#x5FEB;&#x7167;</p>
+</li>
+<li><p>save 60 10000   //&#x6BCF;60&#x79D2;&#xFF08;1&#x5206;&#x949F;&#xFF09;&#x81F3;&#x5C11;10000&#x4E2A;key&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4EA7;&#x751F;&#x5FEB;&#x7167;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>AOF</p>
+</li>
+</ul>
+<pre><code class="lang-text">    &#x7531;&#x4E8E;&#x5FEB;&#x7167;&#x65B9;&#x5F0F;&#x662F;&#x5728;&#x4E00;&#x5B9A;&#x95F4;&#x9694;&#x65F6;&#x95F4;&#x505A;&#x4E00;&#x6B21;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;redis &#x610F;&#x5916;down &#x6389;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x4E22;&#x5931;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x5FEB;&#x7167;&#x540E;&#x7684;&#x6240;&#x6709;&#x4FEE;&#x6539;&#x3002;&#x5982;&#x679C;&#x5E94;&#x7528;&#x8981;&#x6C42;&#x4E0D;&#x80FD;&#x4E22;&#x5931;&#x4EFB;&#x4F55;&#x4FEE;&#x6539;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;aof &#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#x3002;
+    Append-only file:aof &#x6BD4;&#x5FEB;&#x7167;&#x65B9;&#x5F0F;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6301;&#x4E45;&#x5316;&#x6027;&#xFF0C;&#x662F;&#x7531;&#x4E8E;&#x5728;&#x4F7F;&#x7528;aof &#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#x65F6;,redis &#x4F1A;&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x6536;&#x5230;&#x7684;&#x5199;&#x547D;&#x4EE4;&#x90FD;&#x901A;&#x8FC7;write &#x51FD;&#x6570;&#x8FFD;&#x52A0;&#x5230;&#x6587;&#x4EF6;&#x4E2D;(&#x9ED8;&#x8BA4;&#x662F;appendonly.aof)&#x3002;&#x5F53;redis &#x91CD;&#x542F;&#x65F6;&#x4F1A;&#x901A;&#x8FC7;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x5199;&#x547D;&#x4EE4;&#x6765;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x91CD;&#x5EFA;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5185;&#x5BB9;&#x3002;
+</code></pre>
+<p>&#x6709;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF08;&#x9ED8;&#x8BA4;&#x662F;&#xFF1A;&#x6BCF;&#x79D2; fsync &#x4E00;&#x6B21;&#xFF09;</p>
+<pre><code>appendonly yes //&#x542F;&#x7528; aof &#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;
+appendfsync always //&#x6536;&#x5230;&#x5199;&#x547D;&#x4EE4;&#x5C31;&#x7ACB;&#x5373;&#x5199;&#x5165;&#x78C1;&#x76D8;&#xFF0C;&#x6700;&#x6162;&#xFF0C;&#x4F46;&#x662F;&#x4FDD;&#x8BC1;&#x5B8C;&#x5168;&#x7684;&#x6301;&#x4E45;&#x5316;
+appendfsync everysec //&#x6BCF;&#x79D2;&#x949F;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x4E00;&#x6B21;&#xFF0C;&#x5728;&#x6027;&#x80FD;&#x548C;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x9762;&#x505A;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x6298;&#x4E2D;
+appendfsync no //&#x5B8C;&#x5168;&#x4F9D;&#x8D56; os&#xFF0C;&#x6027;&#x80FD;&#x6700;&#x597D;,&#x6301;&#x4E45;&#x5316;&#x6CA1;&#x4FDD;&#x8BC1;
+</code></pre><p>&#x4EA7;&#x751F;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code>aof &#x7684;&#x65B9;&#x5F0F;&#x4E5F;&#x540C;&#x65F6;&#x5E26;&#x6765;&#x4E86;&#x53E6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x6301;&#x4E45;&#x5316;&#x6587;&#x4EF6;&#x4F1A;&#x53D8;&#x7684;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x8C03;&#x7528; incr test&#x547D;&#x4EE4; 100 &#x6B21;&#xFF0C;&#x6587;&#x4EF6;&#x4E2D;&#x5FC5;&#x987B;&#x4FDD;&#x5B58;&#x5168;&#x90E8;&#x7684; 100 &#x6761;&#x547D;&#x4EE4;&#xFF0C;&#x5176;&#x5B9E;&#x6709; 99 &#x6761;&#x90FD;&#x662F;&#x591A;&#x4F59;&#x7684;&#x3002;
+</code></pre><h3 id="redis&#x7F13;&#x5B58;&#x4E0E;&#x6570;&#x636E;&#x5E93;mysql&#x4E00;&#x81F4;&#x6027;&#x65B9;&#x6848;">redis&#x7F13;&#x5B58;&#x4E0E;&#x6570;&#x636E;&#x5E93;(MySQL)&#x4E00;&#x81F4;&#x6027;&#x65B9;&#x6848;</h3>
+<h4 id="&#x4E00;&#x3001;&#x5B9E;&#x65F6;&#x540C;&#x6B65;">&#x4E00;&#x3001;&#x5B9E;&#x65F6;&#x540C;&#x6B65;</h4>
+<p>&#x5BF9;&#x5F3A;&#x4E00;&#x81F4;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#xFF0C;&#x5E94;&#x91C7;&#x7528;&#x5B9E;&#x65F6;&#x540C;&#x6B65;&#x65B9;&#x6848;&#xFF0C;&#x5373;&#x67E5;&#x8BE2;&#x7F13;&#x5B58;&#x67E5;&#x8BE2;&#x4E0D;&#x5230;&#x518D;&#x4ECE;DB&#x67E5;&#x8BE2;&#xFF0C;&#x4FDD;&#x5B58;&#x5230;&#x7F13;&#x5B58;&#xFF1B;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x65F6;&#xFF0C;&#x5148;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x518D;&#x5C06;&#x7F13;&#x5B58;&#x7684;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;(&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x53BB;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x5185;&#x5BB9;&#xFF0C;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#x8FC7;&#x671F;)&#x3002;</p>
+<ul>
+<li>@Cacheable&#xFF1A;&#x67E5;&#x8BE2;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x6CE8;&#x610F;Long&#x7C7B;&#x578B;&#x9700;&#x8F6C;&#x6362;&#x4E3A;Sting&#x7C7B;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x629B;&#x5F02;&#x5E38;</li>
+<li>@CachePut&#xFF1A;&#x66F4;&#x65B0;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x4F7F;&#x7528;&#x6B64;&#x6CE8;&#x89E3;&#xFF0C;&#x4E00;&#x5B9A;&#x4F1A;&#x4ECE;DB&#x4E0A;&#x67E5;&#x8BE2;&#x6570;&#x636E;</li>
+<li>@CacheEvict&#xFF1A;&#x5220;&#x9664;&#x65F6;&#x4F7F;&#x7528;&#xFF1B;</li>
+<li>@Caching&#xFF1A;&#x7EC4;&#x5408;&#x7528;&#x6CD5;  </li>
+</ul>
+<h4 id="&#x4E8C;&#x3001;&#x5F02;&#x6B65;&#x961F;&#x5217;">&#x4E8C;&#x3001;&#x5F02;&#x6B65;&#x961F;&#x5217;</h4>
+<p>&#x5BF9;&#x4E8E;&#x5E76;&#x53D1;&#x7A0B;&#x5EA6;&#x8F83;&#x9AD8;&#x7684;&#xFF0C;&#x53EF;&#x91C7;&#x7528;&#x5F02;&#x6B65;&#x961F;&#x5217;&#x7684;&#x65B9;&#x5F0F;&#x540C;&#x6B65;&#xFF0C;&#x53EF;&#x91C7;&#x7528;kafka&#x7B49;&#x6D88;&#x606F;&#x4E2D;&#x95F4;&#x4EF6;&#x5904;&#x7406;&#x6D88;&#x606F;&#x751F;&#x4EA7;&#x548C;&#x6D88;&#x8D39;&#x3002;</p>
+<p><img src="res/Redis-&#x5F02;&#x6B65;&#x961F;&#x5217;.png" alt=""></p>
+<h4 id="&#x4E09;&#x3001;&#x4F7F;&#x7528;&#x963F;&#x91CC;&#x7684;&#x540C;&#x6B65;&#x5DE5;&#x5177;canal">&#x4E09;&#x3001;&#x4F7F;&#x7528;&#x963F;&#x91CC;&#x7684;&#x540C;&#x6B65;&#x5DE5;&#x5177;canal</h4>
+<p>canal&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#x6A21;&#x62DF;mysql slave&#x548C;master&#x7684;&#x540C;&#x6B65;&#x673A;&#x5236;&#xFF0C;&#x76D1;&#x63A7;DB bitlog&#x7684;&#x65E5;&#x5FD7;&#x66F4;&#x65B0;&#x6765;&#x89E6;&#x53D1;&#x7F13;&#x5B58;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x6B64;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E3;&#x653E;&#x7A0B;&#x5E8F;&#x5458;&#x53CC;&#x624B;&#xFF0C;&#x51CF;&#x5C11;&#x5DE5;&#x4F5C;&#x91CF;&#xFF0C;&#x4F46;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x6709;&#x4E9B;&#x5C40;&#x9650;&#x6027;&#x3002;</p>
+<p><img src="res/MySQL&#x4E3B;&#x4ECE;&#x590D;&#x5236;.png" alt=""></p>
+<ul>
+<li>master&#x5C06;&#x6539;&#x53D8;&#x8BB0;&#x5F55;&#x5230;&#x4E8C;&#x8FDB;&#x5236;&#x65E5;&#x5FD7;(binary log)&#x4E2D;&#xFF08;&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x53EB;&#x505A;&#x4E8C;&#x8FDB;&#x5236;&#x65E5;&#x5FD7;&#x4E8B;&#x4EF6;&#xFF0C;binary log events&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;show binlog events&#x8FDB;&#x884C;&#x67E5;&#x770B;&#xFF09;&#xFF1B;</li>
+<li>slave&#x5C06;master&#x7684;binary log events&#x62F7;&#x8D1D;&#x5230;&#x5B83;&#x7684;&#x4E2D;&#x7EE7;&#x65E5;&#x5FD7;(relay log)&#xFF1B;</li>
+<li>slave&#x91CD;&#x505A;&#x4E2D;&#x7EE7;&#x65E5;&#x5FD7;&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x5C06;&#x6539;&#x53D8;&#x53CD;&#x6620;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<p><img src="res/canal&#x5DE5;&#x4F5C;&#x539F;&#x7406;.png" alt=""></p>
+<ul>
+<li>canal&#x6A21;&#x62DF;mysql slave&#x7684;&#x4EA4;&#x4E92;&#x534F;&#x8BAE;&#xFF0C;&#x4F2A;&#x88C5;&#x81EA;&#x5DF1;&#x4E3A;mysql slave&#xFF0C;&#x5411;mysql master&#x53D1;&#x9001;dump&#x534F;&#x8BAE;</li>
+<li>mysql master&#x6536;&#x5230;dump&#x8BF7;&#x6C42;&#xFF0C;&#x5F00;&#x59CB;&#x63A8;&#x9001;binary log&#x7ED9;slave(&#x4E5F;&#x5C31;&#x662F;canal)</li>
+<li>canal&#x89E3;&#x6790;binary log&#x5BF9;&#x8C61;(&#x539F;&#x59CB;&#x4E3A;byte&#x6D41;)</li>
+</ul>
+<h4 id="&#x56DB;&#x3001;&#x91C7;&#x7528;udf&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;">&#x56DB;&#x3001;&#x91C7;&#x7528;UDF&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;</h4>
+<p>&#x9762;&#x5BF9;mysql&#x7684;API&#x8FDB;&#x884C;&#x7F16;&#x7A0B;&#xFF0C;&#x5229;&#x7528;&#x89E6;&#x53D1;&#x5668;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x540C;&#x6B65;&#xFF0C;&#x4F46;UDF&#x4E3B;&#x8981;&#x662F;c/c++&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#xFF0C;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x9AD8;&#x3002;</p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<h5 id="&#x7A7F;&#x900F;">&#x7A7F;&#x900F;</h5>
+<ul>
+<li>&#x7F13;&#x5B58;&#x7A7F;&#x900F;&#x662F;&#x6307;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x4E00;&#x5B9A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7531;&#x4E8E;&#x7F13;&#x5B58;&#x662F;&#x4E0D;&#x547D;&#x4E2D;&#x65F6;&#x9700;&#x8981;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#xFF0C;&#x67E5;&#x4E0D;&#x5230;&#x6570;&#x636E;&#x5219;&#x4E0D;&#x5199;&#x5165;&#x7F13;&#x5B58;&#xFF0C;&#x8FD9;&#x5C06;&#x5BFC;&#x81F4;&#x8FD9;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x8981;&#x5230;&#x6570;&#x636E;&#x5E93;&#x53BB;&#x67E5;&#x8BE2;&#xFF0C;&#x9020;&#x6210;&#x7F13;&#x5B58;&#x7A7F;&#x900F;&#x3002;</li>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A; &#x6301;&#x4E45;&#x5C42;&#x67E5;&#x8BE2;&#x4E0D;&#x5230;&#x5C31;&#x7F13;&#x5B58;&#x7A7A;&#x7ED3;&#x679C;&#xFF0C;&#x67E5;&#x8BE2;&#x65F6;&#x5148;&#x5224;&#x65AD;&#x7F13;&#x5B58;&#x4E2D;&#x662F;&#x5426;exists(key) ,&#x5982;&#x679C;&#x6709;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7A7A;&#xFF0C;&#x6CA1;&#x6709;&#x5219;&#x67E5;&#x8BE2;&#x540E;&#x8FD4;&#x56DE;&#xFF0C;</li>
+<li>&#x6CE8;&#x610F;insert&#x65F6;&#x9700;&#x6E05;&#x9664;&#x67E5;&#x8BE2;&#x7684;key&#xFF0C;&#x5426;&#x5219;&#x5373;&#x4FBF;DB&#x4E2D;&#x6709;&#x503C;&#x4E5F;&#x67E5;&#x8BE2;&#x4E0D;&#x5230;(&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7A7A;&#x7F13;&#x5B58;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF09;</li>
+</ul>
+<h5 id="&#x96EA;&#x5D29;">&#x96EA;&#x5D29;</h5>
+<ul>
+<li>&#x96EA;&#x5D29;&#xFF1A;&#x7F13;&#x5B58;&#x5927;&#x91CF;&#x5931;&#x6548;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F15;&#x53D1;&#x5927;&#x91CF;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x3002;</li>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;<ul>
+<li>&#x7528;&#x9501;/&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x6216;&#x8005;&#x961F;&#x5217;&#x4E32;&#x884C;&#x8BBF;&#x95EE;</li>
+<li>&#x7F13;&#x5B58;&#x5931;&#x6548;&#x65F6;&#x95F4;&#x5747;&#x5300;&#x5206;&#x5E03;</li>
+</ul>
+</li>
+</ul>
+<h5 id="&#x70ED;&#x70B9;key">&#x70ED;&#x70B9;key</h5>
+<ul>
+<li>&#x70ED;&#x70B9;key:&#x67D0;&#x4E2A;key&#x8BBF;&#x95EE;&#x975E;&#x5E38;&#x9891;&#x7E41;&#xFF0C;&#x5F53;key&#x5931;&#x6548;&#x7684;&#x65F6;&#x5019;&#x6709;&#x5927;&#x91CF;&#x7EBF;&#x7A0B;&#x6765;&#x6784;&#x5EFA;&#x7F13;&#x5B58;&#xFF0C;&#x5BFC;&#x81F4;&#x8D1F;&#x8F7D;&#x589E;&#x52A0;&#xFF0C;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x3002;</li>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;<ul>
+<li>&#x4F7F;&#x7528;&#x9501;&#xFF0C;&#x5355;&#x673A;&#x7528;synchronized,lock&#x7B49;&#xFF0C;&#x5206;&#x5E03;&#x5F0F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x3002;</li>
+<li>&#x7F13;&#x5B58;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x4E0D;&#x8BBE;&#x7F6E;&#xFF0C;&#x800C;&#x662F;&#x8BBE;&#x7F6E;&#x5728;key&#x5BF9;&#x5E94;&#x7684;value&#x91CC;&#x3002;&#x5982;&#x679C;&#x68C0;&#x6D4B;&#x5230;&#x5B58;&#x7684;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x5219;&#x5F02;&#x6B65;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x3002;</li>
+<li>&#x5728;value&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6BD4;&#x8FC7;&#x671F;&#x65F6;&#x95F4;t0&#x5C0F;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x503C;t1&#xFF0C;&#x5F53;t1&#x8FC7;&#x671F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5EF6;&#x957F;t1&#x5E76;&#x505A;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x8BBE;&#x7F6E;&#x6807;&#x7B7E;&#x7F13;&#x5B58;&#xFF0C;&#x6807;&#x7B7E;&#x7F13;&#x5B58;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x6807;&#x7B7E;&#x7F13;&#x5B58;&#x8FC7;&#x671F;&#x540E;&#xFF0C;&#x9700;&#x5F02;&#x6B65;&#x5730;&#x66F4;&#x65B0;&#x5B9E;&#x9645;&#x7F13;&#x5B58; </li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-Redis安装与配置文件.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Redis安装与配置文件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redis基础","level":"5.3.2","depth":2,"next":{"title":"数学基础","level":"6.1","depth":1,"ref":"","articles":[{"title":"高等数学","level":"6.1.1","depth":2,"path":"MachineLearning/数学基础/高等数学.pdf","ref":"./MachineLearning/数学基础/高等数学.pdf","articles":[]},{"title":"概率论","level":"6.1.2","depth":2,"path":"MachineLearning/数学基础/概率论.pdf","ref":"./MachineLearning/数学基础/概率论.pdf","articles":[]},{"title":"微积分","level":"6.1.3","depth":2,"path":"MachineLearning/数学基础/微积分.pdf","ref":"./MachineLearning/数学基础/微积分.pdf","articles":[]},{"title":"SVD","level":"6.1.4","depth":2,"path":"MachineLearning/数学基础/SVD.pdf","ref":"./MachineLearning/数学基础/SVD.pdf","articles":[]},{"title":"似然函数","level":"6.1.5","depth":2,"path":"MachineLearning/数学基础/似然函数.pdf","ref":"./MachineLearning/数学基础/似然函数.pdf","articles":[]},{"title":"后验概率估计","level":"6.1.6","depth":2,"path":"MachineLearning/数学基础/后验概率估计.pdf","ref":"./MachineLearning/数学基础/后验概率估计.pdf","articles":[]},{"title":"拉格朗日乘子法","level":"6.1.7","depth":2,"path":"MachineLearning/数学基础/拉格朗日乘子法.pdf","ref":"./MachineLearning/数学基础/拉格朗日乘子法.pdf","articles":[]},{"title":"核函数","level":"6.1.8","depth":2,"path":"MachineLearning/数学基础/核函数.pdf","ref":"./MachineLearning/数学基础/核函数.pdf","articles":[]},{"title":"梯度","level":"6.1.9","depth":2,"path":"MachineLearning/数学基础/梯度.pdf","ref":"./MachineLearning/数学基础/梯度.pdf","articles":[]},{"title":"概率分布与概率密度","level":"6.1.10","depth":2,"path":"MachineLearning/数学基础/概率分布与概率密度.pdf","ref":"./MachineLearning/数学基础/概率分布与概率密度.pdf","articles":[]},{"title":"泰勒公式","level":"6.1.11","depth":2,"path":"MachineLearning/数学基础/泰勒公式.pdf","ref":"./MachineLearning/数学基础/泰勒公式.pdf","articles":[]},{"title":"激活函数","level":"6.1.12","depth":2,"path":"MachineLearning/数学基础/激活函数.pdf","ref":"./MachineLearning/数学基础/激活函数.pdf","articles":[]},{"title":"熵","level":"6.1.13","depth":2,"path":"MachineLearning/数学基础/熵.pdf","ref":"./MachineLearning/数学基础/熵.pdf","articles":[]},{"title":"特征值与特征向量","level":"6.1.14","depth":2,"path":"MachineLearning/数学基础/特征值与特征向量.pdf","ref":"./MachineLearning/数学基础/特征值与特征向量.pdf","articles":[]},{"title":"矩阵","level":"6.1.15","depth":2,"path":"MachineLearning/数学基础/矩阵.pdf","ref":"./MachineLearning/数学基础/矩阵.pdf","articles":[]}]},"previous":{"title":"Redis安装与配置文件","level":"5.3.1","depth":2,"path":"Database/NoSQL/02-Redis安装与配置文件.md","ref":"./Database/NoSQL/02-Redis安装与配置文件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Database/NoSQL/03-Redis基础.md","mtime":"2021-07-20T02:04:04.324Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-02T06:00:08.204Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

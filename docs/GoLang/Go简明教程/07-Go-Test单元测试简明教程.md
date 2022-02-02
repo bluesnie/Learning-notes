@@ -385,7 +385,7 @@ func BenchmarkHello(b *testing.B) {
 使用 RunParallel 测试并发性能
 ```text
 func BenchmarkParallel(b *testing.B) {
-	templ := template.Must(template.New("test").Parse("Hello, {{.}}!"))
+	templ := template.Must(template.New("test").Parse("Hello, { {.} }!"))
 	b.RunParallel(func(pb *testing.PB) {
 		var buf bytes.Buffer
 		for pb.Next() {
