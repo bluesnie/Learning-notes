@@ -1,0 +1,4077 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Linux常用命令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-强大的文本编辑器Vim.html" />
+    
+    
+    <link rel="prev" href="05-服务器注意事项.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">算法</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Algorithm/算法图解.pdf">
+            
+                <span>
+            
+                    
+                    算法图解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Linux.html">
+            
+                <a href="../Linux.html">
+            
+                    
+                    入门基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="01-Linux系统简介.html">
+            
+                <a href="01-Linux系统简介.html">
+            
+                    
+                    Linux系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="02-Linux系统安装.html">
+            
+                <a href="02-Linux系统安装.html">
+            
+                    
+                    Linux系统安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="03-Linux使用注意事项-新手必看.html">
+            
+                <a href="03-Linux使用注意事项-新手必看.html">
+            
+                    
+                    Linux使用注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="04-Linux各目录的作用.html">
+            
+                <a href="04-Linux各目录的作用.html">
+            
+                    
+                    Linux各目录的作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="05-服务器注意事项.html">
+            
+                <a href="05-服务器注意事项.html">
+            
+                    
+                    服务器注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.6" data-path="06-Linux常用命令.html">
+            
+                <a href="06-Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="07-强大的文本编辑器Vim.html">
+            
+                <a href="07-强大的文本编辑器Vim.html">
+            
+                    
+                    强大的文本编辑器Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="08-Linux软件包管理.html">
+            
+                <a href="08-Linux软件包管理.html">
+            
+                    
+                    Linux软件包管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="09-Linux中的用户管理.html">
+            
+                <a href="09-Linux中的用户管理.html">
+            
+                    
+                    Linux中的用户管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="10-Linux权限管理.html">
+            
+                <a href="10-Linux权限管理.html">
+            
+                    
+                    Linux权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="11-Linux的文件系统管理.html">
+            
+                <a href="11-Linux的文件系统管理.html">
+            
+                    
+                    Linux的文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="12-Shell.html">
+            
+                <a href="12-Shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="13-Linux的服务管理.html">
+            
+                <a href="13-Linux的服务管理.html">
+            
+                    
+                    Linux的服务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="14-Linux系统管理.html">
+            
+                <a href="14-Linux系统管理.html">
+            
+                    
+                    Linux系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="15-Linux日志管理.html">
+            
+                <a href="15-Linux日志管理.html">
+            
+                    
+                    Linux日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="16-Linux启动管理.html">
+            
+                <a href="16-Linux启动管理.html">
+            
+                    
+                    Linux启动管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="17-Linux备份与恢复.html">
+            
+                <a href="17-Linux备份与恢复.html">
+            
+                    
+                    Linux备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Python</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Python语言基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Python/PEP8.html">
+            
+                <a href="../../Python/PEP8.html">
+            
+                    
+                    Python PEP8编码规范 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Python/Python语言基础/00-初识Python.html">
+            
+                <a href="../../Python/Python语言基础/00-初识Python.html">
+            
+                    
+                    初识Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Python/Python语言基础/01-语言元素.html">
+            
+                <a href="../../Python/Python语言基础/01-语言元素.html">
+            
+                    
+                    语言元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Python/Python语言基础/02-分支结构.html">
+            
+                <a href="../../Python/Python语言基础/02-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../Python/Python语言基础/03-循环结构.html">
+            
+                <a href="../../Python/Python语言基础/03-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../Python/Python语言基础/04-练习.html">
+            
+                <a href="../../Python/Python语言基础/04-练习.html">
+            
+                    
+                    构造程序逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../Python/Python语言基础/05-函数和模块的使用.html">
+            
+                <a href="../../Python/Python语言基础/05-函数和模块的使用.html">
+            
+                    
+                    函数和模块的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../../Python/Python语言基础/06-字符串和常用数据结构.html">
+            
+                <a href="../../Python/Python语言基础/06-字符串和常用数据结构.html">
+            
+                    
+                    字符串和常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../../Python/Python语言基础/07-面向对象编程基础.html">
+            
+                <a href="../../Python/Python语言基础/07-面向对象编程基础.html">
+            
+                    
+                    面向对象编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../../Python/Python语言基础/08-面向对象编程进阶.html">
+            
+                <a href="../../Python/Python语言基础/08-面向对象编程进阶.html">
+            
+                    
+                    面向对象编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../../Python/Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                <a href="../../Python/Python语言基础/09-图形用户界面和游戏开发.html">
+            
+                    
+                    图形用户界面和游戏开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../../Python/Python语言基础/10-文件和异常.html">
+            
+                <a href="../../Python/Python语言基础/10-文件和异常.html">
+            
+                    
+                    文件和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../../Python/Python语言基础/11-字符串和正则表达式.html">
+            
+                <a href="../../Python/Python语言基础/11-字符串和正则表达式.html">
+            
+                    
+                    字符串和正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../../Python/Python语言基础/12-进程和线程.html">
+            
+                <a href="../../Python/Python语言基础/12-进程和线程.html">
+            
+                    
+                    进程和线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../../Python/Python语言基础/13-网络编程入门.html">
+            
+                <a href="../../Python/Python语言基础/13-网络编程入门.html">
+            
+                    
+                    网络编程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../../Python/Python语言基础/14-网络应用开发.html">
+            
+                <a href="../../Python/Python语言基础/14-网络应用开发.html">
+            
+                    
+                    网络应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../../Python/Python语言基础/15-图像和办公文档处理.html">
+            
+                <a href="../../Python/Python语言基础/15-图像和办公文档处理.html">
+            
+                    
+                    图像和文档处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../../Python/Python语言基础/16-logging日志模块.html">
+            
+                <a href="../../Python/Python语言基础/16-logging日志模块.html">
+            
+                    
+                    logging日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Python语言进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../Python/Python语言进阶/01-常用数据结构和算法.html">
+            
+                <a href="../../Python/Python语言进阶/01-常用数据结构和算法.html">
+            
+                    
+                    常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../Python/Python语言进阶/02-函数的高级用法.html">
+            
+                <a href="../../Python/Python语言进阶/02-函数的高级用法.html">
+            
+                    
+                    函数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../Python/Python语言进阶/03-面向对象高级知识.html">
+            
+                <a href="../../Python/Python语言进阶/03-面向对象高级知识.html">
+            
+                    
+                    面向对象高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../Python/Python语言进阶/04-迭代器和生成器.html">
+            
+                <a href="../../Python/Python语言进阶/04-迭代器和生成器.html">
+            
+                    
+                    迭代器和生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../Python/Python语言进阶/05-并发和异步编程.html">
+            
+                <a href="../../Python/Python语言进阶/05-并发和异步编程.html">
+            
+                    
+                    并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../Python/Python语言进阶/06-asyncio异步编程.html">
+            
+                <a href="../../Python/Python语言进阶/06-asyncio异步编程.html">
+            
+                    
+                    asynico异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Python 第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../Python/第三方库/Django/01-快速上手.html">
+            
+                <a href="../../Python/第三方库/Django/01-快速上手.html">
+            
+                    
+                    快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.2" data-path="../../Python/第三方库/Django/02-深入模型.html">
+            
+                <a href="../../Python/第三方库/Django/02-深入模型.html">
+            
+                    
+                    深入模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.3" data-path="../../Python/第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                <a href="../../Python/第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                    
+                    静态资源和Ajax请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.4" data-path="../../Python/第三方库/Django/04-Django模板系统.html">
+            
+                <a href="../../Python/第三方库/Django/04-Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.5" data-path="../../Python/第三方库/Django/05-Django的View.html">
+            
+                <a href="../../Python/第三方库/Django/05-Django的View.html">
+            
+                    
+                    Django的View(视图)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.6" data-path="../../Python/第三方库/Django/06-Django的路由系统.html">
+            
+                <a href="../../Python/第三方库/Django/06-Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.7" data-path="../../Python/第三方库/Django/07-Django-ORM相关操作.html">
+            
+                <a href="../../Python/第三方库/Django/07-Django-ORM相关操作.html">
+            
+                    
+                    Django ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.8" data-path="../../Python/第三方库/Django/08-Cookie、Session和分页.html">
+            
+                <a href="../../Python/第三方库/Django/08-Cookie、Session和分页.html">
+            
+                    
+                    Cookie、Session和分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.9" data-path="../../Python/第三方库/Django/09-Form和ModelForm组件.html">
+            
+                <a href="../../Python/第三方库/Django/09-Form和ModelForm组件.html">
+            
+                    
+                    Form、ModelForm组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.10" data-path="../../Python/第三方库/Django/10-中间件.html">
+            
+                <a href="../../Python/第三方库/Django/10-中间件.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.11" data-path="../../Python/第三方库/Django/Django-REST-framework.html">
+            
+                <a href="../../Python/第三方库/Django/Django-REST-framework.html">
+            
+                    
+                    Django-REST-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" >
+            
+                <span>
+            
+                    
+                    Django项目开发经验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                    
+                    登录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                    
+                    异常处理手柄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                    
+                    过滤相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.4" data-path="../../Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                    
+                    存储类重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.5" data-path="../../Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                    
+                    序列化相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.6" data-path="../../Python/第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                    
+                    自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.7" data-path="../../Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                <a href="../../Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                    
+                    接口加速缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" >
+            
+                <span>
+            
+                    
+                    PyQt5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.3.1" data-path="../../Python/第三方库/PyQt5/">
+            
+                <a href="../../Python/第三方库/PyQt5/">
+            
+                    
+                    导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.2" data-path="../../Python/第三方库/PyQt5/01-窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/01-窗口.html">
+            
+                    
+                    窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.3" data-path="../../Python/第三方库/PyQt5/02-按钮.html">
+            
+                <a href="../../Python/第三方库/PyQt5/02-按钮.html">
+            
+                    
+                    按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.4" data-path="../../Python/第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                <a href="../../Python/第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                    
+                    垂直布局和水平布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.5" data-path="../../Python/第三方库/PyQt5/04-栅格布局.html">
+            
+                <a href="../../Python/第三方库/PyQt5/04-栅格布局.html">
+            
+                    
+                    栅格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.6" data-path="../../Python/第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                <a href="../../Python/第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                    
+                    布局添加标签Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.7" data-path="../../Python/第三方库/PyQt5/06-布局添加背景图.html">
+            
+                <a href="../../Python/第三方库/PyQt5/06-布局添加背景图.html">
+            
+                    
+                    布局添加背景图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.8" data-path="../../Python/第三方库/PyQt5/07-单选框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/07-单选框.html">
+            
+                    
+                    单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.9" data-path="../../Python/第三方库/PyQt5/08-复选框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/08-复选框.html">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.10" data-path="../../Python/第三方库/PyQt5/09-键盘提示.html">
+            
+                <a href="../../Python/第三方库/PyQt5/09-键盘提示.html">
+            
+                    
+                    键盘提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.11" data-path="../../Python/第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                <a href="../../Python/第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                    
+                    行编辑Lineedit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.12" data-path="../../Python/第三方库/PyQt5/11-按钮组.html">
+            
+                <a href="../../Python/第三方库/PyQt5/11-按钮组.html">
+            
+                    
+                    按钮组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.13" data-path="../../Python/第三方库/PyQt5/12-布局组.html">
+            
+                <a href="../../Python/第三方库/PyQt5/12-布局组.html">
+            
+                    
+                    布局组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.14" data-path="../../Python/第三方库/PyQt5/13-无边框窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/13-无边框窗口.html">
+            
+                    
+                    无边框窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.15" data-path="../../Python/第三方库/PyQt5/14-框架qframe.html">
+            
+                <a href="../../Python/第三方库/PyQt5/14-框架qframe.html">
+            
+                    
+                    框架Qframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.16" data-path="../../Python/第三方库/PyQt5/15-分离器.html">
+            
+                <a href="../../Python/第三方库/PyQt5/15-分离器.html">
+            
+                    
+                    分离器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.17" data-path="../../Python/第三方库/PyQt5/16-滑动条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/16-滑动条.html">
+            
+                    
+                    滑动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.18" data-path="../../Python/第三方库/PyQt5/17-滚动条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/17-滚动条.html">
+            
+                    
+                    滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.19" data-path="../../Python/第三方库/PyQt5/18-刻度盘.html">
+            
+                <a href="../../Python/第三方库/PyQt5/18-刻度盘.html">
+            
+                    
+                    刻度盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.20" data-path="../../Python/第三方库/PyQt5/19-spinbox.html">
+            
+                <a href="../../Python/第三方库/PyQt5/19-spinbox.html">
+            
+                    
+                    Spinbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.21" data-path="../../Python/第三方库/PyQt5/20-生成随机数.html">
+            
+                <a href="../../Python/第三方库/PyQt5/20-生成随机数.html">
+            
+                    
+                    生成随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.22" data-path="../../Python/第三方库/PyQt5/21-进度条.html">
+            
+                <a href="../../Python/第三方库/PyQt5/21-进度条.html">
+            
+                    
+                    进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.23" data-path="../../Python/第三方库/PyQt5/22-工具框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/22-工具框.html">
+            
+                    
+                    工具框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.24" data-path="../../Python/第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                <a href="../../Python/第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                    
+                    菜单栏工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.25" data-path="../../Python/第三方库/PyQt5/24-文档编辑框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/24-文档编辑框.html">
+            
+                    
+                    文档编辑框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.26" data-path="../../Python/第三方库/PyQt5/25-字体文本框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/25-字体文本框.html">
+            
+                    
+                    字体文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.27" data-path="../../Python/第三方库/PyQt5/26-颜色文本框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/26-颜色文本框.html">
+            
+                    
+                    颜色文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.28" data-path="../../Python/第三方库/PyQt5/27-打印（文本框）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/27-打印（文本框）.html">
+            
+                    
+                    打印（文本框）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.29" data-path="../../Python/第三方库/PyQt5/28-打印预览.html">
+            
+                <a href="../../Python/第三方库/PyQt5/28-打印预览.html">
+            
+                    
+                    打印预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.30" data-path="../../Python/第三方库/PyQt5/29-打印PDF.html">
+            
+                <a href="../../Python/第三方库/PyQt5/29-打印PDF.html">
+            
+                    
+                    打印PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.31" data-path="../../Python/第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                    
+                    消息框提示框（带选择的）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.32" data-path="../../Python/第三方库/PyQt5/31-右键菜单.html">
+            
+                <a href="../../Python/第三方库/PyQt5/31-右键菜单.html">
+            
+                    
+                    右键菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.33" data-path="../../Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                    
+                    选项卡（单选下拉框和多选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.34" data-path="../../Python/第三方库/PyQt5/33-stack(堆叠">
+            
+                <span>
+            
+                    
+                    Stack(堆叠)小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.35" data-path="../../Python/第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                <a href="../../Python/第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                    
+                    可停靠的窗口小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.36" data-path="../../Python/第三方库/PyQt5/35-日历.html">
+            
+                <a href="../../Python/第三方库/PyQt5/35-日历.html">
+            
+                    
+                    日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.37" data-path="../../Python/第三方库/PyQt5/36-单选下拉框.html">
+            
+                <a href="../../Python/第三方库/PyQt5/36-单选下拉框.html">
+            
+                    
+                    单选下拉框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.38" data-path="../../Python/第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                <a href="../../Python/第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                    
+                    首字符模糊填充（查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.39" data-path="../../Python/第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                <a href="../../Python/第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                    
+                    打开更多的窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.40" data-path="../../Python/第三方库/PyQt5/39-时间编辑.html">
+            
+                <a href="../../Python/第三方库/PyQt5/39-时间编辑.html">
+            
+                    
+                    时间编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.41" data-path="../../Python/第三方库/PyQt5/40-列表部件.html">
+            
+                <a href="../../Python/第三方库/PyQt5/40-列表部件.html">
+            
+                    
+                    列表部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.42" data-path="../../Python/第三方库/PyQt5/41-列表部件小示例.html">
+            
+                <a href="../../Python/第三方库/PyQt5/41-列表部件小示例.html">
+            
+                    
+                    列表部件小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" >
+            
+                <span>
+            
+                    
+                    PySide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.4.1" data-path="../../Python/第三方库/PySide/01-Qt简介.html">
+            
+                <a href="../../Python/第三方库/PySide/01-Qt简介.html">
+            
+                    
+                    Qt简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.2" data-path="../../Python/第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                <a href="../../Python/第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                    
+                    界面设计师QtDesigner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.3" data-path="../../Python/第三方库/PySide/03-发布程序.html">
+            
+                <a href="../../Python/第三方库/PySide/03-发布程序.html">
+            
+                    
+                    发布程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.4" data-path="../../Python/第三方库/PySide/04-常用控件1.html">
+            
+                <a href="../../Python/第三方库/PySide/04-常用控件1.html">
+            
+                    
+                    常用控件1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.5" data-path="../../Python/第三方库/PySide/05-常用控件2.html">
+            
+                <a href="../../Python/第三方库/PySide/05-常用控件2.html">
+            
+                    
+                    常用控件2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.6" data-path="../../Python/第三方库/PySide/06-常用控件3.html">
+            
+                <a href="../../Python/第三方库/PySide/06-常用控件3.html">
+            
+                    
+                    常用控件3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.7" data-path="../../Python/第三方库/PySide/07-常用控件4.html">
+            
+                <a href="../../Python/第三方库/PySide/07-常用控件4.html">
+            
+                    
+                    常用控件4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">GoLang</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    GoLang简明教程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../GoLang/Go简明教程/01-Go语言简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/01-Go语言简明教程.html">
+            
+                    
+                    Go语言简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../GoLang/Go简明教程/02-Go-Gin-简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/02-Go-Gin-简明教程.html">
+            
+                    
+                    Gin-简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../GoLang/Go简明教程/03-Go2新特性简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/03-Go2新特性简明教程.html">
+            
+                    
+                    Go2新特性简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../GoLang/Go简明教程/04-Go-Protobuf简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/04-Go-Protobuf简明教程.html">
+            
+                    
+                    Protobuf简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.html">
+            
+                    
+                    RPC&TLS鉴权简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../GoLang/Go简明教程/06-Go-WebAssembly简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/06-Go-WebAssembly简明教程.html">
+            
+                    
+                    WebAssembly(Wasm)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../../GoLang/Go简明教程/07-Go-Test单元测试简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/07-Go-Test单元测试简明教程.html">
+            
+                    
+                    Test单元测试简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../../GoLang/Go简明教程/08-Go-Mock(gomock">
+            
+                <span>
+            
+                    
+                    Mock(gomock)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../../GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.html">
+            
+                    
+                    Mmap-文件内存映射简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../../GoLang/Go简明教程/10-Go-Context并发编程简明教程.html">
+            
+                <a href="../../GoLang/Go简明教程/10-Go-Context并发编程简明教程.html">
+            
+                    
+                    Context并发编程简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    GoLang基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                <a href="../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                    
+                    GoLang发展史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../../GoLang/GoLang基础/02-打印输出.html">
+            
+                <a href="../../GoLang/GoLang基础/02-打印输出.html">
+            
+                    
+                    打印输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                <a href="../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                    
+                    变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../../GoLang/GoLang基础/04-数据类型.html">
+            
+                <a href="../../GoLang/GoLang基础/04-数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../../GoLang/GoLang基础/05-运算符.html">
+            
+                <a href="../../GoLang/GoLang基础/05-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../../GoLang/GoLang基础/06-流程控制.html">
+            
+                <a href="../../GoLang/GoLang基础/06-流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="../../GoLang/GoLang基础/07-数组.html">
+            
+                <a href="../../GoLang/GoLang基础/07-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.8" data-path="../../GoLang/GoLang基础/08-切片.html">
+            
+                <a href="../../GoLang/GoLang基础/08-切片.html">
+            
+                    
+                    切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.9" data-path="../../GoLang/GoLang基础/09-map.html">
+            
+                <a href="../../GoLang/GoLang基础/09-map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.10" data-path="../../GoLang/GoLang基础/10-函数.html">
+            
+                <a href="../../GoLang/GoLang基础/10-函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.11" data-path="../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                <a href="../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                    
+                    time包日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.12" data-path="../../GoLang/GoLang基础/12-指针.html">
+            
+                <a href="../../GoLang/GoLang基础/12-指针.html">
+            
+                    
+                    指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.13" data-path="../../GoLang/GoLang基础/13-结构体.html">
+            
+                <a href="../../GoLang/GoLang基础/13-结构体.html">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.14" data-path="../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                <a href="../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                    
+                    GoMod及包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.15" data-path="../../GoLang/GoLang基础/15-接口.html">
+            
+                <a href="../../GoLang/GoLang基础/15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.16" data-path="../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                <a href="../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.17" data-path="../../GoLang/GoLang基础/17-反射.html">
+            
+                <a href="../../GoLang/GoLang基础/17-反射.html">
+            
+                    
+                    反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.18" data-path="../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                <a href="../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                    
+                    文件和目录操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    7daysGoLang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../GoLang/7daysGoLang/">
+            
+                <a href="../../GoLang/7daysGoLang/">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库基础和进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../Database/MySQL/计算机二级MySQL.html">
+            
+                <a href="../../Database/MySQL/计算机二级MySQL.html">
+            
+                    
+                    计算机二级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../Database/MySQL/数据库三大范式.html">
+            
+                <a href="../../Database/MySQL/数据库三大范式.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../Database/MySQL/主从复制.html">
+            
+                <a href="../../Database/MySQL/主从复制.html">
+            
+                    
+                    MySQL主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    NoSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../Database/NoSQL/01-NoSql入门.html">
+            
+                <a href="../../Database/NoSQL/01-NoSql入门.html">
+            
+                    
+                    NoSql入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    Redeis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                <a href="../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                    
+                    Redis安装与配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="../../Database/NoSQL/03-Redis基础.html">
+            
+                <a href="../../Database/NoSQL/03-Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据分析</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    数学基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../MachineLearning/数学基础/高等数学.pdf">
+            
+                <span>
+            
+                    
+                    高等数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../MachineLearning/数学基础/概率论.pdf">
+            
+                <span>
+            
+                    
+                    概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../MachineLearning/数学基础/微积分.pdf">
+            
+                <span>
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../MachineLearning/数学基础/SVD.pdf">
+            
+                <span>
+            
+                    
+                    SVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../MachineLearning/数学基础/似然函数.pdf">
+            
+                <span>
+            
+                    
+                    似然函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../MachineLearning/数学基础/后验概率估计.pdf">
+            
+                <span>
+            
+                    
+                    后验概率估计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../../MachineLearning/数学基础/拉格朗日乘子法.pdf">
+            
+                <span>
+            
+                    
+                    拉格朗日乘子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../../MachineLearning/数学基础/核函数.pdf">
+            
+                <span>
+            
+                    
+                    核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../../MachineLearning/数学基础/梯度.pdf">
+            
+                <span>
+            
+                    
+                    梯度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../../MachineLearning/数学基础/概率分布与概率密度.pdf">
+            
+                <span>
+            
+                    
+                    概率分布与概率密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../../MachineLearning/数学基础/泰勒公式.pdf">
+            
+                <span>
+            
+                    
+                    泰勒公式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.12" data-path="../../MachineLearning/数学基础/激活函数.pdf">
+            
+                <span>
+            
+                    
+                    激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.13" data-path="../../MachineLearning/数学基础/熵.pdf">
+            
+                <span>
+            
+                    
+                    熵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.14" data-path="../../MachineLearning/数学基础/特征值与特征向量.pdf">
+            
+                <span>
+            
+                    
+                    特征值与特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.15" data-path="../../MachineLearning/数学基础/矩阵.pdf">
+            
+                <span>
+            
+                    
+                    矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    数据分析库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                    
+                    numpy基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                    
+                    pandas基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                    
+                    pandas连接合并追加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                <a href="../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                    
+                    matplotlib基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Web前端</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../Web/Web前端概述.html">
+            
+                <a href="../../Web/Web前端概述.html">
+            
+                    
+                    Web前端入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../Web/HTML5/HTML5.html">
+            
+                <a href="../../Web/HTML5/HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../Web/CSS/CSS.html">
+            
+                <a href="../../Web/CSS/CSS.html">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="../../Web/JavaScript/JavaScript基础.html">
+            
+                <a href="../../Web/JavaScript/JavaScript基础.html">
+            
+                    
+                    JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" data-path="../../Web/JavaScript/JavaScript对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript对象.html">
+            
+                    
+                    JavaScript对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" data-path="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                <a href="../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                    
+                    JavaScript瀑布流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.4" data-path="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                <a href="../../Web/JavaScript/JavaScript面向对象.html">
+            
+                    
+                    JavaScript面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.5.1" data-path="../../Web/JavaScript/框架/Promise.html">
+            
+                <a href="../../Web/JavaScript/框架/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.2" data-path="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                    
+                    Vue.Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.3" data-path="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                    
+                    Vue.Js组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.4" data-path="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                    
+                    Vue.Js路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.5" data-path="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                <a href="../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                    
+                    Vue.Js过渡和动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.6" data-path="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                    
+                    JQuery UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.7" data-path="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery基础.html">
+            
+                    
+                    JQuery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.8" data-path="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                <a href="../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                    
+                    JQuery方法大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../Web/RESTful.html">
+            
+                <a href="../../Web/RESTful.html">
+            
+                    
+                    RESTful规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工具</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../Utils/docker/Docker.html">
+            
+                <a href="../../Utils/docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../Utils/docker/FastDFS.html">
+            
+                <a href="../../Utils/docker/FastDFS.html">
+            
+                    
+                    FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../Utils/Git基本命令.html">
+            
+                <a href="../../Utils/Git基本命令.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../../Utils/Nginx/Nginx基础.html">
+            
+                <a href="../../Utils/Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../../Utils/Nginx/Nginx进阶.html">
+            
+                <a href="../../Utils/Nginx/Nginx进阶.html">
+            
+                    
+                    Nginx进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                <a href="../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">理财</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    基金
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" >
+            
+                <span>
+            
+                    
+                    基金基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1.1" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                    
+                    纯债基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.2" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                    
+                    股票型基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.3" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                    
+                    大数据指数基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.4" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                    
+                    ETF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.5" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                    
+                    LOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.1.6" data-path="../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                <a href="../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                    
+                    四大行业指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" >
+            
+                <span>
+            
+                    
+                    基金进价
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.2.1" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                    
+                    分级基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.2" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                    
+                    避险基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.3" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                    
+                    量化基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.4" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                    
+                    QDII基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2.5" data-path="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                <a href="../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                    
+                    FOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3" >
+            
+                <span>
+            
+                    
+                    其他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.3.1" data-path="../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                <a href="../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                    
+                    基金定投
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.2" data-path="../../FinancialManagement/基金/00-投资术语.html">
+            
+                <a href="../../FinancialManagement/基金/00-投资术语.html">
+            
+                    
+                    基金投资术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.3" data-path="../../FinancialManagement/基金/00-投资误区.html">
+            
+                <a href="../../FinancialManagement/基金/00-投资误区.html">
+            
+                    
+                    投资误区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.4" data-path="../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                    
+                    全球配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.5" data-path="../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                    
+                    场外基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.6" data-path="../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                    
+                    场内基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.7" data-path="../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                    
+                    看懂股票行情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.3.8" data-path="../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                <a href="../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                    
+                    基金套牢怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    股票
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                <a href="../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                    
+                    股票市场常用名称解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" >
+            
+                <span>
+            
+                    
+                    看盘
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.2.1" data-path="../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                <a href="../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                    
+                    早盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.2" data-path="../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                <a href="../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                    
+                    盘后
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.3" data-path="../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                <a href="../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                    
+                    大盘分时图分析技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2.4" data-path="../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                <a href="../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                    
+                    K线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Linux常用命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h6 id="datetime2022-01-08-143400">datetime:2022-01-08 14:34:00</h6>
+<h6 id="authornzb">author:nzb</h6>
+<h2 id="linux&#x5E38;&#x7528;&#x547D;&#x4EE4;">Linux&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+<h3 id="&#x6587;&#x4EF6;&#x5904;&#x7406;&#x547D;&#x4EE4;">&#x6587;&#x4EF6;&#x5904;&#x7406;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>ls&#xFF08;list&#xFF09;</p>
+<p><code>ls [&#x53C2;&#x6570;] [&#x8DEF;&#x5F84;]</code></p>
+<ul>
+<li><p>ls -l&#xFF1A;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x6240;&#x6709;&#x5C5E;&#x6027;</p>
+<ul>
+<li><img src="../res/3f4fae95-2b77-4053-bc18-484e066a65d5-5771924.jpg" alt="img"></li>
+</ul>
+</li>
+<li><p>ls -d&#xFF1A;&#x67E5;&#x770B;&#x76EE;&#x5F55;&#x672C;&#x8EAB;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x67E5;&#x770B;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x4FE1;&#x606F;&#xFF09;</p>
+</li>
+<li><p>ls -i&#xFF1A;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x7684;inode&#x53F7;</p>
+</li>
+<li><p>ls -h&#xFF1A;&#x4EBA;&#x6027;&#x5316;&#x663E;&#x793A;&#xFF08;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;K, M&#x663E;&#x793A;&#xFF09;</p>
+</li>
+<li><p>ls -s&#xFF1A;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5360;&#x7528;&#x7684;&#x5757;&#x7684;&#x6570;&#x91CF;</p>
+</li>
+<li><p>ls -a&#xFF1A;&#x67E5;&#x770B;&#x9690;&#x85CF;&#x6587;&#x4EF6;</p>
+</li>
+</ul>
+</li>
+<li><p>mkdir&#xFF08;make directories&#xFF09;<br><code>&#x521B;&#x5EFA;&#x76EE;&#x5F55;&#xFF1A;mkdir [&#x53C2;&#x6570;] [&#x76EE;&#x5F55;]</code></p>
+<ul>
+<li>mkdir -p&#xFF1A;&#x9012;&#x5F52;&#x521B;&#x5EFA;&#x76EE;&#x5F55;</li>
+</ul>
+</li>
+<li><p>cd&#xFF08;change directories&#xFF09;</p>
+<p><code>&#x5207;&#x6362;&#x76EE;&#x5F55;&#xFF1A;cd [&#x8DEF;&#x5F84;]</code></p>
+</li>
+<li><p>pwd&#xFF08;print work directories&#xFF09;</p>
+<p><code>&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x5DE5;&#x4F5C;&#x8DEF;&#x5F84;</code></p>
+</li>
+<li><p>rmdir &#xFF08;remove empty directories&#xFF09;</p>
+<p><code>&#x5220;&#x9664;&#x7A7A;&#x76EE;&#x5F55;&#xFF1A;rmdir [&#x76EE;&#x5F55;&#x540D;]</code></p>
+</li>
+<li><p>cp&#xFF08;copy&#xFF09;</p>
+<p><code>&#x590D;&#x5236;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#xFF1A;cp -rp [&#x539F;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;] [&#x76EE;&#x6807;&#x76EE;&#x5F55;]</code></p>
+<ul>
+<li><p>cp -r&#xFF1A;&#x590D;&#x5236;&#x76EE;&#x5F55;</p>
+</li>
+<li><p>cp -p&#xFF1A;&#x539F;&#x6587;&#x4EF6;&#x548C;&#x65B0;&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#x5B8C;&#x5168;&#x4E00;&#x81F4;</p>
+</li>
+<li><p>&#x6CE8;&#xFF1A;&#x590D;&#x5236;&#x7684;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x6539;&#x540D;</p>
+</li>
+</ul>
+</li>
+<li><p>mv&#xFF08;move&#xFF09;</p>
+<p><code>&#x526A;&#x5207;&#x6587;&#x4EF6;&#x3001;&#x6539;&#x540D;&#xFF1A;mv [&#x539F;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;] [&#x76EE;&#x6807;&#x76EE;&#x5F55;]</code></p>
+<ul>
+<li>&#x6CE8;&#xFF1A;&#x79FB;&#x52A8;&#x7684;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x6539;&#x540D;</li>
+</ul>
+</li>
+<li><p>rm&#xFF08;remove&#xFF09;</p>
+<p><code>&#x5220;&#x9664;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#xFF1A;rm -rf [&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]</code></p>
+<ul>
+<li><p>rm -r&#xFF1A;&#x6587;&#x4EF6;&#x5939;&#x9012;&#x5F52;&#x5220;&#x9664;&#xFF08;&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF09;</p>
+</li>
+<li><p>rm -f&#xFF1A;&#x5F3A;&#x5236;&#x5220;&#x9664;&#xFF0C;&#x4E0D;&#x8BE2;&#x95EE;</p>
+</li>
+<li><p>&#x6CE8;&#xFF1A;</p>
+<ul>
+<li><p>&#x5220;&#x9664;&#x4E4B;&#x524D;&#x505A;&#x597D;&#x5907;&#x4EFD;</p>
+</li>
+<li><p>&#x8BEF;&#x5220;&#x9664;&#x4E4B;&#x540E;&#x5BF9;&#x786C;&#x76D8;&#x5C11;&#x505A;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>touch</p>
+<p><code>&#x521B;&#x5EFA;&#x7A7A;&#x6587;&#x4EF6;&#xFF1A;touch [&#x6587;&#x4EF6;&#x540D;]</code></p>
+</li>
+<li><p>cat</p>
+<p><code>&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;cat [&#x6587;&#x4EF6;&#x540D;]</code></p>
+<ul>
+<li>cat -n&#xFF1A;&#x663E;&#x793A;&#x884C;&#x53F7;</li>
+</ul>
+</li>
+<li><p>tac</p>
+<p><code>&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF08;&#x53CD;&#x5411;&#x67E5;&#x770B;&#xFF09;&#xFF1A;tac[&#x6587;&#x4EF6;&#x540D;]</code></p>
+</li>
+<li><p>more</p>
+<p><code>&#x5206;&#x9875;&#x663E;&#x793A;&#x6587;&#x4EF6;&#xFF1A;&#x7A7A;&#x683C;&#x7FFB;&#x9875;&#xFF0C;&#x56DE;&#x8F66;&#x6362;&#x884C;&#xFF0C;q&#x9000;&#x51FA; &#x67E5;&#x770B;&#x547D;&#x4EE4;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x65F6;&#x5C31;&#x662F;&#x4F7F;&#x7528;more&#x6765;&#x67E5;&#x770B;</code></p>
+</li>
+<li><p>less</p>
+<p><code>&#x5206;&#x9875;&#x663E;&#x793A;&#x6587;&#x4EF6;&#xFF08;&#x53EF;&#x5411;&#x4E0A;&#x7FFB;&#x9875;&#xFF09;&#xFF1A;&#x7A7A;&#x683C;&#x7FFB;&#x9875;&#xFF0C;&#x56DE;&#x8F66;&#x6362;&#x884C;&#xFF0C;q&#x9000;&#x51FA;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;pageup&#x56DE;&#x7FFB;&#x9875;&#xFF0C;&#x4E0A;&#x7BAD;&#x5934;&#x7F51;&#x4E0A;&#x7FFB;&#x4E00;&#x884C;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#xFF1A;/&#x5173; &#x952E;&#x8BCD;&#xFF0C;&#x518D;&#x6309;n&#x641C;&#x7D22;&#x4E0B;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7684;</code></p>
+</li>
+<li><p>head</p>
+<p><code>&#x663E;&#x793A;&#x6587;&#x4EF6;&#x524D;&#x9762;&#x51E0;&#x884C;&#xFF1A;head [&#x53C2;&#x6570;] [&#x6587;&#x4EF6;&#x540D;]</code></p>
+<ul>
+<li>head -m&#xFF1A;&#x6307;&#x5B9A;&#x770B;&#x524D;&#x51E0;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x524D;10&#x884C;</li>
+</ul>
+</li>
+<li><p>tail</p>
+<p><code>&#x663E;&#x793A;&#x6587;&#x4EF6;&#x540E;&#x9762;&#x51E0;&#x884C;&#xFF1A;tail [&#x53C2;&#x6570;] [&#x6587;&#x4EF6;&#x540D;]</code></p>
+<ul>
+<li><p>tail -n&#xFF1A;&#x6307;&#x5B9A;&#x770B;&#x540E;&#x51E0;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x540E;10&#x884C;</p>
+</li>
+<li><p>tail -f&#xFF1A;&#x52A8;&#x6001;&#x770B;&#x6587;&#x4EF6;&#x52A8;&#x6001;&#x53D8;&#x5316;</p>
+</li>
+</ul>
+</li>
+<li><p>ln&#xFF08;link&#xFF09;</p>
+<p><code>&#x751F;&#x6210;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#xFF1A;ln [&#x539F;&#x6587;&#x4EF6;] [&#x76EE;&#x6807;&#x6587;&#x4EF6;]</code></p>
+<ul>
+<li><p>ln -s&#xFF1A;&#x751F;&#x6210;&#x8F6F;&#x94FE;&#x63A5;</p>
+<ul>
+<li><p>&#x8F6F;&#x8FDE;&#x63A5;&#x7279;&#x5F81;&#xFF1A;&#x7C7B;&#x4F3C;Windows&#x5FEB;&#x6377;&#x65B9;&#x5F0F;</p>
+<ul>
+<li><p>lrwxrwxrwx&#xFF1A;&#x8F6F;&#x8FDE;&#x63A5;&#x7684;&#x6743;&#x9650;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x8FD8;&#x662F;&#x8981;&#x770B;&#x6E90;&#x6587;&#x4EF6;&#x6743;&#x9650;</p>
+</li>
+<li><p>&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF1A;&#x5F88;&#x5C0F;&#xFF0C;&#x53EA;&#x662F;&#x7B26;&#x53F7;&#x94FE;&#x63A5;</p>
+</li>
+<li><p>&#x7BAD;&#x5934;&#x6307;&#x5411;&#x6E90;&#x6587;&#x4EF6;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9700;&#x8981;&#x7528;&#x5230;&#x8F6F;&#x8FDE;&#x63A5;&#xFF1F;Windows&#x65F6;&#x4F60;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9700;&#x8981;&#x7528;&#x5230;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x65F6;&#x5C31;&#x7528;</p>
+</li>
+</ul>
+</li>
+<li><p>ln&#xFF1A;&#x751F;&#x6210;&#x786C;&#x94FE;&#x63A5;</p>
+<ul>
+<li><p>&#x786C;&#x94FE;&#x63A5;&#x7279;&#x5F81;</p>
+<ul>
+<li><p>&#x62F7;&#x8D1D;cp -p + &#x540C;&#x6B65;&#x66F4;&#x65B0;&#xFF1A;cp -p&#x7684;&#x533A;&#x522B;&#x662F;&#x786C;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x548C;&#x539F;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x540C;&#x6B65;&#x66F4;&#x65B0;</p>
+</li>
+<li><p>&#x786C;&#x94FE;&#x63A5;&#x901A;&#x8FC7;inode&#x53F7;&#x6765;&#x533A;&#x5206;</p>
+</li>
+<li><p>&#x4E0D;&#x80FD;&#x8DE8;&#x5206;&#x533A;</p>
+</li>
+<li><p>&#x4E0D;&#x80FD;&#x9488;&#x5BF9;&#x76EE;&#x5F55;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x786C;&#x94FE;&#x63A5;&#x548C;&#x8F6F;&#x8FDE;&#x63A5;&#x7684;&#x533A;&#x522B;</p>
+<ul>
+<li><p>1.&#x786C;&#x94FE;&#x63A5;&#x4E0D;&#x80FD;&#x8DE8;&#x5206;&#x533A;</p>
+</li>
+<li><p>2.&#x786C;&#x94FE;&#x63A5;&#x4E0D;&#x80FD;&#x9488;&#x5BF9;&#x76EE;&#x5F55;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6743;&#x9650;&#x7BA1;&#x7406;&#x547D;&#x4EE4;">&#x6743;&#x9650;&#x7BA1;&#x7406;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>chmod&#xFF08;change the permissions mode of a life&#xFF09;</p>
+<p><code>&#x6539;&#x53D8;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x6743;&#x9650;&#xFF1A;chmod [&#x53C2;&#x6570;] [&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]</code></p>
+<ul>
+<li><p>chmod [u/g/o/a] [+/-/=] [r/w/x]</p>
+<p><code>u&#xFF1A;&#x6240;&#x6709;&#x8005;&#xFF1B;g&#xFF1A;&#x6240;&#x5C5E;&#x7EC4;&#xFF1B;a&#xFF1A;&#x6240;&#x6709;&#x4EBA;&#xFF1B;&#x4E3E;&#x4F8B;&#xFF1A;chmod u+w&#xFF1B;chmod u+x, o-wr</code></p>
+</li>
+<li><p>chmod &#x4E09;&#x4F4D;&#x6570;XXX&#xFF1A;r&#x2014;4&#xFF0C;w&#x2014;2&#xFF0C;x&#x2014;1&#xFF1A;&#x4E3E;&#x4F8B;&#xFF1A;rwxr-xr-x&#xFF1A;755 &#xFF08;&#x6700;&#x5E38;&#x7528;&#xFF09;</p>
+</li>
+<li><p>chmod -R&#xFF1A;&#x9012;&#x5F52;&#x4FEE;&#x6539;&#x76EE;&#x5F55;&#x53CA;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6743;&#x9650;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x6CE8;&#x91CA;&#xFF1A;<strong>&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x6587;&#x4EF6;&#x7684;wrx&#x548C;&#x76EE;&#x5F55;&#x7684;wrx&#x7684;&#x610F;&#x4E49;</strong></p>
+</li>
+</ul>
+<p><code>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x6743;&#x9650;&#x4E0D;&#x662F;&#x5BF9;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x6709;&#x5199;&#x6743;&#x9650;&#xFF0C;&#x800C;&#x662F;&#x5BF9;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x6709;&#x5199;&#x6743;&#x9650; &#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x5F80;&#x5F80;&#x90FD;&#x662F;&#x540C;&#x65F6;&#x6709;r&#x548C;x&#x6743;&#x9650;&#xFF0C;&#x53EF;&#x8FDB;&#x5165;&#x76EE;&#x5F55;&#x548C;&#x67E5;&#x770B;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;</code></p>
+<ul>
+<li><p><img src="../res/06c82052-a933-414f-9c87-509cad6bfe62-5771924.jpg" alt=""></p>
+</li>
+<li><p>chown&#xFF08;change file ownership&#xFF09;</p>
+<p><code>&#x6539;&#x53D8;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x6240;&#x6709;&#x8005;&#xFF1A;chown [&#x7528;&#x6237;&#x540D;] [&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]&#xFF1A;&#x53EA;&#x6709;&#x7BA1;&#x7406;&#x5458;root&#x80FD;&#x6267;&#x884C; &#x4F8B;&#xFF1A;chown root:testgroup /test/</code></p>
+</li>
+<li><p>chgrp&#xFF08;change file group ownership&#xFF09;</p>
+<p><code>&#x6539;&#x53D8;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x6240;&#x5C5E;&#x7EC4;&#xFF1A;chgrp [&#x7EC4;&#x540D;] [&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]&#xFF1A;&#x53EA;&#x6709;&#x7BA1;&#x7406;&#x5458;root&#x80FD;&#x6267;&#x884C;</code></p>
+<ul>
+<li><p>&#x6CE8;&#xFF1A;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x90FD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;user&#x548C;&#x4E00;&#x4E2A;group&#xFF0C;&#x67D0;&#x4E9B;others&#x62E5;&#x6709;&#x62E5;&#x6709;&#x5171;&#x540C;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x8FD9;&#x4E9B;others&#x5728;&#x4E00;&#x4E2A;&#x7EC4;&#x91CC;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;group&#x6240;&#x5C5E;&#x7EC4;&#x3002;&#x6240;&#x5C5E;&#x8005;user&#x53EF;&#x4EE5;&#x4E0D;&#x5728;&#x6240;&#x5C5E;&#x7EC4;group&#x91CC;&#x9762;&#xFF0C;&#x5E76;&#x4E14;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x91CC;&#x3002; &#x76F8;&#x5173;&#x7684;&#x547D;&#x4EE4;&#x662F;&#xFF1A;</p>
+<ul>
+<li><p>groupadd YYY //&#x521B;&#x5EFA;&#x7EC4;</p>
+</li>
+<li><p>useradd -g YYY XXX //&#x521B;&#x5EFA;&#x7528;&#x6237;&#x5E76;&#x5C06;YYY&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x4E3B;&#x8981;&#x7EC4;</p>
+</li>
+<li><p>usermod -g ZZZ XXX //&#x4FEE;&#x6539;&#x7528;&#x6237;XXX&#x7684;&#x4E3B;&#x8981;&#x7EC4;&#x4E3A;ZZZ</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>umask&#xFF08;the user file-creation mask&#xFF09;</p>
+<p><code>&#x663E;&#x793A;&#x3001;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x7F3A;&#x7701;&#x6743;&#x9650;</code></p>
+<ul>
+<li><p>umask -S&#xFF1A;&#x4EBA;&#x6027;&#x5316;&#x663E;&#x793A;&#x9ED8;&#x8BA4;&#x6743;&#x9650;&#xFF0C;&#x4EE5;rwx&#x5F62;&#x5F0F;&#x663E;&#x793A;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x7F3A;&#x7701;&#x6743;&#x9650;</p>
+</li>
+<li><p>umask&#xFF1A;&#x663E;&#x793A;&#x63A9;&#x7801;&#xFF08;&#x975E;&#x4EBA;&#x6027;&#x5316;&#xFF09;</p>
+<p>&#x6BD4;&#x5982;&#xFF1A;0022&#xFF0C;&#x6743;&#x9650; &#x5B9E;&#x9645;&#x4E0A;&#x4E3A;&#xFF1A;777 - 022 = 755</p>
+</li>
+<li><p>&#x6CE8;&#xFF1A;Linux&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#x662F;&#x6CA1;&#x6709;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#x7684;&#xFF08;touch &#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x6587;&#x4EF6;&#x662F;666&#xFF0C;&#x76EE;&#x5F55;&#x662F;777</p>
+</li>
+<li><p>umask &#x4E09;&#x4F4D;&#x6570;&#xFF1A;&#x4FEE;&#x6539;&#x63A9;&#x7801;&#xFF0C;&#x4F7F;&#x9ED8;&#x8BA4;&#x6743;&#x9650;&#x53D8;&#x5316;<br>umask 023&#xFF1B;&#x4E2D;&#x6587;&#x4FEE;&#x6539;&#x6237;&#x7684;&#x63A9;&#x7801;&#x4E3A;0023&#xFF0C;&#x6743;&#x9650;&#x4E3A;&#xFF1A;754&#xFF0C;&#x5E76;&#x4E0D;&#x5EFA;&#x8BAE;&#x4FEE;&#x6539;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x547D;&#x4EE4;">&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x547D;&#x4EE4;</h3>
+<blockquote>
+<p>&#x5C3D;&#x91CF;&#x5C11;&#x641C;&#x7D22;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x9AD8;&#x5CF0;&#x671F;&#x65F6;</p>
+</blockquote>
+<ul>
+<li><p>find</p>
+<p><code>&#x6587;&#x4EF6;&#x7CBE;&#x51C6;&#x641C;&#x7D22;&#xFF1A;find [&#x641C;&#x7D22;&#x8303;&#x56F4;] [&#x5339;&#x914D;&#x6761;&#x4EF6;]</code></p>
+<ul>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -name&#xFF1A;&#x6839;&#x636E;&#x6587;&#x4EF6;&#x540D;&#x641C;&#x7D22;</p>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -iname&#xFF1A;&#x6839;&#x636E;&#x6587;&#x4EF6;&#x540D;&#x641C;&#x7D22;&#xFF0C;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</p>
+<ul>
+<li><p>&#x6CE8;&#xFF1A;&#x901A;&#x914D;&#x7B26;&#xFF1A;<code>*</code>&#xFF0C;<code>&#xFF1F;</code>&#xFF0C;<code>[]</code></p>
+<ul>
+<li><code>*</code>&#xFF1A;&#x5339;&#x914D;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#xFF1B;&#x4E3E;&#x4F8B;&#xFF1A;find /ete -name <em>init</em>&#xFF08;&#x6A21;&#x7CCA;&#x641C;&#x7D22;&#xFF0C;&#x5305;&#x542B;&#x5373;&#x53EF;&#xFF09;</li>
+<li><code>&#xFF1F;</code>&#xFF1A;&#x5339;&#x914D;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#xFF1B;&#x4E3E;&#x4F8B;&#xFF1A;find /ete -name init???&#xFF08;&#x641C;&#x7D22;&#x4EE5;init&#x5F00;&#x5934;&#x540E;&#x9762;&#x8FD8;&#x6709;3&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x6587;&#x4EF6;&#xFF09;</li>
+</ul>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -size [+/-]n&#xFF1A;</p>
+<ul>
+<li><p>+n&#xFF1A;&#x5927;&#x4E8E;&#xFF1B;</p>
+</li>
+<li><p>-n&#xFF1A;&#x5C0F;&#x4E8E;&#xFF0C;&#x53EA;&#x6709;&#x6570;&#x636E;&#x5757;&#xFF08;0.5KB&#xFF09;&#x4E2A;&#x6570;&#xFF1B;</p>
+</li>
+<li><p>n&#xFF1A;&#x7B49;&#x4E8E;</p>
+</li>
+</ul>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -user&#xFF1A;&#x6839;&#x636E;&#x6240;&#x6709;&#x8005;&#x67E5;&#x627E;</p>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -group&#xFF1A;&#x6839;&#x636E;&#x6240;&#x5C5E;&#x7EC4;&#x67E5;&#x627E;</p>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -amin [-/+]&#x5206;&#x949F;&#x6570;&#xFF1A;&#x67E5;&#x627E;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x6216;&#x8005;&#x8D85;&#x8FC7;&#x8BE5;&#x65F6;&#x95F4;&#x88AB;&#x4FEE;&#x6539;&#x8FC7;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x7684;&#x6587;&#x4EF6;(<code>access</code>)</p>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -cmin [-/+]&#x5206;&#x949F;&#x6570;&#xFF1A;&#x67E5;&#x627E;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x6216;&#x8005;&#x8D85;&#x8FC7;&#x8BE5;&#x65F6;&#x95F4;&#x88AB;&#x4FEE;&#x6539;&#x8FC7;&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#x7684;&#x6587;&#x4EF6;(<code>change</code>)</p>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -mmin [-/+]&#x5206;&#x949F;&#x6570;&#xFF1A;&#x67E5;&#x627E;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x6216;&#x8005;&#x8D85;&#x8FC7;&#x8BE5;&#x65F6;&#x95F4;&#x88AB;&#x4FEE;&#x6539;&#x8FC7;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x7684;&#x6587;&#x4EF6;(<code>modify</code>)</p>
+</li>
+<li><p>&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x4E24;&#x4E2A;&#x67E5;&#x627E;&#x6761;&#x4EF6;&#x4E4B;&#x95F4;&#x52A0;&#x4E0A;</p>
+<ul>
+<li><p>-a &#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x540C;&#x65F6;&#x6EE1;&#x8DB3;(<code>and</code>)</p>
+</li>
+<li><p>-o &#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x6EE1;&#x8DB3;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5373;&#x53EF;(<code>or</code>)</p>
+</li>
+<li><p>&#x6216;&#x8005;-exec/-ok &#x547D;&#x4EE4; [&#x7A7A;&#x683C;] {} [&#x7A7A;&#x683C;] \&#xFF1B; &#x5BF9;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x6267;&#x884C;&#x64CD;&#x4F5C;</p>
+<ul>
+<li>&#x793A;&#x4F8B;&#xFF1A;find ./ -name test.txt -exec ls -l {} \;</li>
+<li>-ok&#xFF1A;&#x662F;&#x5BF9;&#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x9010;&#x4E2A;&#x8BE2;&#x95EE;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -type&#xFF1A;&#x6839;&#x636E;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x67E5;&#x627E;</p>
+</li>
+<li><p>find [&#x641C;&#x7D22;&#x8303;&#x56F4;] -inum&#xFF1A;&#x6839;&#x636E;inode&#x53F7;&#x67E5;&#x627E;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>locate</p>
+<p><code>&#x6A21;&#x7CCA;&#x67E5;&#x627E;&#xFF1A;locate &#x6587;&#x4EF6;&#x540D;</code></p>
+<ul>
+<li><p>&#x7CFB;&#x7EDF;&#x91CC;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x5B9A;&#x671F;&#x6536;&#x5F55;&#x5230;/var/lib/mlocate.db&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5E93;&#x91CC;&#xFF0C;locate&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x91CC;&#x53BB;&#x627E;&#xFF0C;&#x4F46;&#x662F;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x6CA1;&#x522B;&#x6536;&#x5F55;&#x8FDB;&#x53BB;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x8D44;&#x6599;&#x5E93;updatedb &#xFF08;&#x4F46;&#x662F;tmp&#x76EE;&#x5F55;&#x4E0B;&#x4E0D;&#x6536;&#x5F55;&#x8FDB;&#x53BB;&#xFF09;</p>
+</li>
+<li><p>locate -i&#xFF1A;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</p>
+</li>
+</ul>
+</li>
+<li><p>which</p>
+<p><code>&#x67E5;&#x627E;&#x547D;&#x4EE4;&#x7684;&#x5730;&#x5740;&#x548C;&#x522B;&#x540D;alias&#xFF1A;which &#x547D;&#x4EE4;&#x540D;</code></p>
+</li>
+<li><p>whereis</p>
+<p><code>&#x67E5;&#x627E;&#x547D;&#x4EE4;&#x5730;&#x5740;&#x548C;&#x5176;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;whereis &#x547D;&#x4EE4;&#x540D;</code></p>
+</li>
+<li><p>grep</p>
+<p><code>&#x5728;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x67E5;&#x627E;&#x5B57;&#x4E32;&#x5339;&#x914D;&#x7684;&#x884C;&#x5E76;&#x8F93;&#x51FA;&#xFF1A;grep [-iv] [&#x6307;&#x5B9A;&#x5B57;&#x4E32;] [&#x6587;&#x4EF6;]</code></p>
+<ul>
+<li><p>grep -i&#xFF1A;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#xFF0C;&#x67E5;&#x627E;&#x6307;&#x5B9A;&#x5B57;&#x4E32;&#x6240;&#x5728;&#x7684;&#x884C;</p>
+</li>
+<li><p>grep -v&#xFF1A;&#x6392;&#x9664;&#x6307;&#x5B9A;&#x5B57;&#x4E32;&#x6240;&#x5728;&#x7684;&#x884C;</p>
+</li>
+<li><p>&#x6307;&#x5B9A;&#x5B57;&#x4E32;&#x524D;&#x9762;&#x52A0;&#x4E2A; ^ &#x8868;&#x793A;&#x4EE5;&#x4EC0;&#x4E48;&#x5B57;&#x4E32;&#x5F00;&#x5934;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5E2E;&#x52A9;&#x547D;&#x4EE4;">&#x5E2E;&#x52A9;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>man &#xFF08;manual&#xFF09;&#x6216; info &#xFF08;information&#xFF09;</p>
+<p><code>&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;&#x6D4F;&#x89C8;&#x548C;more&#x64CD;&#x4F5C;&#x4E00;&#x6837;&#xFF1A;man &#x547D;&#x4EE4;&#x540D;/&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540D;</code></p>
+<ul>
+<li><p>&#x5E2E;&#x52A9;&#x7C7B;&#x578B;&#x91CC;1&#x662F;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#xFF0C;5&#x662F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x5E2E;&#x52A9;</p>
+</li>
+<li><p>For Example&#xFF1A;man 1 passwd&#xFF0C;man 5 passwd</p>
+</li>
+</ul>
+</li>
+<li><p>whatis</p>
+<p><code>&#x66F4;&#x52A0;&#x7B80;&#x5355;&#x7684;&#x547D;&#x4EE4;&#x67E5;&#x8BE2;&#xFF0C;&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x4F5C;&#x7528;</code></p>
+</li>
+<li><p>apropos</p>
+<p><code>&#x66F4;&#x52A0;&#x7B80;&#x5355;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x67E5;&#x8BE2;</code></p>
+</li>
+<li><p>&#x2013;-help</p>
+<p><code>&#x5F97;&#x5230;&#x4FE1;&#x606F;&#x66F4;&#x52A0;&#x7B80;&#x5355;&#xFF1A;&#x547D;&#x4EE4; &#x2013;&#x2013;help</code></p>
+</li>
+<li><p>help</p>
+<p><code>&#x83B7;&#x5F97;shell&#x7684;&#x5185;&#x7F6E;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;cd&#xFF0C;pwd&#xFF0C;umask&#xFF0C;if&#x7B49;</code></p>
+</li>
+</ul>
+<h3 id="&#x7528;&#x6237;&#x7BA1;&#x7406;&#x547D;&#x4EE4;">&#x7528;&#x6237;&#x7BA1;&#x7406;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>useradd&#x548C;passwd</p>
+<p><code>&#x65B0;&#x5EFA;&#x7528;&#x6237;&#x548C;&#x4FEE;&#x6539;&#x5BC6;&#x7801;</code></p>
+</li>
+<li><p>who&#x548C;w</p>
+<p><code>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x767B;&#x5F55;&#x7528;&#x6237;&#x540D;&#xFF1A;tty&#x662F;&#x672C;&#x5730;&#x767B;&#x5F55;&#xFF0C;pts&#x8868;&#x793A;&#x8FDC;&#x7A0B;&#x767B;&#x5F55; who&#x7B80;&#x5355;&#x4FE1;&#x606F; w</code></p>
+<p><img src="../res/ead99ff2-68a1-44ae-9c75-5cde389a82f8-5771924.jpg" alt=""></p>
+<ul>
+<li><p>&#x5176;&#x4E2D;&#x7B2C;&#x4E00;&#x884C;&#xFF1A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x95F4;&#xFF08;&#x670D;&#x52A1;&#x5668;&#xFF09;&#xFF0C;&#x591A;&#x5C11;&#x4E2A;&#x7528;&#x6237;&#x767B;&#x5F55;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;CPU&#xFF0C;&#x5185;&#x5B58;&#x7B49;&#x8D1F;&#x8F7D;&#x60C5;&#x51B5;&#xFF09;&#x8FD9;&#x884C;&#x7C7B;&#x578B;&#x4E5F;&#x53EF;&#x4EE5; &#x901A;&#x8FC7;uptime&#x83B7;&#x5F97;</p>
+</li>
+<li><p>IDLE&#xFF1A;&#x8868;&#x793A;&#x7528;&#x6237;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#xFF08;&#x591A;&#x4E45;&#x6CA1;&#x64CD;&#x4F5C;&#x4E86;&#xFF09;</p>
+</li>
+<li><p>JCPU&#xFF1A;&#x7D2F;&#x8BA1;&#x5360;&#x7528;&#x7684;CPU&#x65F6;&#x95F4;</p>
+</li>
+<li><p>PCPU &#xFF1A;&#x5F53;&#x524D;&#x7528;&#x6237;&#x767B;&#x5F55;&#x540E;&#x5360;&#x7528;CPU&#x7684;&#x65F6;&#x95F4;</p>
+</li>
+<li><p>WHAT&#xFF1A;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x538B;&#x7F29;&#x89E3;&#x538B;&#x547D;&#x4EE4;">&#x538B;&#x7F29;&#x89E3;&#x538B;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>&#x51E0;&#x79CD;&#x538B;&#x7F29;&#x683C;&#x5F0F;</p>
+<ul>
+<li><p>.gz</p>
+</li>
+<li><p>.zip</p>
+</li>
+<li><p>.bz2</p>
+</li>
+</ul>
+</li>
+<li><p>gzip&#xFF08;GNU zip&#xFF09;&#x548C; gunzip/gzip -d &#xFF08;GNU unzip&#xFF09;</p>
+<p><code>&#x538B;&#x7F29;/&#x89E3;&#x538B;&#x6587;&#x4EF6;&#xFF1A;gzip/gunzip [&#x6587;&#x4EF6;]</code></p>
+<ul>
+<li><p>&#x89E3;&#x538B;&#x7F29;&#xFF1A;gunzip[&#x6587;&#x4EF6;] &#x6216; gzip -d [&#x6587;&#x4EF6;]</p>
+</li>
+<li><p>&#x53EA;&#x80FD;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x80FD;&#x538B;&#x7F29;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#xFF1A;.gz</p>
+</li>
+</ul>
+</li>
+<li><p>tar</p>
+<p><code>&#x6253;&#x5305;&#x76EE;&#x5F55;&#xFF1A;tar [&#x9009;&#x9879;] [&#x538B;&#x7F29;&#x540E;&#x6587;&#x4EF6;&#x540D;] [&#x76EE;&#x5F55;&#xFF08;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#xFF09;]</code></p>
+<ul>
+<li><p>tar -c&#xFF1A;&#x6253;&#x5305;</p>
+</li>
+<li><p>tar -x&#xFF1A;&#x89E3;&#x5305;</p>
+</li>
+<li><p>tar -v&#xFF1A;&#x663E;&#x793A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</p>
+</li>
+<li><p>tar -f&#xFF1A;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x540D;</p>
+</li>
+<li><p>tar -z&#xFF1A;&#x6253;&#x5305;&#x7684;&#x540C;&#x65F6;&#x538B;&#x7F29;&#xFF0C;&#x6216;&#x8005;&#x89E3;&#x5305;&#x7684;&#x65F6;&#x5019;&#x89E3;&#x538B;&#x7F29;,&#x9002;&#x7528;&#x4E8E;&#x538B;&#x7F29;&#x89E3;&#x538B;gz</p>
+</li>
+<li><p>tar -j&#xFF1A;&#x540C;-z&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x538B;&#x7F29;&#x89E3;&#x538B;bz2</p>
+</li>
+<li><p>&#x4E3E;&#x4F8B;&#xFF1A;tar -cvf XXX.tar YYY gzip XXX.tar &#xFF0C;&#x6700;&#x540E;&#x751F;&#x6210;XXX.tar.gz &#x3002;&#x6216;&#x8005;&#x76F4;&#x63A5;tar -zcvf&#x6253;&#x5305;&#x538B;&#x7F29;&#x4E00;&#x90E8;&#x5408;&#x6210;&#xFF0C;&#x53CD;&#x5411;&#x662F;tar -zxvf</p>
+</li>
+<li><p>&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#xFF1A;.tar.gz</p>
+</li>
+</ul>
+</li>
+<li><p>zip&#x548C;unzip</p>
+<p><code>&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#xFF1A;zip [&#x9009;&#x9879;] [&#x538B;&#x7F29;&#x540E;&#x6587;&#x4EF6;&#x540D;] [&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;]&#xFF0C;&#x538B;&#x7F29;&#x6BD4;&#x4E0D;&#x9AD8;</code></p>
+<ul>
+<li><p>&#x538B;&#x7F29;&#x540E;&#x80FD;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>zip -r&#xFF1A;&#x538B;&#x7F29;&#x76EE;&#x5F55;</p>
+</li>
+<li><p>&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#xFF1A;.zip</p>
+</li>
+</ul>
+</li>
+<li><p>bzip2&#x548C;bunzip2</p>
+<p><code>bzip2 /bunzip2 [&#x9009;&#x9879;] [&#x6587;&#x4EF6;]</code></p>
+<ul>
+<li><p>bzip2 -k&#xFF1A;&#x538B;&#x7F29;&#x7684;&#x540C;&#x65F6;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>bunzip -k&#xFF1A;&#x89E3;&#x538B;&#x7684;&#x540C;&#x65F6;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x4EF6;</p>
+</li>
+<li><p>gzip&#x7684;&#x5347;&#x7EA7;&#x7248;&#x672C;&#xFF0C;&#x538B;&#x7F29;&#x6BD4;&#x8F83;&#x597D;</p>
+</li>
+<li><p>&#x7528;tar&#x751F;&#x6210;.tar.bz2&#x6587;&#x4EF6;&#xFF1A;tar -cjf xxx.tar.bz2 xxx</p>
+</li>
+<li><p>&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#xFF1A;.bz2</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x7F51;&#x7EDC;&#x547D;&#x4EE4;">&#x7F51;&#x7EDC;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>write</p>
+<p><code>&#x7ED9;&#x5728;&#x7EBF;&#x7528;&#x6237;&#x53D1;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;ctrl+D&#x4FDD;&#x5B58;&#x7ED3;&#x675F;&#xFF1A;write &lt;&#x7528;&#x6237;&#x540D;&gt;</code></p>
+</li>
+<li><p>wall &#xFF08;write all&#xFF09;</p>
+<p><code>&#x7ED9;&#x5F53;&#x524D;&#x5728;&#x7EBF;&#x7684;&#x6240;&#x6709;&#x7528;&#x6237;&#x53D1;&#x9001;&#x4FE1;&#x606F;&#xFF1A;wall [&#x4FE1;&#x606F;&#x5185;&#x5BB9;]</code></p>
+</li>
+<li><p>ping</p>
+<p><code>&#x6D4B;&#x8BD5;&#x7F51;&#x7EDC;&#x8FDE;&#x901A;&#x6027;&#xFF1A;ping &#x9009;&#x9879; [IP&#x5730;&#x5740;]</code></p>
+<ul>
+<li><p>&#x7F51;&#x7EDC;&#x8E29;&#x70B9;&#xFF0C;Linux&#x4F1A;&#x4E00;&#x76F4;ping&#x4E0B;&#x53BB;</p>
+</li>
+<li><p>ping -c &#x6B21;&#x6570;&#xFF1A;&#x5B9A;&#x4E49;ping&#x7684;&#x6B21;&#x6570;</p>
+</li>
+</ul>
+</li>
+<li><p>ifconfig &#xFF08;interface configure&#xFF09;</p>
+<p><code>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x7F51;&#x5361;&#x4FE1;&#x606F;&#x548C;&#x8BBE;&#x7F6E;&#x7F51;&#x5361;&#x4FE1;&#x606F;&#xFF08;&#x4E34;&#x65F6;&#x7684;&#xFF09;&#xFF1A;ifconfig &#x7F51;&#x5361;&#x540D;&#x79F0; IP&#x5730;&#x5740;</code></p>
+</li>
+<li><p>mail</p>
+<p><code>&#x67E5;&#x770B;&#x548C;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#xFF1A;mail [&#x7528;&#x6237;&#x540D;]</code></p>
+<ul>
+<li><p>&#x4E0D;&#x4E00;&#x5B9A;&#x8981;&#x5728;&#x7EBF;</p>
+</li>
+<li><p>mail &#x7528;&#x6237;&#x540D;&#xFF1A;&#x53D1;&#x9001;</p>
+</li>
+<li><p>mail&#xFF1A;&#x67E5;&#x770B;&#x7684;&#x5B50;&#x547D;&#x4EE4;&#xFF1A;</p>
+<ul>
+<li><p>q&#xFF1A;&#x9000;&#x51FA;</p>
+</li>
+<li><p>help(&#x5E2E;&#x52A9;)&#xFF0C;</p>
+</li>
+<li><p>&#x6570;&#x5B57;(&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x90AE;&#x4EF6;)&#xFF0C;</p>
+</li>
+<li><p>&#x5217;&#x8868;&#xFF1A;h(&#x5217;&#x8868;)&#xFF0C;</p>
+</li>
+<li><p>&#x5220;&#x9664;&#xFF1A;d &#x6570;&#x5B57;(&#x5220;)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>last</p>
+<p><code>&#x65E5;&#x5FD7;&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#xFF0C;&#x7EDF;&#x8BA1;&#x7CFB;&#x7EDF;&#x7684;&#x6240;&#x6709;&#x767B;&#x5F55;&#x4FE1;&#x606F;&#xFF1A;</code></p>
+</li>
+<li><p>lastlog</p>
+<p><code>&#x67E5;&#x770B;&#x7528;&#x6237;&#x6700;&#x540E;&#x767B;&#x5F55;&#x7684;&#x4FE1;&#x606F;</code></p>
+<ul>
+<li>lastlog -u uid&#xFF1A;&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x4E0A;&#x6B21;&#x767B;&#x5F55;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+</li>
+<li><p>traceroute</p>
+<p><code>&#x8DDF;&#x8E2A;&#x8282;&#x70B9;&#x7684;&#x8DEF;&#x5F84;&#xFF1A;traceroute ip&#x5730;&#x5740;</code></p>
+</li>
+<li><p>netstat</p>
+<p><code>&#x663E;&#x793A;&#x7F51;&#x7EDC;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF1A;netstat [&#x9009;&#x9879;]</code></p>
+<ul>
+<li><p>netstat -t&#xFF1A;TCP&#x534F;&#x8BAE;&#xFF08;&#x6709;3&#x6B21;&#x63E1;&#x624B;&#xFF09;</p>
+</li>
+<li><p>netstat -u&#xFF1A;UDP&#x534F;&#x8BAE;&#xFF08;&#x65E0;3&#x6B21;&#x63E1;&#x624B;&#xFF0C;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x6536;&#x5230;&#xFF09;</p>
+</li>
+<li><p>netstat -l&#xFF1A;&#x76D1;&#x542C;</p>
+</li>
+<li><p>netstat -r&#xFF1A;&#x8DEF;&#x7531;</p>
+</li>
+<li><p>netstat -n&#xFF1A;&#x663E;&#x793A;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x53F7;</p>
+</li>
+<li><p>&#x6700;&#x5E38;&#x7528;&#x7684;&#x4E09;&#x79CD;&#x7EC4;&#x5408;&#x547D;&#x4EE4;&#xFF1A;</p>
+<ul>
+<li><p>netstat -tlun&#xFF1A;&#x67E5;&#x770B;&#x672C;&#x673A;&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;</p>
+<p><img src="../res/add9fad7-9ca8-4894-9fb6-6672baa34f40-5771924.jpg" alt=""></p>
+<ul>
+<li><p>1&#xFF1A;&#x6807;&#x5FD7;&#x534F;&#x8BAE;&#xFF1A;TCP/UDP</p>
+</li>
+<li><p>2&#xFF1A;&#x6570;&#x636E;&#x5305;&#x63A5;&#x6536;&#x961F;&#x5217;&#xFF1A;0&#x4EE3;&#x8868;&#x7F51;&#x7EDC;&#x901A;&#x7545;</p>
+</li>
+<li><p>3&#xFF1A;&#x6570;&#x636E;&#x5305;&#x53D1;&#x9001;&#x961F;&#x5217;&#xFF1A;0&#x4EE3;&#x8868;&#x7F51;&#x7EDC;&#x901A;&#x7545;</p>
+</li>
+<li><p>4&#xFF1A;&#x672C;&#x673A;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF08;&#x4E3B;&#x8981;&#x67E5;&#x770B;&#x7684;&#x5185;&#x5BB9;&#xFF09;</p>
+</li>
+<li><p>5&#xFF1A;&#x76D1;&#x6D4B;&#x72B6;&#x6001;&#xFF1A;TCP&#x624D;&#x6709;&#xFF0C;UDP&#x6CA1;&#x6709;&#xFF08;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#xFF0C;&#x4E0D;&#x7BA1;&#x5728;&#x4E0D;&#x5728;&#x7EBF;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x76D1;&#x542C;&#xFF09;</p>
+</li>
+</ul>
+</li>
+<li><p>netstat -an&#xFF1A;&#x67E5;&#x770B;&#x672C;&#x673A;&#x6240;&#x6709;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;</p>
+<p><img src="../res/632dd933-4aa5-4b74-8e78-545acf0262af-5771924.jpg" alt=""></p>
+<ul>
+<li>&#x8DDF;-tlun&#x7684;&#x533A;&#x522B;&#x662F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6B63;&#x5728;&#x8FDE;&#x63A5;&#x7684;&#x670D;&#x52A1;</li>
+</ul>
+</li>
+<li><p>netstat -rn&#xFF1A;&#x67E5;&#x770B;&#x672C;&#x673A;&#x8DEF;&#x7531;&#x8868;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>setup</p>
+<p><code>redhat&#x7CFB;linux&#x72EC;&#x6709;</code></p>
+<ul>
+<li><p>&#x914D;&#x7F6E;&#x7F51;&#x7EDC;&#x7684;&#x5DE5;&#x5177;&#xFF1A;&#x6C38;&#x4E45;&#x751F;&#x6548;</p>
+</li>
+<li><p>&#x914D;&#x7F6E;&#x73A9;&#x9700;&#x8981;&#x91CD;&#x542F;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#xFF1A;service network restart</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6302;&#x8F7D;&#x547D;&#x4EE4;">&#x6302;&#x8F7D;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>mount</p>
+<p><code>mount [-t &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;] &#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x540D; &#x6302;&#x8F7D;&#x70B9;</code></p>
+<ul>
+<li><p>&#x4E3E;&#x4F8B;&#xFF1A;mount -t iso9660 /dev/sr0 /mnt/cdrom</p>
+<ul>
+<li>/dev/sr0&#xFF1A;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>umount</p>
+<p><code>&#x5378;&#x8F7D;&#xFF1A;umount &#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x540D;</code></p>
+</li>
+</ul>
+<h3 id="&#x5173;&#x673A;&#x91CD;&#x542F;&#x547D;&#x4EE4;">&#x5173;&#x673A;&#x91CD;&#x542F;&#x547D;&#x4EE4;</h3>
+<ul>
+<li><p>shutdown</p>
+<p><code>shutdown [&#x9009;&#x9879;] &#x65F6;&#x95F4;</code></p>
+<ul>
+<li><p>shutdown -h &#x65F6;&#x95F4;&#xFF08;new&#xFF09;&#xFF1A;&#x5173;&#x673A;</p>
+</li>
+<li><p>shutdown -r &#x65F6;&#x95F4;&#xFF1A;&#x91CD;&#x542F;</p>
+</li>
+<li><p>shutdown -c&#xFF1A;&#x53D6;&#x6D88;&#x524D;&#x4E00;&#x4E2A;&#x5173;&#x673A;&#x547D;&#x4EE4;</p>
+</li>
+<li><p>&#x8C28;&#x614E;&#x64CD;&#x4F5C;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x5176;&#x4ED6;&#x5173;&#x673A;&#x547D;&#x4EE4;&#xFF1A;<code>halt</code>,<code>poweroff</code>,<code>init 0</code></p>
+</li>
+<li><p>&#x5176;&#x4ED6;&#x91CD;&#x542F;&#x547D;&#x4EE4;&#xFF1A;<code>reboot</code>,<code>init 6</code></p>
+</li>
+<li><p>init</p>
+<ul>
+<li><p>&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x7EA7;&#x522B;&#xFF1A;</p>
+<ul>
+<li>0&#xFF1A;&#x5173;&#x673A;&#xFF0C;</li>
+<li>1&#xFF1A;&#x5355;&#x7528;&#x6237;&#xFF0C;</li>
+<li>2&#xFF1A;&#x4E0D;&#x542B;NFS&#x670D;&#x52A1;&#x7684;&#x591A;&#x7528;&#x6237;&#xFF0C;</li>
+<li>3&#xFF1A;&#x5B8C;&#x5168;&#x591A;&#x7528;&#x6237;&#xFF0C;</li>
+<li>4&#xFF1A;&#x672A;&#x5206;&#x914D;&#xFF0C;</li>
+<li>5&#xFF1A;&#x56FE;&#x5F62;&#x754C;&#x9762;&#xFF0C;</li>
+<li>6&#xFF1A;&#x91CD;&#x542F;</li>
+</ul>
+</li>
+<li><p><code>/etc/inittab</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x6709;&#x8FD0;&#x884C;&#x7EA7;&#x522B;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x65B9;&#x4FBF;&#x67E5;&#x8BE2;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x8FD0;&#x884C;&#x7EA7;&#x522B;</p>
+</li>
+<li><p>init &#x6570;&#x5B57;&#xFF1A;&#x8BBE;&#x7F6E;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x7EA7;&#x522B;&#xFF0C;&#x4E34;&#x65F6;&#x66F4;&#x6539;</p>
+</li>
+</ul>
+</li>
+<li><p>runlevel&#xFF1A;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x7EA7;&#x522B;</p>
+</li>
+<li><p>logout&#x548C;exit</p>
+<ul>
+<li>&#x90FD;&#x662F;&#x9000;&#x51FA;&#x767B;&#x5F55;&#xFF1A;logout&#x9000;&#x51FA;&#x662F;&#x628A;&#x56E0;&#x4E3A;&#x4F60;&#x6CE8;&#x9500;&#x4E86;&#x767B;&#x9646;&#x673A;&#x800C;&#x628A;&#x4F60;&#x8E22;&#x51FA;&#x7684;&#x9000;&#x51FA;&#xFF0C;exit&#x662F;&#x4F60;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#x8FDE;&#x63A5;&#x7684;&#x673A;&#x5668;&#x3002;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-服务器注意事项.html" class="navigation navigation-prev " aria-label="Previous page: 服务器注意事项">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-强大的文本编辑器Vim.html" class="navigation navigation-next " aria-label="Next page: 强大的文本编辑器Vim">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux常用命令","level":"2.1.6","depth":2,"next":{"title":"强大的文本编辑器Vim","level":"2.1.7","depth":2,"path":"Linux/基础/07-强大的文本编辑器Vim.md","ref":"Linux/基础/07-强大的文本编辑器Vim.md","articles":[]},"previous":{"title":"服务器注意事项","level":"2.1.5","depth":2,"path":"Linux/基础/05-服务器注意事项.md","ref":"Linux/基础/05-服务器注意事项.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/基础/06-Linux常用命令.md","mtime":"2022-02-02T05:38:49.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-02T05:44:19.586Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

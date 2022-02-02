@@ -229,7 +229,7 @@ $ go run main.go
     ```
     ```text
     $ curl -g "http://localhost:9999/post?ids[Jack]=001&ids[Tom]=002" -X POST -d 'names[a]=Sam&names[b]=David'
-    {"ids":{"Jack":"001","Tom":"002"},"names":{"a":"Sam","b":"David"}}
+    {"ids":{"Jack":"001","Tom":"002"},"names":{"a":"Sam","b":"David"} }
     ```
 - 重定向(Redirect)
     ```text
@@ -330,10 +330,10 @@ r.GET("/arr", func(c *gin.Context) {
 <!-- templates/arr.tmpl -->
 <html>
 <body>
-    <p>hello, {{.title}}</p>
-    {{range $index, $ele := .stuArr }}
-    <p>{{ $index }}: {{ $ele.Name }} is {{ $ele.Age }} years old</p>
-    {{ end }}
+    <p>hello, { {.title} }</p>
+    { {range $index, $ele := .stuArr } }
+    <p>{ { $index } }: { { $ele.Name } } is { { $ele.Age } } years old</p>
+    { { end } }
 </body>
 </html>
 ```
