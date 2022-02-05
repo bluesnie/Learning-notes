@@ -17,15 +17,15 @@
 
 ### 7天用Go从零实现Web框架 - Gee
 
-[Gee](https://geektutu.com/post/gee.html) 是一个模仿 [gin](https://github.com/gin-gonic/gin) 实现的 Web 框架，[Go Gin简明教程](https://geektutu.com/post/quick-go-gin.html)可以快速入门。
+[Gee](./gee-web/doc/gee.md) 是一个模仿 [gin](https://github.com/gin-gonic/gin) 实现的 Web 框架，[Go Gin简明教程](../Go简明教程/01-Go语言简明教程.md)可以快速入门。
 
-- 第一天：[前置知识(http.Handler接口)](https://geektutu.com/post/gee-day1.html) | [Code](gee-web/day1-http-base)
-- 第二天：[上下文设计(Context)](https://geektutu.com/post/gee-day2.html) | [Code](gee-web/day2-context)
-- 第三天：[Trie树路由(Router)](https://geektutu.com/post/gee-day3.html) | [Code](gee-web/day3-router)
-- 第四天：[分组控制(Group)](https://geektutu.com/post/gee-day4.html) | [Code](gee-web/day4-group)
-- 第五天：[中间件(Middleware)](https://geektutu.com/post/gee-day5.html) | [Code](gee-web/day5-middleware)
-- 第六天：[HTML模板(Template)](https://geektutu.com/post/gee-day6.html) | [Code](gee-web/day6-template)
-- 第七天：[错误恢复(Panic Recover)](https://geektutu.com/post/gee-day7.html) | [Code](gee-web/day7-panic-recover)
+- 第一天：[前置知识(http.Handler接口)](./gee-web/doc/gee-day1.md) | [Code - Github](./gee-web/day1-http-base)
+- 第二天：[上下文设计(Context)](./gee-web/doc/gee-day2.md) | [Code - Github](./gee-web/day2-context)
+- 第三天：[Trie树路由(Router)](./gee-web/doc/gee-day3.md) | [Code - Github](./gee-web/day3-router)
+- 第四天：[分组控制(Group)](./gee-web/doc/gee-day4.md) | [Code - Github](./gee-web/day4-group)
+- 第五天：[中间件(Middleware)](./gee-web/doc/gee-day5.md) | [Code - Github](./gee-web/day5-middleware)
+- 第六天：[HTML模板(Template)](./gee-web/doc/gee-day6.md) | [Code - Github](./gee-web/day6-template)
+- 第七天：[错误恢复(Panic Recover)](./gee-web/doc/gee-day7.md) | [Code - Github](./gee-web/day7-panic-recover)
 
 ### 7天用Go从零实现分布式缓存 GeeCache
 
