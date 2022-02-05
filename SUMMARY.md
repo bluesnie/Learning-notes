@@ -148,7 +148,7 @@
     - [RPC&TLS鉴权简明教程](GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.md)
     - [WebAssembly(Wasm)简明教程](GoLang/Go简明教程/06-Go-WebAssembly简明教程.md)
     - [Test单元测试简明教程](GoLang/Go简明教程/07-Go-Test单元测试简明教程.md)
-    - [Mock(gomock)简明教程](GoLang/Go简明教程/08-Go-Mock(gomock)简明教程.md)
+    - [Mock(gomock)简明教程](GoLang/Go简明教程/08-Go-Mock简明教程.md)
     - [Mmap-文件内存映射简明教程](GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.md)
     - [Context并发编程简明教程](GoLang/Go简明教程/10-Go-Context并发编程简明教程.md)
 
