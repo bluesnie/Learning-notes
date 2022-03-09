@@ -3612,83 +3612,87 @@
 </code></pre>
 </li>
 <li><p>fdfs-storage.py</p>
-<p>```python</p>
-<h1 id="encodingutf-8-"><em>*</em> encoding:utf-8 <em>*</em></h1>
-<p><strong>author</strong> = &apos;nzb&apos;
-<strong>datetime</strong> = &apos;2020/1/3 15:18&apos;</p>
-<p>from django.conf import settings
-from django.core.files.storage import Storage
-from django.utils.deconstruct import deconstructible
-from fdfs_client.client import Fdfs_client</p>
 </li>
 </ul>
-<p>  @deconstructible
-  class FastDFSStorage(Storage):
-      def <strong>init</strong>(self, base_url=None, client_conf=None):
-          &quot;&quot;&quot;
+<pre><code class="lang-python">  <span class="hljs-comment"># _*_ encoding:utf-8 _*_</span>
+  __author__ = <span class="hljs-string">&apos;nzb&apos;</span>
+  __datetime__ = <span class="hljs-string">&apos;2020/1/3 15:18&apos;</span>
+
+  <span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings
+  <span class="hljs-keyword">from</span> django.core.files.storage <span class="hljs-keyword">import</span> Storage
+  <span class="hljs-keyword">from</span> django.utils.deconstruct <span class="hljs-keyword">import</span> deconstructible
+  <span class="hljs-keyword">from</span> fdfs_client.client <span class="hljs-keyword">import</span> Fdfs_client
+
+
+<span class="hljs-meta">  @deconstructible</span>
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FastDFSStorage</span><span class="hljs-params">(Storage)</span>:</span>
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, base_url=None, client_conf=None)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
           &#x521D;&#x59CB;&#x5316;
           :param base_url: &#x7528;&#x4E8E;&#x6784;&#x9020;&#x56FE;&#x7247;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x4F7F;&#x7528;&#xFF0C;&#x56FE;&#x7247;&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;
           :param client_conf: FastDFS&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;
-          &quot;&quot;&quot;
-          if base_url is None:
+          &quot;&quot;&quot;</span>
+          <span class="hljs-keyword">if</span> base_url <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
               base_url = settings.FDFS_URL
           self.base_url = base_url
-          if client_conf is None:
+          <span class="hljs-keyword">if</span> client_conf <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
               client_conf = settings.FDFS_CLIENT_CONF
-          self.client_conf = client_conf</p>
-<pre><code>  def _open(self, name, mode=&apos;rb&apos;):
-      &quot;&quot;&quot;
-      &#x7528;&#x4E0D;&#x5230;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x7701;&#x7565;
-      &quot;&quot;&quot;
-      pass
+          self.client_conf = client_conf
 
-  def _save(self, name, content):
-      &quot;&quot;&quot;
-      &#x5728;FastDFS&#x4E2D;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;
-      :param name: &#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x540D;
-      :param content: &#x6587;&#x4EF6;&#x5185;&#x5BB9;
-      :return: &#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;FastDFS&#x7684;&#x6587;&#x4EF6;&#x540D;
-      &quot;&quot;&quot;
-      client = Fdfs_client(self.client_conf)
-      filename = content.name
-      filename_ext = filename.split(&apos;.&apos;)
-      if len(filename_ext) &lt;= 1:
-          filename_ext = &apos;&apos;  # &#x6CA1;&#x6709;&#x6269;&#x5C55;&#x540D;&#x7684;&#x60C5;&#x51B5;
-      else:
-          filename_ext = filename_ext[-1]
-      ret = client.upload_by_buffer(content.read(), file_ext_name=filename_ext)
-      if ret.get(&quot;Status&quot;) != &quot;Upload successed.&quot;:
-          raise Exception(&quot;upload file failed&quot;)
-      file_name = ret.get(&quot;Remote file_id&quot;)
-      file_name = file_name.replace(&apos;\\&apos;, &quot;/&quot;)
-      return file_name
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_open</span><span class="hljs-params">(self, name, mode=<span class="hljs-string">&apos;rb&apos;</span>)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          &#x7528;&#x4E0D;&#x5230;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x7701;&#x7565;
+          &quot;&quot;&quot;</span>
+          <span class="hljs-keyword">pass</span>
 
-  def url(self, name):
-      &quot;&quot;&quot;
-      &#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;URL&#x8DEF;&#x5F84;
-      :param name: &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x540D;
-      :return: &#x5B8C;&#x6574;&#x7684;URL
-      &quot;&quot;&quot;
-      return self.base_url + name
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_save</span><span class="hljs-params">(self, name, content)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          &#x5728;FastDFS&#x4E2D;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;
+          :param name: &#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x540D;
+          :param content: &#x6587;&#x4EF6;&#x5185;&#x5BB9;
+          :return: &#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;FastDFS&#x7684;&#x6587;&#x4EF6;&#x540D;
+          &quot;&quot;&quot;</span>
+          client = Fdfs_client(self.client_conf)
+          filename = content.name
+          filename_ext = filename.split(<span class="hljs-string">&apos;.&apos;</span>)
+          <span class="hljs-keyword">if</span> len(filename_ext) &lt;= <span class="hljs-number">1</span>:
+              filename_ext = <span class="hljs-string">&apos;&apos;</span>  <span class="hljs-comment"># &#x6CA1;&#x6709;&#x6269;&#x5C55;&#x540D;&#x7684;&#x60C5;&#x51B5;</span>
+          <span class="hljs-keyword">else</span>:
+              filename_ext = filename_ext[<span class="hljs-number">-1</span>]
+          ret = client.upload_by_buffer(content.read(), file_ext_name=filename_ext)
+          <span class="hljs-keyword">if</span> ret.get(<span class="hljs-string">&quot;Status&quot;</span>) != <span class="hljs-string">&quot;Upload successed.&quot;</span>:
+              <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;upload file failed&quot;</span>)
+          file_name = ret.get(<span class="hljs-string">&quot;Remote file_id&quot;</span>)
+          file_name = file_name.replace(<span class="hljs-string">&apos;\\&apos;</span>, <span class="hljs-string">&quot;/&quot;</span>)
+          <span class="hljs-keyword">return</span> file_name
 
-  def exists(self, name):
-      &quot;&quot;&quot;
-      &#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;FastDFS&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x89E3;&#x51B3;&#x6587;&#x4EF6;&#x7684;&#x91CD;&#x540D;&#x95EE;&#x9898;
-      &#x6240;&#x4EE5;&#x6B64;&#x5904;&#x8FD4;&#x56DE;False&#xFF0C;&#x544A;&#x8BC9;Django&#x4E0A;&#x4F20;&#x7684;&#x90FD;&#x662F;&#x65B0;&#x6587;&#x4EF6;
-      :param name:  &#x6587;&#x4EF6;&#x540D;
-      :return: False
-      &quot;&quot;&quot;
-      return False
-</code></pre><pre><code>
-- settings.py
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">url</span><span class="hljs-params">(self, name)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          &#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;URL&#x8DEF;&#x5F84;
+          :param name: &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x540D;
+          :return: &#x5B8C;&#x6574;&#x7684;URL
+          &quot;&quot;&quot;</span>
+          <span class="hljs-keyword">return</span> self.base_url + name
 
-  ```python
-  # FastDFS
-  # django&#x6587;&#x4EF6;&#x5B58;&#x50A8;
-  DEFAULT_FILE_STORAGE = &apos;utils.fastdfs.fdfs_storage.FastDFSStorage&apos;
-  FDFS_URL = &apos;http://img.example.com/&apos;
-  FDFS_CLIENT_CONF = os.path.join(BASE_DIR, &apos;utils/fastdfs/client.conf&apos;)
-</code></pre><h2 id="&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;">&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;</h2>
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, name)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          &#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;FastDFS&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x89E3;&#x51B3;&#x6587;&#x4EF6;&#x7684;&#x91CD;&#x540D;&#x95EE;&#x9898;
+          &#x6240;&#x4EE5;&#x6B64;&#x5904;&#x8FD4;&#x56DE;False&#xFF0C;&#x544A;&#x8BC9;Django&#x4E0A;&#x4F20;&#x7684;&#x90FD;&#x662F;&#x65B0;&#x6587;&#x4EF6;
+          :param name:  &#x6587;&#x4EF6;&#x540D;
+          :return: False
+          &quot;&quot;&quot;</span>
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+</code></pre>
+<ul>
+<li>settings.py</li>
+</ul>
+<pre><code class="lang-python">  <span class="hljs-comment"># FastDFS</span>
+  <span class="hljs-comment"># django&#x6587;&#x4EF6;&#x5B58;&#x50A8;</span>
+  DEFAULT_FILE_STORAGE = <span class="hljs-string">&apos;utils.fastdfs.fdfs_storage.FastDFSStorage&apos;</span>
+  FDFS_URL = <span class="hljs-string">&apos;http://img.example.com/&apos;</span>
+  FDFS_CLIENT_CONF = os.path.join(BASE_DIR, <span class="hljs-string">&apos;utils/fastdfs/client.conf&apos;</span>)
+</code></pre>
+<h2 id="&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;">&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;</h2>
 <ul>
 <li>helper.py</li>
 </ul>
@@ -3826,7 +3830,7 @@ ALLOW_FILETYPE = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"存储类重写","level":"3.3.2.4","depth":3,"next":{"title":"序列化相关","level":"3.3.2.5","depth":3,"path":"Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","ref":"./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","articles":[]},"previous":{"title":"过滤相关","level":"3.3.2.3","depth":3,"path":"Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","ref":"./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md","mtime":"2022-03-09T02:38:29.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T02:42:38.799Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"存储类重写","level":"3.3.2.4","depth":3,"next":{"title":"序列化相关","level":"3.3.2.5","depth":3,"path":"Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","ref":"./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","articles":[]},"previous":{"title":"过滤相关","level":"3.3.2.3","depth":3,"path":"Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","ref":"./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md","mtime":"2022-03-09T06:07:39.006Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T06:07:52.541Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

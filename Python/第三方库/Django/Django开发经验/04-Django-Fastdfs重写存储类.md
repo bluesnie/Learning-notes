@@ -16,7 +16,7 @@
   ![](../res/Django存储类3.png)
 
 - client.conf
-    ```text
+```text
         # connect timeout in seconds
         # default value is 30s
         connect_timeout=30
@@ -80,11 +80,11 @@
         
         #use "#include" directive to include HTTP other settiongs
         ##include http.conf
-    ```
+```
 
 - fdfs-storage.py
 
-  ```python
+```python
   # _*_ encoding:utf-8 _*_
   __author__ = 'nzb'
   __datetime__ = '2020/1/3 15:18'
@@ -154,17 +154,17 @@
           """
           return False
   
-  ```
+```
 
 - settings.py
 
-  ```python
+```python
   # FastDFS
   # django文件存储
   DEFAULT_FILE_STORAGE = 'utils.fastdfs.fdfs_storage.FastDFSStorage'
   FDFS_URL = 'http://img.example.com/'
   FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
-  ```
+```
 
 ## 本地存储重命名
 
