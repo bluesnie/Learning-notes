@@ -3546,237 +3546,243 @@
 <img src="../res/Django&#x5B58;&#x50A8;&#x7C7B;3.png" alt=""></p>
 </li>
 <li><p>client.conf</p>
-<pre><code class="lang-text">  # connect timeout in seconds
-  # default value is 30s
-  connect_timeout=30
+<pre><code class="lang-text">      # connect timeout in seconds
+      # default value is 30s
+      connect_timeout=30
 
-  # network timeout in seconds
-  # default value is 30s
-  network_timeout=60
+      # network timeout in seconds
+      # default value is 30s
+      network_timeout=60
 
-  # the base path to store log files
-  # base_path=C:\Users\Admin\PycharmProjects\alumnus_circle\venv
-  # FastDFS&#x5BA2;&#x6237;&#x7AEF;&#x5B58;&#x653E;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;
-  base_path = /data/log/fastdfs/fastdfs.log
+      # the base path to store log files
+      # base_path=C:\Users\Admin\PycharmProjects\alumnus_circle\venv
+      # FastDFS&#x5BA2;&#x6237;&#x7AEF;&#x5B58;&#x653E;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;
+      base_path = /data/log/fastdfs/fastdfs.log
 
-  # tracker_server can ocur more than once, and tracker_server format is
-  #  &quot;host:port&quot;, host can be hostname or ip address
-  # &#x8FD0;&#x884C;tracker&#x670D;&#x52A1;&#x7684;&#x673A;&#x5668;ip
-  tracker_server = 172.26.6.129:22122
+      # tracker_server can ocur more than once, and tracker_server format is
+      #  &quot;host:port&quot;, host can be hostname or ip address
+      # &#x8FD0;&#x884C;tracker&#x670D;&#x52A1;&#x7684;&#x673A;&#x5668;ip
+      tracker_server = 172.26.6.129:22122
 
-  #standard log level as syslog, case insensitive, value list:
-  ### emerg for emergency
-  ### alert
-  ### crit for critical
-  ### error
-  ### warn for warning
-  ### notice
-  ### info
-  ### debug
-  log_level=info
+      #standard log level as syslog, case insensitive, value list:
+      ### emerg for emergency
+      ### alert
+      ### crit for critical
+      ### error
+      ### warn for warning
+      ### notice
+      ### info
+      ### debug
+      log_level=info
 
-  # if use connection pool
-  # default value is false
-  # since V4.05
-  use_connection_pool = false
+      # if use connection pool
+      # default value is false
+      # since V4.05
+      use_connection_pool = false
 
-  # connections whose the idle time exceeds this time will be closed
-  # unit: second
-  # default value is 3600
-  # since V4.05
-  connection_pool_max_idle_time = 3600
+      # connections whose the idle time exceeds this time will be closed
+      # unit: second
+      # default value is 3600
+      # since V4.05
+      connection_pool_max_idle_time = 3600
 
-  # if load FastDFS parameters from tracker server
-  # since V4.05
-  # default value is false
-  load_fdfs_parameters_from_tracker=false
+      # if load FastDFS parameters from tracker server
+      # since V4.05
+      # default value is false
+      load_fdfs_parameters_from_tracker=false
 
-  # if use storage ID instead of IP address
-  # same as tracker.conf
-  # valid only when load_fdfs_parameters_from_tracker is false
-  # default value is false
-  # since V4.05
-  use_storage_id = false
+      # if use storage ID instead of IP address
+      # same as tracker.conf
+      # valid only when load_fdfs_parameters_from_tracker is false
+      # default value is false
+      # since V4.05
+      use_storage_id = false
 
-  # specify storage ids filename, can use relative or absolute path
-  # same as tracker.conf
-  # valid only when load_fdfs_parameters_from_tracker is false
-  # since V4.05
-  storage_ids_filename = storage_ids.conf
+      # specify storage ids filename, can use relative or absolute path
+      # same as tracker.conf
+      # valid only when load_fdfs_parameters_from_tracker is false
+      # since V4.05
+      storage_ids_filename = storage_ids.conf
 
-  #HTTP settings
-  http.tracker_server_port=80
+      #HTTP settings
+      http.tracker_server_port=80
 
-  #use &quot;#include&quot; directive to include HTTP other settiongs
-  ##include http.conf
+      #use &quot;#include&quot; directive to include HTTP other settiongs
+      ##include http.conf
 </code></pre>
 </li>
 <li><p>fdfs-storage.py</p>
+<p>```python</p>
+<h1 id="encodingutf-8-"><em>*</em> encoding:utf-8 <em>*</em></h1>
+<p><strong>author</strong> = &apos;nzb&apos;
+<strong>datetime</strong> = &apos;2020/1/3 15:18&apos;</p>
+<p>from django.conf import settings
+from django.core.files.storage import Storage
+from django.utils.deconstruct import deconstructible
+from fdfs_client.client import Fdfs_client</p>
 </li>
 </ul>
-<pre><code class="lang-python"><span class="hljs-comment"># _*_ encoding:utf-8 _*_</span>
-__author__ = <span class="hljs-string">&apos;nzb&apos;</span>
-__datetime__ = <span class="hljs-string">&apos;2020/1/3 15:18&apos;</span>
+<p>  @deconstructible
+  class FastDFSStorage(Storage):
+      def <strong>init</strong>(self, base_url=None, client_conf=None):
+          &quot;&quot;&quot;
+          &#x521D;&#x59CB;&#x5316;
+          :param base_url: &#x7528;&#x4E8E;&#x6784;&#x9020;&#x56FE;&#x7247;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x4F7F;&#x7528;&#xFF0C;&#x56FE;&#x7247;&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;
+          :param client_conf: FastDFS&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;
+          &quot;&quot;&quot;
+          if base_url is None:
+              base_url = settings.FDFS_URL
+          self.base_url = base_url
+          if client_conf is None:
+              client_conf = settings.FDFS_CLIENT_CONF
+          self.client_conf = client_conf</p>
+<pre><code>  def _open(self, name, mode=&apos;rb&apos;):
+      &quot;&quot;&quot;
+      &#x7528;&#x4E0D;&#x5230;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x7701;&#x7565;
+      &quot;&quot;&quot;
+      pass
 
-<span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings
-<span class="hljs-keyword">from</span> django.core.files.storage <span class="hljs-keyword">import</span> Storage
-<span class="hljs-keyword">from</span> django.utils.deconstruct <span class="hljs-keyword">import</span> deconstructible
-<span class="hljs-keyword">from</span> fdfs_client.client <span class="hljs-keyword">import</span> Fdfs_client
+  def _save(self, name, content):
+      &quot;&quot;&quot;
+      &#x5728;FastDFS&#x4E2D;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;
+      :param name: &#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x540D;
+      :param content: &#x6587;&#x4EF6;&#x5185;&#x5BB9;
+      :return: &#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;FastDFS&#x7684;&#x6587;&#x4EF6;&#x540D;
+      &quot;&quot;&quot;
+      client = Fdfs_client(self.client_conf)
+      filename = content.name
+      filename_ext = filename.split(&apos;.&apos;)
+      if len(filename_ext) &lt;= 1:
+          filename_ext = &apos;&apos;  # &#x6CA1;&#x6709;&#x6269;&#x5C55;&#x540D;&#x7684;&#x60C5;&#x51B5;
+      else:
+          filename_ext = filename_ext[-1]
+      ret = client.upload_by_buffer(content.read(), file_ext_name=filename_ext)
+      if ret.get(&quot;Status&quot;) != &quot;Upload successed.&quot;:
+          raise Exception(&quot;upload file failed&quot;)
+      file_name = ret.get(&quot;Remote file_id&quot;)
+      file_name = file_name.replace(&apos;\\&apos;, &quot;/&quot;)
+      return file_name
 
+  def url(self, name):
+      &quot;&quot;&quot;
+      &#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;URL&#x8DEF;&#x5F84;
+      :param name: &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x540D;
+      :return: &#x5B8C;&#x6574;&#x7684;URL
+      &quot;&quot;&quot;
+      return self.base_url + name
 
+  def exists(self, name):
+      &quot;&quot;&quot;
+      &#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;FastDFS&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x89E3;&#x51B3;&#x6587;&#x4EF6;&#x7684;&#x91CD;&#x540D;&#x95EE;&#x9898;
+      &#x6240;&#x4EE5;&#x6B64;&#x5904;&#x8FD4;&#x56DE;False&#xFF0C;&#x544A;&#x8BC9;Django&#x4E0A;&#x4F20;&#x7684;&#x90FD;&#x662F;&#x65B0;&#x6587;&#x4EF6;
+      :param name:  &#x6587;&#x4EF6;&#x540D;
+      :return: False
+      &quot;&quot;&quot;
+      return False
+</code></pre><pre><code>
+- settings.py
+
+  ```python
+  # FastDFS
+  # django&#x6587;&#x4EF6;&#x5B58;&#x50A8;
+  DEFAULT_FILE_STORAGE = &apos;utils.fastdfs.fdfs_storage.FastDFSStorage&apos;
+  FDFS_URL = &apos;http://img.example.com/&apos;
+  FDFS_CLIENT_CONF = os.path.join(BASE_DIR, &apos;utils/fastdfs/client.conf&apos;)
+</code></pre><h2 id="&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;">&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;</h2>
+<ul>
+<li>helper.py</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6587;&#x4EF6;&#x91CD;&#x547D;&#x540D;</span>
 <span class="hljs-meta">@deconstructible</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FastDFSStorage</span><span class="hljs-params">(Storage)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, base_url=None, client_conf=None)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x521D;&#x59CB;&#x5316;
-        :param base_url: &#x7528;&#x4E8E;&#x6784;&#x9020;&#x56FE;&#x7247;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;&#x4F7F;&#x7528;&#xFF0C;&#x56FE;&#x7247;&#x670D;&#x52A1;&#x5668;&#x7684;&#x57DF;&#x540D;
-        :param client_conf: FastDFS&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;
-        &quot;&quot;&quot;</span>
-        <span class="hljs-keyword">if</span> base_url <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
-            base_url = settings.FDFS_URL
-        self.base_url = base_url
-        <span class="hljs-keyword">if</span> client_conf <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
-            client_conf = settings.FDFS_CLIENT_CONF
-        self.client_conf = client_conf
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RenameFile</span><span class="hljs-params">(object)</span>:</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_open</span><span class="hljs-params">(self, name, mode=<span class="hljs-string">&apos;rb&apos;</span>)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x7528;&#x4E0D;&#x5230;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x7701;&#x7565;
-        &quot;&quot;&quot;</span>
-        <span class="hljs-keyword">pass</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, upload_to)</span>:</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_save</span><span class="hljs-params">(self, name, content)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x5728;FastDFS&#x4E2D;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;
-        :param name: &#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x540D;
-        :param content: &#x6587;&#x4EF6;&#x5185;&#x5BB9;
-        :return: &#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;FastDFS&#x7684;&#x6587;&#x4EF6;&#x540D;
-        &quot;&quot;&quot;</span>
-        client = Fdfs_client(self.client_conf)
-        filename = content.name
+        self.upload_to = upload_to
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self, instance, filename: str, *args, **kwargs)</span> -&gt; str:</span>
         filename_ext = filename.split(<span class="hljs-string">&apos;.&apos;</span>)
         <span class="hljs-keyword">if</span> len(filename_ext) &lt;= <span class="hljs-number">1</span>:
             filename_ext = <span class="hljs-string">&apos;&apos;</span>  <span class="hljs-comment"># &#x6CA1;&#x6709;&#x6269;&#x5C55;&#x540D;&#x7684;&#x60C5;&#x51B5;</span>
         <span class="hljs-keyword">else</span>:
             filename_ext = filename_ext[<span class="hljs-number">-1</span>]
-        ret = client.upload_by_buffer(content.read(), file_ext_name=filename_ext)
-        <span class="hljs-keyword">if</span> ret.get(<span class="hljs-string">&quot;Status&quot;</span>) != <span class="hljs-string">&quot;Upload successed.&quot;</span>:
-            <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;upload file failed&quot;</span>)
-        file_name = ret.get(<span class="hljs-string">&quot;Remote file_id&quot;</span>)
-        file_name = file_name.replace(<span class="hljs-string">&apos;\\&apos;</span>, <span class="hljs-string">&quot;/&quot;</span>)
-        <span class="hljs-keyword">return</span> file_name
+        filename = <span class="hljs-string">&apos;{name}.{ext}&apos;</span>.format(name=uuid.uuid4().hex[:<span class="hljs-number">16</span>], ext=filename_ext)
+        upload_to = posixpath.join(self.upload_to, instance.stu.sno,
+                                   datetime.datetime.now().strftime(constants.UPLOAD_DIR_FORMAT))
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">url</span><span class="hljs-params">(self, name)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x7684;&#x5B8C;&#x6574;URL&#x8DEF;&#x5F84;
-        :param name: &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x540D;
-        :return: &#x5B8C;&#x6574;&#x7684;URL
-        &quot;&quot;&quot;</span>
-        <span class="hljs-keyword">return</span> self.base_url + name
-
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, name)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;FastDFS&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x89E3;&#x51B3;&#x6587;&#x4EF6;&#x7684;&#x91CD;&#x540D;&#x95EE;&#x9898;
-        &#x6240;&#x4EE5;&#x6B64;&#x5904;&#x8FD4;&#x56DE;False&#xFF0C;&#x544A;&#x8BC9;Django&#x4E0A;&#x4F20;&#x7684;&#x90FD;&#x662F;&#x65B0;&#x6587;&#x4EF6;
-        :param name:  &#x6587;&#x4EF6;&#x540D;
-        :return: False
-        &quot;&quot;&quot;</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+        <span class="hljs-keyword">return</span> posixpath.join(upload_to, filename)
 </code></pre>
 <ul>
-<li>settings.py<pre><code class="lang-python"><span class="hljs-comment"># FastDFS</span>
-<span class="hljs-comment"># django&#x6587;&#x4EF6;&#x5B58;&#x50A8;</span>
-DEFAULT_FILE_STORAGE = <span class="hljs-string">&apos;utils.fastdfs.fdfs_storage.FastDFSStorage&apos;</span>
-FDFS_URL = <span class="hljs-string">&apos;http://img.example.com/&apos;</span>
-FDFS_CLIENT_CONF = os.path.join(BASE_DIR, <span class="hljs-string">&apos;utils/fastdfs/client.conf&apos;</span>)
-</code></pre>
-</li>
+<li>models.py</li>
 </ul>
-<h2 id="&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;">&#x672C;&#x5730;&#x5B58;&#x50A8;&#x91CD;&#x547D;&#x540D;</h2>
-<ul>
-<li><p>helper.py
-```python</p>
-<h1 id="&#x6587;&#x4EF6;&#x91CD;&#x547D;&#x540D;">&#x6587;&#x4EF6;&#x91CD;&#x547D;&#x540D;</h1>
-<p>@deconstructible
-class RenameFile(object):</p>
-<p>  def <strong>init</strong>(self, upload_to):</p>
-<pre><code>  self.upload_to = upload_to
-</code></pre><p>  def <strong>call</strong>(self, instance, filename: str, <em>args, *</em>kwargs) -&gt; str:</p>
-<pre><code>  filename_ext = filename.split(&apos;.&apos;)
-  if len(filename_ext) &lt;= 1:
-      filename_ext = &apos;&apos;  # &#x6CA1;&#x6709;&#x6269;&#x5C55;&#x540D;&#x7684;&#x60C5;&#x51B5;
-  else:
-      filename_ext = filename_ext[-1]
-  filename = &apos;{name}.{ext}&apos;.format(name=uuid.uuid4().hex[:16], ext=filename_ext)
-  upload_to = posixpath.join(self.upload_to, instance.stu.sno, datetime.datetime.now().strftime(constants.UPLOAD_DIR_FORMAT))
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FeedBackFile</span><span class="hljs-params">(models.Model)</span>:</span>
+    file = models.FileField(verbose_name=<span class="hljs-string">&quot;&#x610F;&#x89C1;&#x53CD;&#x9988;&#x4E3E;&#x62A5;&#x9644;&#x4EF6;&quot;</span>, upload_to=RenameFile(<span class="hljs-string">&quot;upload/feedback/&quot;</span>))
+    create_time = models.DateTimeField(auto_now_add=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&quot;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&quot;</span>)
 
-  return posixpath.join(upload_to, filename)
-</code></pre></li>
-</ul>
-<pre><code>
-- models.py
-```python
-class FeedBackFile(models.Model):
-    file = models.FileField(verbose_name=&quot;&#x610F;&#x89C1;&#x53CD;&#x9988;&#x4E3E;&#x62A5;&#x9644;&#x4EF6;&quot;, upload_to=RenameFile(&quot;upload/feedback/&quot;))
-    create_time = models.DateTimeField(auto_now_add=True, verbose_name=&quot;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&quot;)
-
-    class Meta:
-        verbose_name = &quot;&#x610F;&#x89C1;&#x53CD;&#x9988;&#x9644;&#x4EF6;&quot;
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">&quot;&#x610F;&#x89C1;&#x53CD;&#x9988;&#x9644;&#x4EF6;&quot;</span>
         verbose_name_plural = verbose_name
-</code></pre><ul>
-<li>&#x5934;&#x90E8;&#x5224;&#x65AD;
-```python
-import struct</li>
+</code></pre>
+<ul>
+<li>&#x5934;&#x90E8;&#x5224;&#x65AD;</li>
 </ul>
-<h1 id="&#x5E38;&#x89C1;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x5934;">&#x5E38;&#x89C1;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x5934;</h1>
-<p>ALLOW_FILETYPE = {
-        &quot;FFD8FF&quot;: &quot;JPEG (jpg)&quot;,
-        &quot;89504E47&quot;: &quot;PNG (png)&quot;,
-        &quot;47494638&quot;: &quot;GIF (gif)&quot;,
-        &quot;49492A00&quot;: &quot;TIFF (tif)&quot;,
-        &quot;41433130&quot;: &quot;CAD (dwg)&quot;,
-        &quot;D0CF11E0&quot;: &quot;MS Word/Excel (xls.or.doc)&quot;,
-        &quot;255044462D312E&quot;: &quot;Adobe Acrobat (pdf)&quot;,
-        &quot;504B0304&quot;: &quot;ZIP Archive (zip)&quot;,
-        &quot;52617221&quot;: &quot;RAR Archive (rar)&quot;,
-        &quot;41564920&quot;: &quot;AVI (avi)&quot;
-}</p>
-<h1 id="&#x5B57;&#x8282;&#x7801;&#x8F6C;16&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;">&#x5B57;&#x8282;&#x7801;&#x8F6C;16&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;</h1>
-<p>def bytes2hex(bytes):
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> struct
+
+<span class="hljs-comment"># &#x5E38;&#x89C1;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x5934;</span>
+ALLOW_FILETYPE = {
+    <span class="hljs-string">&quot;FFD8FF&quot;</span>: <span class="hljs-string">&quot;JPEG (jpg)&quot;</span>,
+    <span class="hljs-string">&quot;89504E47&quot;</span>: <span class="hljs-string">&quot;PNG (png)&quot;</span>,
+    <span class="hljs-string">&quot;47494638&quot;</span>: <span class="hljs-string">&quot;GIF (gif)&quot;</span>,
+    <span class="hljs-string">&quot;49492A00&quot;</span>: <span class="hljs-string">&quot;TIFF (tif)&quot;</span>,
+    <span class="hljs-string">&quot;41433130&quot;</span>: <span class="hljs-string">&quot;CAD (dwg)&quot;</span>,
+    <span class="hljs-string">&quot;D0CF11E0&quot;</span>: <span class="hljs-string">&quot;MS Word/Excel (xls.or.doc)&quot;</span>,
+    <span class="hljs-string">&quot;255044462D312E&quot;</span>: <span class="hljs-string">&quot;Adobe Acrobat (pdf)&quot;</span>,
+    <span class="hljs-string">&quot;504B0304&quot;</span>: <span class="hljs-string">&quot;ZIP Archive (zip)&quot;</span>,
+    <span class="hljs-string">&quot;52617221&quot;</span>: <span class="hljs-string">&quot;RAR Archive (rar)&quot;</span>,
+    <span class="hljs-string">&quot;41564920&quot;</span>: <span class="hljs-string">&quot;AVI (avi)&quot;</span>
+}
+
+
+<span class="hljs-comment"># &#x5B57;&#x8282;&#x7801;&#x8F6C;16&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bytes2hex</span><span class="hljs-params">(bytes)</span>:</span>
     num = len(bytes)
-    hexstr = u&quot;&quot;
-    for i in range(num):
-        t = u&quot;%x&quot; % bytes[i]
-        if len(t) % 2:
-            hexstr += u&quot;0&quot;
+    hexstr = <span class="hljs-string">u&quot;&quot;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num):
+        t = <span class="hljs-string">u&quot;%x&quot;</span> % bytes[i]
+        <span class="hljs-keyword">if</span> len(t) % <span class="hljs-number">2</span>:
+            hexstr += <span class="hljs-string">u&quot;0&quot;</span>
         hexstr += t
-    return hexstr.upper()</p>
-<p>def validate_file(file):
-    &quot;&quot;&quot;
+    <span class="hljs-keyword">return</span> hexstr.upper()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">validate_file</span><span class="hljs-params">(file)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
     &#x6839;&#x636E;&#x6587;&#x4EF6;&#x5934;&#x5224;&#x65AD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;
     &#x6587;&#x4EF6;&#x540E;&#x7F00;&#x4E0D;&#x53EF;&#x4FE1;&#xFF0C;&#x5E76;&#x4E14;&#x540E;&#x7F00;&#x5728;linux&#x7CFB;&#x7EDF;&#x4E0B;&#x662F;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x8FC7;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5934;&#x90E8;&#x6807;&#x8BC6;&#x6765;&#x5224;&#x65AD;
     :param file:IO&#x6587;&#x4EF6;
     :return: xxx&#xFF1A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;unknown&#xFF1A;&#x672A;&#x77E5;&#x6587;&#x4EF6;&#xFF08;&#x4E0D;&#x652F;&#x6301;&#xFF09;
-    &quot;&quot;&quot;</p>
-<pre><code># binfile = open(file, &apos;rb&apos;)  # &#x5FC5;&#x9700;&#x4E8C;&#x5236;&#x5B57;&#x8BFB;&#x53D6;
-tl = ALLOW_FILETYPE
-ftype = &apos;unknown&apos;
-for hcode in tl.keys():
-    numOfBytes = len(hcode) / 2  # &#x9700;&#x8981;&#x8BFB;&#x591A;&#x5C11;&#x5B57;&#x8282;
-    file.seek(0)  # &#x6BCF;&#x6B21;&#x8BFB;&#x53D6;&#x90FD;&#x8981;&#x56DE;&#x5230;&#x6587;&#x4EF6;&#x5934;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x4E00;&#x76F4;&#x5F80;&#x540E;&#x8BFB;&#x53D6;
-    # hbytes = struct.unpack_from(&quot;B&quot; * numOfBytes, binfile.read(numOfBytes))  # &#x4E00;&#x4E2A; &quot;B&quot;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;
-    hbytes = struct.unpack_from(&quot;B&quot; * int(numOfBytes), file.read(int(numOfBytes)))  # &#x4E00;&#x4E2A; &quot;B&quot;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;
-    f_hcode = bytes2hex(hbytes)
-    if f_hcode == hcode:
-        ftype = tl[hcode]
-        break
-file.seek(0)        # &#x56DE;&#x5230;&#x6587;&#x4EF6;&#x5934;
-return ftype
-</code></pre><p>if <strong>name</strong> == &apos;<strong>main</strong>&apos;:
-    pass
-    ret = validate_file(&apos;./test.jpg&apos;)
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># binfile = open(file, &apos;rb&apos;)  # &#x5FC5;&#x9700;&#x4E8C;&#x5236;&#x5B57;&#x8BFB;&#x53D6;</span>
+    tl = ALLOW_FILETYPE
+    ftype = <span class="hljs-string">&apos;unknown&apos;</span>
+    <span class="hljs-keyword">for</span> hcode <span class="hljs-keyword">in</span> tl.keys():
+        numOfBytes = len(hcode) / <span class="hljs-number">2</span>  <span class="hljs-comment"># &#x9700;&#x8981;&#x8BFB;&#x591A;&#x5C11;&#x5B57;&#x8282;</span>
+        file.seek(<span class="hljs-number">0</span>)  <span class="hljs-comment"># &#x6BCF;&#x6B21;&#x8BFB;&#x53D6;&#x90FD;&#x8981;&#x56DE;&#x5230;&#x6587;&#x4EF6;&#x5934;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x4E00;&#x76F4;&#x5F80;&#x540E;&#x8BFB;&#x53D6;</span>
+        <span class="hljs-comment"># hbytes = struct.unpack_from(&quot;B&quot; * numOfBytes, binfile.read(numOfBytes))  # &#x4E00;&#x4E2A; &quot;B&quot;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;</span>
+        hbytes = struct.unpack_from(<span class="hljs-string">&quot;B&quot;</span> * int(numOfBytes), file.read(int(numOfBytes)))  <span class="hljs-comment"># &#x4E00;&#x4E2A; &quot;B&quot;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;</span>
+        f_hcode = bytes2hex(hbytes)
+        <span class="hljs-keyword">if</span> f_hcode == hcode:
+            ftype = tl[hcode]
+            <span class="hljs-keyword">break</span>
+    file.seek(<span class="hljs-number">0</span>)  <span class="hljs-comment"># &#x56DE;&#x5230;&#x6587;&#x4EF6;&#x5934;</span>
+    <span class="hljs-keyword">return</span> ftype
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">pass</span>
+    ret = validate_file(<span class="hljs-string">&apos;./test.jpg&apos;</span>)
     print(ret)
-```</p>
+</code></pre>
 
                                 
                                 </section>
@@ -3820,7 +3826,7 @@ return ftype
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"存储类重写","level":"3.3.2.4","depth":3,"next":{"title":"序列化相关","level":"3.3.2.5","depth":3,"path":"Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","ref":"./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","articles":[]},"previous":{"title":"过滤相关","level":"3.3.2.3","depth":3,"path":"Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","ref":"./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md","mtime":"2021-07-20T02:04:05.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-05T09:47:53.828Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"存储类重写","level":"3.3.2.4","depth":3,"next":{"title":"序列化相关","level":"3.3.2.5","depth":3,"path":"Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","ref":"./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md","articles":[]},"previous":{"title":"过滤相关","level":"3.3.2.3","depth":3,"path":"Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","ref":"./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md","mtime":"2022-03-09T02:38:29.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-09T02:42:38.799Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
