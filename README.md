@@ -169,6 +169,7 @@
 - [文件和目录操作](./GoLang/GoLang基础/18-文件和目录操作.md)
 
 ### [7daysGoLang](GoLang/7daysGoLang)
+
 - [目录](GoLang/7daysGoLang/README.md)
 - 7天用Go从零实现Web框架 - Gee
     - 第一天：[前置知识(http.Handler接口)](./GoLang/7daysGoLang/gee-web/doc/gee-day1.md)
@@ -278,12 +279,19 @@
 - 修改远程仓库地址 / 克隆版本库到本地 / 更新本地版本库 / 基于版本库开发自己的版本库 / 添加pull request / 添加贡献者
 
 ### [Nginx](Utils/Nginx/Nginx基础.md)
+
 - [基础](Utils/Nginx/Nginx基础.md)
 - [进阶](Utils/Nginx/Nginx进阶.md)
 
 ### [面试](InterviewPreparation/README.md)
-- [技术面试必备基础知识](InterviewPreparation/README.md)：[操作系统](InterviewPreparation/TechnicalInterviews/01-操作系统.md) | [网络](InterviewPreparation/TechnicalInterviews/02-网络.md) | [数据库](InterviewPreparation/TechnicalInterviews/03-数据库.md) | [系统设计](InterviewPreparation/TechnicalInterviews/04-系统设计.md)
-- 面试题：[2020](InterviewPreparation/ClassicQuestion/20201027/README.md)
+
+- [技术面试必备基础知识](InterviewPreparation/TechnicalInterviews/TechnicalInterviews.md)
+    - [操作系统](InterviewPreparation/TechnicalInterviews/01-操作系统.md)
+    - [网络](InterviewPreparation/TechnicalInterviews/02-网络.md)
+    - [数据库](InterviewPreparation/TechnicalInterviews/03-数据库.md)
+    - [系统设计](InterviewPreparation/TechnicalInterviews/04-系统设计.md)
+- 面试题
+    - [2020](InterviewPreparation/ClassicQuestion/20201027/README.md)
 
 ## [理财](FinancialManagement)
 

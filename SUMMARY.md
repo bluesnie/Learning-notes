@@ -253,12 +253,15 @@
     - [Nginx基础](Utils/Nginx/Nginx基础.md)
     - [Nginx进阶](Utils/Nginx/Nginx进阶.md)
 
-## [面试](InterviewPreparation/README.md)
-
-- [技术面试必备基础知识](InterviewPreparation/README.md)：[操作系统](InterviewPreparation/TechnicalInterviews/01-操作系统.md)
-  | [网络](InterviewPreparation/TechnicalInterviews/02-网络.md) | [数据库](InterviewPreparation/TechnicalInterviews/03-数据库.md)
-  | [系统设计](InterviewPreparation/TechnicalInterviews/04-系统设计.md)
-- 面试题：[2020](InterviewPreparation/ClassicQuestion/20201027/README.md)
+## 面试
+- [目录](InterviewPreparation/README.md)
+- [技术面试必备基础知识](InterviewPreparation/TechnicalInterviews/TechnicalInterviews.md)
+  - [操作系统](InterviewPreparation/TechnicalInterviews/01-操作系统.md)
+  - [网络](InterviewPreparation/TechnicalInterviews/02-网络.md)
+  - [数据库](InterviewPreparation/TechnicalInterviews/03-数据库.md)
+  - [系统设计](InterviewPreparation/TechnicalInterviews/04-系统设计.md)
+- 面试题
+  - [2020](InterviewPreparation/ClassicQuestion/20201027/README.md)
 
 ## [理财](FinancialManagement)
 
