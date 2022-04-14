@@ -1,0 +1,4929 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>单元测试unittest进阶 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-单元测试unittest集成篇.html" />
+    
+    
+    <link rel="prev" href="01-单元测试unittest基础.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">算法</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Algorithm/算法图解.pdf">
+            
+                <span>
+            
+                    
+                    算法图解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Linux</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../Linux/Linux.html">
+            
+                <a href="../../../Linux/Linux.html">
+            
+                    
+                    入门基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../Linux/基础/01-Linux系统简介.html">
+            
+                <a href="../../../Linux/基础/01-Linux系统简介.html">
+            
+                    
+                    Linux系统简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../Linux/基础/02-Linux系统安装.html">
+            
+                <a href="../../../Linux/基础/02-Linux系统安装.html">
+            
+                    
+                    Linux系统安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../../Linux/基础/03-Linux使用注意事项-新手必看.html">
+            
+                <a href="../../../Linux/基础/03-Linux使用注意事项-新手必看.html">
+            
+                    
+                    Linux使用注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../../Linux/基础/04-Linux各目录的作用.html">
+            
+                <a href="../../../Linux/基础/04-Linux各目录的作用.html">
+            
+                    
+                    Linux各目录的作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../../Linux/基础/05-服务器注意事项.html">
+            
+                <a href="../../../Linux/基础/05-服务器注意事项.html">
+            
+                    
+                    服务器注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../../Linux/基础/06-Linux常用命令.html">
+            
+                <a href="../../../Linux/基础/06-Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../../Linux/基础/07-强大的文本编辑器Vim.html">
+            
+                <a href="../../../Linux/基础/07-强大的文本编辑器Vim.html">
+            
+                    
+                    强大的文本编辑器Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../../Linux/基础/08-Linux软件包管理.html">
+            
+                <a href="../../../Linux/基础/08-Linux软件包管理.html">
+            
+                    
+                    Linux软件包管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../../Linux/基础/09-Linux中的用户管理.html">
+            
+                <a href="../../../Linux/基础/09-Linux中的用户管理.html">
+            
+                    
+                    Linux中的用户管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../../Linux/基础/10-Linux权限管理.html">
+            
+                <a href="../../../Linux/基础/10-Linux权限管理.html">
+            
+                    
+                    Linux权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../../Linux/基础/11-Linux的文件系统管理.html">
+            
+                <a href="../../../Linux/基础/11-Linux的文件系统管理.html">
+            
+                    
+                    Linux的文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../../../Linux/基础/12-Shell.html">
+            
+                <a href="../../../Linux/基础/12-Shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../../../Linux/基础/13-Linux的服务管理.html">
+            
+                <a href="../../../Linux/基础/13-Linux的服务管理.html">
+            
+                    
+                    Linux的服务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="../../../Linux/基础/14-Linux系统管理.html">
+            
+                <a href="../../../Linux/基础/14-Linux系统管理.html">
+            
+                    
+                    Linux系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="../../../Linux/基础/15-Linux日志管理.html">
+            
+                <a href="../../../Linux/基础/15-Linux日志管理.html">
+            
+                    
+                    Linux日志管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="../../../Linux/基础/16-Linux启动管理.html">
+            
+                <a href="../../../Linux/基础/16-Linux启动管理.html">
+            
+                    
+                    Linux启动管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="../../../Linux/基础/17-Linux备份与恢复.html">
+            
+                <a href="../../../Linux/基础/17-Linux备份与恢复.html">
+            
+                    
+                    Linux备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Python</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Python语言基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../PEP8.html">
+            
+                <a href="../../PEP8.html">
+            
+                    
+                    Python PEP8编码规范 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../00-初识Python.html">
+            
+                <a href="../00-初识Python.html">
+            
+                    
+                    初识Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../01-语言元素.html">
+            
+                <a href="../01-语言元素.html">
+            
+                    
+                    语言元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../02-分支结构.html">
+            
+                <a href="../02-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../03-循环结构.html">
+            
+                <a href="../03-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../04-练习.html">
+            
+                <a href="../04-练习.html">
+            
+                    
+                    构造程序逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../05-函数和模块的使用.html">
+            
+                <a href="../05-函数和模块的使用.html">
+            
+                    
+                    函数和模块的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../06-字符串和常用数据结构.html">
+            
+                <a href="../06-字符串和常用数据结构.html">
+            
+                    
+                    字符串和常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../07-面向对象编程基础.html">
+            
+                <a href="../07-面向对象编程基础.html">
+            
+                    
+                    面向对象编程基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../08-面向对象编程进阶.html">
+            
+                <a href="../08-面向对象编程进阶.html">
+            
+                    
+                    面向对象编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../09-图形用户界面和游戏开发.html">
+            
+                <a href="../09-图形用户界面和游戏开发.html">
+            
+                    
+                    图形用户界面和游戏开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../10-文件和异常.html">
+            
+                <a href="../10-文件和异常.html">
+            
+                    
+                    文件和异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../11-字符串和正则表达式.html">
+            
+                <a href="../11-字符串和正则表达式.html">
+            
+                    
+                    字符串和正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../12-进程和线程.html">
+            
+                <a href="../12-进程和线程.html">
+            
+                    
+                    进程和线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../13-网络编程入门.html">
+            
+                <a href="../13-网络编程入门.html">
+            
+                    
+                    网络编程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../14-网络应用开发.html">
+            
+                <a href="../14-网络应用开发.html">
+            
+                    
+                    网络应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../15-图像和办公文档处理.html">
+            
+                <a href="../15-图像和办公文档处理.html">
+            
+                    
+                    图像和文档处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../16-logging日志模块.html">
+            
+                <a href="../16-logging日志模块.html">
+            
+                    
+                    logging日志模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" >
+            
+                <span>
+            
+                    
+                    单元测试unittest
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.19.1" data-path="01-单元测试unittest基础.html">
+            
+                <a href="01-单元测试unittest基础.html">
+            
+                    
+                    单元测试unittest基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.19.2" data-path="02-单元测试unittest进阶.html">
+            
+                <a href="02-单元测试unittest进阶.html">
+            
+                    
+                    单元测试unittest进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19.3" data-path="03-单元测试unittest集成篇.html">
+            
+                <a href="03-单元测试unittest集成篇.html">
+            
+                    
+                    单元测试unittest集成篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Python语言进阶
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../Python语言进阶/01-常用数据结构和算法.html">
+            
+                <a href="../../Python语言进阶/01-常用数据结构和算法.html">
+            
+                    
+                    常用数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../Python语言进阶/02-函数的高级用法.html">
+            
+                <a href="../../Python语言进阶/02-函数的高级用法.html">
+            
+                    
+                    函数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../Python语言进阶/03-面向对象高级知识.html">
+            
+                <a href="../../Python语言进阶/03-面向对象高级知识.html">
+            
+                    
+                    面向对象高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../Python语言进阶/04-迭代器和生成器.html">
+            
+                <a href="../../Python语言进阶/04-迭代器和生成器.html">
+            
+                    
+                    迭代器和生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../Python语言进阶/05-并发和异步编程.html">
+            
+                <a href="../../Python语言进阶/05-并发和异步编程.html">
+            
+                    
+                    并发和异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../Python语言进阶/06-asyncio异步编程.html">
+            
+                <a href="../../Python语言进阶/06-asyncio异步编程.html">
+            
+                    
+                    asynico异步编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Python 第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../第三方库/Django/01-快速上手.html">
+            
+                <a href="../../第三方库/Django/01-快速上手.html">
+            
+                    
+                    快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.2" data-path="../../第三方库/Django/02-深入模型.html">
+            
+                <a href="../../第三方库/Django/02-深入模型.html">
+            
+                    
+                    深入模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.3" data-path="../../第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                <a href="../../第三方库/Django/03-静态资源和Ajax请求.html">
+            
+                    
+                    静态资源和Ajax请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.4" data-path="../../第三方库/Django/04-Django模板系统.html">
+            
+                <a href="../../第三方库/Django/04-Django模板系统.html">
+            
+                    
+                    Django模板系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.5" data-path="../../第三方库/Django/05-Django的View.html">
+            
+                <a href="../../第三方库/Django/05-Django的View.html">
+            
+                    
+                    Django的View(视图)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.6" data-path="../../第三方库/Django/06-Django的路由系统.html">
+            
+                <a href="../../第三方库/Django/06-Django的路由系统.html">
+            
+                    
+                    Django的路由系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.7" data-path="../../第三方库/Django/07-Django-ORM相关操作.html">
+            
+                <a href="../../第三方库/Django/07-Django-ORM相关操作.html">
+            
+                    
+                    Django ORM相关操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.8" data-path="../../第三方库/Django/08-Cookie、Session和分页.html">
+            
+                <a href="../../第三方库/Django/08-Cookie、Session和分页.html">
+            
+                    
+                    Cookie、Session和分页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.9" data-path="../../第三方库/Django/09-Form和ModelForm组件.html">
+            
+                <a href="../../第三方库/Django/09-Form和ModelForm组件.html">
+            
+                    
+                    Form、ModelForm组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.10" data-path="../../第三方库/Django/10-中间件.html">
+            
+                <a href="../../第三方库/Django/10-中间件.html">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.11" data-path="../../第三方库/Django/Django-REST-framework.html">
+            
+                <a href="../../第三方库/Django/Django-REST-framework.html">
+            
+                    
+                    Django-REST-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" >
+            
+                <span>
+            
+                    
+                    Django项目开发经验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/02-Django-restframework登录相关.html">
+            
+                    
+                    登录相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.html">
+            
+                    
+                    异常处理手柄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.html">
+            
+                    
+                    过滤相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.4" data-path="../../第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.html">
+            
+                    
+                    存储类重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.5" data-path="../../第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/05-Django-restframework序列化相关.html">
+            
+                    
+                    序列化相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.6" data-path="../../第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/06-api接口自动化测试.html">
+            
+                    
+                    自动化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.7" data-path="../../第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                <a href="../../第三方库/Django/Django开发经验/07-为接口加速加缓存.html">
+            
+                    
+                    接口加速缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" >
+            
+                <span>
+            
+                    
+                    PyQt5
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.3.1" data-path="../../第三方库/PyQt5/">
+            
+                <a href="../../第三方库/PyQt5/">
+            
+                    
+                    导航
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.2" data-path="../../第三方库/PyQt5/01-窗口.html">
+            
+                <a href="../../第三方库/PyQt5/01-窗口.html">
+            
+                    
+                    窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.3" data-path="../../第三方库/PyQt5/02-按钮.html">
+            
+                <a href="../../第三方库/PyQt5/02-按钮.html">
+            
+                    
+                    按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.4" data-path="../../第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                <a href="../../第三方库/PyQt5/03-垂直布局和水平布局.html">
+            
+                    
+                    垂直布局和水平布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.5" data-path="../../第三方库/PyQt5/04-栅格布局.html">
+            
+                <a href="../../第三方库/PyQt5/04-栅格布局.html">
+            
+                    
+                    栅格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.6" data-path="../../第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                <a href="../../第三方库/PyQt5/05-布局添加标签Label.html">
+            
+                    
+                    布局添加标签Label
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.7" data-path="../../第三方库/PyQt5/06-布局添加背景图.html">
+            
+                <a href="../../第三方库/PyQt5/06-布局添加背景图.html">
+            
+                    
+                    布局添加背景图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.8" data-path="../../第三方库/PyQt5/07-单选框.html">
+            
+                <a href="../../第三方库/PyQt5/07-单选框.html">
+            
+                    
+                    单选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.9" data-path="../../第三方库/PyQt5/08-复选框.html">
+            
+                <a href="../../第三方库/PyQt5/08-复选框.html">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.10" data-path="../../第三方库/PyQt5/09-键盘提示.html">
+            
+                <a href="../../第三方库/PyQt5/09-键盘提示.html">
+            
+                    
+                    键盘提示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.11" data-path="../../第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                <a href="../../第三方库/PyQt5/10-行编辑lineedit.html">
+            
+                    
+                    行编辑Lineedit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.12" data-path="../../第三方库/PyQt5/11-按钮组.html">
+            
+                <a href="../../第三方库/PyQt5/11-按钮组.html">
+            
+                    
+                    按钮组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.13" data-path="../../第三方库/PyQt5/12-布局组.html">
+            
+                <a href="../../第三方库/PyQt5/12-布局组.html">
+            
+                    
+                    布局组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.14" data-path="../../第三方库/PyQt5/13-无边框窗口.html">
+            
+                <a href="../../第三方库/PyQt5/13-无边框窗口.html">
+            
+                    
+                    无边框窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.15" data-path="../../第三方库/PyQt5/14-框架qframe.html">
+            
+                <a href="../../第三方库/PyQt5/14-框架qframe.html">
+            
+                    
+                    框架Qframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.16" data-path="../../第三方库/PyQt5/15-分离器.html">
+            
+                <a href="../../第三方库/PyQt5/15-分离器.html">
+            
+                    
+                    分离器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.17" data-path="../../第三方库/PyQt5/16-滑动条.html">
+            
+                <a href="../../第三方库/PyQt5/16-滑动条.html">
+            
+                    
+                    滑动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.18" data-path="../../第三方库/PyQt5/17-滚动条.html">
+            
+                <a href="../../第三方库/PyQt5/17-滚动条.html">
+            
+                    
+                    滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.19" data-path="../../第三方库/PyQt5/18-刻度盘.html">
+            
+                <a href="../../第三方库/PyQt5/18-刻度盘.html">
+            
+                    
+                    刻度盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.20" data-path="../../第三方库/PyQt5/19-spinbox.html">
+            
+                <a href="../../第三方库/PyQt5/19-spinbox.html">
+            
+                    
+                    Spinbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.21" data-path="../../第三方库/PyQt5/20-生成随机数.html">
+            
+                <a href="../../第三方库/PyQt5/20-生成随机数.html">
+            
+                    
+                    生成随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.22" data-path="../../第三方库/PyQt5/21-进度条.html">
+            
+                <a href="../../第三方库/PyQt5/21-进度条.html">
+            
+                    
+                    进度条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.23" data-path="../../第三方库/PyQt5/22-工具框.html">
+            
+                <a href="../../第三方库/PyQt5/22-工具框.html">
+            
+                    
+                    工具框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.24" data-path="../../第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                <a href="../../第三方库/PyQt5/23-菜单栏工具栏.html">
+            
+                    
+                    菜单栏工具栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.25" data-path="../../第三方库/PyQt5/24-文档编辑框.html">
+            
+                <a href="../../第三方库/PyQt5/24-文档编辑框.html">
+            
+                    
+                    文档编辑框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.26" data-path="../../第三方库/PyQt5/25-字体文本框.html">
+            
+                <a href="../../第三方库/PyQt5/25-字体文本框.html">
+            
+                    
+                    字体文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.27" data-path="../../第三方库/PyQt5/26-颜色文本框.html">
+            
+                <a href="../../第三方库/PyQt5/26-颜色文本框.html">
+            
+                    
+                    颜色文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.28" data-path="../../第三方库/PyQt5/27-打印（文本框）.html">
+            
+                <a href="../../第三方库/PyQt5/27-打印（文本框）.html">
+            
+                    
+                    打印（文本框）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.29" data-path="../../第三方库/PyQt5/28-打印预览.html">
+            
+                <a href="../../第三方库/PyQt5/28-打印预览.html">
+            
+                    
+                    打印预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.30" data-path="../../第三方库/PyQt5/29-打印PDF.html">
+            
+                <a href="../../第三方库/PyQt5/29-打印PDF.html">
+            
+                    
+                    打印PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.31" data-path="../../第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                <a href="../../第三方库/PyQt5/30-消息框提示框（带选择的）.html">
+            
+                    
+                    消息框提示框（带选择的）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.32" data-path="../../第三方库/PyQt5/31-右键菜单.html">
+            
+                <a href="../../第三方库/PyQt5/31-右键菜单.html">
+            
+                    
+                    右键菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.33" data-path="../../第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                <a href="../../第三方库/PyQt5/32-选项卡（单选下拉框和多选）.html">
+            
+                    
+                    选项卡（单选下拉框和多选）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.34" data-path="../../第三方库/PyQt5/33-stack(堆叠">
+            
+                <span>
+            
+                    
+                    Stack(堆叠)小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.35" data-path="../../第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                <a href="../../第三方库/PyQt5/34-可停靠的窗口小部件.html">
+            
+                    
+                    可停靠的窗口小部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.36" data-path="../../第三方库/PyQt5/35-日历.html">
+            
+                <a href="../../第三方库/PyQt5/35-日历.html">
+            
+                    
+                    日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.37" data-path="../../第三方库/PyQt5/36-单选下拉框.html">
+            
+                <a href="../../第三方库/PyQt5/36-单选下拉框.html">
+            
+                    
+                    单选下拉框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.38" data-path="../../第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                <a href="../../第三方库/PyQt5/37-首字符模糊填充（查询）.html">
+            
+                    
+                    首字符模糊填充（查询）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.39" data-path="../../第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                <a href="../../第三方库/PyQt5/38-打开更多的窗口.html">
+            
+                    
+                    打开更多的窗口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.40" data-path="../../第三方库/PyQt5/39-时间编辑.html">
+            
+                <a href="../../第三方库/PyQt5/39-时间编辑.html">
+            
+                    
+                    时间编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.41" data-path="../../第三方库/PyQt5/40-列表部件.html">
+            
+                <a href="../../第三方库/PyQt5/40-列表部件.html">
+            
+                    
+                    列表部件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3.42" data-path="../../第三方库/PyQt5/41-列表部件小示例.html">
+            
+                <a href="../../第三方库/PyQt5/41-列表部件小示例.html">
+            
+                    
+                    列表部件小示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" >
+            
+                <span>
+            
+                    
+                    PySide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.4.1" data-path="../../第三方库/PySide/01-Qt简介.html">
+            
+                <a href="../../第三方库/PySide/01-Qt简介.html">
+            
+                    
+                    Qt简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.2" data-path="../../第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                <a href="../../第三方库/PySide/02-界面设计师QtDesigner.html">
+            
+                    
+                    界面设计师QtDesigner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.3" data-path="../../第三方库/PySide/03-发布程序.html">
+            
+                <a href="../../第三方库/PySide/03-发布程序.html">
+            
+                    
+                    发布程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.4" data-path="../../第三方库/PySide/04-常用控件1.html">
+            
+                <a href="../../第三方库/PySide/04-常用控件1.html">
+            
+                    
+                    常用控件1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.5" data-path="../../第三方库/PySide/05-常用控件2.html">
+            
+                <a href="../../第三方库/PySide/05-常用控件2.html">
+            
+                    
+                    常用控件2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.6" data-path="../../第三方库/PySide/06-常用控件3.html">
+            
+                <a href="../../第三方库/PySide/06-常用控件3.html">
+            
+                    
+                    常用控件3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.7" data-path="../../第三方库/PySide/07-常用控件4.html">
+            
+                <a href="../../第三方库/PySide/07-常用控件4.html">
+            
+                    
+                    常用控件4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" >
+            
+                <span>
+            
+                    
+                    OpenCV
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.5.1" data-path="../../第三方库/OpenCV/01-图像基本操作.html">
+            
+                <a href="../../第三方库/OpenCV/01-图像基本操作.html">
+            
+                    
+                    图像基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.2" data-path="../../第三方库/OpenCV/02-图像处理.html">
+            
+                <a href="../../第三方库/OpenCV/02-图像处理.html">
+            
+                    
+                    图像处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">GoLang</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    GoLang简明教程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../../GoLang/Go简明教程/01-Go语言简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/01-Go语言简明教程.html">
+            
+                    
+                    Go语言简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../../GoLang/Go简明教程/02-Go-Gin-简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/02-Go-Gin-简明教程.html">
+            
+                    
+                    Gin-简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../../GoLang/Go简明教程/03-Go2新特性简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/03-Go2新特性简明教程.html">
+            
+                    
+                    Go2新特性简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../../GoLang/Go简明教程/04-Go-Protobuf简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/04-Go-Protobuf简明教程.html">
+            
+                    
+                    Protobuf简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../../GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/05-Go-RPC&TLS鉴权简明教程.html">
+            
+                    
+                    RPC&TLS鉴权简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../../GoLang/Go简明教程/06-Go-WebAssembly简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/06-Go-WebAssembly简明教程.html">
+            
+                    
+                    WebAssembly(Wasm)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../../../GoLang/Go简明教程/07-Go-Test单元测试简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/07-Go-Test单元测试简明教程.html">
+            
+                    
+                    Test单元测试简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../../../GoLang/Go简明教程/08-Go-Mock简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/08-Go-Mock简明教程.html">
+            
+                    
+                    Mock(gomock)简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../../../GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/09-Go-Mmap-文件内存映射简明教程.html">
+            
+                    
+                    Mmap-文件内存映射简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../../../GoLang/Go简明教程/10-Go-Context并发编程简明教程.html">
+            
+                <a href="../../../GoLang/Go简明教程/10-Go-Context并发编程简明教程.html">
+            
+                    
+                    Context并发编程简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    GoLang基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                <a href="../../../GoLang/GoLang基础/01-GoLang发展史.html">
+            
+                    
+                    GoLang发展史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../../../GoLang/GoLang基础/02-打印输出.html">
+            
+                <a href="../../../GoLang/GoLang基础/02-打印输出.html">
+            
+                    
+                    打印输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                <a href="../../../GoLang/GoLang基础/03-变量和常量.html">
+            
+                    
+                    变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../../../GoLang/GoLang基础/04-数据类型.html">
+            
+                <a href="../../../GoLang/GoLang基础/04-数据类型.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../../../GoLang/GoLang基础/05-运算符.html">
+            
+                <a href="../../../GoLang/GoLang基础/05-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../../../GoLang/GoLang基础/06-流程控制.html">
+            
+                <a href="../../../GoLang/GoLang基础/06-流程控制.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="../../../GoLang/GoLang基础/07-数组.html">
+            
+                <a href="../../../GoLang/GoLang基础/07-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.8" data-path="../../../GoLang/GoLang基础/08-切片.html">
+            
+                <a href="../../../GoLang/GoLang基础/08-切片.html">
+            
+                    
+                    切片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.9" data-path="../../../GoLang/GoLang基础/09-map.html">
+            
+                <a href="../../../GoLang/GoLang基础/09-map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.10" data-path="../../../GoLang/GoLang基础/10-函数.html">
+            
+                <a href="../../../GoLang/GoLang基础/10-函数.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.11" data-path="../../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                <a href="../../../GoLang/GoLang基础/11-time包日期函数.html">
+            
+                    
+                    time包日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.12" data-path="../../../GoLang/GoLang基础/12-指针.html">
+            
+                <a href="../../../GoLang/GoLang基础/12-指针.html">
+            
+                    
+                    指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.13" data-path="../../../GoLang/GoLang基础/13-结构体.html">
+            
+                <a href="../../../GoLang/GoLang基础/13-结构体.html">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.14" data-path="../../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                <a href="../../../GoLang/GoLang基础/14-GoMod及包.html">
+            
+                    
+                    GoMod及包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.15" data-path="../../../GoLang/GoLang基础/15-接口.html">
+            
+                <a href="../../../GoLang/GoLang基础/15-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.16" data-path="../../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                <a href="../../../GoLang/GoLang基础/16-goroutine实现并行和并发.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.17" data-path="../../../GoLang/GoLang基础/17-反射.html">
+            
+                <a href="../../../GoLang/GoLang基础/17-反射.html">
+            
+                    
+                    反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.18" data-path="../../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                <a href="../../../GoLang/GoLang基础/18-文件和目录操作.html">
+            
+                    
+                    文件和目录操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    7daysGoLang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../../GoLang/7daysGoLang/">
+            
+                <a href="../../../GoLang/7daysGoLang/">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" >
+            
+                <span>
+            
+                    
+                    7天用Go从零实现Web框架 - Gee
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.2.1" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day1.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day1.html">
+            
+                    
+                    前置知识(http.Handler接口)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.2" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day2.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day2.html">
+            
+                    
+                    上下文设计(Context)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.3" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day3.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day3.html">
+            
+                    
+                    Trie树路由(Router)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.4" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day4.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day4.html">
+            
+                    
+                    分组控制(Group)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.5" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day5.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day5.html">
+            
+                    
+                    中间件(Middleware)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.6" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day6.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day6.html">
+            
+                    
+                    HTML模板(Template)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.7" data-path="../../../GoLang/7daysGoLang/gee-web/doc/gee-day7.html">
+            
+                <a href="../../../GoLang/7daysGoLang/gee-web/doc/gee-day7.html">
+            
+                    
+                    错误恢复(Panic Recover)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库基础和进阶</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../../Database/MySQL/计算机二级MySQL.html">
+            
+                <a href="../../../Database/MySQL/计算机二级MySQL.html">
+            
+                    
+                    计算机二级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../../Database/MySQL/数据库三大范式.html">
+            
+                <a href="../../../Database/MySQL/数据库三大范式.html">
+            
+                    
+                    数据库三大范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../../Database/MySQL/主从复制.html">
+            
+                <a href="../../../Database/MySQL/主从复制.html">
+            
+                    
+                    MySQL主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    NoSQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../../Database/NoSQL/01-NoSql入门.html">
+            
+                <a href="../../../Database/NoSQL/01-NoSql入门.html">
+            
+                    
+                    NoSql入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    Redeis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="../../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                <a href="../../../Database/NoSQL/02-Redis安装与配置文件.html">
+            
+                    
+                    Redis安装与配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="../../../Database/NoSQL/03-Redis基础.html">
+            
+                <a href="../../../Database/NoSQL/03-Redis基础.html">
+            
+                    
+                    Redis基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据分析</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    数学基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../../MachineLearning/数学基础/高等数学.pdf">
+            
+                <span>
+            
+                    
+                    高等数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../../MachineLearning/数学基础/概率论.pdf">
+            
+                <span>
+            
+                    
+                    概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../../MachineLearning/数学基础/微积分.pdf">
+            
+                <span>
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../../MachineLearning/数学基础/SVD.pdf">
+            
+                <span>
+            
+                    
+                    SVD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../../MachineLearning/数学基础/似然函数.pdf">
+            
+                <span>
+            
+                    
+                    似然函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../../MachineLearning/数学基础/后验概率估计.pdf">
+            
+                <span>
+            
+                    
+                    后验概率估计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../../../MachineLearning/数学基础/拉格朗日乘子法.pdf">
+            
+                <span>
+            
+                    
+                    拉格朗日乘子法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../../../MachineLearning/数学基础/核函数.pdf">
+            
+                <span>
+            
+                    
+                    核函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../../../MachineLearning/数学基础/梯度.pdf">
+            
+                <span>
+            
+                    
+                    梯度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../../../MachineLearning/数学基础/概率分布与概率密度.pdf">
+            
+                <span>
+            
+                    
+                    概率分布与概率密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../../../MachineLearning/数学基础/泰勒公式.pdf">
+            
+                <span>
+            
+                    
+                    泰勒公式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.12" data-path="../../../MachineLearning/数学基础/激活函数.pdf">
+            
+                <span>
+            
+                    
+                    激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.13" data-path="../../../MachineLearning/数学基础/熵.pdf">
+            
+                <span>
+            
+                    
+                    熵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.14" data-path="../../../MachineLearning/数学基础/特征值与特征向量.pdf">
+            
+                <span>
+            
+                    
+                    特征值与特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.15" data-path="../../../MachineLearning/数学基础/矩阵.pdf">
+            
+                <span>
+            
+                    
+                    矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    数据分析库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/numpy基础.html">
+            
+                    
+                    numpy基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.html">
+            
+                    
+                    pandas基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.html">
+            
+                    
+                    pandas连接合并追加
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                <a href="../../../MachineLearning/MatplotlibNumpyPandas/matplotlib基础.html">
+            
+                    
+                    matplotlib基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Web前端</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../../Web/Web前端概述.html">
+            
+                <a href="../../../Web/Web前端概述.html">
+            
+                    
+                    Web前端入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../../Web/HTML5/HTML5.html">
+            
+                <a href="../../../Web/HTML5/HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../../Web/CSS/CSS.html">
+            
+                <a href="../../../Web/CSS/CSS.html">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    JavaScript
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="../../../Web/JavaScript/JavaScript基础.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript基础.html">
+            
+                    
+                    JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" data-path="../../../Web/JavaScript/JavaScript对象.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript对象.html">
+            
+                    
+                    JavaScript对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" data-path="../../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript瀑布流.html">
+            
+                    
+                    JavaScript瀑布流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.4" data-path="../../../Web/JavaScript/JavaScript面向对象.html">
+            
+                <a href="../../../Web/JavaScript/JavaScript面向对象.html">
+            
+                    
+                    JavaScript面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.5.1" data-path="../../../Web/JavaScript/框架/Promise.html">
+            
+                <a href="../../../Web/JavaScript/框架/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.2" data-path="../../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js基础.html">
+            
+                    
+                    Vue.Js基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.3" data-path="../../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js组件.html">
+            
+                    
+                    Vue.Js组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.4" data-path="../../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js路由.html">
+            
+                    
+                    Vue.Js路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.5" data-path="../../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                <a href="../../../Web/JavaScript/框架/Vue.js过渡和动画.html">
+            
+                    
+                    Vue.Js过渡和动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.6" data-path="../../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                <a href="../../../Web/JavaScript/框架/jQuery-UI.html">
+            
+                    
+                    JQuery UI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.7" data-path="../../../Web/JavaScript/框架/jQuery基础.html">
+            
+                <a href="../../../Web/JavaScript/框架/jQuery基础.html">
+            
+                    
+                    JQuery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5.8" data-path="../../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                <a href="../../../Web/JavaScript/框架/jQuery方法大全.html">
+            
+                    
+                    JQuery方法大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../../Web/RESTful.html">
+            
+                <a href="../../../Web/RESTful.html">
+            
+                    
+                    RESTful规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工具</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../../Utils/docker/Docker.html">
+            
+                <a href="../../../Utils/docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../../Utils/docker/FastDFS.html">
+            
+                <a href="../../../Utils/docker/FastDFS.html">
+            
+                    
+                    FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../../Utils/Git基本命令.html">
+            
+                <a href="../../../Utils/Git基本命令.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../../../Utils/Nginx/Nginx基础.html">
+            
+                <a href="../../../Utils/Nginx/Nginx基础.html">
+            
+                    
+                    Nginx基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../../../Utils/Nginx/Nginx进阶.html">
+            
+                <a href="../../../Utils/Nginx/Nginx进阶.html">
+            
+                    
+                    Nginx进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">面试</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../../InterviewPreparation/">
+            
+                <a href="../../../InterviewPreparation/">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../../../InterviewPreparation/TechnicalInterviews/TechnicalInterviews.html">
+            
+                <a href="../../../InterviewPreparation/TechnicalInterviews/TechnicalInterviews.html">
+            
+                    
+                    技术面试必备基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../../InterviewPreparation/TechnicalInterviews/01-操作系统.html">
+            
+                <a href="../../../InterviewPreparation/TechnicalInterviews/01-操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="../../../InterviewPreparation/TechnicalInterviews/02-网络.html">
+            
+                <a href="../../../InterviewPreparation/TechnicalInterviews/02-网络.html">
+            
+                    
+                    网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="../../../InterviewPreparation/TechnicalInterviews/03-数据库.html">
+            
+                <a href="../../../InterviewPreparation/TechnicalInterviews/03-数据库.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.4" data-path="../../../InterviewPreparation/TechnicalInterviews/04-系统设计.html">
+            
+                <a href="../../../InterviewPreparation/TechnicalInterviews/04-系统设计.html">
+            
+                    
+                    系统设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/DataStructuresAlgorithms.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/DataStructuresAlgorithms.html">
+            
+                    
+                    数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.3.1" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/01-算法.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/01-算法.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.2" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/02-线性表.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/02-线性表.html">
+            
+                    
+                    线性表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.3" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/03-栈.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/03-栈.html">
+            
+                    
+                    栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.4" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/04-队列.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/04-队列.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.5" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/05-特殊矩阵压缩存储.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/05-特殊矩阵压缩存储.html">
+            
+                    
+                    特殊矩阵压缩存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.6" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/06-串.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/06-串.html">
+            
+                    
+                    串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.7" data-path="../../../InterviewPreparation/DataStructuresAlgorithms/07-树与二叉树.html">
+            
+                <a href="../../../InterviewPreparation/DataStructuresAlgorithms/07-树与二叉树.html">
+            
+                    
+                    树与二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" >
+            
+                <span>
+            
+                    
+                    面试题
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.4.1" data-path="../../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                <a href="../../../InterviewPreparation/ClassicQuestion/20201027/">
+            
+                    
+                    2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">理财</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" >
+            
+                <span>
+            
+                    
+                    基金
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.1" >
+            
+                <span>
+            
+                    
+                    基金基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.1.1" data-path="../../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.html">
+            
+                    
+                    纯债基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.1.2" data-path="../../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.html">
+            
+                    
+                    股票型基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.1.3" data-path="../../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.html">
+            
+                    
+                    大数据指数基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.1.4" data-path="../../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.html">
+            
+                    
+                    ETF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.1.5" data-path="../../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.html">
+            
+                    
+                    LOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.1.6" data-path="../../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                <a href="../../../FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.html">
+            
+                    
+                    四大行业指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.2" >
+            
+                <span>
+            
+                    
+                    基金进价
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.2.1" data-path="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.html">
+            
+                    
+                    分级基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.2.2" data-path="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.html">
+            
+                    
+                    避险基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.2.3" data-path="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.html">
+            
+                    
+                    量化基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.2.4" data-path="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.html">
+            
+                    
+                    QDII基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.2.5" data-path="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                <a href="../../../FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.html">
+            
+                    
+                    FOF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3" >
+            
+                <span>
+            
+                    
+                    其他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.3.1" data-path="../../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                <a href="../../../FinancialManagement/基金/基金定投/01-基金定投.html">
+            
+                    
+                    基金定投
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.2" data-path="../../../FinancialManagement/基金/00-投资术语.html">
+            
+                <a href="../../../FinancialManagement/基金/00-投资术语.html">
+            
+                    
+                    基金投资术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.3" data-path="../../../FinancialManagement/基金/00-投资误区.html">
+            
+                <a href="../../../FinancialManagement/基金/00-投资误区.html">
+            
+                    
+                    投资误区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.4" data-path="../../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                <a href="../../../FinancialManagement/基金/基金全球配置大法/01-全球配置.html">
+            
+                    
+                    全球配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.5" data-path="../../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                <a href="../../../FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.html">
+            
+                    
+                    场外基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.6" data-path="../../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                <a href="../../../FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.html">
+            
+                    
+                    场内基金开户和买卖实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.7" data-path="../../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                <a href="../../../FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.html">
+            
+                    
+                    看懂股票行情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3.8" data-path="../../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                <a href="../../../FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.html">
+            
+                    
+                    基金套牢怎么办
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" >
+            
+                <span>
+            
+                    
+                    股票
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.2.1" data-path="../../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                <a href="../../../FinancialManagement/股票/01-股票市场常用名称解释.html">
+            
+                    
+                    股票市场常用名称解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.2" >
+            
+                <span>
+            
+                    
+                    看盘
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.2.2.1" data-path="../../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                <a href="../../../FinancialManagement/股票/02-看盘-早盘.html">
+            
+                    
+                    早盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.2.2" data-path="../../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                <a href="../../../FinancialManagement/股票/03-看盘-盘后.html">
+            
+                    
+                    盘后
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.2.3" data-path="../../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                <a href="../../../FinancialManagement/股票/04-看盘-大盘分时图分析技巧.html">
+            
+                    
+                    大盘分时图分析技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.2.4" data-path="../../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                <a href="../../../FinancialManagement/股票/05-看盘-K线图.html">
+            
+                    
+                    K线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >单元测试unittest进阶</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h6 id="datetime20220412-1748">datetime:2022/04/12 17:48</h6>
+<h6 id="authornzb">author:nzb</h6>
+<h2 id="&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1A;unittest-&#x6846;&#x67B6;&#x8FDB;&#x9636;">&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1A;unittest &#x6846;&#x67B6;&#x8FDB;&#x9636;</h2>
+<h3 id="&#x4E00;&#x3001;&#x6D4B;&#x8BD5;&#x5939;&#x5177;&#xFF08;&#x56FA;&#x4EF6;&#x3001;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x3001;&#x524D;&#x540E;&#x7F6E;&#xFF09;testfixtrue&#x8BE6;&#x89E3;">&#x4E00;&#x3001;&#x6D4B;&#x8BD5;&#x5939;&#x5177;&#xFF08;&#x56FA;&#x4EF6;&#x3001;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x3001;&#x524D;&#x540E;&#x7F6E;&#xFF09;TestFixtrue&#x8BE6;&#x89E3;</h3>
+<ul>
+<li><code>setUp/tearDown</code>&#xFF1A;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x6267;&#x884C;</li>
+<li><code>setUpClass/tearDownClass</code>&#xFF1A;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7C7B;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x6267;&#x884C;&#xFF08;&#x5FC5;&#x987B;&#x52A0; <code>@classmethod</code> &#x7684;&#x88C5;&#x9970;&#x5668;&#xFF09;</li>
+<li><code>setUpModule/teardownModule</code>&#xFF1A;&#x5728;&#x6D4B;&#x8BD5;&#x6A21;&#x5757;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x6267;&#x884C;</li>
+</ul>
+<pre><code class="lang-python">      __date__ = <span class="hljs-string">&quot;2022/4/12 15:18&quot;</span>
+
+      <span class="hljs-keyword">import</span> unittest
+
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestUnittest</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
+
+<span class="hljs-meta">          @classmethod</span>
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUpClass</span><span class="hljs-params">(cls)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;&quot;</span>)
+
+<span class="hljs-meta">          @classmethod</span>
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tearDownClass</span><span class="hljs-params">(cls)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x9500;&#x6BC1;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;&#x9500;&#x6BC1;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;&quot;</span>)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUp</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x9875;&quot;</span>)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tearDown</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&quot;</span>)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_01</span><span class="hljs-params">(self)</span>:</span>
+              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_01&quot;</span>)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_02</span><span class="hljs-params">(self)</span>:</span>
+              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_02&quot;</span>)
+              <span class="hljs-comment"># self.assertEqual(1, 2)</span>
+
+      <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+          print(<span class="hljs-string">&quot;___________________________main___________________________&quot;</span>)
+          suite = unittest.defaultTestLoader.discover(<span class="hljs-string">&apos;.&apos;</span>, pattern=<span class="hljs-string">&quot;test_unittest.py&quot;</span>)
+          unittest.main(defaultTest=<span class="hljs-string">&apos;suite&apos;</span>)
+</code></pre>
+<pre><code class="lang-text">      C:\Users\lenovo\PycharmProjects\demo\venv\Scripts\python.exe C:/Users/lenovo/PycharmProjects/demo/study/unittest_demo/test_unittest.py
+      ..
+      ----------------------------------------------------------------------
+      Ran 2 tests in 0.000s
+
+      OK
+      ___________________________main___________________________
+      &#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;
+      &#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x9875;
+      &#x6D4B;&#x8BD5; test_01
+      &#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;
+      &#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x9875;
+      &#x6D4B;&#x8BD5; test_02
+      &#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;
+      &#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x9500;&#x6BC1;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;&#x9500;&#x6BC1;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;
+
+      Process finished with exit code 0
+</code></pre>
+<ul>
+<li>&#x5939;&#x5177;&#x5C01;&#x88C5; &#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x5FC5;&#x5907;&#x7684;&#x601D;&#x60F3;</li>
+</ul>
+<h3 id="&#x4E8C;&#x3001;&#x5FFD;&#x7565;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;">&#x4E8C;&#x3001;&#x5FFD;&#x7565;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> unittest
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestUnittest</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
+    a = <span class="hljs-number">18</span>
+
+<span class="hljs-meta">    @unittest.skip(&quot;&#x65E0;&#x6761;&#x4EF6;&#x5FFD;&#x7565;&quot;)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_04</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_04&quot;</span>)
+
+<span class="hljs-meta">    @unittest.skipIf(a &gt;= 15, &quot;&#x6761;&#x4EF6;&#x4E3A; True &#x5FFD;&#x7565;&quot;)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_05</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_05&quot;</span>)
+
+<span class="hljs-meta">    @unittest.skipUnless(a &gt;= 20, &quot;&#x6761;&#x4EF6;&#x4E3A; False &#x5FFD;&#x7565;&quot;)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_06</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_06&quot;</span>)
+</code></pre>
+<h3 id="&#x4E09;&#x3001;&#x65AD;&#x8A00;&#x5224;&#x65AD;&#x6211;&#x4EEC;&#x7528;&#x4F8B;&#x662F;&#x5426;&#x6267;&#x884C;&#x6210;&#x529F;">&#x4E09;&#x3001;&#x65AD;&#x8A00;(&#x5224;&#x65AD;&#x6211;&#x4EEC;&#x7528;&#x4F8B;&#x662F;&#x5426;&#x6267;&#x884C;&#x6210;&#x529F;)</h3>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;</th>
+<th>&#x68C0;&#x67E5;&#x5BF9;&#x8C61;</th>
+<th>&#x5F15;&#x5165;&#x7248;&#x672C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assertEqual(a, b)</td>
+<td>a == b</td>
+<td></td>
+</tr>
+<tr>
+<td>assertEqual(a, b)</td>
+<td>a != b</td>
+<td></td>
+</tr>
+<tr>
+<td>assertTrue(x)</td>
+<td>bool(x) is True</td>
+<td></td>
+</tr>
+<tr>
+<td>assertFalse(x)</td>
+<td>bool(x) is False</td>
+<td></td>
+</tr>
+<tr>
+<td>assertIs(a, b)</td>
+<td>a is b</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>assertIsNot(a, b)</td>
+<td>a is not b</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>assertIsNone(x)</td>
+<td>x is None</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>assertIsNotNone(x)</td>
+<td>x is not None</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>assertIn(a, b)</td>
+<td>a in b</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>assertNotIn(a, b)</td>
+<td>a not in b</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>assertIsInstance(a, b)</td>
+<td>isinstance(a, b)</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>assertNotIsInstance(a, b)</td>
+<td>not isinstance(a, b)</td>
+<td>3.2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5E38;&#x7528;<ul>
+<li>assertEqual(a, b)</li>
+<li>assertTrue(x)</li>
+<li>assertIn(a, b)</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x56DB;&#x3001;&#x6279;&#x91CF;&#x751F;&#x4EA7;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;">&#x56DB;&#x3001;&#x6279;&#x91CF;&#x751F;&#x4EA7;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;</h3>
+<ul>
+<li><p>txt &#x6587;&#x672C;&#x683C;&#x5F0F;&#x7684;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;</p>
+</li>
+<li><p>html&#x683C;&#x5F0F;&#x7684;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A; HTMLTestRunner.py (&#x5B98;&#x65B9;&#x4E0A;&#x7684;&#x4E0D;&#x884C;&#xFF0C;&#x4EC5;&#x652F;&#x6301;py2.7)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python">      <span class="hljs-string">&quot;&quot;&quot;
+      A TestRunner for use with the Python unit testing framework. It
+      generates a HTML report to show the result at a glance.
+
+      The simplest way to use this is to invoke its main method. E.g.
+
+          import unittest
+          import HTMLTestRunner
+
+          ... define your tests ...
+
+          if __name__ == &apos;__main__&apos;:
+              HTMLTestRunner.main()
+
+
+      For more customization options, instantiates a HTMLTestRunner object.
+      HTMLTestRunner is a counterpart to unittest&apos;s TextTestRunner. E.g.
+
+          # output to a file
+          fp = file(&apos;my_report.html&apos;, &apos;wb&apos;)
+          runner = HTMLTestRunner.HTMLTestRunner(
+                      stream=fp,
+                      title=&apos;My unit test&apos;,
+                      description=&apos;This demonstrates the report output by HTMLTestRunner.&apos;
+                      )
+
+          # Use an external stylesheet.
+          # See the Template_mixin class for more customizable options
+          runner.STYLESHEET_TMPL = &apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;my_stylesheet.css&quot; type=&quot;text/css&quot;&gt;&apos;
+
+          # run the test
+          runner.run(my_test_suite)
+
+
+      ------------------------------------------------------------------------
+      Copyright (c) 2004-2007, Wai Yip Tung
+      All rights reserved.
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are
+      met:
+
+      * Redistributions of source code must retain the above copyright notice,
+        this list of conditions and the following disclaimer.
+      * Redistributions in binary form must reproduce the above copyright
+        notice, this list of conditions and the following disclaimer in the
+        documentation and/or other materials provided with the distribution.
+      * Neither the name Wai Yip Tung nor the names of its contributors may be
+        used to endorse or promote products derived from this software without
+        specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS
+      IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+      TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+      OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+      EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+      PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+      &quot;&quot;&quot;</span>
+
+      <span class="hljs-comment"># URL: http://tungwaiyip.info/software/HTMLTestRunner.html</span>
+
+      __author__ = <span class="hljs-string">&quot;Wai Yip Tung&quot;</span>
+      __version__ = <span class="hljs-string">&quot;0.8.2&quot;</span>
+
+      <span class="hljs-string">&quot;&quot;&quot;
+      Change History
+
+      Version 0.8.2
+      * Show output inline instead of popup window (Viorel Lupu).
+
+      Version in 0.8.1
+      * Validated XHTML (Wolfgang Borgert).
+      * Added description of test classes and test cases.
+
+      Version in 0.8.0
+      * Define Template_mixin class for customization.
+      * Workaround a IE 6 bug that it does not treat &lt;script&gt; block as CDATA.
+
+      Version in 0.7.1
+      * Back port to Python 2.3 (Frank Horowitz).
+      * Fix missing scroll bars in detail log (Podi).
+      &quot;&quot;&quot;</span>
+
+      <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> color stderr</span>
+      <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> simplify javascript using ,ore than 1 class in the class attribute?</span>
+
+      <span class="hljs-keyword">import</span> datetime
+      <span class="hljs-keyword">import</span> io
+      <span class="hljs-keyword">import</span> sys
+      <span class="hljs-keyword">import</span> time
+      <span class="hljs-keyword">import</span> unittest
+      <span class="hljs-keyword">from</span> xml.sax <span class="hljs-keyword">import</span> saxutils
+
+
+      <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+      <span class="hljs-comment"># The redirectors below are used to capture output during testing. Output</span>
+      <span class="hljs-comment"># sent to sys.stdout and sys.stderr are automatically captured. However</span>
+      <span class="hljs-comment"># in some cases sys.stdout is already cached before HTMLTestRunner is</span>
+      <span class="hljs-comment"># invoked (e.g. calling logging.basicConfig). In order to capture those</span>
+      <span class="hljs-comment"># output, use the redirectors for the cached stream.</span>
+      <span class="hljs-comment">#</span>
+      <span class="hljs-comment"># e.g.</span>
+      <span class="hljs-comment">#   &gt;&gt;&gt; logging.basicConfig(stream=HTMLTestRunner.stdout_redirector)</span>
+      <span class="hljs-comment">#   &gt;&gt;&gt;</span>
+
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OutputRedirector</span><span class="hljs-params">(object)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot; Wrapper to redirect stdout or stderr &quot;&quot;&quot;</span>
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, fp)</span>:</span>
+              self.fp = fp
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write</span><span class="hljs-params">(self, s)</span>:</span>
+              self.fp.write(bytes(s, <span class="hljs-string">&apos;UTF-8&apos;</span>))
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writelines</span><span class="hljs-params">(self, lines)</span>:</span>
+              self.fp.writelines(lines)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flush</span><span class="hljs-params">(self)</span>:</span>
+              self.fp.flush()
+
+
+      stdout_redirector = OutputRedirector(sys.stdout)
+      stderr_redirector = OutputRedirector(sys.stderr)
+
+
+      <span class="hljs-comment"># ----------------------------------------------------------------------</span>
+      <span class="hljs-comment"># Template</span>
+
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Template_mixin</span><span class="hljs-params">(object)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          Define a HTML template for report customerization and generation.
+
+          Overall structure of an HTML report
+
+          HTML
+          +------------------------+
+          |&lt;html&gt;                  |
+          |  &lt;head&gt;                |
+          |                        |
+          |   STYLESHEET           |
+          |   +----------------+   |
+          |   |                |   |
+          |   +----------------+   |
+          |                        |
+          |  &lt;/head&gt;               |
+          |                        |
+          |  &lt;body&gt;                |
+          |                        |
+          |   HEADING              |
+          |   +----------------+   |
+          |   |                |   |
+          |   +----------------+   |
+          |                        |
+          |   REPORT               |
+          |   +----------------+   |
+          |   |                |   |
+          |   +----------------+   |
+          |                        |
+          |   ENDING               |
+          |   +----------------+   |
+          |   |                |   |
+          |   +----------------+   |
+          |                        |
+          |  &lt;/body&gt;               |
+          |&lt;/html&gt;                 |
+          +------------------------+
+          &quot;&quot;&quot;</span>
+
+          STATUS = {
+              <span class="hljs-number">0</span>: <span class="hljs-string">&apos;pass&apos;</span>,
+              <span class="hljs-number">1</span>: <span class="hljs-string">&apos;fail&apos;</span>,
+              <span class="hljs-number">2</span>: <span class="hljs-string">&apos;error&apos;</span>,
+          }
+
+          DEFAULT_TITLE = <span class="hljs-string">&apos;Unit Test Report&apos;</span>
+          DEFAULT_DESCRIPTION = <span class="hljs-string">&apos;&apos;</span>
+
+          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+          <span class="hljs-comment"># HTML Template</span>
+
+          HTML_TMPL = <span class="hljs-string">r&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+      &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+      &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+      &lt;head&gt;
+          &lt;title&gt;%(title)s&lt;/title&gt;
+          &lt;meta name=&quot;generator&quot; content=&quot;%(generator)s&quot;/&gt;
+          &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;/&gt;
+          %(stylesheet)s
+      &lt;/head&gt;
+      &lt;body&gt;
+      &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;&lt;!--
+      output_list = Array();
+
+      /* level - 0:Summary; 1:Failed; 2:All */
+      function showCase(level) {
+          trs = document.getElementsByTagName(&quot;tr&quot;);
+          for (var i = 0; i &lt; trs.length; i++) {
+              tr = trs[i];
+              id = tr.id;
+              if (id.substr(0,2) == &apos;ft&apos;) {
+                  if (level &lt; 1) {
+                      tr.className = &apos;hiddenRow&apos;;
+                  }
+                  else {
+                      tr.className = &apos;&apos;;
+                  }
+              }
+              if (id.substr(0,2) == &apos;pt&apos;) {
+                  if (level &gt; 1) {
+                      tr.className = &apos;&apos;;
+                  }
+                  else {
+                      tr.className = &apos;hiddenRow&apos;;
+                  }
+              }
+          }
+      }
+
+
+      function showClassDetail(cid, count) {
+          var id_list = Array(count);
+          var toHide = 1;
+          for (var i = 0; i &lt; count; i++) {
+              tid0 = &apos;t&apos; + cid.substr(1) + &apos;.&apos; + (i+1);
+              tid = &apos;f&apos; + tid0;
+              tr = document.getElementById(tid);
+              if (!tr) {
+                  tid = &apos;p&apos; + tid0;
+                  tr = document.getElementById(tid);
+              }
+              id_list[i] = tid;
+              if (tr.className) {
+                  toHide = 0;
+              }
+          }
+          for (var i = 0; i &lt; count; i++) {
+              tid = id_list[i];
+              if (toHide) {
+                  document.getElementById(&apos;div_&apos;+tid).style.display = &apos;none&apos;
+                  document.getElementById(tid).className = &apos;hiddenRow&apos;;
+              }
+              else {
+                  document.getElementById(tid).className = &apos;&apos;;
+              }
+          }
+      }
+
+
+      function showTestDetail(div_id){
+          var details_div = document.getElementById(div_id)
+          var displayState = details_div.style.display
+          // alert(displayState)
+          if (displayState != &apos;block&apos; ) {
+              displayState = &apos;block&apos;
+              details_div.style.display = &apos;block&apos;
+          }
+          else {
+              details_div.style.display = &apos;none&apos;
+          }
+      }
+
+
+      function html_escape(s) {
+          s = s.replace(/&amp;/g,&apos;&amp;amp;&apos;);
+          s = s.replace(/&lt;/g,&apos;&amp;lt;&apos;);
+          s = s.replace(/&gt;/g,&apos;&amp;gt;&apos;);
+          return s;
+      }
+
+      /* obsoleted by detail in &lt;div&gt;
+      function showOutput(id, name) {
+          var w = window.open(&quot;&quot;, //url
+                          name,
+                          &quot;resizable,scrollbars,status,width=800,height=450&quot;);
+          d = w.document;
+          d.write(&quot;&lt;pre&gt;&quot;);
+          d.write(html_escape(output_list[id]));
+          d.write(&quot;\n&quot;);
+          d.write(&quot;&lt;a href=&apos;javascript:window.close()&apos;&gt;close&lt;/a&gt;\n&quot;);
+          d.write(&quot;&lt;/pre&gt;\n&quot;);
+          d.close();
+      }
+      */
+      --&gt;&lt;/script&gt;
+
+      %(heading)s
+      %(report)s
+      %(ending)s
+
+      &lt;/body&gt;
+      &lt;/html&gt;
+      &quot;&quot;&quot;</span>
+          <span class="hljs-comment"># variables: (title, generator, stylesheet, heading, report, ending)</span>
+
+          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+          <span class="hljs-comment"># Stylesheet</span>
+          <span class="hljs-comment">#</span>
+          <span class="hljs-comment"># alternatively use a &lt;link&gt; for external style sheet, e.g.</span>
+          <span class="hljs-comment">#   &lt;link rel=&quot;stylesheet&quot; href=&quot;$url&quot; type=&quot;text/css&quot;&gt;</span>
+
+          STYLESHEET_TMPL = <span class="hljs-string">&quot;&quot;&quot;
+      &lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
+      body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+      table       { font-size: 100%; }
+      pre         { }
+
+      /* -- heading ---------------------------------------------------------------------- */
+      h1 {
+          font-size: 16pt;
+          color: gray;
+      }
+      .heading {
+          margin-top: 0ex;
+          margin-bottom: 1ex;
+      }
+
+      .heading .attribute {
+          margin-top: 1ex;
+          margin-bottom: 0;
+      }
+
+      .heading .description {
+          margin-top: 4ex;
+          margin-bottom: 6ex;
+      }
+
+      /* -- css div popup ------------------------------------------------------------------------ */
+      a.popup_link {
+      }
+
+      a.popup_link:hover {
+          color: red;
+      }
+
+      .popup_window {
+          display: none;
+          position: relative;
+          left: 0px;
+          top: 0px;
+          /*border: solid #627173 1px; */
+          padding: 10px;
+          background-color: #E6E6D6;
+          font-family: &quot;Lucida Console&quot;, &quot;Courier New&quot;, Courier, monospace;
+          text-align: left;
+          font-size: 8pt;
+          width: 500px;
+      }
+
+      }
+      /* -- report ------------------------------------------------------------------------ */
+      #show_detail_line {
+          margin-top: 3ex;
+          margin-bottom: 1ex;
+      }
+      #result_table {
+          width: 80%;
+          border-collapse: collapse;
+          border: 1px solid #777;
+      }
+      #header_row {
+          font-weight: bold;
+          color: white;
+          background-color: #777;
+      }
+      #result_table td {
+          border: 1px solid #777;
+          padding: 2px;
+      }
+      #total_row  { font-weight: bold; }
+      .passClass  { background-color: #6c6; }
+      .failClass  { background-color: #c60; }
+      .errorClass { background-color: #c00; }
+      .passCase   { color: #6c6; }
+      .failCase   { color: #c60; font-weight: bold; }
+      .errorCase  { color: #c00; font-weight: bold; }
+      .hiddenRow  { display: none; }
+      .testcase   { margin-left: 2em; }
+
+
+      /* -- ending ---------------------------------------------------------------------- */
+      #ending {
+      }
+
+      &lt;/style&gt;
+      &quot;&quot;&quot;</span>
+
+          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+          <span class="hljs-comment"># Heading</span>
+          <span class="hljs-comment">#</span>
+
+          HEADING_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;div class=&apos;heading&apos;&gt;
+      &lt;h1&gt;%(title)s&lt;/h1&gt;
+      %(parameters)s
+      &lt;p class=&apos;description&apos;&gt;%(description)s&lt;/p&gt;
+      &lt;/div&gt;
+
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (title, parameters, description)</span>
+
+          HEADING_ATTRIBUTE_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;p class=&apos;attribute&apos;&gt;&lt;strong&gt;%(name)s:&lt;/strong&gt; %(value)s&lt;/p&gt;
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (name, value)</span>
+
+          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+          <span class="hljs-comment"># Report</span>
+          <span class="hljs-comment">#</span>
+
+          REPORT_TMPL = <span class="hljs-string">&quot;&quot;&quot;
+      &lt;p id=&apos;show_detail_line&apos;&gt;Show
+      &lt;a href=&apos;javascript:showCase(0)&apos;&gt;Summary&lt;/a&gt;
+      &lt;a href=&apos;javascript:showCase(1)&apos;&gt;Failed&lt;/a&gt;
+      &lt;a href=&apos;javascript:showCase(2)&apos;&gt;All&lt;/a&gt;
+      &lt;/p&gt;
+      &lt;table id=&apos;result_table&apos;&gt;
+      &lt;colgroup&gt;
+      &lt;col align=&apos;left&apos; /&gt;
+      &lt;col align=&apos;right&apos; /&gt;
+      &lt;col align=&apos;right&apos; /&gt;
+      &lt;col align=&apos;right&apos; /&gt;
+      &lt;col align=&apos;right&apos; /&gt;
+      &lt;col align=&apos;right&apos; /&gt;
+      &lt;/colgroup&gt;
+      &lt;tr id=&apos;header_row&apos;&gt;
+          &lt;td&gt;Test Group/Test case&lt;/td&gt;
+          &lt;td&gt;Count&lt;/td&gt;
+          &lt;td&gt;Pass&lt;/td&gt;
+          &lt;td&gt;Fail&lt;/td&gt;
+          &lt;td&gt;Error&lt;/td&gt;
+          &lt;td&gt;View&lt;/td&gt;
+      &lt;/tr&gt;
+      %(test_list)s
+      &lt;tr id=&apos;total_row&apos;&gt;
+          &lt;td&gt;Total&lt;/td&gt;
+          &lt;td&gt;%(count)s&lt;/td&gt;
+          &lt;td&gt;%(Pass)s&lt;/td&gt;
+          &lt;td&gt;%(fail)s&lt;/td&gt;
+          &lt;td&gt;%(error)s&lt;/td&gt;
+          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (test_list, count, Pass, fail, error)</span>
+
+          REPORT_CLASS_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+      &lt;tr class=&apos;%(style)s&apos;&gt;
+          &lt;td&gt;%(desc)s&lt;/td&gt;
+          &lt;td&gt;%(count)s&lt;/td&gt;
+          &lt;td&gt;%(Pass)s&lt;/td&gt;
+          &lt;td&gt;%(fail)s&lt;/td&gt;
+          &lt;td&gt;%(error)s&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&quot;javascript:showClassDetail(&apos;%(cid)s&apos;,%(count)s)&quot;&gt;Detail&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (style, desc, count, Pass, fail, error, cid)</span>
+
+          REPORT_TEST_WITH_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+      &lt;tr id=&apos;%(tid)s&apos; class=&apos;%(Class)s&apos;&gt;
+          &lt;td class=&apos;%(style)s&apos;&gt;&lt;div class=&apos;testcase&apos;&gt;%(desc)s&lt;/div&gt;&lt;/td&gt;
+          &lt;td colspan=&apos;5&apos; align=&apos;center&apos;&gt;
+
+          &lt;!--css div popup start--&gt;
+          &lt;a class=&quot;popup_link&quot; onfocus=&apos;this.blur();&apos; href=&quot;javascript:showTestDetail(&apos;div_%(tid)s&apos;)&quot; &gt;
+              %(status)s&lt;/a&gt;
+
+          &lt;div id=&apos;div_%(tid)s&apos; class=&quot;popup_window&quot;&gt;
+              &lt;div style=&apos;text-align: right; color:red;cursor:pointer&apos;&gt;
+              &lt;a onfocus=&apos;this.blur();&apos; onclick=&quot;document.getElementById(&apos;div_%(tid)s&apos;).style.display = &apos;none&apos; &quot; &gt;
+                 [x]&lt;/a&gt;
+              &lt;/div&gt;
+              &lt;pre&gt;
+              %(script)s
+              &lt;/pre&gt;
+          &lt;/div&gt;
+          &lt;!--css div popup end--&gt;
+
+          &lt;/td&gt;
+      &lt;/tr&gt;
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (tid, Class, style, desc, status)</span>
+
+          REPORT_TEST_NO_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+      &lt;tr id=&apos;%(tid)s&apos; class=&apos;%(Class)s&apos;&gt;
+          &lt;td class=&apos;%(style)s&apos;&gt;&lt;div class=&apos;testcase&apos;&gt;%(desc)s&lt;/div&gt;&lt;/td&gt;
+          &lt;td colspan=&apos;5&apos; align=&apos;center&apos;&gt;%(status)s&lt;/td&gt;
+      &lt;/tr&gt;
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (tid, Class, style, desc, status)</span>
+
+          REPORT_TEST_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+      %(id)s: %(output)s
+      &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (id, output)</span>
+
+          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+          <span class="hljs-comment"># ENDING</span>
+          <span class="hljs-comment">#</span>
+
+          ENDING_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;div id=&apos;ending&apos;&gt;&amp;nbsp;&lt;/div&gt;&quot;&quot;&quot;</span>
+
+
+      <span class="hljs-comment"># -------------------- The end of the Template class -------------------</span>
+
+
+      TestResult = unittest.TestResult
+
+
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">_TestResult</span><span class="hljs-params">(TestResult)</span>:</span>
+          <span class="hljs-comment"># note: _TestResult is a pure representation of results.</span>
+          <span class="hljs-comment"># It lacks the output and reporting ability compares to unittest._TextTestResult.</span>
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, verbosity=<span class="hljs-number">1</span>)</span>:</span>
+              TestResult.__init__(self)
+              self.stdout0 = <span class="hljs-keyword">None</span>
+              self.stderr0 = <span class="hljs-keyword">None</span>
+              self.success_count = <span class="hljs-number">0</span>
+              self.failure_count = <span class="hljs-number">0</span>
+              self.error_count = <span class="hljs-number">0</span>
+              self.verbosity = verbosity
+
+              <span class="hljs-comment"># result is a list of result in 4 tuple</span>
+              <span class="hljs-comment"># (</span>
+              <span class="hljs-comment">#   result code (0: success; 1: fail; 2: error),</span>
+              <span class="hljs-comment">#   TestCase object,</span>
+              <span class="hljs-comment">#   Test output (byte string),</span>
+              <span class="hljs-comment">#   stack trace,</span>
+              <span class="hljs-comment"># )</span>
+              self.result = []
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">startTest</span><span class="hljs-params">(self, test)</span>:</span>
+              TestResult.startTest(self, test)
+              <span class="hljs-comment"># just one buffer for both stdout and stderr</span>
+              self.outputBuffer = io.BytesIO()
+              stdout_redirector.fp = self.outputBuffer
+              stderr_redirector.fp = self.outputBuffer
+              self.stdout0 = sys.stdout
+              self.stderr0 = sys.stderr
+              sys.stdout = stdout_redirector
+              sys.stderr = stderr_redirector
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">complete_output</span><span class="hljs-params">(self)</span>:</span>
+              <span class="hljs-string">&quot;&quot;&quot;
+              Disconnect output redirection and return buffer.
+              Safe to call multiple times.
+              &quot;&quot;&quot;</span>
+              <span class="hljs-keyword">if</span> self.stdout0:
+                  sys.stdout = self.stdout0
+                  sys.stderr = self.stderr0
+                  self.stdout0 = <span class="hljs-keyword">None</span>
+                  self.stderr0 = <span class="hljs-keyword">None</span>
+              <span class="hljs-keyword">return</span> self.outputBuffer.getvalue()
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">stopTest</span><span class="hljs-params">(self, test)</span>:</span>
+              <span class="hljs-comment"># Usually one of addSuccess, addError or addFailure would have been called.</span>
+              <span class="hljs-comment"># But there are some path in unittest that would bypass this.</span>
+              <span class="hljs-comment"># We must disconnect stdout in stopTest(), which is guaranteed to be called.</span>
+              self.complete_output()
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addSuccess</span><span class="hljs-params">(self, test)</span>:</span>
+              self.success_count += <span class="hljs-number">1</span>
+              TestResult.addSuccess(self, test)
+              output = self.complete_output()
+              self.result.append((<span class="hljs-number">0</span>, test, output, <span class="hljs-string">&apos;&apos;</span>))
+              <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
+                  sys.stderr.write(<span class="hljs-string">&apos;ok &apos;</span>)
+                  sys.stderr.write(str(test))
+                  sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
+              <span class="hljs-keyword">else</span>:
+                  sys.stderr.write(<span class="hljs-string">&apos;.&apos;</span>)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addError</span><span class="hljs-params">(self, test, err)</span>:</span>
+              self.error_count += <span class="hljs-number">1</span>
+              TestResult.addError(self, test, err)
+              _, _exc_str = self.errors[<span class="hljs-number">-1</span>]
+              output = self.complete_output()
+              self.result.append((<span class="hljs-number">2</span>, test, output, _exc_str))
+              <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
+                  sys.stderr.write(<span class="hljs-string">&apos;E  &apos;</span>)
+                  sys.stderr.write(str(test))
+                  sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
+              <span class="hljs-keyword">else</span>:
+                  sys.stderr.write(<span class="hljs-string">&apos;E&apos;</span>)
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addFailure</span><span class="hljs-params">(self, test, err)</span>:</span>
+              self.failure_count += <span class="hljs-number">1</span>
+              TestResult.addFailure(self, test, err)
+              _, _exc_str = self.failures[<span class="hljs-number">-1</span>]
+              output = self.complete_output()
+              self.result.append((<span class="hljs-number">1</span>, test, output, _exc_str))
+              <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
+                  sys.stderr.write(<span class="hljs-string">&apos;F  &apos;</span>)
+                  sys.stderr.write(str(test))
+                  sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
+              <span class="hljs-keyword">else</span>:
+                  sys.stderr.write(<span class="hljs-string">&apos;F&apos;</span>)
+
+
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTMLTestRunner</span><span class="hljs-params">(Template_mixin)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          &quot;&quot;&quot;</span>
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, stream=sys.stdout, verbosity=<span class="hljs-number">1</span>, title=None, description=None)</span>:</span>
+              self.stream = stream
+              self.verbosity = verbosity
+              <span class="hljs-keyword">if</span> title <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+                  self.title = self.DEFAULT_TITLE
+              <span class="hljs-keyword">else</span>:
+                  self.title = title
+              <span class="hljs-keyword">if</span> description <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+                  self.description = self.DEFAULT_DESCRIPTION
+              <span class="hljs-keyword">else</span>:
+                  self.description = description
+
+              self.startTime = datetime.datetime.now()
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self, test)</span>:</span>
+              <span class="hljs-string">&quot;Run the given test case or test suite.&quot;</span>
+              result = _TestResult(self.verbosity)
+              test(result)
+              self.stopTime = datetime.datetime.now()
+              self.generateReport(test, result)
+              print(<span class="hljs-string">&apos;\nTime Elapsed: %s&apos;</span> % (self.stopTime - self.startTime), file=sys.stderr)
+              <span class="hljs-keyword">return</span> result
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sortResult</span><span class="hljs-params">(self, result_list)</span>:</span>
+              <span class="hljs-comment"># unittest does not seems to run in any particular order.</span>
+              <span class="hljs-comment"># Here at least we want to group them together by class.</span>
+              rmap = {}
+              classes = []
+              <span class="hljs-keyword">for</span> n, t, o, e <span class="hljs-keyword">in</span> result_list:
+                  cls = t.__class__
+                  <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> cls <span class="hljs-keyword">in</span> rmap:
+                      rmap[cls] = []
+                      classes.append(cls)
+                  rmap[cls].append((n, t, o, e))
+              r = [(cls, rmap[cls]) <span class="hljs-keyword">for</span> cls <span class="hljs-keyword">in</span> classes]
+              <span class="hljs-keyword">return</span> r
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getReportAttributes</span><span class="hljs-params">(self, result)</span>:</span>
+              <span class="hljs-string">&quot;&quot;&quot;
+              Return report attributes as a list of (name, value).
+              Override this to add custom attributes.
+              &quot;&quot;&quot;</span>
+              startTime = str(self.startTime)[:<span class="hljs-number">19</span>]
+              duration = str(self.stopTime - self.startTime)
+              status = []
+              <span class="hljs-keyword">if</span> result.success_count: status.append(<span class="hljs-string">&apos;Pass %s&apos;</span> % result.success_count)
+              <span class="hljs-keyword">if</span> result.failure_count: status.append(<span class="hljs-string">&apos;Failure %s&apos;</span> % result.failure_count)
+              <span class="hljs-keyword">if</span> result.error_count:   status.append(<span class="hljs-string">&apos;Error %s&apos;</span> % result.error_count)
+              <span class="hljs-keyword">if</span> status:
+                  status = <span class="hljs-string">&apos; &apos;</span>.join(status)
+              <span class="hljs-keyword">else</span>:
+                  status = <span class="hljs-string">&apos;none&apos;</span>
+              <span class="hljs-keyword">return</span> [
+                  (<span class="hljs-string">&apos;Start Time&apos;</span>, startTime),
+                  (<span class="hljs-string">&apos;Duration&apos;</span>, duration),
+                  (<span class="hljs-string">&apos;Status&apos;</span>, status),
+              ]
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateReport</span><span class="hljs-params">(self, test, result)</span>:</span>
+              report_attrs = self.getReportAttributes(result)
+              generator = <span class="hljs-string">&apos;HTMLTestRunner %s&apos;</span> % __version__
+              stylesheet = self._generate_stylesheet()
+              heading = self._generate_heading(report_attrs)
+              report = self._generate_report(result)
+              ending = self._generate_ending()
+              output = self.HTML_TMPL % dict(
+                  title=saxutils.escape(self.title),
+                  generator=generator,
+                  stylesheet=stylesheet,
+                  heading=heading,
+                  report=report,
+                  ending=ending,
+              )
+              self.stream.write(output.encode(<span class="hljs-string">&apos;utf8&apos;</span>))
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_stylesheet</span><span class="hljs-params">(self)</span>:</span>
+              <span class="hljs-keyword">return</span> self.STYLESHEET_TMPL
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_heading</span><span class="hljs-params">(self, report_attrs)</span>:</span>
+              a_lines = []
+              <span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">in</span> report_attrs:
+                  line = self.HEADING_ATTRIBUTE_TMPL % dict(
+                      name=saxutils.escape(name),
+                      value=saxutils.escape(value),
+                  )
+                  a_lines.append(line)
+              heading = self.HEADING_TMPL % dict(
+                  title=saxutils.escape(self.title),
+                  parameters=<span class="hljs-string">&apos;&apos;</span>.join(a_lines),
+                  description=saxutils.escape(self.description),
+              )
+              <span class="hljs-keyword">return</span> heading
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_report</span><span class="hljs-params">(self, result)</span>:</span>
+              rows = []
+              sortedResult = self.sortResult(result.result)
+              <span class="hljs-keyword">for</span> cid, (cls, cls_results) <span class="hljs-keyword">in</span> enumerate(sortedResult):
+                  <span class="hljs-comment"># subtotal for a class</span>
+                  np = nf = ne = <span class="hljs-number">0</span>
+                  <span class="hljs-keyword">for</span> n, t, o, e <span class="hljs-keyword">in</span> cls_results:
+                      <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
+                          np += <span class="hljs-number">1</span>
+                      <span class="hljs-keyword">elif</span> n == <span class="hljs-number">1</span>:
+                          nf += <span class="hljs-number">1</span>
+                      <span class="hljs-keyword">else</span>:
+                          ne += <span class="hljs-number">1</span>
+
+                  <span class="hljs-comment"># format class description</span>
+                  <span class="hljs-keyword">if</span> cls.__module__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+                      name = cls.__name__
+                  <span class="hljs-keyword">else</span>:
+                      name = <span class="hljs-string">&quot;%s.%s&quot;</span> % (cls.__module__, cls.__name__)
+                  doc = cls.__doc__ <span class="hljs-keyword">and</span> cls.__doc__.split(<span class="hljs-string">&quot;\n&quot;</span>)[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&quot;</span>
+                  desc = doc <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;%s: %s&apos;</span> % (name, doc) <span class="hljs-keyword">or</span> name
+
+                  row = self.REPORT_CLASS_TMPL % dict(
+                      style=ne &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;errorClass&apos;</span> <span class="hljs-keyword">or</span> nf &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;failClass&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;passClass&apos;</span>,
+                      desc=desc,
+                      count=np + nf + ne,
+                      Pass=np,
+                      fail=nf,
+                      error=ne,
+                      cid=<span class="hljs-string">&apos;c%s&apos;</span> % (cid + <span class="hljs-number">1</span>),
+                  )
+                  rows.append(row)
+
+                  <span class="hljs-keyword">for</span> tid, (n, t, o, e) <span class="hljs-keyword">in</span> enumerate(cls_results):
+                      self._generate_report_test(rows, cid, tid, n, t, o, e)
+
+              report = self.REPORT_TMPL % dict(
+                  test_list=<span class="hljs-string">&apos;&apos;</span>.join(rows),
+                  count=str(result.success_count + result.failure_count + result.error_count),
+                  Pass=str(result.success_count),
+                  fail=str(result.failure_count),
+                  error=str(result.error_count),
+              )
+              <span class="hljs-keyword">return</span> report
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_report_test</span><span class="hljs-params">(self, rows, cid, tid, n, t, o, e)</span>:</span>
+              <span class="hljs-comment"># e.g. &apos;pt1.1&apos;, &apos;ft1.1&apos;, etc</span>
+              has_output = bool(o <span class="hljs-keyword">or</span> e)
+              tid = (n == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;p&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;f&apos;</span>) + <span class="hljs-string">&apos;t%s.%s&apos;</span> % (cid + <span class="hljs-number">1</span>, tid + <span class="hljs-number">1</span>)
+              name = t.id().split(<span class="hljs-string">&apos;.&apos;</span>)[<span class="hljs-number">-1</span>]
+              doc = t.shortDescription() <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&quot;</span>
+              desc = doc <span class="hljs-keyword">and</span> (<span class="hljs-string">&apos;%s: %s&apos;</span> % (name, doc)) <span class="hljs-keyword">or</span> name
+              tmpl = has_output <span class="hljs-keyword">and</span> self.REPORT_TEST_WITH_OUTPUT_TMPL <span class="hljs-keyword">or</span> self.REPORT_TEST_NO_OUTPUT_TMPL
+
+              <span class="hljs-comment"># o and e should be byte string because they are collected from stdout and stderr?</span>
+              <span class="hljs-keyword">if</span> isinstance(o, str):
+                  <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> some problem with &apos;string_escape&apos;: it escape \n and mess up formating</span>
+                  <span class="hljs-comment"># uo = unicode(o.encode(&apos;string_escape&apos;))</span>
+                  uo = o
+              <span class="hljs-keyword">else</span>:
+                  uo = o.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)
+              <span class="hljs-keyword">if</span> isinstance(e, str):
+                  <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> some problem with &apos;string_escape&apos;: it escape \n and mess up formating</span>
+                  <span class="hljs-comment"># ue = unicode(e.encode(&apos;string_escape&apos;))</span>
+                  ue = e
+              <span class="hljs-keyword">else</span>:
+                  ue = e.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)
+
+              script = self.REPORT_TEST_OUTPUT_TMPL % dict(
+                  id=tid,
+                  output=saxutils.escape(uo + ue),
+              )
+
+              row = tmpl % dict(
+                  tid=tid,
+                  Class=(n == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;hiddenRow&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;none&apos;</span>),
+                  style=n == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;errorCase&apos;</span> <span class="hljs-keyword">or</span> (n == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;failCase&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;none&apos;</span>),
+                  desc=desc,
+                  script=script,
+                  status=self.STATUS[n],
+              )
+              rows.append(row)
+              <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> has_output:
+                  <span class="hljs-keyword">return</span>
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_ending</span><span class="hljs-params">(self)</span>:</span>
+              <span class="hljs-keyword">return</span> self.ENDING_TMPL
+
+
+      <span class="hljs-comment">##############################################################################</span>
+      <span class="hljs-comment"># Facilities for running tests from the command line</span>
+      <span class="hljs-comment">##############################################################################</span>
+
+      <span class="hljs-comment"># Note: Reuse unittest.TestProgram to launch test. In the future we may</span>
+      <span class="hljs-comment"># build our own launcher to support more specific command line</span>
+      <span class="hljs-comment"># parameters like test title, CSS, etc.</span>
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestProgram</span><span class="hljs-params">(unittest.TestProgram)</span>:</span>
+          <span class="hljs-string">&quot;&quot;&quot;
+          A variation of the unittest.TestProgram. Please refer to the base
+          class for command line parameters.
+          &quot;&quot;&quot;</span>
+
+          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">runTests</span><span class="hljs-params">(self)</span>:</span>
+              <span class="hljs-comment"># Pick HTMLTestRunner as the default test runner.</span>
+              <span class="hljs-comment"># base class&apos;s testRunner parameter is not useful because it means</span>
+              <span class="hljs-comment"># we have to instantiate HTMLTestRunner before we know self.verbosity.</span>
+              <span class="hljs-keyword">if</span> self.testRunner <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+                  self.testRunner = HTMLTestRunner(verbosity=self.verbosity)
+              unittest.TestProgram.runTests(self)
+
+
+      main = TestProgram
+
+      <span class="hljs-comment">##############################################################################</span>
+      <span class="hljs-comment"># Executing this module from the command line</span>
+      <span class="hljs-comment">##############################################################################</span>
+
+      <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+          main(module=<span class="hljs-keyword">None</span>)
+</code></pre>
+<pre><code>  ```python
+  import datetime
+  import unittest
+  from unittest_demo.HTMLTestRunner import HTMLTestRunner
+
+  if __name__ == &apos;__main__&apos;:
+      suite = unittest.defaultTestLoader.discover(&apos;.&apos;, pattern=&quot;test_unittest.py&quot;)
+      time_str = datetime.datetime.now().strftime(&apos;%Y%m%d%H%M%S&apos;)
+      with open(f&quot;./report_{time_str}.html&quot;, &apos;wb&apos;) as f:
+          runner = HTMLTestRunner(f, title=&quot;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&quot;, description=&quot;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x8BE6;&#x60C5;&quot;)
+          runner.run(suite)
+</code></pre><p>```</p>
+<p><img src="imgs/unittest_demo_20220414151220.jpg" alt=""></p>
+<blockquote>
+<p>&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x4E2D;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7684;&#x4E2D;&#x6587;&#x8BF4;&#x660E;&#x662F;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x51FD;&#x6570;&#x7684;&#x6CE8;&#x91CA;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-单元测试unittest基础.html" class="navigation navigation-prev " aria-label="Previous page: 单元测试unittest基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-单元测试unittest集成篇.html" class="navigation navigation-next " aria-label="Next page: 单元测试unittest集成篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"单元测试unittest进阶","level":"3.1.19.2","depth":3,"next":{"title":"单元测试unittest集成篇","level":"3.1.19.3","depth":3,"path":"Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","ref":"./Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","articles":[]},"previous":{"title":"单元测试unittest基础","level":"3.1.19.1","depth":3,"path":"Python/Python语言基础/unittest/01-单元测试unittest基础.md","ref":"./Python/Python语言基础/unittest/01-单元测试unittest基础.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言基础/unittest/02-单元测试unittest进阶.md","mtime":"2022-04-14T09:18:09.163Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-14T09:30:21.205Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

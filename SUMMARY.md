@@ -54,6 +54,10 @@
     - [网络应用开发](./Python/Python语言基础/14-网络应用开发.md)
     - [图像和文档处理](./Python/Python语言基础/15-图像和办公文档处理.md)
     - [logging日志模块](./Python/Python语言基础/16-logging日志模块.md)
+    - 单元测试unittest
+        - [单元测试unittest基础](./Python/Python语言基础/unittest/01-单元测试unittest基础.md)
+        - [单元测试unittest进阶](./Python/Python语言基础/unittest/02-单元测试unittest进阶.md)
+        - [单元测试unittest集成篇](./Python/Python语言基础/unittest/03-单元测试unittest集成篇.md)
 
 - Python语言进阶
     - [常用数据结构](./Python/Python语言进阶/01-常用数据结构和算法.md)
@@ -137,7 +141,7 @@
         - [常用控件2](./Python/第三方库/PySide/05-常用控件2.md)
         - [常用控件3](./Python/第三方库/PySide/06-常用控件3.md)
         - [常用控件4](./Python/第三方库/PySide/07-常用控件4.md)
-    
+
     - OpenCV
         - [图像基本操作](./Python/第三方库/OpenCV/01-图像基本操作.md)
         - [图像处理](./Python/第三方库/OpenCV/02-图像处理.md)
