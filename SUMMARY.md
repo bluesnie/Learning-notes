@@ -145,6 +145,8 @@
     - OpenCV
         - [图像基本操作](./Python/第三方库/OpenCV/01-图像基本操作.md)
         - [图像处理](./Python/第三方库/OpenCV/02-图像处理.md)
+    - Pyinstaller
+        - [pyInstaller打包基础](./Python/第三方库/PyInstaller/01-pyInstaller打包基础.md)
 
 ## GoLang
 
@@ -251,6 +253,16 @@
         - [JQuery方法大全](Web/JavaScript/框架/jQuery方法大全.md)
 - [RESTful规范](./Web/RESTful.md)
 
+## ROS
+- 基础
+    - [什么是ROS](ROS/基础/01-什么是ROS.md)
+    - [Catkin工作空间编译系统](ROS/基础/02-Catkin工作空间与编译系统.md)
+    - [ROS通信架构上](ROS/基础/03-ROS通信架构(上).md)
+    - [ROS通信架构下](ROS/基础/04-ROS通信架构(下).md)
+    - [常用工具](ROS/基础/05-常用工具.md)
+    - [roscpp](ROS/基础/06-roscpp.md)
+    - [rospy](ROS/基础/07-rospy.md)
+
 ## 工具
 
 - Docker
@@ -279,6 +291,10 @@
     - [树与二叉树](InterviewPreparation/DataStructuresAlgorithms/07-树与二叉树.md)
 - 面试题
     - [2020](InterviewPreparation/ClassicQuestion/20201027/README.md)
+
+- 工作所学技能或知识
+    - [福建路阳有限公司](Works/01-贞仕.md)
+    - [上海快仓自动化有限公司](Works/02-快仓.md)
 
 ## [理财](FinancialManagement)
 
