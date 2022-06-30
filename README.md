@@ -230,6 +230,7 @@
       | [Redis数据淘汰策略](Database/NoSQL/Redis/01-Redis基础.md#redis数据淘汰策略redisconf)
       | [Redis持久化](Database/NoSQL/Redis/01-Redis基础.md#redis持久化)
       | [Redis缓存与数据库Mysql一致性方案](Database/NoSQL/Redis/01-Redis基础.md#redis缓存与数据库mysql一致性方案)
+- [Redis开发规范](Database/NoSQL/Redis/03-Redis开发规范.md)
 
 ## [数据分析](./MachineLearning/)
 

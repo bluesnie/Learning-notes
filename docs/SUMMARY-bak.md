@@ -122,8 +122,8 @@
     - [NoSql入门](Database/NoSQL/01-NoSql入门.md)
 
 - Redeis
-    - [Redis安装与配置文件](./Database/NoSQL/02-Redis安装与配置文件.md)
-    - [Redis基础](./Database/NoSQL/03-Redis基础.md)
+    - [Redis安装与配置文件](Database/NoSQL/Redis/02-Redis安装与配置文件.md)
+    - [Redis基础](Database/NoSQL/Redis/01-Redis基础.md)
 
 ## 数据分析
 

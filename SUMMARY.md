@@ -206,6 +206,7 @@
 - Redeis
     - [Redis安装与配置文件](Database/NoSQL/Redis/02-Redis安装与配置文件.md)
     - [Redis基础](Database/NoSQL/Redis/01-Redis基础.md)
+    - [Redis开发规范](Database/NoSQL/Redis/03-Redis开发规范.md)
 
 ## 数据分析
 
