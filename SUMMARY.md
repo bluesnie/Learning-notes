@@ -8,10 +8,6 @@
 >
 > 注意：SUMMARY.md 目录中有的 markdown 才会转成静态 html, 并且才能全局搜索得到
 
-## 算法
-
-- [算法图解](./Algorithm/算法图解.pdf)
-
 ## Linux
 
 - [入门基础](./Linux/Linux.md)
@@ -193,6 +189,15 @@
         - 第六天：[HTML模板(Template)](./GoLang/7daysGoLang/gee-web/doc/gee-day6.md)
         - 第七天：[错误恢复(Panic Recover)](./GoLang/7daysGoLang/gee-web/doc/gee-day7.md)
 
+## C++
+
+- C++基础
+    - [C++初始](./C++/基础/01-C++初识.md)
+    - [数据类型](./C++/基础/02-数据类型.md)
+    - [运算符](./C++/基础/03-运算符.md)
+    - [流程控制](./C++/基础/04-流程控制.md)
+    - [数组](./C++/基础/05-数组.md)
+
 ## 数据库基础和进阶
 
 - MySQL
@@ -283,7 +288,11 @@
     - [数据库](InterviewPreparation/TechnicalInterviews/03-数据库.md)
     - [系统设计](InterviewPreparation/TechnicalInterviews/04-系统设计.md)
 - [数据结构与算法](InterviewPreparation/DataStructuresAlgorithms/DataStructuresAlgorithms.md)
-    - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
+    - 算法
+        - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
+        - [埃氏筛选法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/01-埃氏筛选法.md)
+        - [双指针法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/02-双指针法.md)
+        
     - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
     - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
     - [队列](InterviewPreparation/DataStructuresAlgorithms/04-队列.md)

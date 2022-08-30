@@ -75,12 +75,15 @@
     - 除了.py之外，其他格式若要打包进去，需要使用 --add-data 处理，或者手动拷贝(嫌麻烦，你每次都能记住？)
 
 - 如何使用 --add-data?
-  - 用法：pyinstaller x.py --add-data="源地址;目标地址"。 windows以;分割，linux以:分割
-  - 例如：将 config 目录的所有文件打包到目标的 config 文件夹（不存在会自动创建）下
+    - 用法：pyinstaller x.py --add-data="源地址;目标地址"。 windows以;分割，linux以:分割
+    - 例如：将 config 目录的所有文件打包到目标的 config 文件夹（不存在会自动创建）下
+
 ```text
  pyinstaller x.py --add-data ".\\config\\*;.\\config"
 ```
-  - 可使用多次 --add-data
+
+- 可使用多次 --add-data
+
 ```text
 pyinstaller x.py  -n Demo2.0.3 --key !@)v -i "res\logo.ico"  
 --add-data=".\*.txt;." --add-data=".\*.json;." --add-data="res\*.*;.\res" 
@@ -119,6 +122,57 @@ pyinstaller x.py  -n Demo2.0.3 --key !@)v -i "res\logo.ico"
 | `--uac-admin` |   | 请参考原文 |
 | `--uac-uiaccess` |   | 请参考原文 |
 
+## `.spec`文件打包
+
+- 生成 `.spec` 文件：`pyinstaller -F xxx.py`
+- 编写 `.spec` 内容
+- 打包：`pyinstaller xxx.py`
+
+```text
+# -*- mode: python ; coding: utf-8 -*-
+
+block_cipher = None
+
+a = Analysis(
+    ['run.py'],  # 此列表存放项目设计的所有Python脚本文件
+    pathex=["/upper_computer/src/upper_computer_ui/script/qs_apis"], # 此列表为项目的绝对路径
+    binaries=[],
+    datas=[('./dist/*', './dist')],
+    hiddenimports=['redis', 'paramiko', 'aioredis', 'gevent', 'requests', 'zmq', 'run'],  # fastapi的打包示例，run 也要加进来，否则启动不了
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name='run',  # 打包程序的名字
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=True,  # 程序运行时是否打开控制台
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+)
+```
+
 ## 常见打包错误及解决办法
 
 ### 1、在用`pyinstaller`打包（-F 选项），如果用到的第三方库含有`data`文件，而`pyinstaller`又没有自带该第三方库文件的`hook`的时候，执行打包后的`exe`一般会报以下错误
@@ -145,7 +199,7 @@ datas = collect_data_files("jieba")
 接下来，找到`pyinstaller`的`hooks`文件夹，大概位于：
 `python`根目录`\Lib\site-packages\PyInstaller\hooks`下，然后把`hook-jieba.py`丢进去
 > 注意是`\Lib\site-packages\PyInstaller\hooks` 不是 `\Lib\site-packages\PyInstaller\utils\hooks`
-> 
+>
 > **或者可以使用参数 `--additional-hooks-dir HOOKSPATH` 指定用户自定义的 hook 文件夹目录**
 
 最后，回到项目根目录，用`pyinstaller`打包即可。（注意需要把`build`目录删了，使`pyinstaller`从头开始打包）

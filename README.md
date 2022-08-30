@@ -12,10 +12,6 @@
 
 # 学习笔记
 
-## [算法](./Algorithm)
-
-- [算法图解](./Algorithm/算法图解.pdf)
-
 ## [Linux](./Linux)
 
 - [入门基础](./Linux/Linux.md)
@@ -191,6 +187,16 @@
     - 第六天：[HTML模板(Template)](./GoLang/7daysGoLang/gee-web/doc/gee-day6.md)
     - 第七天：[错误恢复(Panic Recover)](./GoLang/7daysGoLang/gee-web/doc/gee-day7.md)
 
+## [C++](./C++)
+
+### [C++基础](./C++/基础)
+- [C++初始](./C++/基础/01-C++初识.md)
+| [数据类型](./C++/基础/02-数据类型.md)
+| [运算符](./C++/基础/03-运算符.md)
+- [流程控制](./C++/基础/04-流程控制.md)
+| [数组](./C++/基础/05-数组.md)
+
+
 ## [数据库基础和进阶](./Database)
 
 ### [关系型数据库MySQL](./Database/MySQL)
@@ -308,7 +314,7 @@
 - [福建路阳有限公司](Works/01-贞仕.md)
 - [上海快仓自动化有限公司](Works/02-快仓.md)
 
-### [面试](InterviewPreparation/README.md)
+## [面试](InterviewPreparation/README.md)
 
 - [技术面试必备基础知识](InterviewPreparation/TechnicalInterviews/TechnicalInterviews.md)
     - [操作系统](InterviewPreparation/TechnicalInterviews/01-操作系统.md)
@@ -316,7 +322,9 @@
     - [数据库](InterviewPreparation/TechnicalInterviews/03-数据库.md)
     - [系统设计](InterviewPreparation/TechnicalInterviews/04-系统设计.md)
 - [数据结构与算法](InterviewPreparation/DataStructuresAlgorithms/DataStructuresAlgorithms.md)
-    - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
+    - 算法
+        - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
+        - [算法图解](InterviewPreparation/DataStructuresAlgorithms/Algorithm/算法图解.pdf)
     - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
     - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
     - [队列](InterviewPreparation/DataStructuresAlgorithms/04-队列.md)

@@ -10,7 +10,7 @@
 
 ## 算法
 
-- [算法图解](./Algorithm/算法图解.pdf)
+- [算法图解](InterviewPreparation/DataStructuresAlgorithms/Algorithm/算法图解.pdf)
 
 ## Linux
 
