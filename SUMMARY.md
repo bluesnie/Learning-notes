@@ -143,6 +143,8 @@
         - [图像处理](./Python/第三方库/OpenCV/02-图像处理.md)
     - Pyinstaller
         - [pyInstaller打包基础](./Python/第三方库/PyInstaller/01-pyInstaller打包基础.md)
+    - ZeroMQ
+        - [zmq基础](./Python/第三方库/ZeroMQ/01-zmq基础.md)    
 
 ## GoLang
 

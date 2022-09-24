@@ -191,9 +191,10 @@ FileNotFoundError: [Errno 2] No such file or directory: ‘C:\Users\ADMINI~1\App
 `hook`文件的命名规范为: `hook-【库名】.py`，以结巴分词为例，即为`hook-jieba.py`，然后简单敲入以下两行：
 
 ```python
-from PyInstaller.utils.hooks import collect_data_files
+from PyInstaller.utils.hooks import copy_metadata, collect_data_files
 
-datas = collect_data_files("jieba")
+datas = copy_metadata('jieba')  # 解决 `pkg_resources` 错误
+datas.extend(collect_data_files("jieba"))  # 解决静态文件不存在错误
 ```
 
 接下来，找到`pyinstaller`的`hooks`文件夹，大概位于：
