@@ -76,15 +76,29 @@
         - [Form、ModelForm组件](./Python/第三方库/Django/09-Form和ModelForm组件.md)
         - [中间件](./Python/第三方库/Django/10-中间件.md)
         - [Django-REST-framework](./Python/第三方库/Django/Django-REST-framework.md)
+        - Django项目开发经验
+            - [登录相关](./Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md)
+            - [异常处理手柄](./Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md)
+            - [过滤相关](./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md)
+            - [存储类重写](./Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md)
+            - [序列化相关](./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md)
+            - [自动化测试](./Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md)
+            - [接口加速缓存](./Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md)
 
-    - Django项目开发经验
-        - [登录相关](./Python/第三方库/Django/Django开发经验/02-Django-restframework登录相关.md)
-        - [异常处理手柄](./Python/第三方库/Django/Django开发经验/01-Django-restframework重写异常处理手柄.md)
-        - [过滤相关](./Python/第三方库/Django/Django开发经验/03-Django-restframework过滤类相关.md)
-        - [存储类重写](./Python/第三方库/Django/Django开发经验/04-Django-Fastdfs重写存储类.md)
-        - [序列化相关](./Python/第三方库/Django/Django开发经验/05-Django-restframework序列化相关.md)
-        - [自动化测试](./Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md)
-        - [接口加速缓存](./Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md)
+    - FastAPI
+
+        - FastAPI基础
+            - [pydantic](./Python/第三方库/FastAPI/基础/01-pydantic.md)
+            - [hello_world](./Python/第三方库/FastAPI/基础/02-hello_world.md)
+            - [请求参数和验证](./Python/第三方库/FastAPI/基础/03-请求参数和验证.md)
+            - [响应处理和FastAPI配置](./Python/第三方库/FastAPI/基础/04-响应处理和FastAPI配置.md)
+            - [FastAPI的依赖注入系统](./Python/第三方库/FastAPI/基础/05-FastAPI的依赖注入系统.md)
+            - [安全、认证和授权](./Python/第三方库/FastAPI/基础/06-安全、认证和授权.md)
+            - [FastAPI的数据库操作和多应用的目录结构设计](./Python/第三方库/FastAPI/基础/07-FastAPI的数据库操作和多应用的目录结构设计.md)
+            - [中间件、CORS、后台任务、测试用例](./Python/第三方库/FastAPI/基础/08-中间件、CORS、后台任务、测试用例.md)
+            - [示例新冠病毒疫情跟踪器API](./Python/第三方库/FastAPI/基础/09-示例新冠病毒疫情跟踪器API.md)
+            - [apSheduler动态定时任务](./Python/第三方库/FastAPI/基础/10-apSheduler动态定时任务.md)
+            - [入口文件、全局配置](./Python/第三方库/FastAPI/基础/11-main.md)
 
     - PyQt5
         - [导航](./Python/第三方库/PyQt5/README.md)
@@ -144,7 +158,7 @@
     - Pyinstaller
         - [pyInstaller打包基础](./Python/第三方库/PyInstaller/01-pyInstaller打包基础.md)
     - ZeroMQ
-        - [zmq基础](./Python/第三方库/ZeroMQ/01-zmq基础.md)    
+        - [zmq基础](./Python/第三方库/ZeroMQ/01-zmq基础.md)
 
 ## GoLang
 
@@ -262,6 +276,7 @@
 - [RESTful规范](./Web/RESTful.md)
 
 ## ROS
+
 - 基础
     - [什么是ROS](ROS/基础/01-什么是ROS.md)
     - [Catkin工作空间编译系统](ROS/基础/02-Catkin工作空间与编译系统.md)
@@ -294,7 +309,7 @@
         - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
         - [埃氏筛选法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/01-埃氏筛选法.md)
         - [双指针法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/02-双指针法.md)
-        
+
     - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
     - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
     - [队列](InterviewPreparation/DataStructuresAlgorithms/04-队列.md)

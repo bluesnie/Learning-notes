@@ -110,6 +110,22 @@
   | [自动化测试](./Python/第三方库/Django/Django开发经验/06-api接口自动化测试.md)
   | [接口加速缓存](./Python/第三方库/Django/Django开发经验/07-为接口加速加缓存.md)
 
+#### [FastAPI](./Python/第三方库/FastAPI)
+
+#### [基础](./Python/第三方库/FastAPI/基础)
+
+- [pydantic](./Python/第三方库/FastAPI/基础/01-pydantic.md)
+- [hello_world](./Python/第三方库/FastAPI/基础/02-hello_world.md)
+- [请求参数和验证](./Python/第三方库/FastAPI/基础/03-请求参数和验证.md)
+- [响应处理和FastAPI配置](./Python/第三方库/FastAPI/基础/04-响应处理和FastAPI配置.md)
+- [FastAPI的依赖注入系统](./Python/第三方库/FastAPI/基础/05-FastAPI的依赖注入系统.md)
+- [安全、认证和授权](./Python/第三方库/FastAPI/基础/06-安全、认证和授权.md)
+- [FastAPI的数据库操作和多应用的目录结构设计](./Python/第三方库/FastAPI/基础/07-FastAPI的数据库操作和多应用的目录结构设计.md)
+- [中间件、CORS、后台任务、测试用例](./Python/第三方库/FastAPI/基础/08-中间件、CORS、后台任务、测试用例.md)
+- [示例新冠病毒疫情跟踪器API](./Python/第三方库/FastAPI/基础/09-示例新冠病毒疫情跟踪器API.md)
+- [apSheduler动态定时任务](./Python/第三方库/FastAPI/基础/10-apSheduler动态定时任务.md)
+- [入口文件、全局配置](./Python/第三方库/FastAPI/基础/11-main.md)
+
 #### [PyQt5](./Python/第三方库/PyQt5)
 
 - [导航](./Python/第三方库/PyQt5/README.md)
