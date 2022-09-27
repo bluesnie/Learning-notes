@@ -220,14 +220,26 @@ class Foo(metaclass=SingletonMeta):
 你可以定义自己想要的行为，而这一切都是自动发生的，它们经常是两个下划线包围来命名的（比如 `__init__` , `__len__` ),
 Python的魔法方法是非常强的所以了解其使大用方法也变得尤为重要!
 
-- `__init__`： 构造器，当一个实例被创建的时候初始化的方法，但是它并不是实例化调用的第一个方法。
-- `__new__`：才是实例化对象调用的第一个方法，它只取下 cls 参数，并把其他参数传给 `__init___`。
-- `___new__`： 很少使用，但是也有它适合的场景，尤其是当类继承自一个像元祖或者字符串这样不经常改变的类型的时候。
+- `__init__`： 构造器，当一个实例被创建的时候初始化的方法，但是它并不是实例化调用的第一个方法。`__new__`：才是实例化对象调用的第一个方法，它只取下 cls 参数，并把其他参数传给 `__init___`。
+- `__new__`： 很少使用，但是也有它适合的场景，尤其是当类继承自一个像元祖或者字符串这样不经常改变的类型的时候。
 - `__call__`： 让一个类的实例像函数一样被调用
 - `__getitem__`： 定义获取容器中指定元素的行为，相当于 self[key]
 - `__getattr__`： 定义当用户试图访问一个不存在属性的时候的行为。
 - `__setattr__`： 定义当一个属性被设置的时候的行为
 - `__getattribute___`： 定义当一个属性被访问的时候的行为
+
+> `__new__`在 py2 和 py3 的区别
+> 
+> - py2
+> 
+>  - `__init__`  有形参和args和kwargs，实例化传不传实参都支持
+>       - `super(AgvStatusMonitor, cls).__new__(cls)`
+>       - `super(AgvStatusMonitor, cls).__new__(cls, *args, **kwargs)`
+> - py3 实例化实例时
+>   
+>   - `__init__`传参数（也可不传参数）：`super(AgvStatusMonitor, cls).__new__(cls)` 或 `super(AgvStatusMonitor, cls).__new__(cls, *args, **kwargs)`
+>   - `__init__`不传参数（传参数报错）：`super(AgvStatusMonitor, cls).__new__(cls, *args, **kwargs)`
+
 
 # 多进程多线程以及协程的理解
 

@@ -10,6 +10,11 @@ import threading
 import time
 
 import uvicorn
+from fastapi.openapi.docs import (
+    get_redoc_html,
+    get_swagger_ui_html,
+    get_swagger_ui_oauth2_redirect_html,
+)
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,8 +31,7 @@ app = FastAPI(
     title="FastAPI tutorial and Coronavirus Tracker API Docs",
     description='FastAPI教程 新冠病毒疫情跟踪器API接口文档',
     version="1.0.0",
-    docs_url="/docs",
-    redoc_url="/redocs",
+    docs_url=None, redoc_url=None  # 自定义本地js，css
     # dependencies=[], # 全局依赖
 )
 # mount表示将某个目录下一个完全独立的应用挂载过来，这个不会在API交互文档中显示
@@ -75,6 +79,36 @@ app.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
+
+
+# 自定义 swagger 相关，加速静态文件的加载
+
+@app.get("/docs", include_in_schema=False)
+async def custom_swagger_ui_html():
+    """自定义 swagger，静态文件本地化"""
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title=app.title + " - Swagger UI",
+        oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url,
+        swagger_js_url="/static/swagger-ui/swagger-ui-bundle.js",
+        swagger_css_url="/static/swagger-ui/swagger-ui.css",
+    )
+
+
+@app.get(app.swagger_ui_oauth2_redirect_url, include_in_schema=False)
+async def swagger_ui_redirect():
+    """自定义 swagger，oauth相关"""
+    return get_swagger_ui_oauth2_redirect_html()
+
+
+@app.get("/redoc", include_in_schema=False)
+async def redoc_html():
+    return get_redoc_html(
+        openapi_url=app.openapi_url,
+        title=app.title + " - ReDoc",
+        redoc_js_url="/static/redoc.standalone.js",  # 网上找不到相关js, 该页面一般没人用
+    )
+
 
 app.include_router(app3, prefix="/chapter03", tags=["第三章 请求参数和验证"])
 app.include_router(app4, prefix="/chapter04", tags=["第四章 响应处理和FastAPI配置"])
