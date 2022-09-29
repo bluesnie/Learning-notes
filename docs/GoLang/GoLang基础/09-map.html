@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="../../Python/Python语言进阶/07-GIL全局解释器锁.html">
+            
+                <a href="../../Python/Python语言进阶/07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4495,30 +4508,30 @@ countMap := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">m
 fmt.Println(countMap)
 </code></pre>
 <ul>
-<li>&#x5347;&#x5E8F;&#x8F93;&#x51FA; map &#x7684;&#x503C;
-```go
-map1 := make(map[int]int, 10)
-map1[10] = 100
-map1[1] = 13
-map1[4] = 56
-map1[8] = 90
-map1[12] = 43
-map1[7] = 32</li>
+<li>&#x5347;&#x5E8F;&#x8F93;&#x51FA; map &#x7684;&#x503C;</li>
 </ul>
-<p>// 1&#x3001;&#x628A; map &#x7684; key &#x5347;&#x5E8F;&#x653E;&#x5165;&#x5207;&#x7247;
-keySlice []int
-for k, <em> := range map1{
-    keySlice = append(keySlice, k)
+<pre><code class="lang-go">map1 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>, <span class="hljs-number">10</span>)
+map1[<span class="hljs-number">10</span>] = <span class="hljs-number">100</span>
+map1[<span class="hljs-number">1</span>] = <span class="hljs-number">13</span>
+map1[<span class="hljs-number">4</span>] = <span class="hljs-number">56</span>
+map1[<span class="hljs-number">8</span>] = <span class="hljs-number">90</span>
+map1[<span class="hljs-number">12</span>] = <span class="hljs-number">43</span>
+map1[<span class="hljs-number">7</span>] = <span class="hljs-number">32</span>
+
+<span class="hljs-comment">// 1&#x3001;&#x628A; map &#x7684; key &#x5347;&#x5E8F;&#x653E;&#x5165;&#x5207;&#x7247;</span>
+keySlice []<span class="hljs-keyword">int</span>
+<span class="hljs-keyword">for</span> k, _ := <span class="hljs-keyword">range</span> map1{
+    keySlice = <span class="hljs-built_in">append</span>(keySlice, k)
 }
 fmt.Println(keySlice)
-// 2&#x3001;&#x5347;&#x5E8F;
+<span class="hljs-comment">// 2&#x3001;&#x5347;&#x5E8F;</span>
 sort.Ints(keySlice)
 fmt.Println(keySlice)
-// 3&#x3001;&#x8F93;&#x51FA;
-for </em>, v := range keySlice{
-    fmt.Printf(&quot;key=%v, value=%v&quot;, v, map1[v])
+<span class="hljs-comment">// 3&#x3001;&#x8F93;&#x51FA;</span>
+<span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> keySlice{
+    fmt.Printf(<span class="hljs-string">&quot;key=%v, value=%v&quot;</span>, v, map1[v])
 }
-```</p>
+</code></pre>
 
                                 
                                 </section>
@@ -4562,7 +4575,7 @@ for </em>, v := range keySlice{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"map","level":"3.2.9","depth":2,"next":{"title":"函数","level":"3.2.10","depth":2,"path":"GoLang/GoLang基础/10-函数.md","ref":"./GoLang/GoLang基础/10-函数.md","articles":[]},"previous":{"title":"切片","level":"3.2.8","depth":2,"path":"GoLang/GoLang基础/08-切片.md","ref":"./GoLang/GoLang基础/08-切片.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/09-map.md","mtime":"2021-11-29T07:02:14.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"map","level":"3.2.9","depth":2,"next":{"title":"函数","level":"3.2.10","depth":2,"path":"GoLang/GoLang基础/10-函数.md","ref":"./GoLang/GoLang基础/10-函数.md","articles":[]},"previous":{"title":"切片","level":"3.2.8","depth":2,"path":"GoLang/GoLang基础/08-切片.md","ref":"./GoLang/GoLang基础/08-切片.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/09-map.md","mtime":"2022-09-29T10:51:04.420Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

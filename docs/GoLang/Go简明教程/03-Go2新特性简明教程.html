@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="../../Python/Python语言进阶/07-GIL全局解释器锁.html">
+            
+                <a href="../../Python/Python语言进阶/07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4393,9 +4406,12 @@
 <h6 id="authornzb">author:nzb</h6>
 <h1 id="go2-&#x65B0;&#x7279;&#x6027;&#x7B80;&#x660E;&#x6559;&#x7A0B;">Go2 &#x65B0;&#x7279;&#x6027;&#x7B80;&#x660E;&#x6559;&#x7A0B;</h1>
 <h2 id="go-&#x7684;&#x6F14;&#x8FDB;">Go &#x7684;&#x6F14;&#x8FDB;</h2>
-<p>Go&#x8BED;&#x8A00;/golang &#x8BDE;&#x751F;&#x4E8E;2007&#x5E74;&#xFF0C;&#x7ECF;&#x8FC7;12&#x5E74;&#x7684;&#x53D1;&#x5C55;&#xFF0C;Go&#x9010;&#x6E10;&#x6210;&#x4E3A;&#x4E86;&#x4E91;&#x8BA1;&#x7B97;&#x9886;&#x57DF;&#x65B0;&#x4E00;&#x4EE3;&#x7684;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x3002;Go&#x8BED;&#x8A00;&#x5728;&#x727A;&#x7272;&#x5F88;&#x5C11;&#x6027;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BED;&#x6CD5;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x3002;&#x6211;&#x662F;Python&#x7684;&#x91CD;&#x5EA6;&#x7528;&#x6237;&#xFF0C;&#x5728;&#x5B66;&#x4E60;Go&#x65F6;&#xFF0C;&#x5374;&#x6709;&#x4E00;&#x79CD;&#x5728;&#x5B66;&#x4E60;Python&#x7684;&#x611F;&#x89C9;&#x3002;&#x5E76;&#x975E;&#x8BED;&#x6CD5;&#x76F8;&#x4F3C;&#xFF0C;&#x800C;&#x662F;Go&#x8BED;&#x8A00;&#x4F5C;&#x4E3A;&#x4E00;&#x95E8;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#xFF0C;&#x7ADF;&#x7136;&#x80FD;&#x591F;&#x50CF;Python&#x4E00;&#x6837;&#xFF0C;&#x5C11;&#x91CF;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x4E8B;&#x60C5;&#x3002;Go&#x8BED;&#x8A00;&#x4EFF;&#x4F5B;&#x662F;C&#x548C;Python&#x7684;&#x7ED3;&#x5408;&#x4F53;&#x3002;</p>
-<p>Go&#x662F;&#x5982;&#x4F55;&#x706B;&#x8D77;&#x6765;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x89C9;&#x5F97;&#x6709;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x9664;&#x4E86;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x6027;&#x80FD;&#x597D;&#xFF0C;&#x8BED;&#x6CD5;&#x7B80;&#x5355;&#xFF0C;&#x6613;&#x4E0A;&#x624B;&#x5916;&#x3002;Go&#x8BED;&#x8A00;&#x539F;&#x751F;&#x652F;&#x6301; <code>Goroutine</code> &#x548C; <code>Channel</code>&#xFF0C;&#x6781;&#x5927;&#x5730;&#x964D;&#x4F4E;&#x4E86;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;&#x7F16;&#x7A0B;&#xFF0C;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x5C24;&#x5176;&#x91CD;&#x8981;&#xFF0C;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;C++&#xFF0C;Java&#x7B49;&#x8BED;&#x8A00;&#x7684;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x63A7;&#x5236;&#x903B;&#x8F91;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6740;&#x624B;&#x7EA7;&#x5E94;&#x7528;Docker&#x7684;&#x51FA;&#x73B0;&#x8D77;&#x5230;&#x4E86;&#x5F88;&#x5927;&#x7684;&#x63A8;&#x52A8;&#x4F5C;&#x7528;&#x3002;</p>
-<p>Go&#x8BED;&#x8A00;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x4EE4;&#x4EBA;&#x8BDF;&#x75C5;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4F8B;&#x5982;&#x5305;&#x7BA1;&#x7406;&#x673A;&#x5236;&#xFF0C;Go&#x76F4;&#x5230;v1.6&#x624D;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x4E86;vendor&#x673A;&#x5236;&#xFF0C;vendor&#x673A;&#x5236;&#x975E;&#x5E38;&#x7B80;&#x964B;&#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x5C31;&#x662F;&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x589E;&#x52A0;&#x4E00;&#x4E2A;vendor&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x653E;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x3002;vendor&#x673A;&#x5236;&#x662F;&#x6CA1;&#x6709;&#x7248;&#x672C;&#x6982;&#x5FF5;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;vendor&#x76EE;&#x5F55;&#x5D4C;&#x5957;&#x7684;&#x95EE;&#x9898;&#x4EE5;&#x53CA;&#x540C;&#x540D;&#x5305;&#x51FD;&#x6570;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x3002;&#x540E;&#x6765;&#x793E;&#x533A;&#x6D8C;&#x73B0;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x4EC5;&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x5C31;&#x6709;15&#x79CD;&#x4E4B;&#x591A;&#xFF0C;&#x5E94;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#x7684;&#xFF0C;&#x5982;dep&#x3001;govendor&#x3002;&#x76F4;&#x5230;v1.11&#xFF0C;&#x5B98;&#x65B9;&#x589E;&#x52A0;&#x4E86;Go modules&#x673A;&#x5236;&#xFF0C;&#x624D;&#x7B97;&#x8F83;&#x4E3A;&#x5B8C;&#x6574;&#x5730;&#x89E3;&#x51B3;&#x4E86;&#x5305;&#x7BA1;&#x7406;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>Go&#x8BED;&#x8A00;/golang
+&#x8BDE;&#x751F;&#x4E8E;2007&#x5E74;&#xFF0C;&#x7ECF;&#x8FC7;12&#x5E74;&#x7684;&#x53D1;&#x5C55;&#xFF0C;Go&#x9010;&#x6E10;&#x6210;&#x4E3A;&#x4E86;&#x4E91;&#x8BA1;&#x7B97;&#x9886;&#x57DF;&#x65B0;&#x4E00;&#x4EE3;&#x7684;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x3002;Go&#x8BED;&#x8A00;&#x5728;&#x727A;&#x7272;&#x5F88;&#x5C11;&#x6027;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BED;&#x6CD5;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x3002;&#x6211;&#x662F;Python&#x7684;&#x91CD;&#x5EA6;&#x7528;&#x6237;&#xFF0C;&#x5728;&#x5B66;&#x4E60;Go&#x65F6;&#xFF0C;&#x5374;&#x6709;&#x4E00;&#x79CD;&#x5728;&#x5B66;&#x4E60;Python&#x7684;&#x611F;&#x89C9;&#x3002;&#x5E76;&#x975E;&#x8BED;&#x6CD5;&#x76F8;&#x4F3C;&#xFF0C;&#x800C;&#x662F;Go&#x8BED;&#x8A00;&#x4F5C;&#x4E3A;&#x4E00;&#x95E8;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#xFF0C;&#x7ADF;&#x7136;&#x80FD;&#x591F;&#x50CF;Python&#x4E00;&#x6837;&#xFF0C;&#x5C11;&#x91CF;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x4E8B;&#x60C5;&#x3002;Go&#x8BED;&#x8A00;&#x4EFF;&#x4F5B;&#x662F;C&#x548C;Python&#x7684;&#x7ED3;&#x5408;&#x4F53;&#x3002;</p>
+<p>Go&#x662F;&#x5982;&#x4F55;&#x706B;&#x8D77;&#x6765;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x89C9;&#x5F97;&#x6709;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x9664;&#x4E86;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x6027;&#x80FD;&#x597D;&#xFF0C;&#x8BED;&#x6CD5;&#x7B80;&#x5355;&#xFF0C;&#x6613;&#x4E0A;&#x624B;&#x5916;&#x3002;Go&#x8BED;&#x8A00;&#x539F;&#x751F;&#x652F;&#x6301; <code>Goroutine</code> &#x548C; <code>Channel</code>
+&#xFF0C;&#x6781;&#x5927;&#x5730;&#x964D;&#x4F4E;&#x4E86;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;&#x7F16;&#x7A0B;&#xFF0C;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x5C24;&#x5176;&#x91CD;&#x8981;&#xFF0C;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;C++&#xFF0C;Java&#x7B49;&#x8BED;&#x8A00;&#x7684;&#x5E76;&#x53D1;&#x548C;&#x5F02;&#x6B65;&#x63A7;&#x5236;&#x903B;&#x8F91;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6740;&#x624B;&#x7EA7;&#x5E94;&#x7528;Docker&#x7684;&#x51FA;&#x73B0;&#x8D77;&#x5230;&#x4E86;&#x5F88;&#x5927;&#x7684;&#x63A8;&#x52A8;&#x4F5C;&#x7528;&#x3002;</p>
+<p>Go&#x8BED;&#x8A00;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x4EE4;&#x4EBA;&#x8BDF;&#x75C5;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4F8B;&#x5982;&#x5305;&#x7BA1;&#x7406;&#x673A;&#x5236;&#xFF0C;Go&#x76F4;&#x5230;v1.6&#x624D;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x4E86;vendor&#x673A;&#x5236;&#xFF0C;vendor&#x673A;&#x5236;&#x975E;&#x5E38;&#x7B80;&#x964B;&#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x5C31;&#x662F;&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x589E;&#x52A0;&#x4E00;&#x4E2A;vendor&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x653E;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x3002;vendor&#x673A;&#x5236;&#x662F;&#x6CA1;&#x6709;&#x7248;&#x672C;&#x6982;&#x5FF5;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;vendor&#x76EE;&#x5F55;&#x5D4C;&#x5957;&#x7684;&#x95EE;&#x9898;&#x4EE5;&#x53CA;&#x540C;&#x540D;&#x5305;&#x51FD;&#x6570;&#x51B2;&#x7A81;&#x95EE;&#x9898;&#x3002;&#x540E;&#x6765;&#x793E;&#x533A;&#x6D8C;&#x73B0;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x4EC5;&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x5C31;&#x6709;15&#x79CD;&#x4E4B;&#x591A;&#xFF0C;&#x5E94;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#x7684;&#xFF0C;&#x5982;dep&#x3001;govendor&#x3002;&#x76F4;&#x5230;v1.11&#xFF0C;&#x5B98;&#x65B9;&#x589E;&#x52A0;&#x4E86;Go
+modules&#x673A;&#x5236;&#xFF0C;&#x624D;&#x7B97;&#x8F83;&#x4E3A;&#x5B8C;&#x6574;&#x5730;&#x89E3;&#x51B3;&#x4E86;&#x5305;&#x7BA1;&#x7406;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
 <p>Go2 &#x53EF;&#x4EE5;&#x8BF4;&#x662F;Go&#x8BED;&#x8A00;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x91CC;&#x7A0B;&#x7891;&#xFF0C;Go1 &#x76EE;&#x524D;&#x867D;&#x7136;&#x5DF2;&#x7ECF;&#x5230;&#x4E86;1.12&#x7248;&#x672C;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x6BCF;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5F88;&#x5C11;&#x6D89;&#x53CA;&#x8BED;&#x6CD5;&#x5C42;&#x9762;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x800C;&#x4E14;&#x6BCF;&#x4E2A;&#x7248;&#x672C;&#x90FD;&#x662F;&#x5411;&#x524D;&#x517C;&#x5BB9;&#x7684;&#x3002;&#x8F83;&#x5927;&#x7684;&#x6539;&#x52A8;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
 <li>Go1.2 &#x5207;&#x7247;&#x64CD;&#x4F5C;</li>
@@ -4404,29 +4420,36 @@
 var b = a[i:j:k]
 </code></pre>
 <ul>
-<li>Go1.4 for&#x8BED;&#x8A00;&#x52A0;&#x5F3A;
-```text
-// &lt;= 1.3
-for i, v := range x {
-  // ...
-}</li>
+<li>Go1.4 for&#x8BED;&#x8A00;&#x52A0;&#x5F3A;</li>
 </ul>
-<p>for i := range x {
+<pre><code class="lang-text">// &lt;= 1.3
+for i, v := range x {
     // ...
-}</p>
-<p>// 1.4 &#x65B0;&#x589E;
-var times [5][0]int</p>
-<p>for i := 0; i &lt; len(times); i++ {
+}
+
+for i := range x {
     // ...
-}</p>
-<p>for _ = range times {
+}
+
+// 1.4 &#x65B0;&#x589E;
+var times [5][0]int
+
+for i := 0; i &lt; len(times); i++ {
     // ...
-}</p>
-<pre><code>- Go1.9 &#x7C7B;&#x578B;&#x522B;&#x540D;
-```text
-type T1 = T2
-</code></pre><h2 id="go-2-&#x8BBE;&#x8BA1;&#x8349;&#x6848;">Go 2 &#x8BBE;&#x8BA1;&#x8349;&#x6848;</h2>
-<p>&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x5B8C;&#x5584;Go&#x8BED;&#x8A00;&#xFF0C;&#x63D0;&#x4F9B;&#x66F4;&#x597D;&#x7684;&#x4F53;&#x9A8C;&#x3002;Go&#x8BED;&#x8A00;&#x793E;&#x533A;&#x76EE;&#x524D;&#x53D1;&#x5E03;&#x4E86;&#x4E09;&#x7C7B;&#x91CD;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#x8349;&#x6848;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x9519;&#x8BEF;&#x5904;&#x7406;(Error handling)&#x3001;&#x9519;&#x8BEF;&#x503C;(Error values)&#x3001;&#x6CDB;&#x578B;(Generics)&#xFF0C;&#x8FD9;&#x51E0;&#x4E2A;&#x8349;&#x6848;&#x4EE3;&#x8868;&#x4E86;&#x793E;&#x533A;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x5B8C;&#x5584;&#x65B9;&#x5411;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x6700;&#x7EC8;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+}
+
+for _ = range times {
+    // ...
+}
+</code></pre>
+<ul>
+<li>Go1.9 &#x7C7B;&#x578B;&#x522B;&#x540D;</li>
+</ul>
+<pre><code class="lang-text">type T1 = T2
+</code></pre>
+<h2 id="go-2-&#x8BBE;&#x8BA1;&#x8349;&#x6848;">Go 2 &#x8BBE;&#x8BA1;&#x8349;&#x6848;</h2>
+<p>&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x5B8C;&#x5584;Go&#x8BED;&#x8A00;&#xFF0C;&#x63D0;&#x4F9B;&#x66F4;&#x597D;&#x7684;&#x4F53;&#x9A8C;&#x3002;Go&#x8BED;&#x8A00;&#x793E;&#x533A;&#x76EE;&#x524D;&#x53D1;&#x5E03;&#x4E86;&#x4E09;&#x7C7B;&#x91CD;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#x8349;&#x6848;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x9519;&#x8BEF;&#x5904;&#x7406;(Error handling)&#x3001;&#x9519;&#x8BEF;&#x503C;(Error values)&#x3001;&#x6CDB;&#x578B;(Generics)
+&#xFF0C;&#x8FD9;&#x51E0;&#x4E2A;&#x8349;&#x6848;&#x4EE3;&#x8868;&#x4E86;&#x793E;&#x533A;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x5B8C;&#x5584;&#x65B9;&#x5411;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x6700;&#x7EC8;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
 <h3 id="&#x9519;&#x8BEF;&#x5904;&#x7406;error-handling">&#x9519;&#x8BEF;&#x5904;&#x7406;(Error Handling)</h3>
 <p>Go1 &#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5F3A;&#x8FEB;&#x8C03;&#x7528;&#x8005;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x5BFC;&#x81F4;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x5927;&#x91CF;&#x7684; <code>if</code> &#x5224;&#x65AD;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
 <pre><code class="lang-text">func CopyFile(src, dst string) {
@@ -4487,7 +4510,9 @@ try err
 </code></pre>
 <p>&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#xFF0C;<code>check err</code>&#x663E;&#x7136;&#x6BD4;<code>try err</code>&#x66F4;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
 <h3 id="&#x9519;&#x8BEF;&#x503C;error-values">&#x9519;&#x8BEF;&#x503C;(Error values)</h3>
-<p>&#x540C;&#x6837;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x8BBE;&#x8BA1;&#x5F97;&#x8F83;&#x4E3A;&#x7B80;&#x964B;&#xFF0C;Go&#x8BED;&#x8A00;&#x5BF9;<code>Error values</code>&#x652F;&#x6301;&#x6709;&#x9650;&#x3002;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x4E86;<code>error</code>&#x63A5;&#x53E3;&#xFF0C;&#x90FD;&#x662F;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x3002;&#x7531;&#x4E8E;&#x7F3A;&#x5C11;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5728;&#x5404;&#x79CD;&#x5E93;&#x5F53;&#x4E2D;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x4EE5;&#x53CA;&#x4EA7;&#x751F;&#x4E86;&#x54EA;&#x7C7B;&#x9519;&#x8BEF;&#x7684;&#x65B9;&#x5F0F;&#x591A;&#x79CD;&#x591A;&#x6837;&#xFF0C;&#x4F8B;&#x5982;<code>io.EOF</code>&#xFF0C;<code>os.IsNotExist</code>&#xFF0C;<code>err.Error()</code>&#x7B49;&#xFF0C;&#x3002;&#x53E6;&#x5916;&#xFF0C;Go&#x8BED;&#x8A00;&#x76EE;&#x524D;&#x6CA1;&#x6709;&#x673A;&#x5236;&#x8FFD;&#x6EAF;&#x5230;&#x5B8C;&#x6574;&#x7684;&#x9519;&#x8BEF;&#x94FE;&#x6761;&#x3002;&#x4F8B;&#x5982;&#xFF0C;</p>
+<p>&#x540C;&#x6837;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#x8BBE;&#x8BA1;&#x5F97;&#x8F83;&#x4E3A;&#x7B80;&#x964B;&#xFF0C;Go&#x8BED;&#x8A00;&#x5BF9;<code>Error values</code>&#x652F;&#x6301;&#x6709;&#x9650;&#x3002;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x4E86;<code>error</code>
+&#x63A5;&#x53E3;&#xFF0C;&#x90FD;&#x662F;&#x9519;&#x8BEF;&#x7C7B;&#x578B;&#x3002;&#x7531;&#x4E8E;&#x7F3A;&#x5C11;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5728;&#x5404;&#x79CD;&#x5E93;&#x5F53;&#x4E2D;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x4EE5;&#x53CA;&#x4EA7;&#x751F;&#x4E86;&#x54EA;&#x7C7B;&#x9519;&#x8BEF;&#x7684;&#x65B9;&#x5F0F;&#x591A;&#x79CD;&#x591A;&#x6837;&#xFF0C;&#x4F8B;&#x5982;<code>io.EOF</code>&#xFF0C;<code>os.IsNotExist</code>&#xFF0C;<code>err.Error()</code>
+&#x7B49;&#xFF0C;&#x3002;&#x53E6;&#x5916;&#xFF0C;Go&#x8BED;&#x8A00;&#x76EE;&#x524D;&#x6CA1;&#x6709;&#x673A;&#x5236;&#x8FFD;&#x6EAF;&#x5230;&#x5B8C;&#x6574;&#x7684;&#x9519;&#x8BEF;&#x94FE;&#x6761;&#x3002;&#x4F8B;&#x5982;&#xFF0C;</p>
 <pre><code class="lang-text">func funcB() error {
     if v, err := funcA(); if err != nil {
         return fmt.Errorf(&quot;connect to db: %v&quot;, err)
@@ -4506,36 +4531,39 @@ func funcC() error {
 <p>&#x6BCF;&#x4E00;&#x5C42;&#xFF0C;&#x7528;&#x989D;&#x5916;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x662F;&#x76EE;&#x524D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x9664;&#x4E86;&#x901A;&#x8FC7;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#xFF0C;&#x5F88;&#x96BE;&#x8FD8;&#x539F;&#x51FA;&#x5B8C;&#x6574;&#x7684;&#x9519;&#x8BEF;&#x94FE;&#x6761;&#x3002;</p>
 <p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;Error values&#x7F3A;&#x5C11;&#x6807;&#x51C6;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6709;2&#x4E2A;&#x63D0;&#x6848;&#xFF0C;&#x5206;&#x522B;&#x9488;&#x5BF9;<code>Error inspection</code>&#x548C;<code>Error formatting</code>&#x3002;</p>
 <ul>
-<li>&#x9488;&#x5BF9; Error inspection &#xFF0C;&#x4E3A;error&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63A5;&#x53E3;<code>Unwrap</code>&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x94FE;&#x4E0A;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;
-```text
-package errors</li>
+<li>&#x9488;&#x5BF9; Error inspection &#xFF0C;&#x4E3A;error&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63A5;&#x53E3;<code>Unwrap</code>&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x94FE;&#x4E0A;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</li>
 </ul>
-<p>type Wrapper interface {
+<pre><code class="lang-text">package errors
+
+type Wrapper interface {
     Unwrap() error
-}</p>
-<pre><code>&#x4F8B;&#x5982;&#xFF0C;
-```text
-// WriteError &#x5B9E;&#x73B0; Unwrap &#x63A5;&#x53E3;
+}
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code class="lang-text">// WriteError &#x5B9E;&#x73B0; Unwrap &#x63A5;&#x53E3;
 func (e *WriteError) Unwrap() error { return e.Err }
-</code></pre><ul>
-<li>&#x9488;&#x5BF9; Error format&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63A5;&#x53E3;Format&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
-```text
-package errors</li>
+</code></pre>
+<ul>
+<li>&#x9488;&#x5BF9; Error format&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x63A5;&#x53E3;Format&#xFF0C;&#x7528;&#x6765;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</li>
 </ul>
-<p>type Formatter interface {
+<pre><code class="lang-text">package errors
+
+type Formatter interface {
     Format(p Printer) (next error)
-}</p>
-<pre><code>&#x4F8B;&#x5982;&#xFF0C;
-```text
-func (e *WriteError) Format(p errors.Printer) (next error) {
+}
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;</p>
+<pre><code class="lang-text">func (e *WriteError) Format(p errors.Printer) (next error) {
     p.Printf(&quot;write %s database&quot;, e.Database)
     if p.Detail() {
         p.Printf(&quot;more detail here&quot;)
     }
     return e.Err
 }
-</code></pre><h3 id="&#x6CDB;&#x578B;generics">&#x6CDB;&#x578B;(Generics)</h3>
-<p>Go&#x8BED;&#x8A00;&#x5F53;&#x524D;&#x53EF;&#x4F7F;&#x7528;<code>inferface{}</code>&#xFF0C;&#x5141;&#x8BB8;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x4F46;&#x8FD9;&#x8FC7;&#x4E8E;&#x7075;&#x6D3B;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x540E;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF0C;&#x8FDB;&#x800C;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x6B65;&#x7684;&#x5904;&#x7406;&#x3002;&#x5BF9;&#x6BD4;C++/Java&#x7684;&#x6807;&#x51C6;&#x5BB9;&#x5668;&#xFF0C;Go&#x8BED;&#x8A00;&#x5728;&#x6CDB;&#x578B;&#x65B9;&#x9762;&#x6709;&#x5F88;&#x5927;&#x4E0D;&#x8DB3;&#xFF0C;&#x56E0;&#x6B64;&#x9488;&#x5BF9;&#x6CDB;&#x578B;&#x7684;&#x63D0;&#x6848;&#x5373;&#x5E0C;&#x671B;&#x5F25;&#x8865;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4E0D;&#x8DB3;&#x3002;&#x63D0;&#x6848;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
+</code></pre>
+<h3 id="&#x6CDB;&#x578B;generics">&#x6CDB;&#x578B;(Generics)</h3>
+<p>Go&#x8BED;&#x8A00;&#x5F53;&#x524D;&#x53EF;&#x4F7F;&#x7528;<code>inferface{}</code>
+&#xFF0C;&#x5141;&#x8BB8;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x4F46;&#x8FD9;&#x8FC7;&#x4E8E;&#x7075;&#x6D3B;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5728;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x540E;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF0C;&#x8FDB;&#x800C;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x6B65;&#x7684;&#x5904;&#x7406;&#x3002;&#x5BF9;&#x6BD4;C++/Java&#x7684;&#x6807;&#x51C6;&#x5BB9;&#x5668;&#xFF0C;Go&#x8BED;&#x8A00;&#x5728;&#x6CDB;&#x578B;&#x65B9;&#x9762;&#x6709;&#x5F88;&#x5927;&#x4E0D;&#x8DB3;&#xFF0C;&#x56E0;&#x6B64;&#x9488;&#x5BF9;&#x6CDB;&#x578B;&#x7684;&#x63D0;&#x6848;&#x5373;&#x5E0C;&#x671B;&#x5F25;&#x8865;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4E0D;&#x8DB3;&#x3002;&#x63D0;&#x6848;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
 <pre><code class="lang-text">type List(type T) []T
 // &#x8FD4;&#x56DE;map&#x7684;&#x952E;
 func Keys(type K, V)(m map[K]V) []K
@@ -4598,7 +4626,7 @@ keysB := Keys(string, string)(map[string]string{&quot;name&quot;:&quot;geektutu&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Go2新特性简明教程","level":"3.1.3","depth":2,"next":{"title":"Protobuf简明教程","level":"3.1.4","depth":2,"path":"GoLang/Go简明教程/04-Go-Protobuf简明教程.md","ref":"GoLang/Go简明教程/04-Go-Protobuf简明教程.md","articles":[]},"previous":{"title":"Gin-简明教程","level":"3.1.2","depth":2,"path":"GoLang/Go简明教程/02-Go-Gin-简明教程.md","ref":"GoLang/Go简明教程/02-Go-Gin-简明教程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/Go简明教程/03-Go2新特性简明教程.md","mtime":"2022-01-31T05:45:50.528Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Go2新特性简明教程","level":"3.1.3","depth":2,"next":{"title":"Protobuf简明教程","level":"3.1.4","depth":2,"path":"GoLang/Go简明教程/04-Go-Protobuf简明教程.md","ref":"GoLang/Go简明教程/04-Go-Protobuf简明教程.md","articles":[]},"previous":{"title":"Gin-简明教程","level":"3.1.2","depth":2,"path":"GoLang/Go简明教程/02-Go-Gin-简明教程.md","ref":"GoLang/Go简明教程/02-Go-Gin-简明教程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/Go简明教程/03-Go2新特性简明教程.md","mtime":"2022-09-29T10:48:17.099Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,9 +1,11 @@
 ###### datetime:2022/1/16 16:00
+
 ###### author:nzb
 
 # Go WebAssembly (Wasm) 简明教程
 
 ## 1 WebAssembly 简介
+
 > WebAssembly是一种新的编码方式，可以在现代的网络浏览器中运行 － 它是一种低级的类汇编语言，具有紧凑的二进制格式，可以接近原生的性能运行，并为诸如C / C ++等语言提供一个编译目标，以便它们可以在Web上运行。它也被设计为可以与JavaScript共存，允许两者一起工作。 —— [MDN web docs - mozilla.org](https://developer.mozilla.org/zh-CN/docs/WebAssembly)
 
 从 MDN 的介绍中，我们可以得出几个结论：
@@ -12,9 +14,13 @@
 - WebAssembly 不是为了取代 JavaScript，而是一种补充（至少现阶段是这样），结合 WebAssembly 的性能优势，很大可能集中在对性能要求高（例如游戏，AI），或是对交互体验要求高（例如移动端）的场景。
 - C/C++ 等语言可以编译 WebAssembly 的目标文件，也就是说，其他语言可以通过编译器支持，而写出能够在浏览器前端运行的代码。
 
-Go 语言在 1.11 版本(2018年8月) 加入了对 WebAssembly (Wasm) 的原生支持，使用 Go 语言开发 WebAssembly 相关的应用变得更加地简单。Go 语言的内建支持是 Go 语言进军前端的一个重要的里程碑。在这之前，如果想使用 Go 语言开发前端，需要使用 [GopherJS](https://github.com/gopherjs/gopherjs)，GopherJS 是一个编译器，可以将 Go 语言转换成可以在浏览器中运行的 JavaScript 代码。新版本的 Go 则直接将 Go 代码编译为 wasm 二进制文件，而不再需要转为 JavaScript 代码。更巧的是，实现 GopherJS 和在 Go 语言中内建支持 WebAssembly 的是同一拨人。
+Go 语言在 1.11 版本(2018年8月) 加入了对 WebAssembly (Wasm) 的原生支持，使用 Go 语言开发 WebAssembly 相关的应用变得更加地简单。Go 语言的内建支持是 Go
+语言进军前端的一个重要的里程碑。在这之前，如果想使用 Go 语言开发前端，需要使用 [GopherJS](https://github.com/gopherjs/gopherjs)，GopherJS 是一个编译器，可以将 Go
+语言转换成可以在浏览器中运行的 JavaScript 代码。新版本的 Go 则直接将 Go 代码编译为 wasm 二进制文件，而不再需要转为 JavaScript 代码。更巧的是，实现 GopherJS 和在 Go 语言中内建支持
+WebAssembly 的是同一拨人。
 
-Go 语言实现的函数可以直接导出供 JavaScript 代码调用，同时，Go 语言内置了 [syscall/js](https://github.com/golang/go/tree/master/src/syscall/js) 包，可以在 Go 语言中直接调用 JavaScript 函数，包括对 DOM 树的操作。
+Go 语言实现的函数可以直接导出供 JavaScript 代码调用，同时，Go 语言内置了 [syscall/js](https://github.com/golang/go/tree/master/src/syscall/js)
+包，可以在 Go 语言中直接调用 JavaScript 函数，包括对 DOM 树的操作。
 
 ## 2 Hello World
 
@@ -36,14 +42,19 @@ func main() {
 
 第二步，将 main.go 编译为 static/main.wasm
 > 如果启用了 `GO MODULES`，则需要使用 go mod init 初始化模块，或设置 GO111MODULE=auto。
+
 ```text
 $ GOOS=js GOARCH=wasm go build -o static/main.wasm
 ```
+
 第三步，拷贝 wasm_exec.js (JavaScript 支持文件，加载 wasm 文件时需要) 到 static 文件夹
+
 ```text
 $ cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" static
 ```
+
 第四步，创建 index.html，引用 static/main.wasm 和 static/wasm_exec.js。
+
 ```text
 <html>
 <script src="static/wasm_exec.js"></script>
@@ -55,11 +66,13 @@ $ cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" static
 
 </html>
 ```
+
 第五步，使用 goexec 启动 Web 服务
 
 > 如果没有安装 goexec，可用 `go get -u github.com/shurcooL/goexec` 安装，需要将 $GOBIN 或 $GOPATH/bin 加入环境变量
 
 当前的目录结构如下：
+
 ```text
 demo/
    |--static/
@@ -68,14 +81,17 @@ demo/
    |--main.go
    |--index.html
 ```
+
 ```text
 $ goexec 'http.ListenAndServe(`:9999`, http.FileServer(http.Dir(`.`)))'
 ```
+
 浏览器访问 localhost:9999，则会有一个弹出窗口，上面写着 *Hello World!*。
 
 ![](imgs/hello_world.png)
 
 为了避免每次编译都需要输入繁琐的命令，可将这个过程写在 `Makefile` 中
+
 ```text
 all: static/main.wasm static/wasm_exec.js
 	goexec 'http.ListenAndServe(`:9999`, http.FileServer(http.Dir(`.`)))'
@@ -94,6 +110,7 @@ static/main.wasm : main.go
 在 Go 语言中调用 JavaScript 函数是一方面，另一方面，如果仅仅是使用 WebAssembly 替代性能要求高的模块，那么就需要注册函数，以便其他 JavaScript 代码调用。
 
 假设我们需要注册一个计算斐波那契数列的函数，可以这么实现。
+
 ```text
 // main.go
 package main
@@ -117,11 +134,13 @@ func main() {
 	<-done
 }
 ```
+
 - fib 是一个普通的 Go 函数，通过递归计算第 i 个斐波那契数，接收一个 int 入参，返回值也是 int。
 - 定义了 fibFunc 函数，为 fib 函数套了一个壳，从 args[0] 获取入参，计算结果用 js.ValueOf 包装，并返回。
 - 使用 js.Global().Set() 方法，将注册函数 fibFunc 到全局，以便在浏览器中能够调用。
 
-`js.Value` 可以将 Js 的值转换为 Go 的值，比如 args[0].Int()，则是转换为 Go 语言中的整型。`js.ValueOf`，则用来将 Go 的值，转换为 Js 的值。另外，注册函数的时候，使用 js.FuncOf 将函数转换为 `Func` 类型，只有 Func 类型的函数，才能在 JavaScript 中调用。可以认为这是 Go 与 JavaScript 之间的接口/约定。
+`js.Value` 可以将 Js 的值转换为 Go 的值，比如 args[0].Int()，则是转换为 Go 语言中的整型。`js.ValueOf`，则用来将 Go 的值，转换为 Js 的值。另外，注册函数的时候，使用 js.FuncOf
+将函数转换为 `Func` 类型，只有 Func 类型的函数，才能在 JavaScript 中调用。可以认为这是 Go 与 JavaScript 之间的接口/约定。
 
 `js.Func()` 接受一个函数类型作为其参数，该函数的定义必须是：
 
@@ -131,11 +150,13 @@ func(this Value, args []Value) interface{}
 // args 是在 JavaScript 中调用该函数的参数列表。
 // 返回值需用 js.ValueOf 映射成 JavaScript 的值
 ```
+
 在 main 函数中，创建了信道(chan) done，阻塞主协程(goroutine)。fibFunc 如果在 JavaScript 中被调用，会开启一个新的子协程执行。
 
 > A wrapped function triggered during a call from Go to JavaScript gets executed on the same goroutine. A wrapped function triggered by JavaScript’s event loop gets executed on an extra goroutine. —— [FuncOf - golang.org](https://golang.org/pkg/syscall/js/#FuncOf)
 
 接下来，修改之前的 index.html，在其中添加一个输入框(num)，一个按钮(btn) 和一个文本框(ans，用来显示计算结果)，并给按钮添加了一个点击事件，调用 fibFunc，并将计算结果显示在文本框(ans)中。
+
 ```text
 <html>
 ...
@@ -155,10 +176,10 @@ func(this Value, args []Value) interface{}
 
 ## 4 操作 DOM
 
-在上一个例子中，仅仅是注册了全局函数 fibFunc，事件注册，调用，对 DOM 元素的操作都是在 HTML
-中通过原生的 JavaScript 函数实现的。这些事情，能不能全部在 Go 语言中完成呢？答案可以。
+在上一个例子中，仅仅是注册了全局函数 fibFunc，事件注册，调用，对 DOM 元素的操作都是在 HTML 中通过原生的 JavaScript 函数实现的。这些事情，能不能全部在 Go 语言中完成呢？答案可以。
 
 首先修改 index.html，删除事件注册部分和 对 DOM 元素的操作部分。
+
 ```text
 <html>
 ...
@@ -171,6 +192,7 @@ func(this Value, args []Value) interface{}
 ```
 
 修改 main.go：
+
 ```text
 package main
 
@@ -207,6 +229,7 @@ func main() {
 	<-done
 }
 ```
+
 - 通过 `js.Global().Get("btn")` 或 `document.Call("getElementById", "num")` 两种方式获取到 DOM 元素。
 - btnEle 调用 `addEventListener` 为 btn 绑定点击事件 fibFunc。
 - 在 fibFunc 中使用 `numEle.Get("value")` 获取到 numEle 的值（字符串），转为整型并调用 fib 计算出结果。
@@ -261,16 +284,19 @@ func main() {
 - 计算结果出来前，先在界面上显示 `Waiting 3s...`
 
 接下来我们修改 index.html，为按钮添加点击事件，调用 fibFunc
+
 ```html
+
 <html>
 ...
 <body>
-	<input id="num" type="number" />
-	<button id="btn" onclick="fibFunc(num.value * 1, (v)=> ans.innerHTML=v)">Click</button>
-	<p id="ans"></p>
+<input id="num" type="number"/>
+<button id="btn" onclick="fibFunc(num.value * 1, (v)=> ans.innerHTML=v)">Click</button>
+<p id="ans"></p>
 </body>
 </html>
 ```
+
 - 为 btn 注册了点击事件，第一个参数是待计算的数字，从 num 输入框获取。
 - 第二个参数是一个回调函数，将参数 v 显示在 ans 文本框中。
 
@@ -279,14 +305,23 @@ func main() {
 ![](imgs/callback.png)
 
 ## 6 进一步的尝试
+
 ### 6.1 工具框架
+
 - WebAssembly 的二进制分析工具 [WebAssembly Code Explorer](https://wasdk.github.io/wasmcodeexplorer/)
-- 使用NodeJs 或浏览器测试 Go Wasm 代码 [Github Wiki](https://github.com/golang/go/wiki/WebAssembly#executing-webassembly-with-nodejs)
-- 借鉴 Vue 实现的 Golang WebAssembly 前端框架 [Vugu](https://www.vugu.org/doc/start)，完全使用 Go，不用写任何的 JavaScript 代码。
+- 使用NodeJs 或浏览器测试 Go Wasm
+  代码 [Github Wiki](https://github.com/golang/go/wiki/WebAssembly#executing-webassembly-with-nodejs)
+- 借鉴 Vue 实现的 Golang WebAssembly 前端框架 [Vugu](https://www.vugu.org/doc/start) ，完全使用 Go，不用写任何的 JavaScript 代码。
+
 ### 6.2 Demo/项目
+
 - 使用 Go Assembly 前端渲染的一些例子
-- [jsgo](https://github.com/dave/jsgo) 这个项目汇聚一些小而精的项目，包括 [2048](https://jsgo.io/hajimehoshi/ebiten/examples/2048)，[俄罗斯方块](https://jsgo.io/hajimehoshi/ebiten/examples/blocks)等游戏，还有证明 Go 可以完整开发前端项目的 [TodoMVC](https://jsgo.io/dave/todomvc)
+- [jsgo](https://github.com/dave/jsgo) 这个项目汇聚一些小而精的项目，包括 [2048](https://jsgo.io/hajimehoshi/ebiten/examples/2048)
+  ，[俄罗斯方块](https://jsgo.io/hajimehoshi/ebiten/examples/blocks) 等游戏，还有证明Go
+  可以完整开发前端项目的 [TodoMVC](https://jsgo.io/dave/todomvc)
+
 ### 6.3 相关文档
+
 - [syscall/js 官方文档 - golang.org](https://golang.org/pkg/syscall/js)
 - [Go WebAssembly 官方文档 - github.com](https://github.com/golang/go/wiki/WebAssembly)
 

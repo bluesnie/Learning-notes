@@ -756,6 +756,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="../Python语言进阶/07-GIL全局解释器锁.html">
+            
+                <a href="../Python语言进阶/07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4412,21 +4425,24 @@ file_object.write(<span class="hljs-string">&apos;&#x65E5;&#x5FD7;...&apos;</spa
 </code></pre>
 <h3 id="logging-&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x81EA;&#x52A8;&#x5207;&#x5272;&#x65E5;&#x5FD7;&#x7684;&#x529F;&#x80FD;">logging &#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x673A;&#x5236;(&#x81EA;&#x52A8;&#x5207;&#x5272;&#x65E5;&#x5FD7;&#x7684;&#x529F;&#x80FD;)</h3>
 <ul>
-<li><p>&#x542F;&#x52A8;&#x7F51;&#x7AD9;&#xFF0C;&#x521B;&#x5EFA; 4&#x4E2A; &#x8FDB;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x90FD;&#x6253;&#x5F00;&#x6587;&#x4EF6; a1.log&#xFF0C; &#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x90FD;&#x6709;</p>
-<pre><code class="lang-python">  <span class="hljs-comment"># &#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</span>
-  file_object = open(<span class="hljs-string">&quot;a1.log&quot;</span>, <span class="hljs-string">&apos;a&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>)
+<li>&#x542F;&#x52A8;&#x7F51;&#x7AD9;&#xFF0C;&#x521B;&#x5EFA; 4&#x4E2A; &#x8FDB;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x90FD;&#x6253;&#x5F00;&#x6587;&#x4EF6; a1.log&#xFF0C; &#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x90FD;&#x6709;</li>
+</ul>
+<pre><code class="lang-python">    <span class="hljs-comment"># &#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</span>
+file_object = open(<span class="hljs-string">&quot;a1.log&quot;</span>, <span class="hljs-string">&apos;a&apos;</span>, encoding=<span class="hljs-string">&apos;utf-8&apos;</span>)
 </code></pre>
-</li>
-<li><p>&#x7528;&#x6237;&#x8BBF;&#x95EE;</p>
-<pre><code class="lang-python">  <span class="hljs-comment"># &#x5176;&#x4E2D; 1&#x4E2A; &#x8FDB;&#x7A0B;&#x63A5;&#x6536;&#x5E76;&#x52A0;&#x4EE5;&#x5904;&#x7406;&#xFF0C;&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x7684; write</span>
-  file_object.write(<span class="hljs-string">&apos;&#x65E5;&#x5FD7;...&apos;</span>)
+<ul>
+<li>&#x7528;&#x6237;&#x8BBF;&#x95EE;</li>
+</ul>
+<pre><code class="lang-python">    <span class="hljs-comment"># &#x5176;&#x4E2D; 1&#x4E2A; &#x8FDB;&#x7A0B;&#x63A5;&#x6536;&#x5E76;&#x52A0;&#x4EE5;&#x5904;&#x7406;&#xFF0C;&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x7684; write</span>
+file_object.write(<span class="hljs-string">&apos;&#x65E5;&#x5FD7;...&apos;</span>)
 </code></pre>
-</li>
-<li><p>&#x540C;&#x65F6;&#x6765; 4&#x4E2A;</p>
-<pre><code class="lang-python">  <span class="hljs-comment"># &#x5176;&#x4E2D; 4&#x4E2A; &#x8FDB;&#x7A0B;&#x63A5;&#x6536;&#x5E76;&#x5904;&#x7406;&#xFF0C;&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x7684; write</span>
-  file_object.write(<span class="hljs-string">&apos;&#x65E5;&#x5FD7;...&apos;</span>)
+<ul>
+<li>&#x540C;&#x65F6;&#x6765; 4&#x4E2A;</li>
+</ul>
+<pre><code class="lang-python">    <span class="hljs-comment"># &#x5176;&#x4E2D; 4&#x4E2A; &#x8FDB;&#x7A0B;&#x63A5;&#x6536;&#x5E76;&#x5904;&#x7406;&#xFF0C;&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x7684; write</span>
+file_object.write(<span class="hljs-string">&apos;&#x65E5;&#x5FD7;...&apos;</span>)
 </code></pre>
-</li>
+<ul>
 <li><p>&#x95EE;&#x9898;1&#xFF1A;&#x591A;&#x8FDB;&#x7A0B;&#x5199;&#x65E5;&#x5FD7;&#x4F1A;&#x5BFC;&#x81F4;&#x5220;&#x9664;</p>
 <ul>
 <li><p>&#x4F8B;&#x5982; 11-18&#x65E5;</p>
@@ -4438,88 +4454,90 @@ file_object.write(<span class="hljs-string">&apos;&#x65E5;&#x5FD7;...&apos;</spa
 </code></pre>
 </li>
 <li><p>&#x6E90;&#x7801;&#x627E;&#x539F;&#x56E0;</p>
-<p>```python
-import time
-import os
-from logging.handlers import BaseRotatingHandler</p>
 </li>
 </ul>
 </li>
 </ul>
-<pre><code>class TimedRotatingFileHandler(BaseRotatingHandler):
-    &quot;&quot;&quot;
+<pre><code class="lang-python">    <span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> logging.handlers <span class="hljs-keyword">import</span> BaseRotatingHandler
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimedRotatingFileHandler</span><span class="hljs-params">(BaseRotatingHandler)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
     Handler for logging to a file, rotating the log file at certain timed
     intervals.
 
     If backupCount is &gt; 0, when rollover is done, no more than backupCount
     files are kept - the oldest ones are deleted.
-    &quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
 
-    def doRollover(self):
-        &quot;&quot;&quot;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">doRollover</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
         do a rollover; in this case, a date/time stamp is appended to the filename
         when the rollover happens.  However, you want the file to be named for the
         start of the interval, not the current time.  If there is a backup count,
         then we have to get a list of matching filenames, sort them and remove
         the one with the oldest suffix.
-        &quot;&quot;&quot;
-        if self.stream:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> self.stream:
             self.stream.close()
-            self.stream = None
-        # get the time that this sequence started at and make it a TimeTuple
+            self.stream = <span class="hljs-keyword">None</span>
+        <span class="hljs-comment"># get the time that this sequence started at and make it a TimeTuple</span>
         currentTime = int(time.time())
-        dstNow = time.localtime(currentTime)[-1]
+        dstNow = time.localtime(currentTime)[<span class="hljs-number">-1</span>]
         t = self.rolloverAt - self.interval
-        if self.utc:
+        <span class="hljs-keyword">if</span> self.utc:
             timeTuple = time.gmtime(t)
-        else:
+        <span class="hljs-keyword">else</span>:
             timeTuple = time.localtime(t)
-            dstThen = timeTuple[-1]
-            if dstNow != dstThen:
-                if dstNow:
-                    addend = 3600
-                else:
-                    addend = -3600
+            dstThen = timeTuple[<span class="hljs-number">-1</span>]
+            <span class="hljs-keyword">if</span> dstNow != dstThen:
+                <span class="hljs-keyword">if</span> dstNow:
+                    addend = <span class="hljs-number">3600</span>
+                <span class="hljs-keyword">else</span>:
+                    addend = <span class="hljs-number">-3600</span>
                 timeTuple = time.localtime(t + addend)
 
-        # # &#x65B0;&#x6587;&#x4EF6;&#x540D;&#xFF0C;a1-11-19.log
-        # dfn = self.rotation_filename(self.baseFilename + &quot;.&quot; +
-        #                              time.strftime(self.suffix, timeTuple))
-        # # &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5B58;&#x5728;&#x5220;&#x9664;&#xFF0C;&#x95EE;&#x9898;&#x5C31;&#x51FA;&#x5728;&#x8FD9;&#xFF0C;&#x591A;&#x8FDB;&#x7A0B;&#x65F6;&#x4F1A;&#x5220;&#x9664;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x5907;&#x4EFD;&#x7684;
-        # if os.path.exists(dfn):
-        #     os.remove(dfn)
-        # # &#x91CD;&#x547D;&#x540D;
-        # self.rotate(self.baseFilename, dfn)
+        <span class="hljs-comment"># # &#x65B0;&#x6587;&#x4EF6;&#x540D;&#xFF0C;a1-11-19.log</span>
+        <span class="hljs-comment"># dfn = self.rotation_filename(self.baseFilename + &quot;.&quot; +</span>
+        <span class="hljs-comment">#                              time.strftime(self.suffix, timeTuple))</span>
+        <span class="hljs-comment"># # &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5B58;&#x5728;&#x5220;&#x9664;&#xFF0C;&#x95EE;&#x9898;&#x5C31;&#x51FA;&#x5728;&#x8FD9;&#xFF0C;&#x591A;&#x8FDB;&#x7A0B;&#x65F6;&#x4F1A;&#x5220;&#x9664;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x5907;&#x4EFD;&#x7684;</span>
+        <span class="hljs-comment"># if os.path.exists(dfn):</span>
+        <span class="hljs-comment">#     os.remove(dfn)</span>
+        <span class="hljs-comment"># # &#x91CD;&#x547D;&#x540D;</span>
+        <span class="hljs-comment"># self.rotate(self.baseFilename, dfn)</span>
 
-        # &#x4FEE;&#x590D;
-        dfn = self.rotation_filename(self.baseFilename + &quot;.&quot; +
+        <span class="hljs-comment"># &#x4FEE;&#x590D;</span>
+        dfn = self.rotation_filename(self.baseFilename + <span class="hljs-string">&quot;.&quot;</span> +
                                      time.strftime(self.suffix, timeTuple))
-        # &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x91CD;&#x547D;&#x540D;
-        if not os.path.exists(dfn):
+        <span class="hljs-comment"># &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x91CD;&#x547D;&#x540D;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(dfn):
             self.rotate(self.baseFilename, dfn)
 
-        if self.backupCount &gt; 0:
-            for s in self.getFilesToDelete():
+        <span class="hljs-keyword">if</span> self.backupCount &gt; <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> self.getFilesToDelete():
                 os.remove(s)
-        if not self.delay:
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self.delay:
             self.stream = self._open()
         newRolloverAt = self.computeRollover(currentTime)
-        while newRolloverAt &lt;= currentTime:
+        <span class="hljs-keyword">while</span> newRolloverAt &lt;= currentTime:
             newRolloverAt = newRolloverAt + self.interval
-        # If DST changes and midnight or weekly rollover, adjust for this.
-        if (self.when == &apos;MIDNIGHT&apos; or self.when.startswith(&apos;W&apos;)) and not self.utc:
-            dstAtRollover = time.localtime(newRolloverAt)[-1]
-            if dstNow != dstAtRollover:
-                if not dstNow:  # DST kicks in before next rollover, so we need to deduct an hour
-                    addend = -3600
-                else:  # DST bows out before next rollover, so we need to add an hour
-                    addend = 3600
+        <span class="hljs-comment"># If DST changes and midnight or weekly rollover, adjust for this.</span>
+        <span class="hljs-keyword">if</span> (self.when == <span class="hljs-string">&apos;MIDNIGHT&apos;</span> <span class="hljs-keyword">or</span> self.when.startswith(<span class="hljs-string">&apos;W&apos;</span>)) <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> self.utc:
+            dstAtRollover = time.localtime(newRolloverAt)[<span class="hljs-number">-1</span>]
+            <span class="hljs-keyword">if</span> dstNow != dstAtRollover:
+                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> dstNow:  <span class="hljs-comment"># DST kicks in before next rollover, so we need to deduct an hour</span>
+                    addend = <span class="hljs-number">-3600</span>
+                <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># DST bows out before next rollover, so we need to add an hour</span>
+                    addend = <span class="hljs-number">3600</span>
                 newRolloverAt += addend
         self.rolloverAt = newRolloverAt
-```
-</code></pre><ul>
-<li><p>&#x95EE;&#x9898;2&#xFF1A;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E0D;&#x80FD;&#x505A;&#x76F8;&#x5173;&#x64CD;&#x4F5C;(&#x6BD4;&#x5982;&#xFF1A;&#x5220;&#x9664;&#x6216;&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;&#x65E5;&#x5FD7;&#x5C31;&#x4E0D;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7EE7;&#x7EED;&#x6253;&#x5370;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x8BE5;&#x7A0B;&#x5E8F;&#xFF0C;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x65E5;&#x5FD7;)</p>
-<pre><code class="lang-python"><span class="hljs-comment"># &#x7C7B;&#x6BD4; WatchedFileHandler &#x63D0;&#x4F9B;&#x89E3;&#x51B3;&#x601D;&#x8DEF;</span>
+</code></pre>
+<ul>
+<li>&#x95EE;&#x9898;2&#xFF1A;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E0D;&#x80FD;&#x505A;&#x76F8;&#x5173;&#x64CD;&#x4F5C;(&#x6BD4;&#x5982;&#xFF1A;&#x5220;&#x9664;&#x6216;&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;&#x65E5;&#x5FD7;&#x5C31;&#x4E0D;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7EE7;&#x7EED;&#x6253;&#x5370;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x8BE5;&#x7A0B;&#x5E8F;&#xFF0C;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x65E5;&#x5FD7;)</li>
+</ul>
+<pre><code class="lang-python">  <span class="hljs-comment"># &#x7C7B;&#x6BD4; WatchedFileHandler &#x63D0;&#x4F9B;&#x89E3;&#x51B3;&#x601D;&#x8DEF;</span>
 <span class="hljs-keyword">import</span> os
 <span class="hljs-keyword">import</span> time
 <span class="hljs-keyword">from</span> stat <span class="hljs-keyword">import</span> ST_INO, ST_DEV
@@ -4547,8 +4565,6 @@ dev, ino = sres[ST_DEV], sres[ST_INO]
     file_obj.flush()
     time.sleep(<span class="hljs-number">1</span>)
 </code></pre>
-</li>
-</ul>
 <h3 id="&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x5220;&#x9664;&#x540E;-2-&#x4E2A;&#x7ED3;&#x5408;&#x91CD;&#x5199;-handler">&#x591A;&#x8FDB;&#x7A0B;&#x548C;&#x6587;&#x4EF6;&#x4FEE;&#x6539;(&#x5220;&#x9664;)&#x540E; 2 &#x4E2A;&#x7ED3;&#x5408;&#x91CD;&#x5199; handler</h3>
 <h4 id="logging-handler-&#x6E90;&#x7801;&#x89E3;&#x6790;timedrotatingfilehandler&#x4E3A;&#x4F8B;">logging Handler &#x6E90;&#x7801;&#x89E3;&#x6790;(TimedRotatingFileHandler&#x4E3A;&#x4F8B;)</h4>
 <pre><code class="lang-python">
@@ -4923,7 +4939,7 @@ __doc__ = <span class="hljs-string">&quot;&quot;&quot;&quot;&quot;&quot;</span>
 <span class="hljs-keyword">import</span> logging.config
 
 standard_format = <span class="hljs-string">&apos;[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]&apos;</span>
-                  <span class="hljs-string">&apos;[%(levelname)s][%(message)s]&apos;</span>  <span class="hljs-comment"># &#x5176;&#x4E2D; name &#x4E3A; getlogger &#x6307;&#x5B9A;&#x7684;&#x540D;&#x5B57;</span>
+<span class="hljs-string">&apos;[%(levelname)s][%(message)s]&apos;</span>  <span class="hljs-comment"># &#x5176;&#x4E2D; name &#x4E3A; getlogger &#x6307;&#x5B9A;&#x7684;&#x540D;&#x5B57;</span>
 
 simple_format = <span class="hljs-string">&apos;[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d]%(message)s&apos;</span>
 
@@ -5120,7 +5136,7 @@ log_test2 = LogUtil(<span class="hljs-string">&quot;test2&quot;</span>, console_
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"logging日志模块","level":"2.1.18","depth":2,"next":{"title":"单元测试unittest","level":"2.1.19","depth":2,"ref":"","articles":[{"title":"单元测试unittest基础","level":"2.1.19.1","depth":3,"path":"Python/Python语言基础/unittest/01-单元测试unittest基础.md","ref":"./Python/Python语言基础/unittest/01-单元测试unittest基础.md","articles":[]},{"title":"单元测试unittest进阶","level":"2.1.19.2","depth":3,"path":"Python/Python语言基础/unittest/02-单元测试unittest进阶.md","ref":"./Python/Python语言基础/unittest/02-单元测试unittest进阶.md","articles":[]},{"title":"单元测试unittest集成篇","level":"2.1.19.3","depth":3,"path":"Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","ref":"./Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","articles":[]}]},"previous":{"title":"图像和文档处理","level":"2.1.17","depth":2,"path":"Python/Python语言基础/15-图像和办公文档处理.md","ref":"./Python/Python语言基础/15-图像和办公文档处理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言基础/16-logging日志模块.md","mtime":"2021-11-18T09:15:23.807Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"logging日志模块","level":"2.1.18","depth":2,"next":{"title":"单元测试unittest","level":"2.1.19","depth":2,"ref":"","articles":[{"title":"单元测试unittest基础","level":"2.1.19.1","depth":3,"path":"Python/Python语言基础/unittest/01-单元测试unittest基础.md","ref":"./Python/Python语言基础/unittest/01-单元测试unittest基础.md","articles":[]},{"title":"单元测试unittest进阶","level":"2.1.19.2","depth":3,"path":"Python/Python语言基础/unittest/02-单元测试unittest进阶.md","ref":"./Python/Python语言基础/unittest/02-单元测试unittest进阶.md","articles":[]},{"title":"单元测试unittest集成篇","level":"2.1.19.3","depth":3,"path":"Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","ref":"./Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","articles":[]}]},"previous":{"title":"图像和文档处理","level":"2.1.17","depth":2,"path":"Python/Python语言基础/15-图像和办公文档处理.md","ref":"./Python/Python语言基础/15-图像和办公文档处理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言基础/16-logging日志模块.md","mtime":"2022-09-29T09:43:12.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

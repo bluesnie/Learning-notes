@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="../../Python/Python语言进阶/07-GIL全局解释器锁.html">
+            
+                <a href="../../Python/Python语言进阶/07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4446,36 +4459,40 @@
 </code></pre>
 <h3 id="23&#x3001;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;&#x5305;">2.3&#x3001;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;&#x5305;</h3>
 <ul>
-<li>&#x5355;&#x884C;&#x5BFC;&#x5165;<pre><code class="lang-text">import &quot;&#x5305;1&quot;
+<li>&#x5355;&#x884C;&#x5BFC;&#x5165;</li>
+</ul>
+<pre><code class="lang-text">import &quot;&#x5305;1&quot;
 import &quot;&#x5305;2&quot;
 </code></pre>
-</li>
-<li><p>&#x591A;&#x884C;&#x5BFC;&#x5165;</p>
+<ul>
+<li>&#x591A;&#x884C;&#x5BFC;&#x5165;</li>
+</ul>
 <pre><code class="lang-text">import (
-  &quot;&#x5305;1&quot;
-  &quot;&#x5305;2&quot;
+    &quot;&#x5305;1&quot;
+    &quot;&#x5305;2&quot;
 )
 </code></pre>
-</li>
-<li><p>&#x81EA;&#x5B9A;&#x4E49;&#x5305;&#x540D;<br>&#x5728;&#x5BFC;&#x5165;&#x5305;&#x540D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4E3A;&#x5BFC;&#x5165;&#x7684;&#x5305;&#x8BBE;&#x7F6E;&#x522B;&#x540D;&#x3002;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x5BFC;&#x5165;&#x7684;&#x5305;&#x540D;&#x592A;&#x957F;&#x6216;&#x8005;&#x5BFC;&#x5165;&#x7684;&#x5305;&#x540D;&#x51B2;&#x7A81;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5177;&#x4F53;&#x683C;&#x5F0F;
-```text
-import &#x522B;&#x540D; &quot;&#x5305;&#x7684;&#x8DEF;&#x5F84;&quot;</p>
-</li>
+<ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x5305;&#x540D;<br>&#x5728;&#x5BFC;&#x5165;&#x5305;&#x540D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4E3A;&#x5BFC;&#x5165;&#x7684;&#x5305;&#x8BBE;&#x7F6E;&#x522B;&#x540D;&#x3002;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x5BFC;&#x5165;&#x7684;&#x5305;&#x540D;&#x592A;&#x957F;&#x6216;&#x8005;&#x5BFC;&#x5165;&#x7684;&#x5305;&#x540D;&#x51B2;&#x7A81;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5177;&#x4F53;&#x683C;&#x5F0F;</li>
 </ul>
-<p>// &#x5355;&#x884C;&#x5F15;&#x5165;&#x5B9A;&#x4E49;&#x522B;&#x540D;
-import c &quot;goProject/calc&quot;</p>
-<p>// &#x591A;&#x884C;&#x5F15;&#x5165;&#x5B9A;&#x4E49;&#x522B;&#x540D;
+<pre><code class="lang-text">import &#x522B;&#x540D; &quot;&#x5305;&#x7684;&#x8DEF;&#x5F84;&quot;
+
+// &#x5355;&#x884C;&#x5F15;&#x5165;&#x5B9A;&#x4E49;&#x522B;&#x540D;
+import c &quot;goProject/calc&quot;
+
+// &#x591A;&#x884C;&#x5F15;&#x5165;&#x5B9A;&#x4E49;&#x522B;&#x540D;
 import (
     &quot;fmt&quot;
     T &quot;goProject/calc&quot;
 )
-fmt.Println(T.test())</p>
-<pre><code>
-- &#x533F;&#x540D;&#x5BFC;&#x5165;&#x5305;  
-&#x5982;&#x679C;&#x53EA;&#x5E0C;&#x671B;&#x5BFC;&#x5165;&#x5305;&#xFF0C;&#x800C;&#x4E0D;&#x4F7F;&#x7528;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x533F;&#x540D;&#x5BFC;&#x5165;&#x5305;&#x3002;&#x5177;&#x4F53;&#x683C;&#x5F0F;
-```text
-import _ &quot;&#x5305;&#x7684;&#x8DEF;&#x5F84;&quot;
-</code></pre><h2 id="3&#x3001;golang&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x5305;">3&#x3001;Golang&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x5305;</h2>
+fmt.Println(T.test())
+</code></pre>
+<ul>
+<li>&#x533F;&#x540D;&#x5BFC;&#x5165;&#x5305;<br>&#x5982;&#x679C;&#x53EA;&#x5E0C;&#x671B;&#x5BFC;&#x5165;&#x5305;&#xFF0C;&#x800C;&#x4E0D;&#x4F7F;&#x7528;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x533F;&#x540D;&#x5BFC;&#x5165;&#x5305;&#x3002;&#x5177;&#x4F53;&#x683C;&#x5F0F;</li>
+</ul>
+<pre><code class="lang-text">import _ &quot;&#x5305;&#x7684;&#x8DEF;&#x5F84;&quot;
+</code></pre>
+<h2 id="3&#x3001;golang&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x5305;">3&#x3001;Golang&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x5305;</h2>
 <p>&#x5305;&#xFF08;package&#xFF09;&#x662F;&#x591A;&#x4E2A;Go&#x6E90;&#x7801;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x4E00;&#x4E2A;&#x5305;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7406;&#x89E3;&#x4E3A;&#x4E00;&#x4E2A;&#x5B58;&#x653E;&#x591A;&#x4E2A;.go&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x9762;&#x7684;&#x6240;&#x6709;go&#x6587;&#x4EF6;&#x90FD;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x58F0;&#x660E;&#x8BE5;&#x6587;&#x4EF6;&#x5F52;&#x5C5E;&#x7684;&#x5305;&#x3002;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">package</span> &#x5305;&#x540D;
 </code></pre>
@@ -4632,7 +4649,7 @@ go get -u github.com/tidwall/gjson
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"GoMod及包","level":"3.2.14","depth":2,"next":{"title":"接口","level":"3.2.15","depth":2,"path":"GoLang/GoLang基础/15-接口.md","ref":"./GoLang/GoLang基础/15-接口.md","articles":[]},"previous":{"title":"结构体","level":"3.2.13","depth":2,"path":"GoLang/GoLang基础/13-结构体.md","ref":"./GoLang/GoLang基础/13-结构体.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/14-GoMod及包.md","mtime":"2021-12-01T03:53:08.219Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GoMod及包","level":"3.2.14","depth":2,"next":{"title":"接口","level":"3.2.15","depth":2,"path":"GoLang/GoLang基础/15-接口.md","ref":"./GoLang/GoLang基础/15-接口.md","articles":[]},"previous":{"title":"结构体","level":"3.2.13","depth":2,"path":"GoLang/GoLang基础/13-结构体.md","ref":"./GoLang/GoLang基础/13-结构体.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"GoLang/GoLang基础/14-GoMod及包.md","mtime":"2022-09-29T10:51:50.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

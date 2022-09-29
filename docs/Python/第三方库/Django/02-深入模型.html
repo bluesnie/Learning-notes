@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="../../Python语言进阶/07-GIL全局解释器锁.html">
+            
+                <a href="../../Python语言进阶/07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4399,6 +4412,8 @@
 <li><p>&#x4FEE;&#x6539;&#x9879;&#x76EE;&#x7684;settings.py&#x6587;&#x4EF6;&#xFF0C;&#x9996;&#x5148;&#x5C06;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x7684;&#x5E94;&#x7528;hrs&#x6DFB;&#x52A0;&#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x914D;&#x7F6E;MySQL&#x4F5C;&#x4E3A;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x6848;&#x3002;</p>
 <pre><code class="lang-Shell">(venv)$ cd oa/settings.py
 </code></pre>
+</li>
+</ol>
 <pre><code class="lang-Python"><span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
 
 INSTALLED_APPS = [
@@ -4425,24 +4440,25 @@ DATABASES = {
 <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
 </code></pre>
 <p>&#x5728;&#x914D;&#x7F6E;ENGINE&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x53EF;&#x9009;&#x503C;&#x5305;&#x62EC;&#xFF1A;</p>
-<ul>
-<li><code>&apos;django.db.backends.sqlite3&apos;</code>&#xFF1A;SQLite&#x5D4C;&#x5165;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#x3002;</li>
-<li><code>&apos;django.db.backends.postgresql&apos;</code>&#xFF1A;BSD&#x8BB8;&#x53EF;&#x8BC1;&#x4E0B;&#x53D1;&#x884C;&#x7684;&#x5F00;&#x6E90;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4EA7;&#x54C1;&#x3002;</li>
-<li><code>&apos;django.db.backends.mysql&apos;</code>&#xFF1A;&#x8F6C;&#x624B;&#x591A;&#x6B21;&#x76EE;&#x524D;&#x5C5E;&#x4E8E;&#x7532;&#x9AA8;&#x6587;&#x516C;&#x53F8;&#x7684;&#x7ECF;&#x6D4E;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4EA7;&#x54C1;&#x3002;</li>
-<li><code>&apos;django.db.backends.oracle&apos;</code>&#xFF1A;&#x7532;&#x9AA8;&#x6587;&#x516C;&#x53F8;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x65D7;&#x8230;&#x4EA7;&#x54C1;&#x3002;</li>
-</ul>
-<p>&#x5176;&#x4ED6;&#x7684;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/databases/#third-party-notes" target="_blank">&#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;</a>&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<pre><code>- `&apos;django.db.backends.sqlite3&apos;`&#xFF1A;SQLite&#x5D4C;&#x5165;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#x3002;
+- `&apos;django.db.backends.postgresql&apos;`&#xFF1A;BSD&#x8BB8;&#x53EF;&#x8BC1;&#x4E0B;&#x53D1;&#x884C;&#x7684;&#x5F00;&#x6E90;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4EA7;&#x54C1;&#x3002;
+- `&apos;django.db.backends.mysql&apos;`&#xFF1A;&#x8F6C;&#x624B;&#x591A;&#x6B21;&#x76EE;&#x524D;&#x5C5E;&#x4E8E;&#x7532;&#x9AA8;&#x6587;&#x516C;&#x53F8;&#x7684;&#x7ECF;&#x6D4E;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4EA7;&#x54C1;&#x3002;
+- `&apos;django.db.backends.oracle&apos;`&#xFF1A;&#x7532;&#x9AA8;&#x6587;&#x516C;&#x53F8;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x65D7;&#x8230;&#x4EA7;&#x54C1;&#x3002;
+</code></pre><p>&#x5176;&#x4ED6;&#x7684;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;<a href="https://docs.djangoproject.com/zh-hans/2.0/ref/databases/#third-party-notes" target="_blank">&#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;</a>&#x7684;&#x90E8;&#x5206;&#x3002;</p>
 <p>NAME&#x5C5E;&#x6027;&#x4EE3;&#x8868;&#x6570;&#x636E;&#x5E93;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;SQLite&#x5B83;&#x5BF9;&#x5E94;&#x7740;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;NAME&#x7684;&#x5C5E;&#x6027;&#x503C;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1B;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5219;&#x8981;&#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;HOST&#xFF08;&#x4E3B;&#x673A;&#xFF09;&#x3001;PORT&#xFF08;&#x7AEF;&#x53E3;&#xFF09;&#x3001;USER&#xFF08;&#x7528;&#x6237;&#x540D;&#xFF09;&#x3001;PASSWORD&#xFF08;&#x53E3;&#x4EE4;&#xFF09;&#x7B49;&#x5C5E;&#x6027;&#x3002;</p>
-</li>
+<ol>
 <li><p>&#x5B89;&#x88C5;MySQL&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#xFF0C;Python 3&#x4E2D;&#x4F7F;&#x7528;PyMySQL&#xFF0C;Python 2&#x4E2D;&#x7528;MySQLdb&#x3002;</p>
 <pre><code class="lang-Shell">(venv)$ pip install pymysql
 </code></pre>
-<p>&#x5982;&#x679C;&#x4F7F;&#x7528;Python 3&#x9700;&#x8981;&#x4FEE;&#x6539;<strong>&#x9879;&#x76EE;</strong>&#x7684;<code>__init__.py</code>&#x6587;&#x4EF6;&#x5E76;&#x52A0;&#x5165;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5C06;PyMySQL&#x89C6;&#x4E3A;MySQLdb&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;Django&#x627E;&#x4E0D;&#x5230;&#x8FDE;&#x63A5;MySQL&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x800C;&#x8BE2;&#x95EE;&#x4F60;&#xFF1A;&#x201C;Did you install mysqlclient? &#x201D;&#xFF08;&#x4F60;&#x5B89;&#x88C5;&#x4E86;mysqlclient&#x5417;&#xFF1F;&#xFF09;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;Python 3&#x9700;&#x8981;&#x4FEE;&#x6539;<strong>&#x9879;&#x76EE;</strong>&#x7684;<code>__init__.py</code>&#x6587;&#x4EF6;&#x5E76;&#x52A0;&#x5165;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5C06;PyMySQL&#x89C6;&#x4E3A;MySQLdb&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;Django&#x627E;&#x4E0D;&#x5230;&#x8FDE;&#x63A5;MySQL&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x800C;&#x8BE2;&#x95EE;&#x4F60;&#xFF1A;&#x201C;Did you
+install mysqlclient? &#x201D;&#xFF08;&#x4F60;&#x5B89;&#x88C5;&#x4E86;mysqlclient&#x5417;&#xFF1F;&#xFF09;&#x3002;</p>
+</li>
+</ol>
 <pre><code class="lang-Python"><span class="hljs-keyword">import</span> pymysql
 
 pymysql.install_as_MySQLdb()
 </code></pre>
-</li>
+<ol>
 <li><p>&#x8FD0;&#x884C;manage.py&#x5E76;&#x6307;&#x5B9A;migrate&#x53C2;&#x6570;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5E93;&#x8FC1;&#x79FB;&#xFF0C;&#x4E3A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x5F53;&#x7136;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#x9700;&#x8981;<strong>&#x5148;&#x542F;&#x52A8;MySQL&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x5E76;&#x521B;&#x5EFA;&#x540D;&#x4E3A;oa&#x7684;&#x6570;&#x636E;&#x5E93;</strong>&#xFF0C;&#x5728;MySQL&#x4E2D;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
 <pre><code class="lang-SQL"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">database</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> oa;
 <span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> oa <span class="hljs-keyword">default</span> <span class="hljs-keyword">charset</span> utf8;
@@ -4468,52 +4484,61 @@ Running migrations:
   Applying sessions.0001_initial... OK
 </code></pre>
 </li>
-<li><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Django&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;10&#x5F20;&#x8868;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x4F7F;&#x7528;Django&#x6846;&#x67B6;&#x9700;&#x8981;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7A0D;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x7528;&#x5230;&#x8FD9;&#x4E9B;&#x8868;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5E94;&#x8BE5;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x6A21;&#x578B;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;hrs&#x5E94;&#x7528;&#x4E2D;&#x5B9E;&#x73B0;&#x5BF9;&#x90E8;&#x95E8;&#x548C;&#x5458;&#x5DE5;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x3002;</p>
+</ol>
+<p>4.</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Django&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;10&#x5F20;&#x8868;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x4F7F;&#x7528;Django&#x6846;&#x67B6;&#x9700;&#x8981;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7A0D;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x7528;&#x5230;&#x8FD9;&#x4E9B;&#x8868;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5E94;&#x8BE5;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x6A21;&#x578B;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;hrs&#x5E94;&#x7528;&#x4E2D;&#x5B9E;&#x73B0;&#x5BF9;&#x90E8;&#x95E8;&#x548C;&#x5458;&#x5DE5;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x3002;</p>
 <pre><code class="lang-Shell">(venv)$ vim hrs/models.py
 </code></pre>
-<p>```Python
-from django.db import models</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dept</span><span class="hljs-params">(models.Model)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x90E8;&#x95E8;&#x7C7B;&quot;&quot;&quot;</span>
+
+    no = models.IntegerField(primary_key=<span class="hljs-keyword">True</span>, db_column=<span class="hljs-string">&apos;dno&apos;</span>, verbose_name=<span class="hljs-string">&apos;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&apos;</span>)
+    name = models.CharField(max_length=<span class="hljs-number">20</span>, db_column=<span class="hljs-string">&apos;dname&apos;</span>, verbose_name=<span class="hljs-string">&apos;&#x90E8;&#x95E8;&#x540D;&#x79F0;&apos;</span>)
+    location = models.CharField(max_length=<span class="hljs-number">10</span>, db_column=<span class="hljs-string">&apos;dloc&apos;</span>, verbose_name=<span class="hljs-string">&apos;&#x90E8;&#x95E8;&#x6240;&#x5728;&#x5730;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        db_table = <span class="hljs-string">&apos;tb_dept&apos;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Emp</span><span class="hljs-params">(models.Model)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5458;&#x5DE5;&#x7C7B;&quot;&quot;&quot;</span>
+
+    no = models.IntegerField(primary_key=<span class="hljs-keyword">True</span>, db_column=<span class="hljs-string">&apos;eno&apos;</span>, verbose_name=<span class="hljs-string">&apos;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&apos;</span>)
+    name = models.CharField(max_length=<span class="hljs-number">20</span>, db_column=<span class="hljs-string">&apos;ename&apos;</span>, verbose_name=<span class="hljs-string">&apos;&#x5458;&#x5DE5;&#x59D3;&#x540D;&apos;</span>)
+    job = models.CharField(max_length=<span class="hljs-number">10</span>, verbose_name=<span class="hljs-string">&apos;&#x804C;&#x4F4D;&apos;</span>)
+    <span class="hljs-comment"># &#x81EA;&#x53C2;&#x7167;&#x5B8C;&#x6574;&#x6027;&#x591A;&#x5BF9;&#x4E00;&#x5916;&#x952E;&#x5173;&#x8054;</span>
+    mgr = models.ForeignKey(<span class="hljs-string">&apos;self&apos;</span>, on_delete=models.SET_NULL, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&apos;&#x4E3B;&#x7BA1;&#x7F16;&#x53F7;&apos;</span>)
+    sal = models.DecimalField(max_digits=<span class="hljs-number">7</span>, decimal_places=<span class="hljs-number">2</span>, verbose_name=<span class="hljs-string">&apos;&#x6708;&#x85AA;&apos;</span>)
+    comm = models.DecimalField(max_digits=<span class="hljs-number">7</span>, decimal_places=<span class="hljs-number">2</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&apos;&#x8865;&#x8D34;&apos;</span>)
+    <span class="hljs-comment"># &#x591A;&#x5BF9;&#x4E00;&#x5916;&#x952E;&#x5173;&#x8054;</span>
+    dept = models.ForeignKey(Dept, db_column=<span class="hljs-string">&apos;dno&apos;</span>, on_delete=models.PROTECT, verbose_name=<span class="hljs-string">&apos;&#x6240;&#x5728;&#x90E8;&#x95E8;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        db_table = <span class="hljs-string">&apos;tb_emp&apos;</span>
+</code></pre>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x65F6;&#x4F7F;&#x7528;&#x4E86;&#x5B57;&#x6BB5;&#x7C7B;&#x53CA;&#x5176;&#x5C5E;&#x6027;&#xFF0C;&#x5176;&#x4E2D;IntegerField&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;integer&#x7C7B;&#x578B;&#xFF0C;CharField&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x7684;varchar&#x7C7B;&#x578B;&#xFF0C;DecimalField&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x7684;decimal&#x7C7B;&#x578B;&#xFF0C;ForeignKey&#x7528;&#x6765;&#x5EFA;&#x7ACB;&#x591A;&#x5BF9;&#x4E00;&#x5916;&#x952E;&#x5173;&#x8054;&#x3002;&#x5B57;&#x6BB5;&#x5C5E;&#x6027;primary_key&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x4E3B;&#x952E;&#xFF0C;max_length&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x5B57;&#x6BB5;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;db_column&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0E;&#x5B57;&#x6BB5;&#x5BF9;&#x5E94;&#x7684;&#x5217;&#xFF0C;verbose_name&#x5219;&#x8BBE;&#x7F6E;&#x4E86;Django&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4E2D;&#x8BE5;&#x5B57;&#x6BB5;&#x663E;&#x793A;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x611F;&#x5230;&#x5F88;&#x56F0;&#x60D1;&#x4E5F;&#x4E0D;&#x8981;&#x7D27;&#xFF0C;&#x6587;&#x672B;&#x63D0;&#x4F9B;&#x4E86;&#x5B57;&#x6BB5;&#x7C7B;&#x3001;&#x5B57;&#x6BB5;&#x5C5E;&#x6027;&#x3001;&#x5143;&#x6570;&#x636E;&#x9009;&#x9879;&#x7B49;&#x8BBE;&#x7F6E;&#x7684;&#x76F8;&#x5173;&#x8BF4;&#x660E;&#xFF0C;&#x4E0D;&#x6E05;&#x695A;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x7A0D;&#x540E;&#x67E5;&#x770B;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x8003;&#x6307;&#x5357;&#x3002;</p>
+</blockquote>
+<ol>
+<li><p>&#x901A;&#x8FC7;&#x6A21;&#x578B;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;&#x3002;</p>
+<pre><code class="lang-Shell">(venv)$ python manage.py makemigrations hrs
+Migrations for &apos;hrs&apos;:
+  hrs/migrations/0001_initial.py
+    - Create model Dept
+    - Create model Emp
+(venv)$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, hrs, sessions
+Running migrations:
+  Applying hrs.0001_initial... OK
+</code></pre>
+<p>&#x6267;&#x884C;&#x5B8C;&#x6570;&#x636E;&#x6A21;&#x578B;&#x8FC1;&#x79FB;&#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x901A;&#x8FC7;&#x56FE;&#x5F62;&#x5316;&#x7684;MySQL&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x67E5;&#x770B;&#x5230;E-R&#x56FE;&#xFF08;&#x5B9E;&#x4F53;&#x5173;&#x7CFB;&#x56FE;&#xFF09;&#x3002;</p>
+<p><img src="res/er-graph.png" alt=""></p>
 </li>
 </ol>
-<p>   class Dept(models.Model):
-       &quot;&quot;&quot;&#x90E8;&#x95E8;&#x7C7B;&quot;&quot;&quot;</p>
-<pre><code>   no = models.IntegerField(primary_key=True, db_column=&apos;dno&apos;, verbose_name=&apos;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&apos;)
-   name = models.CharField(max_length=20, db_column=&apos;dname&apos;, verbose_name=&apos;&#x90E8;&#x95E8;&#x540D;&#x79F0;&apos;)
-   location = models.CharField(max_length=10, db_column=&apos;dloc&apos;, verbose_name=&apos;&#x90E8;&#x95E8;&#x6240;&#x5728;&#x5730;&apos;)
-
-   class Meta:
-       db_table = &apos;tb_dept&apos;
-</code></pre><p>   class Emp(models.Model):
-       &quot;&quot;&quot;&#x5458;&#x5DE5;&#x7C7B;&quot;&quot;&quot;</p>
-<pre><code>   no = models.IntegerField(primary_key=True, db_column=&apos;eno&apos;, verbose_name=&apos;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&apos;)
-   name = models.CharField(max_length=20, db_column=&apos;ename&apos;, verbose_name=&apos;&#x5458;&#x5DE5;&#x59D3;&#x540D;&apos;)
-   job = models.CharField(max_length=10, verbose_name=&apos;&#x804C;&#x4F4D;&apos;)
-   # &#x81EA;&#x53C2;&#x7167;&#x5B8C;&#x6574;&#x6027;&#x591A;&#x5BF9;&#x4E00;&#x5916;&#x952E;&#x5173;&#x8054;
-   mgr = models.ForeignKey(&apos;self&apos;, on_delete=models.SET_NULL, null=True, blank=True, verbose_name=&apos;&#x4E3B;&#x7BA1;&#x7F16;&#x53F7;&apos;)
-   sal = models.DecimalField(max_digits=7, decimal_places=2, verbose_name=&apos;&#x6708;&#x85AA;&apos;)
-   comm = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True, verbose_name=&apos;&#x8865;&#x8D34;&apos;)
-   # &#x591A;&#x5BF9;&#x4E00;&#x5916;&#x952E;&#x5173;&#x8054;
-   dept = models.ForeignKey(Dept, db_column=&apos;dno&apos;, on_delete=models.PROTECT, verbose_name=&apos;&#x6240;&#x5728;&#x90E8;&#x95E8;&apos;)
-
-   class Meta:
-       db_table = &apos;tb_emp&apos;
-</code></pre><pre><code>   &gt; &#x8BF4;&#x660E;&#xFF1A;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x65F6;&#x4F7F;&#x7528;&#x4E86;&#x5B57;&#x6BB5;&#x7C7B;&#x53CA;&#x5176;&#x5C5E;&#x6027;&#xFF0C;&#x5176;&#x4E2D;IntegerField&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;integer&#x7C7B;&#x578B;&#xFF0C;CharField&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x7684;varchar&#x7C7B;&#x578B;&#xFF0C;DecimalField&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x7684;decimal&#x7C7B;&#x578B;&#xFF0C;ForeignKey&#x7528;&#x6765;&#x5EFA;&#x7ACB;&#x591A;&#x5BF9;&#x4E00;&#x5916;&#x952E;&#x5173;&#x8054;&#x3002;&#x5B57;&#x6BB5;&#x5C5E;&#x6027;primary_key&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x4E3B;&#x952E;&#xFF0C;max_length&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x5B57;&#x6BB5;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;db_column&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0E;&#x5B57;&#x6BB5;&#x5BF9;&#x5E94;&#x7684;&#x5217;&#xFF0C;verbose_name&#x5219;&#x8BBE;&#x7F6E;&#x4E86;Django&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4E2D;&#x8BE5;&#x5B57;&#x6BB5;&#x663E;&#x793A;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x611F;&#x5230;&#x5F88;&#x56F0;&#x60D1;&#x4E5F;&#x4E0D;&#x8981;&#x7D27;&#xFF0C;&#x6587;&#x672B;&#x63D0;&#x4F9B;&#x4E86;&#x5B57;&#x6BB5;&#x7C7B;&#x3001;&#x5B57;&#x6BB5;&#x5C5E;&#x6027;&#x3001;&#x5143;&#x6570;&#x636E;&#x9009;&#x9879;&#x7B49;&#x8BBE;&#x7F6E;&#x7684;&#x76F8;&#x5173;&#x8BF4;&#x660E;&#xFF0C;&#x4E0D;&#x6E05;&#x695A;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x7A0D;&#x540E;&#x67E5;&#x770B;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x8003;&#x6307;&#x5357;&#x3002;
-
-5. &#x901A;&#x8FC7;&#x6A21;&#x578B;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;&#x3002;
-
-   ```Shell
-   (venv)$ python manage.py makemigrations hrs
-   Migrations for &apos;hrs&apos;:
-     hrs/migrations/0001_initial.py
-       - Create model Dept
-       - Create model Emp
-   (venv)$ python manage.py migrate
-   Operations to perform:
-     Apply all migrations: admin, auth, contenttypes, hrs, sessions
-   Running migrations:
-     Applying hrs.0001_initial... OK
-</code></pre><p>   &#x6267;&#x884C;&#x5B8C;&#x6570;&#x636E;&#x6A21;&#x578B;&#x8FC1;&#x79FB;&#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x901A;&#x8FC7;&#x56FE;&#x5F62;&#x5316;&#x7684;MySQL&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x67E5;&#x770B;&#x5230;E-R&#x56FE;&#xFF08;&#x5B9E;&#x4F53;&#x5173;&#x7CFB;&#x56FE;&#xFF09;&#x3002;</p>
-<p>   <img src="res/er-graph.png" alt=""></p>
 <h3 id="&#x5728;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x6A21;&#x578B;">&#x5728;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x6A21;&#x578B;</h3>
 <ol>
 <li><p>&#x521B;&#x5EFA;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#x8D26;&#x53F7;&#x3002;</p>
@@ -4537,6 +4562,8 @@ Superuser created successfully.
 <li><p>&#x6CE8;&#x518C;&#x6A21;&#x578B;&#x7C7B;&#x3002;</p>
 <pre><code class="lang-Shell">(venv)$ vim hrs/admin.py
 </code></pre>
+</li>
+</ol>
 <pre><code class="lang-Python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
 
 <span class="hljs-keyword">from</span> hrs.models <span class="hljs-keyword">import</span> Emp, Dept
@@ -4546,7 +4573,7 @@ admin.site.register(Emp)
 </code></pre>
 <p>&#x6CE8;&#x518C;&#x6A21;&#x578B;&#x7C7B;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4E2D;&#x770B;&#x5230;&#x5B83;&#x4EEC;&#x3002;</p>
 <p><img src="res/admin-model.png" alt=""></p>
-</li>
+<ol>
 <li><p>&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;CRUD&#x64CD;&#x4F5C;&#x3002;</p>
 <p>&#x53EF;&#x4EE5;&#x5728;&#x7BA1;&#x7406;&#x5458;&#x5E73;&#x53F0;&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;C&#xFF08;&#x65B0;&#x589E;&#xFF09;R&#xFF08;&#x67E5;&#x770B;&#xFF09;U&#xFF08;&#x66F4;&#x65B0;&#xFF09;D&#xFF08;&#x5220;&#x9664;&#xFF09;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
 <p>&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x90E8;&#x95E8;&#x3002;</p>
@@ -4558,463 +4585,553 @@ admin.site.register(Emp)
 </li>
 <li><p>&#x6CE8;&#x518C;&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x7C7B;&#x3002;</p>
 <p>&#x518D;&#x6B21;&#x4FEE;&#x6539;admin.py&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x6CE8;&#x518C;&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x4E2D;&#x66F4;&#x597D;&#x7684;&#x7BA1;&#x7406;&#x6A21;&#x578B;&#x3002;</p>
-<p>```Python
-from django.contrib import admin</p>
-<p>from hrs.models import Emp, Dept</p>
 </li>
 </ol>
-<p>   class DeptAdmin(admin.ModelAdmin):</p>
-<pre><code>   list_display = (&apos;no&apos;, &apos;name&apos;, &apos;location&apos;)
-   ordering = (&apos;no&apos;, )
-</code></pre><p>   class EmpAdmin(admin.ModelAdmin):</p>
-<pre><code>   list_display = (&apos;no&apos;, &apos;name&apos;, &apos;job&apos;, &apos;mgr&apos;, &apos;sal&apos;, &apos;comm&apos;, &apos;dept&apos;)
-   search_fields = (&apos;name&apos;, &apos;job&apos;)
-</code></pre><p>   admin.site.register(Dept, DeptAdmin)
-   admin.site.register(Emp, EmpAdmin)</p>
-<pre><code>
-   ![](./res/admin-model-depts.png)
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
 
-   ![](./res/admin-model-emps.png)
-
-   &#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x67E5;&#x770B;&#x6A21;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;Dept&#x548C;Emp&#x4E24;&#x4E2A;&#x6A21;&#x578B;&#x7C7B;&#x6DFB;&#x52A0;`__str__`&#x9B54;&#x6CD5;&#x65B9;&#x6CD5;&#x3002;
-
-   ```Python
-   from django.db import models
+<span class="hljs-keyword">from</span> hrs.models <span class="hljs-keyword">import</span> Emp, Dept
 
 
-   class Dept(models.Model):
-       &quot;&quot;&quot;&#x90E8;&#x95E8;&#x7C7B;&quot;&quot;&quot;
-
-       # &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;
-
-       def __str__(self):
-           return self.name
-
-       # &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeptAdmin</span><span class="hljs-params">(admin.ModelAdmin)</span>:</span>
+    list_display = (<span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;location&apos;</span>)
+    ordering = (<span class="hljs-string">&apos;no&apos;</span>,)
 
 
-   class Emp(models.Model):
-       &quot;&quot;&quot;&#x5458;&#x5DE5;&#x7C7B;&quot;&quot;&quot;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmpAdmin</span><span class="hljs-params">(admin.ModelAdmin)</span>:</span>
+    list_display = (<span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;job&apos;</span>, <span class="hljs-string">&apos;mgr&apos;</span>, <span class="hljs-string">&apos;sal&apos;</span>, <span class="hljs-string">&apos;comm&apos;</span>, <span class="hljs-string">&apos;dept&apos;</span>)
+    search_fields = (<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;job&apos;</span>)
 
-       # &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;
 
-       mgr = models.ForeignKey(&apos;self&apos;, on_delete=models.SET_NULL, null=True, blank=True, verbose_name=&apos;&#x76F4;&#x63A5;&#x4E3B;&#x7BA1;&apos;)
+admin.site.register(Dept, DeptAdmin)
+admin.site.register(Emp, EmpAdmin)
+</code></pre>
+<p><img src="res/admin-model-depts.png" alt=""></p>
+<p><img src="res/admin-model-emps.png" alt=""></p>
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x67E5;&#x770B;&#x6A21;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;Dept&#x548C;Emp&#x4E24;&#x4E2A;&#x6A21;&#x578B;&#x7C7B;&#x6DFB;&#x52A0;<code>__str__</code>&#x9B54;&#x6CD5;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
 
-       # &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;
 
-       # &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dept</span><span class="hljs-params">(models.Model)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x90E8;&#x95E8;&#x7C7B;&quot;&quot;&quot;</span>
 
-       def __str__(self):
-           return self.name
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
 
-       # &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;
-</code></pre><p>   &#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x540E;&#x5237;&#x65B0;&#x67E5;&#x770B;Emp&#x6A21;&#x578B;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
-<p>   <img src="res/admin-model-emps-modified.png" alt=""></p>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
+
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Emp</span><span class="hljs-params">(models.Model)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5458;&#x5DE5;&#x7C7B;&quot;&quot;&quot;</span>
+
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+
+    mgr = models.ForeignKey(<span class="hljs-string">&apos;self&apos;</span>, on_delete=models.SET_NULL, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, verbose_name=<span class="hljs-string">&apos;&#x76F4;&#x63A5;&#x4E3B;&#x7BA1;&apos;</span>)
+
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
+
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+</code></pre>
+<p>&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x540E;&#x5237;&#x65B0;&#x67E5;&#x770B;Emp&#x6A21;&#x578B;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="res/admin-model-emps-modified.png" alt=""></p>
 <h3 id="&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x7C7B;&#x8BE6;&#x7EC6;&#x914D;&#x7F6E;">&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x7C7B;&#x8BE6;&#x7EC6;&#x914D;&#x7F6E;</h3>
 <p>models.py</p>
-<pre><code class="lang-python">    <span class="hljs-comment"># _*_ encoding:utf-8 _*_</span>
-    <span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
 
-    <span class="hljs-keyword">from</span> DjangoUeditor.models <span class="hljs-keyword">import</span> UEditorField
+<span class="hljs-keyword">from</span> DjangoUeditor.models <span class="hljs-keyword">import</span> UEditorField
 
-    <span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
-    <span class="hljs-keyword">from</span> organization.models <span class="hljs-keyword">import</span> CourseOrg, Teacher
-    <span class="hljs-comment"># Create your models here.</span>
+<span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+<span class="hljs-keyword">from</span> organization.models <span class="hljs-keyword">import</span> CourseOrg, Teacher
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Course</span><span class="hljs-params">(models.Model)</span>:</span>
-        course_org = models.ForeignKey(CourseOrg, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x673A;&#x6784;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">50</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x540D;&#x79F0;&apos;</span>)
-        desc = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x63CF;&#x8FF0;&apos;</span>)
-        <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x63D2;&#x4EF6;, ueditor&#x7684;&#x4E0A;&#x4F20;&#x8DEF;&#x5F84;&#x56FA;&#x5B9A;&#x5728;ueditor&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x6587;&#x4EF6;&#x540D;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;</span>
-        detail = UEditorField(verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8BE6;&#x60C5;&apos;</span>, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">300</span>, imagePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>,
-                              filePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>, default=<span class="hljs-string">u&apos;&apos;</span>)
-        is_banner = models.BooleanField(default=<span class="hljs-keyword">False</span>, verbose_name=<span class="hljs-string">u&apos;&#x662F;&#x5426;&#x8F6E;&#x64AD;&apos;</span>)
-        teacher = models.ForeignKey(Teacher, verbose_name=<span class="hljs-string">u&apos;&#x8BB2;&#x5E08;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
-        degree = models.CharField(verbose_name=<span class="hljs-string">u&apos;&#x96BE;&#x5EA6;&apos;</span>, choices=((<span class="hljs-string">&apos;cj&apos;</span>, <span class="hljs-string">u&apos;&#x521D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;zj&apos;</span>, <span class="hljs-string">u&apos;&#x4E2D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;gj&apos;</span>, <span class="hljs-string">u&apos;&#x9AD8;&#x7EA7;&apos;</span>)), max_length=<span class="hljs-number">2</span>)
-        learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
-        students = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x4EBA;&#x6570;&apos;</span>)
-        fav_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x6536;&#x85CF;&#x4EBA;&#x6570;&apos;</span>)
-        image = models.ImageField(upload_to=<span class="hljs-string">&apos;courses/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x5C01;&#x9762;&#x56FE;&apos;</span>, max_length=<span class="hljs-number">100</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>)
-        click_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x70B9;&#x51FB;&#x6570;&apos;</span>)
-        category = models.CharField(default=<span class="hljs-string">u&apos;&#x540E;&#x7AEF;&#x5F00;&#x53D1;&apos;</span>, max_length=<span class="hljs-number">20</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x7C7B;&#x522B;&apos;</span>)
-        tag = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x6807;&#x7B7E;&apos;</span>, max_length=<span class="hljs-number">10</span>,)
-        youneed_know = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x987B;&#x77E5;&apos;</span>, default=<span class="hljs-string">&apos;&apos;</span>)
-        what_you_learn = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8001;&#x5E08;&#x544A;&#x8BC9;&#x4F60;&#x80FD;&#x5B66;&#x5230;&#x4EC0;&#x4E48;&apos;</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
-
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>
-            verbose_name_plural = verbose_name
-        <span class="hljs-comment">#</span>
-        <span class="hljs-comment"># def __unicode__(self):</span>
-        <span class="hljs-comment">#     return self.name</span>
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_nums</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x6570;
-            :return: &#x7AE0;&#x8282;&#x6570;
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.lesson_set.all().count()
-        <span class="hljs-comment"># &#x7ED9;&#x4E2A;&#x663E;&#x793A;&#x540D;&#x5B57;</span>
-        get_lesson_nums.short_description = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x6570;&apos;</span>
-
-        <span class="hljs-comment"># &#x8DF3;&#x8F6C;&#x51FD;&#x6570;</span>
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">go_to</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">from</span> django.utils.safestring <span class="hljs-keyword">import</span> mark_safe
-            <span class="hljs-keyword">return</span> mark_safe(<span class="hljs-string">&quot;&lt;a href=&apos;http://www.bilibili.com&apos;&gt;&#x8DF3;&#x8F6C;&lt;/a&gt;&quot;</span>)
-        go_to.short_description = <span class="hljs-string">u&apos;&#x8DF3;&#x8F6C;&apos;</span>
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_learn_users</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x5B66;&#x4E60;&#x7528;&#x6237;
-            :return: &#x5B66;&#x4E60;&#x7528;&#x6237;
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.usercourse_set.all()[:<span class="hljs-number">5</span>]
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x8BFE;&#x7A0B;&#x6240;&#x6709;&#x7AE0;&#x8282;
-            :return:
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.lesson_set.all()
-
-        <span class="hljs-comment"># def get_user(self):</span>
-        <span class="hljs-comment">#     &quot;&quot;&quot;</span>
-        <span class="hljs-comment">#     &#x83B7;&#x53D6;&#x8BFE;&#x7A0B;&#x6240;&#x6709;&#x7AE0;&#x8282;</span>
-        <span class="hljs-comment">#     :return:</span>
-        <span class="hljs-comment">#     &quot;&quot;&quot;</span>
-        <span class="hljs-comment">#     return self.lesson_set.all()</span>
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+<span class="hljs-comment"># Create your models here.</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BannerCourse</span><span class="hljs-params">(Course)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;model&#x7EE7;&#x627F;&#x4E8E;Course,&#x62E5;&#x6709;Course&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&quot;&quot;&quot;</span>
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;&apos;</span>
-            verbose_name_plural = verbose_name
-            <span class="hljs-comment"># proxy&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;True,&#x5C31;&#x4E0D;&#x4F1A;&#x53E6;&#x5916;&#x751F;&#x4EA7;&#x4E00;&#x5F20;&#x8868;&#x800C;&#x662F;&#x548C;Course&#x540C;&#x4E00;&#x5F20;&#x8868;</span>
-            proxy = <span class="hljs-keyword">True</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Course</span><span class="hljs-params">(models.Model)</span>:</span>
+    course_org = models.ForeignKey(CourseOrg, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x673A;&#x6784;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">50</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x540D;&#x79F0;&apos;</span>)
+    desc = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x63CF;&#x8FF0;&apos;</span>)
+    <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x63D2;&#x4EF6;, ueditor&#x7684;&#x4E0A;&#x4F20;&#x8DEF;&#x5F84;&#x56FA;&#x5B9A;&#x5728;ueditor&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x6587;&#x4EF6;&#x540D;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;</span>
+    detail = UEditorField(verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8BE6;&#x60C5;&apos;</span>, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">300</span>, imagePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>,
+                          filePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>, default=<span class="hljs-string">u&apos;&apos;</span>)
+    is_banner = models.BooleanField(default=<span class="hljs-keyword">False</span>, verbose_name=<span class="hljs-string">u&apos;&#x662F;&#x5426;&#x8F6E;&#x64AD;&apos;</span>)
+    teacher = models.ForeignKey(Teacher, verbose_name=<span class="hljs-string">u&apos;&#x8BB2;&#x5E08;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
+    degree = models.CharField(verbose_name=<span class="hljs-string">u&apos;&#x96BE;&#x5EA6;&apos;</span>, choices=((<span class="hljs-string">&apos;cj&apos;</span>, <span class="hljs-string">u&apos;&#x521D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;zj&apos;</span>, <span class="hljs-string">u&apos;&#x4E2D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;gj&apos;</span>, <span class="hljs-string">u&apos;&#x9AD8;&#x7EA7;&apos;</span>)), max_length=<span class="hljs-number">2</span>)
+    learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
+    students = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x4EBA;&#x6570;&apos;</span>)
+    fav_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x6536;&#x85CF;&#x4EBA;&#x6570;&apos;</span>)
+    image = models.ImageField(upload_to=<span class="hljs-string">&apos;courses/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x5C01;&#x9762;&#x56FE;&apos;</span>, max_length=<span class="hljs-number">100</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>)
+    click_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x70B9;&#x51FB;&#x6570;&apos;</span>)
+    category = models.CharField(default=<span class="hljs-string">u&apos;&#x540E;&#x7AEF;&#x5F00;&#x53D1;&apos;</span>, max_length=<span class="hljs-number">20</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x7C7B;&#x522B;&apos;</span>)
+    tag = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x6807;&#x7B7E;&apos;</span>, max_length=<span class="hljs-number">10</span>, )
+    youneed_know = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x987B;&#x77E5;&apos;</span>, default=<span class="hljs-string">&apos;&apos;</span>)
+    what_you_learn = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8001;&#x5E08;&#x544A;&#x8BC9;&#x4F60;&#x80FD;&#x5B66;&#x5230;&#x4EC0;&#x4E48;&apos;</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>
+        verbose_name_plural = verbose_name
+
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># def __unicode__(self):</span>
+    <span class="hljs-comment">#     return self.name</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x6570;
+        :return: &#x7AE0;&#x8282;&#x6570;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.lesson_set.all().count()
+
+    <span class="hljs-comment"># &#x7ED9;&#x4E2A;&#x663E;&#x793A;&#x540D;&#x5B57;</span>
+    get_lesson_nums.short_description = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x6570;&apos;</span>
+
+    <span class="hljs-comment"># &#x8DF3;&#x8F6C;&#x51FD;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">go_to</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">from</span> django.utils.safestring <span class="hljs-keyword">import</span> mark_safe
+        <span class="hljs-keyword">return</span> mark_safe(<span class="hljs-string">&quot;&lt;a href=&apos;http://www.bilibili.com&apos;&gt;&#x8DF3;&#x8F6C;&lt;/a&gt;&quot;</span>)
+
+    go_to.short_description = <span class="hljs-string">u&apos;&#x8DF3;&#x8F6C;&apos;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_learn_users</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x5B66;&#x4E60;&#x7528;&#x6237;
+        :return: &#x5B66;&#x4E60;&#x7528;&#x6237;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.usercourse_set.all()[:<span class="hljs-number">5</span>]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x8BFE;&#x7A0B;&#x6240;&#x6709;&#x7AE0;&#x8282;
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.lesson_set.all()
+
+    <span class="hljs-comment"># def get_user(self):</span>
+    <span class="hljs-comment">#     &quot;&quot;&quot;</span>
+    <span class="hljs-comment">#     &#x83B7;&#x53D6;&#x8BFE;&#x7A0B;&#x6240;&#x6709;&#x7AE0;&#x8282;</span>
+    <span class="hljs-comment">#     :return:</span>
+    <span class="hljs-comment">#     &quot;&quot;&quot;</span>
+    <span class="hljs-comment">#     return self.lesson_set.all()</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lesson</span><span class="hljs-params">(models.Model)</span>:</span>
-        course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x540D;&apos;</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BannerCourse</span><span class="hljs-params">(Course)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;model&#x7EE7;&#x627F;&#x4E8E;Course,&#x62E5;&#x6709;Course&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&quot;&quot;&quot;</span>
 
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>
-            verbose_name_plural = verbose_name
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_video</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x89C6;&#x9891;&#x4FE1;&#x606F;
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.video_set.all()
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;&apos;</span>
+        verbose_name_plural = verbose_name
+        <span class="hljs-comment"># proxy&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;True,&#x5C31;&#x4E0D;&#x4F1A;&#x53E6;&#x5916;&#x751F;&#x4EA7;&#x4E00;&#x5F20;&#x8868;&#x800C;&#x662F;&#x548C;Course&#x540C;&#x4E00;&#x5F20;&#x8868;</span>
+        proxy = <span class="hljs-keyword">True</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Video</span><span class="hljs-params">(models.Model)</span>:</span>
-        lesson = models.ForeignKey(Lesson, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x89C6;&#x9891;&#x540D;&apos;</span>)
-        url = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">200</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BBF;&#x95EE;&#x5730;&#x5740;&apos;</span>)
-        learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lesson</span><span class="hljs-params">(models.Model)</span>:</span>
+    course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x540D;&apos;</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
 
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x89C6;&#x9891;&apos;</span>
-            verbose_name_plural = verbose_name
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>
+        verbose_name_plural = verbose_name
 
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_video</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x89C6;&#x9891;&#x4FE1;&#x606F;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.video_set.all()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResource</span><span class="hljs-params">(models.Model)</span>:</span>
-        course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x540D;&#x79F0;&apos;</span>)
-        download = models.FileField(upload_to=<span class="hljs-string">&apos;course/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&apos;</span>, max_length=<span class="hljs-number">100</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Video</span><span class="hljs-params">(models.Model)</span>:</span>
+    lesson = models.ForeignKey(Lesson, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x89C6;&#x9891;&#x540D;&apos;</span>)
+    url = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">200</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BBF;&#x95EE;&#x5730;&#x5740;&apos;</span>)
+    learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
 
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8D44;&#x6E90;&apos;</span>
-            verbose_name_plural = verbose_name
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x89C6;&#x9891;&apos;</span>
+        verbose_name_plural = verbose_name
 
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResource</span><span class="hljs-params">(models.Model)</span>:</span>
+    course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x540D;&#x79F0;&apos;</span>)
+    download = models.FileField(upload_to=<span class="hljs-string">&apos;course/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&apos;</span>, max_length=<span class="hljs-number">100</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8D44;&#x6E90;&apos;</span>
+        verbose_name_plural = verbose_name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
 </code></pre>
 <p>adminx.py</p>
-<pre><code class="lang-python">    <span class="hljs-keyword">import</span> xadmin
-    <span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Course, Lesson, Video, CourseResource, BannerCourse
-
-    <span class="hljs-comment">#&#x914D;&#x7F6E;&#x4E3B;&#x9898;&#x529F;&#x80FD;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseSetting</span><span class="hljs-params">(object)</span>:</span>
-        enable_themes = <span class="hljs-keyword">True</span>
-        use_bootswatch = <span class="hljs-keyword">True</span>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> xadmin
+<span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Course, Lesson, Video, CourseResource, BannerCourse
 
 
-    <span class="hljs-comment">#&#x5168;&#x5C40;&#x5934;&#x90E8;&#x811A;&#x6B65;&#x914D;&#x7F6E;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GlobalSettings</span><span class="hljs-params">(object)</span>:</span>
-        site_title = <span class="hljs-string">&apos;&#x6155;&#x8BFE;&#x7F51;&apos;</span>
-        site_footer = <span class="hljs-string">&apos;&#x6155;&#x8BFE;&#x5728;&#x7EBF;&#x7F51;&apos;</span>
-        menu_style = <span class="hljs-string">&apos;accordion&apos;</span>
-
-    <span class="hljs-comment"># inline&#x6A21;&#x5F0F;&#xFF0C;&#x53EA;&#x80FD;&#x4E00;&#x5C42;&#x5D4C;&#x5957;&#xFF0C;&#x4E0D;&#x80FD;&#x591A;&#x5C42;&#x5D4C;&#x5957;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LessonInline</span><span class="hljs-params">(object)</span>:</span>
-        model = Lesson
-        extra = <span class="hljs-number">0</span>
+<span class="hljs-comment"># &#x914D;&#x7F6E;&#x4E3B;&#x9898;&#x529F;&#x80FD;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseSetting</span><span class="hljs-params">(object)</span>:</span>
+    enable_themes = <span class="hljs-keyword">True</span>
+    use_bootswatch = <span class="hljs-keyword">True</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResourceInline</span><span class="hljs-params">(object)</span>:</span>
-        model = CourseResource
-        extra = <span class="hljs-number">0</span>
+<span class="hljs-comment"># &#x5168;&#x5C40;&#x5934;&#x90E8;&#x811A;&#x6B65;&#x914D;&#x7F6E;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GlobalSettings</span><span class="hljs-params">(object)</span>:</span>
+    site_title = <span class="hljs-string">&apos;&#x6155;&#x8BFE;&#x7F51;&apos;</span>
+    site_footer = <span class="hljs-string">&apos;&#x6155;&#x8BFE;&#x5728;&#x7EBF;&#x7F51;&apos;</span>
+    menu_style = <span class="hljs-string">&apos;accordion&apos;</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseAdmin</span><span class="hljs-params">(object)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x8BFE;&#x7A0B;&#x7BA1;&#x7406;&#x5668;
-        &quot;&quot;&quot;</span>
-        <span class="hljs-comment"># &#x663E;&#x793A;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x5165;model&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x5982;&#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x6570;&#xFF1A;get_lesson_nums,go_to</span>
-        list_display = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;course_org&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>,
-                        <span class="hljs-string">&apos;add_time&apos;</span>, <span class="hljs-string">&apos;get_lesson_nums&apos;</span>, <span class="hljs-string">&apos;go_to&apos;</span>]
-        <span class="hljs-comment"># &#x641C;&#x7D22;&#x529F;&#x80FD;</span>
-        search_fields = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>]
-        <span class="hljs-comment"># &#x8FC7;&#x6EE4;&#x5668;</span>
-        list_filter = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>,
-                       <span class="hljs-string">&apos;add_time&apos;</span>]
-
-        <span class="hljs-comment"># ico&#x56FE;&#x6807;</span>
-        model_icon = <span class="hljs-string">&apos;fa fa-file&apos;</span>
-
-        <span class="hljs-comment"># &#x5F53;&#x6709;&#x4E00;&#x4E2A;model&#x6709;&#x4E00;&#x4E2A;&#x5916;&#x952E;&#x6307;&#x5411;&#x5B83;&#x65F6;&#xFF0C;&#x5B83;&#x662F;ajax&#x52A0;&#x8F7D;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x8FC7;&#x5927;&#x65F6;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x53EF;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x800C;&#x4E0D;&#x662F;&#x4E0B;&#x62C9;&#x5F0F;</span>
-        relfield_style = <span class="hljs-string">&apos;fk-ajax&apos;</span>
-
-        <span class="hljs-comment"># &#x6392;&#x5E8F;&#x89C4;&#x5219;</span>
-        ordering = [<span class="hljs-string">&apos;-click_nums&apos;</span>]
-
-        <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E3A;&#x53EA;&#x8BFB;</span>
-        readonly_fields = [<span class="hljs-string">&apos;click_nums&apos;</span>]
-
-        <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x663E;&#x793A;,&#x548C;&#x4E0A;&#x9762;&#x7684;&#x8BBE;&#x7F6E;&#x4F1A;&#x51B2;&#x7A81;&#xFF0C;&#x6240;&#x4EE5;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;</span>
-        exclude = [<span class="hljs-string">&apos;fav_nums&apos;</span>]
-
-        <span class="hljs-comment"># &#x5C55;&#x793A;&#x9875;&#x9762;&#x4E2D;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x529F;&#x80FD;</span>
-        list_editable = [<span class="hljs-string">&apos;degree&apos;</span>,<span class="hljs-string">&apos;desc&apos;</span>]
-
-        <span class="hljs-comment"># inlines &#x8BBE;&#x7F6E;</span>
-        inlines = [LessonInline, CourseResourceInline]
-
-        <span class="hljs-comment"># &#x81EA;&#x5B9A;&#x4E49;&#x5237;&#x65B0;&#x65F6;&#x95F4;,&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x53EF;&#x9009;</span>
-        refresh_times = [<span class="hljs-number">3</span>, <span class="hljs-number">5</span>]
-
-        <span class="hljs-comment"># &#x63D2;&#x4EF6;&#x914D;&#x7F6E;</span>
-        <span class="hljs-comment"># 1&#x3001;&#x6307;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x5F0F;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;&#x662F;&#x6307;&#x660E;detail&#x662F;ueditor&#x6837;&#x5F0F;</span>
-        style_fields = {<span class="hljs-string">&quot;detail&quot;</span>: <span class="hljs-string">&quot;ueditor&quot;</span>}
-
-        <span class="hljs-comment"># 2&#x3001;Excel&#x5BFC;&#x5165;&#x5BFC;&#x51FA;&#x529F;&#x80FD;,True&#x4E3A;&#x5F00;&#x542F;</span>
-        list_export = [<span class="hljs-string">&apos;xls&apos;</span>, <span class="hljs-string">&apos;xml&apos;</span>, <span class="hljs-string">&apos;json&apos;</span>]
-        import_excel = <span class="hljs-keyword">True</span>
-
-        <span class="hljs-comment"># &#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;&#x8BFE;&#x7A0B;</span>
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">queryset</span><span class="hljs-params">(self)</span>:</span>
-            qs = super(CourseAdmin, self).queryset()
-            qs = qs.filter(is_banner=<span class="hljs-keyword">False</span>)
-            <span class="hljs-keyword">return</span> qs
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_models</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-comment"># &#x5728;&#x4FDD;&#x5B58;&#x8BFE;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x7EDF;&#x8BA1;&#x673A;&#x6784;&#x7684;&#x8BFE;&#x7A0B;&#x6570;</span>
-            obj = self.new_obj
-            <span class="hljs-comment"># &#x67E5;&#x8BE2;&#x524D;&#x5148;&#x4FDD;&#x5B58;&#x624D;&#x80FD;&#x589E;&#x52A0;&#x65B0;&#x589E;&#x7684;&#x6570;&#x91CF;</span>
-            obj.save()
-            <span class="hljs-keyword">if</span> obj.course_org <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
-                course_org = obj.course_org
-                course_org.course_nums = Course.objects.filter(course_org=course_org).count()
-                course_org.save()
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">post</span><span class="hljs-params">(self, request, *args, **kwargs)</span>:</span>
-            <span class="hljs-comment"># &#x5BFC;&#x5165;&#x903B;&#x8F91;</span>
-            <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;excel&apos;</span> <span class="hljs-keyword">in</span> request.FILES:
-                <span class="hljs-keyword">pass</span>
-            <span class="hljs-keyword">return</span> super(CourseAdmin, self).post(request, args, kwargs)
-
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BannerCourseAdmin</span><span class="hljs-params">(object)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;
-        &#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x548C;&#x4E0A;&#x9762;&#x7684;&#x8BFE;&#x7A0B;&#x7BA1;&#x7406;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x662F;&#x540C;&#x4E00;&#x5F20;&#x8868;
-        &quot;&quot;&quot;</span>
-        list_display = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;course_org&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>,
-                        <span class="hljs-string">&apos;click_nums&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
-        search_fields = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>,
-                         <span class="hljs-string">&apos;click_nums&apos;</span>]
-        list_filter = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>,
-                       <span class="hljs-string">&apos;add_time&apos;</span>]
-        model_icon = <span class="hljs-string">&apos;fa fa-file&apos;</span>
-        <span class="hljs-comment"># &#x6392;&#x5E8F;&#x89C4;&#x5219;</span>
-        ordering = [<span class="hljs-string">&apos;-click_nums&apos;</span>]
-        <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E3A;&#x53EA;&#x8BFB;</span>
-        readonly_fields = [<span class="hljs-string">&apos;click_nums&apos;</span>]
-        <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x663E;&#x793A;,&#x548C;&#x4E0A;&#x9762;&#x7684;&#x8BBE;&#x7F6E;&#x4F1A;&#x51B2;&#x7A81;&#xFF0C;&#x6240;&#x4EE5;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;</span>
-        exclude = [<span class="hljs-string">&apos;fav_nums&apos;</span>]
-        <span class="hljs-comment"># inlines &#x8BBE;&#x7F6E;</span>
-        inlines = [LessonInline, CourseResourceInline]
-
-        <span class="hljs-comment"># &#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;&#x8BFE;&#x7A0B;</span>
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">queryset</span><span class="hljs-params">(self)</span>:</span>
-            qs = super(BannerCourseAdmin, self).queryset()
-            qs = qs.filter(is_banner=<span class="hljs-keyword">True</span>)
-            <span class="hljs-keyword">return</span> qs
+<span class="hljs-comment"># inline&#x6A21;&#x5F0F;&#xFF0C;&#x53EA;&#x80FD;&#x4E00;&#x5C42;&#x5D4C;&#x5957;&#xFF0C;&#x4E0D;&#x80FD;&#x591A;&#x5C42;&#x5D4C;&#x5957;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x591A;&#x4E2A;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LessonInline</span><span class="hljs-params">(object)</span>:</span>
+    model = Lesson
+    extra = <span class="hljs-number">0</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LessonAdmin</span><span class="hljs-params">(object)</span>:</span>
-        list_display = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
-        search_fields = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>]
-        list_filter = [<span class="hljs-string">&apos;course__name&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>] <span class="hljs-comment">#course__name&#x5916;&#x952E;&#x8BBE;&#x7F6E;</span>
-        model_icon = <span class="hljs-string">&apos;fa fa-file-o&apos;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResourceInline</span><span class="hljs-params">(object)</span>:</span>
+    model = CourseResource
+    extra = <span class="hljs-number">0</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VideoAdmin</span><span class="hljs-params">(object)</span>:</span>
-        list_display = [<span class="hljs-string">&apos;lesson&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
-        search_fields = [<span class="hljs-string">&apos;lesson&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>]
-        list_filter = [<span class="hljs-string">&apos;lesson__name&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]<span class="hljs-comment">#course__name&#x5916;&#x952E;&#x8BBE;&#x7F6E;</span>
-        model_icon = <span class="hljs-string">&apos;fa fa-file-video-o&apos;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseAdmin</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8BFE;&#x7A0B;&#x7BA1;&#x7406;&#x5668;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># &#x663E;&#x793A;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x5165;model&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x5982;&#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x6570;&#xFF1A;get_lesson_nums,go_to</span>
+    list_display = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;course_org&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>,
+                    <span class="hljs-string">&apos;click_nums&apos;</span>,
+                    <span class="hljs-string">&apos;add_time&apos;</span>, <span class="hljs-string">&apos;get_lesson_nums&apos;</span>, <span class="hljs-string">&apos;go_to&apos;</span>]
+    <span class="hljs-comment"># &#x641C;&#x7D22;&#x529F;&#x80FD;</span>
+    search_fields = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>]
+    <span class="hljs-comment"># &#x8FC7;&#x6EE4;&#x5668;</span>
+    list_filter = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>,
+                   <span class="hljs-string">&apos;add_time&apos;</span>]
+
+    <span class="hljs-comment"># ico&#x56FE;&#x6807;</span>
+    model_icon = <span class="hljs-string">&apos;fa fa-file&apos;</span>
+
+    <span class="hljs-comment"># &#x5F53;&#x6709;&#x4E00;&#x4E2A;model&#x6709;&#x4E00;&#x4E2A;&#x5916;&#x952E;&#x6307;&#x5411;&#x5B83;&#x65F6;&#xFF0C;&#x5B83;&#x662F;ajax&#x52A0;&#x8F7D;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x8FC7;&#x5927;&#x65F6;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x53EF;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x800C;&#x4E0D;&#x662F;&#x4E0B;&#x62C9;&#x5F0F;</span>
+    relfield_style = <span class="hljs-string">&apos;fk-ajax&apos;</span>
+
+    <span class="hljs-comment"># &#x6392;&#x5E8F;&#x89C4;&#x5219;</span>
+    ordering = [<span class="hljs-string">&apos;-click_nums&apos;</span>]
+
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E3A;&#x53EA;&#x8BFB;</span>
+    readonly_fields = [<span class="hljs-string">&apos;click_nums&apos;</span>]
+
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x663E;&#x793A;,&#x548C;&#x4E0A;&#x9762;&#x7684;&#x8BBE;&#x7F6E;&#x4F1A;&#x51B2;&#x7A81;&#xFF0C;&#x6240;&#x4EE5;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;</span>
+    exclude = [<span class="hljs-string">&apos;fav_nums&apos;</span>]
+
+    <span class="hljs-comment"># &#x5C55;&#x793A;&#x9875;&#x9762;&#x4E2D;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x529F;&#x80FD;</span>
+    list_editable = [<span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>]
+
+    <span class="hljs-comment"># inlines &#x8BBE;&#x7F6E;</span>
+    inlines = [LessonInline, CourseResourceInline]
+
+    <span class="hljs-comment"># &#x81EA;&#x5B9A;&#x4E49;&#x5237;&#x65B0;&#x65F6;&#x95F4;,&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x53EF;&#x9009;</span>
+    refresh_times = [<span class="hljs-number">3</span>, <span class="hljs-number">5</span>]
+
+    <span class="hljs-comment"># &#x63D2;&#x4EF6;&#x914D;&#x7F6E;</span>
+    <span class="hljs-comment"># 1&#x3001;&#x6307;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x5F0F;&#xFF0C;&#x4E0B;&#x9762;&#x5C31;&#x662F;&#x6307;&#x660E;detail&#x662F;ueditor&#x6837;&#x5F0F;</span>
+    style_fields = {<span class="hljs-string">&quot;detail&quot;</span>: <span class="hljs-string">&quot;ueditor&quot;</span>}
+
+    <span class="hljs-comment"># 2&#x3001;Excel&#x5BFC;&#x5165;&#x5BFC;&#x51FA;&#x529F;&#x80FD;,True&#x4E3A;&#x5F00;&#x542F;</span>
+    list_export = [<span class="hljs-string">&apos;xls&apos;</span>, <span class="hljs-string">&apos;xml&apos;</span>, <span class="hljs-string">&apos;json&apos;</span>]
+    import_excel = <span class="hljs-keyword">True</span>
+
+    <span class="hljs-comment"># &#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;&#x8BFE;&#x7A0B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">queryset</span><span class="hljs-params">(self)</span>:</span>
+        qs = super(CourseAdmin, self).queryset()
+        qs = qs.filter(is_banner=<span class="hljs-keyword">False</span>)
+        <span class="hljs-keyword">return</span> qs
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_models</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># &#x5728;&#x4FDD;&#x5B58;&#x8BFE;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x7EDF;&#x8BA1;&#x673A;&#x6784;&#x7684;&#x8BFE;&#x7A0B;&#x6570;</span>
+        obj = self.new_obj
+        <span class="hljs-comment"># &#x67E5;&#x8BE2;&#x524D;&#x5148;&#x4FDD;&#x5B58;&#x624D;&#x80FD;&#x589E;&#x52A0;&#x65B0;&#x589E;&#x7684;&#x6570;&#x91CF;</span>
+        obj.save()
+        <span class="hljs-keyword">if</span> obj.course_org <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+            course_org = obj.course_org
+            course_org.course_nums = Course.objects.filter(course_org=course_org).count()
+            course_org.save()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">post</span><span class="hljs-params">(self, request, *args, **kwargs)</span>:</span>
+        <span class="hljs-comment"># &#x5BFC;&#x5165;&#x903B;&#x8F91;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;excel&apos;</span> <span class="hljs-keyword">in</span> request.FILES:
+            <span class="hljs-keyword">pass</span>
+        <span class="hljs-keyword">return</span> super(CourseAdmin, self).post(request, args, kwargs)
 
 
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BannerCourseAdmin</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x548C;&#x4E0A;&#x9762;&#x7684;&#x8BFE;&#x7A0B;&#x7BA1;&#x7406;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x662F;&#x540C;&#x4E00;&#x5F20;&#x8868;
+    &quot;&quot;&quot;</span>
+    list_display = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;course_org&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>,
+                    <span class="hljs-string">&apos;click_nums&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
+    search_fields = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>,
+                     <span class="hljs-string">&apos;click_nums&apos;</span>]
+    list_filter = [<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;desc&apos;</span>, <span class="hljs-string">&apos;detail&apos;</span>, <span class="hljs-string">&apos;degree&apos;</span>, <span class="hljs-string">&apos;learn_times&apos;</span>, <span class="hljs-string">&apos;students&apos;</span>, <span class="hljs-string">&apos;fav_nums&apos;</span>, <span class="hljs-string">&apos;image&apos;</span>, <span class="hljs-string">&apos;click_nums&apos;</span>,
+                   <span class="hljs-string">&apos;add_time&apos;</span>]
+    model_icon = <span class="hljs-string">&apos;fa fa-file&apos;</span>
+    <span class="hljs-comment"># &#x6392;&#x5E8F;&#x89C4;&#x5219;</span>
+    ordering = [<span class="hljs-string">&apos;-click_nums&apos;</span>]
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E3A;&#x53EA;&#x8BFB;</span>
+    readonly_fields = [<span class="hljs-string">&apos;click_nums&apos;</span>]
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0D;&#x663E;&#x793A;,&#x548C;&#x4E0A;&#x9762;&#x7684;&#x8BBE;&#x7F6E;&#x4F1A;&#x51B2;&#x7A81;&#xFF0C;&#x6240;&#x4EE5;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;</span>
+    exclude = [<span class="hljs-string">&apos;fav_nums&apos;</span>]
+    <span class="hljs-comment"># inlines &#x8BBE;&#x7F6E;</span>
+    inlines = [LessonInline, CourseResourceInline]
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResourceAdmin</span><span class="hljs-params">(object)</span>:</span>
-        list_display = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;download&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
-        search_fields = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;download&apos;</span>]
-        list_filter = [<span class="hljs-string">&apos;course__name&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;download&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
-        model_icon = <span class="hljs-string">&apos;fa fa-file-archive-o&apos;</span>
+    <span class="hljs-comment"># &#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;&#x8BFE;&#x7A0B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">queryset</span><span class="hljs-params">(self)</span>:</span>
+        qs = super(BannerCourseAdmin, self).queryset()
+        qs = qs.filter(is_banner=<span class="hljs-keyword">True</span>)
+        <span class="hljs-keyword">return</span> qs
 
 
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LessonAdmin</span><span class="hljs-params">(object)</span>:</span>
+    list_display = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
+    search_fields = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>]
+    list_filter = [<span class="hljs-string">&apos;course__name&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]  <span class="hljs-comment"># course__name&#x5916;&#x952E;&#x8BBE;&#x7F6E;</span>
+    model_icon = <span class="hljs-string">&apos;fa fa-file-o&apos;</span>
 
 
-    xadmin.site.register(Course, CourseAdmin)
-    xadmin.site.register(BannerCourse, BannerCourseAdmin)
-    xadmin.site.register(Lesson, LessonAdmin)
-    xadmin.site.register(Video, VideoAdmin)
-    xadmin.site.register(CourseResource, CourseResourceAdmin)
-    xadmin.site.register(views.BaseAdminView, BaseSetting)
-    xadmin.site.register(views.CommAdminView, GlobalSettings)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VideoAdmin</span><span class="hljs-params">(object)</span>:</span>
+    list_display = [<span class="hljs-string">&apos;lesson&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
+    search_fields = [<span class="hljs-string">&apos;lesson&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>]
+    list_filter = [<span class="hljs-string">&apos;lesson__name&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]  <span class="hljs-comment"># course__name&#x5916;&#x952E;&#x8BBE;&#x7F6E;</span>
+    model_icon = <span class="hljs-string">&apos;fa fa-file-video-o&apos;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResourceAdmin</span><span class="hljs-params">(object)</span>:</span>
+    list_display = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;download&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
+    search_fields = [<span class="hljs-string">&apos;course&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;download&apos;</span>]
+    list_filter = [<span class="hljs-string">&apos;course__name&apos;</span>, <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;download&apos;</span>, <span class="hljs-string">&apos;add_time&apos;</span>]
+    model_icon = <span class="hljs-string">&apos;fa fa-file-archive-o&apos;</span>
+
+
+xadmin.site.register(Course, CourseAdmin)
+xadmin.site.register(BannerCourse, BannerCourseAdmin)
+xadmin.site.register(Lesson, LessonAdmin)
+xadmin.site.register(Video, VideoAdmin)
+xadmin.site.register(CourseResource, CourseResourceAdmin)
+xadmin.site.register(views.BaseAdminView, BaseSetting)
+xadmin.site.register(views.CommAdminView, GlobalSettings)
 </code></pre>
 <h3 id="djangoxadmin&#x5F00;&#x542F;excel&#x5BFC;&#x5165;&#x529F;&#x80FD;">Django_xadmin&#x5F00;&#x542F;excel&#x5BFC;&#x5165;&#x529F;&#x80FD;</h3>
 <pre><code class="lang-python">    <span class="hljs-comment"># &#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF1A;xadmin/plugins/execl.py</span>
-    <span class="hljs-keyword">from</span> xadmin.sites <span class="hljs-keyword">import</span> site
-    <span class="hljs-keyword">from</span> xadmin.views <span class="hljs-keyword">import</span> BaseAdminPlugin, ListAdminView
-    <span class="hljs-keyword">from</span> django.template <span class="hljs-keyword">import</span> loader
-    <span class="hljs-keyword">from</span> xadmin.plugins.utils <span class="hljs-keyword">import</span> get_context_dict
-
-    <span class="hljs-comment">#excel &#x5BFC;&#x5165;</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListImportExcelPlugin</span><span class="hljs-params">(BaseAdminPlugin)</span>:</span>
-        import_excel = <span class="hljs-keyword">False</span>
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init_request</span><span class="hljs-params">(self, *args, **kwargs)</span>:</span>
-            <span class="hljs-keyword">return</span> bool(self.import_excel)
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">block_top_toolbar</span><span class="hljs-params">(self, context, nodes)</span>:</span>
-            nodes.append(loader.render_to_string(<span class="hljs-string">&apos;xadmin/excel/model_list.top_toolbar.import.html&apos;</span>, context=get_context_dict(context)))
+<span class="hljs-keyword">from</span> xadmin.sites <span class="hljs-keyword">import</span> site
+<span class="hljs-keyword">from</span> xadmin.views <span class="hljs-keyword">import</span> BaseAdminPlugin, ListAdminView
+<span class="hljs-keyword">from</span> django.template <span class="hljs-keyword">import</span> loader
+<span class="hljs-keyword">from</span> xadmin.plugins.utils <span class="hljs-keyword">import</span> get_context_dict
 
 
-    xadmin.site.register_plugin(ListImportExcelPlugin, ListAdminView)
+<span class="hljs-comment"># excel &#x5BFC;&#x5165;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListImportExcelPlugin</span><span class="hljs-params">(BaseAdminPlugin)</span>:</span>
+    import_excel = <span class="hljs-keyword">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init_request</span><span class="hljs-params">(self, *args, **kwargs)</span>:</span>
+        <span class="hljs-keyword">return</span> bool(self.import_excel)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">block_top_toolbar</span><span class="hljs-params">(self, context, nodes)</span>:</span>
+        nodes.append(loader.render_to_string(<span class="hljs-string">&apos;xadmin/excel/model_list.top_toolbar.import.html&apos;</span>,
+                                             context=get_context_dict(context)))
+
+
+xadmin.site.register_plugin(ListImportExcelPlugin, ListAdminView)
 </code></pre>
-<pre><code>```html
-# &#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF1A;xadmin/templates/xadmin/excel/model_list.top_toolbar.import.html
-{ % load i18n % }
-&lt;div class=&quot;btn-group export&quot;&gt;
-  &lt;a class=&quot;dropdown-toggle btn btn-default btn-sm&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot;&gt;
-    &lt;i class=&quot;icon-share&quot;&gt;&lt;/i&gt; &#x5BFC;&#x5165;1 &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-  &lt;/a&gt;
-  &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;dLabel&quot;&gt;
-      &lt;li&gt;&lt;a data-toggle=&quot;modal&quot; data-target=&quot;#export-modal-import-excel&quot;&gt;&lt;i class=&quot;icon-circle-arrow-down&quot;&gt;&lt;/i&gt; &#x5BFC;&#x5165; Excel&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-    &lt;script&gt;
-        function fileChange(target){
-        //&#x68C0;&#x6D4B;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x7C7B;&#x578B;
-            var imgName = document.all.submit_upload.value;
-            var ext,idx;
-            if (imgName == &apos;&apos;){
-                document.all.submit_upload_b.disabled=true;
-                alert(&quot;&#x8BF7;&#x9009;&#x62E9;&#x9700;&#x8981;&#x4E0A;&#x4F20;&#x7684; xls &#x6587;&#x4EF6;!&quot;);
-                return;
-            } else {
-                idx = imgName.lastIndexOf(&quot;.&quot;);
-                if (idx != -1){
-                    ext = imgName.substr(idx+1).toUpperCase();
-                    ext = ext.toLowerCase( );
-{#                    alert(&quot;ext=&quot;+ext);#}
-                    if (ext != &apos;xls&apos; &amp;&amp; ext != &apos;xlsx&apos;){
-                        document.all.submit_upload_b.disabled=true;
-                        alert(&quot;&#x53EA;&#x80FD;&#x4E0A;&#x4F20; .xls &#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;!&quot;);
+<pre><code class="lang-html"># &#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF1A;xadmin/templates/xadmin/excel/model_list.top_toolbar.import.html
+{ % load
+i18n %}
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
 
-                        return;
-                    }
-                } else {
-                    document.all.submit_upload_b.disabled=true;
-                    alert(&quot;&#x53EA;&#x80FD;&#x4E0A;&#x4F20; .xls &#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;!&quot;);
-                    return;
-                }
-            }
 
-        }
-    &lt;/script&gt;
-    &lt;div id=&quot;export-modal-import-excel&quot; class=&quot;modal fade&quot;&gt;
-      &lt;div class=&quot;modal-dialog&quot;&gt;
-        &lt;div class=&quot;modal-content&quot;&gt;
-          &lt;form method=&quot;post&quot; action=&quot;&quot; enctype=&quot;multipart/form-data&quot;&gt;
-              { % csrf_token % }
-          &lt;div class=&quot;modal-header&quot;&gt;
-            &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
-            &lt;h4 class=&quot;modal-title&quot;&gt;&#x5BFC;&#x5165; Excel&lt;/h4&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;modal-body&quot;&gt;
-               &lt;input type=&quot;file&quot; onchange=&quot;fileChange(this)&quot; name=&quot;excel&quot; id=&quot;submit_upload&quot;&gt;
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;btn-group export&quot;</span> &gt;</span>
 
-          &lt;/div&gt;
-          &lt;div class=&quot;modal-footer&quot;&gt;
-            &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;{ % trans &quot;Close&quot; % }&lt;/button&gt;
-            &lt;button class=&quot;btn btn-success&quot; type=&quot;submit&quot; id=&quot;submit_upload_b&quot;&gt;&lt;i class=&quot;icon-share&quot;&gt;&lt;/i&gt; &#x5BFC;&#x5165;&lt;/button&gt;
-          &lt;/div&gt;
-          &lt;/form&gt;
-        &lt;/div&gt;&lt;!-- /.modal-content --&gt;
-      &lt;/div&gt;&lt;!-- /.modal-dalog --&gt;
-    &lt;/div&gt;&lt;!-- /.modal --&gt;
+<span class="hljs-tag">&lt; <span class="hljs-attr">a</span>
 
-&lt;/div&gt;
-```
 
-```python
-# adminx.py&#x6587;&#x4EF6;
-class maintenanceRecordListAdmin(object):
-list_display = [...]
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;dropdown-toggle btn btn-default btn-sm&quot;</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">&quot;dropdown&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">i</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;icon-share&quot;</span> &gt;</span> <span class="hljs-tag">&lt; / <span class="hljs-attr">i</span> &gt;</span> &#x5BFC;&#x5165;1 <span class="hljs-tag">&lt; <span class="hljs-attr">span</span> <span class="hljs-attr">class</span> =<span class="hljs-string">&quot;caret&quot;</span> &gt;</span> <span class="hljs-tag">&lt; / <span class="hljs-attr">span</span> &gt;</span>
+
+<span class="hljs-tag">&lt; / <span class="hljs-attr">a</span> &gt;</span>
+<span class="hljs-tag">&lt; <span class="hljs-attr">ul</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;dropdown-menu&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menu&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;dLabel&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">li</span> &gt;</span> <span class="hljs-tag">&lt; <span class="hljs-attr">a</span>
+<span class="hljs-attr">data</span> <span class="hljs-attr">-</span> <span class="hljs-attr">toggle</span> = &quot;<span class="hljs-attr">modal</span>&quot;
+<span class="hljs-attr">data</span> <span class="hljs-attr">-</span> <span class="hljs-attr">target</span> = &quot;#<span class="hljs-attr">export-modal-import-excel</span>&quot; &gt;</span> <span class="hljs-tag">&lt; <span class="hljs-attr">i</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;icon-circle-arrow-down&quot;</span> &gt;</span> <span class="hljs-tag">&lt; / <span class="hljs-attr">i</span> &gt;</span> &#x5BFC;&#x5165; Excel <span class="hljs-tag">&lt; / <span class="hljs-attr">a</span> &gt;</span> <span class="hljs-tag">&lt; / <span class="hljs-attr">li</span> &gt;</span>
+
+<span class="hljs-tag">&lt; / <span class="hljs-attr">ul</span> &gt;</span>
+<span class="hljs-tag">&lt; <span class="hljs-attr">script</span> &gt;</span>
+function
+fileChange(target)
+{
+// &#x68C0;&#x6D4B;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x7C7B;&#x578B;
+var
+imgName = document.all.submit_upload.value;
+var
+ext, idx;
+if (imgName == &apos;&apos;)
+{
+document.all.submit_upload_b.disabled = true;
+alert(&quot;&#x8BF7;&#x9009;&#x62E9;&#x9700;&#x8981;&#x4E0A;&#x4F20;&#x7684; xls &#x6587;&#x4EF6;!&quot;);
+return;
+} else {
+idx = imgName.lastIndexOf(&quot;.&quot;);
+if (idx != -1){
+ext = imgName.substr(idx+1).toUpperCase();
+ext = ext.toLowerCase( );
+{  #                    alert(&quot;ext=&quot;+ext);#}
+if (ext != &apos;xls&apos; &amp; &amp; ext != &apos;xlsx&apos;){
+document.all.submit_upload_b.disabled=true;
+alert(&quot;&#x53EA;&#x80FD;&#x4E0A;&#x4F20; .xls &#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;!&quot;);
+
+return;
+}
+} else {
+document.all.submit_upload_b.disabled = true;
+alert(&quot;&#x53EA;&#x80FD;&#x4E0A;&#x4F20; .xls &#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;!&quot;);
+return;
+}
+}
+
+}
+<span class="hljs-tag">&lt; / <span class="hljs-attr">script</span> &gt;</span>
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
+<span class="hljs-attr">id</span> = &quot;<span class="hljs-attr">export-modal-import-excel</span>&quot;
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal fade&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal-dialog&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal-content&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">form</span>
+<span class="hljs-attr">method</span> = &quot;<span class="hljs-attr">post</span>&quot;
+<span class="hljs-attr">action</span> = &quot;&quot;
+<span class="hljs-attr">enctype</span> = &quot;<span class="hljs-attr">multipart</span>/<span class="hljs-attr">form-data</span>&quot; &gt;</span>
+{ % csrf_token %}
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal-header&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">button</span>
+<span class="hljs-attr">type</span> = &quot;<span class="hljs-attr">button</span>&quot;
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;close&quot;</span> <span class="hljs-attr">data-dismiss</span>=<span class="hljs-string">&quot;modal&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span> &gt;</span> &amp; times; <span class="hljs-tag">&lt; / <span class="hljs-attr">button</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">h4</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal-title&quot;</span> &gt;</span> &#x5BFC;&#x5165; Excel <span class="hljs-tag">&lt; / <span class="hljs-attr">h4</span> &gt;</span>
+
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span>
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal-body&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">input</span>
+<span class="hljs-attr">type</span> = &quot;<span class="hljs-attr">file</span>&quot;
+<span class="hljs-attr">onchange</span> = &quot;<span class="hljs-attr">fileChange</span>(<span class="hljs-attr">this</span>)&quot;
+<span class="hljs-attr">name</span> = &quot;<span class="hljs-attr">excel</span>&quot;
+<span class="hljs-attr">id</span> = &quot;<span class="hljs-attr">submit_upload</span>&quot; &gt;</span>
+
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span>
+<span class="hljs-tag">&lt; <span class="hljs-attr">div</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;modal-footer&quot;</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">button</span>
+<span class="hljs-attr">type</span> = &quot;<span class="hljs-attr">button</span>&quot;
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;btn btn-default&quot;</span> <span class="hljs-attr">data-dismiss</span>=<span class="hljs-string">&quot;modal&quot;</span> &gt;</span> { % trans &quot;Close&quot; % } <span class="hljs-tag">&lt; / <span class="hljs-attr">button</span> &gt;</span>
+
+<span class="hljs-tag">&lt; <span class="hljs-attr">button</span>
+
+
+<span class="hljs-attr">class</span> =<span class="hljs-string">&quot;btn btn-success&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;submit_upload_b&quot;</span> &gt;</span> <span class="hljs-tag">&lt; <span class="hljs-attr">i</span> <span class="hljs-attr">class</span> =<span class="hljs-string">&quot;icon-share&quot;</span> &gt;</span> <span class="hljs-tag">&lt; / <span class="hljs-attr">i</span> &gt;</span> &#x5BFC;&#x5165; <span class="hljs-tag">&lt; / <span class="hljs-attr">button</span> &gt;</span>
+
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span>
+<span class="hljs-tag">&lt; / <span class="hljs-attr">form</span> &gt;</span>
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span> <span class="hljs-comment">&lt;!-- /.modal - content --&gt;</span>
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span> <span class="hljs-comment">&lt;!-- /.modal - dalog --&gt;</span>
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span> <span class="hljs-comment">&lt;!-- /.modal --&gt;</span>
+
+<span class="hljs-tag">&lt; / <span class="hljs-attr">div</span> &gt;</span>
+</code></pre>
+<pre><code class="lang-python">
+
+<span class="hljs-comment"># adminx.py&#x6587;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">maintenanceRecordListAdmin</span><span class="hljs-params">(object)</span>:</span>
+    list_display = [...]
+
+
 search_fields = [...]
 list_filter = [...]
 list_editable = [...]
 readonly_fields = [...]
 
-#excel&#x5BFC;&#x5165;&#x5BFC;&#x51FA;&#x529F;&#x80FD;
-list_export = [&apos;xls&apos;, &apos;xml&apos;, &apos;json&apos;]
-import_excel = True
+<span class="hljs-comment"># excel&#x5BFC;&#x5165;&#x5BFC;&#x51FA;&#x529F;&#x80FD;</span>
+list_export = [<span class="hljs-string">&apos;xls&apos;</span>, <span class="hljs-string">&apos;xml&apos;</span>, <span class="hljs-string">&apos;json&apos;</span>]
+import_excel = <span class="hljs-keyword">True</span>
 
-def post(self, request, *args, **kwargs):
-    #  &#x5BFC;&#x5165;&#x903B;&#x8F91;
-    if &apos;excel&apos; in request.FILES:
-        pass
-    return super(maintenanceRecordListAdmin, self).post(request, args, kwargs)
-</code></pre><pre><code>
-### &#x4F7F;&#x7528;ORM&#x5B8C;&#x6210;&#x6A21;&#x578B;&#x7684;CRUD&#x64CD;&#x4F5C;
 
-&#x5728;&#x4E86;&#x89E3;&#x4E86;Django&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x5982;&#x4F55;&#x4ECE;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x5B8C;&#x6210;&#x5BF9;&#x6A21;&#x578B;&#x7684;CRUD&#xFF08;Create / Read / Update / Delete&#xFF09;&#x64CD;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;manage.py&#x5F00;&#x542F;Shell&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;Django&#x5185;&#x7F6E;&#x7684;ORM&#x6846;&#x67B6;&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;CRUD&#x64CD;&#x4F5C;&#x3002;
-
-```Shell
-(venv)$ python manage.py shell
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">post</span><span class="hljs-params">(self, request, *args, **kwargs)</span>:</span>
+    <span class="hljs-comment">#  &#x5BFC;&#x5165;&#x903B;&#x8F91;</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;excel&apos;</span> <span class="hljs-keyword">in</span> request.FILES:
+        <span class="hljs-keyword">pass</span>
+    <span class="hljs-keyword">return</span> super(maintenanceRecordListAdmin, self).post(request, args, kwargs)
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;orm&#x5B8C;&#x6210;&#x6A21;&#x578B;&#x7684;crud&#x64CD;&#x4F5C;">&#x4F7F;&#x7528;ORM&#x5B8C;&#x6210;&#x6A21;&#x578B;&#x7684;CRUD&#x64CD;&#x4F5C;</h3>
+<p>&#x5728;&#x4E86;&#x89E3;&#x4E86;Django&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x578B;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x5982;&#x4F55;&#x4ECE;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x5B8C;&#x6210;&#x5BF9;&#x6A21;&#x578B;&#x7684;CRUD&#xFF08;Create / Read / Update /
+Delete&#xFF09;&#x64CD;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;manage.py&#x5F00;&#x542F;Shell&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;Django&#x5185;&#x7F6E;&#x7684;ORM&#x6846;&#x67B6;&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;CRUD&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-Shell">(venv)$ python manage.py shell
 Python 3.6.4 (v3.6.4:d48ecebad5, Dec 18 2017, 21:07:28) 
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 (InteractiveConsole)
 &gt;&gt;&gt;
-</code></pre><h4 id="&#x65B0;&#x589E;">&#x65B0;&#x589E;</h4>
+</code></pre>
+<h4 id="&#x65B0;&#x589E;">&#x65B0;&#x589E;</h4>
 <pre><code class="lang-Shell">&gt;&gt;&gt; from hrs.models import Dept, Emp
 &gt;&gt;&gt; dept = Dept(40, &apos;&#x7814;&#x53D1;2&#x90E8;&apos;, &apos;&#x6DF1;&#x5733;&apos;)
 &gt;&gt;&gt; dept.save()
@@ -5414,126 +5531,131 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 &lt;QuerySet [&lt;Emp: &#x5F20;&#x4E09;&#x4E30;&gt;]&gt;
 </code></pre>
 <h3 id="&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4F8B;&#x5B50;">&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x4F8B;&#x5B50;</h3>
-<pre><code class="lang-python">    <span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
-    <span class="hljs-keyword">from</span> DjangoUeditor.models <span class="hljs-keyword">import</span> UEditorField
-    <span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
-    <span class="hljs-keyword">from</span> organization.models <span class="hljs-keyword">import</span> CourseOrg, Teacher
-    <span class="hljs-comment"># Create your models here.</span>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+<span class="hljs-keyword">from</span> DjangoUeditor.models <span class="hljs-keyword">import</span> UEditorField
+<span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+<span class="hljs-keyword">from</span> organization.models <span class="hljs-keyword">import</span> CourseOrg, Teacher
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Course</span><span class="hljs-params">(models.Model)</span>:</span>
-        course_org = models.ForeignKey(CourseOrg, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x673A;&#x6784;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">50</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x540D;&#x79F0;&apos;</span>)
-        desc = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x63CF;&#x8FF0;&apos;</span>)
-        <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x63D2;&#x4EF6;, ueditor&#x7684;&#x4E0A;&#x4F20;&#x8DEF;&#x5F84;&#x56FA;&#x5B9A;&#x5728;ueditor&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x6587;&#x4EF6;&#x540D;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;</span>
-        detail = UEditorField(verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8BE6;&#x60C5;&apos;</span>, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">300</span>, imagePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>,
-                              filePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>, default=<span class="hljs-string">u&apos;&apos;</span>)
-        is_banner = models.BooleanField(default=<span class="hljs-keyword">False</span>, verbose_name=<span class="hljs-string">u&apos;&#x662F;&#x5426;&#x8F6E;&#x64AD;&apos;</span>)
-        teacher = models.ForeignKey(Teacher, verbose_name=<span class="hljs-string">u&apos;&#x8BB2;&#x5E08;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
-        degree = models.CharField(verbose_name=<span class="hljs-string">u&apos;&#x96BE;&#x5EA6;&apos;</span>, choices=((<span class="hljs-string">&apos;cj&apos;</span>, <span class="hljs-string">u&apos;&#x521D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;zj&apos;</span>, <span class="hljs-string">u&apos;&#x4E2D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;gj&apos;</span>, <span class="hljs-string">u&apos;&#x9AD8;&#x7EA7;&apos;</span>)), max_length=<span class="hljs-number">2</span>)
-        learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
-        students = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x4EBA;&#x6570;&apos;</span>)
-        fav_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x6536;&#x85CF;&#x4EBA;&#x6570;&apos;</span>)
-        image = models.ImageField(upload_to=<span class="hljs-string">&apos;courses/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x5C01;&#x9762;&#x56FE;&apos;</span>, max_length=<span class="hljs-number">100</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>)
-        click_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x70B9;&#x51FB;&#x6570;&apos;</span>)
-        category = models.CharField(default=<span class="hljs-string">u&apos;&#x540E;&#x7AEF;&#x5F00;&#x53D1;&apos;</span>, max_length=<span class="hljs-number">20</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x7C7B;&#x522B;&apos;</span>)
-        tag = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x6807;&#x7B7E;&apos;</span>, max_length=<span class="hljs-number">10</span>,)
-        youneed_know = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x987B;&#x77E5;&apos;</span>, default=<span class="hljs-string">&apos;&apos;</span>)
-        what_you_learn = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8001;&#x5E08;&#x544A;&#x8BC9;&#x4F60;&#x80FD;&#x5B66;&#x5230;&#x4EC0;&#x4E48;&apos;</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
-
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>
-            verbose_name_plural = verbose_name
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_nums</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x6570;
-            :return: &#x7AE0;&#x8282;&#x6570;
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.lesson_set.all().count()
-        <span class="hljs-comment"># &#x7ED9;&#x4E2A;&#x663E;&#x793A;&#x540D;&#x5B57;</span>
-        get_lesson_nums.short_description = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x6570;&apos;</span>
-
-        <span class="hljs-comment"># &#x8DF3;&#x8F6C;&#x51FD;&#x6570;</span>
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">go_to</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">from</span> django.utils.safestring <span class="hljs-keyword">import</span> mark_safe
-            <span class="hljs-keyword">return</span> mark_safe(<span class="hljs-string">&quot;&lt;a href=&apos;http://www.bilibili.com&apos;&gt;&#x8DF3;&#x8F6C;&lt;/a&gt;&quot;</span>)
-        go_to.short_description = <span class="hljs-string">u&apos;&#x8DF3;&#x8F6C;&apos;</span>
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_learn_users</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x5B66;&#x4E60;&#x7528;&#x6237;
-            :return: &#x5B66;&#x4E60;&#x7528;&#x6237;
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.usercourse_set.all()[:<span class="hljs-number">5</span>]
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x8BFE;&#x7A0B;&#x6240;&#x6709;&#x7AE0;&#x8282;
-            :return:
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.lesson_set.all()
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+<span class="hljs-comment"># Create your models here.</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BannerCourse</span><span class="hljs-params">(Course)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;model&#x7EE7;&#x627F;&#x4E8E;Course,&#x62E5;&#x6709;Course&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&quot;&quot;&quot;</span>
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;&apos;</span>
-            verbose_name_plural = verbose_name
-            <span class="hljs-comment"># proxy&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;True,&#x5C31;&#x4E0D;&#x4F1A;&#x53E6;&#x5916;&#x751F;&#x4EA7;&#x4E00;&#x5F20;&#x8868;&#x800C;&#x662F;&#x548C;Course&#x540C;&#x4E00;&#x5F20;&#x8868;</span>
-            proxy = <span class="hljs-keyword">True</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Course</span><span class="hljs-params">(models.Model)</span>:</span>
+    course_org = models.ForeignKey(CourseOrg, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x673A;&#x6784;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">50</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x540D;&#x79F0;&apos;</span>)
+    desc = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x63CF;&#x8FF0;&apos;</span>)
+    <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x63D2;&#x4EF6;, ueditor&#x7684;&#x4E0A;&#x4F20;&#x8DEF;&#x5F84;&#x56FA;&#x5B9A;&#x5728;ueditor&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x6587;&#x4EF6;&#x540D;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;</span>
+    detail = UEditorField(verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8BE6;&#x60C5;&apos;</span>, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">300</span>, imagePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>,
+                          filePath=<span class="hljs-string">&quot;courses/ueditor/&quot;</span>, default=<span class="hljs-string">u&apos;&apos;</span>)
+    is_banner = models.BooleanField(default=<span class="hljs-keyword">False</span>, verbose_name=<span class="hljs-string">u&apos;&#x662F;&#x5426;&#x8F6E;&#x64AD;&apos;</span>)
+    teacher = models.ForeignKey(Teacher, verbose_name=<span class="hljs-string">u&apos;&#x8BB2;&#x5E08;&apos;</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>, on_delete=models.CASCADE)
+    degree = models.CharField(verbose_name=<span class="hljs-string">u&apos;&#x96BE;&#x5EA6;&apos;</span>, choices=((<span class="hljs-string">&apos;cj&apos;</span>, <span class="hljs-string">u&apos;&#x521D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;zj&apos;</span>, <span class="hljs-string">u&apos;&#x4E2D;&#x7EA7;&apos;</span>), (<span class="hljs-string">&apos;gj&apos;</span>, <span class="hljs-string">u&apos;&#x9AD8;&#x7EA7;&apos;</span>)), max_length=<span class="hljs-number">2</span>)
+    learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
+    students = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x4EBA;&#x6570;&apos;</span>)
+    fav_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x6536;&#x85CF;&#x4EBA;&#x6570;&apos;</span>)
+    image = models.ImageField(upload_to=<span class="hljs-string">&apos;courses/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x5C01;&#x9762;&#x56FE;&apos;</span>, max_length=<span class="hljs-number">100</span>, null=<span class="hljs-keyword">True</span>, blank=<span class="hljs-keyword">True</span>)
+    click_nums = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x70B9;&#x51FB;&#x6570;&apos;</span>)
+    category = models.CharField(default=<span class="hljs-string">u&apos;&#x540E;&#x7AEF;&#x5F00;&#x53D1;&apos;</span>, max_length=<span class="hljs-number">20</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x7C7B;&#x522B;&apos;</span>)
+    tag = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x6807;&#x7B7E;&apos;</span>, max_length=<span class="hljs-number">10</span>, )
+    youneed_know = models.CharField(max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x987B;&#x77E5;&apos;</span>, default=<span class="hljs-string">&apos;&apos;</span>)
+    what_you_learn = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">300</span>, verbose_name=<span class="hljs-string">u&apos;&#x8001;&#x5E08;&#x544A;&#x8BC9;&#x4F60;&#x80FD;&#x5B66;&#x5230;&#x4EC0;&#x4E48;&apos;</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>
+        verbose_name_plural = verbose_name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x6570;
+        :return: &#x7AE0;&#x8282;&#x6570;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.lesson_set.all().count()
+
+    <span class="hljs-comment"># &#x7ED9;&#x4E2A;&#x663E;&#x793A;&#x540D;&#x5B57;</span>
+    get_lesson_nums.short_description = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x6570;&apos;</span>
+
+    <span class="hljs-comment"># &#x8DF3;&#x8F6C;&#x51FD;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">go_to</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">from</span> django.utils.safestring <span class="hljs-keyword">import</span> mark_safe
+        <span class="hljs-keyword">return</span> mark_safe(<span class="hljs-string">&quot;&lt;a href=&apos;http://www.bilibili.com&apos;&gt;&#x8DF3;&#x8F6C;&lt;/a&gt;&quot;</span>)
+
+    go_to.short_description = <span class="hljs-string">u&apos;&#x8DF3;&#x8F6C;&apos;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_learn_users</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x5B66;&#x4E60;&#x7528;&#x6237;
+        :return: &#x5B66;&#x4E60;&#x7528;&#x6237;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.usercourse_set.all()[:<span class="hljs-number">5</span>]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x8BFE;&#x7A0B;&#x6240;&#x6709;&#x7AE0;&#x8282;
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.lesson_set.all()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lesson</span><span class="hljs-params">(models.Model)</span>:</span>
-        course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x540D;&apos;</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BannerCourse</span><span class="hljs-params">(Course)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;model&#x7EE7;&#x627F;&#x4E8E;Course,&#x62E5;&#x6709;Course&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&quot;&quot;&quot;</span>
 
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>
-            verbose_name_plural = verbose_name
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_video</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-string">&quot;&quot;&quot;
-            &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x89C6;&#x9891;&#x4FE1;&#x606F;
-            &quot;&quot;&quot;</span>
-            <span class="hljs-keyword">return</span> self.video_set.all()
-
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x8F6E;&#x64AD;&#x8BFE;&#x7A0B;&apos;</span>
+        verbose_name_plural = verbose_name
+        <span class="hljs-comment"># proxy&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;True,&#x5C31;&#x4E0D;&#x4F1A;&#x53E6;&#x5916;&#x751F;&#x4EA7;&#x4E00;&#x5F20;&#x8868;&#x800C;&#x662F;&#x548C;Course&#x540C;&#x4E00;&#x5F20;&#x8868;</span>
+        proxy = <span class="hljs-keyword">True</span>
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Video</span><span class="hljs-params">(models.Model)</span>:</span>
-        lesson = models.ForeignKey(Lesson, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x89C6;&#x9891;&#x540D;&apos;</span>)
-        url = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">200</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BBF;&#x95EE;&#x5730;&#x5740;&apos;</span>)
-        learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lesson</span><span class="hljs-params">(models.Model)</span>:</span>
+    course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&#x540D;&apos;</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
 
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x89C6;&#x9891;&apos;</span>
-            verbose_name_plural = verbose_name
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>
+        verbose_name_plural = verbose_name
 
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_lesson_video</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x83B7;&#x53D6;&#x7AE0;&#x8282;&#x89C6;&#x9891;&#x4FE1;&#x606F;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.video_set.all()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
 
 
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResource</span><span class="hljs-params">(models.Model)</span>:</span>
-        course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
-        name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x540D;&#x79F0;&apos;</span>)
-        download = models.FileField(upload_to=<span class="hljs-string">&apos;course/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&apos;</span>, max_length=<span class="hljs-number">100</span>)
-        add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Video</span><span class="hljs-params">(models.Model)</span>:</span>
+    lesson = models.ForeignKey(Lesson, verbose_name=<span class="hljs-string">u&apos;&#x7AE0;&#x8282;&apos;</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x89C6;&#x9891;&#x540D;&apos;</span>)
+    url = models.CharField(default=<span class="hljs-string">&apos;&apos;</span>, max_length=<span class="hljs-number">200</span>, verbose_name=<span class="hljs-string">u&apos;&#x8BBF;&#x95EE;&#x5730;&#x5740;&apos;</span>)
+    learn_times = models.IntegerField(default=<span class="hljs-number">0</span>, verbose_name=<span class="hljs-string">u&apos;&#x5B66;&#x4E60;&#x65F6;&#x957F;&apos;</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
 
-        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
-            verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8D44;&#x6E90;&apos;</span>
-            verbose_name_plural = verbose_name
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x89C6;&#x9891;&apos;</span>
+        verbose_name_plural = verbose_name
 
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
-            <span class="hljs-keyword">return</span> self.name
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseResource</span><span class="hljs-params">(models.Model)</span>:</span>
+    course = models.ForeignKey(Course, verbose_name=<span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&apos;</span>, on_delete=models.CASCADE)
+    name = models.CharField(max_length=<span class="hljs-number">100</span>, verbose_name=<span class="hljs-string">u&apos;&#x540D;&#x79F0;&apos;</span>)
+    download = models.FileField(upload_to=<span class="hljs-string">&apos;course/%Y/%m&apos;</span>, verbose_name=<span class="hljs-string">u&apos;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&apos;</span>, max_length=<span class="hljs-number">100</span>)
+    add_time = models.DateTimeField(default=datetime.now, verbose_name=<span class="hljs-string">u&apos;&#x6DFB;&#x52A0;&#x65F6;&#x95F4;&apos;</span>)
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        verbose_name = <span class="hljs-string">u&apos;&#x8BFE;&#x7A0B;&#x8D44;&#x6E90;&apos;</span>
+        verbose_name_plural = verbose_name
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.name
 </code></pre>
 
                                 
@@ -5578,7 +5700,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"深入模型","level":"2.3.1.2","depth":3,"next":{"title":"静态资源和Ajax请求","level":"2.3.1.3","depth":3,"path":"Python/第三方库/Django/03-静态资源和Ajax请求.md","ref":"./Python/第三方库/Django/03-静态资源和Ajax请求.md","articles":[]},"previous":{"title":"快速上手","level":"2.3.1.1","depth":3,"path":"Python/第三方库/Django/01-快速上手.md","ref":"./Python/第三方库/Django/01-快速上手.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/02-深入模型.md","mtime":"2021-07-20T02:04:05.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"深入模型","level":"2.3.1.2","depth":3,"next":{"title":"静态资源和Ajax请求","level":"2.3.1.3","depth":3,"path":"Python/第三方库/Django/03-静态资源和Ajax请求.md","ref":"./Python/第三方库/Django/03-静态资源和Ajax请求.md","articles":[]},"previous":{"title":"快速上手","level":"2.3.1.1","depth":3,"path":"Python/第三方库/Django/01-快速上手.md","ref":"./Python/第三方库/Django/01-快速上手.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/第三方库/Django/02-深入模型.md","mtime":"2022-09-29T10:42:51.386Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

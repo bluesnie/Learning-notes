@@ -67,6 +67,7 @@
 - [迭代器和生成器](./Python/Python语言进阶/04-迭代器和生成器.md) - 相关魔术方法 / 创建生成器的两种方式 /
 - [并发和异步编程](./Python/Python语言进阶/05-并发和异步编程.md) - 多线程 / 多进程 / 异步IO / async和await
 - [asynico异步编程](./Python/Python语言进阶/06-asyncio异步编程.md)
+- [GIL全局解释器锁](./Python/Python语言进阶/07-GIL全局解释器锁.md)
 
 ### [Python 第三方库](./Python/第三方库)
 

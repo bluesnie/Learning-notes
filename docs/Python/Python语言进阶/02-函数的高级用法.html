@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="07-GIL全局解释器锁.html">
+            
+                <a href="07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4401,10 +4414,12 @@
 </ul>
 </li>
 <li><p>&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x7684;&#x7528;&#x6CD5;&#xFF08;<code>filter</code>&#x3001;<code>map</code>&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF09;</p>
-<pre><code class="lang-Python">items1 = list(map(<span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>, filter(<span class="hljs-keyword">lambda</span> x: x % <span class="hljs-number">2</span>, range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))))
+</li>
+</ul>
+<pre><code class="lang-python">items1 = list(map(<span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>, filter(<span class="hljs-keyword">lambda</span> x: x % <span class="hljs-number">2</span>, range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))))
 items2 = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>) <span class="hljs-keyword">if</span> x % <span class="hljs-number">2</span>]
 </code></pre>
-</li>
+<ul>
 <li><p>&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x3001;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x3001;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x3001;&#x547D;&#x540D;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;</p>
 </li>
 <li><p>&#x53C2;&#x6570;&#x7684;&#x5143;&#x4FE1;&#x606F;&#xFF08;&#x4EE3;&#x7801;&#x53EF;&#x8BFB;&#x6027;&#x95EE;&#x9898;&#xFF09;</p>
@@ -4414,9 +4429,9 @@ items2 = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for
 <li><p>&#x95ED;&#x5305;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x95EE;&#x9898;</p>
 <ul>
 <li><p>&#x95ED;&#x5305;</p>
-<p> &#x51FD;&#x6570;&#x5185;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90FD;&#x662F;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x671F;&#x95F4;</p>
-<p> &#x5185;&#x90E8;&#x51FD;&#x6570;&#x5BF9;&#x5916;&#x90E8;&#x51FD;&#x6570;<strong>&#x4F5C;&#x7528;&#x57DF;</strong>&#x91CC;<strong>&#x53D8;&#x91CF;</strong>&#x7684;&#x5F15;&#x7528;</p>
-<p> &#x95ED;&#x5305;&#x5185;&#x7684;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x79C1;&#x6709;&#x5316;&#x4E86;&#x53D8;&#x91CF;&#xFF0C;&#x5B8C;&#x6210;&#x4E86;&#x6570;&#x636E;&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x7C7B;&#x4F3C;&#x9762;&#x5411;&#x5BF9;&#x8C61;</p>
+<p>&#x51FD;&#x6570;&#x5185;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90FD;&#x662F;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x671F;&#x95F4;</p>
+<p>&#x5185;&#x90E8;&#x51FD;&#x6570;&#x5BF9;&#x5916;&#x90E8;&#x51FD;&#x6570;<strong>&#x4F5C;&#x7528;&#x57DF;</strong>&#x91CC;<strong>&#x53D8;&#x91CF;</strong>&#x7684;&#x5F15;&#x7528;</p>
+<p>&#x95ED;&#x5305;&#x5185;&#x7684;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x79C1;&#x6709;&#x5316;&#x4E86;&#x53D8;&#x91CF;&#xFF0C;&#x5B8C;&#x6210;&#x4E86;&#x6570;&#x636E;&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x7C7B;&#x4F3C;&#x9762;&#x5411;&#x5BF9;&#x8C61;</p>
 </li>
 <li><p>&#x4F5C;&#x7528;&#x57DF;</p>
 <ul>
@@ -4432,11 +4447,15 @@ items2 = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for
 </li>
 <li><p>&#x88C5;&#x9970;&#x5668;&#x51FD;&#x6570;&#xFF08;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#x548C;&#x53D6;&#x6D88;&#x88C5;&#x9970;&#x5668;&#xFF09;&#x8BED;&#x6CD5;&#x7CD6; @</p>
 <p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func1</span><span class="hljs-params">(func)</span>:</span> <span class="hljs-comment"># &#x5916;&#x90E8;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x88AB;&#x88C5;&#x9970;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</span>
-   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span>:</span>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func1</span><span class="hljs-params">(func)</span>:</span>  <span class="hljs-comment"># &#x5916;&#x90E8;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x88AB;&#x88C5;&#x9970;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span>:</span>
         print(<span class="hljs-string">&apos;aaabbb&apos;</span>)
-        <span class="hljs-keyword">return</span> func() <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4E86;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x7684;&#x88AB;&#x88C5;&#x9970;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;</span>
-   <span class="hljs-keyword">return</span> func2
+        <span class="hljs-keyword">return</span> func()  <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4E86;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x7684;&#x88AB;&#x88C5;&#x9970;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;</span>
+
+    <span class="hljs-keyword">return</span> func2
+
 
 <span class="hljs-comment"># return func # &#x8FD4;&#x56DE;&#x4E86;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</span>
 <span class="hljs-comment"># return func() # &#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;</span>
@@ -4446,36 +4465,42 @@ items2 = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for
 
 <span class="hljs-meta">@func1</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myfunc</span><span class="hljs-params">()</span>:</span>
-   print(<span class="hljs-string">&apos;&#x4F60;&#x597D;&apos;</span>)
-   <span class="hljs-comment"># &#x4E0D;&#x5F71;&#x54CD;&#x539F;&#x6709;&#x51FD;&#x6570;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD8;&#x80FD;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x529F;&#x80FD;</span>
+    print(<span class="hljs-string">&apos;&#x4F60;&#x597D;&apos;</span>)
+    <span class="hljs-comment"># &#x4E0D;&#x5F71;&#x54CD;&#x539F;&#x6709;&#x51FD;&#x6570;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD8;&#x80FD;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x529F;&#x80FD;</span>
+
 
 myfunc()  <span class="hljs-comment"># func1(myfunc)()</span>
 </code></pre>
 <p>&#x88C5;&#x9970;&#x5668;&#x51FD;&#x6570;&#x5E26;&#x53C2;&#x6570;&#xFF08;&#x4E0E;&#x4E0B;&#x9762;&#x4E00;&#x6837;&#xFF09;&#x591A;&#x4E00;&#x5C42;&#x5305;&#x88C5;&#x6765;&#x63A5;&#x6536;&#x88C5;&#x9970;&#x5668;&#x7684;&#x53C2;&#x6570;</p>
 <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">arg_func</span><span class="hljs-params">(sex)</span>:</span>
-   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func1</span><span class="hljs-params">(b_func)</span>:</span>
-       <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func1</span><span class="hljs-params">(b_func)</span>:</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span>:</span>
             <span class="hljs-keyword">if</span> sex == <span class="hljs-string">&apos;man&apos;</span>:
                 print(<span class="hljs-string">&apos;&#x4F60;&#x662F;&#x7537;&#x58EB;&apos;</span>)
             <span class="hljs-keyword">if</span> sex == <span class="hljs-string">&apos;woman&apos;</span>:
                 print(<span class="hljs-string">&apos;&#x4F60;&#x662F;&#x5973;&#x58EB;&apos;</span>)
             <span class="hljs-keyword">return</span> b_func()
-       <span class="hljs-keyword">return</span> func2
-   <span class="hljs-keyword">return</span> func1
 
-<span class="hljs-meta">@arg_func(sex=&apos;man&apos;) </span>
+        <span class="hljs-keyword">return</span> func2
+
+    <span class="hljs-keyword">return</span> func1
+
+
+<span class="hljs-meta">@arg_func(sex=&apos;man&apos;)</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">man</span><span class="hljs-params">()</span>:</span>
-   print(<span class="hljs-string">&apos;&#x597D;&#x597D;&#x4E0A;&#x73ED;&apos;</span>)
+    print(<span class="hljs-string">&apos;&#x597D;&#x597D;&#x4E0A;&#x73ED;&apos;</span>)
+
 
 <span class="hljs-meta">@arg_func(sex=&apos;woman&apos;)</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">woman</span><span class="hljs-params">()</span>:</span>
-   print(<span class="hljs-string">&apos;&#x597D;&#x597D;&#x4E0A;&#x73ED;&apos;</span>)
+    print(<span class="hljs-string">&apos;&#x597D;&#x597D;&#x4E0A;&#x73ED;&apos;</span>)
+
 
 man()
 woman()
 </code></pre>
 <p>&#x4F8B;&#x5B50;&#xFF1A;&#x8F93;&#x51FA;&#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7684;&#x88C5;&#x9970;&#x5668;&#x3002;</p>
-<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">record_time</span><span class="hljs-params">(func)</span>:</span>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">record_time</span><span class="hljs-params">(func)</span>:</span>
     <span class="hljs-string">&quot;&quot;&quot;&#x81EA;&#x5B9A;&#x4E49;&#x88C5;&#x9970;&#x51FD;&#x6570;&#x7684;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;</span>
 
 <span class="hljs-meta">    @wraps(func)</span>
@@ -4488,100 +4513,120 @@ woman()
     <span class="hljs-keyword">return</span> wrapper
 </code></pre>
 <p>&#x5982;&#x679C;&#x88C5;&#x9970;&#x5668;&#x4E0D;&#x5E0C;&#x671B;&#x8DDF;<code>print</code>&#x51FD;&#x6570;&#x8026;&#x5408;&#xFF0C;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x5E26;&#x53C2;&#x6570;&#x7684;&#x88C5;&#x9970;&#x5668;&#x3002;</p>
-<p>```Python
-from functools import wraps
-from time import time</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> time
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">record</span><span class="hljs-params">(output)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x81EA;&#x5B9A;&#x4E49;&#x5E26;&#x53C2;&#x6570;&#x7684;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorate</span><span class="hljs-params">(func)</span>:</span>
+<span class="hljs-meta">        @wraps(func)</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+            start = time()
+            result = func(*args, **kwargs)
+            output(func.__name__, time() - start)
+            <span class="hljs-keyword">return</span> result
+
+        <span class="hljs-keyword">return</span> wrapper
+
+    <span class="hljs-keyword">return</span> decorate
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> time
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Record</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x81EA;&#x5B9A;&#x4E49;&#x88C5;&#x9970;&#x5668;&#x7C7B;(&#x901A;&#x8FC7;__call__&#x9B54;&#x672F;&#x65B9;&#x6CD5;&#x4F7F;&#x5F97;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F53;&#x6210;&#x51FD;&#x6570;&#x8C03;&#x7528;)&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, output)</span>:</span>
+        self.output = output
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self, func)</span>:</span>
+<span class="hljs-meta">        @wraps(func)</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+            start = time()
+            result = func(*args, **kwargs)
+            self.output(func.__name__, time() - start)
+            <span class="hljs-keyword">return</span> result
+
+        <span class="hljs-keyword">return</span> wrapper
+</code></pre>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x7531;&#x4E8E;&#x5BF9;&#x5E26;&#x88C5;&#x9970;&#x529F;&#x80FD;&#x7684;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x4E86;@wraps&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>func.__wrapped__</code>&#x65B9;&#x5F0F;&#x83B7;&#x5F97;&#x88AB;&#x88C5;&#x9970;&#x4E4B;&#x524D;&#x7684;&#x51FD;&#x6570;&#x6216;&#x7C7B;&#x6765;&#x53D6;&#x6D88;&#x88C5;&#x9970;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+</blockquote>
+<p>&#x4F8B;&#x5B50;&#xFF1A;&#x7528;&#x88C5;&#x9970;&#x5668;&#x6765;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">singleton</span><span class="hljs-params">(cls)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x88C5;&#x9970;&#x7C7B;&#x7684;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;</span>
+    instances = {}
+
+<span class="hljs-meta">    @wraps(cls)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+        <span class="hljs-keyword">if</span> cls <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> instances:
+            instances[cls] = cls(*args, **kwargs)
+        <span class="hljs-keyword">return</span> instances[cls]
+
+    <span class="hljs-keyword">return</span> wrapper
+
+
+<span class="hljs-meta">@singleton</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">President</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x603B;&#x7EDF;(&#x5355;&#x4F8B;&#x7C7B;)&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x7528;&#x5230;&#x4E86;&#x95ED;&#x5305;&#xFF08;closure&#xFF09;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x610F;&#x8BC6;&#x5230;&#x4E86;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#x5462;&#xFF1F;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">singleton</span><span class="hljs-params">(cls)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;</span>
+    instances = {}
+    locker = Lock()
+
+<span class="hljs-meta">    @wraps(cls)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+        <span class="hljs-keyword">if</span> cls <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> instances:
+            <span class="hljs-keyword">with</span> locker:
+                <span class="hljs-keyword">if</span> cls <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> instances:
+                    instances[cls] = cls(*args, **kwargs)
+        <span class="hljs-keyword">return</span> instances[cls]
+
+    <span class="hljs-keyword">return</span> wrapper
+</code></pre>
+<ul>
+<li><p>&#x88C5;&#x9970;&#x5668;&#x6A21;&#x677F;</p>
+<p>&#x88C5;&#x9970;&#x5668;&#x7684;&#x4F5C;&#x7528;&#xFF1A;&#x88C5;&#x9970;&#x5668;&#x5373;&#x53EF;&#x4EE5;&#x88C5;&#x9970;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x88C5;&#x9970;&#x7C7B;&#x3002;<br>&#x88C5;&#x9970;&#x5668;&#x7684;&#x539F;&#x7406;&#xFF1A;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;</p>
+<ul>
+<li><p>&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#xFF1A;&#x5047;&#x8BBE;decorator&#x662F;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x88C5;&#x9970;&#x5668;&#x3002;</p>
+<ul>
+<li><p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x4E0D;&#x7528;@&#x7B26;&#x53F7;</p>
+<pre><code class="lang-python">      <span class="hljs-comment"># &#x88C5;&#x9970;&#x5668;&#x4E0D;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x65F6;</span>
+      f = decorator(&#x51FD;&#x6570;&#x540D;)
+      <span class="hljs-comment"># &#x88C5;&#x9970;&#x5668;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x65F6;</span>
+      f = (decorator(&#x53C2;&#x6570;))(&#x51FD;&#x6570;&#x540D;) &#x6216; decorator(&#x53C2;&#x6570;)(&#x51FD;&#x6570;&#x540D;)
+</code></pre>
+</li>
+<li><p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;@&#x7B26;&#x53F7;</p>
+<pre><code class="lang-python">      <span class="hljs-comment"># &#x5DF2;&#x5B9A;&#x4E49;&#x7684;&#x88C5;&#x9970;&#x5668;</span>
+<span class="hljs-meta">      @decorator</span>
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">()</span>:</span>
+          <span class="hljs-keyword">pass</span>
+
+      <span class="hljs-comment"># &#x6267;&#x884C;&#x88AB;&#x88C5;&#x9970;&#x8FC7;&#x7684;&#x51FD;&#x6570;</span>
+      f()
+</code></pre>
 </li>
 </ul>
-<pre><code> def record(output):
-     &quot;&quot;&quot;&#x81EA;&#x5B9A;&#x4E49;&#x5E26;&#x53C2;&#x6570;&#x7684;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;
+</li>
+</ul>
+</li>
+</ul>
 
-     def decorate(func):
-
-         @wraps(func)
-         def wrapper(*args, **kwargs):
-             start = time()
-             result = func(*args, **kwargs)
-             output(func.__name__, time() - start)
-             return result
-
-         return wrapper
-
-     return decorate
- ```
-
- ```Python
- from functools import wraps
- from time import time
-
-
- class Record():
-     &quot;&quot;&quot;&#x81EA;&#x5B9A;&#x4E49;&#x88C5;&#x9970;&#x5668;&#x7C7B;(&#x901A;&#x8FC7;__call__&#x9B54;&#x672F;&#x65B9;&#x6CD5;&#x4F7F;&#x5F97;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F53;&#x6210;&#x51FD;&#x6570;&#x8C03;&#x7528;)&quot;&quot;&quot;
-
-     def __init__(self, output):
-         self.output = output
-
-     def __call__(self, func):
-
-         @wraps(func)
-         def wrapper(*args, **kwargs):
-             start = time()
-             result = func(*args, **kwargs)
-             self.output(func.__name__, time() - start)
-             return result
-
-         return wrapper
- ```
-
- &gt; &#x8BF4;&#x660E;&#xFF1A;&#x7531;&#x4E8E;&#x5BF9;&#x5E26;&#x88C5;&#x9970;&#x529F;&#x80FD;&#x7684;&#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x4E86;@wraps&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;`func.__wrapped__`&#x65B9;&#x5F0F;&#x83B7;&#x5F97;&#x88AB;&#x88C5;&#x9970;&#x4E4B;&#x524D;&#x7684;&#x51FD;&#x6570;&#x6216;&#x7C7B;&#x6765;&#x53D6;&#x6D88;&#x88C5;&#x9970;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x3002;
-
- &#x4F8B;&#x5B50;&#xFF1A;&#x7528;&#x88C5;&#x9970;&#x5668;&#x6765;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;
-
- ```Python
- from functools import wraps
-
-
- def singleton(cls):
-     &quot;&quot;&quot;&#x88C5;&#x9970;&#x7C7B;&#x7684;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;
-     instances = {}
-
-     @wraps(cls)
-     def wrapper(*args, **kwargs):
-         if cls not in instances:
-             instances[cls] = cls(*args, **kwargs)
-         return instances[cls]
-
-     return wrapper
-
-
- @singleton
- class President():
-     &quot;&quot;&quot;&#x603B;&#x7EDF;(&#x5355;&#x4F8B;&#x7C7B;)&quot;&quot;&quot;
-     pass
- ```
-
- &gt; &#x8BF4;&#x660E;&#xFF1A;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x7528;&#x5230;&#x4E86;&#x95ED;&#x5305;&#xFF08;closure&#xFF09;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x610F;&#x8BC6;&#x5230;&#x4E86;&#x3002;&#x8FD8;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#x5462;&#xFF1F;
-
- ```Python
- from functools import wraps
-
-
- def singleton(cls):
-     &quot;&quot;&quot;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x5355;&#x4F8B;&#x88C5;&#x9970;&#x5668;&quot;&quot;&quot;
-     instances = {}
-     locker = Lock()
-
-     @wraps(cls)
-     def wrapper(*args, **kwargs):
-         if cls not in instances:
-             with locker:
-                 if cls not in instances:
-                     instances[cls] = cls(*args, **kwargs)
-         return instances[cls]
-
-     return wrapper
- ```
-</code></pre>
                                 
                                 </section>
                             
@@ -4624,7 +4669,7 @@ from time import time</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"函数的高级用法","level":"2.2.2","depth":2,"next":{"title":"面向对象高级知识","level":"2.2.3","depth":2,"path":"Python/Python语言进阶/03-面向对象高级知识.md","ref":"./Python/Python语言进阶/03-面向对象高级知识.md","articles":[]},"previous":{"title":"常用数据结构","level":"2.2.1","depth":2,"path":"Python/Python语言进阶/01-常用数据结构和算法.md","ref":"./Python/Python语言进阶/01-常用数据结构和算法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/02-函数的高级用法.md","mtime":"2021-07-20T02:04:05.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"函数的高级用法","level":"2.2.2","depth":2,"next":{"title":"面向对象高级知识","level":"2.2.3","depth":2,"path":"Python/Python语言进阶/03-面向对象高级知识.md","ref":"./Python/Python语言进阶/03-面向对象高级知识.md","articles":[]},"previous":{"title":"常用数据结构","level":"2.2.1","depth":2,"path":"Python/Python语言进阶/01-常用数据结构和算法.md","ref":"./Python/Python语言进阶/01-常用数据结构和算法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/02-函数的高级用法.md","mtime":"2022-09-29T09:37:17.928Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

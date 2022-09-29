@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="../../Python语言进阶/07-GIL全局解释器锁.html">
+            
+                <a href="../../Python语言进阶/07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4398,37 +4411,39 @@
 <li><code>setUpClass/tearDownClass</code>&#xFF1A;&#x5728;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7C7B;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x6267;&#x884C;&#xFF08;&#x5FC5;&#x987B;&#x52A0; <code>@classmethod</code> &#x7684;&#x88C5;&#x9970;&#x5668;&#xFF09;</li>
 <li><code>setUpModule/teardownModule</code>&#xFF1A;&#x5728;&#x6D4B;&#x8BD5;&#x6A21;&#x5757;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x6267;&#x884C;</li>
 </ul>
-<pre><code class="lang-python">      __date__ = <span class="hljs-string">&quot;2022/4/12 15:18&quot;</span>
+<pre><code class="lang-python">__date__ = <span class="hljs-string">&quot;2022/4/12 15:18&quot;</span>
 
-      <span class="hljs-keyword">import</span> unittest
+<span class="hljs-keyword">import</span> unittest
 
-      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestUnittest</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
 
-<span class="hljs-meta">          @classmethod</span>
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUpClass</span><span class="hljs-params">(cls)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
-              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;&quot;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestUnittest</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
 
-<span class="hljs-meta">          @classmethod</span>
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tearDownClass</span><span class="hljs-params">(cls)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
-              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x9500;&#x6BC1;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;&#x9500;&#x6BC1;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;&quot;</span>)
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUpClass</span><span class="hljs-params">(cls)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;&quot;</span>)
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUp</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
-              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x9875;&quot;</span>)
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tearDownClass</span><span class="hljs-params">(cls)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x9500;&#x6BC1;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;&#x9500;&#x6BC1;&#x65E5;&#x5FD7;&#x5BF9;&#x8C61;&#x7B49;&quot;</span>)
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tearDown</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
-              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUp</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF1A;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x9875;&quot;</span>)
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_01</span><span class="hljs-params">(self)</span>:</span>
-              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_01&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tearDown</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E4B;&#x540E;&#x7684;&#x626B;&#x5C3E;&#x5DE5;&#x4F5C;&#xFF1A;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&quot;</span>)
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_02</span><span class="hljs-params">(self)</span>:</span>
-              print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_02&quot;</span>)
-              <span class="hljs-comment"># self.assertEqual(1, 2)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_01</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_01&quot;</span>)
 
-      <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
-          print(<span class="hljs-string">&quot;___________________________main___________________________&quot;</span>)
-          suite = unittest.defaultTestLoader.discover(<span class="hljs-string">&apos;.&apos;</span>, pattern=<span class="hljs-string">&quot;test_unittest.py&quot;</span>)
-          unittest.main(defaultTest=<span class="hljs-string">&apos;suite&apos;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_02</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5; test_02&quot;</span>)
+        <span class="hljs-comment"># self.assertEqual(1, 2)</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    print(<span class="hljs-string">&quot;___________________________main___________________________&quot;</span>)
+    suite = unittest.defaultTestLoader.discover(<span class="hljs-string">&apos;.&apos;</span>, pattern=<span class="hljs-string">&quot;test_unittest.py&quot;</span>)
+    unittest.main(defaultTest=<span class="hljs-string">&apos;suite&apos;</span>)
 </code></pre>
 <pre><code class="lang-text">      C:\Users\lenovo\PycharmProjects\demo\venv\Scripts\python.exe C:/Users/lenovo/PycharmProjects/demo/study/unittest_demo/test_unittest.py
       ..
@@ -4560,192 +4575,192 @@
 </ul>
 </li>
 </ul>
-<pre><code class="lang-python">      <span class="hljs-string">&quot;&quot;&quot;
-      A TestRunner for use with the Python unit testing framework. It
-      generates a HTML report to show the result at a glance.
+<pre><code class="lang-python">__doc__ =<span class="hljs-string">&quot;&quot;&quot;
+A TestRunner for use with the Python unit testing framework. It
+generates a HTML report to show the result at a glance.
 
-      The simplest way to use this is to invoke its main method. E.g.
+The simplest way to use this is to invoke its main method. E.g.
 
-          import unittest
-          import HTMLTestRunner
+    import unittest
+    import HTMLTestRunner
 
-          ... define your tests ...
+    ... define your tests ...
 
-          if __name__ == &apos;__main__&apos;:
-              HTMLTestRunner.main()
-
-
-      For more customization options, instantiates a HTMLTestRunner object.
-      HTMLTestRunner is a counterpart to unittest&apos;s TextTestRunner. E.g.
-
-          # output to a file
-          fp = file(&apos;my_report.html&apos;, &apos;wb&apos;)
-          runner = HTMLTestRunner.HTMLTestRunner(
-                      stream=fp,
-                      title=&apos;My unit test&apos;,
-                      description=&apos;This demonstrates the report output by HTMLTestRunner.&apos;
-                      )
-
-          # Use an external stylesheet.
-          # See the Template_mixin class for more customizable options
-          runner.STYLESHEET_TMPL = &apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;my_stylesheet.css&quot; type=&quot;text/css&quot;&gt;&apos;
-
-          # run the test
-          runner.run(my_test_suite)
+    if __name__ == &apos;__main__&apos;:
+        HTMLTestRunner.main()
 
 
-      ------------------------------------------------------------------------
-      Copyright (c) 2004-2007, Wai Yip Tung
-      All rights reserved.
+For more customization options, instantiates a HTMLTestRunner object.
+HTMLTestRunner is a counterpart to unittest&apos;s TextTestRunner. E.g.
 
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are
-      met:
+    # output to a file
+    fp = file(&apos;my_report.html&apos;, &apos;wb&apos;)
+    runner = HTMLTestRunner.HTMLTestRunner(
+                stream=fp,
+                title=&apos;My unit test&apos;,
+                description=&apos;This demonstrates the report output by HTMLTestRunner.&apos;
+                )
 
-      * Redistributions of source code must retain the above copyright notice,
-        this list of conditions and the following disclaimer.
-      * Redistributions in binary form must reproduce the above copyright
-        notice, this list of conditions and the following disclaimer in the
-        documentation and/or other materials provided with the distribution.
-      * Neither the name Wai Yip Tung nor the names of its contributors may be
-        used to endorse or promote products derived from this software without
-        specific prior written permission.
+    # Use an external stylesheet.
+    # See the Template_mixin class for more customizable options
+    runner.STYLESHEET_TMPL = &apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;my_stylesheet.css&quot; type=&quot;text/css&quot;&gt;&apos;
 
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS
-      IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
-      TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
-      OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-      EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-      PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      &quot;&quot;&quot;</span>
-
-      <span class="hljs-comment"># URL: http://tungwaiyip.info/software/HTMLTestRunner.html</span>
-
-      __author__ = <span class="hljs-string">&quot;Wai Yip Tung&quot;</span>
-      __version__ = <span class="hljs-string">&quot;0.8.2&quot;</span>
-
-      <span class="hljs-string">&quot;&quot;&quot;
-      Change History
-
-      Version 0.8.2
-      * Show output inline instead of popup window (Viorel Lupu).
-
-      Version in 0.8.1
-      * Validated XHTML (Wolfgang Borgert).
-      * Added description of test classes and test cases.
-
-      Version in 0.8.0
-      * Define Template_mixin class for customization.
-      * Workaround a IE 6 bug that it does not treat &lt;script&gt; block as CDATA.
-
-      Version in 0.7.1
-      * Back port to Python 2.3 (Frank Horowitz).
-      * Fix missing scroll bars in detail log (Podi).
-      &quot;&quot;&quot;</span>
-
-      <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> color stderr</span>
-      <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> simplify javascript using ,ore than 1 class in the class attribute?</span>
-
-      <span class="hljs-keyword">import</span> datetime
-      <span class="hljs-keyword">import</span> io
-      <span class="hljs-keyword">import</span> sys
-      <span class="hljs-keyword">import</span> time
-      <span class="hljs-keyword">import</span> unittest
-      <span class="hljs-keyword">from</span> xml.sax <span class="hljs-keyword">import</span> saxutils
+    # run the test
+    runner.run(my_test_suite)
 
 
-      <span class="hljs-comment"># ------------------------------------------------------------------------</span>
-      <span class="hljs-comment"># The redirectors below are used to capture output during testing. Output</span>
-      <span class="hljs-comment"># sent to sys.stdout and sys.stderr are automatically captured. However</span>
-      <span class="hljs-comment"># in some cases sys.stdout is already cached before HTMLTestRunner is</span>
-      <span class="hljs-comment"># invoked (e.g. calling logging.basicConfig). In order to capture those</span>
-      <span class="hljs-comment"># output, use the redirectors for the cached stream.</span>
-      <span class="hljs-comment">#</span>
-      <span class="hljs-comment"># e.g.</span>
-      <span class="hljs-comment">#   &gt;&gt;&gt; logging.basicConfig(stream=HTMLTestRunner.stdout_redirector)</span>
-      <span class="hljs-comment">#   &gt;&gt;&gt;</span>
+------------------------------------------------------------------------
+Copyright (c) 2004-2007, Wai Yip Tung
+All rights reserved.
 
-      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OutputRedirector</span><span class="hljs-params">(object)</span>:</span>
-          <span class="hljs-string">&quot;&quot;&quot; Wrapper to redirect stdout or stderr &quot;&quot;&quot;</span>
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, fp)</span>:</span>
-              self.fp = fp
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+* Neither the name Wai Yip Tung nor the names of its contributors may be
+  used to endorse or promote products derived from this software without
+  specific prior written permission.
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write</span><span class="hljs-params">(self, s)</span>:</span>
-              self.fp.write(bytes(s, <span class="hljs-string">&apos;UTF-8&apos;</span>))
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS
+IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+&quot;&quot;&quot;</span>
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writelines</span><span class="hljs-params">(self, lines)</span>:</span>
-              self.fp.writelines(lines)
+<span class="hljs-comment"># URL: http://tungwaiyip.info/software/HTMLTestRunner.html</span>
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flush</span><span class="hljs-params">(self)</span>:</span>
-              self.fp.flush()
+__author__ = <span class="hljs-string">&quot;Wai Yip Tung&quot;</span>
+__version__ = <span class="hljs-string">&quot;0.8.2&quot;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;
+Change History
+
+Version 0.8.2
+* Show output inline instead of popup window (Viorel Lupu).
+
+Version in 0.8.1
+* Validated XHTML (Wolfgang Borgert).
+* Added description of test classes and test cases.
+
+Version in 0.8.0
+* Define Template_mixin class for customization.
+* Workaround a IE 6 bug that it does not treat &lt;script&gt; block as CDATA.
+
+Version in 0.7.1
+* Back port to Python 2.3 (Frank Horowitz).
+* Fix missing scroll bars in detail log (Podi).
+&quot;&quot;&quot;</span>
+
+<span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> color stderr</span>
+<span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> simplify javascript using ,ore than 1 class in the class attribute?</span>
+
+<span class="hljs-keyword">import</span> datetime
+<span class="hljs-keyword">import</span> io
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> unittest
+<span class="hljs-keyword">from</span> xml.sax <span class="hljs-keyword">import</span> saxutils
 
 
-      stdout_redirector = OutputRedirector(sys.stdout)
-      stderr_redirector = OutputRedirector(sys.stderr)
+<span class="hljs-comment"># ------------------------------------------------------------------------</span>
+<span class="hljs-comment"># The redirectors below are used to capture output during testing. Output</span>
+<span class="hljs-comment"># sent to sys.stdout and sys.stderr are automatically captured. However</span>
+<span class="hljs-comment"># in some cases sys.stdout is already cached before HTMLTestRunner is</span>
+<span class="hljs-comment"># invoked (e.g. calling logging.basicConfig). In order to capture those</span>
+<span class="hljs-comment"># output, use the redirectors for the cached stream.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># e.g.</span>
+<span class="hljs-comment">#   &gt;&gt;&gt; logging.basicConfig(stream=HTMLTestRunner.stdout_redirector)</span>
+<span class="hljs-comment">#   &gt;&gt;&gt;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OutputRedirector</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; Wrapper to redirect stdout or stderr &quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, fp)</span>:</span>
+        self.fp = fp
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write</span><span class="hljs-params">(self, s)</span>:</span>
+        self.fp.write(bytes(s, <span class="hljs-string">&apos;UTF-8&apos;</span>))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writelines</span><span class="hljs-params">(self, lines)</span>:</span>
+        self.fp.writelines(lines)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flush</span><span class="hljs-params">(self)</span>:</span>
+        self.fp.flush()
 
 
-      <span class="hljs-comment"># ----------------------------------------------------------------------</span>
-      <span class="hljs-comment"># Template</span>
+stdout_redirector = OutputRedirector(sys.stdout)
+stderr_redirector = OutputRedirector(sys.stderr)
 
-      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Template_mixin</span><span class="hljs-params">(object)</span>:</span>
-          <span class="hljs-string">&quot;&quot;&quot;
-          Define a HTML template for report customerization and generation.
 
-          Overall structure of an HTML report
+<span class="hljs-comment"># ----------------------------------------------------------------------</span>
+<span class="hljs-comment"># Template</span>
 
-          HTML
-          +------------------------+
-          |&lt;html&gt;                  |
-          |  &lt;head&gt;                |
-          |                        |
-          |   STYLESHEET           |
-          |   +----------------+   |
-          |   |                |   |
-          |   +----------------+   |
-          |                        |
-          |  &lt;/head&gt;               |
-          |                        |
-          |  &lt;body&gt;                |
-          |                        |
-          |   HEADING              |
-          |   +----------------+   |
-          |   |                |   |
-          |   +----------------+   |
-          |                        |
-          |   REPORT               |
-          |   +----------------+   |
-          |   |                |   |
-          |   +----------------+   |
-          |                        |
-          |   ENDING               |
-          |   +----------------+   |
-          |   |                |   |
-          |   +----------------+   |
-          |                        |
-          |  &lt;/body&gt;               |
-          |&lt;/html&gt;                 |
-          +------------------------+
-          &quot;&quot;&quot;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Template_mixin</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    Define a HTML template for report customerization and generation.
 
-          STATUS = {
-              <span class="hljs-number">0</span>: <span class="hljs-string">&apos;pass&apos;</span>,
-              <span class="hljs-number">1</span>: <span class="hljs-string">&apos;fail&apos;</span>,
-              <span class="hljs-number">2</span>: <span class="hljs-string">&apos;error&apos;</span>,
-          }
+    Overall structure of an HTML report
 
-          DEFAULT_TITLE = <span class="hljs-string">&apos;Unit Test Report&apos;</span>
-          DEFAULT_DESCRIPTION = <span class="hljs-string">&apos;&apos;</span>
+    HTML
+    +------------------------+
+    |&lt;html&gt;                  |
+    |  &lt;head&gt;                |
+    |                        |
+    |   STYLESHEET           |
+    |   +----------------+   |
+    |   |                |   |
+    |   +----------------+   |
+    |                        |
+    |  &lt;/head&gt;               |
+    |                        |
+    |  &lt;body&gt;                |
+    |                        |
+    |   HEADING              |
+    |   +----------------+   |
+    |   |                |   |
+    |   +----------------+   |
+    |                        |
+    |   REPORT               |
+    |   +----------------+   |
+    |   |                |   |
+    |   +----------------+   |
+    |                        |
+    |   ENDING               |
+    |   +----------------+   |
+    |   |                |   |
+    |   +----------------+   |
+    |                        |
+    |  &lt;/body&gt;               |
+    |&lt;/html&gt;                 |
+    +------------------------+
+    &quot;&quot;&quot;</span>
 
-          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
-          <span class="hljs-comment"># HTML Template</span>
+    STATUS = {
+        <span class="hljs-number">0</span>: <span class="hljs-string">&apos;pass&apos;</span>,
+        <span class="hljs-number">1</span>: <span class="hljs-string">&apos;fail&apos;</span>,
+        <span class="hljs-number">2</span>: <span class="hljs-string">&apos;error&apos;</span>,
+    }
 
-          HTML_TMPL = <span class="hljs-string">r&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    DEFAULT_TITLE = <span class="hljs-string">&apos;Unit Test Report&apos;</span>
+    DEFAULT_DESCRIPTION = <span class="hljs-string">&apos;&apos;</span>
+
+    <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+    <span class="hljs-comment"># HTML Template</span>
+
+    HTML_TMPL = <span class="hljs-string">r&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
       &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
       &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
       &lt;head&gt;
@@ -4857,15 +4872,15 @@
       &lt;/body&gt;
       &lt;/html&gt;
       &quot;&quot;&quot;</span>
-          <span class="hljs-comment"># variables: (title, generator, stylesheet, heading, report, ending)</span>
+    <span class="hljs-comment"># variables: (title, generator, stylesheet, heading, report, ending)</span>
 
-          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
-          <span class="hljs-comment"># Stylesheet</span>
-          <span class="hljs-comment">#</span>
-          <span class="hljs-comment"># alternatively use a &lt;link&gt; for external style sheet, e.g.</span>
-          <span class="hljs-comment">#   &lt;link rel=&quot;stylesheet&quot; href=&quot;$url&quot; type=&quot;text/css&quot;&gt;</span>
+    <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+    <span class="hljs-comment"># Stylesheet</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># alternatively use a &lt;link&gt; for external style sheet, e.g.</span>
+    <span class="hljs-comment">#   &lt;link rel=&quot;stylesheet&quot; href=&quot;$url&quot; type=&quot;text/css&quot;&gt;</span>
 
-          STYLESHEET_TMPL = <span class="hljs-string">&quot;&quot;&quot;
+    STYLESHEET_TMPL = <span class="hljs-string">&quot;&quot;&quot;
       &lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
       body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
       table       { font-size: 100%; }
@@ -4951,11 +4966,11 @@
       &lt;/style&gt;
       &quot;&quot;&quot;</span>
 
-          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
-          <span class="hljs-comment"># Heading</span>
-          <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+    <span class="hljs-comment"># Heading</span>
+    <span class="hljs-comment">#</span>
 
-          HEADING_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;div class=&apos;heading&apos;&gt;
+    HEADING_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;div class=&apos;heading&apos;&gt;
       &lt;h1&gt;%(title)s&lt;/h1&gt;
       %(parameters)s
       &lt;p class=&apos;description&apos;&gt;%(description)s&lt;/p&gt;
@@ -4963,14 +4978,14 @@
 
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (title, parameters, description)</span>
 
-          HEADING_ATTRIBUTE_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;p class=&apos;attribute&apos;&gt;&lt;strong&gt;%(name)s:&lt;/strong&gt; %(value)s&lt;/p&gt;
+    HEADING_ATTRIBUTE_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;p class=&apos;attribute&apos;&gt;&lt;strong&gt;%(name)s:&lt;/strong&gt; %(value)s&lt;/p&gt;
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (name, value)</span>
 
-          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
-          <span class="hljs-comment"># Report</span>
-          <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+    <span class="hljs-comment"># Report</span>
+    <span class="hljs-comment">#</span>
 
-          REPORT_TMPL = <span class="hljs-string">&quot;&quot;&quot;
+    REPORT_TMPL = <span class="hljs-string">&quot;&quot;&quot;
       &lt;p id=&apos;show_detail_line&apos;&gt;Show
       &lt;a href=&apos;javascript:showCase(0)&apos;&gt;Summary&lt;/a&gt;
       &lt;a href=&apos;javascript:showCase(1)&apos;&gt;Failed&lt;/a&gt;
@@ -5005,7 +5020,7 @@
       &lt;/table&gt;
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (test_list, count, Pass, fail, error)</span>
 
-          REPORT_CLASS_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+    REPORT_CLASS_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
       &lt;tr class=&apos;%(style)s&apos;&gt;
           &lt;td&gt;%(desc)s&lt;/td&gt;
           &lt;td&gt;%(count)s&lt;/td&gt;
@@ -5016,7 +5031,7 @@
       &lt;/tr&gt;
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (style, desc, count, Pass, fail, error, cid)</span>
 
-          REPORT_TEST_WITH_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+    REPORT_TEST_WITH_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
       &lt;tr id=&apos;%(tid)s&apos; class=&apos;%(Class)s&apos;&gt;
           &lt;td class=&apos;%(style)s&apos;&gt;&lt;div class=&apos;testcase&apos;&gt;%(desc)s&lt;/div&gt;&lt;/td&gt;
           &lt;td colspan=&apos;5&apos; align=&apos;center&apos;&gt;
@@ -5040,349 +5055,348 @@
       &lt;/tr&gt;
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (tid, Class, style, desc, status)</span>
 
-          REPORT_TEST_NO_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+    REPORT_TEST_NO_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
       &lt;tr id=&apos;%(tid)s&apos; class=&apos;%(Class)s&apos;&gt;
           &lt;td class=&apos;%(style)s&apos;&gt;&lt;div class=&apos;testcase&apos;&gt;%(desc)s&lt;/div&gt;&lt;/td&gt;
           &lt;td colspan=&apos;5&apos; align=&apos;center&apos;&gt;%(status)s&lt;/td&gt;
       &lt;/tr&gt;
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (tid, Class, style, desc, status)</span>
 
-          REPORT_TEST_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
+    REPORT_TEST_OUTPUT_TMPL = <span class="hljs-string">r&quot;&quot;&quot;
       %(id)s: %(output)s
       &quot;&quot;&quot;</span>  <span class="hljs-comment"># variables: (id, output)</span>
 
-          <span class="hljs-comment"># ------------------------------------------------------------------------</span>
-          <span class="hljs-comment"># ENDING</span>
-          <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># ------------------------------------------------------------------------</span>
+    <span class="hljs-comment"># ENDING</span>
+    <span class="hljs-comment">#</span>
 
-          ENDING_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;div id=&apos;ending&apos;&gt;&amp;nbsp;&lt;/div&gt;&quot;&quot;&quot;</span>
-
-
-      <span class="hljs-comment"># -------------------- The end of the Template class -------------------</span>
+    ENDING_TMPL = <span class="hljs-string">&quot;&quot;&quot;&lt;div id=&apos;ending&apos;&gt;&amp;nbsp;&lt;/div&gt;&quot;&quot;&quot;</span>
 
 
-      TestResult = unittest.TestResult
+<span class="hljs-comment"># -------------------- The end of the Template class -------------------</span>
 
 
-      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">_TestResult</span><span class="hljs-params">(TestResult)</span>:</span>
-          <span class="hljs-comment"># note: _TestResult is a pure representation of results.</span>
-          <span class="hljs-comment"># It lacks the output and reporting ability compares to unittest._TextTestResult.</span>
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, verbosity=<span class="hljs-number">1</span>)</span>:</span>
-              TestResult.__init__(self)
-              self.stdout0 = <span class="hljs-keyword">None</span>
-              self.stderr0 = <span class="hljs-keyword">None</span>
-              self.success_count = <span class="hljs-number">0</span>
-              self.failure_count = <span class="hljs-number">0</span>
-              self.error_count = <span class="hljs-number">0</span>
-              self.verbosity = verbosity
-
-              <span class="hljs-comment"># result is a list of result in 4 tuple</span>
-              <span class="hljs-comment"># (</span>
-              <span class="hljs-comment">#   result code (0: success; 1: fail; 2: error),</span>
-              <span class="hljs-comment">#   TestCase object,</span>
-              <span class="hljs-comment">#   Test output (byte string),</span>
-              <span class="hljs-comment">#   stack trace,</span>
-              <span class="hljs-comment"># )</span>
-              self.result = []
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">startTest</span><span class="hljs-params">(self, test)</span>:</span>
-              TestResult.startTest(self, test)
-              <span class="hljs-comment"># just one buffer for both stdout and stderr</span>
-              self.outputBuffer = io.BytesIO()
-              stdout_redirector.fp = self.outputBuffer
-              stderr_redirector.fp = self.outputBuffer
-              self.stdout0 = sys.stdout
-              self.stderr0 = sys.stderr
-              sys.stdout = stdout_redirector
-              sys.stderr = stderr_redirector
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">complete_output</span><span class="hljs-params">(self)</span>:</span>
-              <span class="hljs-string">&quot;&quot;&quot;
-              Disconnect output redirection and return buffer.
-              Safe to call multiple times.
-              &quot;&quot;&quot;</span>
-              <span class="hljs-keyword">if</span> self.stdout0:
-                  sys.stdout = self.stdout0
-                  sys.stderr = self.stderr0
-                  self.stdout0 = <span class="hljs-keyword">None</span>
-                  self.stderr0 = <span class="hljs-keyword">None</span>
-              <span class="hljs-keyword">return</span> self.outputBuffer.getvalue()
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">stopTest</span><span class="hljs-params">(self, test)</span>:</span>
-              <span class="hljs-comment"># Usually one of addSuccess, addError or addFailure would have been called.</span>
-              <span class="hljs-comment"># But there are some path in unittest that would bypass this.</span>
-              <span class="hljs-comment"># We must disconnect stdout in stopTest(), which is guaranteed to be called.</span>
-              self.complete_output()
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addSuccess</span><span class="hljs-params">(self, test)</span>:</span>
-              self.success_count += <span class="hljs-number">1</span>
-              TestResult.addSuccess(self, test)
-              output = self.complete_output()
-              self.result.append((<span class="hljs-number">0</span>, test, output, <span class="hljs-string">&apos;&apos;</span>))
-              <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
-                  sys.stderr.write(<span class="hljs-string">&apos;ok &apos;</span>)
-                  sys.stderr.write(str(test))
-                  sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
-              <span class="hljs-keyword">else</span>:
-                  sys.stderr.write(<span class="hljs-string">&apos;.&apos;</span>)
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addError</span><span class="hljs-params">(self, test, err)</span>:</span>
-              self.error_count += <span class="hljs-number">1</span>
-              TestResult.addError(self, test, err)
-              _, _exc_str = self.errors[<span class="hljs-number">-1</span>]
-              output = self.complete_output()
-              self.result.append((<span class="hljs-number">2</span>, test, output, _exc_str))
-              <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
-                  sys.stderr.write(<span class="hljs-string">&apos;E  &apos;</span>)
-                  sys.stderr.write(str(test))
-                  sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
-              <span class="hljs-keyword">else</span>:
-                  sys.stderr.write(<span class="hljs-string">&apos;E&apos;</span>)
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addFailure</span><span class="hljs-params">(self, test, err)</span>:</span>
-              self.failure_count += <span class="hljs-number">1</span>
-              TestResult.addFailure(self, test, err)
-              _, _exc_str = self.failures[<span class="hljs-number">-1</span>]
-              output = self.complete_output()
-              self.result.append((<span class="hljs-number">1</span>, test, output, _exc_str))
-              <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
-                  sys.stderr.write(<span class="hljs-string">&apos;F  &apos;</span>)
-                  sys.stderr.write(str(test))
-                  sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
-              <span class="hljs-keyword">else</span>:
-                  sys.stderr.write(<span class="hljs-string">&apos;F&apos;</span>)
+TestResult = unittest.TestResult
 
 
-      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTMLTestRunner</span><span class="hljs-params">(Template_mixin)</span>:</span>
-          <span class="hljs-string">&quot;&quot;&quot;
-          &quot;&quot;&quot;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">_TestResult</span><span class="hljs-params">(TestResult)</span>:</span>
+    <span class="hljs-comment"># note: _TestResult is a pure representation of results.</span>
+    <span class="hljs-comment"># It lacks the output and reporting ability compares to unittest._TextTestResult.</span>
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, stream=sys.stdout, verbosity=<span class="hljs-number">1</span>, title=None, description=None)</span>:</span>
-              self.stream = stream
-              self.verbosity = verbosity
-              <span class="hljs-keyword">if</span> title <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
-                  self.title = self.DEFAULT_TITLE
-              <span class="hljs-keyword">else</span>:
-                  self.title = title
-              <span class="hljs-keyword">if</span> description <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
-                  self.description = self.DEFAULT_DESCRIPTION
-              <span class="hljs-keyword">else</span>:
-                  self.description = description
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, verbosity=<span class="hljs-number">1</span>)</span>:</span>
+        TestResult.__init__(self)
+        self.stdout0 = <span class="hljs-keyword">None</span>
+        self.stderr0 = <span class="hljs-keyword">None</span>
+        self.success_count = <span class="hljs-number">0</span>
+        self.failure_count = <span class="hljs-number">0</span>
+        self.error_count = <span class="hljs-number">0</span>
+        self.verbosity = verbosity
 
-              self.startTime = datetime.datetime.now()
+        <span class="hljs-comment"># result is a list of result in 4 tuple</span>
+        <span class="hljs-comment"># (</span>
+        <span class="hljs-comment">#   result code (0: success; 1: fail; 2: error),</span>
+        <span class="hljs-comment">#   TestCase object,</span>
+        <span class="hljs-comment">#   Test output (byte string),</span>
+        <span class="hljs-comment">#   stack trace,</span>
+        <span class="hljs-comment"># )</span>
+        self.result = []
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self, test)</span>:</span>
-              <span class="hljs-string">&quot;Run the given test case or test suite.&quot;</span>
-              result = _TestResult(self.verbosity)
-              test(result)
-              self.stopTime = datetime.datetime.now()
-              self.generateReport(test, result)
-              print(<span class="hljs-string">&apos;\nTime Elapsed: %s&apos;</span> % (self.stopTime - self.startTime), file=sys.stderr)
-              <span class="hljs-keyword">return</span> result
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">startTest</span><span class="hljs-params">(self, test)</span>:</span>
+        TestResult.startTest(self, test)
+        <span class="hljs-comment"># just one buffer for both stdout and stderr</span>
+        self.outputBuffer = io.BytesIO()
+        stdout_redirector.fp = self.outputBuffer
+        stderr_redirector.fp = self.outputBuffer
+        self.stdout0 = sys.stdout
+        self.stderr0 = sys.stderr
+        sys.stdout = stdout_redirector
+        sys.stderr = stderr_redirector
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sortResult</span><span class="hljs-params">(self, result_list)</span>:</span>
-              <span class="hljs-comment"># unittest does not seems to run in any particular order.</span>
-              <span class="hljs-comment"># Here at least we want to group them together by class.</span>
-              rmap = {}
-              classes = []
-              <span class="hljs-keyword">for</span> n, t, o, e <span class="hljs-keyword">in</span> result_list:
-                  cls = t.__class__
-                  <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> cls <span class="hljs-keyword">in</span> rmap:
-                      rmap[cls] = []
-                      classes.append(cls)
-                  rmap[cls].append((n, t, o, e))
-              r = [(cls, rmap[cls]) <span class="hljs-keyword">for</span> cls <span class="hljs-keyword">in</span> classes]
-              <span class="hljs-keyword">return</span> r
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">complete_output</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Disconnect output redirection and return buffer.
+        Safe to call multiple times.
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> self.stdout0:
+            sys.stdout = self.stdout0
+            sys.stderr = self.stderr0
+            self.stdout0 = <span class="hljs-keyword">None</span>
+            self.stderr0 = <span class="hljs-keyword">None</span>
+        <span class="hljs-keyword">return</span> self.outputBuffer.getvalue()
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getReportAttributes</span><span class="hljs-params">(self, result)</span>:</span>
-              <span class="hljs-string">&quot;&quot;&quot;
-              Return report attributes as a list of (name, value).
-              Override this to add custom attributes.
-              &quot;&quot;&quot;</span>
-              startTime = str(self.startTime)[:<span class="hljs-number">19</span>]
-              duration = str(self.stopTime - self.startTime)
-              status = []
-              <span class="hljs-keyword">if</span> result.success_count: status.append(<span class="hljs-string">&apos;Pass %s&apos;</span> % result.success_count)
-              <span class="hljs-keyword">if</span> result.failure_count: status.append(<span class="hljs-string">&apos;Failure %s&apos;</span> % result.failure_count)
-              <span class="hljs-keyword">if</span> result.error_count:   status.append(<span class="hljs-string">&apos;Error %s&apos;</span> % result.error_count)
-              <span class="hljs-keyword">if</span> status:
-                  status = <span class="hljs-string">&apos; &apos;</span>.join(status)
-              <span class="hljs-keyword">else</span>:
-                  status = <span class="hljs-string">&apos;none&apos;</span>
-              <span class="hljs-keyword">return</span> [
-                  (<span class="hljs-string">&apos;Start Time&apos;</span>, startTime),
-                  (<span class="hljs-string">&apos;Duration&apos;</span>, duration),
-                  (<span class="hljs-string">&apos;Status&apos;</span>, status),
-              ]
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">stopTest</span><span class="hljs-params">(self, test)</span>:</span>
+        <span class="hljs-comment"># Usually one of addSuccess, addError or addFailure would have been called.</span>
+        <span class="hljs-comment"># But there are some path in unittest that would bypass this.</span>
+        <span class="hljs-comment"># We must disconnect stdout in stopTest(), which is guaranteed to be called.</span>
+        self.complete_output()
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateReport</span><span class="hljs-params">(self, test, result)</span>:</span>
-              report_attrs = self.getReportAttributes(result)
-              generator = <span class="hljs-string">&apos;HTMLTestRunner %s&apos;</span> % __version__
-              stylesheet = self._generate_stylesheet()
-              heading = self._generate_heading(report_attrs)
-              report = self._generate_report(result)
-              ending = self._generate_ending()
-              output = self.HTML_TMPL % dict(
-                  title=saxutils.escape(self.title),
-                  generator=generator,
-                  stylesheet=stylesheet,
-                  heading=heading,
-                  report=report,
-                  ending=ending,
-              )
-              self.stream.write(output.encode(<span class="hljs-string">&apos;utf8&apos;</span>))
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addSuccess</span><span class="hljs-params">(self, test)</span>:</span>
+        self.success_count += <span class="hljs-number">1</span>
+        TestResult.addSuccess(self, test)
+        output = self.complete_output()
+        self.result.append((<span class="hljs-number">0</span>, test, output, <span class="hljs-string">&apos;&apos;</span>))
+        <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
+            sys.stderr.write(<span class="hljs-string">&apos;ok &apos;</span>)
+            sys.stderr.write(str(test))
+            sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
+        <span class="hljs-keyword">else</span>:
+            sys.stderr.write(<span class="hljs-string">&apos;.&apos;</span>)
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_stylesheet</span><span class="hljs-params">(self)</span>:</span>
-              <span class="hljs-keyword">return</span> self.STYLESHEET_TMPL
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addError</span><span class="hljs-params">(self, test, err)</span>:</span>
+        self.error_count += <span class="hljs-number">1</span>
+        TestResult.addError(self, test, err)
+        _, _exc_str = self.errors[<span class="hljs-number">-1</span>]
+        output = self.complete_output()
+        self.result.append((<span class="hljs-number">2</span>, test, output, _exc_str))
+        <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
+            sys.stderr.write(<span class="hljs-string">&apos;E  &apos;</span>)
+            sys.stderr.write(str(test))
+            sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
+        <span class="hljs-keyword">else</span>:
+            sys.stderr.write(<span class="hljs-string">&apos;E&apos;</span>)
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_heading</span><span class="hljs-params">(self, report_attrs)</span>:</span>
-              a_lines = []
-              <span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">in</span> report_attrs:
-                  line = self.HEADING_ATTRIBUTE_TMPL % dict(
-                      name=saxutils.escape(name),
-                      value=saxutils.escape(value),
-                  )
-                  a_lines.append(line)
-              heading = self.HEADING_TMPL % dict(
-                  title=saxutils.escape(self.title),
-                  parameters=<span class="hljs-string">&apos;&apos;</span>.join(a_lines),
-                  description=saxutils.escape(self.description),
-              )
-              <span class="hljs-keyword">return</span> heading
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_report</span><span class="hljs-params">(self, result)</span>:</span>
-              rows = []
-              sortedResult = self.sortResult(result.result)
-              <span class="hljs-keyword">for</span> cid, (cls, cls_results) <span class="hljs-keyword">in</span> enumerate(sortedResult):
-                  <span class="hljs-comment"># subtotal for a class</span>
-                  np = nf = ne = <span class="hljs-number">0</span>
-                  <span class="hljs-keyword">for</span> n, t, o, e <span class="hljs-keyword">in</span> cls_results:
-                      <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
-                          np += <span class="hljs-number">1</span>
-                      <span class="hljs-keyword">elif</span> n == <span class="hljs-number">1</span>:
-                          nf += <span class="hljs-number">1</span>
-                      <span class="hljs-keyword">else</span>:
-                          ne += <span class="hljs-number">1</span>
-
-                  <span class="hljs-comment"># format class description</span>
-                  <span class="hljs-keyword">if</span> cls.__module__ == <span class="hljs-string">&quot;__main__&quot;</span>:
-                      name = cls.__name__
-                  <span class="hljs-keyword">else</span>:
-                      name = <span class="hljs-string">&quot;%s.%s&quot;</span> % (cls.__module__, cls.__name__)
-                  doc = cls.__doc__ <span class="hljs-keyword">and</span> cls.__doc__.split(<span class="hljs-string">&quot;\n&quot;</span>)[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&quot;</span>
-                  desc = doc <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;%s: %s&apos;</span> % (name, doc) <span class="hljs-keyword">or</span> name
-
-                  row = self.REPORT_CLASS_TMPL % dict(
-                      style=ne &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;errorClass&apos;</span> <span class="hljs-keyword">or</span> nf &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;failClass&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;passClass&apos;</span>,
-                      desc=desc,
-                      count=np + nf + ne,
-                      Pass=np,
-                      fail=nf,
-                      error=ne,
-                      cid=<span class="hljs-string">&apos;c%s&apos;</span> % (cid + <span class="hljs-number">1</span>),
-                  )
-                  rows.append(row)
-
-                  <span class="hljs-keyword">for</span> tid, (n, t, o, e) <span class="hljs-keyword">in</span> enumerate(cls_results):
-                      self._generate_report_test(rows, cid, tid, n, t, o, e)
-
-              report = self.REPORT_TMPL % dict(
-                  test_list=<span class="hljs-string">&apos;&apos;</span>.join(rows),
-                  count=str(result.success_count + result.failure_count + result.error_count),
-                  Pass=str(result.success_count),
-                  fail=str(result.failure_count),
-                  error=str(result.error_count),
-              )
-              <span class="hljs-keyword">return</span> report
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_report_test</span><span class="hljs-params">(self, rows, cid, tid, n, t, o, e)</span>:</span>
-              <span class="hljs-comment"># e.g. &apos;pt1.1&apos;, &apos;ft1.1&apos;, etc</span>
-              has_output = bool(o <span class="hljs-keyword">or</span> e)
-              tid = (n == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;p&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;f&apos;</span>) + <span class="hljs-string">&apos;t%s.%s&apos;</span> % (cid + <span class="hljs-number">1</span>, tid + <span class="hljs-number">1</span>)
-              name = t.id().split(<span class="hljs-string">&apos;.&apos;</span>)[<span class="hljs-number">-1</span>]
-              doc = t.shortDescription() <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&quot;</span>
-              desc = doc <span class="hljs-keyword">and</span> (<span class="hljs-string">&apos;%s: %s&apos;</span> % (name, doc)) <span class="hljs-keyword">or</span> name
-              tmpl = has_output <span class="hljs-keyword">and</span> self.REPORT_TEST_WITH_OUTPUT_TMPL <span class="hljs-keyword">or</span> self.REPORT_TEST_NO_OUTPUT_TMPL
-
-              <span class="hljs-comment"># o and e should be byte string because they are collected from stdout and stderr?</span>
-              <span class="hljs-keyword">if</span> isinstance(o, str):
-                  <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> some problem with &apos;string_escape&apos;: it escape \n and mess up formating</span>
-                  <span class="hljs-comment"># uo = unicode(o.encode(&apos;string_escape&apos;))</span>
-                  uo = o
-              <span class="hljs-keyword">else</span>:
-                  uo = o.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)
-              <span class="hljs-keyword">if</span> isinstance(e, str):
-                  <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> some problem with &apos;string_escape&apos;: it escape \n and mess up formating</span>
-                  <span class="hljs-comment"># ue = unicode(e.encode(&apos;string_escape&apos;))</span>
-                  ue = e
-              <span class="hljs-keyword">else</span>:
-                  ue = e.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)
-
-              script = self.REPORT_TEST_OUTPUT_TMPL % dict(
-                  id=tid,
-                  output=saxutils.escape(uo + ue),
-              )
-
-              row = tmpl % dict(
-                  tid=tid,
-                  Class=(n == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;hiddenRow&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;none&apos;</span>),
-                  style=n == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;errorCase&apos;</span> <span class="hljs-keyword">or</span> (n == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;failCase&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;none&apos;</span>),
-                  desc=desc,
-                  script=script,
-                  status=self.STATUS[n],
-              )
-              rows.append(row)
-              <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> has_output:
-                  <span class="hljs-keyword">return</span>
-
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_ending</span><span class="hljs-params">(self)</span>:</span>
-              <span class="hljs-keyword">return</span> self.ENDING_TMPL
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addFailure</span><span class="hljs-params">(self, test, err)</span>:</span>
+        self.failure_count += <span class="hljs-number">1</span>
+        TestResult.addFailure(self, test, err)
+        _, _exc_str = self.failures[<span class="hljs-number">-1</span>]
+        output = self.complete_output()
+        self.result.append((<span class="hljs-number">1</span>, test, output, _exc_str))
+        <span class="hljs-keyword">if</span> self.verbosity &gt; <span class="hljs-number">1</span>:
+            sys.stderr.write(<span class="hljs-string">&apos;F  &apos;</span>)
+            sys.stderr.write(str(test))
+            sys.stderr.write(<span class="hljs-string">&apos;\n&apos;</span>)
+        <span class="hljs-keyword">else</span>:
+            sys.stderr.write(<span class="hljs-string">&apos;F&apos;</span>)
 
 
-      <span class="hljs-comment">##############################################################################</span>
-      <span class="hljs-comment"># Facilities for running tests from the command line</span>
-      <span class="hljs-comment">##############################################################################</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTMLTestRunner</span><span class="hljs-params">(Template_mixin)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &quot;&quot;&quot;</span>
 
-      <span class="hljs-comment"># Note: Reuse unittest.TestProgram to launch test. In the future we may</span>
-      <span class="hljs-comment"># build our own launcher to support more specific command line</span>
-      <span class="hljs-comment"># parameters like test title, CSS, etc.</span>
-      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestProgram</span><span class="hljs-params">(unittest.TestProgram)</span>:</span>
-          <span class="hljs-string">&quot;&quot;&quot;
-          A variation of the unittest.TestProgram. Please refer to the base
-          class for command line parameters.
-          &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, stream=sys.stdout, verbosity=<span class="hljs-number">1</span>, title=None, description=None)</span>:</span>
+        self.stream = stream
+        self.verbosity = verbosity
+        <span class="hljs-keyword">if</span> title <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            self.title = self.DEFAULT_TITLE
+        <span class="hljs-keyword">else</span>:
+            self.title = title
+        <span class="hljs-keyword">if</span> description <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            self.description = self.DEFAULT_DESCRIPTION
+        <span class="hljs-keyword">else</span>:
+            self.description = description
 
-          <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">runTests</span><span class="hljs-params">(self)</span>:</span>
-              <span class="hljs-comment"># Pick HTMLTestRunner as the default test runner.</span>
-              <span class="hljs-comment"># base class&apos;s testRunner parameter is not useful because it means</span>
-              <span class="hljs-comment"># we have to instantiate HTMLTestRunner before we know self.verbosity.</span>
-              <span class="hljs-keyword">if</span> self.testRunner <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
-                  self.testRunner = HTMLTestRunner(verbosity=self.verbosity)
-              unittest.TestProgram.runTests(self)
+        self.startTime = datetime.datetime.now()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self, test)</span>:</span>
+        <span class="hljs-string">&quot;Run the given test case or test suite.&quot;</span>
+        result = _TestResult(self.verbosity)
+        test(result)
+        self.stopTime = datetime.datetime.now()
+        self.generateReport(test, result)
+        print(<span class="hljs-string">&apos;\nTime Elapsed: %s&apos;</span> % (self.stopTime - self.startTime), file=sys.stderr)
+        <span class="hljs-keyword">return</span> result
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sortResult</span><span class="hljs-params">(self, result_list)</span>:</span>
+        <span class="hljs-comment"># unittest does not seems to run in any particular order.</span>
+        <span class="hljs-comment"># Here at least we want to group them together by class.</span>
+        rmap = {}
+        classes = []
+        <span class="hljs-keyword">for</span> n, t, o, e <span class="hljs-keyword">in</span> result_list:
+            cls = t.__class__
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> cls <span class="hljs-keyword">in</span> rmap:
+                rmap[cls] = []
+                classes.append(cls)
+            rmap[cls].append((n, t, o, e))
+        r = [(cls, rmap[cls]) <span class="hljs-keyword">for</span> cls <span class="hljs-keyword">in</span> classes]
+        <span class="hljs-keyword">return</span> r
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getReportAttributes</span><span class="hljs-params">(self, result)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Return report attributes as a list of (name, value).
+        Override this to add custom attributes.
+        &quot;&quot;&quot;</span>
+        startTime = str(self.startTime)[:<span class="hljs-number">19</span>]
+        duration = str(self.stopTime - self.startTime)
+        status = []
+        <span class="hljs-keyword">if</span> result.success_count: status.append(<span class="hljs-string">&apos;Pass %s&apos;</span> % result.success_count)
+        <span class="hljs-keyword">if</span> result.failure_count: status.append(<span class="hljs-string">&apos;Failure %s&apos;</span> % result.failure_count)
+        <span class="hljs-keyword">if</span> result.error_count:   status.append(<span class="hljs-string">&apos;Error %s&apos;</span> % result.error_count)
+        <span class="hljs-keyword">if</span> status:
+            status = <span class="hljs-string">&apos; &apos;</span>.join(status)
+        <span class="hljs-keyword">else</span>:
+            status = <span class="hljs-string">&apos;none&apos;</span>
+        <span class="hljs-keyword">return</span> [
+            (<span class="hljs-string">&apos;Start Time&apos;</span>, startTime),
+            (<span class="hljs-string">&apos;Duration&apos;</span>, duration),
+            (<span class="hljs-string">&apos;Status&apos;</span>, status),
+        ]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateReport</span><span class="hljs-params">(self, test, result)</span>:</span>
+        report_attrs = self.getReportAttributes(result)
+        generator = <span class="hljs-string">&apos;HTMLTestRunner %s&apos;</span> % __version__
+        stylesheet = self._generate_stylesheet()
+        heading = self._generate_heading(report_attrs)
+        report = self._generate_report(result)
+        ending = self._generate_ending()
+        output = self.HTML_TMPL % dict(
+            title=saxutils.escape(self.title),
+            generator=generator,
+            stylesheet=stylesheet,
+            heading=heading,
+            report=report,
+            ending=ending,
+        )
+        self.stream.write(output.encode(<span class="hljs-string">&apos;utf8&apos;</span>))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_stylesheet</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.STYLESHEET_TMPL
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_heading</span><span class="hljs-params">(self, report_attrs)</span>:</span>
+        a_lines = []
+        <span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">in</span> report_attrs:
+            line = self.HEADING_ATTRIBUTE_TMPL % dict(
+                name=saxutils.escape(name),
+                value=saxutils.escape(value),
+            )
+            a_lines.append(line)
+        heading = self.HEADING_TMPL % dict(
+            title=saxutils.escape(self.title),
+            parameters=<span class="hljs-string">&apos;&apos;</span>.join(a_lines),
+            description=saxutils.escape(self.description),
+        )
+        <span class="hljs-keyword">return</span> heading
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_report</span><span class="hljs-params">(self, result)</span>:</span>
+        rows = []
+        sortedResult = self.sortResult(result.result)
+        <span class="hljs-keyword">for</span> cid, (cls, cls_results) <span class="hljs-keyword">in</span> enumerate(sortedResult):
+            <span class="hljs-comment"># subtotal for a class</span>
+            np = nf = ne = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">for</span> n, t, o, e <span class="hljs-keyword">in</span> cls_results:
+                <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
+                    np += <span class="hljs-number">1</span>
+                <span class="hljs-keyword">elif</span> n == <span class="hljs-number">1</span>:
+                    nf += <span class="hljs-number">1</span>
+                <span class="hljs-keyword">else</span>:
+                    ne += <span class="hljs-number">1</span>
+
+            <span class="hljs-comment"># format class description</span>
+            <span class="hljs-keyword">if</span> cls.__module__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+                name = cls.__name__
+            <span class="hljs-keyword">else</span>:
+                name = <span class="hljs-string">&quot;%s.%s&quot;</span> % (cls.__module__, cls.__name__)
+            doc = cls.__doc__ <span class="hljs-keyword">and</span> cls.__doc__.split(<span class="hljs-string">&quot;\n&quot;</span>)[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&quot;</span>
+            desc = doc <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;%s: %s&apos;</span> % (name, doc) <span class="hljs-keyword">or</span> name
+
+            row = self.REPORT_CLASS_TMPL % dict(
+                style=ne &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;errorClass&apos;</span> <span class="hljs-keyword">or</span> nf &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;failClass&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;passClass&apos;</span>,
+                desc=desc,
+                count=np + nf + ne,
+                Pass=np,
+                fail=nf,
+                error=ne,
+                cid=<span class="hljs-string">&apos;c%s&apos;</span> % (cid + <span class="hljs-number">1</span>),
+            )
+            rows.append(row)
+
+            <span class="hljs-keyword">for</span> tid, (n, t, o, e) <span class="hljs-keyword">in</span> enumerate(cls_results):
+                self._generate_report_test(rows, cid, tid, n, t, o, e)
+
+        report = self.REPORT_TMPL % dict(
+            test_list=<span class="hljs-string">&apos;&apos;</span>.join(rows),
+            count=str(result.success_count + result.failure_count + result.error_count),
+            Pass=str(result.success_count),
+            fail=str(result.failure_count),
+            error=str(result.error_count),
+        )
+        <span class="hljs-keyword">return</span> report
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_report_test</span><span class="hljs-params">(self, rows, cid, tid, n, t, o, e)</span>:</span>
+        <span class="hljs-comment"># e.g. &apos;pt1.1&apos;, &apos;ft1.1&apos;, etc</span>
+        has_output = bool(o <span class="hljs-keyword">or</span> e)
+        tid = (n == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;p&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;f&apos;</span>) + <span class="hljs-string">&apos;t%s.%s&apos;</span> % (cid + <span class="hljs-number">1</span>, tid + <span class="hljs-number">1</span>)
+        name = t.id().split(<span class="hljs-string">&apos;.&apos;</span>)[<span class="hljs-number">-1</span>]
+        doc = t.shortDescription() <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;&quot;</span>
+        desc = doc <span class="hljs-keyword">and</span> (<span class="hljs-string">&apos;%s: %s&apos;</span> % (name, doc)) <span class="hljs-keyword">or</span> name
+        tmpl = has_output <span class="hljs-keyword">and</span> self.REPORT_TEST_WITH_OUTPUT_TMPL <span class="hljs-keyword">or</span> self.REPORT_TEST_NO_OUTPUT_TMPL
+
+        <span class="hljs-comment"># o and e should be byte string because they are collected from stdout and stderr?</span>
+        <span class="hljs-keyword">if</span> isinstance(o, str):
+            <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> some problem with &apos;string_escape&apos;: it escape \n and mess up formating</span>
+            <span class="hljs-comment"># uo = unicode(o.encode(&apos;string_escape&apos;))</span>
+            uo = o
+        <span class="hljs-keyword">else</span>:
+            uo = o.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)
+        <span class="hljs-keyword">if</span> isinstance(e, str):
+            <span class="hljs-comment"># <span class="hljs-doctag">TODO:</span> some problem with &apos;string_escape&apos;: it escape \n and mess up formating</span>
+            <span class="hljs-comment"># ue = unicode(e.encode(&apos;string_escape&apos;))</span>
+            ue = e
+        <span class="hljs-keyword">else</span>:
+            ue = e.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)
+
+        script = self.REPORT_TEST_OUTPUT_TMPL % dict(
+            id=tid,
+            output=saxutils.escape(uo + ue),
+        )
+
+        row = tmpl % dict(
+            tid=tid,
+            Class=(n == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;hiddenRow&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;none&apos;</span>),
+            style=n == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;errorCase&apos;</span> <span class="hljs-keyword">or</span> (n == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;failCase&apos;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&apos;none&apos;</span>),
+            desc=desc,
+            script=script,
+            status=self.STATUS[n],
+        )
+        rows.append(row)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> has_output:
+            <span class="hljs-keyword">return</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_generate_ending</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.ENDING_TMPL
 
 
-      main = TestProgram
+<span class="hljs-comment">##############################################################################</span>
+<span class="hljs-comment"># Facilities for running tests from the command line</span>
+<span class="hljs-comment">##############################################################################</span>
 
-      <span class="hljs-comment">##############################################################################</span>
-      <span class="hljs-comment"># Executing this module from the command line</span>
-      <span class="hljs-comment">##############################################################################</span>
+<span class="hljs-comment"># Note: Reuse unittest.TestProgram to launch test. In the future we may</span>
+<span class="hljs-comment"># build our own launcher to support more specific command line</span>
+<span class="hljs-comment"># parameters like test title, CSS, etc.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestProgram</span><span class="hljs-params">(unittest.TestProgram)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    A variation of the unittest.TestProgram. Please refer to the base
+    class for command line parameters.
+    &quot;&quot;&quot;</span>
 
-      <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
-          main(module=<span class="hljs-keyword">None</span>)
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">runTests</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Pick HTMLTestRunner as the default test runner.</span>
+        <span class="hljs-comment"># base class&apos;s testRunner parameter is not useful because it means</span>
+        <span class="hljs-comment"># we have to instantiate HTMLTestRunner before we know self.verbosity.</span>
+        <span class="hljs-keyword">if</span> self.testRunner <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            self.testRunner = HTMLTestRunner(verbosity=self.verbosity)
+        unittest.TestProgram.runTests(self)
+
+
+main = TestProgram
+
+<span class="hljs-comment">##############################################################################</span>
+<span class="hljs-comment"># Executing this module from the command line</span>
+<span class="hljs-comment">##############################################################################</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    main(module=<span class="hljs-keyword">None</span>)
 </code></pre>
-<pre><code>  ```python
-  import datetime
-  import unittest
-  from unittest_demo.HTMLTestRunner import HTMLTestRunner
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> datetime
+<span class="hljs-keyword">import</span> unittest
+<span class="hljs-keyword">from</span> unittest_demo.HTMLTestRunner <span class="hljs-keyword">import</span> HTMLTestRunner
 
-  if __name__ == &apos;__main__&apos;:
-      suite = unittest.defaultTestLoader.discover(&apos;.&apos;, pattern=&quot;test_unittest.py&quot;)
-      time_str = datetime.datetime.now().strftime(&apos;%Y%m%d%H%M%S&apos;)
-      with open(f&quot;./report_{time_str}.html&quot;, &apos;wb&apos;) as f:
-          runner = HTMLTestRunner(f, title=&quot;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&quot;, description=&quot;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x8BE6;&#x60C5;&quot;)
-          runner.run(suite)
-</code></pre><p>```</p>
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    suite = unittest.defaultTestLoader.discover(<span class="hljs-string">&apos;.&apos;</span>, pattern=<span class="hljs-string">&quot;test_unittest.py&quot;</span>)
+    time_str = datetime.datetime.now().strftime(<span class="hljs-string">&apos;%Y%m%d%H%M%S&apos;</span>)
+    <span class="hljs-keyword">with</span> open(f<span class="hljs-string">&quot;./report_{time_str}.html&quot;</span>, <span class="hljs-string">&apos;wb&apos;</span>) <span class="hljs-keyword">as</span> f:
+        runner = HTMLTestRunner(f, title=<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&quot;</span>, description=<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x8BE6;&#x60C5;&quot;</span>)
+        runner.run(suite)
+</code></pre>
 <p><img src="imgs/unittest_demo_20220414151220.jpg" alt=""></p>
 <blockquote>
 <p>&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x4E2D;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7684;&#x4E2D;&#x6587;&#x8BF4;&#x660E;&#x662F;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x51FD;&#x6570;&#x7684;&#x6CE8;&#x91CA;</p>
@@ -5430,7 +5444,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"单元测试unittest进阶","level":"2.1.19.2","depth":3,"next":{"title":"单元测试unittest集成篇","level":"2.1.19.3","depth":3,"path":"Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","ref":"./Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","articles":[]},"previous":{"title":"单元测试unittest基础","level":"2.1.19.1","depth":3,"path":"Python/Python语言基础/unittest/01-单元测试unittest基础.md","ref":"./Python/Python语言基础/unittest/01-单元测试unittest基础.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言基础/unittest/02-单元测试unittest进阶.md","mtime":"2022-04-14T09:18:09.163Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"单元测试unittest进阶","level":"2.1.19.2","depth":3,"next":{"title":"单元测试unittest集成篇","level":"2.1.19.3","depth":3,"path":"Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","ref":"./Python/Python语言基础/unittest/03-单元测试unittest集成篇.md","articles":[]},"previous":{"title":"单元测试unittest基础","level":"2.1.19.1","depth":3,"path":"Python/Python语言基础/unittest/01-单元测试unittest基础.md","ref":"./Python/Python语言基础/unittest/01-单元测试unittest基础.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言基础/unittest/02-单元测试unittest进阶.md","mtime":"2022-09-29T09:46:51.861Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

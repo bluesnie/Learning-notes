@@ -62,6 +62,7 @@
     - [迭代器和生成器](./Python/Python语言进阶/04-迭代器和生成器.md)
     - [并发和异步编程](./Python/Python语言进阶/05-并发和异步编程.md)
     - [asynico异步编程](./Python/Python语言进阶/06-asyncio异步编程.md)
+    - [GIL全局解释器锁](./Python/Python语言进阶/07-GIL全局解释器锁.md)
 
 - Python 第三方库
     - Django

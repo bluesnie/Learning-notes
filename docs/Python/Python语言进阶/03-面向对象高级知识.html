@@ -758,6 +758,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="07-GIL全局解释器锁.html">
+            
+                <a href="07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4708,7 +4721,21 @@ list2.append(list1)
  print(my_dict)
 </code></pre>
 <h3 id="&#x5143;&#x7F16;&#x7A0B;&#x548C;&#x5143;&#x7C7B;">&#x5143;&#x7F16;&#x7A0B;&#x548C;&#x5143;&#x7C7B;</h3>
-<p> &#x4F8B;&#x5B50;&#xFF1A;&#x7528;&#x5143;&#x7C7B;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;</p>
+<ul>
+<li><code>Python2&#x548C;Python3</code>&#x5B9E;&#x73B0;&#x5143;&#x7C7B;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># py2</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object)</span>:</span>
+    __metaclass__ = ABCMeta
+    [...]
+
+<span class="hljs-comment"># py3</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Simple1</span><span class="hljs-params">(object, metaclass=ABCMeta)</span>:</span>
+    [...]
+</code></pre>
+<ul>
+<li>&#x7528;&#x5143;&#x7C7B;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;</li>
+</ul>
 <pre><code class="lang-Python"> <span class="hljs-keyword">import</span> threading
 
 
@@ -4752,33 +4779,38 @@ list2.append(list1)
 <li>&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;&#xFF1A;&#x9002;&#x914D;&#x5668;&#x3001;&#x95E8;&#x9762;&#xFF08;&#x5916;&#x89C2;&#xFF09;&#x3001;&#x4EE3;&#x7406;</li>
 <li><p>&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;&#xFF1A;&#x8FED;&#x4EE3;&#x5668;&#x3001;&#x89C2;&#x5BDF;&#x8005;&#x3001;&#x72B6;&#x6001;&#x3001;&#x7B56;&#x7565;</p>
 <p>&#x4F8B;&#x5B50;&#xFF1A;&#x53EF;&#x63D2;&#x62D4;&#x7684;&#x54C8;&#x5E0C;&#x7B97;&#x6CD5;&#x3002;</p>
-<p>```Python
-class StreamHasher():
-  &quot;&quot;&quot;&#x54C8;&#x5E0C;&#x6458;&#x8981;&#x751F;&#x6210;&#x5668;(&#x7B56;&#x7565;&#x6A21;&#x5F0F;)&quot;&quot;&quot;</p>
-<p>  def <strong>init</strong>(self, alg=&apos;md5&apos;, size=4096):</p>
-<pre><code>  self.size = size
-  alg = alg.lower()
-  self.hasher = getattr(__import__(&apos;hashlib&apos;), alg.lower())()
-</code></pre><p>  def <strong>call</strong>(self, stream):</p>
-<pre><code>  return self.to_digest(stream)
-</code></pre><p>  def to_digest(self, stream):</p>
-<pre><code>  &quot;&quot;&quot;&#x751F;&#x6210;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x7684;&#x6458;&#x8981;&quot;&quot;&quot;
-  for buf in iter(lambda: stream.read(self.size), b&apos;&apos;):
-      self.hasher.update(buf)
-  return self.hasher.hexdigest()
-</code></pre><p>def main():
-  &quot;&quot;&quot;&#x4E3B;&#x51FD;&#x6570;&quot;&quot;&quot;
-  hasher1 = StreamHasher()
-  with open(&apos;Python-3.7.1.tgz&apos;, &apos;rb&apos;) as stream:</p>
-<pre><code>  print(hasher1.to_digest(stream))
-</code></pre><p>  hasher2 = StreamHasher(&apos;sha1&apos;)
-  with open(&apos;Python-3.7.1.tgz&apos;, &apos;rb&apos;) as stream:</p>
-<pre><code>  print(hasher2(stream))
-</code></pre></li>
+</li>
 </ul>
-<p> if <strong>name</strong> == &apos;<strong>main</strong>&apos;:
+<pre><code class="lang-Python"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StreamHasher</span><span class="hljs-params">()</span>:</span>
+     <span class="hljs-string">&quot;&quot;&quot;&#x54C8;&#x5E0C;&#x6458;&#x8981;&#x751F;&#x6210;&#x5668;(&#x7B56;&#x7565;&#x6A21;&#x5F0F;)&quot;&quot;&quot;</span>
+
+     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, alg=<span class="hljs-string">&apos;md5&apos;</span>, size=<span class="hljs-number">4096</span>)</span>:</span>
+         self.size = size
+         alg = alg.lower()
+         self.hasher = getattr(__import__(<span class="hljs-string">&apos;hashlib&apos;</span>), alg.lower())()
+
+     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self, stream)</span>:</span>
+         <span class="hljs-keyword">return</span> self.to_digest(stream)
+
+     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">to_digest</span><span class="hljs-params">(self, stream)</span>:</span>
+         <span class="hljs-string">&quot;&quot;&quot;&#x751F;&#x6210;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x7684;&#x6458;&#x8981;&quot;&quot;&quot;</span>
+         <span class="hljs-keyword">for</span> buf <span class="hljs-keyword">in</span> iter(<span class="hljs-keyword">lambda</span>: stream.read(self.size), <span class="hljs-string">b&apos;&apos;</span>):
+             self.hasher.update(buf)
+         <span class="hljs-keyword">return</span> self.hasher.hexdigest()
+
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+     <span class="hljs-string">&quot;&quot;&quot;&#x4E3B;&#x51FD;&#x6570;&quot;&quot;&quot;</span>
+     hasher1 = StreamHasher()
+     <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;Python-3.7.1.tgz&apos;</span>, <span class="hljs-string">&apos;rb&apos;</span>) <span class="hljs-keyword">as</span> stream:
+         print(hasher1.to_digest(stream))
+     hasher2 = StreamHasher(<span class="hljs-string">&apos;sha1&apos;</span>)
+     <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;Python-3.7.1.tgz&apos;</span>, <span class="hljs-string">&apos;rb&apos;</span>) <span class="hljs-keyword">as</span> stream:
+         print(hasher2(stream))
+
+
+ <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
      main()
- ```</p>
+</code></pre>
 
                                 
                                 </section>
@@ -4822,7 +4854,7 @@ class StreamHasher():
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"面向对象高级知识","level":"2.2.3","depth":2,"next":{"title":"迭代器和生成器","level":"2.2.4","depth":2,"path":"Python/Python语言进阶/04-迭代器和生成器.md","ref":"./Python/Python语言进阶/04-迭代器和生成器.md","articles":[]},"previous":{"title":"函数的高级用法","level":"2.2.2","depth":2,"path":"Python/Python语言进阶/02-函数的高级用法.md","ref":"./Python/Python语言进阶/02-函数的高级用法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/03-面向对象高级知识.md","mtime":"2021-07-20T02:04:05.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面向对象高级知识","level":"2.2.3","depth":2,"next":{"title":"迭代器和生成器","level":"2.2.4","depth":2,"path":"Python/Python语言进阶/04-迭代器和生成器.md","ref":"./Python/Python语言进阶/04-迭代器和生成器.md","articles":[]},"previous":{"title":"函数的高级用法","level":"2.2.2","depth":2,"path":"Python/Python语言进阶/02-函数的高级用法.md","ref":"./Python/Python语言进阶/02-函数的高级用法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/03-面向对象高级知识.md","mtime":"2022-09-27T06:11:12.335Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

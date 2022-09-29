@@ -756,6 +756,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.7" data-path="07-GIL全局解释器锁.html">
+            
+                <a href="07-GIL全局解释器锁.html">
+            
+                    
+                    GIL全局解释器锁
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -4391,7 +4404,7 @@
 <h6 id="authornzb">author:nzb</h6>
 <h2 id="&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;">&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;</h2>
 <ul>
-<li><p><a href="https://www.runoob.com/w3cnote/ten-sorting-algorithm.html" target="_blank">&#x5341;&#x5927;&#x7ECF;&#x5178;&#x7B97;&#x6CD5;</a> </p>
+<li><p><a href="https://www.runoob.com/w3cnote/ten-sorting-algorithm.html" target="_blank">&#x5341;&#x5927;&#x7ECF;&#x5178;&#x7B97;&#x6CD5;</a></p>
 </li>
 <li><p>&#x7B97;&#x6CD5;&#xFF1A;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x6B65;&#x9AA4;</p>
 </li>
@@ -4412,7 +4425,9 @@
 <p><img src="res/algorithm_complexity_2.png" alt=""></p>
 </li>
 <li><p>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#xFF08;&#x9009;&#x62E9;&#x3001;&#x5192;&#x6CE1;&#x548C;&#x5F52;&#x5E76;&#xFF09;&#x548C;&#x67E5;&#x627E;&#x7B97;&#x6CD5;&#xFF08;&#x987A;&#x5E8F;&#x548C;&#x6298;&#x534A;&#xFF09;</p>
-<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select_sort</span><span class="hljs-params">(origin_items, comp=lambda x, y: x &lt; y)</span>:</span>
+</li>
+</ul>
+<pre><code class="lang-Python">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select_sort</span><span class="hljs-params">(origin_items, comp=lambda x, y: x &lt; y)</span>:</span>
     <span class="hljs-string">&quot;&quot;&quot;&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;&quot;&quot;&quot;</span>
     items = origin_items[:]
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(items) - <span class="hljs-number">1</span>):
@@ -4423,7 +4438,7 @@
         items[i], items[min_index] = items[min_index], items[i]
     <span class="hljs-keyword">return</span> items
 </code></pre>
-<pre><code class="lang-Python"><span class="hljs-comment"># &#x7B2C;&#x4E00;&#x79CD;</span>
+<pre><code class="lang-Python">  <span class="hljs-comment"># &#x7B2C;&#x4E00;&#x79CD;</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bubble_sort</span><span class="hljs-params">(origin_items, comp=lambda x, y: x &gt; y)</span>:</span>
     <span class="hljs-string">&quot;&quot;&quot;&#x9AD8;&#x8D28;&#x91CF;&#x5192;&#x6CE1;&#x6392;&#x5E8F;(&#x6405;&#x62CC;&#x6392;&#x5E8F;)&quot;&quot;&quot;</span>
     items = origin_items[:]
@@ -4442,101 +4457,99 @@
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> swapped:
             <span class="hljs-keyword">break</span>
     <span class="hljs-keyword">return</span> items
+
+
 <span class="hljs-comment"># &#x7B2C;&#x4E8C;&#x79CD;</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bubble_sort</span><span class="hljs-params">(origin_items, comp=lambda x, y: x &gt; y)</span>:</span>
-   <span class="hljs-string">&quot;&quot;&quot;&#x9AD8;&#x8D28;&#x91CF;&#x5192;&#x6CE1;&#x6392;&#x5E8F;(&#x6405;&#x62CC;&#x6392;&#x5E8F;)&quot;&quot;&quot;</span>
-   items = origin_items[:]
-   <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(items)):  <span class="hljs-comment"># &#x5FAA;&#x73AF;&#x6B21;&#x6570;</span>
-       <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, len(items) - i):  <span class="hljs-comment"># &#x5FAA;&#x73AF;&#x7D22;&#x5F15;</span>
-           <span class="hljs-keyword">if</span> comp(items[j], items[j + <span class="hljs-number">1</span>]):
-               items[j], items[j+<span class="hljs-number">1</span>] = items[j+<span class="hljs-number">1</span>], items[j]
-   <span class="hljs-keyword">return</span> items
+    <span class="hljs-string">&quot;&quot;&quot;&#x9AD8;&#x8D28;&#x91CF;&#x5192;&#x6CE1;&#x6392;&#x5E8F;(&#x6405;&#x62CC;&#x6392;&#x5E8F;)&quot;&quot;&quot;</span>
+    items = origin_items[:]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(items)):  <span class="hljs-comment"># &#x5FAA;&#x73AF;&#x6B21;&#x6570;</span>
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, len(items) - i):  <span class="hljs-comment"># &#x5FAA;&#x73AF;&#x7D22;&#x5F15;</span>
+            <span class="hljs-keyword">if</span> comp(items[j], items[j + <span class="hljs-number">1</span>]):
+                items[j], items[j + <span class="hljs-number">1</span>] = items[j + <span class="hljs-number">1</span>], items[j]
+    <span class="hljs-keyword">return</span> items
 </code></pre>
-<p>```Python</p>
-<h1 id="&#x7B2C;&#x4E00;&#x79CD;">&#x7B2C;&#x4E00;&#x79CD;</h1>
-<p>def merge_sort(items, comp=lambda x, y: x &lt;= y):</p>
-<pre><code>&quot;&quot;&quot;&#x5F52;&#x5E76;&#x6392;&#x5E8F;(&#x5206;&#x6CBB;&#x6CD5;)&quot;&quot;&quot;
-if len(items) &lt; 2:
-    return items[:]
-mid = len(items) // 2
-left = merge_sort(items[:mid], comp)
-right = merge_sort(items[mid:], comp)
-return merge(left, right, comp)
-</code></pre></li>
-</ul>
-<pre><code> def merge(items1, items2, comp):
-     &quot;&quot;&quot;&#x5408;&#x5E76;(&#x5C06;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x5217;&#x8868;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x5217;&#x8868;)&quot;&quot;&quot;
-     items = []
-     index, index2 = 0, 0
-     while index1 &lt; len(items1) and index2 &lt; len(items2):
-         if comp(items1[index1], items2[index2]):
-             items.append(items1[index1])
-             index1 += 1
-         else:
-             items.append(items2[index2])
-             index2 += 1
-     items += items1[index1:]
-     items += items2[index2:]
-     return items
+<pre><code class="lang-Python">  <span class="hljs-comment"># &#x7B2C;&#x4E00;&#x79CD;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(items, comp=lambda x, y: x &lt;= y)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5F52;&#x5E76;&#x6392;&#x5E8F;(&#x5206;&#x6CBB;&#x6CD5;)&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> len(items) &lt; <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> items[:]
+    mid = len(items) // <span class="hljs-number">2</span>
+    left = merge_sort(items[:mid], comp)
+    right = merge_sort(items[mid:], comp)
+    <span class="hljs-keyword">return</span> merge(left, right, comp)
 
- # &#x7B2C;&#x4E8C;&#x79CD;
- def mergeSort(arr):
-    if len(arr) &lt; 2:
-        return arr
-    middle = len(arr) // 2
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span><span class="hljs-params">(items1, items2, comp)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5408;&#x5E76;(&#x5C06;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x5217;&#x8868;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x5217;&#x8868;)&quot;&quot;&quot;</span>
+    items = []
+    index, index2 = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> index1 &lt; len(items1) <span class="hljs-keyword">and</span> index2 &lt; len(items2):
+        <span class="hljs-keyword">if</span> comp(items1[index1], items2[index2]):
+            items.append(items1[index1])
+            index1 += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            items.append(items2[index2])
+            index2 += <span class="hljs-number">1</span>
+    items += items1[index1:]
+    items += items2[index2:]
+    <span class="hljs-keyword">return</span> items
+
+
+<span class="hljs-comment"># &#x7B2C;&#x4E8C;&#x79CD;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(arr)</span>:</span>
+    <span class="hljs-keyword">if</span> len(arr) &lt; <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> arr
+    middle = len(arr) // <span class="hljs-number">2</span>
     left, right = arr[:middle], arr[middle:]
-    return merge(mergeSort(left), mergeSort(right))
+    <span class="hljs-keyword">return</span> merge(mergeSort(left), mergeSort(right))
 
- def merge(left, right):
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">merge</span><span class="hljs-params">(left, right)</span>:</span>
     result = []
-    while left and right:
-        if left[0] &lt;= right[0]:
-            result.append(left.pop(0))
-        else:
-            result.append(right.pop(0))
+    <span class="hljs-keyword">while</span> left <span class="hljs-keyword">and</span> right:
+        <span class="hljs-keyword">if</span> left[<span class="hljs-number">0</span>] &lt;= right[<span class="hljs-number">0</span>]:
+            result.append(left.pop(<span class="hljs-number">0</span>))
+        <span class="hljs-keyword">else</span>:
+            result.append(right.pop(<span class="hljs-number">0</span>))
     result += left[:]
     result += right[:]
-    return result
- ```
-
- ```Python
- def quick_sort(self, li):
-    # &#x5FEB;&#x901F;&#x6392;&#x5E8F; &#x901A;&#x8FC7;
-    if len(li) &lt; 2:
-        return li
-    else:
-        tmp = li[0]
-        less = [i for i in li[1:] if i &lt;= tmp]
-        more = [i for i in li[1:] if i &gt; tmp]
-        return self.quick_sort(less) + [tmp] + self.quick_sort(more)
- ```
-
- ```Python
- def seq_search(items, key):
-     &quot;&quot;&quot;&#x987A;&#x5E8F;&#x67E5;&#x627E;&quot;&quot;&quot;
-     for index, item in enumerate(items):
-         if item == key:
-             return index
-     return -1
- ```
-
- ```Python
- def bin_search(items, key):
-     &quot;&quot;&quot;&#x6298;&#x534A;&#x67E5;&#x627E;&quot;&quot;&quot;
-     start, end = 0, len(items) - 1
-     while start &lt;= end:
-         mid = (start + end) // 2
-         if key &gt; items[mid]:
-             start = mid + 1
-         elif key &lt; items[mid]:
-             end = mid - 1
-         else:
-             return mid
-     return -1
- ```
-</code></pre><ul>
-<li><p>&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5F0F;&#xFF08;&#x63A8;&#x5BFC;&#x5F0F;&#xFF09;&#x8BED;&#x6CD5;</p>
-<pre><code class="lang-Python">prices = {
+    <span class="hljs-keyword">return</span> result
+</code></pre>
+<pre><code class="lang-Python">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(self, li)</span>:</span>
+    <span class="hljs-comment"># &#x5FEB;&#x901F;&#x6392;&#x5E8F; &#x901A;&#x8FC7;</span>
+    <span class="hljs-keyword">if</span> len(li) &lt; <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">return</span> li
+    <span class="hljs-keyword">else</span>:
+        tmp = li[<span class="hljs-number">0</span>]
+        less = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> li[<span class="hljs-number">1</span>:] <span class="hljs-keyword">if</span> i &lt;= tmp]
+        more = [i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> li[<span class="hljs-number">1</span>:] <span class="hljs-keyword">if</span> i &gt; tmp]
+        <span class="hljs-keyword">return</span> self.quick_sort(less) + [tmp] + self.quick_sort(more)
+</code></pre>
+<pre><code class="lang-Python">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">seq_search</span><span class="hljs-params">(items, key)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x987A;&#x5E8F;&#x67E5;&#x627E;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">for</span> index, item <span class="hljs-keyword">in</span> enumerate(items):
+        <span class="hljs-keyword">if</span> item == key:
+            <span class="hljs-keyword">return</span> index
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+</code></pre>
+<pre><code class="lang-Python">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bin_search</span><span class="hljs-params">(items, key)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x6298;&#x534A;&#x67E5;&#x627E;&quot;&quot;&quot;</span>
+    start, end = <span class="hljs-number">0</span>, len(items) - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> start &lt;= end:
+        mid = (start + end) // <span class="hljs-number">2</span>
+        <span class="hljs-keyword">if</span> key &gt; items[mid]:
+            start = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">elif</span> key &lt; items[mid]:
+            end = mid - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> mid
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5F0F;&#xFF08;&#x63A8;&#x5BFC;&#x5F0F;&#xFF09;&#x8BED;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-Python">  prices = {
     <span class="hljs-string">&apos;AAPL&apos;</span>: <span class="hljs-number">191.88</span>,
     <span class="hljs-string">&apos;GOOG&apos;</span>: <span class="hljs-number">1186.96</span>,
     <span class="hljs-string">&apos;IBM&apos;</span>: <span class="hljs-number">149.24</span>,
@@ -4552,9 +4565,10 @@ print(prices2)
 <blockquote>
 <p>&#x8BF4;&#x660E;&#xFF1A;&#x751F;&#x6210;&#x5F0F;&#xFF08;&#x63A8;&#x5BFC;&#x5F0F;&#xFF09;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x751F;&#x6210;&#x5217;&#x8868;&#x3001;&#x96C6;&#x5408;&#x548C;&#x5B57;&#x5178;&#x3002;</p>
 </blockquote>
-</li>
-<li><p>&#x5D4C;&#x5957;&#x7684;&#x5217;&#x8868;</p>
-<pre><code class="lang-Python">names = [<span class="hljs-string">&apos;&#x5173;&#x7FBD;&apos;</span>, <span class="hljs-string">&apos;&#x5F20;&#x98DE;&apos;</span>, <span class="hljs-string">&apos;&#x8D75;&#x4E91;&apos;</span>, <span class="hljs-string">&apos;&#x9A6C;&#x8D85;&apos;</span>, <span class="hljs-string">&apos;&#x9EC4;&#x5FE0;&apos;</span>]
+<ul>
+<li>&#x5D4C;&#x5957;&#x7684;&#x5217;&#x8868;</li>
+</ul>
+<pre><code class="lang-Python">  names = [<span class="hljs-string">&apos;&#x5173;&#x7FBD;&apos;</span>, <span class="hljs-string">&apos;&#x5F20;&#x98DE;&apos;</span>, <span class="hljs-string">&apos;&#x8D75;&#x4E91;&apos;</span>, <span class="hljs-string">&apos;&#x9A6C;&#x8D85;&apos;</span>, <span class="hljs-string">&apos;&#x9EC4;&#x5FE0;&apos;</span>]
 courses = [<span class="hljs-string">&apos;&#x8BED;&#x6587;&apos;</span>, <span class="hljs-string">&apos;&#x6570;&#x5B66;&apos;</span>, <span class="hljs-string">&apos;&#x82F1;&#x8BED;&apos;</span>]
 <span class="hljs-comment"># &#x5F55;&#x5165;&#x4E94;&#x4E2A;&#x5B66;&#x751F;&#x4E09;&#x95E8;&#x8BFE;&#x7A0B;&#x7684;&#x6210;&#x7EE9;</span>
 <span class="hljs-comment"># &#x9519;&#x8BEF; - &#x53C2;&#x8003;http://pythontutor.com/visualize.html#mode=edit</span>
@@ -4566,12 +4580,13 @@ scores = [[<span class="hljs-keyword">None</span>] * len(courses) <span class="h
         print(scores)
 </code></pre>
 <p><a href="http://pythontutor.com/" target="_blank">Python Tutor</a> - VISUALIZE CODE AND GET LIVE HELP</p>
-</li>
-<li><p>heapq&#x3001;itertools&#x7B49;&#x7684;&#x7528;&#x6CD5;</p>
-<pre><code class="lang-Python"><span class="hljs-string">&quot;&quot;&quot;
-&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x627E;&#x51FA;&#x6700;&#x5927;&#x7684;&#x6216;&#x6700;&#x5C0F;&#x7684;N&#x4E2A;&#x5143;&#x7D20;
-&#x5806;&#x7ED3;&#x6784;(&#x5927;&#x6839;&#x5806;/&#x5C0F;&#x6839;&#x5806;)
-&quot;&quot;&quot;</span>
+<ul>
+<li>heapq&#x3001;itertools&#x7B49;&#x7684;&#x7528;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x627E;&#x51FA;&#x6700;&#x5927;&#x7684;&#x6216;&#x6700;&#x5C0F;&#x7684;N&#x4E2A;&#x5143;&#x7D20;
+  &#x5806;&#x7ED3;&#x6784;(&#x5927;&#x6839;&#x5806;/&#x5C0F;&#x6839;&#x5806;)
+  &quot;&quot;&quot;</span>
 <span class="hljs-keyword">import</span> heapq
 
 list1 = [<span class="hljs-number">34</span>, <span class="hljs-number">25</span>, <span class="hljs-number">12</span>, <span class="hljs-number">99</span>, <span class="hljs-number">87</span>, <span class="hljs-number">63</span>, <span class="hljs-number">58</span>, <span class="hljs-number">78</span>, <span class="hljs-number">88</span>, <span class="hljs-number">92</span>]
@@ -4588,20 +4603,21 @@ print(heapq.nsmallest(<span class="hljs-number">3</span>, list1))
 print(heapq.nlargest(<span class="hljs-number">2</span>, list2, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-string">&apos;price&apos;</span>]))
 print(heapq.nlargest(<span class="hljs-number">2</span>, list2, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-string">&apos;shares&apos;</span>]))
 </code></pre>
-<pre><code class="lang-Python"><span class="hljs-string">&quot;&quot;&quot;
-&#x8FED;&#x4EE3;&#x5DE5;&#x5177; - &#x6392;&#x5217; / &#x7EC4;&#x5408; / &#x7B1B;&#x5361;&#x5C14;&#x79EF;
-&quot;&quot;&quot;</span>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x8FED;&#x4EE3;&#x5DE5;&#x5177; - &#x6392;&#x5217; / &#x7EC4;&#x5408; / &#x7B1B;&#x5361;&#x5C14;&#x79EF;
+  &quot;&quot;&quot;</span>
 <span class="hljs-keyword">import</span> itertools
 
 itertools.permutations(<span class="hljs-string">&apos;ABCD&apos;</span>)
 itertools.combinations(<span class="hljs-string">&apos;ABCDE&apos;</span>, <span class="hljs-number">3</span>)
 itertools.product(<span class="hljs-string">&apos;ABCD&apos;</span>, <span class="hljs-string">&apos;123&apos;</span>)
 </code></pre>
-</li>
-<li><p>collections&#x6A21;&#x5757;&#x4E0B;&#x7684;&#x5DE5;&#x5177;&#x7C7B;</p>
-<pre><code class="lang-Python"><span class="hljs-string">&quot;&quot;&quot;
-&#x627E;&#x51FA;&#x5E8F;&#x5217;&#x4E2D;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x6700;&#x591A;&#x7684;&#x5143;&#x7D20;
-&quot;&quot;&quot;</span>
+<ul>
+<li>collections&#x6A21;&#x5757;&#x4E0B;&#x7684;&#x5DE5;&#x5177;&#x7C7B;</li>
+</ul>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x627E;&#x51FA;&#x5E8F;&#x5217;&#x4E2D;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x6700;&#x591A;&#x7684;&#x5143;&#x7D20;
+  &quot;&quot;&quot;</span>
 <span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
 
 words = [
@@ -4613,7 +4629,7 @@ words = [
 counter = Counter(words)
 print(counter.most_common(<span class="hljs-number">3</span>))
 </code></pre>
-</li>
+<ul>
 <li><p>&#x5E38;&#x7528;&#x7B97;&#x6CD5;&#xFF1A;</p>
 <ul>
 <li>&#x7A77;&#x4E3E;&#x6CD5; - &#x53C8;&#x79F0;&#x4E3A;&#x66B4;&#x529B;&#x7834;&#x89E3;&#x6CD5;&#xFF0C;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x6B63;&#x786E;&#x7B54;&#x6848;&#x3002;</li>
@@ -4623,7 +4639,9 @@ print(counter.most_common(<span class="hljs-number">3</span>))
 <li>&#x52A8;&#x6001;&#x89C4;&#x5212; - &#x57FA;&#x672C;&#x601D;&#x60F3;&#x4E5F;&#x662F;&#x5C06;&#x5F85;&#x6C42;&#x89E3;&#x95EE;&#x9898;&#x5206;&#x89E3;&#x6210;&#x82E5;&#x5E72;&#x4E2A;&#x5B50;&#x95EE;&#x9898;&#xFF0C;&#x5148;&#x6C42;&#x89E3;&#x5E76;&#x4FDD;&#x5B58;&#x8FD9;&#x4E9B;&#x5B50;&#x95EE;&#x9898;&#x7684;&#x89E3;&#xFF0C;&#x907F;&#x514D;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684;&#x91CD;&#x590D;&#x8FD0;&#x7B97;&#x3002;</li>
 </ul>
 <p>&#x7A77;&#x4E3E;&#x6CD5;&#x4F8B;&#x5B50;&#xFF1A;&#x767E;&#x94B1;&#x767E;&#x9E21;&#x548C;&#x4E94;&#x4EBA;&#x5206;&#x9C7C;&#x3002;</p>
-<pre><code class="lang-Python"><span class="hljs-comment"># &#x516C;&#x9E21;5&#x5143;&#x4E00;&#x53EA; &#x6BCD;&#x9E21;3&#x5143;&#x4E00;&#x53EA; &#x5C0F;&#x9E21;1&#x5143;&#x4E09;&#x53EA;</span>
+</li>
+</ul>
+<pre><code class="lang-Python">  <span class="hljs-comment"># &#x516C;&#x9E21;5&#x5143;&#x4E00;&#x53EA; &#x6BCD;&#x9E21;3&#x5143;&#x4E00;&#x53EA; &#x5C0F;&#x9E21;1&#x5143;&#x4E09;&#x53EA;</span>
 <span class="hljs-comment"># &#x7528;100&#x5143;&#x4E70;100&#x53EA;&#x9E21; &#x95EE;&#x516C;&#x9E21;/&#x6BCD;&#x9E21;/&#x5C0F;&#x9E21;&#x5404;&#x591A;&#x5C11;&#x53EA;</span>
 <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">20</span>):
     <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(<span class="hljs-number">33</span>):
@@ -4651,197 +4669,218 @@ fish = <span class="hljs-number">1</span>
     fish += <span class="hljs-number">1</span>
 </code></pre>
 <p>&#x8D2A;&#x5A6A;&#x6CD5;&#x4F8B;&#x5B50;&#xFF1A;&#x5047;&#x8BBE;&#x5C0F;&#x5077;&#x6709;&#x4E00;&#x4E2A;&#x80CC;&#x5305;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x88C5;20&#x516C;&#x65A4;&#x8D43;&#x7269;&#xFF0C;&#x4ED6;&#x95EF;&#x5165;&#x4E00;&#x6237;&#x4EBA;&#x5BB6;&#xFF0C;&#x53D1;&#x73B0;&#x5982;&#x4E0B;&#x8868;&#x6240;&#x793A;&#x7684;&#x7269;&#x54C1;&#x3002;&#x5F88;&#x663E;&#x7136;&#xFF0C;&#x4ED6;&#x4E0D;&#x80FD;&#x628A;&#x6240;&#x6709;&#x7269;&#x54C1;&#x90FD;&#x88C5;&#x8FDB;&#x80CC;&#x5305;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x786E;&#x5B9A;&#x62FF;&#x8D70;&#x54EA;&#x4E9B;&#x7269;&#x54C1;&#xFF0C;&#x7559;&#x4E0B;&#x54EA;&#x4E9B;&#x7269;&#x54C1;&#x3002;</p>
-<p>|  &#x540D;&#x79F0;  | &#x4EF7;&#x683C;&#xFF08;&#x7F8E;&#x5143;&#xFF09; | &#x91CD;&#x91CF;&#xFF08;kg&#xFF09; |
-| :----: | :----------: | :--------: |
-|  &#x7535;&#x8111;  |     200      |     20     |
-| &#x6536;&#x97F3;&#x673A; |      20      |     4      |
-|   &#x949F;   |     175      |     10     |
-|  &#x82B1;&#x74F6;  |      50      |     2      |
-|   &#x4E66;   |      10      |     1      |
-|  &#x6CB9;&#x753B;  |      90      |     9      |</p>
-<p>```Python
-&quot;&quot;&quot;
-&#x8D2A;&#x5A6A;&#x6CD5;&#xFF1A;&#x5728;&#x5BF9;&#x95EE;&#x9898;&#x6C42;&#x89E3;&#x65F6;&#xFF0C;&#x603B;&#x662F;&#x505A;&#x51FA;&#x5728;&#x5F53;&#x524D;&#x770B;&#x6765;&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x4E0D;&#x8FFD;&#x6C42;&#x6700;&#x4F18;&#x89E3;&#xFF0C;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x6EE1;&#x610F;&#x89E3;&#x3002;
-&#x8F93;&#x5165;&#xFF1A;
-20 6
-&#x7535;&#x8111; 200 20
-&#x6536;&#x97F3;&#x673A; 20 4
-&#x949F; 175 10
-&#x82B1;&#x74F6; 50 2
-&#x4E66; 10 1
-&#x6CB9;&#x753B; 90 9
-&quot;&quot;&quot;
-class Thing(object):</p>
-<pre><code>&quot;&quot;&quot;&#x7269;&#x54C1;&quot;&quot;&quot;
-
-def __init__(self, name, price, weight):
-    self.name = name
-    self.price = price
-    self.weight = weight
-
-@property
-def value(self):
-    &quot;&quot;&quot;&#x4EF7;&#x683C;&#x91CD;&#x91CF;&#x6BD4;&quot;&quot;&quot;
-    return self.price / self.weight
-</code></pre></li>
-</ul>
-<pre><code> def input_thing():
-     &quot;&quot;&quot;&#x8F93;&#x5165;&#x7269;&#x54C1;&#x4FE1;&#x606F;&quot;&quot;&quot;
-     name_str, price_str, weight_str = input().split()
-     return name_str, int(price_str), int(weight_str)
-
-
- def main():
-     &quot;&quot;&quot;&#x4E3B;&#x51FD;&#x6570;&quot;&quot;&quot;
-     max_weight, num_of_things = map(int, input().split())
-     all_things = []
-     for _ in range(num_of_things):
-         all_things.append(Thing(*input_thing()))
-     all_things.sort(key=lambda x: x.value, reverse=True)
-     total_weight = 0
-     total_price = 0
-     for thing in all_things:
-         if total_weight + thing.weight &lt;= max_weight:
-             print(f&apos;&#x5C0F;&#x5077;&#x62FF;&#x8D70;&#x4E86;{thing.name}&apos;)
-             total_weight += thing.weight
-             total_price += thing.price
-     print(f&apos;&#x603B;&#x4EF7;&#x503C;: {total_price}&#x7F8E;&#x5143;&apos;)
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x540D;&#x79F0;</th>
+<th style="text-align:center">&#x4EF7;&#x683C;&#xFF08;&#x7F8E;&#x5143;&#xFF09;</th>
+<th style="text-align:center">&#x91CD;&#x91CF;&#xFF08;kg&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&#x7535;&#x8111;</td>
+<td style="text-align:center">200</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x6536;&#x97F3;&#x673A;</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x949F;</td>
+<td style="text-align:center">175</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x82B1;&#x74F6;</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x4E66;</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x6CB9;&#x753B;</td>
+<td style="text-align:center">90</td>
+<td style="text-align:center">9</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x8D2A;&#x5A6A;&#x6CD5;&#xFF1A;&#x5728;&#x5BF9;&#x95EE;&#x9898;&#x6C42;&#x89E3;&#x65F6;&#xFF0C;&#x603B;&#x662F;&#x505A;&#x51FA;&#x5728;&#x5F53;&#x524D;&#x770B;&#x6765;&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x4E0D;&#x8FFD;&#x6C42;&#x6700;&#x4F18;&#x89E3;&#xFF0C;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x6EE1;&#x610F;&#x89E3;&#x3002;
+  &#x8F93;&#x5165;&#xFF1A;
+  20 6
+  &#x7535;&#x8111; 200 20
+  &#x6536;&#x97F3;&#x673A; 20 4
+  &#x949F; 175 10
+  &#x82B1;&#x74F6; 50 2
+  &#x4E66; 10 1
+  &#x6CB9;&#x753B; 90 9
+  &quot;&quot;&quot;</span>
 
 
- if __name__ == &apos;__main__&apos;:
-     main()
- ```
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Thing</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7269;&#x54C1;&quot;&quot;&quot;</span>
 
- &#x5206;&#x6CBB;&#x6CD5;&#x4F8B;&#x5B50;&#xFF1A;[&#x5FEB;&#x901F;&#x6392;&#x5E8F;](https://zh.wikipedia.org/zh/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F)&#x3002;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, price, weight)</span>:</span>
+        self.name = name
+        self.price = price
+        self.weight = weight
 
- ```Python
- &quot;&quot;&quot;
- &#x5FEB;&#x901F;&#x6392;&#x5E8F; - &#x9009;&#x62E9;&#x67A2;&#x8F74;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C;&#x5DE6;&#x8FB9;&#x90FD;&#x6BD4;&#x67A2;&#x8F74;&#x5C0F;&#x53F3;&#x8FB9;&#x90FD;&#x6BD4;&#x67A2;&#x8F74;&#x5927;
- &quot;&quot;&quot;
- def quick_sort(origin_items, comp=lambda x, y: x &lt;= y):
-     items = origin_items[:]
-     _quick_sort(items, 0, len(items) - 1, comp)
-     return items
+<span class="hljs-meta">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">value</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x4EF7;&#x683C;&#x91CD;&#x91CF;&#x6BD4;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.price / self.weight
 
 
- def _quick_sort(items, start, end, comp):
-     if start &lt; end:
-         pos = _partition(items, start, end, comp)
-         _quick_sort(items, start, pos - 1, comp)
-         _quick_sort(items, pos + 1, end, comp)
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">input_thing</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8F93;&#x5165;&#x7269;&#x54C1;&#x4FE1;&#x606F;&quot;&quot;&quot;</span>
+    name_str, price_str, weight_str = input().split()
+    <span class="hljs-keyword">return</span> name_str, int(price_str), int(weight_str)
 
 
- def _partition(items, start, end, comp):
-     pivot = items[end]
-     i = start - 1
-     for j in range(start, end):
-         if comp(items[j], pivot):
-             i += 1
-             items[i], items[j] = items[j], items[i]
-     items[i + 1], items[end] = items[end], items[i + 1]
-     return i + 1
- ```
-
- &#x56DE;&#x6EAF;&#x6CD5;&#x4F8B;&#x5B50;&#xFF1A;[&#x9A91;&#x58EB;&#x5DE1;&#x903B;](https://zh.wikipedia.org/zh/%E9%AA%91%E5%A3%AB%E5%B7%A1%E9%80%BB)&#x3002;
-
- ```Python
- &quot;&quot;&quot;
- &#x9012;&#x5F52;&#x56DE;&#x6EAF;&#x6CD5;&#xFF1A;&#x53EB;&#x79F0;&#x4E3A;&#x8BD5;&#x63A2;&#x6CD5;&#xFF0C;&#x6309;&#x9009;&#x4F18;&#x6761;&#x4EF6;&#x5411;&#x524D;&#x641C;&#x7D22;&#xFF0C;&#x5F53;&#x641C;&#x7D22;&#x5230;&#x67D0;&#x4E00;&#x6B65;&#xFF0C;&#x53D1;&#x73B0;&#x539F;&#x5148;&#x9009;&#x62E9;&#x5E76;&#x4E0D;&#x4F18;&#x6216;&#x8FBE;&#x4E0D;&#x5230;&#x76EE;&#x6807;&#x65F6;&#xFF0C;&#x5C31;&#x9000;&#x56DE;&#x4E00;&#x6B65;&#x91CD;&#x65B0;&#x9009;&#x62E9;&#xFF0C;&#x6BD4;&#x8F83;&#x7ECF;&#x5178;&#x7684;&#x95EE;&#x9898;&#x5305;&#x62EC;&#x9A91;&#x58EB;&#x5DE1;&#x903B;&#x3001;&#x516B;&#x7687;&#x540E;&#x548C;&#x8FF7;&#x5BAB;&#x5BFB;&#x8DEF;&#x7B49;&#x3002;
- &quot;&quot;&quot;
- import sys
- import time
-
- SIZE = 5
- total = 0
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x4E3B;&#x51FD;&#x6570;&quot;&quot;&quot;</span>
+    max_weight, num_of_things = map(int, input().split())
+    all_things = []
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(num_of_things):
+        all_things.append(Thing(*input_thing()))
+    all_things.sort(key=<span class="hljs-keyword">lambda</span> x: x.value, reverse=<span class="hljs-keyword">True</span>)
+    total_weight = <span class="hljs-number">0</span>
+    total_price = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> thing <span class="hljs-keyword">in</span> all_things:
+        <span class="hljs-keyword">if</span> total_weight + thing.weight &lt;= max_weight:
+            print(f<span class="hljs-string">&apos;&#x5C0F;&#x5077;&#x62FF;&#x8D70;&#x4E86;{thing.name}&apos;</span>)
+            total_weight += thing.weight
+            total_price += thing.price
+    print(f<span class="hljs-string">&apos;&#x603B;&#x4EF7;&#x503C;: {total_price}&#x7F8E;&#x5143;&apos;</span>)
 
 
- def print_board(board):
-     for row in board:
-         for col in row:
-             print(str(col).center(4), end=&apos;&apos;)
-         print()
-
-
- def patrol(board, row, col, step=1):
-     if row &gt;= 0 and row &lt; SIZE and \
-         col &gt;= 0 and col &lt; SIZE and \
-         board[row][col] == 0:
-         board[row][col] = step
-         if step == SIZE * SIZE:
-             global total
-             total += 1
-             print(f&apos;&#x7B2C;{total}&#x79CD;&#x8D70;&#x6CD5;: &apos;)
-             print_board(board)
-         patrol(board, row - 2, col - 1, step + 1)
-         patrol(board, row - 1, col - 2, step + 1)
-         patrol(board, row + 1, col - 2, step + 1)
-         patrol(board, row + 2, col - 1, step + 1)
-         patrol(board, row + 2, col + 1, step + 1)
-         patrol(board, row + 1, col + 2, step + 1)
-         patrol(board, row - 1, col + 2, step + 1)
-         patrol(board, row - 2, col + 1, step + 1)
-         board[row][col] = 0
-
-
- def main():
-     board = [[0] * SIZE for _ in range(SIZE)]
-     patrol(board, SIZE - 1, SIZE - 1)
-
-
- if __name__ == &apos;__main__&apos;:
-     main()
- ```
-
- &#x52A8;&#x6001;&#x89C4;&#x5212;&#x4F8B;&#x5B50;1&#xFF1A;[&#x6590;&#x6CE2;&#x62C9;&#x5207;&#x6570;&#x5217;]()&#x3002;&#xFF08;&#x4E0D;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x5C06;&#x4F1A;&#x662F;&#x51E0;&#x4F55;&#x7EA7;&#x6570;&#x590D;&#x6742;&#x5EA6;&#xFF09;
-
- ```Python
- &quot;&quot;&quot;
- &#x52A8;&#x6001;&#x89C4;&#x5212; - &#x9002;&#x7528;&#x4E8E;&#x6709;&#x91CD;&#x53E0;&#x5B50;&#x95EE;&#x9898;&#x548C;&#x6700;&#x4F18;&#x5B50;&#x7ED3;&#x6784;&#x6027;&#x8D28;&#x7684;&#x95EE;&#x9898;
- &#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x65B9;&#x6CD5;&#x6240;&#x8017;&#x65F6;&#x95F4;&#x5F80;&#x5F80;&#x8FDC;&#x5C11;&#x4E8E;&#x6734;&#x7D20;&#x89E3;&#x6CD5;(&#x7528;&#x7A7A;&#x95F4;&#x6362;&#x53D6;&#x65F6;&#x95F4;)
- &quot;&quot;&quot;
- def fib(num, temp={}):
-     &quot;&quot;&quot;&#x7528;&#x9012;&#x5F52;&#x8BA1;&#x7B97;Fibonacci&#x6570;&quot;&quot;&quot;
-     if num in (1, 2):
-         return 1
-     try:
-         return temp[num]
-     except KeyError:
-         temp[num] = fib(num - 1) + fib(num - 2)
-         return temp[num]
- ```
-
- &#x52A8;&#x6001;&#x89C4;&#x5212;&#x4F8B;&#x5B50;2&#xFF1A;&#x5B50;&#x5217;&#x8868;&#x5143;&#x7D20;&#x4E4B;&#x548C;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;&#xFF08;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E8C;&#x91CD;&#x5FAA;&#x73AF;&#xFF09;
-
- &gt; &#x8BF4;&#x660E;&#xFF1A;&#x5B50;&#x5217;&#x8868;&#x6307;&#x7684;&#x662F;&#x5217;&#x8868;&#x4E2D;&#x7D22;&#x5F15;&#xFF08;&#x4E0B;&#x6807;&#xFF09;&#x8FDE;&#x7EED;&#x7684;&#x5143;&#x7D20;&#x6784;&#x6210;&#x7684;&#x5217;&#x8868;&#xFF1B;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;int&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x6B63;&#x6574;&#x6570;&#x3001;0&#x3001;&#x8D1F;&#x6574;&#x6570;&#xFF1B;&#x7A0B;&#x5E8F;&#x8F93;&#x5165;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x8F93;&#x51FA;&#x5B50;&#x5217;&#x8868;&#x5143;&#x7D20;&#x6C42;&#x548C;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;
- &gt;
- &gt; &#x8F93;&#x5165;&#xFF1A;1 -2 3 5 -3 2
- &gt;
- &gt; &#x8F93;&#x51FA;&#xFF1A;8
- &gt;
- &gt; &#x8F93;&#x5165;&#xFF1A;0 -2 3 5 -1 2
- &gt;
- &gt; &#x8F93;&#x51FA;&#xFF1A;9
- &gt;
- &gt; &#x8F93;&#x5165;&#xFF1A;-9 -2 -3 -5 -3
- &gt;
- &gt; &#x8F93;&#x51FA;&#xFF1A;-2
-
- ```Python
- def main():
-     items = list(map(int, input().split()))
-     size = len(items)
-     overall, partial = {}, {}
-     overall[size - 1] = partial[size - 1] = items[size - 1]
-     for i in range(size - 2, -1, -1):
-         partial[i] = max(items[i], partial[i + 1] + items[i])
-         overall[i] = max(partial[i], overall[i + 1])
-     print(overall[0])
-
-
- if __name__ == &apos;__main__&apos;:
-     main()
- ```
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
 </code></pre>
+<p>&#x5206;&#x6CBB;&#x6CD5;&#x4F8B;&#x5B50;&#xFF1A;<a href="https://zh.wikipedia.org/zh/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" target="_blank">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</a>&#x3002;</p>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x5FEB;&#x901F;&#x6392;&#x5E8F; - &#x9009;&#x62E9;&#x67A2;&#x8F74;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C;&#x5DE6;&#x8FB9;&#x90FD;&#x6BD4;&#x67A2;&#x8F74;&#x5C0F;&#x53F3;&#x8FB9;&#x90FD;&#x6BD4;&#x67A2;&#x8F74;&#x5927;
+  &quot;&quot;&quot;</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(origin_items, comp=lambda x, y: x &lt;= y)</span>:</span>
+    items = origin_items[:]
+    _quick_sort(items, <span class="hljs-number">0</span>, len(items) - <span class="hljs-number">1</span>, comp)
+    <span class="hljs-keyword">return</span> items
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_quick_sort</span><span class="hljs-params">(items, start, end, comp)</span>:</span>
+    <span class="hljs-keyword">if</span> start &lt; end:
+        pos = _partition(items, start, end, comp)
+        _quick_sort(items, start, pos - <span class="hljs-number">1</span>, comp)
+        _quick_sort(items, pos + <span class="hljs-number">1</span>, end, comp)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_partition</span><span class="hljs-params">(items, start, end, comp)</span>:</span>
+    pivot = items[end]
+    i = start - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(start, end):
+        <span class="hljs-keyword">if</span> comp(items[j], pivot):
+            i += <span class="hljs-number">1</span>
+            items[i], items[j] = items[j], items[i]
+    items[i + <span class="hljs-number">1</span>], items[end] = items[end], items[i + <span class="hljs-number">1</span>]
+    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>
+</code></pre>
+<p>&#x56DE;&#x6EAF;&#x6CD5;&#x4F8B;&#x5B50;&#xFF1A;<a href="https://zh.wikipedia.org/zh/%E9%AA%91%E5%A3%AB%E5%B7%A1%E9%80%BB" target="_blank">&#x9A91;&#x58EB;&#x5DE1;&#x903B;</a>&#x3002;</p>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x9012;&#x5F52;&#x56DE;&#x6EAF;&#x6CD5;&#xFF1A;&#x53EB;&#x79F0;&#x4E3A;&#x8BD5;&#x63A2;&#x6CD5;&#xFF0C;&#x6309;&#x9009;&#x4F18;&#x6761;&#x4EF6;&#x5411;&#x524D;&#x641C;&#x7D22;&#xFF0C;&#x5F53;&#x641C;&#x7D22;&#x5230;&#x67D0;&#x4E00;&#x6B65;&#xFF0C;&#x53D1;&#x73B0;&#x539F;&#x5148;&#x9009;&#x62E9;&#x5E76;&#x4E0D;&#x4F18;&#x6216;&#x8FBE;&#x4E0D;&#x5230;&#x76EE;&#x6807;&#x65F6;&#xFF0C;&#x5C31;&#x9000;&#x56DE;&#x4E00;&#x6B65;&#x91CD;&#x65B0;&#x9009;&#x62E9;&#xFF0C;&#x6BD4;&#x8F83;&#x7ECF;&#x5178;&#x7684;&#x95EE;&#x9898;&#x5305;&#x62EC;&#x9A91;&#x58EB;&#x5DE1;&#x903B;&#x3001;&#x516B;&#x7687;&#x540E;&#x548C;&#x8FF7;&#x5BAB;&#x5BFB;&#x8DEF;&#x7B49;&#x3002;
+  &quot;&quot;&quot;</span>
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> time
+
+SIZE = <span class="hljs-number">5</span>
+total = <span class="hljs-number">0</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_board</span><span class="hljs-params">(board)</span>:</span>
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> board:
+        <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> row:
+            print(str(col).center(<span class="hljs-number">4</span>), end=<span class="hljs-string">&apos;&apos;</span>)
+        print()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">patrol</span><span class="hljs-params">(board, row, col, step=<span class="hljs-number">1</span>)</span>:</span>
+    <span class="hljs-keyword">if</span> row &gt;= <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> row &lt; SIZE <span class="hljs-keyword">and</span>
+        col &gt;= <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> col &lt; SIZE <span class="hljs-keyword">and</span>
+        board[row][col] == <span class="hljs-number">0</span>:
+    board[row][col] = step
+    <span class="hljs-keyword">if</span> step == SIZE * SIZE:
+        <span class="hljs-keyword">global</span> total
+        total += <span class="hljs-number">1</span>
+        print(f<span class="hljs-string">&apos;&#x7B2C;{total}&#x79CD;&#x8D70;&#x6CD5;: &apos;</span>)
+        print_board(board)
+    patrol(board, row - <span class="hljs-number">2</span>, col - <span class="hljs-number">1</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row - <span class="hljs-number">1</span>, col - <span class="hljs-number">2</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row + <span class="hljs-number">1</span>, col - <span class="hljs-number">2</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row + <span class="hljs-number">2</span>, col - <span class="hljs-number">1</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row + <span class="hljs-number">2</span>, col + <span class="hljs-number">1</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row + <span class="hljs-number">1</span>, col + <span class="hljs-number">2</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row - <span class="hljs-number">1</span>, col + <span class="hljs-number">2</span>, step + <span class="hljs-number">1</span>)
+    patrol(board, row - <span class="hljs-number">2</span>, col + <span class="hljs-number">1</span>, step + <span class="hljs-number">1</span>)
+    board[row][col] = <span class="hljs-number">0</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    board = [[<span class="hljs-number">0</span>] * SIZE <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(SIZE)]
+    patrol(board, SIZE - <span class="hljs-number">1</span>, SIZE - <span class="hljs-number">1</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<p>&#x52A8;&#x6001;&#x89C4;&#x5212;&#x4F8B;&#x5B50;1&#xFF1A;<a href="">&#x6590;&#x6CE2;&#x62C9;&#x5207;&#x6570;&#x5217;</a>&#x3002;&#xFF08;&#x4E0D;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x5C06;&#x4F1A;&#x662F;&#x51E0;&#x4F55;&#x7EA7;&#x6570;&#x590D;&#x6742;&#x5EA6;&#xFF09;</p>
+<pre><code class="lang-Python">  <span class="hljs-string">&quot;&quot;&quot;
+  &#x52A8;&#x6001;&#x89C4;&#x5212; - &#x9002;&#x7528;&#x4E8E;&#x6709;&#x91CD;&#x53E0;&#x5B50;&#x95EE;&#x9898;&#x548C;&#x6700;&#x4F18;&#x5B50;&#x7ED3;&#x6784;&#x6027;&#x8D28;&#x7684;&#x95EE;&#x9898;
+  &#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x65B9;&#x6CD5;&#x6240;&#x8017;&#x65F6;&#x95F4;&#x5F80;&#x5F80;&#x8FDC;&#x5C11;&#x4E8E;&#x6734;&#x7D20;&#x89E3;&#x6CD5;(&#x7528;&#x7A7A;&#x95F4;&#x6362;&#x53D6;&#x65F6;&#x95F4;)
+  &quot;&quot;&quot;</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib</span><span class="hljs-params">(num, temp={})</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7528;&#x9012;&#x5F52;&#x8BA1;&#x7B97;Fibonacci&#x6570;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">if</span> num <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">return</span> temp[num]
+    <span class="hljs-keyword">except</span> KeyError:
+        temp[num] = fib(num - <span class="hljs-number">1</span>) + fib(num - <span class="hljs-number">2</span>)
+        <span class="hljs-keyword">return</span> temp[num]
+</code></pre>
+<p>&#x52A8;&#x6001;&#x89C4;&#x5212;&#x4F8B;&#x5B50;2&#xFF1A;&#x5B50;&#x5217;&#x8868;&#x5143;&#x7D20;&#x4E4B;&#x548C;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;&#xFF08;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E8C;&#x91CD;&#x5FAA;&#x73AF;&#xFF09;</p>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5B50;&#x5217;&#x8868;&#x6307;&#x7684;&#x662F;&#x5217;&#x8868;&#x4E2D;&#x7D22;&#x5F15;&#xFF08;&#x4E0B;&#x6807;&#xFF09;&#x8FDE;&#x7EED;&#x7684;&#x5143;&#x7D20;&#x6784;&#x6210;&#x7684;&#x5217;&#x8868;&#xFF1B;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;int&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x6B63;&#x6574;&#x6570;&#x3001;0&#x3001;&#x8D1F;&#x6574;&#x6570;&#xFF1B;&#x7A0B;&#x5E8F;&#x8F93;&#x5165;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x8F93;&#x51FA;&#x5B50;&#x5217;&#x8868;&#x5143;&#x7D20;&#x6C42;&#x548C;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x8F93;&#x5165;&#xFF1A;1 -2 3 5 -3 2</p>
+<p>&#x8F93;&#x51FA;&#xFF1A;8</p>
+<p>&#x8F93;&#x5165;&#xFF1A;0 -2 3 5 -1 2</p>
+<p>&#x8F93;&#x51FA;&#xFF1A;9</p>
+<p>&#x8F93;&#x5165;&#xFF1A;-9 -2 -3 -5 -3</p>
+<p>&#x8F93;&#x51FA;&#xFF1A;-2</p>
+</blockquote>
+<pre><code class="lang-Python">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    items = list(map(int, input().split()))
+    size = len(items)
+    overall, partial = {}, {}
+    overall[size - <span class="hljs-number">1</span>] = partial[size - <span class="hljs-number">1</span>] = items[size - <span class="hljs-number">1</span>]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(size - <span class="hljs-number">2</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):
+        partial[i] = max(items[i], partial[i + <span class="hljs-number">1</span>] + items[i])
+        overall[i] = max(partial[i], overall[i + <span class="hljs-number">1</span>])
+    print(overall[<span class="hljs-number">0</span>])
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+
                                 
                                 </section>
                             
@@ -4880,7 +4919,7 @@ def value(self):
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常用数据结构","level":"2.2.1","depth":2,"next":{"title":"函数的高级用法","level":"2.2.2","depth":2,"path":"Python/Python语言进阶/02-函数的高级用法.md","ref":"./Python/Python语言进阶/02-函数的高级用法.md","articles":[]},"previous":{"title":"Python语言进阶","level":"2.2","depth":1,"ref":"","articles":[{"title":"常用数据结构","level":"2.2.1","depth":2,"path":"Python/Python语言进阶/01-常用数据结构和算法.md","ref":"./Python/Python语言进阶/01-常用数据结构和算法.md","articles":[]},{"title":"函数的高级用法","level":"2.2.2","depth":2,"path":"Python/Python语言进阶/02-函数的高级用法.md","ref":"./Python/Python语言进阶/02-函数的高级用法.md","articles":[]},{"title":"面向对象高级知识","level":"2.2.3","depth":2,"path":"Python/Python语言进阶/03-面向对象高级知识.md","ref":"./Python/Python语言进阶/03-面向对象高级知识.md","articles":[]},{"title":"迭代器和生成器","level":"2.2.4","depth":2,"path":"Python/Python语言进阶/04-迭代器和生成器.md","ref":"./Python/Python语言进阶/04-迭代器和生成器.md","articles":[]},{"title":"并发和异步编程","level":"2.2.5","depth":2,"path":"Python/Python语言进阶/05-并发和异步编程.md","ref":"./Python/Python语言进阶/05-并发和异步编程.md","articles":[]},{"title":"asynico异步编程","level":"2.2.6","depth":2,"path":"Python/Python语言进阶/06-asyncio异步编程.md","ref":"./Python/Python语言进阶/06-asyncio异步编程.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/01-常用数据结构和算法.md","mtime":"2021-07-20T02:04:05.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T11:05:58.016Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常用数据结构","level":"2.2.1","depth":2,"next":{"title":"函数的高级用法","level":"2.2.2","depth":2,"path":"Python/Python语言进阶/02-函数的高级用法.md","ref":"./Python/Python语言进阶/02-函数的高级用法.md","articles":[]},"previous":{"title":"Python语言进阶","level":"2.2","depth":1,"ref":"","articles":[{"title":"常用数据结构","level":"2.2.1","depth":2,"path":"Python/Python语言进阶/01-常用数据结构和算法.md","ref":"./Python/Python语言进阶/01-常用数据结构和算法.md","articles":[]},{"title":"函数的高级用法","level":"2.2.2","depth":2,"path":"Python/Python语言进阶/02-函数的高级用法.md","ref":"./Python/Python语言进阶/02-函数的高级用法.md","articles":[]},{"title":"面向对象高级知识","level":"2.2.3","depth":2,"path":"Python/Python语言进阶/03-面向对象高级知识.md","ref":"./Python/Python语言进阶/03-面向对象高级知识.md","articles":[]},{"title":"迭代器和生成器","level":"2.2.4","depth":2,"path":"Python/Python语言进阶/04-迭代器和生成器.md","ref":"./Python/Python语言进阶/04-迭代器和生成器.md","articles":[]},{"title":"并发和异步编程","level":"2.2.5","depth":2,"path":"Python/Python语言进阶/05-并发和异步编程.md","ref":"./Python/Python语言进阶/05-并发和异步编程.md","articles":[]},{"title":"asynico异步编程","level":"2.2.6","depth":2,"path":"Python/Python语言进阶/06-asyncio异步编程.md","ref":"./Python/Python语言进阶/06-asyncio异步编程.md","articles":[]},{"title":"GIL全局解释器锁","level":"2.2.7","depth":2,"path":"Python/Python语言进阶/07-GIL全局解释器锁.md","ref":"./Python/Python语言进阶/07-GIL全局解释器锁.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Python/Python语言进阶/01-常用数据结构和算法.md","mtime":"2022-09-29T09:52:11.672Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-29T11:11:25.549Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
