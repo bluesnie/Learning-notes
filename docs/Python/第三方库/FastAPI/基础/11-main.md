@@ -120,7 +120,6 @@ app.include_router(application, prefix="/coronavirus", tags=["新冠病毒疫情
 app.include_router(tasks_router, prefix="/timed_tasks", tags=["apSheduler动态定时任务"])
 
 if __name__ == '__main__':
-    threading.Thread(target=lambda: asyncio.new_event_loop().run_forever).start()
     uvicorn.run('main:app', host='127.0.0.1', port=8001, reload=True, debug=True, workers=5)
 
 ```
