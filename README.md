@@ -33,6 +33,9 @@
     - [Linux启动管理](Linux/基础/16-Linux启动管理.md)
     - [Linux备份与恢复](Linux/基础/17-Linux备份与恢复.md)
 
+- [命令指北](./Linux/命令指北)
+    - [strace](Linux/命令指北/01-strace.md)
+
 ## [Python](./Python)
 
 ### [Python语言基础](./Python/Python语言基础/)
