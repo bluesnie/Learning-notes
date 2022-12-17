@@ -234,9 +234,24 @@
 
 - [模板](./C++/进阶/01-模板.md)
   | [STL初识](./C++/进阶/02-STL初识.md)
-  | [STL常用容器](./C++/进阶/03-STL常用容器.md)
   | [STL函数对象](./C++/进阶/04-STL函数对象.md)
-  | [STL常用算法](./C++/进阶/05-STL常用算法.md)
+
+    - STL常用容器  
+    [string](./C++/进阶/03-1-STL常用容器-string.md)
+    | [vector](./C++/进阶/03-2-STL常用容器-vector.md)
+    | [deque](./C++/进阶/03-3-STL常用容器-deque.md)
+    | [stack](./C++/进阶/03-4-STL常用容器-stack.md)
+    | [queue](./C++/进阶/03-5-STL常用容器-queue.md)
+    | [list](./C++/进阶/03-6-STL常用容器-list.md)
+    | [set-multiset](./C++/进阶/03-7-STL常用容器-set-multiset.md)
+    | [map-multimap](./C++/进阶/03-8-STL常用容器-map-multimap.md)
+    - STL常用算法  
+    [遍历](./C++/进阶/05-1-STL常用算法-遍历.md)
+    | [查找](./C++/进阶/05-2-STL常用算法-查找.md)
+    | [排序](./C++/进阶/05-3-STL常用算法-排序.md)
+    | [拷贝替换](./C++/进阶/05-4-STL常用算法-拷贝替换.md)
+    | [算术生成](./C++/进阶/05-5-STL常用算法-算术生成.md)
+    | [集合算法](./C++/进阶/05-6-STL常用算法-集合算法.md)
 
 ## [数据库基础和进阶](./Database)
 
