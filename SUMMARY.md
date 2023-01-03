@@ -247,6 +247,23 @@
         - [算术生成](./C++/进阶/05-5-STL常用算法-算术生成.md)
         - [集合算法](./C++/进阶/05-6-STL常用算法-集合算法.md)
 
+- Linux环境编程
+    - [gdb调试](./C++/Linux环境编程/01-gdb调试.md)
+    - [make和Makefile](./C++/Linux环境编程/02-make和Makefile.md)
+
+- 网络通信socket
+    - [socket概述](./C++/网络通信socket/01-socket概述.md)
+    - [数据类型和相关库函数](./C++/网络通信socket/02-数据类型和相关库函数.md)
+    - [网络字节序与主机字节序](./C++/网络通信socket/03-网络字节序与主机字节序.md)
+    - [程序封装成类](./C++/网络通信socket/04-程序封装成类.md)
+    - [多进程网络服务端](./C++/网络通信socket/05-多进程网络服务端.md)
+    - [TCP长连接和短连接](./C++/网络通信socket/06-TCP长连接和短连接.md)
+    - [多线程网络服务端](./C++/网络通信socket/07-多线程网络服务端.md)
+    - [性能测试](./C++/网络通信socket/08-性能测试.md)
+    - [IO复用-select](./C++/网络通信socket/09-IO复用-select.md)
+    - [IO复用-poll](./C++/网络通信socket/10-IO复用-poll.md)
+    - [IO复用-epoll](./C++/网络通信socket/11-IO复用-epoll.md)
+
 ## 数据库基础和进阶
 
 - MySQL
