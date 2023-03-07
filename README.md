@@ -35,6 +35,8 @@
 
 - [命令指北](./Linux/命令指北)
     - [strace](Linux/命令指北/01-strace.md)
+    - [ps和pstree](Linux/命令指北/02-ps和pstree.md)
+    - [top](Linux/命令指北/03-top.md)
 
 ## [Python](./Python)
 
@@ -377,7 +379,8 @@
 - [roscore与Master启动](ROS/进阶/源码分析/01-roscore与Master启动.md)
 - [roslaunch](ROS/进阶/源码分析/02-roslaunch.md)
 - [process_monitoring](ROS/进阶/源码分析/03-process_monitoring.md)
-- [service](ROS/进阶/源码分析/04-service.md)
+- [topic](ROS/进阶/源码分析/04-topic.md)
+- [service](ROS/进阶/源码分析/05-service.md)
 
 ## [工具](./Utils/)
 

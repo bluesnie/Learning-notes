@@ -12,6 +12,14 @@
 
 ![](./imgs/roscore_map.png)
 
+`rospy class map`
+
+![](./imgs/rospy_class_map.jpg)
+
+`rospy map`
+
+![](./imgs/rospy_map.jpg)
+
 该文章分析roslaunch是如何调用这个rosmaster脚本，将roscore，roslaunch，rosmaster联系起来的
 
 启动脚本
