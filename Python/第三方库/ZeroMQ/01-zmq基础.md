@@ -42,7 +42,7 @@
 ```python
 import zmq
 
-context = zmq.Context()
+context = zmq.Context(io_threads=5)  # 5个线程
 socket = context.socket(zmq.REP)  # 设置socket的类型，zmq.REP答复
 socket.bind("tcp://*:15000")  # 绑定服务端的IP和端口
 
@@ -60,19 +60,22 @@ while True:  # 循环接收客户端发来的消息
 - client客户端
 
 ```python
-import zmq, sys
+import zmq, sys, threading
 
 context = zmq.Context()
 socket = context.socket(zmq.REQ)  # 设置socket类型，请求端 socket.connect("tcp://localhost:15000") #连接服务端的IP和端口
 socket.connect("tcp://127.0.0.1:15000")
+lock = threading.Lock()
 
 while True:
     data = input("input your request:")
     if data == "q":
         sys.exit()
-    socket.send_string(data)  # 向服务端发送消息 message=socket.recv()              #接收服务端返回的消息，注：是byte类型 print(message)
-    recv_msg = socket.recv_string()
-    print(f"recv msg: {recv_msg}")
+    # 客户端如果一个进程有多线程使用，需要使用锁，保证send和recv配对使用，否则会报错
+    with lock:
+        socket.send_string(data)  # 向服务端发送消息 message=socket.recv()              #接收服务端返回的消息，注：是byte类型 print(message)
+        recv_msg = socket.recv_string()
+        print(f"recv msg: {recv_msg}")
 """
 结果：每输入请求一次，就得到服务端的一次返回 input your data:123 b'copy!'
 input your data:456 b'copy!'
