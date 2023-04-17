@@ -274,3 +274,68 @@ with ThreadPoolExecutor(max_workers=2) as pool:
 ```
 
 可以看出返回结果和列表的结果一致，即使第2个元素只需要1s就能返回，也还是等待第一个5s线程返回只有才有结果。
+
+### 自定义打印PID的线程池
+
+```python
+import os
+import threading
+import time
+import sys
+import ctypes
+from concurrent.futures import ThreadPoolExecutor
+
+SYS_get_tid = 178  # 获取线程PID
+libc = ctypes.cdll.LoadLibrary("libc.so.6")
+
+
+class CustomThreadPoolExecutor(ThreadPoolExecutor):
+    """
+    在 3.7 版更改: 加入 initializer 和*initargs* 参数。
+    """
+
+    def __init__(self, max_workers=None, thread_name_prefix='',
+                 initializer=None, initargs=()):
+        if initializer is None:
+            initializer = self._record_threading_info
+        if sys.version_info >= (3, 7):
+            super(CustomThreadPoolExecutor, self).__init__(max_workers=max_workers,
+                                                           thread_name_prefix=thread_name_prefix,
+                                                           initializer=initializer, initargs=initargs)
+        else:
+            super(CustomThreadPoolExecutor, self).__init__(max_workers=max_workers,
+                                                           thread_name_prefix=thread_name_prefix)
+
+    def submit(self, fn, *args, **kwargs):
+        self._thread_name_prefix = fn.__name__
+        super(CustomThreadPoolExecutor, self).submit(fn, *args, **kwargs)
+
+    @staticmethod
+    def _record_threading_info():
+        """记录线程信息"""
+        pid = os.getpid()
+        ppid = libc.syscall(SYS_get_tid)
+        name = threading.current_thread().name
+        info = f"func name: {name}, pid: {pid}, ppid: {ppid}"
+        print(info)
+
+
+pools = CustomThreadPoolExecutor(max_workers=10)
+
+
+def test1():
+    while True:
+        time.sleep(0.1)
+        # print("I'm test1!!!")
+
+
+def test2():
+    while True:
+        time.sleep(1)
+        # print("I'm test2!!!")
+
+
+if __name__ == '__main__':
+    pools.submit(test1)
+    pools.submit(test2)
+```
