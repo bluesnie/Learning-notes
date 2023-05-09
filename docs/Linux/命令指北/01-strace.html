@@ -399,6 +399,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.4" data-path="04-性能分析工具-py-spy.html">
+            
+                <a href="04-性能分析工具-py-spy.html">
+            
+                    
+                    py-spy
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5509,19 +5522,19 @@ top -H -p 17553
 <li><code>-e trace=signal</code> &#x4FE1;&#x53F7;&#x53D1;&#x9001;&#x548C;&#x5904;&#x7406;&#x76F8;&#x5173;&#xFF0C;&#x6BD4;&#x5982;kill/sigaction</li>
 <li><code>-e trace=desc</code> &#x548C;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x76F8;&#x5173;&#xFF0C;&#x6BD4;&#x5982;write/read/select/epoll&#x7B49;</li>
 <li><code>-e trace=ipc</code> &#x8DDF;&#x8E2A;&#x6240;&#x6709;&#x4E0E;&#x8FDB;&#x7A0B;&#x901A;&#x8BAF;&#x6709;&#x5173;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF0C;&#x6BD4;&#x5982;shmget&#x7B49;</li>
-<li><code>-e signal=</code>  &#x6307;&#x5B9A;&#x8DDF;&#x8E2A;&#x7684;&#x7CFB;&#x7EDF;&#x4FE1;&#x53F7;.&#x9ED8;&#x8BA4;&#x4E3A;all.&#x5982; signal=!SIGIO(&#x6216;&#x8005;signal=!io),&#x8868;&#x793A;&#x4E0D;&#x8DDF;&#x8E2A;SIGIO&#x4FE1;&#x53F7;. </li>
-<li><code>-e trace=</code> &#x53EA;&#x8DDF;&#x8E2A;&#x6307;&#x5B9A;&#x7684;&#x7CFB;&#x7EDF; &#x8C03;&#x7528;.&#x4F8B;&#x5982;:-e trace=open,close,read,write&#x8868;&#x793A;&#x53EA;&#x8DDF;&#x8E2A;&#x8FD9;&#x56DB;&#x4E2A;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;.&#x9ED8;&#x8BA4;&#x7684;&#x4E3A;set=all. </li>
+<li><code>-e signal=</code>  &#x6307;&#x5B9A;&#x8DDF;&#x8E2A;&#x7684;&#x7CFB;&#x7EDF;&#x4FE1;&#x53F7;.&#x9ED8;&#x8BA4;&#x4E3A;all.&#x5982; signal=!SIGIO(&#x6216;&#x8005;signal=!io),&#x8868;&#x793A;&#x4E0D;&#x8DDF;&#x8E2A;SIGIO&#x4FE1;&#x53F7;.</li>
+<li><code>-e trace=</code> &#x53EA;&#x8DDF;&#x8E2A;&#x6307;&#x5B9A;&#x7684;&#x7CFB;&#x7EDF; &#x8C03;&#x7528;.&#x4F8B;&#x5982;:-e trace=open,close,read,write&#x8868;&#x793A;&#x53EA;&#x8DDF;&#x8E2A;&#x8FD9;&#x56DB;&#x4E2A;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;.&#x9ED8;&#x8BA4;&#x7684;&#x4E3A;set=all.</li>
 </ul>
 </li>
 <li><code>-o</code>&#xFF1A;&#x628A; strace &#x7684;&#x8F93;&#x51FA;&#x5355;&#x72EC;&#x5199;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;</li>
 <li><code>-s</code>&#xFF1A;&#x5F53;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x7684;&#x67D0;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x6700;&#x591A;&#x8F93;&#x51FA;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; 32 &#x4E2A;&#x5B57;&#x8282;</li>
 <li><code>-p</code>&#xFF1A;&#x6307;&#x5B9A;&#x8981;&#x8DDF;&#x8E2A;&#x7684;&#x8FDB;&#x7A0B; pid&#xFF0C;&#x8981;&#x540C;&#x65F6;&#x8DDF;&#x8E2A;&#x591A;&#x4E2A; pid&#xFF0C;&#x91CD;&#x590D;&#x591A;&#x6B21; -p &#x9009;&#x9879;&#x5373;&#x53EF;&#x3002;</li>
-<li><code>-x</code>&#xFF1A;&#x6253;&#x5370;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x975E;ascii&#x5B57;&#x7B26;&#x4E32;
-```text<h1 id="&#x4E0B;&#x4F4D;&#x673A;&#x4E32;&#x53E3;&#x6570;&#x636E;">&#x4E0B;&#x4F4D;&#x673A;&#x4E32;&#x53E3;&#x6570;&#x636E;</h1>
-<h1 id="&#x547D;&#x4EE4;&#xFF1A;strace--s-1024--p-214--e-traceread--x">&#x547D;&#x4EE4;&#xFF1A;strace -s 1024 -p 214 -e trace=read -x</h1>
-</li>
+<li><code>-x</code>&#xFF1A;&#x6253;&#x5370;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x975E;ascii&#x5B57;&#x7B26;&#x4E32;</li>
 </ul>
-<p>read(64, &quot;R&quot;, 1)                        = 1
+<pre><code class="lang-text"># &#x4E0B;&#x4F4D;&#x673A;&#x4E32;&#x53E3;&#x6570;&#x636E;
+# &#x547D;&#x4EE4;&#xFF1A;strace -s 1024 -p 214 -e trace=read -x
+
+read(64, &quot;R&quot;, 1)                        = 1
 read(64, &quot;U&quot;, 1)                        = 1     // &#x5E27;&#x5C3E;
 read(64, &quot;\xaa&quot;, 1)                     = 1     // &#x5E27;&#x5934;
 read(64, &quot;L&quot;, 1)                        = 1
@@ -5573,11 +5586,12 @@ read(64, &quot;R&quot;, 1)                        = 1
 read(64, &quot;U&quot;, 1)                        = 1     // &#x5E27;&#x5C3E;
 read(64, &quot;\xaa&quot;, 1)                     = 1     // &#x5E27;&#x5934;
 read(64, &quot;L&quot;, 1)                        = 1
-read(64, &quot;M&quot;, 1)                        = 1</p>
-<pre><code>- `-xx`&#xFF1A;&#x6253;&#x5370;&#x5341;&#x516D;&#x8FDB;&#x5236;ascii&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x53EF;&#x8BFB;&#x6027;&#x9AD8;&#x70B9;&#xFF09;
-
-```text
-# &#x4E0B;&#x4F4D;&#x673A;&#x4E32;&#x53E3;&#x6570;&#x636E;
+read(64, &quot;M&quot;, 1)                        = 1
+</code></pre>
+<ul>
+<li><code>-xx</code>&#xFF1A;&#x6253;&#x5370;&#x5341;&#x516D;&#x8FDB;&#x5236;ascii&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x53EF;&#x8BFB;&#x6027;&#x9AD8;&#x70B9;&#xFF09;</li>
+</ul>
+<pre><code class="lang-text"># &#x4E0B;&#x4F4D;&#x673A;&#x4E32;&#x53E3;&#x6570;&#x636E;
 # &#x547D;&#x4EE4;&#xFF1A;strace -s 1024 -p 214 -e trace=read -xx
 
 read(64, &quot;\x52&quot;, 1)                     = 1
@@ -5633,7 +5647,38 @@ read(64, &quot;\x55&quot;, 1)                     = 1     // &#x5E27;&#x5C3E;
 read(64, &quot;\xaa&quot;, 1)                     = 1     // &#x5E27;&#x5934;
 read(64, &quot;\x4c&quot;, 1)                     = 1
 read(64, &quot;\x4d&quot;, 1)                     = 1
-</code></pre><h3 id="&#x56DB;&#x3001;strace&#x95EE;&#x9898;&#x5B9A;&#x4F4D;&#x6848;&#x4F8B;">&#x56DB;&#x3001;strace&#x95EE;&#x9898;&#x5B9A;&#x4F4D;&#x6848;&#x4F8B;</h3>
+</code></pre>
+<ul>
+<li><code>-c</code>&#xFF1A;&#x5C06;&#x8FDB;&#x7A0B;&#x6240;&#x6709;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x505A;&#x4E00;&#x4E2A;&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x5E76;&#x8FD4;&#x56DE;</li>
+</ul>
+<pre><code class="lang-text"># strace -f -c -p 126
+
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 55.87    9.992260         363     27527      1649 futex
+ 19.84    3.547689        8717       407           pselect6
+ 11.15    1.994709        1471      1356           ppoll
+  6.01    1.074210        5838       184           epoll_pwait
+  3.89    0.695708          88      7934       625 recvfrom
+  1.45    0.260006          54      4772           fcntl
+  0.66    0.117486         474       248           read
+  0.65    0.117000       58500         2           accept
+  0.19    0.033846          54       626           sendto
+  0.07    0.013000         813        16           fsync
+  0.06    0.011512          27       421           newfstatat
+  0.05    0.008677           7      1327           getpid
+  0.04    0.006500          22       298           munmap
+  0.03    0.004798          51        94           write
+  0.02    0.004247          18       241           mmap
+  0.01    0.002207         130        17           openat
+  0.01    0.002000          56        36           fstat
+  0.00    0.000000           0        19           close
+  0.00    0.000000           0        19           lseek
+  0.00    0.000000           0         1           mprotect
+------ ----------- ----------- --------- --------- ----------------
+100.00   17.885855                 45545      2274 total
+</code></pre>
+<h3 id="&#x56DB;&#x3001;strace&#x95EE;&#x9898;&#x5B9A;&#x4F4D;&#x6848;&#x4F8B;">&#x56DB;&#x3001;strace&#x95EE;&#x9898;&#x5B9A;&#x4F4D;&#x6848;&#x4F8B;</h3>
 <h4 id="-1&#x3001;&#x5B9A;&#x4F4D;&#x8FDB;&#x7A0B;&#x5F02;&#x5E38;&#x9000;&#x51FA;">- 1&#x3001;&#x5B9A;&#x4F4D;&#x8FDB;&#x7A0B;&#x5F02;&#x5E38;&#x9000;&#x51FA;</h4>
 <p>&#x95EE;&#x9898;&#xFF1A;&#x673A;&#x5668;&#x4E0A;&#x6709;&#x4E2A;&#x53EB;&#x505A;run.sh&#x7684;&#x5E38;&#x9A7B;&#x811A;&#x672C;&#xFF0C;&#x8FD0;&#x884C;&#x4E00;&#x5206;&#x949F;&#x540E;&#x4F1A;&#x6B7B;&#x6389;&#x3002;&#x9700;&#x8981;&#x67E5;&#x51FA;&#x6B7B;&#x56E0;&#x3002;</p>
 <p>&#x5B9A;&#x4F4D;&#xFF1A;&#x8FDB;&#x7A0B;&#x8FD8;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;ps&#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x5176;pid, &#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x7684;pid&#x662F;24298</p>
@@ -5739,7 +5784,7 @@ while read filename; do
 done &lt; &lt;( find linux-4.5.4 -type f  ( -iname &apos;.c&apos; -o -iname &apos;.h&apos; -o -iname &apos;*.S&apos; ) )
 echo &quot;total line: $total_line&quot;
 </code></pre>
-<p>good_script.sh: </p>
+<p>good_script.sh:</p>
 <pre><code class="lang-shell">#!/bin/bash
 find linux-4.5.4 -type f  ( -iname &apos;.c&apos; -o -iname &apos;.h&apos; -o -iname &apos;*.S&apos; ) -print0 | wc -l &#x2014;files0-from - | tail -n 1
 </code></pre>
@@ -5756,7 +5801,7 @@ find linux-4.5.4 -type f  ( -iname &apos;.c&apos; -o -iname &apos;.h&apos; -o -i
 <ul>
 <li><p>1&#x3001;perf &#x539F;&#x56E0; kernel &#x652F;&#x6301;</p>
 </li>
-<li><p>2&#x3001;ftrace  kernel &#x652F;&#x6301;&#x53EF;&#x7F16;&#x7A0B;</p>
+<li><p>2&#x3001;ftrace kernel &#x652F;&#x6301;&#x53EF;&#x7F16;&#x7A0B;</p>
 </li>
 <li><p>3&#x3001;systemtap &#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;RedHat &#x7CFB;&#x7EDF;&#x652F;&#x6301;&#xFF0C;&#x5BF9;&#x7528;&#x6237;&#x6001;&#xFF0C;&#x5185;&#x6838;&#x6001;&#x903B;&#x8F91;&#x90FD;&#x80FD;&#x63A2;&#x67E5;&#xFF0C;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#x66F4;&#x5E7F;&#x3002;</p>
 </li>
@@ -5800,7 +5845,7 @@ find linux-4.5.4 -type f  ( -iname &apos;.c&apos; -o -iname &apos;.h&apos; -o -i
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"strace","level":"1.3.1","depth":2,"next":{"title":"ps和pstree","level":"1.3.2","depth":2,"path":"Linux/命令指北/02-ps和pstree.md","ref":"Linux/命令指北/02-ps和pstree.md","articles":[]},"previous":{"title":"命令指北","level":"1.3","depth":1,"ref":"","articles":[{"title":"strace","level":"1.3.1","depth":2,"path":"Linux/命令指北/01-strace.md","ref":"Linux/命令指北/01-strace.md","articles":[]},{"title":"ps和pstree","level":"1.3.2","depth":2,"path":"Linux/命令指北/02-ps和pstree.md","ref":"Linux/命令指北/02-ps和pstree.md","articles":[]},{"title":"top","level":"1.3.3","depth":2,"path":"Linux/命令指北/03-top.md","ref":"Linux/命令指北/03-top.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/命令指北/01-strace.md","mtime":"2023-04-14T02:38:55.162Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-17T06:05:49.830Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"strace","level":"1.3.1","depth":2,"next":{"title":"ps和pstree","level":"1.3.2","depth":2,"path":"Linux/命令指北/02-ps和pstree.md","ref":"Linux/命令指北/02-ps和pstree.md","articles":[]},"previous":{"title":"命令指北","level":"1.3","depth":1,"ref":"","articles":[{"title":"strace","level":"1.3.1","depth":2,"path":"Linux/命令指北/01-strace.md","ref":"Linux/命令指北/01-strace.md","articles":[]},{"title":"ps和pstree","level":"1.3.2","depth":2,"path":"Linux/命令指北/02-ps和pstree.md","ref":"Linux/命令指北/02-ps和pstree.md","articles":[]},{"title":"top","level":"1.3.3","depth":2,"path":"Linux/命令指北/03-top.md","ref":"Linux/命令指北/03-top.md","articles":[]},{"title":"py-spy","level":"1.3.4","depth":2,"path":"Linux/命令指北/04-性能分析工具-py-spy.md","ref":"Linux/命令指北/04-性能分析工具-py-spy.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Linux/命令指北/01-strace.md","mtime":"2023-04-26T02:43:42.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-09T06:50:15.207Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

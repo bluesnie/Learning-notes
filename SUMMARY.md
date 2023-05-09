@@ -33,6 +33,7 @@
     - [strace](Linux/命令指北/01-strace.md)
     - [ps和pstree](Linux/命令指北/02-ps和pstree.md)
     - [top](Linux/命令指北/03-top.md)
+    - [py-spy](Linux/命令指北/04-性能分析工具-py-spy.md)
 
 ## Python
 
