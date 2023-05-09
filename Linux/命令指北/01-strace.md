@@ -117,12 +117,13 @@ strace -tt -T -v -f -e trace=file -o /data/log/strace.log -s 1024 -p 23489
     - `-e trace=signal` 信号发送和处理相关，比如kill/sigaction
     - `-e trace=desc` 和文件描述符相关，比如write/read/select/epoll等
     - `-e trace=ipc` 跟踪所有与进程通讯有关的系统调用，比如shmget等
-    - `-e signal=`  指定跟踪的系统信号.默认为all.如 signal=!SIGIO(或者signal=!io),表示不跟踪SIGIO信号. 
-    - `-e trace=` 只跟踪指定的系统 调用.例如:-e trace=open,close,read,write表示只跟踪这四个系统调用.默认的为set=all. 
+    - `-e signal=`  指定跟踪的系统信号.默认为all.如 signal=!SIGIO(或者signal=!io),表示不跟踪SIGIO信号.
+    - `-e trace=` 只跟踪指定的系统 调用.例如:-e trace=open,close,read,write表示只跟踪这四个系统调用.默认的为set=all.
 - `-o`：把 strace 的输出单独写到指定的文件
 - `-s`：当系统调用的某个参数是字符串时，最多输出指定长度的内容，默认是 32 个字节
 - `-p`：指定要跟踪的进程 pid，要同时跟踪多个 pid，重复多次 -p 选项即可。
 - `-x`：打印十六进制非ascii字符串
+
 ```text
 # 下位机串口数据
 # 命令：strace -s 1024 -p 214 -e trace=read -x
@@ -181,6 +182,7 @@ read(64, "\xaa", 1)                     = 1     // 帧头
 read(64, "L", 1)                        = 1
 read(64, "M", 1)                        = 1
 ```
+
 - `-xx`：打印十六进制ascii字符串（可读性高点）
 
 ```text
@@ -242,6 +244,36 @@ read(64, "\x4c", 1)                     = 1
 read(64, "\x4d", 1)                     = 1
 ```
 
+- `-c`：将进程所有系统调用做一个统计分析并返回
+
+```text
+# strace -f -c -p 126
+
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 55.87    9.992260         363     27527      1649 futex
+ 19.84    3.547689        8717       407           pselect6
+ 11.15    1.994709        1471      1356           ppoll
+  6.01    1.074210        5838       184           epoll_pwait
+  3.89    0.695708          88      7934       625 recvfrom
+  1.45    0.260006          54      4772           fcntl
+  0.66    0.117486         474       248           read
+  0.65    0.117000       58500         2           accept
+  0.19    0.033846          54       626           sendto
+  0.07    0.013000         813        16           fsync
+  0.06    0.011512          27       421           newfstatat
+  0.05    0.008677           7      1327           getpid
+  0.04    0.006500          22       298           munmap
+  0.03    0.004798          51        94           write
+  0.02    0.004247          18       241           mmap
+  0.01    0.002207         130        17           openat
+  0.01    0.002000          56        36           fstat
+  0.00    0.000000           0        19           close
+  0.00    0.000000           0        19           lseek
+  0.00    0.000000           0         1           mprotect
+------ ----------- ----------- --------- --------- ----------------
+100.00   17.885855                 45545      2274 total
+```
 
 ### 四、strace问题定位案例
 
@@ -378,6 +410,7 @@ key        shmid      owner      perms      bytes      nattch     status
 假如有个需求，统计 Linux 4.5.4 版本内核中的代码行数（包含汇编和 C 代码）。这里提供两个Shell 脚本实现：
 
 poor_script.sh:
+
 ```shell
 #!/bin/bash
 total_line=0
@@ -389,7 +422,8 @@ echo "total line: $total_line"
  
 ```
 
-good_script.sh: 
+good_script.sh:
+
 ```shell
 #!/bin/bash
 find linux-4.5.4 -type f  ( -iname '.c' -o -iname '.h' -o -iname '*.S' ) -print0 | wc -l —files0-from - | tail -n 1
@@ -417,7 +451,7 @@ find linux-4.5.4 -type f  ( -iname '.c' -o -iname '.h' -o -iname '*.S' ) -print0
 
 - 1、perf 原因 kernel 支持
 
-- 2、ftrace  kernel 支持可编程
+- 2、ftrace kernel 支持可编程
 
 - 3、systemtap 功能强大，RedHat 系统支持，对用户态，内核态逻辑都能探查，使用范围更广。
 
