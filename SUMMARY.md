@@ -285,6 +285,23 @@
     - [多线程并发的网络服务](./C++/多线程/03-多线程并发的网络服务.md)
     - [线程同步案例](./C++/多线程/04-线程同步案例.md)
 
+## BehaviorTree
+
+- 入门
+    - [初始行为树](./BehaviorTree/入门/01-初始行为树.md)
+    - [行为树的基本知识点](./BehaviorTree/入门/02-行为树的基本知识点.md)
+    - [基本类型Tree和TreeNode](./BehaviorTree/入门/03-库中基本类型Tree和TreeNode.md)
+    - [基本类型Factory和Blackboard](./BehaviorTree/入门/04-库中基本类型Factory和Blackboard.md)
+    - [DecoratorNodes源码解析](./BehaviorTree/入门/05-DecoratorNodes源码解析.md)
+    - [ControlNodes源码解析](./BehaviorTree/入门/06-ControlNodes源码解析.md)
+    - [ControlNodes源码解析之Sequence](./BehaviorTree/入门/07-ControlNodes源码解析之Sequence.md)
+    - [ActionNode及同步和异步](./BehaviorTree/入门/08-ActionNode及同步和异步.md)
+    - [各种调试工具介绍](./BehaviorTree/入门/09-各种调试工具介绍.md)
+    - [Logger类实现原理解析-单例与观察者模式](./BehaviorTree/入门/10-Logger类实现原理解析（单例与观察者模式）.md)
+    - [行为树内外的数据传输](./BehaviorTree/入门/11-行为树内外的数据传输.md)
+    - [从xml创建加载行为树的过程分析](./BehaviorTree/入门/12-从xml创建加载行为树的过程分析.md)
+    - [自定义的用于枚举类型的SwitchNode](./BehaviorTree/入门/13-自定义的用于枚举类型的SwitchNode.md)
+
 ## 数据库基础和进阶
 
 - MySQL
