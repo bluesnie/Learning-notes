@@ -2,7 +2,7 @@
 
 ###### author:nzb
 
-# BT14：自定义的用于枚举类型的SwitchNode
+# BT13：自定义的用于枚举类型的SwitchNode
 
 ## 内建SwitchNode的局限
 
