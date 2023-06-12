@@ -5027,6 +5027,19 @@
             
         </li>
     
+        <li class="chapter " data-level="11.3.1.1.3" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识O(NlogN">
+            
+                <span>
+            
+                    
+                    认识O(NlogN)的排序
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5777,7 +5790,7 @@
 
         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\nsetOutput open3, the value is: abc, the blackboard key is &apos;key1&apos; \n&quot;</span>;
         self.setOutput(<span class="hljs-string">&quot;open3&quot;</span>, <span class="hljs-string">&quot;abc&quot;</span>);                                                                 <span class="hljs-comment">// open3 &#x6307;&#x5411;&#x4E86;&#x9ED1;&#x677F; key1</span>
-        self.getInput(<span class="hljs-string">&quot;open4&quot;</span>, key1_v);                                                                 <span class="hljs-comment">// open4 &#x6307;&#x5411;&#x4E86;&#x9ED1;&#x677F; key1&#xFF0C;&#x6240;&#x4EE5;&#x53D6;&#x51FA;&#x6765;&#x4E0A;&#x9762;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x503C;</span>
+        self.getInput(<span class="hljs-string">&quot;open4&quot;</span>, key1_v);                                                                 <span class="hljs-comment">// open4 &#x6307;&#x5411;&#x4E86;&#x9ED1;&#x677F; key1&#xFF0C;&#x6240;&#x4EE5;&#x53D6;&#x51FA;&#x6765;&#x4E0A;&#x9762;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x503C;&#xFF0C;&#x672A;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x9700;&#x8981;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;</span>
         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;self.getInput blackboard &apos;key1&apos; value ---&gt;&quot;</span> &lt;&lt; key1_v &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
 
         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;-------------------port and blackboard size ---------------------------&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
@@ -5788,7 +5801,7 @@
 
         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;open1: &quot;</span> &lt;&lt; self.config().input_ports.find(<span class="hljs-string">&quot;open1&quot;</span>)-&gt;second &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;open2: &quot;</span> &lt;&lt; self.config().input_ports.find(<span class="hljs-string">&quot;open2&quot;</span>)-&gt;second &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;         <span class="hljs-comment">// &#x53D6;&#x5230;&#x503C;&#x4E0D;&#x662F;&#x9884;&#x671F;&#x7684;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; getInput &#x62FF;&#x5230;&#x6620;&#x5C04;&#x7684;&#x9ED1;&#x677F;&#x503C;&#xFF0C;&#x4E0B;&#x4E00;&#x4E2A;&#x4E3A;&#x793A;&#x4F8B;</span>
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;open2: &quot;</span> &lt;&lt; self.getInput&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">&quot;open2&quot;</span>).value() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;open2: &quot;</span> &lt;&lt; self.getInput&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">&quot;open2&quot;</span>).value() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;             <span class="hljs-comment">// getInput&#x6307;&#x5B9A;&#x4E86;&#x7C7B;&#x578B;&#x4E0D;&#x9700;&#x8981;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x83B7;&#x53D6;</span>
         <span class="hljs-comment">// std::cout &lt;&lt; &quot;open3: &quot; &lt;&lt; self.getInput&lt;std::string&gt;(&quot;open3&quot;).value() &lt;&lt; std::endl;          // open3 &#x662F; OutputPort &#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x80FD;&#x83B7;&#x53D6;&#xFF0C;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;</span>
         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;open4: &quot;</span> &lt;&lt; self.getInput&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(<span class="hljs-string">&quot;open4&quot;</span>).value() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
 
@@ -5917,9 +5930,14 @@ GripperInterface::close
 <li><code>InputPort</code>&#xFF1A;&#x53EA;&#x80FD;<code>getInput</code>&#x64CD;&#x4F5C;</li>
 <li><code>registerSimpleAction</code><ul>
 <li>&#x7B80;&#x5355;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;<code>ports</code>&#xFF0C;<strong>&#x4F46;&#x662F;&#x5728;<code>Groot</code>&#x5DE5;&#x5177;&#x4E2D;&#x521A;&#x5F00;&#x59CB;&#x4E0D;&#x663E;&#x793A;&#xFF0C;&#x9700;&#x8981;&#x518D;<code>xml</code>&#x4E2D;<code>TreeNodesModel</code>&#x5BF9;&#x5E94;&#x8282;&#x70B9;&#x4E0A;&#x52A0;&#x4E0A;&#x53C2;&#x6570;</strong>&#xFF0C;&#x5982;&#x4E0A;&#x56FE;&#x7684; <code>CustomCondition</code>&#x8282;&#x70B9;&#x4E00;&#x6837;</li>
-<li>&#x64CD;&#x4F5C;&#x6570;&#x636E;&#xFF0C;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x51FD;&#x6570;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#xFF1A;<code>open(BT::TreeNode &amp;self); factory.registerSimpleAction(&quot;OpenGripper&quot;, std::bind(&amp;GripperInterface::open, gripper, std::placeholders::_1), ports);</code><ul>
+<li>&#x64CD;&#x4F5C;&#x6570;&#x636E;&#xFF0C;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x51FD;&#x6570;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#xFF1A;
+<code>open(BT::TreeNode &amp;self); factory.registerSimpleAction(&quot;OpenGripper&quot;, std::bind(&amp;GripperInterface::open, gripper, std::placeholders::_1), ports);</code><ul>
 <li><code>std::placeholders::_1</code>&#xFF1A;&#x5360;&#x4F4D;&#x4F7F;&#x7528;</li>
-<li>&#x8BFB;&#x53D6;<code>ports</code>&#x6570;&#x636E;&#xFF1A;<code>self.getInput</code></li>
+<li>&#x8BFB;&#x53D6;<code>ports</code>&#x6570;&#x636E;&#xFF1A;<code>self.getInput</code><ul>
+<li>&#x5199;&#x6CD5;1&#xFF0C;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#xFF1A;<code>Position2D data = self.getInput&lt;Position2D&gt;(&quot;key&quot;);</code></li>
+<li>&#x5199;&#x6CD5;2&#xFF0C;&#x5148;&#x58F0;&#x660E;&#x4E86;&#x6570;&#x636E;&#xFF1A;<code>Position2D pos; self.getInput(&quot;key&quot;, pos);</code></li>
+</ul>
+</li>
 <li>&#x8BBE;&#x7F6E;<code>ports</code>&#x6570;&#x636E;&#xFF1A;<code>self.setOutput</code></li>
 <li>&#x8BFB;&#x53D6;&#x9ED1;&#x677F;&#x6570;&#x636E;&#xFF1A;<code>std::string key1_v; self.config().blackboard-&gt;get(&quot;key1&quot;, key1_v);</code></li>
 <li>&#x8BBE;&#x7F6E;&#x9ED1;&#x677F;&#x6570;&#x636E;&#xFF1A;<code>self.config().blackboard-&gt;set(&quot;key1&quot;, &quot;789&quot;);</code></li>
@@ -5969,7 +5987,7 @@ GripperInterface::close
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"registerSimpleNode相关数据传输","level":"5.1.14","depth":2,"next":{"title":"MySQL","level":"6.1","depth":1,"ref":"","articles":[{"title":"计算机二级","level":"6.1.1","depth":2,"path":"Database/MySQL/计算机二级MySQL.md","ref":"./Database/MySQL/计算机二级MySQL.md","articles":[]},{"title":"数据库三大范式","level":"6.1.2","depth":2,"path":"Database/MySQL/数据库三大范式.md","ref":"./Database/MySQL/数据库三大范式.md","articles":[]},{"title":"MySQL主从复制","level":"6.1.3","depth":2,"path":"Database/MySQL/主从复制.md","ref":"./Database/MySQL/主从复制.md","articles":[]}]},"previous":{"title":"自定义的用于枚举类型的SwitchNode","level":"5.1.13","depth":2,"path":"BehaviorTree/入门/13-自定义的用于枚举类型的SwitchNode.md","ref":"./BehaviorTree/入门/13-自定义的用于枚举类型的SwitchNode.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BehaviorTree/入门/14-registerSimpleNode相关数据传输.md","mtime":"2023-06-02T10:02:53.636Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-03T08:37:58.250Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"registerSimpleNode相关数据传输","level":"5.1.14","depth":2,"next":{"title":"MySQL","level":"6.1","depth":1,"ref":"","articles":[{"title":"计算机二级","level":"6.1.1","depth":2,"path":"Database/MySQL/计算机二级MySQL.md","ref":"./Database/MySQL/计算机二级MySQL.md","articles":[]},{"title":"数据库三大范式","level":"6.1.2","depth":2,"path":"Database/MySQL/数据库三大范式.md","ref":"./Database/MySQL/数据库三大范式.md","articles":[]},{"title":"MySQL主从复制","level":"6.1.3","depth":2,"path":"Database/MySQL/主从复制.md","ref":"./Database/MySQL/主从复制.md","articles":[]}]},"previous":{"title":"自定义的用于枚举类型的SwitchNode","level":"5.1.13","depth":2,"path":"BehaviorTree/入门/13-自定义的用于枚举类型的SwitchNode.md","ref":"./BehaviorTree/入门/13-自定义的用于枚举类型的SwitchNode.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BehaviorTree/入门/14-registerSimpleNode相关数据传输.md","mtime":"2023-06-08T09:36:05.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-12T08:48:22.172Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

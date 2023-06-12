@@ -84,7 +84,7 @@ public:
 
         std::cout << "\nsetOutput open3, the value is: abc, the blackboard key is 'key1' \n";
         self.setOutput("open3", "abc");                                                                 // open3 指向了黑板 key1
-        self.getInput("open4", key1_v);                                                                 // open4 指向了黑板 key1，所以取出来上面修改后的值
+        self.getInput("open4", key1_v);                                                                 // open4 指向了黑板 key1，所以取出来上面修改后的值，未指定类型需要第二个参数
         std::cout << "self.getInput blackboard 'key1' value --->" << key1_v << std::endl;
         
         std::cout << "-------------------port and blackboard size ---------------------------" << std::endl;
@@ -95,7 +95,7 @@ public:
 
         std::cout << "open1: " << self.config().input_ports.find("open1")->second << std::endl;
         std::cout << "open2: " << self.config().input_ports.find("open2")->second << std::endl;         // 取到值不是预期的，应该使用 getInput 拿到映射的黑板值，下一个为示例
-        std::cout << "open2: " << self.getInput<std::string>("open2").value() << std::endl;
+        std::cout << "open2: " << self.getInput<std::string>("open2").value() << std::endl;             // getInput指定了类型不需要第二个参数，直接获取
         // std::cout << "open3: " << self.getInput<std::string>("open3").value() << std::endl;          // open3 是 OutputPort 类型，不能获取，只能设置
         std::cout << "open4: " << self.getInput<std::string>("open4").value() << std::endl;
 
@@ -143,7 +143,7 @@ void ports_demo()
     tree.tickRootWhileRunning();
 }
 ```
- 
+
 - 行为树
 
 ```xml
@@ -227,9 +227,12 @@ GripperInterface::close
     - `InputPort`：只能`getInput`操作
     - `registerSimpleAction`
         - 简单节点可以提供`ports`，**但是在`Groot`工具中刚开始不显示，需要再`xml`中`TreeNodesModel`对应节点上加上参数**，如上图的 `CustomCondition`节点一样
-        - 操作数据，前提条件函数需要添加一个节点参数，如：`open(BT::TreeNode &self); factory.registerSimpleAction("OpenGripper", std::bind(&GripperInterface::open, gripper, std::placeholders::_1), ports);`
+        - 操作数据，前提条件函数需要添加一个节点参数，如：
+          `open(BT::TreeNode &self); factory.registerSimpleAction("OpenGripper", std::bind(&GripperInterface::open, gripper, std::placeholders::_1), ports);`
             - `std::placeholders::_1`：占位使用
             - 读取`ports`数据：`self.getInput`
+                - 写法1，指定类型：`Position2D data = self.getInput<Position2D>("key");`
+                - 写法2，先声明了数据：`Position2D pos; self.getInput("key", pos);`
             - 设置`ports`数据：`self.setOutput`
             - 读取黑板数据：`std::string key1_v; self.config().blackboard->get("key1", key1_v);`
             - 设置黑板数据：`self.config().blackboard->set("key1", "789");`

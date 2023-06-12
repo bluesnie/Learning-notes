@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="02-认识O(NlogN" />
+    
     
     <link rel="prev" href="../../01-算法.html" />
     
@@ -5027,6 +5029,19 @@
             
         </li>
     
+        <li class="chapter " data-level="11.3.1.1.3" data-path="02-认识O(NlogN">
+            
+                <span>
+            
+                    
+                    认识O(NlogN)的排序
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5704,6 +5719,7 @@
 <p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x4E2D;&#xFF0C;&#x5E38;&#x6570;&#x64CD;&#x4F5C;&#x6570;&#x91CF;&#x7684;&#x4E00;&#x4E2A;&#x6307;&#x6807;&#x3002;&#x5E38;&#x7528;O(&#x8BFB;&#x4F5C;big O)&#x6765;&#x8868;&#x793A;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x5148;&#x8981;&#x5BF9;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x975E;&#x5E38;&#x719F;&#x6089;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x5199;&#x51FA;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x4E2D;&#xFF0C;&#x53D1;&#x751F;&#x4E86;&#x591A;&#x5C11;&#x5E38;&#x6570;&#x64CD;&#x4F5C;&#xFF0C;&#x8FDB;&#x800C;&#x603B;&#x7ED3;&#x51FA;&#x5E38;&#x6570;&#x64CD;&#x4F5C;&#x6570;&#x91CF;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
 <p>&#x5728;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#xFF0C;&#x53EA;&#x8981;&#x9AD8;&#x9636;&#x9879;&#xFF0C;&#x4E0D;&#x8981;&#x4F4E;&#x9636;&#x9879;&#xFF0C;&#x4E5F;&#x4E0D;&#x8981;&#x9AD8;&#x9636;&#x9879;&#x7684;&#x7CFB;&#x6570;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x90E8;&#x5206;&#x5982;&#x679C;&#x4E3A;f(N)&#xFF0C;&#x90A3;&#x4E48;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(f(N))&#x3002;</p>
 <p>&#x8BC4;&#x4EF7;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x7684;&#x597D;&#x574F;&#xFF0C;&#x5148;&#x770B;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x6307;&#x6807;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5206;&#x6790;&#x4E0D;&#x540C;&#x6570;&#x636E;&#x6837;&#x672C;&#x4E0B;&#x7684;&#x5B9E;&#x9645;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x201C;&#x5E38;&#x6570;&#x9879;&#x65F6;&#x95F4;&#x201D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7528;&#x5B9E;&#x9645;&#x8DD1;&#x4E00;&#x904D;&#x7A0B;&#x5E8F;&#x5BF9;&#x6BD4;&#x3002;</p>
+<p>&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x6309;&#x7167;&#x6700;&#x5DEE;&#x60C5;&#x51B5;&#x6765;&#x4F30;&#x8BA1;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</p>
 <h3 id="&#x9009;&#x62E9;&#x6392;&#x5E8F;&#x3001;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#x7EC6;&#x8282;&#x7684;&#x8BB2;&#x89E3;&#x4E0E;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;">&#x9009;&#x62E9;&#x6392;&#x5E8F;&#x3001;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#x7EC6;&#x8282;&#x7684;&#x8BB2;&#x89E3;&#x4E0E;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;</h3>
 <ul>
 <li><p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(N^2)</p>
@@ -5720,8 +5736,8 @@ random.shuffle(data)
 print(data)
 
 <span class="hljs-comment"># &#x989D;&#x5916;&#x7A7A;&#x95F4;&#xFF0C;i&#x3001;min_idx&#x3001;j&#xFF0C;&#x6709;&#x9650;&#x6570;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;O(1)</span>
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):     
-    min_idx = i                 
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+    min_idx = i
     <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i + <span class="hljs-number">1</span>, len(data)):
         <span class="hljs-keyword">if</span> data[j] &lt; data[min_idx]:
             min_idx = j
@@ -5756,6 +5772,205 @@ print(data)
             data[j], data[j + <span class="hljs-number">1</span>] = data[j + <span class="hljs-number">1</span>], data[j]
 print(data)
 </code></pre>
+<h3 id="&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7EC6;&#x8282;&#x7684;&#x8BB2;&#x89E3;&#x4E0E;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;">&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7EC6;&#x8282;&#x7684;&#x8BB2;&#x89E3;&#x4E0E;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;</h3>
+<ul>
+<li><code>[3, 2, 5, 4, 2, 3, 1]</code></li>
+<li>&#x4E0B;&#x6807;<code>0~0</code>&#xFF1A;&#x6709;&#x5E8F;</li>
+<li>&#x4E0B;&#x6807;<code>0~1</code>&#xFF1A;2&#x6BD4;3&#x5C11;&#xFF0C;&#x5219;0&#x548C;1&#x4F4D;&#x7F6E;&#x4EA4;&#x6362;&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;&#x6CA1;&#x6570;&#x4E86;&#xFF0C;&#x5219; <code>0~1</code>&#x6709;&#x5E8F;&#x4E86;&#xFF0C;&#x5373;&#xFF1A;<code>[2, 3, 5, 4, 2, 3, 1]</code></li>
+<li>&#x4E0B;&#x6807;<code>0~2</code>&#xFF1A;5&#x4E0D;&#x6BD4;3&#x5C0F;&#xFF0C;&#x5219;&#x4E0D;&#x770B;&#x4E86;<code>0~2</code>&#x6709;&#x5E8F;&#x4E86;&#xFF0C;&#x5373;&#xFF1A;<code>[2, 3, 5, 4, 2, 3, 1]</code></li>
+<li>&#x4E0B;&#x6807;<code>0~3</code>&#xFF1A;4&#x6BD4;3&#x5C0F;&#xFF0C;4&#x548C;3&#x4F4D;&#x7F6E;&#x4EA4;&#x6362;&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;4&#x4E0D;&#x6BD4;3&#x5C0F;&#xFF0C;&#x5219;&#x4E0D;&#x770B;&#x4E86;&#xFF0C;<code>0~3</code>&#x6709;&#x5E8F;&#x4E86;&#xFF0C;&#x5373;&#xFF1A;<code>[2, 3, 4, 5, 2, 3, 1]</code></li>
+<li>&#x4E0B;&#x6807;<code>0~4</code>&#xFF1A;2&#x6BD4;5&#x5C0F;&#xFF0C;2&#x548C;5&#x4F4D;&#x7F6E;&#x4EA4;&#x6362;<code>[2, 3, 4, 2, 5, 3, 1]</code>&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;2&#x6BD4;4&#x5C0F;&#xFF0C;&#x4EA4;&#x6362;<code>[2, 3, 2, 4, 5, 3, 1]</code>&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;2&#x6BD4;3&#x5C0F;&#xFF0C;&#x4EA4;&#x6362;<code>[2, 2, 3, 4, 5, 3, 1]</code>
+&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;2&#x4E0D;&#x6BD4;2&#x5C0F;&#xFF0C;&#x5219;&#x4E0D;&#x770B;&#x4E86;&#xFF0C;<code>0~4</code>&#x6709;&#x5E8F;&#x4E86;&#xFF0C;&#x5373;&#xFF1A;<code>[2, 2, 3, 4, 5, 3, 1]</code></li>
+<li>&#x4E0B;&#x6807;<code>0~5</code>&#xFF1A;3&#x6BD4;5&#x5C0F;&#xFF0C;3&#x548C;5&#x4F4D;&#x7F6E;&#x4EA4;&#x6362;<code>[2, 2, 3, 4, 3, 5, 1]</code>&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;3&#x6BD4;4&#x5C0F;&#xFF0C;&#x4EA4;&#x6362;<code>[2, 2, 3, 3, 4, 5, 1]</code>&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;&#x518D;&#x5F80;&#x524D;&#x770B;&#xFF0C;3&#x4E0D;&#x6BD4;3&#x5C0F;&#xFF0C;&#x5219;&#x4E0D;&#x770B;&#x4E86;&#xFF0C;<code>0~5</code>
+&#x6709;&#x5E8F;&#x4E86;&#xFF0C;&#x5373;&#xFF1A;<code>[2, 2, 3, 3, 4, 5, 1]</code></li>
+<li><p>&#x4E0B;&#x6807;<code>0~6</code>&#xFF1A;1&#x4E00;&#x76F4;&#x4F1A;&#x5F80;&#x524D;&#x770B;&#xFF0C;&#x5E76;&#x4EA4;&#x6362;&#xFF0C;&#x76F4;&#x5230;&#x4E0D;&#x6BD4;&#x524D;&#x9762;&#x5C0F;&#x6216;&#x524D;&#x9762;&#x6CA1;&#x6570;&#x4E86;&#xFF0C;&#x5219;<code>0~6</code>&#x6709;&#x5E8F;&#x4E86;&#xFF0C;&#x5373;&#xFF1A;<code>[1, 2, 2, 3, 3, 4, 5]</code></p>
+</li>
+<li><p>&#x603B;&#x7ED3;&#xFF1A;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8DDF;&#x6570;&#x636E;&#x72B6;&#x51B5;&#x7684;&#x4E0D;&#x540C;&#x800C;&#x4E0D;&#x540C;</p>
+<ul>
+<li><code>[7, 6, 5, 4, 3, 2, 1]</code>&#xFF1A;&#x4EA4;&#x6362;&#x6B21;&#x6570;(&#x7B49;&#x5DEE;&#x6570;&#x5217;)&#xFF1A;<code>1+2+3+4...</code>&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<code>O(N^2)</code></li>
+<li><code>[1, 2, 3, 4, 5, 6, 7]</code> &#xFF1A;&#x6BCF;&#x6B21;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x4E0D;&#x7528;&#x4EA4;&#x6362;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<code>O(N)</code></li>
+<li><strong>&#x63A8;&#x7B97;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8868;&#x73B0;&#xFF0C;&#x90FD;&#x662F;&#x6309;&#x6700;&#x5DEE;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x53CA;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x4E3A;&#xFF1A;<code>O(N^2)</code></strong></li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python">data = [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
+
+print(data)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+    <span class="hljs-comment"># for j in range(i - 1, -1, -1):  # &#x5305;&#x62EC; i-1&#xFF0C;&#x4E0D;&#x5305;&#x62EC; -1</span>
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, i)[::<span class="hljs-number">-1</span>]:  <span class="hljs-comment"># &#x5305;&#x62EC;0&#xFF0C;&#x4E0D;&#x5305;&#x62EC; i</span>
+        <span class="hljs-keyword">if</span> data[j] &gt; data[j + <span class="hljs-number">1</span>]:
+            data[j], data[j + <span class="hljs-number">1</span>] = data[j + <span class="hljs-number">1</span>], data[j]
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">break</span>
+
+print(data)
+</code></pre>
+<h2 id="&#x4E8C;&#x5206;&#x6CD5;&#x7684;&#x8BE6;&#x89E3;&#x4E0E;&#x6269;&#x5C55;">&#x4E8C;&#x5206;&#x6CD5;&#x7684;&#x8BE6;&#x89E3;&#x4E0E;&#x6269;&#x5C55;</h2>
+<ul>
+<li>1&#xFF09;&#x5728;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x627E;&#x67D0;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;<code>O(logN)</code>&#xFF0C; <code>logN</code>&#x4EE5;&#x4E8C;&#x4E3A;&#x5E95;&#xFF0C;&#x5373;<code>log2^N</code>&#x7684;&#x7F29;&#x5199;</li>
+</ul>
+<blockquote>
+<p>&#x6BD4;&#x5982;17&#x4E2A;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x534A;&#x5230;8&#x4E2A;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5BF9;&#x534A;&#x5230;4&#x4E2A;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5BF9;&#x534A;&#x5230;2&#x4E2A;&#x6570;&#xFF0C;&#x518D;&#x5BF9;&#x534A;&#x5230;1&#x4E2A;&#x6570;&#xFF0C;&#x603B;&#x5171;&#x780D;4&#x6B21;&#xFF0C;&#x5373;<code>log2^16=4</code>
+&#x6BD4;&#x5982;8&#x4E2A;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x534A;&#x5230;4&#x4E2A;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5BF9;&#x534A;&#x5230;2&#x4E2A;&#x6570;&#xFF0C;&#x518D;&#x5BF9;&#x534A;&#x5230;1&#x4E2A;&#x6570;&#xFF0C;&#x603B;&#x5171;&#x780D;3&#x6B21;&#xFF0C;&#x5373;<code>log2^8=3</code>
+&#x6BD4;&#x5982;4&#x4E2A;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x534A;&#x5230;2&#x4E2A;&#x6570;&#xFF0C;&#x518D;&#x5BF9;&#x534A;&#x5230;1&#x4E2A;&#x6570;&#xFF0C;&#x603B;&#x5171;&#x780D;2&#x6B21;&#xFF0C;&#x5373;<code>log2^4=2</code></p>
+</blockquote>
+<pre><code class="lang-python">data = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bin_search</span><span class="hljs-params">(d, search_data)</span>:</span>
+    start, end = <span class="hljs-number">0</span>, len(d) - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> start &lt;= end:
+        <span class="hljs-comment"># mid = (start + end) // 2</span>
+        <span class="hljs-comment"># &gt;&gt; 1&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x6210; // 2, &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x7528;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A; start + end &#x53EF;&#x80FD;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#xFF0C;&#x800C; end &#x548C; start &#x4E0D;&#x4F1A;&#x6EA2;&#x51FA;&#xFF0C;end - start &#x4E5F;&#x4E0D;&#x4F1A;</span>
+        mid = start + ((end - start) &gt;&gt; <span class="hljs-number">1</span>)
+        <span class="hljs-comment"># print(start, end, mid, data[mid])</span>
+        <span class="hljs-keyword">if</span> d[mid] &gt; search_data:
+            end = mid - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">elif</span> d[mid] &lt; search_data:
+            start = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> mid
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+
+
+print(bin_search(data, <span class="hljs-number">5</span>))
+</code></pre>
+<ul>
+<li>2&#xFF09;&#x5728;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x627E;<code>&gt;=</code>&#x67D0;&#x4E2A;&#x6570;&#x6700;&#x5DE6;&#x4FA7;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># ix = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+data = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bin_search</span><span class="hljs-params">(d, search_data)</span>:</span>
+    start, end = <span class="hljs-number">0</span>, len(d) - <span class="hljs-number">1</span>
+    idx = <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">while</span> start &lt;= end:
+        <span class="hljs-comment"># mid = (start + end) // 2</span>
+        <span class="hljs-comment"># &gt;&gt; 1&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x6210; // 2, &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x7528;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A; start + end &#x53EF;&#x80FD;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#xFF0C;&#x800C; end &#x548C; start &#x4E0D;&#x4F1A;&#x6EA2;&#x51FA;&#xFF0C;end - start &#x4E5F;&#x4E0D;&#x4F1A;</span>
+        mid = start + ((end - start) &gt;&gt; <span class="hljs-number">1</span>)
+        <span class="hljs-comment"># print(start, end, mid, data[mid])</span>
+        <span class="hljs-keyword">if</span> d[mid] &gt;= search_data:
+            idx = mid
+            end = mid - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            start = mid + <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">return</span> idx
+
+
+print(bin_search(data, <span class="hljs-number">3</span>))
+</code></pre>
+<ul>
+<li>3&#xFF09;&#x5C40;&#x90E8;&#x6700;&#x5C0F;&#x503C;&#x95EE;&#x9898;(&#x4F7F;&#x7528;&#x4E8C;&#x5206;&#x6CD5;&#x67E5;&#x627E;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x6709;&#x5E8F;&#x624D;&#x80FD;&#x4E8C;&#x5206;)</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># ix = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+data = [<span class="hljs-number">9</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bin_search</span><span class="hljs-params">(d)</span>:</span>
+    start, end = <span class="hljs-number">0</span>, len(d) - <span class="hljs-number">1</span>
+    <span class="hljs-comment"># &#x5904;&#x7406;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x5934;&#x548C;&#x5C3E;</span>
+    <span class="hljs-keyword">if</span> d[start] &lt; d[start + <span class="hljs-number">1</span>]:  <span class="hljs-comment"># [1,2,3]</span>
+        <span class="hljs-keyword">return</span> start
+    <span class="hljs-keyword">elif</span> d[end] &lt; d[end - <span class="hljs-number">1</span>]:  <span class="hljs-comment"># [3,2,1]</span>
+        <span class="hljs-keyword">return</span> end
+    idx = <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">while</span> start &lt;= end:
+        <span class="hljs-comment"># mid = (start + end) // 2</span>
+        <span class="hljs-comment"># &gt;&gt; 1&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x6210; // 2, &#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x7528;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A; start + end &#x53EF;&#x80FD;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#xFF0C;&#x800C; end &#x548C; start &#x4E0D;&#x4F1A;&#x6EA2;&#x51FA;&#xFF0C;end - start &#x4E5F;&#x4E0D;&#x4F1A;</span>
+        mid = start + ((end - start) &gt;&gt; <span class="hljs-number">1</span>)
+        <span class="hljs-comment"># print(start, end, mid, data[mid])</span>
+        <span class="hljs-keyword">if</span> d[mid - <span class="hljs-number">1</span>] &lt; d[mid] &lt; d[mid + <span class="hljs-number">1</span>]:
+            end = mid - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">elif</span> d[mid + <span class="hljs-number">1</span>] &lt; d[mid] &lt; d[mid - <span class="hljs-number">1</span>]:
+            start = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            idx = mid
+            <span class="hljs-keyword">break</span>
+
+    <span class="hljs-keyword">return</span> idx
+
+
+print(bin_search(data))
+</code></pre>
+<h2 id="&#x5BF9;&#x6570;&#x5668;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x4F7F;&#x7528;">&#x5BF9;&#x6570;&#x5668;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x4F7F;&#x7528;</h2>
+<ul>
+<li>1&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x4F60;&#x60F3;&#x8981;&#x6D4B;&#x7684;&#x65B9;&#x6CD5;a</li>
+<li>2&#xFF0C;&#x5B9E;&#x73B0;&#x590D;&#x6742;&#x5EA6;&#x4E0D;&#x597D;&#x4F46;&#x662F;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;b</li>
+<li>3&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6837;&#x672C;&#x4EA7;&#x751F;&#x5668;</li>
+<li>4&#xFF0C;&#x628A;&#x65B9;&#x6CD5;a&#x548C;&#x65B9;&#x6CD5;b&#x8DD1;&#x76F8;&#x540C;&#x7684;&#x968F;&#x673A;&#x6837;&#x672C;&#xFF0C;&#x770B;&#x770B;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E00;&#x6837;&#x3002;</li>
+<li>5&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6837;&#x672C;&#x4F7F;&#x5F97;&#x6BD4;&#x5BF9;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6253;&#x5370;&#x6837;&#x672C;&#x8FDB;&#x884C;&#x4EBA;&#x5DE5;&#x5E72;&#x9884;&#xFF0C;&#x6539;&#x5BF9;&#x65B9;&#x6CD5;a&#x6216;&#x8005;&#x65B9;&#x6CD5;b</li>
+<li>6&#xFF0C;&#x5F53;&#x6837;&#x672C;&#x6570;&#x91CF;&#x5F88;&#x591A;&#x65F6;&#x6BD4;&#x5BF9;&#x6D4B;&#x8BD5;&#x4F9D;&#x7136;&#x6B63;&#x786E;&#xFF0C;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#x65B9;&#x6CD5;a&#x5DF2;&#x7ECF;&#x6B63;&#x786E;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x6BD4;&#x5982;&#x4F7F;&#x7528;&#x5192;&#x6CE1;&#x3001;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7B49;&#x4E0E;Python&#x81EA;&#x5E26;&#x7684;sort&#x5BF9;&#x6BD4;</p>
+</blockquote>
+<h2 id="&#x989D;&#x5916;&#x77E5;&#x8BC6;&#x70B9;&#x5F02;&#x6216;&#x8FD0;&#x7B97;">&#x989D;&#x5916;&#x77E5;&#x8BC6;&#x70B9;&#x5F02;&#x6216;&#x8FD0;&#x7B97;</h2>
+<ul>
+<li>&#x76F8;&#x540C;&#x4E3A;0&#xFF0C;&#x4E0D;&#x540C;&#x4E3A;1&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x65E0;&#x8FDB;&#x4F4D;&#x76F8;&#x52A0;&#xFF0C;&#x4F8B;&#xFF1A;<code>1010 ^ 0110 = 1100</code></li>
+<li><p>&#x5F02;&#x6216;&#x6027;&#x8D28;</p>
+<ul>
+<li><code>0 ^ N = N</code>&#xFF1B;<code>N ^ N = 0</code></li>
+<li>&#x6EE1;&#x8DB3;&#x4EA4;&#x6362;&#x5F8B;&#x548C;&#x7ED3;&#x5408;&#x5F8B;&#xFF1A;<code>a^b = b^a</code>&#xFF1B;<code>(a^b)^c = a^(b^c)</code></li>
+</ul>
+</li>
+<li><p>&#x6839;&#x636E;&#x4E0A;&#x9762;&#x6027;&#x8D28;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x989D;&#x5916;&#x53D8;&#x91CF;&#x4EA4;&#x6362;2&#x4E2A;&#x503C;&#xFF0C;<strong>&#x524D;&#x63D0;&#x6761;&#x4EF6;</strong>&#xFF1A;<code>&#x8FD9;2&#x4E2A;&#x503C;&#x5728;&#x5185;&#x5B58;&#x91CC;&#x9762;&#x662F;2&#x5757;&#x72EC;&#x7ACB;&#x7684;&#x533A;&#x57DF;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x628A;&#x503C;&#x91CD;&#x7F6E;&#x4E3A;0&#xFF0C;&#x53CA;&#x4E0A;&#x9762;&#x7684;&#x6027;&#x8D28;&#xFF1A;N ^ N = 0</code></p>
+</li>
+</ul>
+<pre><code class="lang-python">a, b = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>
+a = a ^ b
+b = a ^ b  <span class="hljs-comment"># b = a ^ b ^ b, &#x7ED3;&#x5408;&#x5F8B;&#xFF1A;b=a</span>
+a = a ^ b  <span class="hljs-comment"># a= a ^ b; b = a; a = a ^ b ^ a&#xFF0C;&#x7ED3;&#x5408;&#x5F8B;&#xFF1A;a=b</span>
+</code></pre>
+<p>&#x540C;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x4EA4;&#x6362;</p>
+<pre><code class="lang-python">a = [[<span class="hljs-number">5</span>]] * <span class="hljs-number">3</span>
+a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] ^ a[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]
+a[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] ^ a[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]
+a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = a[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] ^ a[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]
+<span class="hljs-comment"># a = [[0], [0], [0]]</span>
+</code></pre>
+<h3 id="&#x5F02;&#x6216;&#x9898;&#x76EE;1">&#x5F02;&#x6216;&#x9898;&#x76EE;1</h3>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x5DF2;&#x77E5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x51FA;&#x73B0;&#x4E86;&#x5947;&#x6570;&#x6B21;&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x51FA;&#x73B0;&#x4E86;&#x5076;&#x6570;&#x6B21;&#xFF0C;&#x627E;&#x51FA;&#x51FA;&#x73B0;&#x4E86;&#x5947;&#x6570;&#x6B21;&#x7684;&#x6570;&#xFF1F;&#x8981;&#x6C42;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6; O(N)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</li>
+</ul>
+<pre><code class="lang-python">data = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>]
+eor = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> data:
+    eor ^= i
+print(eor)
+</code></pre>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x5DF2;&#x77E5;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x6570;&#x51FA;&#x73B0;&#x4E86;&#x5947;&#x6570;&#x6B21;&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x51FA;&#x73B0;&#x4E86;&#x5076;&#x6570;&#x6B21;&#xFF0C;&#x627E;&#x51FA;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x6B21;&#x5947;&#x6570;&#x6B21;&#x7684;&#x6570;&#xFF1F;&#x8981;&#x6C42;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6; O(N)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</li>
+</ul>
+<pre><code class="lang-python">data = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">9</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>]
+eor = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> data:
+    eor ^= i
+    <span class="hljs-string">&quot;&quot;&quot;
+    eor = a ^ b;
+    eor != 0
+    eor &#x5FC5;&#x7136;&#x6709;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x662F;1
+
+    eor:            1010111100
+    ~eor:           0101000011
+    ~eor+1:         0101000100
+    eor &amp; (~eor+1): 0000000100   &#x63D0;&#x53D6;&#x51FA;&#x6700;&#x53F3;&#x4FA7;&#x7684;1
+    &quot;&quot;&quot;</span>
+right_one = eor &amp; (~eor + <span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x63D0;&#x53D6;&#x51FA;&#x6700;&#x53F3;&#x4FA7;&#x7684;1</span>
+only_one = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> data:
+    <span class="hljs-comment"># &amp; 2&#x4E2A;&#x4E3A;1&#xFF0C;&#x624D;&#x4E3A;1&#xFF0C;&#x5426;&#x5219;&#x4E3A;0</span>
+    <span class="hljs-comment"># if (right_one &amp; j) == 0:  # &#x7B5B;&#x9009;&#x51FA;&#x90A3;&#x4E00;&#x4F4D;&#x4E3A;0&#xFF0C;&#x4E0E;&#x4E00;&#x4E0B;&#x5C31;&#x4E3A;0&#x4E86;&#xFF0C;&#x4F8B;&#xFF1A;101 &amp; 010 = 000</span>
+    <span class="hljs-keyword">if</span> (right_one &amp; j) == right_one:  <span class="hljs-comment"># &#x7B5B;&#x9009;&#x51FA;&#x90A3;&#x4E00;&#x4F4D;&#x4E5F;&#x4E3A;1&#x7684;&#x503C;&#xFF0C;&#x4F8B;&#xFF1A;110 &amp; 010 = 010</span>
+        <span class="hljs-comment"># print(bin(j)[2:], bin(right_one)[2:])</span>
+        only_one ^= j  <span class="hljs-comment"># a &#x6216; b</span>
+
+print(only_one)
+print(only_one ^ eor)
+</code></pre>
 
                                 
                                 </section>
@@ -5783,10 +5998,14 @@ print(data)
 
             
                 
-                <a href="../../01-算法.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 算法">
+                <a href="../../01-算法.html" class="navigation navigation-prev " aria-label="Previous page: 算法">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="02-认识O(NlogN" class="navigation navigation-next " aria-label="Next page: 认识O(NlogN)的排序">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -5795,7 +6014,7 @@ print(data)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"认识复杂度和简单的排序算法","level":"11.3.1.1.2","depth":4,"next":{"title":"数据结构","level":"11.3.2","depth":2,"ref":"","articles":[{"title":"线性表","level":"11.3.2.1","depth":3,"path":"InterviewPreparation/DataStructuresAlgorithms/02-线性表.md","ref":"InterviewPreparation/DataStructuresAlgorithms/02-线性表.md","articles":[]},{"title":"栈","level":"11.3.2.2","depth":3,"path":"InterviewPreparation/DataStructuresAlgorithms/03-栈.md","ref":"InterviewPreparation/DataStructuresAlgorithms/03-栈.md","articles":[]},{"title":"队列","level":"11.3.2.3","depth":3,"path":"InterviewPreparation/DataStructuresAlgorithms/04-队列.md","ref":"InterviewPreparation/DataStructuresAlgorithms/04-队列.md","articles":[]},{"title":"特殊矩阵压缩存储","level":"11.3.2.4","depth":3,"path":"InterviewPreparation/DataStructuresAlgorithms/05-特殊矩阵压缩存储.md","ref":"InterviewPreparation/DataStructuresAlgorithms/05-特殊矩阵压缩存储.md","articles":[]},{"title":"串","level":"11.3.2.5","depth":3,"path":"InterviewPreparation/DataStructuresAlgorithms/06-串.md","ref":"InterviewPreparation/DataStructuresAlgorithms/06-串.md","articles":[]},{"title":"树与二叉树","level":"11.3.2.6","depth":3,"path":"InterviewPreparation/DataStructuresAlgorithms/07-树与二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/07-树与二叉树.md","articles":[]}]},"previous":{"title":"算法","level":"11.3.1.1.1","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/01-算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/01-算法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/01-认识复杂度和简单的排序算法.md","mtime":"2023-06-03T08:16:40.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-03T08:37:58.250Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"认识复杂度和简单的排序算法","level":"11.3.1.1.2","depth":4,"next":{"title":"认识O(NlogN)的排序","level":"11.3.1.1.3","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识O(NlogN","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识O(NlogN","articles":[]},"previous":{"title":"算法","level":"11.3.1.1.1","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/01-算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/01-算法.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/01-认识复杂度和简单的排序算法.md","mtime":"2023-06-08T01:58:11.261Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-12T08:48:22.172Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

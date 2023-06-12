@@ -412,6 +412,7 @@
         - 基础
             - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
             - [认识复杂度和简单的排序算法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/01-认识复杂度和简单的排序算法.md)
+            - [认识O(NlogN)的排序](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识O(NlogN)的排序.md)
     - 数据结构    
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
