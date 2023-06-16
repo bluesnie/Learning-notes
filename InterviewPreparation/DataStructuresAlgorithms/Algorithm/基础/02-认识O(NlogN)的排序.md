@@ -66,7 +66,8 @@ print(max_value(data, 0, len(data) - 1))
 
 ## 归并排序
 
-- 整体就是一个简单递归，左边排好序、右边排好序、让其整体有序2）让其整体有序的过程里用了排外序方法
+- 整体就是一个简单递归，左边排好序、右边排好序、让其整体有序
+- 让其整体有序的过程里用了排外序方法
 - 利用master公式来求解时间复杂度，`master`公式：`T(N) = 2 * T(N/2) + O(N)`，log(2, 2) = 1，所以时间复杂度：`O(N * logN)`
 - 归并排序的实质
 - 时间复杂度：`O(N * logN)`，额外空间复杂度`O(N)`
@@ -83,6 +84,8 @@ def merge_sort(arr):
     left = merge_sort(arr[:mid])  # T(N/2)
     right = merge_sort(arr[mid:])  # T(N/2)
     return merge(left, right)
+    # mid = len(arr) >> 1  # len(arr) // 2
+    # return  merge(merge_sort(arr[:mid]), merge_sort(arr[mid:]))
 
 
 def merge(left, right):
@@ -100,17 +103,129 @@ def merge(left, right):
 print(merge_sort(data))
 ```
 
-- 归并排序是如何做到时间复杂度从 `O(N^2)`到 `O(N*logN)`?
+- 归并排序实质，归并排序是如何做到时间复杂度从 `O(N^2)`到 `O(N*logN)`?
     - 冒泡、选择排序，浪费了大量的比较行为，比如选择排序，0~N-1范围上，比较了N次才知道了放到0位置，只搞定了一个数，0~N-2范围上，比较了N-1次才搞定一个数，以此类推，每一轮的比较都是独立的，浪费了多次比较才搞定一个数
     - 归并排序没有浪费比较行为，左侧部分有序，右侧部分有序，接下来比较是左侧部分的指针和右侧部分的指针，依次从左到右，左侧跟右侧的比，这个比较行为信息没有浪费，
       变成了一个整体有序的部分，下一回轮到这个大部分继续跟另一个大部分继续merge出来一个更长的有序部分，依次往下传递，所以时间复杂度更优
 
+### 归并排序的扩展
+
+- 小和问题：在一个数组中，每一个数左边比当前数小的数累加起来，叫做这个数组的小和。求一个数组的小和。
+    - 例子:`[1,3,4,2,5]` 1左边比1小的数，没有; 3左边比3小的数，1; 4左边比4小的数，1、3; 2左边比2小的数，1; 5左边比5小的数，1、3、4、2; 所以小和为`1+1+3+1+1+3+4+2=16`
+    - 暴力解法：O(N^2)
+    - 转换思路，求一个数前面的小和，比如对于1来说，右边有多少个数比1大，就产生多少个数乘以1的小和，右边有多少个数比3大，就产生多少个数乘以3的小和
+        - `1: 4 * 1`
+        - `3: 2 * 3`
+        - `4: 4 * 1`
+        - `2: 2 * 1`
+
+```python
+# idx = [0, 1, 2, 3, 4]
+data = [1, 3, 4, 2, 5]
 
 
+def small_sum(arr):
+    if not arr or len(arr) < 2:
+        return 0
+    return merge_sort(arr, 0, len(arr) - 1)
 
 
+def merge_sort(arr, left, right):
+    if left == right:
+        return 0
+    mid = left + ((right - left) >> 1)  # len(arr) // 2
+    # 左组在排序的时候求小和，右组在排序的时候求小和，左组和右组合并的时候也要求小和
+    return merge_sort(arr, left, mid) + merge_sort(arr, mid + 1, right) + merge(arr, left, mid, right)
 
 
+def merge(arr, left, mid, right):
+    # tmp = [0] * (right - left + 1)  # 长度：right - left + 1
+    tmp = []
+    i = 0
+    p1 = left
+    p2 = mid + 1
+    res = 0
+    while p1 <= mid and p2 <= right:  # 都不越界
+        if arr[p1] < arr[p2]:
+            res += (right - p2 + 1) * arr[p1]  # 求小和
+            # tmp[i] = arr[p1]
+            tmp.append(arr[p1])
+            p1 += 1
+        else:  # 左组的数和右组的数相等的时候，需要先拷贝右组的数，并且不产生小和，否则不知道右组有多少个小和：[1,1,1,2,2,3,4,5]  [1,1,2,3,4,4,5,5]
+            # tmp[i] = arr[p2]
+            tmp.append(arr[p2])
+            p2 += 1
+        i += 1
+    # while p1 <= mid:
+    #     tmp[i] = arr[p1]
+    #     i += 1
+    #     p1 += 1
+    # while p2 <= right:
+    #     tmp[i] = arr[p2]
+    #     i += 1
+    #     p2 += 1
+    tmp += arr[p1:mid + 1]
+    tmp += arr[p2:right + 1]
+    for k, v in enumerate(tmp):
+        arr[left + k] = v
+    return res
+
+
+print(small_sum(data))
+```    
+
+- 逆序对问题：在一个数组中，左边的数如果比右边的数大，则这两个数构成一个逆序对，请打印所有逆序对(请找到逆序对)。
+    - 例子:`[3,2,4,5,0]`
+        - `3,2`
+        - `3,0`
+        - `2,0`
+        - `4,0`
+        - `5,0`
+
+```python
+# idx = [0, 1, 2, 3, 4]
+data = [3, 2, 4, 5, 0]
+
+
+def reverse_pair(arr):
+    if not arr or len(arr) < 2:
+        return 0
+    return merge_sort(arr, 0, len(arr) - 1)
+
+
+def merge_sort(arr, left, right):
+    if left == right:
+        return 0
+    mid = left + ((right - left) >> 1)
+    return merge_sort(arr, left, mid) + merge_sort(arr, mid + 1, right) + merge(arr, left, mid, right)
+
+
+def merge(arr, left, mid, right):
+    tmp = []
+    cnt = 0
+    p1 = left
+    p2 = mid + 1
+    while p1 <= mid and p2 <= right:
+        if arr[p1] > arr[p2]:
+            print(arr[p1], arr[p2])
+            tmp.append(arr[p1])
+            cnt += right - p2 + 1
+            p1 += 1
+        else:  # 左组的数和右组的数相等的时候，需要先拷贝右组的数，并且不产生逆序对[1,1,1,2,2,3,4,5]  [1,1,2,3,4,4,5,5]
+            tmp.append(arr[p2])
+            p2 += 1
+
+    tmp += arr[p1:mid + 1]
+    tmp += arr[p2:right + 1]
+    for k, v in enumerate(tmp):
+        arr[left + k] = v
+    return cnt
+
+
+print(reverse_pair(data))
+```
+
+## 快速排序
 
 
 
