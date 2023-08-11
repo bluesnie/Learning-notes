@@ -5864,6 +5864,492 @@ StdCoutLogger::~StdCoutLogger() { ref_count.store(<span class="hljs-literal">fal
   <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::weak_ptr&lt;CallableFunction&gt;&gt; subscribers_;
 };
 </code></pre>
+<h2 id="publisherzmq-json&#x7248;&#x672C;">PublisherZMQ JSON&#x7248;&#x672C;</h2>
+<ul>
+<li><code>bt_zmq_pub_json.h</code></li>
+</ul>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _BT_ZMQ_PUB_JSON_H_</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _BT_ZMQ_PUB_JSON_H_</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;map&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;cppzmq/zmq.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rapidjson/stringbuffer.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rapidjson/writer.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rapidjson/document.h&quot;</span></span>
+
+<span class="hljs-keyword">typedef</span> rapidjson::Document JSON;
+<span class="hljs-keyword">typedef</span> rapidjson::Value JValue;
+
+<span class="hljs-keyword">class</span> PublisherJsonZMQ : <span class="hljs-keyword">public</span> BT::StatusChangeLogger
+{
+    <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::atomic&lt;<span class="hljs-keyword">bool</span>&gt; ref_cnt;
+
+<span class="hljs-keyword">public</span>:
+    PublisherJsonZMQ(<span class="hljs-keyword">const</span> BT::Tree &amp;tree, <span class="hljs-keyword">unsigned</span> max_msg_per_second = <span class="hljs-number">25</span>, <span class="hljs-keyword">unsigned</span> publisher_port = <span class="hljs-number">1666</span>, <span class="hljs-keyword">unsigned</span> server_port = <span class="hljs-number">1667</span>);
+    <span class="hljs-keyword">virtual</span> ~PublisherJsonZMQ();
+
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">callback</span><span class="hljs-params">(BT::Duration timestamp, <span class="hljs-keyword">const</span> BT::TreeNode &amp;node, BT::NodeStatus prev_status, BT::NodeStatus status)</span> override</span>;
+    <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flush</span><span class="hljs-params">()</span> override</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CreateJsonBehaviorTree</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">createStatusData</span><span class="hljs-params">()</span></span>;
+
+    <span class="hljs-keyword">const</span> BT::Tree &amp;tree_;          <span class="hljs-comment">// &#x6811;&#x6307;&#x9488;&#x5F15;&#x7528;</span>
+    JSON tree_data_;                <span class="hljs-comment">// &#x6811;&#x6570;&#x636E;</span>
+    JSON status_transition_data_;   <span class="hljs-comment">// &#x72B6;&#x6001;&#x548C;&#x53D8;&#x66F4;&#x6570;&#x636E;</span>
+    JValue status_data_;            <span class="hljs-comment">// &#x5F53;&#x524D;&#x6811;&#x72B6;&#x6001;&#x6570;&#x636E;</span>
+    JValue transition_data_;        <span class="hljs-comment">// &#x72B6;&#x6001;&#x53D8;&#x66F4;&#x6570;&#x636E;</span>
+    <span class="hljs-built_in">std</span>::chrono::microseconds min_time_between_msgs_;
+
+    <span class="hljs-built_in">std</span>::<span class="hljs-keyword">atomic_bool</span> active_server_;
+    <span class="hljs-built_in">std</span>::thread thread_;
+
+    <span class="hljs-built_in">std</span>::mutex mutex_;
+    <span class="hljs-built_in">std</span>::<span class="hljs-keyword">atomic_bool</span> send_pending_;
+    <span class="hljs-built_in">std</span>::condition_variable send_condition_variable_;
+    <span class="hljs-built_in">std</span>::future&lt;<span class="hljs-keyword">void</span>&gt; send_future_;
+
+    <span class="hljs-keyword">struct</span> Pimpl;
+    Pimpl *zmq_;
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+<ul>
+<li><code>bt_zmq_pub_json.cpp</code></li>
+</ul>
+<pre><code class="lang-c++">#include &quot;bt_zmq_pub_json.h&quot;
+
+const char *json_to_str(rapidjson::Document &amp;json, rapidjson::StringBuffer &amp;buffer)
+{
+    rapidjson::Writer&lt;rapidjson::StringBuffer&gt; writer(buffer);
+    json.Accept(writer);
+    auto str_msg = buffer.GetString();
+    return str_msg;
+}
+
+std::atomic&lt;bool&gt; PublisherJsonZMQ::ref_cnt(false);
+
+struct PublisherJsonZMQ::Pimpl
+{
+    Pimpl() : ctx(1), publisher(ctx, ZMQ_PUB), server(ctx, ZMQ_REP) {}
+
+    zmq::context_t ctx;
+    zmq::socket_t publisher;
+    zmq::socket_t server;
+};
+
+PublisherJsonZMQ::PublisherJsonZMQ(const BT::Tree &amp;tree, unsigned max_msg_per_second, unsigned publisher_port, unsigned server_port) : StatusChangeLogger(tree.rootNode()),
+                                                                                                                                       tree_(tree),
+                                                                                                                                       min_time_between_msgs_(std::chrono::microseconds(1000 * 1000) / max_msg_per_second),
+                                                                                                                                       send_pending_(false),
+                                                                                                                                       zmq_(new Pimpl()),
+                                                                                                                                       status_data_(rapidjson::kArrayType),
+                                                                                                                                       transition_data_(rapidjson::kArrayType)
+{
+    bool expected = false;
+    if (!ref_cnt.compare_exchange_strong(expected, true))
+    {
+        throw BT::LogicError(&quot;Only one instace of PublisherJsonZMQ shall be created&quot;);
+    }
+    if (publisher_port == server_port)
+    {
+        throw BT::LogicError(&quot;The TCP ports of the publisher and the server must be different&quot;);
+    }
+    // &#x521B;&#x5EFA;json&#x6811;
+    CreateJsonBehaviorTree();
+
+    char str[100];
+    sprintf(str, &quot;tcp://*:%d&quot;, publisher_port);
+    zmq_-&gt;publisher.bind(str);                      // &#x72B6;&#x6001;&#x53D1;&#x5E03;&#x8BDD;&#x9898; pub
+    sprintf(str, &quot;tcp://*:%d&quot;, server_port);
+    zmq_-&gt;server.bind(str);                         // &#x6811;&#x6570;&#x636E;rep
+
+    int timeout_ms = 100;
+    zmq_-&gt;server.set(zmq::sockopt::rcvtimeo, timeout_ms);
+
+    active_server_ = true;
+    // &#x542F;&#x7EBF;&#x7A0B;&#x63A5;&#x6536; req &#x8BF7;&#x6C42;
+    thread_ = std::thread([this]()
+                          {
+    while (active_server_)
+    {
+      zmq::message_t req;
+      try
+      {
+        zmq::recv_result_t received = zmq_-&gt;server.recv(req);
+        if (received)
+        {
+        // to string
+          rapidjson::StringBuffer buffer;
+          auto tree_str = json_to_str(tree_data_, buffer);
+          SPDLOG_DEBUG(&quot;behavior_tree-&gt; {}&quot;, tree_str);
+          zmq::message_t reply(strlen(tree_str));
+          memcpy(reply.data(), tree_str, strlen(tree_str));
+          // send data
+          zmq_-&gt;server.send(reply, zmq::send_flags::none);
+        }
+      }
+      catch (zmq::error_t&amp; err)
+      {
+        if (err.num() == ETERM)
+        {
+          SPDLOG_INFO(&quot;[PublisherZMQ] Server quitting.&quot;);
+        }
+        SPDLOG_ERROR(&quot;[PublisherZMQ] just died. Exception {} &quot;,  err.what());
+        active_server_ = false;
+      }
+    } });
+}
+
+PublisherJsonZMQ::~PublisherJsonZMQ()
+{
+    active_server_ = false;
+    if (thread_.joinable())
+    {
+        thread_.join();
+    }
+    if (send_pending_)
+    {
+        send_condition_variable_.notify_all();
+        send_future_.get();
+    }
+    flush();
+    zmq_-&gt;ctx.shutdown();
+    delete zmq_;
+    ref_cnt = false;
+}
+
+void PublisherJsonZMQ::CreateJsonBehaviorTree()
+{
+    rapidjson::Document::AllocatorType &amp;allocator = tree_data_.GetAllocator();
+    tree_data_.SetObject();
+    // &#x5F53;&#x524D;&#x6240;&#x5728;&#x6811;&#x8282;&#x70B9;
+    JValue tree_nodes(rapidjson::kArrayType);
+    BT::applyRecursiveVisitor(tree_.rootNode(), [&amp;](BT::TreeNode *node)
+                              {
+                                  // &#x5B50;&#x8282;&#x70B9;
+                                  JValue children_uid(rapidjson::kArrayType);
+                                  // &#x63A7;&#x5236;&#x8282;&#x70B9;
+                                  if (auto control = dynamic_cast&lt;BT::ControlNode *&gt;(node))
+                                  {
+                                      for (const auto &amp;child : control-&gt;children())
+                                      {
+                                          children_uid.PushBack(child-&gt;UID(), allocator);
+                                      }
+                                  }
+                                  // &#x88C5;&#x9970;&#x8282;&#x70B9;
+                                  else if (auto decorator = dynamic_cast&lt;BT::DecoratorNode *&gt;(node))
+                                  {
+                                      const auto &amp;child = decorator-&gt;child();
+                                      children_uid.PushBack(child-&gt;UID(), allocator);
+                                  }
+                                  // &#x8282;&#x70B9;&#x8F93;&#x5165;&#x7AEF;&#x53E3;
+                                  JValue ports(rapidjson::kArrayType);
+                                  for (const auto &amp;it : node-&gt;config().input_ports)
+                                  {
+                                      JValue port_obj(rapidjson::kObjectType);
+                                      JValue key(it.first.c_str(), allocator);
+                                      JValue val(it.second.c_str(), allocator);
+                                      port_obj.AddMember(key, val, allocator);
+                                      ports.PushBack(port_obj, allocator);
+                                  }
+                                  // &#x8282;&#x70B9;&#x8F93;&#x51FA;&#x7AEF;&#x53E3;
+                                  for (const auto &amp;it : node-&gt;config().output_ports)
+                                  {
+                                      JValue port_obj(rapidjson::kObjectType);
+                                      JValue key(it.first.c_str(), allocator);
+                                      JValue val(it.second.c_str(), allocator);
+                                      port_obj.AddMember(key, val, allocator);
+                                      ports.PushBack(port_obj, allocator);
+                                  }
+                                  // &#x6811;&#x8282;&#x70B9;
+                                  JValue tn(rapidjson::kObjectType);
+                                  tn.AddMember(&quot;uid&quot;, node-&gt;UID(), allocator);
+                                  tn.AddMember(&quot;children_uid&quot;, children_uid, allocator);
+                                  tn.AddMember(&quot;status&quot;, static_cast&lt;int8_t&gt;(node-&gt;status()), allocator);
+                                  JValue name(node-&gt;name().c_str(), allocator);
+                                  JValue registration_name(node-&gt;registrationName().c_str(), allocator);
+                                  tn.AddMember(&quot;name&quot;, name, allocator);
+                                  tn.AddMember(&quot;registration_name&quot;, registration_name, allocator);
+                                  tn.AddMember(&quot;ports&quot;, ports, allocator);
+                                  tree_nodes.PushBack(tn, allocator); });
+    // &#x6240;&#x6709;&#x8282;&#x70B9;&#x6A21;&#x578B;
+    JValue node_models(rapidjson::kArrayType);
+
+    for (const auto &amp;node_it : tree_.manifests)
+    {
+        const auto &amp;manifest = node_it.second;
+
+        JValue port_models(rapidjson::kArrayType);
+        // &#x8282;&#x70B9;&#x7AEF;&#x53E3;
+        for (const auto &amp;port_it : manifest.ports)
+        {
+            const auto &amp;port_name = port_it.first;
+            const auto &amp;port = port_it.second;
+
+            JValue port_model(rapidjson::kObjectType);
+            JValue port_name_val(port_name.c_str(), allocator);
+            port_model.AddMember(&quot;port_name&quot;, port_name_val, allocator);
+            port_model.AddMember(&quot;direction&quot;, static_cast&lt;int8_t&gt;(port.direction()), allocator);
+            JValue type_info(BT::demangle(port.type()).c_str(), allocator);
+            port_model.AddMember(&quot;type_info&quot;, type_info, allocator);
+            JValue description(port.description().c_str(), allocator);
+            port_model.AddMember(&quot;description&quot;, description, allocator);
+
+            port_models.PushBack(port_model, allocator);
+        }
+        // &#x8282;&#x70B9;&#x4FE1;&#x606F;
+        JValue node_model(rapidjson::kObjectType);
+        JValue registration_id(manifest.registration_ID.c_str(), allocator);
+        node_model.AddMember(&quot;registration_id&quot;, registration_id, allocator);
+        node_model.AddMember(&quot;node_type&quot;, static_cast&lt;int8_t&gt;(manifest.type), allocator);
+        node_model.AddMember(&quot;port_models&quot;, port_models, allocator);
+
+        node_models.PushBack(node_model, allocator);
+    }
+    // &#x6811;
+    tree_data_.AddMember(&quot;uid&quot;, tree_.rootNode()-&gt;UID(), allocator);
+    tree_data_.AddMember(&quot;tree_nodes&quot;, tree_nodes, allocator);
+    tree_data_.AddMember(&quot;node_models&quot;, node_models, allocator);
+}
+
+// &#x66F4;&#x65B0;&#x72B6;&#x6001;
+void PublisherJsonZMQ::createStatusData()
+{
+    status_data_.SetArray();
+    rapidjson::Document::AllocatorType &amp;allocator = status_transition_data_.GetAllocator();
+    // &#x9012;&#x5F52;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6811;&#x6240;&#x6709;&#x8282;&#x70B9;&#x72B6;&#x6001;
+    BT::applyRecursiveVisitor(tree_.rootNode(), [&amp;](BT::TreeNode *node)
+                              {
+        JSON tmp(rapidjson::kObjectType);
+        tmp.AddMember(&quot;uid&quot;, node-&gt;UID(), allocator); 
+        tmp.AddMember(&quot;status&quot;, static_cast&lt;int8_t&gt;(node-&gt;status()), allocator); 
+        status_data_.PushBack(tmp, allocator); });
+}
+
+void PublisherJsonZMQ::callback(BT::Duration timestamp, const BT::TreeNode &amp;node, BT::NodeStatus prev_status, BT::NodeStatus status)
+{
+    rapidjson::Document::AllocatorType &amp;allocator = status_transition_data_.GetAllocator();
+    JValue transition(rapidjson::kObjectType);
+    int64_t usec = std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(timestamp).count();
+    transition.AddMember(&quot;uid&quot;, node.UID(), allocator);
+    transition.AddMember(&quot;prev_status&quot;, static_cast&lt;int8_t&gt;(prev_status), allocator);
+    transition.AddMember(&quot;status&quot;, static_cast&lt;int8_t&gt;(status), allocator);
+    transition.AddMember(&quot;t_sec&quot;, usec / 1000000, allocator);
+    transition.AddMember(&quot;t_usec&quot;, usec % 1000000, allocator);
+
+    {
+        std::unique_lock&lt;std::mutex&gt; lock(mutex_);
+        transition_data_.PushBack(transition, allocator);
+    }
+
+    if (!send_pending_.exchange(true))
+    {
+        send_future_ = std::async(std::launch::async, [this]()
+                                  {
+      std::unique_lock&lt;std::mutex&gt; lock(mutex_);
+      const bool is_server_inactive = send_condition_variable_.wait_for(
+          lock, min_time_between_msgs_, [this]() { return !active_server_; });
+      lock.unlock();
+      if (!is_server_inactive)
+      {
+        flush();
+      } });
+    }
+}
+
+void PublisherJsonZMQ::flush()
+{
+    zmq::message_t message;
+    {
+        {
+            std::unique_lock&lt;std::mutex&gt; lock(mutex_);
+
+            status_transition_data_.SetObject();
+            rapidjson::Document::AllocatorType &amp;allocator = status_transition_data_.GetAllocator();
+            status_transition_data_.AddMember(&quot;status&quot;, status_data_, allocator);
+            status_transition_data_.AddMember(&quot;transition&quot;, transition_data_, allocator);
+            // to string
+            rapidjson::StringBuffer buffer;
+            auto status_transition_str = json_to_str(status_transition_data_, buffer);
+            message.rebuild(strlen(status_transition_str));
+            memcpy(message.data(), status_transition_str, strlen(status_transition_str));
+            SPDLOG_DEBUG(&quot;pub status and transition-&gt; {}&quot;, status_transition_str);
+
+            transition_data_.SetArray();
+            createStatusData();
+        }
+        try
+        {
+            zmq_-&gt;publisher.send(message, zmq::send_flags::none);
+        }
+        catch (zmq::error_t &amp;err)
+        {
+            if (err.num() == ETERM)
+            {
+                SPDLOG_INFO(&quot;[PublisherZMQ] Publisher quitting.&quot;);
+            }
+            SPDLOG_ERROR(&quot;[PublisherZMQ] just died. Exception {} &quot;, err.what());
+        }
+
+        send_pending_ = false;
+    }
+}
+</code></pre>
+<h2 id="groot-&#x6570;&#x636E;&#x4F7F;&#x7528;&#x6E90;&#x7801;&#x89E3;&#x6790;">Groot &#x6570;&#x636E;&#x4F7F;&#x7528;&#x6E90;&#x7801;&#x89E3;&#x6790;</h2>
+<ul>
+<li>&#x6E90;&#x7801;&#x8DEF;&#x5F84;&#xFF1A;<code>Groot/bt_editor/sidepanel_monitor.cpp</code></li>
+</ul>
+<pre><code class="lang-c++"><span class="hljs-comment">// &#x8BA2;&#x9605;&#x72B6;&#x6001;&#x53D8;&#x66F4;</span>
+<span class="hljs-keyword">void</span> SidepanelMonitor::on_timer()
+{
+    <span class="hljs-keyword">if</span>( !_connected ) <span class="hljs-keyword">return</span>;
+
+    zmq::<span class="hljs-keyword">message_t</span> msg;
+    <span class="hljs-keyword">try</span>{
+        <span class="hljs-keyword">while</span>(  _zmq_subscriber.recv(msg) )
+        {
+            _msg_count++;
+            ui-&gt;labelCount-&gt;setText( QString(<span class="hljs-string">&quot;Messages received: %1&quot;</span>).arg(_msg_count) );
+
+            <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* buffer = <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>*&gt;(msg.data());
+            <span class="hljs-comment">// status&#x6570;&#x636E;&#x957F;&#x5EA6;</span>
+            <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint32_t</span> header_size = flatbuffers::ReadScalar&lt;<span class="hljs-keyword">uint32_t</span>&gt;( buffer );
+            <span class="hljs-comment">// transitions &#x6570;&#x7EC4;&#x957F;&#x5EA6;</span>
+            <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint32_t</span> num_transitions = flatbuffers::ReadScalar&lt;<span class="hljs-keyword">uint32_t</span>&gt;( &amp;buffer[<span class="hljs-number">4</span>+header_size] );
+
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::pair&lt;<span class="hljs-keyword">int</span>, NodeStatus&gt;&gt; node_status;
+            <span class="hljs-comment">// check uid in the index, if failed load tree from server</span>
+            <span class="hljs-keyword">try</span>{
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">size_t</span> offset = <span class="hljs-number">4</span>; offset &lt; header_size +<span class="hljs-number">4</span>; offset +=<span class="hljs-number">3</span> )
+                {
+                    <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span> uid = flatbuffers::ReadScalar&lt;<span class="hljs-keyword">uint16_t</span>&gt;(&amp;buffer[offset]);
+                    _uid_to_index.at(uid);  <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5C31;&#x62A5;&#x9519;&#xFF0C;&#x6811;&#x53D8;&#x4E86;&#xFF0C;&#x91CD;&#x65B0;&#x8BF7;&#x6C42;&#x6811;&#x6570;&#x636E;</span>
+                }
+
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">size_t</span> t=<span class="hljs-number">0</span>; t &lt; num_transitions; t++)
+                {
+                    <span class="hljs-keyword">size_t</span> offset = <span class="hljs-number">8</span> + header_size + <span class="hljs-number">12</span>*t;
+                    <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span> uid = flatbuffers::ReadScalar&lt;<span class="hljs-keyword">uint16_t</span>&gt;(&amp;buffer[offset+<span class="hljs-number">8</span>]);
+                    _uid_to_index.at(uid);
+                }
+                <span class="hljs-comment">// &#x66F4;&#x65B0;&#x8282;&#x70B9;&#x72B6;&#x6001;</span>
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">size_t</span> offset = <span class="hljs-number">4</span>; offset &lt; header_size +<span class="hljs-number">4</span>; offset +=<span class="hljs-number">3</span> )
+                {
+                    <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span> uid = flatbuffers::ReadScalar&lt;<span class="hljs-keyword">uint16_t</span>&gt;(&amp;buffer[offset]);
+                    <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span> index = _uid_to_index.at(uid);
+                    AbstractTreeNode* node = _loaded_tree.node( index );
+                    node-&gt;status = convert(flatbuffers::ReadScalar&lt;Serialization::NodeStatus&gt;(&amp;buffer[offset+<span class="hljs-number">2</span>] ));
+                }
+
+                <span class="hljs-comment">//qDebug() &lt;&lt; &quot;--------&quot;;</span>
+                <span class="hljs-comment">// &#x66F4;&#x65B0;&#x8282;&#x70B9;&#x6D41;&#x8F6C;&#x72B6;&#x6001;</span>
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">size_t</span> t=<span class="hljs-number">0</span>; t &lt; num_transitions; t++)
+                {
+                    <span class="hljs-keyword">size_t</span> offset = <span class="hljs-number">8</span> + header_size + <span class="hljs-number">12</span>*t;
+                    <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span> uid = flatbuffers::ReadScalar&lt;<span class="hljs-keyword">uint16_t</span>&gt;(&amp;buffer[offset+<span class="hljs-number">8</span>]);
+                    <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span> index = _uid_to_index.at(uid);
+                    NodeStatus status  = convert(flatbuffers::ReadScalar&lt;Serialization::NodeStatus&gt;(&amp;buffer[offset+<span class="hljs-number">11</span>] ));
+
+                    _loaded_tree.node(index)-&gt;status = status;
+                    node_status.push_back( {index, status} );
+
+                }
+            }
+            <span class="hljs-keyword">catch</span>( <span class="hljs-built_in">std</span>::out_of_range&amp; err) {
+                qDebug() &lt;&lt; <span class="hljs-string">&quot;Reload tree from server&quot;</span>;
+                <span class="hljs-keyword">if</span>( !getTreeFromServer() ) {
+                    _connected = <span class="hljs-literal">false</span>;
+                    ui-&gt;lineEdit_address-&gt;setDisabled(<span class="hljs-literal">false</span>);
+                    _timer-&gt;stop();
+                    connectionUpdate(<span class="hljs-literal">false</span>);
+                    <span class="hljs-keyword">return</span>;
+                }
+            }
+
+            <span class="hljs-comment">// update the graphic part</span>
+            <span class="hljs-function">emit <span class="hljs-title">changeNodeStyle</span><span class="hljs-params">( <span class="hljs-string">&quot;BehaviorTree&quot;</span>, node_status )</span></span>;
+
+            <span class="hljs-comment">// lock editing of nodes</span>
+            <span class="hljs-keyword">auto</span> main_win = <span class="hljs-keyword">dynamic_cast</span>&lt;MainWindow*&gt;( _parent );
+            main_win-&gt;lockEditing(<span class="hljs-literal">true</span>);
+        }
+    }
+    <span class="hljs-keyword">catch</span>( zmq::<span class="hljs-keyword">error_t</span>&amp; err)
+    {
+        qDebug() &lt;&lt; <span class="hljs-string">&quot;ZMQ receive failed: &quot;</span> &lt;&lt; err.what();
+    }
+}
+
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x6811;&#x4FE1;&#x606F;</span>
+<span class="hljs-keyword">bool</span> SidepanelMonitor::getTreeFromServer()
+{
+    <span class="hljs-keyword">try</span>{
+        zmq::<span class="hljs-keyword">message_t</span> request(<span class="hljs-number">0</span>);
+        zmq::<span class="hljs-keyword">message_t</span> reply;
+
+        zmq::<span class="hljs-keyword">socket_t</span>  zmq_client( _zmq_context, ZMQ_REQ );
+        zmq_client.connect( _connection_address_req.c_str() );
+
+        zmq_client.setsockopt(ZMQ_RCVTIMEO, &amp;_load_tree_timeout_ms, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>) );
+
+        zmq_client.send(request, zmq::send_flags::none);
+
+        <span class="hljs-keyword">auto</span> bytes_received  = zmq_client.recv(reply, zmq::recv_flags::none);
+        <span class="hljs-keyword">if</span>( !bytes_received || *bytes_received == <span class="hljs-number">0</span> )
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+
+        <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* buffer = <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>*&gt;(reply.data());
+        <span class="hljs-keyword">auto</span> fb_behavior_tree = Serialization::GetBehaviorTree( buffer );
+
+        <span class="hljs-keyword">auto</span> res_pair = BuildTreeFromFlatbuffers( fb_behavior_tree );
+
+        _loaded_tree  = <span class="hljs-built_in">std</span>::move( res_pair.first );
+        _uid_to_index = <span class="hljs-built_in">std</span>::move( res_pair.second );  <span class="hljs-comment">// &#x952E;&#x4E3A;uid&#xFF0C;&#x503C;&#x4E3A; _loaded_tree&#x7684;nodes&#x5C5E;&#x6027;&#x91CC;&#x9762;&#x5BF9;&#x5E94;&#x8282;&#x70B9;&#x7684;&#x7D22;&#x5F15;</span>
+
+        <span class="hljs-comment">// add new models to registry</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span>&amp; tree_node: _loaded_tree.nodes())
+        {
+            <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span>&amp; registration_ID = tree_node.model.registration_ID;
+            <span class="hljs-keyword">if</span>( BuiltinNodeModels().count(registration_ID) == <span class="hljs-number">0</span>)
+            {
+                addNewModel( tree_node.model );
+            }
+        }
+
+        <span class="hljs-keyword">try</span> {
+            loadBehaviorTree( _loaded_tree, <span class="hljs-string">&quot;BehaviorTree&quot;</span> );
+        }
+        <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">std</span>::exception&amp; err) {
+            QMessageBox messageBox;
+            messageBox.critical(<span class="hljs-keyword">this</span>,<span class="hljs-string">&quot;Error Connecting to remote server&quot;</span>, err.what() );
+            messageBox.show();
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::pair&lt;<span class="hljs-keyword">int</span>, NodeStatus&gt;&gt; node_status;
+        node_status.reserve(_loaded_tree.nodesCount());
+
+        <span class="hljs-comment">//  qDebug() &lt;&lt; &quot;--------&quot;;</span>
+
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">size_t</span> t=<span class="hljs-number">0</span>; t &lt; _loaded_tree.nodesCount(); t++)
+        {
+            node_status.push_back( { t, _loaded_tree.nodes()[t].status } );
+        }
+        <span class="hljs-function">emit <span class="hljs-title">changeNodeStyle</span><span class="hljs-params">( <span class="hljs-string">&quot;BehaviorTree&quot;</span>, node_status )</span></span>;
+    }
+    <span class="hljs-keyword">catch</span>( zmq::<span class="hljs-keyword">error_t</span>&amp; err)
+    {
+        qDebug() &lt;&lt; <span class="hljs-string">&quot;ZMQ client receive failed: &quot;</span> &lt;&lt; err.what();
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -5907,7 +6393,7 @@ StdCoutLogger::~StdCoutLogger() { ref_count.store(<span class="hljs-literal">fal
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Logger类实现原理解析-单例与观察者模式","level":"5.1.10","depth":2,"next":{"title":"行为树内外的数据传输","level":"5.1.11","depth":2,"path":"BehaviorTree/入门/11-行为树内外的数据传输.md","ref":"./BehaviorTree/入门/11-行为树内外的数据传输.md","articles":[]},"previous":{"title":"各种调试工具介绍","level":"5.1.9","depth":2,"path":"BehaviorTree/入门/09-各种调试工具介绍.md","ref":"./BehaviorTree/入门/09-各种调试工具介绍.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BehaviorTree/入门/10-Logger类实现原理解析（单例与观察者模式）.md","mtime":"2023-05-12T08:40:32.918Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-10T06:13:42.305Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Logger类实现原理解析-单例与观察者模式","level":"5.1.10","depth":2,"next":{"title":"行为树内外的数据传输","level":"5.1.11","depth":2,"path":"BehaviorTree/入门/11-行为树内外的数据传输.md","ref":"./BehaviorTree/入门/11-行为树内外的数据传输.md","articles":[]},"previous":{"title":"各种调试工具介绍","level":"5.1.9","depth":2,"path":"BehaviorTree/入门/09-各种调试工具介绍.md","ref":"./BehaviorTree/入门/09-各种调试工具介绍.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BehaviorTree/入门/10-Logger类实现原理解析（单例与观察者模式）.md","mtime":"2023-08-10T10:42:48.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-11T07:09:56.287Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
