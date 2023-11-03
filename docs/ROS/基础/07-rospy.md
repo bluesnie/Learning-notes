@@ -63,7 +63,7 @@ ROS中的这种Python模块组织规范与标准的Python模块规范并不完�
 
 | 返回值 | 方法 | 作用 |
 | ----- | ----- | ----- |
-| rospy.init_node(name, argv=None, anonymous=False) | 注册和初始化node |   |
+|  | rospy.init_node(name, argv=None, anonymous=False) | 注册和初始化node  |
 | MasterProxy | rospy.get_master() | 获取master的句柄 |
 | bool | rospy.is_shutdown() | 节点是否关闭 |
 | rospy.on_shutdown(fn) |    在节点关闭时调用fn函数 |  |

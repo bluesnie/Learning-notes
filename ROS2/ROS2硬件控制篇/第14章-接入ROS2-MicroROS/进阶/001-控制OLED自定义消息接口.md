@@ -57,7 +57,7 @@ cd extra_packages
 ros2 pkg create fishbot_interfaces
 ```
 
-接着添加服务接口文件并修改CMakeLists.txt
+接着添加服务接口文件并修改CMakeLists.txt和package.xml
 
 文件`extra_packages/fishbot_interfaces/srv/OledControl.srv`
 
@@ -106,6 +106,33 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 ament_package()
 
+```
+
+文件`package.xml`
+
+```xml
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>fishbot_interfaces</name>
+    <version>0.0.0</version>
+    <description>TODO: Package description</description>
+    <maintainer email="root@todo.todo">root</maintainer>
+    <license>TODO: License declaration</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <build_depend>rosidl_default_generators</build_depend>
+    <exec_depend>rosidl_default_runtime</exec_depend>
+    <member_of_group>rosidl_interface_packages</member_of_group>
+
+    <test_depend>ament_lint_auto</test_depend>
+    <test_depend>ament_lint_common</test_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>
 ```
 
 ## 2.2 编译功能包
