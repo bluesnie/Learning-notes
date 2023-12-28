@@ -262,6 +262,7 @@
 - [gdb调试](./C++/Linux环境编程/01-gdb调试.md)
   | [make和Makefile](./C++/Linux环境编程/02-make和Makefile.md)
   | [CMakeLists入门](./C++/Linux环境编程/03-CMakeLists入门.md)
+  | [CMakeLists进阶find_package的用法](./C++/Linux环境编程/05-CMakeLists进阶find_package的用法.md)
   | [静态库和动态库的制作和使用](./C++/Linux环境编程/04-静态库和动态库的制作和使用.md)
 
 ### [网络通信socket](./C++/网络通信socket)

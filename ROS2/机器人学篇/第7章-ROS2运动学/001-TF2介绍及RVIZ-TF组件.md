@@ -117,6 +117,8 @@ sudo apt install ros-humble-rqt-tf-tree
 接着你就可以看到这个强大的，几乎可以实时看到系统tf更新信息的工具，这个工具对于后面我们进行导航和机械臂的调试非常有帮助。
 
 > 长的不一样没关系，这是后面补充的图。
+> 
+> 如果打开后没有该选项：`rm  ~/.config/ros.org/rqt_gui.ini`
 
 ![image-20220426181252686](imgs/image-20220426181252686.png)
 
