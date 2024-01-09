@@ -729,7 +729,7 @@
         - 基础
             - [算法](InterviewPreparation/DataStructuresAlgorithms/01-算法.md)
             - [认识复杂度和简单的排序算法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/01-认识复杂度和简单的排序算法.md)
-            - [认识NlogN的排序](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识O(NlogN)的排序.md)
+            - [认识NlogN的排序](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识NlogN的排序.md)
             - [堆和桶排序以及排序总结](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/03-堆、桶排序以及排序总结.md)
             - [算法图解](InterviewPreparation/DataStructuresAlgorithms/Algorithm/算法图解.pdf)
     - 数据结构
