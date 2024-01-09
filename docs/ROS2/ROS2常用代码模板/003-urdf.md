@@ -272,7 +272,7 @@ Xacro是urdf的定义和生成工具，你按照Xacro提供的方式定义可以
 
 ## 1.添加模板
 
-小鱼这里提供了常用的xacro描述定义的代码块，你可以直接引入的你的工程里进行使用。
+这里提供了常用的xacro描述定义的代码块，你可以直接引入的你的工程里进行使用。
 
 在你的功能包里新建`xacro_template.xacro`文件，复制粘贴下面的内容到其中。
 
@@ -386,7 +386,7 @@ Xacro是urdf的定义和生成工具，你按照Xacro提供的方式定义可以
 
 ## 2.使用模板生成URDF
 
-接着你可以新建你的机器人模型描述文件，比如`fishbot.urdf.xacro`,之后你就可以在你的描述文件中调用小鱼提供的模板，快速的定义机器人。
+接着你可以新建你的机器人模型描述文件，比如`fishbot.urdf.xacro`,之后你就可以在你的描述文件中调用提供的模板，快速的定义机器人。
 
 比如创建一个正方体的base_link,并导入惯性矩阵。
 
@@ -404,7 +404,7 @@ Xacro是urdf的定义和生成工具，你按照Xacro提供的方式定义可以
 </robot>
 ```
 
-上面w,d,h,代表长宽高，m代表质量。` <xacro:include filename="xacro_template.xacro" />`用于引入小鱼提供的模板。
+上面w,d,h,代表长宽高，m代表质量。` <xacro:include filename="xacro_template.xacro" />`用于引入提供的模板。
 
 接着我们就可以通过xacro指令将其变成正常的urdf，打开终端，进入fishbot.urdf.xacro同级目录，输入指令`xacro fishbot.urdf.xacro -o fishbot.urdf`
 ,即可生成fishbot.urdf，正常生成后的内容如下。

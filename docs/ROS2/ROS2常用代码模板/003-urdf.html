@@ -3199,7 +3199,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3.4" data-path="../../C++/Linux环境编程/04-静态库和动态库的制作和使用.html">
+        <li class="chapter " data-level="4.3.4" data-path="../../C++/Linux环境编程/05-CMakeLists进阶find_package的用法.html">
+            
+                <a href="../../C++/Linux环境编程/05-CMakeLists进阶find_package的用法.html">
+            
+                    
+                    CMakeLists进阶find_package的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="../../C++/Linux环境编程/04-静态库和动态库的制作和使用.html">
             
                 <a href="../../C++/Linux环境编程/04-静态库和动态库的制作和使用.html">
             
@@ -7485,9 +7498,9 @@
             
         </li>
     
-        <li class="chapter " data-level="11.3.1.1.3" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识O(NlogN">
+        <li class="chapter " data-level="11.3.1.1.3" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识NlogN的排序.html">
             
-                <span>
+                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-认识NlogN的排序.html">
             
                     
                     认识NlogN的排序
@@ -7945,7 +7958,7 @@
 <p>URDF&#x9ED8;&#x8BA4;&#x683C;&#x5F0F;&#x662F;&#x7EAF;&#x6587;&#x672C;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x80FD;&#x5728;&#x5176;&#x4E2D;&#x52A0;&#x5165;&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#x548C;&#x5B9A;&#x4E49;&#xFF0C;&#x7528;URDF&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#x4F1A;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x975E;&#x5E38;&#x5197;&#x957F;&#xFF0C;&#x4F7F;&#x7528;Xacro&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
 <p>Xacro&#x662F;urdf&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x751F;&#x6210;&#x5DE5;&#x5177;&#xFF0C;&#x4F60;&#x6309;&#x7167;Xacro&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#x7684;&#x6A21;&#x578B;&#x63CF;&#x8FF0;&#x5757;&#xFF0C;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x63CF;&#x8FF0;&#xFF0C;&#x6700;&#x540E;&#x4F7F;&#x7528;xacro&#x6307;&#x4EE4;&#x751F;&#x6210;&#x6700;&#x7EC8;&#x7684;urdf&#x6A21;&#x578B;&#x4E86;&#x3002;</p>
 <h2 id="1&#x6DFB;&#x52A0;&#x6A21;&#x677F;">1.&#x6DFB;&#x52A0;&#x6A21;&#x677F;</h2>
-<p>&#x5C0F;&#x9C7C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E86;&#x5E38;&#x7528;&#x7684;xacro&#x63CF;&#x8FF0;&#x5B9A;&#x4E49;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F15;&#x5165;&#x7684;&#x4F60;&#x7684;&#x5DE5;&#x7A0B;&#x91CC;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E86;&#x5E38;&#x7528;&#x7684;xacro&#x63CF;&#x8FF0;&#x5B9A;&#x4E49;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F15;&#x5165;&#x7684;&#x4F60;&#x7684;&#x5DE5;&#x7A0B;&#x91CC;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#x3002;</p>
 <p>&#x5728;&#x4F60;&#x7684;&#x529F;&#x80FD;&#x5305;&#x91CC;&#x65B0;&#x5EFA;<code>xacro_template.xacro</code>&#x6587;&#x4EF6;&#xFF0C;&#x590D;&#x5236;&#x7C98;&#x8D34;&#x4E0B;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x5230;&#x5176;&#x4E2D;&#x3002;</p>
 <pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">robot</span> <span class="hljs-attr">xmlns:xacro</span>=<span class="hljs-string">&quot;http://ros.org/wiki/xacro&quot;</span> <span class="hljs-attr">xmlns:fishros</span>=<span class="hljs-string">&quot;http://fishros.com&quot;</span>&gt;</span>
@@ -8054,7 +8067,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">robot</span>&gt;</span>
 </code></pre>
 <h2 id="2&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x751F;&#x6210;urdf">2.&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x751F;&#x6210;URDF</h2>
-<p>&#x63A5;&#x7740;&#x4F60;&#x53EF;&#x4EE5;&#x65B0;&#x5EFA;&#x4F60;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;<code>fishbot.urdf.xacro</code>,&#x4E4B;&#x540E;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x4E2D;&#x8C03;&#x7528;&#x5C0F;&#x9C7C;&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x5FEB;&#x901F;&#x7684;&#x5B9A;&#x4E49;&#x673A;&#x5668;&#x4EBA;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#x4F60;&#x53EF;&#x4EE5;&#x65B0;&#x5EFA;&#x4F60;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;<code>fishbot.urdf.xacro</code>,&#x4E4B;&#x540E;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#x4E2D;&#x8C03;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x5FEB;&#x901F;&#x7684;&#x5B9A;&#x4E49;&#x673A;&#x5668;&#x4EBA;&#x3002;</p>
 <p>&#x6BD4;&#x5982;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6B63;&#x65B9;&#x4F53;&#x7684;base_link,&#x5E76;&#x5BFC;&#x5165;&#x60EF;&#x6027;&#x77E9;&#x9635;&#x3002;</p>
 <pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">robot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fishbot&quot;</span> <span class="hljs-attr">xmlns:xacro</span>=<span class="hljs-string">&quot;http://ros.org/wiki/xacro&quot;</span>&gt;</span>
@@ -8068,7 +8081,7 @@
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">robot</span>&gt;</span>
 </code></pre>
-<p>&#x4E0A;&#x9762;w,d,h,&#x4EE3;&#x8868;&#x957F;&#x5BBD;&#x9AD8;&#xFF0C;m&#x4EE3;&#x8868;&#x8D28;&#x91CF;&#x3002;<code>&lt;xacro:include filename=&quot;xacro_template.xacro&quot; /&gt;</code>&#x7528;&#x4E8E;&#x5F15;&#x5165;&#x5C0F;&#x9C7C;&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x677F;&#x3002;</p>
+<p>&#x4E0A;&#x9762;w,d,h,&#x4EE3;&#x8868;&#x957F;&#x5BBD;&#x9AD8;&#xFF0C;m&#x4EE3;&#x8868;&#x8D28;&#x91CF;&#x3002;<code>&lt;xacro:include filename=&quot;xacro_template.xacro&quot; /&gt;</code>&#x7528;&#x4E8E;&#x5F15;&#x5165;&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x677F;&#x3002;</p>
 <p>&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;xacro&#x6307;&#x4EE4;&#x5C06;&#x5176;&#x53D8;&#x6210;&#x6B63;&#x5E38;&#x7684;urdf&#xFF0C;&#x6253;&#x5F00;&#x7EC8;&#x7AEF;&#xFF0C;&#x8FDB;&#x5165;fishbot.urdf.xacro&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#xFF0C;&#x8F93;&#x5165;&#x6307;&#x4EE4;<code>xacro fishbot.urdf.xacro -o fishbot.urdf</code>
 ,&#x5373;&#x53EF;&#x751F;&#x6210;fishbot.urdf&#xFF0C;&#x6B63;&#x5E38;&#x751F;&#x6210;&#x540E;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x3002;</p>
 <pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> <span class="hljs-meta">?&gt;</span></span>
@@ -8145,7 +8158,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"urdf","level":"9.2.7.3","depth":3,"next":{"title":"Docker","level":"10.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"10.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"10.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"10.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"10.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"10.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"10.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"rclpy","level":"9.2.7.2","depth":3,"path":"ROS2/ROS2常用代码模板/002-rclpy.md","ref":"ROS2/ROS2常用代码模板/002-rclpy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ROS2/ROS2常用代码模板/003-urdf.md","mtime":"2023-11-10T09:01:44.631Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-10T09:16:39.440Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"urdf","level":"9.2.7.3","depth":3,"next":{"title":"Docker","level":"10.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"10.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"10.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"10.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"10.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"10.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"10.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"rclpy","level":"9.2.7.2","depth":3,"path":"ROS2/ROS2常用代码模板/002-rclpy.md","ref":"ROS2/ROS2常用代码模板/002-rclpy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ROS2/ROS2常用代码模板/003-urdf.md","mtime":"2023-11-22T09:54:11.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-09T09:05:08.136Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
