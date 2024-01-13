@@ -32,24 +32,24 @@ file_object.write('日志...')
 
 - 启动网站，创建 4个 进程，每个进程中都打开文件 a1.log， 每个进程中都有
 
-    ```python
+```python
     # 每个进程都有各自文件对象
-    file_object = open("a1.log", 'a', encoding='utf-8')
-    ```
+file_object = open("a1.log", 'a', encoding='utf-8')
+```
 
 - 用户访问
 
-    ```python
+```python
     # 其中 1个 进程接收并加以处理，执行自己的 write
-    file_object.write('日志...')
-    ```
+file_object.write('日志...')
+```
 
 - 同时来 4个
 
-    ```python
+```python
     # 其中 4个 进程接收并处理，执行自己的 write
-    file_object.write('日志...')
-    ```
+file_object.write('日志...')
+```
 
 - 问题1：多进程写日志会导致删除
 
@@ -64,116 +64,116 @@ file_object.write('日志...')
 
     - 源码找原因
 
-    ```python
+```python
     import time
-    import os
-    from logging.handlers import BaseRotatingHandler
-    
-    
-    class TimedRotatingFileHandler(BaseRotatingHandler):
+import os
+from logging.handlers import BaseRotatingHandler
+
+
+class TimedRotatingFileHandler(BaseRotatingHandler):
+    """
+    Handler for logging to a file, rotating the log file at certain timed
+    intervals.
+  
+    If backupCount is > 0, when rollover is done, no more than backupCount
+    files are kept - the oldest ones are deleted.
+    """
+
+    def doRollover(self):
         """
-        Handler for logging to a file, rotating the log file at certain timed
-        intervals.
-      
-        If backupCount is > 0, when rollover is done, no more than backupCount
-        files are kept - the oldest ones are deleted.
+        do a rollover; in this case, a date/time stamp is appended to the filename
+        when the rollover happens.  However, you want the file to be named for the
+        start of the interval, not the current time.  If there is a backup count,
+        then we have to get a list of matching filenames, sort them and remove
+        the one with the oldest suffix.
         """
-    
-        def doRollover(self):
-            """
-            do a rollover; in this case, a date/time stamp is appended to the filename
-            when the rollover happens.  However, you want the file to be named for the
-            start of the interval, not the current time.  If there is a backup count,
-            then we have to get a list of matching filenames, sort them and remove
-            the one with the oldest suffix.
-            """
-            if self.stream:
-                self.stream.close()
-                self.stream = None
-            # get the time that this sequence started at and make it a TimeTuple
-            currentTime = int(time.time())
-            dstNow = time.localtime(currentTime)[-1]
-            t = self.rolloverAt - self.interval
-            if self.utc:
-                timeTuple = time.gmtime(t)
-            else:
-                timeTuple = time.localtime(t)
-                dstThen = timeTuple[-1]
-                if dstNow != dstThen:
-                    if dstNow:
-                        addend = 3600
-                    else:
-                        addend = -3600
-                    timeTuple = time.localtime(t + addend)
-    
-            # # 新文件名，a1-11-19.log
-            # dfn = self.rotation_filename(self.baseFilename + "." +
-            #                              time.strftime(self.suffix, timeTuple))
-            # # 判断是否存在，存在删除，问题就出在这，多进程时会删除其他进程创建备份的
-            # if os.path.exists(dfn):
-            #     os.remove(dfn)
-            # # 重命名
-            # self.rotate(self.baseFilename, dfn)
-    
-            # 修复
-            dfn = self.rotation_filename(self.baseFilename + "." +
-                                         time.strftime(self.suffix, timeTuple))
-            # 判断是否存在，不存在重命名
-            if not os.path.exists(dfn):
-                self.rotate(self.baseFilename, dfn)
-    
-            if self.backupCount > 0:
-                for s in self.getFilesToDelete():
-                    os.remove(s)
-            if not self.delay:
-                self.stream = self._open()
-            newRolloverAt = self.computeRollover(currentTime)
-            while newRolloverAt <= currentTime:
-                newRolloverAt = newRolloverAt + self.interval
-            # If DST changes and midnight or weekly rollover, adjust for this.
-            if (self.when == 'MIDNIGHT' or self.when.startswith('W')) and not self.utc:
-                dstAtRollover = time.localtime(newRolloverAt)[-1]
-                if dstNow != dstAtRollover:
-                    if not dstNow:  # DST kicks in before next rollover, so we need to deduct an hour
-                        addend = -3600
-                    else:  # DST bows out before next rollover, so we need to add an hour
-                        addend = 3600
-                    newRolloverAt += addend
-            self.rolloverAt = newRolloverAt
-    ```
+        if self.stream:
+            self.stream.close()
+            self.stream = None
+        # get the time that this sequence started at and make it a TimeTuple
+        currentTime = int(time.time())
+        dstNow = time.localtime(currentTime)[-1]
+        t = self.rolloverAt - self.interval
+        if self.utc:
+            timeTuple = time.gmtime(t)
+        else:
+            timeTuple = time.localtime(t)
+            dstThen = timeTuple[-1]
+            if dstNow != dstThen:
+                if dstNow:
+                    addend = 3600
+                else:
+                    addend = -3600
+                timeTuple = time.localtime(t + addend)
+
+        # # 新文件名，a1-11-19.log
+        # dfn = self.rotation_filename(self.baseFilename + "." +
+        #                              time.strftime(self.suffix, timeTuple))
+        # # 判断是否存在，存在删除，问题就出在这，多进程时会删除其他进程创建备份的
+        # if os.path.exists(dfn):
+        #     os.remove(dfn)
+        # # 重命名
+        # self.rotate(self.baseFilename, dfn)
+
+        # 修复
+        dfn = self.rotation_filename(self.baseFilename + "." +
+                                     time.strftime(self.suffix, timeTuple))
+        # 判断是否存在，不存在重命名
+        if not os.path.exists(dfn):
+            self.rotate(self.baseFilename, dfn)
+
+        if self.backupCount > 0:
+            for s in self.getFilesToDelete():
+                os.remove(s)
+        if not self.delay:
+            self.stream = self._open()
+        newRolloverAt = self.computeRollover(currentTime)
+        while newRolloverAt <= currentTime:
+            newRolloverAt = newRolloverAt + self.interval
+        # If DST changes and midnight or weekly rollover, adjust for this.
+        if (self.when == 'MIDNIGHT' or self.when.startswith('W')) and not self.utc:
+            dstAtRollover = time.localtime(newRolloverAt)[-1]
+            if dstNow != dstAtRollover:
+                if not dstNow:  # DST kicks in before next rollover, so we need to deduct an hour
+                    addend = -3600
+                else:  # DST bows out before next rollover, so we need to add an hour
+                    addend = 3600
+                newRolloverAt += addend
+        self.rolloverAt = newRolloverAt
+```
 
 - 问题2：日志文件不能做相关操作(比如：删除或修改日志文件，日志就不创建文件继续打印了，需要重新执行该程序，才会重新创建文件写入日志)
 
-  ```python
+```python
   # 类比 WatchedFileHandler 提供解决思路
-  import os
-  import time
-  from stat import ST_INO, ST_DEV
-  
-  file_obj = open('xxx.log', 'a', encoding='utf-8')
-  sres = os.fstat(file_obj.fileno())
-  dev, ino = sres[ST_DEV], sres[ST_INO]
-  
-  while True:
-      # WatchedFileHandler 处理 handler 的处理机制
-      # 删除文件之后报错
-      try:
-          # stat the file by path, checking for existence
-          new_sres = os.stat("xxx.log")
-      except FileNotFoundError:
-          sres = None
-      if not new_sres or new_sres[ST_DEV] != dev or new_sres[ST_INO] != ino:
-          print("文件被删除或修改了")
-          # 重新打开，获取标志数据
-          file_obj = open('xxx.log', 'a', encoding='utf-8')
-          sres = os.fstat(file_obj.fileno())
-          dev, ino = sres[ST_DEV], sres[ST_INO]
-  
-      file_obj.write("111\n")
-      file_obj.flush()
-      time.sleep(1)
-  
-  ```
+import os
+import time
+from stat import ST_INO, ST_DEV
+
+file_obj = open('xxx.log', 'a', encoding='utf-8')
+sres = os.fstat(file_obj.fileno())
+dev, ino = sres[ST_DEV], sres[ST_INO]
+
+while True:
+    # WatchedFileHandler 处理 handler 的处理机制
+    # 删除文件之后报错
+    try:
+        # stat the file by path, checking for existence
+        new_sres = os.stat("xxx.log")
+    except FileNotFoundError:
+        sres = None
+    if not new_sres or new_sres[ST_DEV] != dev or new_sres[ST_INO] != ino:
+        print("文件被删除或修改了")
+        # 重新打开，获取标志数据
+        file_obj = open('xxx.log', 'a', encoding='utf-8')
+        sres = os.fstat(file_obj.fileno())
+        dev, ino = sres[ST_DEV], sres[ST_INO]
+
+    file_obj.write("111\n")
+    file_obj.flush()
+    time.sleep(1)
+
+```
 
 ### 多进程和文件修改(删除)后 2 个结合重写 handler
 
@@ -559,7 +559,7 @@ from logging.handlers import WatchedFileHandler
 import logging.config
 
 standard_format = '[%(asctime)s][%(threadName)s:%(thread)d][task_id:%(name)s][%(filename)s:%(lineno)d]'
-                  '[%(levelname)s][%(message)s]'  # 其中 name 为 getlogger 指定的名字
+'[%(levelname)s][%(message)s]'  # 其中 name 为 getlogger 指定的名字
 
 simple_format = '[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d]%(message)s'
 

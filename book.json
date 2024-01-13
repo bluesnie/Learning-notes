@@ -3,6 +3,9 @@
     "expandable-chapters",
     "-lunr",
     "-search",
-    "search-pro"
-  ]
+    "search-pro",
+    "mathjax-pro",
+    "mermaid-gb3"
+  ],
+  "cache": "./_book/.gitbook_cache"
 }

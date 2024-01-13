@@ -1,10 +1,12 @@
-# Pandas 
+# Pandas
+
 [中文文档](https://www.pypandas.cn/)
 [英文文档](https://pandas.pydata.org/)
 
 ## Pandas概览
 
-Pandas 是 Python 的核心数据分析支持库，提供了快速、灵活、明确的数据结构，旨在简单、直观地处理关系型、标记型数据。Pandas 的目标是成为 Python 数据分析实践与实战的必备高级工具，其长远目标是成为最强大、最灵活、可以支持任何语言的开源数据分析工具。经过多年不懈的努力，Pandas 离这个目标已经越来越近了。
+Pandas 是 Python 的核心数据分析支持库，提供了快速、灵活、明确的数据结构，旨在简单、直观地处理关系型、标记型数据。Pandas 的目标是成为 Python
+数据分析实践与实战的必备高级工具，其长远目标是成为最强大、最灵活、可以支持任何语言的开源数据分析工具。经过多年不懈的努力，Pandas 离这个目标已经越来越近了。
 
 Pandas 适用于处理以下类型的数据：
 
@@ -13,7 +15,10 @@ Pandas 适用于处理以下类型的数据：
 - 带行列标签的矩阵数据，包括同构或异构型数据;
 - 任意其它形式的观测、统计数据集, 数据转入 Pandas 数据结构时不必事先标记。
 
-Pandas 的主要数据结构是 [Series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series)（一维数据）与 [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame)（二维数据），这两种数据结构足以处理金融、统计、- 社会科学、工程等领域里的大多数典型用例。对于 R 用户，DataFrame 提供了比 R 语言 data.frame 更丰富的功能。Pandas 基于 [NumPy](https://www.numpy.org/) 开发，可以与其它第三方科学计算支持库完美集成。
+Pandas
+的主要数据结构是 [Series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series)（一维数据）与 [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame)（二维数据），这两种数据结构足以处理金融、统计、-
+社会科学、工程等领域里的大多数典型用例。对于 R 用户，DataFrame 提供了比 R 语言 data.frame 更丰富的功能。Pandas 基于 [NumPy](https://www.numpy.org/)
+开发，可以与其它第三方科学计算支持库完美集成。
 
 Pandas 就像一把万能瑞士军刀，下面仅列出了它的部分优势 ：
 
@@ -48,9 +53,11 @@ Pandas 就像一把万能瑞士军刀，下面仅列出了它的部分优势 ：
 
 Pandas 数据结构就像是低维数据的容器。比如，DataFrame 是 Series 的容器，Series 则是标量的容器。使用这种方式，可以在容器中以字典的形式插入或删除对象。
 
-此外，通用 API 函数的默认操作要顾及时间序列与截面数据集的方向。多维数组存储二维或三维数据时，编写函数要注意数据集的方向，这对用户来说是一种负担；如果不考虑 C 或 Fortran 中连续性对性能的影响，一般情况下，不同的轴在程序里其实没有什么区别。Pandas 里，轴的概念主要是为了给数据赋予更直观的语义，即用“更恰当”的方式表示数据集的方向。这样做可以让用户编写数据转换函数时，少费点脑子。
+此外，通用 API 函数的默认操作要顾及时间序列与截面数据集的方向。多维数组存储二维或三维数据时，编写函数要注意数据集的方向，这对用户来说是一种负担；如果不考虑 C 或 Fortran
+中连续性对性能的影响，一般情况下，不同的轴在程序里其实没有什么区别。Pandas 里，轴的概念主要是为了给数据赋予更直观的语义，即用“更恰当”的方式表示数据集的方向。这样做可以让用户编写数据转换函数时，少费点脑子。
 
 处理 DataFrame 等表格数据时，index（行）或 columns（列）比 axis 0 和 axis 1 更直观。用这种方式迭代 DataFrame 的列，代码更易读易懂：
+
 ```python
 for col in df.columns:
     series = df[col]
@@ -69,7 +76,6 @@ Pandas 里，绝大多数方法都不改变原始的输入数据，而是复制�
 
 本节以下列方式导入 Pandas 与 NumPy：
 
-
 ```python
 import numpy as np
 import pandas as pd
@@ -79,16 +85,13 @@ import pandas as pd
 
 详见[数据结构](https://www.pypandas.cn/docs/getting_started/dsintro.html#dsintro)简介文档。
 
-用值列表生成 [Series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series) 时，Pandas 默认自动生成整数索引：
-
+用值列表生成 [Series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series) 时，Pandas
+默认自动生成整数索引：
 
 ```python
-s = pd.Series([1,2,3,4,5,np.nan, 6,8])
+s = pd.Series([1, 2, 3, 4, 5, np.nan, 6, 8])
 s
 ```
-
-
-
 
     0    1.0
     1    2.0
@@ -100,33 +103,21 @@ s
     7    8.0
     dtype: float64
 
-
-
 用含日期时间索引与标签的Numpy数组生成[DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame)
-
 
 ```python
 df1 = pd.date_range(start='20150101', periods=6)
 df1
 ```
 
-
-
-
     DatetimeIndex(['2015-01-01', '2015-01-02', '2015-01-03', '2015-01-04',
                    '2015-01-05', '2015-01-06'],
                   dtype='datetime64[ns]', freq='D')
 
-
-
-
 ```python
-df2 = pd.DataFrame(np.random.randn(6,4), index=df1, columns=list('ABCD'))
+df2 = pd.DataFrame(np.random.randn(6, 4), index=df1, columns=list('ABCD'))
 df2
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -141,6 +132,7 @@ df2
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -203,21 +195,17 @@ df2
 
 用Series字典对象生成DataFrame
 
-
 ```python
 df3 = pd.DataFrame({
     'A': 1.,
     'B': pd.Timestamp('20150101'),
     'C': pd.Series(1, index=list(range(4)), dtype='float32'),
-    'D': np.array([3]* 4, dtype='int32'),
-    'E': pd.Categorical(['test', 'train','test', 'train']),
-    'F':'foo'
+    'D': np.array([3] * 4, dtype='int32'),
+    'E': pd.Categorical(['test', 'train', 'test', 'train']),
+    'F': 'foo'
 })
 df3
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -232,6 +220,7 @@ df3
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -290,13 +279,9 @@ df3
 
 DataFrame 的列有不同[数据类型](https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-dtypes)。
 
-
 ```python
 df3.dtypes
 ```
-
-
-
 
     A           float64
     B    datetime64[ns]
@@ -306,13 +291,10 @@ df3.dtypes
     F            object
     dtype: object
 
-
-
 IPython支持 tab 键自动补全列名与公共属性。下面是部分可自动补全的属性：
 
-
 ```python
-df3.<TAB>
+df3. < TAB >
 # df2.A                  df2.bool
 # df2.abs                df2.boxplot
 # df2.add                df2.C
@@ -328,13 +310,10 @@ df3.<TAB>
 # 列 A、B、C、D 和 E 都可以自动补全；为简洁起见，此处只显示了部分属性。
 ```
 
-
       File "<ipython-input-16-fe6086829f7d>", line 1
         df3.<TAB>
             ^
     SyntaxError: invalid syntax
-    
-
 
 ### 查看数据
 
@@ -342,13 +321,9 @@ df3.<TAB>
 
 下列代码说明如何查看 DataFrame 头部和尾部数据：
 
-
 ```python
 df2.head()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -363,6 +338,7 @@ df2.head()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -414,15 +390,9 @@ df2.head()
 </table>
 </div>
 
-
-
-
 ```python
 df2.tail(3)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -437,6 +407,7 @@ df2.tail(3)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -478,43 +449,30 @@ df2.tail(3)
 
 显示索引与列名
 
-
 ```python
 df2.index
 ```
-
-
-
 
     DatetimeIndex(['2015-01-01', '2015-01-02', '2015-01-03', '2015-01-04',
                    '2015-01-05', '2015-01-06'],
                   dtype='datetime64[ns]', freq='D')
 
-
-
-
 ```python
 df2.columns
 ```
 
-
-
-
     Index(['A', 'B', 'C', 'D'], dtype='object')
 
-
-
-[DataFrame.to_numpy()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas.DataFrame.to_numpy) 输出底层数据的 NumPy 对象。注意，DataFrame 的列由多种数据类型组成时，该操作耗费系统资源较大，这也是 Pandas 和 NumPy 的本质区别：**NumPy 数组只有一种数据类型，DataFrame 每列的数据类型各不相同**。调用 DataFrame.to_numpy() 时，Pandas 查找支持 DataFrame 里所有数据类型的 NumPy 数据类型。还有一种数据类型是 `object`，可以把 DataFrame 列里的值强制转换为 Python 对象。
+[DataFrame.to_numpy()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_numpy.html#pandas.DataFrame.to_numpy)
+输出底层数据的 NumPy 对象。注意，DataFrame 的列由多种数据类型组成时，该操作耗费系统资源较大，这也是 Pandas 和 NumPy 的本质区别：**NumPy 数组只有一种数据类型，DataFrame
+每列的数据类型各不相同**。调用 DataFrame.to_numpy() 时，Pandas 查找支持 DataFrame 里所有数据类型的 NumPy 数据类型。还有一种数据类型是 `object`，可以把 DataFrame
+列里的值强制转换为 Python 对象。
 
 下面的 `df2` 这个 DataFrame 里的值都是浮点数，DataFrame.to_numpy() 的操作会很快，而且不复制数据。
-
 
 ```python
 df2.to_numpy()
 ```
-
-
-
 
     array([[ 0.49577653, -0.5242963 , -0.08997072,  1.64004361],
            [ 2.01445165, -0.42293604,  0.99104484, -0.28133103],
@@ -523,17 +481,11 @@ df2.to_numpy()
            [-1.85407664,  0.36895609, -1.26782639, -2.46488774],
            [-0.22499319, -1.25311828, -0.19571662, -0.62379678]])
 
-
-
 `df3` 这个 DataFrame 包含了多种类型，DataFrame.to_numpy() 操作就会耗费较多资源。
-
 
 ```python
 df3.to_numpy()
 ```
-
-
-
 
     array([[1.0, Timestamp('2015-01-01 00:00:00'), 1.0, 3, 'test', 'foo'],
            [1.0, Timestamp('2015-01-01 00:00:00'), 1.0, 3, 'train', 'foo'],
@@ -541,20 +493,14 @@ df3.to_numpy()
            [1.0, Timestamp('2015-01-01 00:00:00'), 1.0, 3, 'train', 'foo']],
           dtype=object)
 
+**提醒**： DataFrame.to_numpy() 的输出不包含行索引和列标签。
 
-
-**提醒**：
-DataFrame.to_numpy() 的输出不包含行索引和列标签。
-
-[describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe) 可以快速查看数据的统计摘要：
-
+[describe()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe)
+可以快速查看数据的统计摘要：
 
 ```python
 df2.describe()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -569,6 +515,7 @@ df2.describe()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -645,7 +592,6 @@ df2.describe()
 
 转置数据：
 
-
 ```python
 print(df2)
 print("\n-------------------转置后-------------------------")
@@ -661,10 +607,6 @@ df2.T
     2015-01-06 -0.224993 -1.253118 -0.195717 -0.623797
     
     -------------------转置后-------------------------
-    
-
-
-
 
 <div>
 <style scoped>
@@ -679,6 +621,7 @@ df2.T
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -737,13 +680,9 @@ df2.T
 
 按轴排序：
 
-
 ```python
 df2.sort_index(axis=1, ascending=False)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -758,6 +697,7 @@ df2.sort_index(axis=1, ascending=False)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -820,13 +760,9 @@ df2.sort_index(axis=1, ascending=False)
 
 按值排序：
 
-
 ```python
 df2.sort_values(by='B')
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -841,6 +777,7 @@ df2.sort_values(by='B')
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -899,8 +836,6 @@ df2.sort_values(by='B')
 </table>
 </div>
 
-
-
 ### 选择
 
 **提醒**：
@@ -913,13 +848,9 @@ df2.sort_values(by='B')
 
 选择单列，产生`Series`，与`df2.A`等效：
 
-
 ```python
 df2['A']
 ```
-
-
-
 
     2015-01-01    0.495777
     2015-01-02    2.014452
@@ -929,17 +860,11 @@ df2['A']
     2015-01-06   -0.224993
     Freq: D, Name: A, dtype: float64
 
-
-
 用`[]`切片行：
-
 
 ```python
 df2[0:3]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -954,6 +879,7 @@ df2[0:3]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -991,15 +917,9 @@ df2[0:3]
 </table>
 </div>
 
-
-
-
 ```python
 df2['20150102': '20150103']
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1014,6 +934,7 @@ df2['20150102': '20150103']
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1044,21 +965,15 @@ df2['20150102': '20150103']
 </table>
 </div>
 
-
-
 #### 按标签选择
 
 详见[按标签选择](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-label)
 
 用标签提取一行数据：
 
-
 ```python
 df2.loc[df1[0]]
 ```
-
-
-
 
     A    0.495777
     B   -0.524296
@@ -1066,17 +981,11 @@ df2.loc[df1[0]]
     D    1.640044
     Name: 2015-01-01 00:00:00, dtype: float64
 
-
-
 用标签选择多列数据：
 
-
 ```python
-df2.loc[:,['A', 'B']]
+df2.loc[:, ['A', 'B']]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1091,6 +1000,7 @@ df2.loc[:,['A', 'B']]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1139,13 +1049,9 @@ df2.loc[:,['A', 'B']]
 
 用标签切片，包含行与列结束点：
 
-
 ```python
-df2.loc['20150102': '20150104', ['A','B']]
+df2.loc['20150102': '20150104', ['A', 'B']]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1160,6 +1066,7 @@ df2.loc['20150102': '20150104', ['A','B']]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1193,47 +1100,29 @@ df2.loc['20150102': '20150104', ['A','B']]
 
 返回对象降维：
 
-
 ```python
-df2.loc['20150102', ['A','B']]
+df2.loc['20150102', ['A', 'B']]
 ```
-
-
-
 
     A    2.014452
     B   -0.422936
     Name: 2015-01-02 00:00:00, dtype: float64
 
-
-
 提取标量值：
 
-
 ```python
-df2.loc[df1[0],'A']
+df2.loc[df1[0], 'A']
 ```
-
-
-
 
     0.4957765303321702
 
-
-
 快速访问标量，与上述方法等效
-
 
 ```python
 df2.at[df1[0], 'A']
 ```
 
-
-
-
     0.4957765303321702
-
-
 
 #### 按位置选择
 
@@ -1241,13 +1130,9 @@ df2.at[df1[0], 'A']
 
 用整数位置选择：
 
-
 ```python
 df2.iloc[3]
 ```
-
-
-
 
     A    0.565125
     B    0.858778
@@ -1255,17 +1140,11 @@ df2.iloc[3]
     D    0.201316
     Name: 2015-01-04 00:00:00, dtype: float64
 
-
-
 类似Numpy/Python，用整数切片
 
-
 ```python
-df2.iloc[3:5,0:2]
+df2.iloc[3:5, 0:2]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1280,6 +1159,7 @@ df2.iloc[3:5,0:2]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1308,13 +1188,9 @@ df2.iloc[3:5,0:2]
 
 类型Numpy/Python，用整数列表按位置切片：
 
-
 ```python
-df2.iloc[[1,2,4], [0,2]]
+df2.iloc[[1, 2, 4], [0, 2]]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1329,6 +1205,7 @@ df2.iloc[[1,2,4], [0,2]]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1362,13 +1239,9 @@ df2.iloc[[1,2,4], [0,2]]
 
 显式整行切片
 
-
 ```python
 df2.iloc[1:3, :]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1383,6 +1256,7 @@ df2.iloc[1:3, :]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1417,13 +1291,9 @@ df2.iloc[1:3, :]
 
 显式整列切片：
 
-
 ```python
-df2.iloc[:,1:3]
+df2.iloc[:, 1:3]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1438,6 +1308,7 @@ df2.iloc[:,1:3]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1486,43 +1357,27 @@ df2.iloc[:,1:3]
 
 显式提取值：
 
-
 ```python
-df2.iloc[1,1]
+df2.iloc[1, 1]
 ```
 
-
-
-
     -0.4229360414145462
-
-
 
 快速访问标量，与上述方法等效：
 
-
 ```python
-df2.iat[1,1]
+df2.iat[1, 1]
 ```
 
-
-
-
     -0.4229360414145462
-
-
 
 #### 布尔索引
 
 用单列的值选择数据：
 
-
 ```python
 df2[df2.A > 0]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1537,6 +1392,7 @@ df2[df2.A > 0]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1585,13 +1441,9 @@ df2[df2.A > 0]
 
 选择DataFrame里满足条件的值：
 
-
 ```python
 df2[df2 > 0]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1606,6 +1458,7 @@ df2[df2 > 0]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1668,15 +1521,11 @@ df2[df2 > 0]
 
 用[isin()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.isin.html#pandas.Series.isin)筛选：
 
-
 ```python
 df4 = df2.copy()
 df4['E'] = ['one', 'two', 'three', 'four', 'three', 'one']
 df4
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1691,6 +1540,7 @@ df4
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1756,15 +1606,9 @@ df4
 </table>
 </div>
 
-
-
-
 ```python
 df4[df4['E'].isin(['two', 'four'])]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1779,6 +1623,7 @@ df4[df4['E'].isin(['two', 'four'])]
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1812,15 +1657,12 @@ df4[df4['E'].isin(['two', 'four'])]
 </table>
 </div>
 
-
-
 ### 赋值
 
 用索引自动对齐新增列的数据：
 
-
 ```python
-s1 = pd.Series([1,2,3,4,5,6], index=pd.date_range('20150101', periods=6))
+s1 = pd.Series([1, 2, 3, 4, 5, 6], index=pd.date_range('20150101', periods=6))
 df2['F'] = s1
 print(df2)
 ```
@@ -1832,18 +1674,13 @@ print(df2)
     2015-01-04  0.565125  0.858778  0.138376  0.201316  4
     2015-01-05 -1.854077  0.368956 -1.267826 -2.464888  5
     2015-01-06 -0.224993 -1.253118 -0.195717 -0.623797  6
-    
 
 按标签赋值：
-
 
 ```python
 df2.at[df1[0], 'A'] = 0
 df2
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1858,6 +1695,7 @@ df2
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1927,14 +1765,10 @@ df2
 
 按位置赋值：
 
-
 ```python
-df2.iat[0,1] = 0
+df2.iat[0, 1] = 0
 df2
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -1949,6 +1783,7 @@ df2
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2018,14 +1853,10 @@ df2
 
 按Numpy数组赋值：
 
-
 ```python
-df2.loc[:,"D"] = np.array([5]* len(df2))
+df2.loc[:, "D"] = np.array([5] * len(df2))
 df2
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2040,6 +1871,7 @@ df2
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2108,17 +1940,14 @@ df2
 
 
 用`where`条件赋值：
-- 签名`DataFrame.where()`不同于`numpy.where()`。大致相当于。`df1.where(m, df2)``````np.where(m, df1, df2)`
 
+- 签名`DataFrame.where()`不同于`numpy.where()`。大致相当于。`df1.where(m, df2)``````np.where(m, df1, df2)`
 
 ```python
 df5 = df2.copy()
 df5[df5 > 0] = -df5
 df5
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2133,6 +1962,7 @@ df5
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2198,23 +2028,18 @@ df5
 </table>
 </div>
 
-
-
 ### 缺失值
 
-Pandas 主要用 `np.nan` 表示缺失数据。 计算时，默认不包含空值。详见[缺失数据](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data)。
+Pandas 主要用 `np.nan` 表示缺失数据。
+计算时，默认不包含空值。详见[缺失数据](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data)。
 
 重建索引（reindex）可以更改、添加、删除指定轴的索引，并返回数据副本，即不更改原数据。
-
 
 ```python
 df6 = df2.reindex(index=df1[0:4], columns=list(df2.columns) + ['E'])
 df6.loc[df1[0]:df1[1], 'E'] = 1
 df6
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2229,6 +2054,7 @@ df6
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2287,13 +2113,9 @@ df6
 
 删除所有含缺失值得行：
 
-
 ```python
 df6.dropna(how='any')
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2308,6 +2130,7 @@ df6.dropna(how='any')
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2348,13 +2171,9 @@ df6.dropna(how='any')
 
 填充缺失值：
 
-
 ```python
 df6.fillna(value=4)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2369,6 +2188,7 @@ df6.fillna(value=4)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2427,13 +2247,9 @@ df6.fillna(value=4)
 
 提取`nan`值得布尔掩码：
 
-
 ```python
 pd.isna(df6)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2448,6 +2264,7 @@ pd.isna(df6)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2502,9 +2319,8 @@ pd.isna(df6)
 </table>
 </div>
 
-
-
 ### 运算
+
 详见[二进制操作](https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-binop)
 
 #### 统计
@@ -2513,13 +2329,9 @@ pd.isna(df6)
 
 描述性统计：
 
-
 ```python
 df2.mean()
 ```
-
-
-
 
     A    0.230684
     B   -0.373854
@@ -2528,17 +2340,11 @@ df2.mean()
     F    3.500000
     dtype: float64
 
-
-
 在另一个轴(即,行)上执行同样的操作：
-
 
 ```python
 df2.mean(1)
 ```
-
-
-
 
     2015-01-01    1.182006
     2015-01-02    1.916512
@@ -2548,18 +2354,12 @@ df2.mean(1)
     2015-01-06    1.865234
     Freq: D, dtype: float64
 
-
-
 不同维度对象运算时，要先对齐。此外，Pandas自动沿指定维度广播。
 
-
 ```python
-s2 = pd.Series([1,3,5, np.nan, 6, 8], index=df1).shift(2)
+s2 = pd.Series([1, 3, 5, np.nan, 6, 8], index=df1).shift(2)
 s2
 ```
-
-
-
 
     2015-01-01    NaN
     2015-01-02    NaN
@@ -2569,15 +2369,9 @@ s2
     2015-01-06    NaN
     Freq: D, dtype: float64
 
-
-
-
 ```python
 df2.sub(s2, axis='index')
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2592,6 +2386,7 @@ df2.sub(s2, axis='index')
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2657,19 +2452,13 @@ df2.sub(s2, axis='index')
 </table>
 </div>
 
-
-
 #### Apply函数
 
 Apply函数处理数据
 
-
 ```python
 df2.apply(np.cumsum)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2684,6 +2473,7 @@ df2.apply(np.cumsum)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2749,15 +2539,9 @@ df2.apply(np.cumsum)
 </table>
 </div>
 
-
-
-
 ```python
 df2.apply(lambda x: x.max() - x.min())
 ```
-
-
-
 
     A    3.868528
     B    2.653581
@@ -2766,20 +2550,14 @@ df2.apply(lambda x: x.max() - x.min())
     F    5.000000
     dtype: float64
 
-
-
 #### 直方图
 
 详见[直方图与离散化](https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-discretization)。
-
 
 ```python
 s3 = pd.Series(np.random.randint(0, 7, size=10))
 s3
 ```
-
-
-
 
     0    6
     1    3
@@ -2793,15 +2571,9 @@ s3
     9    3
     dtype: int32
 
-
-
-
 ```python
 s3.value_counts()
 ```
-
-
-
 
     3    3
     6    2
@@ -2811,20 +2583,15 @@ s3.value_counts()
     0    1
     dtype: int64
 
-
-
 #### 字符串方法
 
-Series 的 `str` 属性包含一组字符串处理功能，如下列代码所示。注意，`str` 的模式匹配默认使用[正则表达式](https://docs.python.org/3/library/re.html)。详见[矢量字符串方法](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#text-string-methods)。
-
+Series 的 `str` 属性包含一组字符串处理功能，如下列代码所示。注意，`str`
+的模式匹配默认使用[正则表达式](https://docs.python.org/3/library/re.html)。详见[矢量字符串方法](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#text-string-methods)。
 
 ```python
-s4 = pd.Series(['A','B', 'C', 'Aaba','Baca', np.nan, 'CABA', 'dog', 'cat'])
+s4 = pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat'])
 s4.str.lower()
 ```
-
-
-
 
     0       a
     1       b
@@ -2837,26 +2604,21 @@ s4.str.lower()
     8     cat
     dtype: object
 
-
-
 ### 合并（Merge）
 
 #### 结合（Concat）
+
 Pandas 提供了多种将 Series、DataFrame 对象组合在一起的功能，用索引与关联代数功能的多种设置逻辑可执行连接（join）与合并（merge）操作。
 
 详见[合并](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#merging)。
 
 `concat()` 用于连接 Pandas 对象：
 
-
 ```python
 df7 = pd.DataFrame(np.random.randn(10, 4))
 df7
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2870,6 +2632,7 @@ df7
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2955,18 +2718,12 @@ df7
   </tbody>
 </table>
 </div>
-
-
-
 
 ```python
 # 分解为多组
-pieces = [df7[:3], df7[3:7],df7[7:]]
+pieces = [df7[:3], df7[3:7], df7[7:]]
 pd.concat(pieces)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -2981,6 +2738,7 @@ pd.concat(pieces)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3066,17 +2824,14 @@ pd.concat(pieces)
   </tbody>
 </table>
 </div>
-
-
 
 #### 连接（join）
 
 SQL 风格的合并。 详见[数据库风格连接](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#merging-join)。
 
-
 ```python
-left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1,2]})
-right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4,5]})
+left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
+right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
 print(left)
 print('-------------------')
 print(right)
@@ -3089,15 +2844,10 @@ print(right)
        key  rval
     0  foo     4
     1  foo     5
-    
-
 
 ```python
 pd.merge(left, right, on='key')
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3112,6 +2862,7 @@ pd.merge(left, right, on='key')
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3155,10 +2906,9 @@ pd.merge(left, right, on='key')
 
 还有一个例子：
 
-
 ```python
-left = pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1,2]})
-right = pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4,5]})
+left = pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1, 2]})
+right = pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4, 5]})
 print(left)
 print('-------------------')
 print(right)
@@ -3171,15 +2921,10 @@ print(right)
        key  rval
     0  foo     4
     1  bar     5
-    
-
 
 ```python
 pd.merge(left, right, on='key')
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3194,6 +2939,7 @@ pd.merge(left, right, on='key')
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3221,20 +2967,14 @@ pd.merge(left, right, on='key')
 </table>
 </div>
 
-
-
 #### 追加（Append）
 
 为 DataFrame 追加行。详见[追加](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#merging-concatenation)文档。
-
 
 ```python
 df = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
 df
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3249,6 +2989,7 @@ df
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3321,16 +3062,10 @@ df
 </table>
 </div>
 
-
-
-
 ```python
 s = df.iloc[3]
 df.append(s, ignore_index=True)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3345,6 +3080,7 @@ df.append(s, ignore_index=True)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3424,9 +3160,8 @@ df.append(s, ignore_index=True)
 </table>
 </div>
 
-
-
 ### 分组（Grouping）
+
 “group by” 指的是涵盖下列一项或多项步骤的处理流程：
 
 - 分割：按条件把数据分割成多组；
@@ -3436,16 +3171,12 @@ df.append(s, ignore_index=True)
 详见[中文文档](https://www.pypandas.cn/docs/getting_started/10min.html#%E5%88%86%E7%BB%84%EF%BC%88grouping%EF%BC%89)
 [官方](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#groupby)
 
-
 ```python
 df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'foo'],
-                  'B': ['one', 'one', 'two', 'three','two', 'two', 'one', 'three'],
-                  'C': np.random.randn(8), 'D': np.random.randn(8)})
+                   'B': ['one', 'one', 'two', 'three', 'two', 'two', 'one', 'three'],
+                   'C': np.random.randn(8), 'D': np.random.randn(8)})
 df
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3460,6 +3191,7 @@ df
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3532,17 +3264,11 @@ df
 </table>
 </div>
 
-
-
 ##### 先分组，再用`sum`函数计算每组的汇总数据
-
 
 ```python
 df.groupby('A').sum()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3557,6 +3283,7 @@ df.groupby('A').sum()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3586,17 +3313,11 @@ df.groupby('A').sum()
 </table>
 </div>
 
-
-
 ##### 多列分组后，生成多层索引，也可以应用 sum 函数：
-
 
 ```python
 df.groupby(['A', 'B']).sum()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3611,6 +3332,7 @@ df.groupby(['A', 'B']).sum()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3664,25 +3386,22 @@ df.groupby(['A', 'B']).sum()
 </table>
 </div>
 
-
-
 ### 重塑（Reshaping）
+
 详见[多层索引](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#advanced-hierarchical)与[重塑](https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-stacking)。
 
 #### 堆叠（Stack）
 
-
 ```python
-tuples = list(zip(*[['bar', 'bar', 'baz', 'baz','foo', 'foo', 'qux', 'qux'],
-   ....:            ['one', 'two', 'one', 'two','one', 'two', 'one', 'two']]))
+tuples = list(zip(*[['bar', 'bar', 'baz', 'baz', 'foo', 'foo', 'qux', 'qux'],
+                    ....:            ['one', 'two', 'one', 'two', 'one', 'two', 'one', 'two']]))
 index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
-df = pd.DataFrame(np.random.randn(8,2), index=index, columns=['A', 'B'])
+df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=['A', 'B'])
 df2 = df[:4]
 ```
 
-
 ```python
-print(df, df2, sep='\n'*3)
+print(df, df2, sep='\n' * 3)
 ```
 
                          A         B
@@ -3703,17 +3422,12 @@ print(df, df2, sep='\n'*3)
           two    -0.541903 -0.763716
     baz   one     0.002802 -0.073066
           two     1.086178  0.505617
-    
-
 
 ```python
 # stack()方法把 DataFrame 列压缩至一层
-stacked = df2.stack() 
+stacked = df2.stack()
 stacked
 ```
-
-
-
 
     first  second   
     bar    one     A    1.192086
@@ -3726,16 +3440,10 @@ stacked
                    B    0.505617
     dtype: float64
 
-
-
-
 ```python
 # 压缩后的 DataFrame 或 Series 具有多层索引， stack() 的逆操作是 unstack()，默认为拆叠最后一层：
 stacked.unstack()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3750,6 +3458,7 @@ stacked.unstack()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3793,15 +3502,9 @@ stacked.unstack()
 </table>
 </div>
 
-
-
-
 ```python
 stacked.unstack(1)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3816,6 +3519,7 @@ stacked.unstack(1)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3859,15 +3563,9 @@ stacked.unstack(1)
 </table>
 </div>
 
-
-
-
 ```python
 stacked.unstack(0)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3882,6 +3580,7 @@ stacked.unstack(0)
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3925,23 +3624,18 @@ stacked.unstack(0)
 </table>
 </div>
 
-
-
 ### 数据透视表（Pivot Tables）
-详见[数据透视表](https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-pivot)。
 
+详见[数据透视表](https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-pivot)。
 
 ```python
 df = pd.DataFrame({'A': ['one', 'one', 'two', 'three'] * 3,
-   .....:                    'B': ['A', 'B', 'C'] * 4,
-   .....:                    'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] * 2,
-   .....:                    'D': np.random.randn(12),
-   .....:                    'E': np.random.randn(12)})
+                   .....: 'B': ['A', 'B', 'C'] * 4,
+                               .....: 'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] * 2,
+                                           .....: 'D': np.random.randn(12),
+                                                       .....: 'E': np.random.randn(12)})
 df
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -3956,6 +3650,7 @@ df
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4069,15 +3764,9 @@ df
 </table>
 </div>
 
-
-
-
 ```python
-pd.pivot_table(df, values='D', index=['A','B'], columns=['C'])
+pd.pivot_table(df, values='D', index=['A', 'B'], columns=['C'])
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -4092,6 +3781,7 @@ pd.pivot_table(df, values='D', index=['A','B'], columns=['C'])
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -4161,21 +3851,18 @@ pd.pivot_table(df, values='D', index=['A','B'], columns=['C'])
 </table>
 </div>
 
-
-
 ### 时间序列(TimeSeries)
-Pandas 为频率转换时重采样提供了虽然简单易用，但强大高效的功能，
-如，将秒级的数据转换为 5 分钟为频率的数据。这种操作常见于财务应用程序，但又不仅限于此。详见[时间序列](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries)。
 
+Pandas 为频率转换时重采样提供了虽然简单易用，但强大高效的功能， 如，将秒级的数据转换为 5
+分钟为频率的数据。这种操作常见于财务应用程序，但又不仅限于此。详见[时间序列](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries)。
 
 ```python
 rng = pd.date_range('1/1/2020', periods=10, freq='S')
 ts = pd.Series(np.random.randint(0, 20, len(rng)), index=rng)
 ```
 
-
 ```python
-print(rng, ts, sep='\n'*2)
+print(rng, ts, sep='\n' * 2)
 ```
 
     DatetimeIndex(['2020-01-01 00:00:00', '2020-01-01 00:00:01',
@@ -4196,28 +3883,20 @@ print(rng, ts, sep='\n'*2)
     2020-01-01 00:00:08    14
     2020-01-01 00:00:09     8
     Freq: S, dtype: int32
-    
-
 
 ```python
 ts.resample('5Min').sum()
 ```
 
-
-
-
     2020-01-01    84
     Freq: 5T, dtype: int32
-
-
-
 
 ```python
 # 时区表示
 rng = pd.date_range('2020/8/1', periods=5, freq='D')
 ts = pd.Series(np.random.randn(len(rng)), rng)
 ts_UTC = ts.tz_localize('UTC')
-print(ts, ts_UTC, sep='\n'*3)
+print(ts, ts_UTC, sep='\n' * 3)
 ```
 
     2020-08-01   -0.938967
@@ -4234,16 +3913,11 @@ print(ts, ts_UTC, sep='\n'*3)
     2020-08-04 00:00:00+00:00   -0.300962
     2020-08-05 00:00:00+00:00   -1.635329
     Freq: D, dtype: float64
-    
-
 
 ```python
 # 转换成其他时区
 ts_UTC.tz_convert('US/Eastern')
 ```
-
-
-
 
     2020-07-31 20:00:00-04:00   -0.938967
     2020-08-01 20:00:00-04:00    0.056395
@@ -4252,16 +3926,13 @@ ts_UTC.tz_convert('US/Eastern')
     2020-08-04 20:00:00-04:00   -1.635329
     Freq: D, dtype: float64
 
-
-
-
 ```python
 # 转换时间段
 rng = pd.date_range('2020/8/1', periods=5, freq='M')
 ts = pd.Series(np.random.randn(len(rng)), rng)
 ps = ts.to_period()
 pts = ps.to_timestamp()
-print(ts, ps, pts, sep='\n'*3)
+print(ts, ps, pts, sep='\n' * 3)
 ```
 
     2020-08-31    2.606606
@@ -4286,11 +3957,10 @@ print(ts, ps, pts, sep='\n'*3)
     2020-11-01   -0.376675
     2020-12-01   -0.196782
     Freq: MS, dtype: float64
-    
 
 ### 可视化
-详见[可视化文档](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#visualization)。
 
+详见[可视化文档](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#visualization)。
 
 ```python
 ts = pd.Series(np.random.randn(1000), index=pd.date_range('2020/1/1', periods=1000))
@@ -4298,31 +3968,21 @@ ts = ts.cumsum()
 ts.plot()
 ```
 
-
-
-
     <matplotlib.axes._subplots.AxesSubplot at 0x1ef3b4d7d08>
-
-
-
 
 ![png](./imgs/output_143_1.png)
 
-
 ##### DataFrame 的 [plot() ](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#visualization)方法可以快速绘制所有带标签的列：
 
-
 ```python
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+
 df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index, columns=['A', 'B', 'C', 'D'])
 df = df.cumsum()
-plt.figure(figsize=(30,10),dpi=80)
+plt.figure(figsize=(30, 10), dpi=80)
 df.plot()
 plt.legend(loc='best')
 ```
-
-
-
 
     <matplotlib.legend.Legend at 0x1ef3ae58408>
 
@@ -4331,11 +3991,7 @@ plt.legend(loc='best')
 
     <Figure size 2400x800 with 0 Axes>
 
-
-
 ![png](./imgs/output_145_2.png)
-
-
 
 ```python
 

@@ -8,7 +8,7 @@
         git help 命令 / git 命令 help     查看某命令的使用说明, F键下一页，B键上一页，Q退出
 
 ## git 配置（全局配置）
-    
+
         所有的配置都会保存到当前用户目录下的: .gitconfig 文件中
             git config --global user.name '名称'               配置用户名
             git config --global user.email '邮箱名'            配置邮箱
@@ -19,20 +19,20 @@
 ## 初始化项目
 
         git init        初始化项目
-    
+
 ## 查看状态
-    
+
         git status
             状态：
                 untracked:未跟踪的文件
                 modified: 修改后未添加提交的文件
-        
+
 ## 添加文件
-    
+
         git add .或具体文件                      添加当前文件夹的文件或具体文件
 
 ## 提交文件
-    
+
         git commit -m '提交信息'                提交
         git commit -am '提交信息'               添加提交
 
@@ -47,8 +47,7 @@
             --author:指定作者
             --grep:搜索某文件
             --before:某时间之前
-        
-    
+
 ## 查看文件修改前和修改后的区别
 
         git diff 文件名                        查看文件修改的区别，不指明文件则所以修改文件的区别
@@ -58,12 +57,12 @@
         git mv 原文件名 新文件名                重命名/移动文件夹或文件名
         git add .
         git commit -m '信息'
-    
+
 ## 删除文件
 
         git rm 文件名1 文件名2 。。。    
         git rm -r 文件夹名                      递归删除  
-    
+
 ## 恢复文件
 
         git checkout HEAD^ -- 需要恢复的文件名
@@ -89,7 +88,7 @@
         - HEAD^ 表示上一个版本，即上一次的commit，也可以写成HEAD~1
         - 如果进行两次的commit，想要都撤回，可以使用HEAD~2
         git reset HEAD XXX/XXX/XXX.java 就是对某个文件进行撤销了
-                    
+
 ## 查看/创建/切换分支
 
         git branch -a               查看分支
@@ -105,7 +104,7 @@
 
         git checkout master
         git merge 分支名    
-    
+
 ## 解决合并冲突
 
         手动解决冲突
@@ -124,7 +123,7 @@
         git apply 工作进度代号            恢复工作进度
         git shash drop 工作进度代号       删除工作进度
         git apply pop 工作进度代号        恢复工作进度同时删除
-    
+
 ## 添加别名
 
         git config --global alias.co(别名) checkout(命令)
@@ -139,7 +138,7 @@
         git config --global core.excludesfile ~/.gitignore_global
         告诉git全局范围中忽略的文件包含在.gitignore_global文件中
         编辑.gitignore_global需要忽略的文件
-    
+
 ## 项目级忽略文件
 
         在项目根目录下创建.gitignore文件
@@ -147,30 +146,30 @@
         
         如果你不想推什么文件到git 可以运行这个命令：
         git update-index --assume-unchanged xxx/xxx.py  
-        
+
 ## 忽略已被跟踪的文件
 
 - 忽略规则只针对还没有被git跟踪的文件及文件夹有效。若需要忽略规则对已被跟踪的文件及文件夹有效，则需要取消对文件或文件夹的跟踪
 
     - `git rm -r --cached <dir>`：取消对文件夹及文件夹下的所有子文件夹、文件的跟踪，文件夹及文件夹下的所有子文件夹、文件的状态将从跟踪状态变为未跟踪状态
-    
+
     - `git rm --cached <file>`：取消对文件的跟踪，文件的跟踪状态将变为未跟踪状态
-    
+
 - 取消对文件或文件夹的跟踪之后，`.gitignore`文件中的忽略规则将会对取消了跟踪状态的文件或文件夹生效
 
 ## 创建远程版本库
-    
+
         git remote add origin 远程版本库url地址
         git remote -v                               查看远程库信息
         git remote rm                               移除远程库
-    
+
 ## 推送版本库
 
         git push [-u] origin 分支名
             -u:跟踪远程分支的变化
-            
-## 修改远程仓库地址 
-    
+
+## 修改远程仓库地址
+
         1.修改命令
             git remote origin set-url [url]
         
@@ -195,16 +194,77 @@
 ## 基于版本库开发自己的版本库，fork到自己账户然后克隆到本地
 
         git fork 远程版本库url地址
-        
+
 ## 添加pull request
 
         git pull request
-    
+
 ## 添加贡献者
 
         GitHub中的setting中的collaborator添加贡献者
-    
+
 ## 详情图
 
 ![image](./docker/img/git.png)
-                               
+
+## git submodule常用命令
+
+- 添加子模块
+
+```shell
+git submodule add <repository> <path>
+```
+> `<path>` 是子模块在当前仓库中的相对路径
+
+- 初始化子模块
+
+```shell
+git submodule update --init --recursive
+```
+
+- 更新子模块
+
+```shell
+git submodule update --remote <path>
+```
+
+- 切换子模块分支
+
+```shell
+cd <path>
+git checkout <branch>
+cd ..
+git add <path>
+git commit -m "Update submodule"
+```
+
+- 删除子模块
+
+```shell
+git submodule deinit <path>
+git rm <path>
+rm -rf .git/modules/<path>
+```
+
+- 切换全部子项目分支
+
+```shell
+git submodule foreach -q 'git checkout <branch_name>'
+```
+
+- 递归克隆包含子项目的仓库
+
+```shell
+git clone --recurse-submodules <repository>
+```
+
+
+
+
+
+
+
+
+
+
+

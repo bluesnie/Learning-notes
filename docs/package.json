@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/bluesnie/Learning-notes/issues"
   },
-  "homepage": "https://github.com/bluesnie/Learning-notes#readme"
+  "homepage": "https://github.com/bluesnie/Learning-notes#readme",
+  "dependencies": {
+    "gitbook-plugin-mathjax-pro": "0.0.6",
+    "mathjax": "^2.7.7"
+  }
 }
