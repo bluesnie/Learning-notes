@@ -740,6 +740,9 @@
             - [选择、冒泡和插入排序](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/01-选择、冒泡和插入排序.md)
             - [归并、快速排序](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-归并、快速排序.md)
             - [堆和桶排序以及排序总结](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/03-堆、桶排序以及排序总结.md)
+            - [链表](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/04-链表.md)
+            - [二叉树](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md)
+            - [图](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md)
             - [算法图解](InterviewPreparation/DataStructuresAlgorithms/Algorithm/算法图解.pdf)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
