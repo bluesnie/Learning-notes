@@ -622,6 +622,7 @@
             - [链表](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/04-链表.md)
             - [二叉树](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md)
             - [图](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md)
+            - [前缀树和贪心算法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
