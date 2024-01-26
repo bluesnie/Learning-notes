@@ -7641,6 +7641,19 @@
             
         </li>
     
+        <li class="chapter " data-level="12.3.1.1.8" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.html">
+            
+                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.html">
+            
+                    
+                    前缀树和贪心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -8043,6 +8056,329 @@ nav_msgs::msg::OccupancyGrid &#x7684;data&#x7684;&#x662F;&#x4E00;&#x7EF4;&#x6570
 <blockquote>
 <p>TODO&#xFF0C;&#x5148;&#x4E86;&#x89E3;&#x5DE5;&#x4F5C;&#x6D41;&#x4EE5;&#x53CA;&#x6709;&#x54EA;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x9700;&#x8981;&#x518D;&#x6DF1;&#x5165;&#xFF0C;&#x6BD4;&#x8F83;&#x96BE;&#x61C2;</p>
 </blockquote>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x4F53;&#x7D20;voxel">&#x4EC0;&#x4E48;&#x662F;&#x4F53;&#x7D20;(Voxel)?</h3>
+<p><img src="imgs/voxel.png" alt=""></p>
+<p>&#x9898;&#x56FE;&#x4E2D;&#x662F;3D&#x6570;&#x636E;&#x7684;&#x4E0D;&#x540C;&#x8868;&#x793A;&#x7C7B;&#x578B;:</p>
+<ul>
+<li>a)&#x3001;&#x70B9;&#x4E91;&#xFF08;Point clouds&#xFF09;&#xFF1B;&#x70B9;&#x4E91;&#x662F;&#x4E09;&#x7EF4;&#x7A7A;&#x95F4;(xyz&#x5750;&#x6807;)&#x70B9;&#x7684;&#x96C6;&#x5408;&#x3002;</li>
+<li>b)&#x3001;&#x4F53;&#x7D20;&#x7F51;&#x683C;(Voxel grids)&#xFF1B;&#x4F53;&#x7D20;&#x662F;3D&#x7A7A;&#x95F4;&#x7684;&#x50CF;&#x7D20;&#x3002;&#x91CF;&#x5316;&#x7684;&#xFF0C;&#x5927;&#x5C0F;&#x56FA;&#x5B9A;&#x7684;&#x70B9;&#x4E91;&#x3002;&#x6BCF;&#x4E2A;&#x5355;&#x5143;&#x90FD;&#x662F;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x548C;&#x79BB;&#x6563;&#x5750;&#x6807;&#x3002;</li>
+<li>c) &#x591A;&#x8FB9;&#x5F62;&#x7F51;&#x683C;(Polygon meshes)&#xFF1B;mesh&#x662F;&#x9762;&#x7247;&#x7684;&#x96C6;&#x5408;&#x3002;</li>
+<li>d) &#x591A;&#x89C6;&#x56FE;&#x8868;&#x793A;(Multi-view representations)&#xFF1B;&#x591A;&#x89C6;&#x56FE;&#x8868;&#x793A;&#x662F;&#x4ECE;&#x4E0D;&#x540C;&#x6A21;&#x62DF;&#x89C6;&#x70B9;&#x6E32;&#x67D3;&#x7684;2D&#x56FE;&#x50CF;&#x96C6;&#x5408;&#x3002;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x91CA;&#x4F53;&#x7D20;&#x7F51;&#x683C;(Voxel grid),&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8981;&#x4E86;&#x89E3;&#x5360;&#x636E;&#x6805;&#x683C;&#x5730;&#x56FE;&#xFF08;Occupancy Grid Map&#xFF09;</p>
+<p><img src="imgs/v2-31903c9629c149dc34d8d085fff22c59_720w.png" alt=""></p>
+<p>&#x753B;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x7F51;&#x683C;&#xFF0C;&#x6BCF;&#x4E2A;&#x7F51;&#x683C;&#x5355;&#x5143;&#x91CC;&#x6709;&#x5B9E;&#x4F53;&#x7684;&#x8BDD;&#x5C31;&#x4E3A;&#x5360;&#x636E;&#x72B6;&#x6001;&#xFF08;1&#xFF09;&#xFF0C;&#x7A7A;&#x7684;&#x8BDD;&#x5C31;&#x4E3A;&#xFF08;0&#xFF09;&#x3002;&#x5F88;&#x597D;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x800C;&#x4F53;&#x7D20;&#x5C31;&#x662F;&#x56FA;&#x5B9A;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x4E09;&#x7EF4;&#x6805;&#x683C;&#x5730;&#x56FE;&#x3002;</p>
+<p><img src="imgs/v2-e67a92616f73185843f1cbd0dfbfdaa8_720w.png" alt=""></p>
+<p>&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x662F;&#x56FA;&#x5B9A;&#x5206;&#x8FA8;&#x7387;&#x7684;&#xFF0C;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x53EF;&#x53D8;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x7F51;&#x683C;&#x53EB;&#x516B;&#x53C9;&#x6811;&#x5730;&#x56FE;(Octomap)&#x3002;</p>
+<p><img src="imgs/v2-c55943227d7089621adb2a5ba9a18385_720w.png" alt=""></p>
+<p>&#x56FE;&#x5DE6;&#x662F;&#x516B;&#x53C9;&#x6811;&#x5730;&#x56FE;(Octomap)&#xFF0C;&#x56FE;&#x53F3;&#x662F;&#x516B;&#x53C9;&#x6811;(Octotree)&#x3002;</p>
+<p>&#x603B;&#x7ED3;&#xFF1A;</p>
+<ul>
+<li>&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x662F;&#x7528;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x7ACB;&#x65B9;&#x5757;&#x4F5C;&#x4E3A;&#x6700;&#x5C0F;&#x5355;&#x5143;&#xFF0C;&#x6765;&#x8868;&#x793A;&#x4E09;&#x7EF4;&#x7269;&#x4F53;&#x7684;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</li>
+<li>&#x4F53;&#x7D20;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x7C97;&#x7565;&#x7248;&#x7684;&#x70B9;&#x4E91;&#x3002;</li>
+</ul>
+<h3 id="&#x4E3B;&#x8981;&#x7684;&#x7C7B;">&#x4E3B;&#x8981;&#x7684;&#x7C7B;</h3>
+<ul>
+<li><strong>VoxelGrid</strong><ul>
+<li><code>VoxelGrid</code>&#xFF1A;&#x4EC5;&#x652F;&#x6301;z&lt;=16<ul>
+<li><code>~((uint32_t)0) &gt;&gt; 16</code> &#x8868;&#x793A;32&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x4E2D;&#x6240;&#x6709;&#x4F4D;&#x90FD;&#x4E3A;1&#x7684;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x53F3;&#x79FB;16&#x4F4D;&#x64CD;&#x4F5C; (&gt;&gt; 16) &#x6765;&#x5C06;&#x9AD8;16&#x4F4D;&#x8BBE;&#x7F6E;&#x4E3A;1&#xFF0C;&#x4F4E;16&#x4F4D;&#x8BBE;&#x7F6E;&#x4E3A;0<ul>
+<li><code>~0</code>&#xFF1A;&#x5F97;&#x5230;&#x5168;1</li>
+<li>&#x7B49;&#x4E8E;<code>python</code>&#x7684;<code>unknown_col = 0xFFFFFFFF &gt;&gt; 16</code></li>
+<li>&#x7ED3;&#x679C;&#xFF1A;<code>0b00000000000000001111111111111111</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>resize</code>&#xFF1A;&#x8C03;&#x6574;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x7684;&#x5C3A;&#x5BF8;</li>
+<li><code>reset</code>&#xFF1A;&#x91CD;&#x7F6E;&#x4F53;&#x7D20;&#x7F51;&#x683C;</li>
+<li><code>getData</code>&#xFF1A;&#x8FD4;&#x56DE;&#x6307;&#x5411;&#x8868;&#x793A;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x7684;&#x6570;&#x636E;&#x6570;&#x7EC4;&#x7684;&#x6307;&#x9488;</li>
+<li><code>markVoxel</code>&#xFF1A;&#x64CD;&#x4F5C;&#x5355;&#x4E2A;&#x4F53;&#x7D20;&#x3002;&#x5B83;&#x4EEC;&#x68C0;&#x67E5;&#x8FB9;&#x754C;&#x5E76;&#x6267;&#x884C;&#x6807;&#x8BB0;&#x6216;&#x68C0;&#x67E5;&#x9608;&#x503C;&#x7B49;&#x64CD;&#x4F5C;<ul>
+<li><code>full_mask = ((uint32_t)1 &lt;&lt; z &lt;&lt; 16) | (1 &lt;&lt; z);</code>&#xFF1A;&#x6CE8;&#x610F;&#xFF1A;<code>z&lt;=16</code></li>
+<li><code>data_[y * size_x_ + x] |= full_mask</code>&#xFF1A;&#x6807;&#x8BB0;&#x6216;&#x6E05;&#x9519;</li>
+</ul>
+</li>
+<li><code>markVoxelInMap</code>&#xFF1A;&#x64CD;&#x4F5C;&#x5355;&#x4E2A;&#x4F53;&#x7D20;&#x3002;&#x5B83;&#x4EEC;&#x68C0;&#x67E5;&#x8FB9;&#x754C;&#x5E76;&#x6267;&#x884C;&#x6807;&#x8BB0;&#x6216;&#x68C0;&#x67E5;&#x9608;&#x503C;&#x7B49;&#x64CD;&#x4F5C;<ul>
+<li><code>marked_bits = (*col |= full_mask) &gt;&gt; 16</code>&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>bitsBelowThreshold</code></li>
+</ul>
+</li>
+<li><code>clearVoxel</code>&#xFF1A;&#x64CD;&#x4F5C;&#x5355;&#x4E2A;&#x4F53;&#x7D20;&#x3002;&#x5B83;&#x4EEC;&#x68C0;&#x67E5;&#x8FB9;&#x754C;&#x5E76;&#x6267;&#x884C;&#x6E05;&#x9664;&#x6216;&#x68C0;&#x67E5;&#x9608;&#x503C;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;<code>data_[y * size_x_ + x] &amp;= ~(full_mask);</code></li>
+<li><code>clearVoxelInMap</code>&#xFF1A;&#x68C0;&#x67E5;&#x8FB9;&#x754C;&#x5E76;&#x6267;&#x884C;&#x6E05;&#x9664;&#x6216;&#x68C0;&#x67E5;&#x9608;&#x503C;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;<strong>&#x91CD;&#x7F6E;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;</strong><ul>
+<li><code>*col &amp;= ~(full_mask);</code></li>
+<li><code>unknown_bits = uint16_t(*col &gt;&gt; 16) ^ uint16_t(*col);</code></li>
+<li><code>marked_bits = *col &gt;&gt; 16</code></li>
+<li><code>bitsBelowThreshold(unknown_bits, 1) &amp;&amp; bitsBelowThreshold(marked_bits, 1)</code> -&gt; <code>costmap[index] = 0;</code></li>
+</ul>
+</li>
+<li><code>clearVoxelColumn</code>&#xFF1A;&#x6E05;&#x9664;&#x6307;&#x5B9A;&#x7D22;&#x5F15;&#x7684;&#x4F53;&#x7D20;</li>
+<li><code>bitsBelowThreshold</code>&#xFF1A;&#x67E5;&#x770B;&#x4F4D;&#x6570;&#x662F;&#x5426;&#x4F4E;&#x4E8E;&#x9608;&#x503C;</li>
+<li><code>numBits</code>&#xFF1A;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x6570;&#x6709;&#x591A;&#x5C11;&#x4E2A;bit&#x4F4D;&#x662F;1&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x79CD;&#x79F0;&#x4E3A;<code>Brian Kernighan&apos;s Algorithm</code>&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x53CD;&#x590D;&#x6E05;&#x9664; <code>n</code> &#x4E2D;&#x7684;&#x6700;&#x4F4E;&#x4F4D;&#x7684;1&#x6765;&#x8BA1;&#x7B97;1&#x7684;&#x4E2A;&#x6570;&#x3002;
+&#x7B97;&#x6CD5;&#x7684;&#x601D;&#x8DEF;&#x662F;&#x6BCF;&#x6B21;&#x6E05;&#x9664;&#x6700;&#x4F4E;&#x4F4D;&#x7684;1&#xFF0C;&#x7136;&#x540E;&#x8BA1;&#x6570;&#x5668;&#x589E;&#x52A0;1&#xFF0C;&#x76F4;&#x5230; <code>n</code> &#x53D8;&#x6210;0&#x3002;&#x6700;&#x7EC8;&#xFF0C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6574;&#x6570; <code>n</code> &#x4E2D;&#x4F4D;&#x4E3A;1&#x7684;&#x4E2A;&#x6570;&#x3002;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x4F18;&#x52BF;&#x5728;&#x4E8E;&#x5B83;&#x53EA;&#x9700;&#x8981;&#x5FAA;&#x73AF;&#x6B21;&#x6570;&#x7B49;&#x4E8E; <code>n</code> &#x4E2D;&#x4F4D;&#x4E3A;1&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6574;&#x4E2A;32&#x4F4D;&#x3002;</li>
+<li><code>getVoxel</code>&#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x5750;&#x6807;&#x5904;&#x7684;&#x4F53;&#x7D20;&#x72B6;&#x6001;&#xFF08;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF09;<ul>
+<li><code>result = data[y * size_x + x] &amp; full_mask;</code></li>
+<li><code>bits = numBits(result)</code></li>
+<li><code>known marked: 11 = 2 bits, unknown: 01 = 1 bit, known free: 00 = 0 bits</code></li>
+</ul>
+</li>
+<li><code>markVoxelLine</code>&#xFF1A;&#x7528;&#x4E8E;&#x5728;&#x7F51;&#x683C;&#x4E2D;&#x6807;&#x8BB0;&#x6216;&#x6E05;&#x9664;&#x4E00;&#x6761;&#x4F53;&#x7D20;&#x7EBF;&#x7684;&#x51FD;&#x6570;<ul>
+<li>&#x5B9E;&#x4F8B;&#x5316;&#x51FD;&#x6570;&#x5BF9;&#x8C61;<code>MarkVoxel</code></li>
+<li>&#x8C03;&#x7528;<code>raytraceLine</code></li>
+</ul>
+</li>
+<li><code>clearVoxelLine</code>&#xFF1A;&#x7528;&#x4E8E;&#x5728;&#x7F51;&#x683C;&#x4E2D;&#x6807;&#x8BB0;&#x6216;&#x6E05;&#x9664;&#x4E00;&#x6761;&#x4F53;&#x7D20;&#x7EBF;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x51FD;&#x6570;&#x5BF9;&#x8C61;<code>MarkVoxel</code>&#xFF0C;&#x8C03;&#x7528;<code>raytraceLine</code></li>
+<li><code>clearVoxelLineInMap</code>&#xFF1A;&#x7528;&#x4E8E;&#x5728;&#x7F51;&#x683C;&#x4E2D;&#x6807;&#x8BB0;&#x6216;&#x6E05;&#x9664;&#x4E00;&#x6761;&#x4F53;&#x7D20;&#x7EBF;&#x7684;&#x51FD;&#x6570;<ul>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#xFF0C;&#x8C03;&#x7528;<code>clearVoxelLine</code></li>
+<li>&#x5426;&#x5219;&#x5B9E;&#x4F8B;&#x5316;&#x51FD;&#x6570;&#x5BF9;&#x8C61;<code>ClearVoxelInMap</code></li>
+<li>&#x8C03;&#x7528;<code>raytraceLine</code></li>
+</ul>
+</li>
+<li><code>getVoxel</code>&#xFF1A;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x5750;&#x6807;&#x5904;&#x7684;&#x4F53;&#x7D20;&#x72B6;&#x6001;&#xFF08;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF09;</li>
+<li><code>getVoxelColumn</code>&#xFF1A;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x6307;&#x5B9A; <code>(x, y)</code> &#x4E0A;&#x7684;&#x4F53;&#x7D20;&#x72B6;&#x6001;</li>
+<li><code>printVoxelGrid</code>&#xFF1A;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x7684;&#x6253;&#x5370;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x6216;&#x7F51;&#x683C;&#x5217;&#x7684;&#x51FD;&#x6570;</li>
+<li><code>printColumnGrid</code>&#xFF1A;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x7684;&#x6253;&#x5370;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x6216;&#x7F51;&#x683C;&#x5217;&#x7684;&#x51FD;&#x6570;</li>
+<li><code>sizeX</code>&#xFF1A;&#x8FD4;&#x56DE;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x7684;&#x5C3A;&#x5BF8;</li>
+<li><code>sizeY</code>&#xFF1A;&#x8FD4;&#x56DE;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x7684;&#x5C3A;&#x5BF8;</li>
+<li><code>sizeZ</code>&#xFF1A;&#x8FD4;&#x56DE;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x7684;&#x5C3A;&#x5BF8;</li>
+<li><code>raytraceLine</code>&#xFF1A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x4E2D;&#x6267;&#x884C;&#x5C04;&#x7EBF;&#x8DDF;&#x8E2A;&#xFF0C;&#x6CBF;&#x7740;&#x7EBF;&#x6807;&#x8BB0;&#x6216;&#x6E05;&#x9664;&#x4F53;&#x7D20;<ul>
+<li>&#x5B9E;&#x4F8B;&#x5316;<code>GridOffset</code>&#x3001;<code>ZOffset</code></li>
+<li>&#x6839;&#x636E;&#x6570;&#x636E;&#x72B6;&#x51B5;&#x8C03;&#x7528;<code>bresenham3D</code></li>
+</ul>
+</li>
+<li><code>bresenham3D</code>&#xFF1A;<code>Bresenham</code> &#x7B97;&#x6CD5;&#x5728;&#x4E09;&#x7EF4;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528;<code>MarkVoxel</code>&#x5B9E;&#x4F8B;&#x51FD;&#x6570;&#x66F4;&#x65B0;&#x4F53;&#x7D20;&#x72B6;&#x6001;</li>
+<li><code>sign</code>&#xFF1A;&#x7B7E;&#x540D;&#xFF0C;&#x5927;&#x4E8E;0&#xFF0C;&#x8FD4;&#x56DE;1&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;-1</li>
+<li><code>max</code>&#xFF1A;&#x6700;&#x5927;&#x503C;</li>
+<li>&#x51FD;&#x6570;&#x5BF9;&#x8C61;<ul>
+<li><code>MarkVoxel</code>&#xFF1A;&#x6807;&#x8BB0;&#xFF1A;<code>data_[offset] |= z_mask;</code></li>
+<li><code>ClearVoxel</code>&#xFF1A;&#x6E05;&#x9664;&#xFF1A;<code>data_[offset] &amp;= ~(z_mask)</code></li>
+<li><code>ClearVoxelInMap</code>&#xFF1A;&#x6E05;&#x9664;&#x5E76;<strong>&#x91CD;&#x7F6E;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;</strong>&#xFF1A;&#x7C7B;&#x4F3C;&#x4E0A;&#x9762;&#x7684;<code>clearVoxelInMap</code></li>
+<li><code>GridOffset</code>&#xFF1A;&#x66F4;&#x65B0;&#x504F;&#x79FB;&#x91CF;</li>
+<li><code>ZOffset</code>&#xFF1A;&#x5982;&#x679C; <code>offset_val</code> &#x5927;&#x4E8E;0&#xFF0C;&#x5219;&#x6267;&#x884C;&#x5DE6;&#x79FB;&#x64CD;&#x4F5C; <code>z_mask_ &lt;&lt;= 1</code>&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x6267;&#x884C;&#x53F3;&#x79FB;&#x64CD;&#x4F5C; <code>z_mask_ &gt;&gt;= 1</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x3001;&#x6E05;&#x9664;&#x548C;&#x66F4;&#x65B0;&#x504F;&#x79FB;&#x91CF;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;</p>
+<h2 id="nav2costmap2d">nav2_costmap_2d</h2>
+<h3 id="&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#x548C;&#x8282;&#x70B9;">&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#x548C;&#x8282;&#x70B9;</h3>
+<ul>
+<li><p><strong>Costmap2DROS</strong>&#xFF1A;<code>2D Costmap</code>&#x7684;ROS&#x5305;&#x88C5;&#x5668;&#x7C7B;&#x3002; &#x5904;&#x7406;&#x8BA2;&#x9605;<code>PointCloud</code>&#x6216;<code>LaserScan</code>&#x63D0;&#x4F9B;&#x969C;&#x788D;&#x7B49;&#x76F8;&#x5173;&#x6D88;&#x606F;&#x3002;&#x7EE7;&#x627F;&#x4E8E;<code>nav2_util::LifecycleNode</code></p>
+<ul>
+<li><code>Costmap2DROS</code>&#xFF1A;&#x6784;&#x9020;&#x51FD;&#x6570;<ul>
+<li>&#x8282;&#x70B9;&#x540D;&#x79F0;&#xFF1A;<code>costmap</code></li>
+<li>&#x521D;&#x59CB;&#x5316;&#x53C2;&#x6570;&#xFF1A;<ul>
+<li><code>default_plugins_</code>-&gt;<code>{&quot;static_layer&quot;, &quot;obstacle_layer&quot;, &quot;inflation_layer&quot;}</code>&#xFF0C;&#x4F9D;&#x6B21;&#x4E3A;&#x9759;&#x6001;&#x5C42;&#xFF0C;&#x907F;&#x969C;&#x5C42;&#xFF0C;&#x81A8;&#x80C0;&#x5C42;</li>
+<li>&#x5BF9;&#x5E94;&#x7684;&#x63D2;&#x4EF6;<code>default_types__</code>
+-&gt;<code>{&quot;nav2_costmap_2d::StaticLayer&quot;, &quot;nav2_costmap_2d::ObstacleLayer&quot;, &quot;nav2_costmap_2d::InflationLayer&quot;}</code></li>
+<li><code>clearable_layers</code>-&gt;<code>{&quot;obstacle_layer&quot;, &quot;voxel_layer&quot;, &quot;range_layer&quot;}</code>&#xFF0C;&#x53EF;&#x6E05;&#x9664;&#x7684;&#x5C42;&#xFF0C;&#x5305;&#x62EC;&#x907F;&#x969C;&#x5C42;&#x3001;&#x4F53;&#x7D20;&#x5C42;&#x3001;&#x6D4B;&#x8DDD;&#x5C42;
+-
+| &#x53C2;&#x6570; | &#x9ED8;&#x8BA4;&#x503C; | &#x8BF4;&#x660E; |<pre><code>  |--- | ---| --- |
+</code></pre>| <code>always_send_full_costmap</code> | <code>false</code> |  |
+| <code>footprint_padding</code> | <code>0.01</code> | &#x8DB3;&#x8FF9;&#x8865;&#x507F;&#x503C; |
+| <code>footprint</code> | <code>&quot;[]&quot;</code> |  |
+| <code>global_frame</code> | <code>map</code> |  |
+| <code>height</code> | <code>5</code> |  |
+| <code>width</code> | <code>5</code> |  |
+| <code>lethal_cost_threshold</code> | <code>100</code> | &#x969C;&#x788D;&#x7269;&#x9608;&#x503C; |
+| <code>map_topic</code> | <code>/map</code> |  |
+| <code>observation_sources</code> |  |  |
+| <code>origin_x</code> |  |  |
+| <code>origin_y</code> |  |  |
+| <code>plugins</code> | <code>default_plugins</code> |  |
+| <code>filters</code> |  |  |
+| <code>publish_frequency</code> | <code>1.0</code> |  |
+| <code>resolution</code> | <code>0.1</code> |  |
+| <code>robot_base_frame</code> | <code>base_link</code> |  |
+| <code>robot_radius</code> | <code>0.1</code> |  |
+| <code>rolling_window</code> | <code>false</code> |  |
+| <code>track_unknown_space</code> | <code>false</code> |  |
+| <code>transform_tolerance</code> | <code>0.3</code> |  |
+| <code>trinary_costmap</code> | <code>true</code> |  |
+| <code>unknown_cost_value</code> | <code>0xff</code> |  |
+| <code>update_frequency</code> | <code>5.0</code> |  |
+| <code>use_maximum</code> | <code>false</code> |  |
+| <code>clearable_layers</code> | &#x4E0A;&#x9762;&#x7684;<code>clearable_layers</code> |  |</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>on_configure</code>&#xFF1A;&#x914D;&#x7F6E;<ul>
+<li>&#x8C03;&#x7528;<code>getParameters</code></li>
+<li>&#x521B;&#x5EFA;&#x4E3B;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x5C42;<code>layered_costmap_ = std::make_unique&lt;LayeredCostmap&gt;</code></li>
+<li>&#x521D;&#x59CB;&#x5316;<code>tf_buffer_</code></li>
+<li>&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x7684;<code>plugin_names_</code>&#x63D2;&#x4EF6;<ul>
+<li>&#x521B;&#x5EFA;&#x63D2;&#x4EF6;&#x5B9E;&#x4F8B;<code>plugin = std::shared_ptr&lt;Layer&gt;</code></li>
+<li>&#x63D2;&#x4EF6;&#x5B9E;&#x4F8B;&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x5C42;<code>layered_costmap_-&gt;addPlugin(plugin)</code></li>
+<li>&#x63D2;&#x4EF6;&#x521D;&#x59CB;&#x5316;<code>plugin-&gt;initialize()</code></li>
+</ul>
+</li>
+<li>&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x7684;<code>filter_names_</code>&#x8FC7;&#x6EE4;&#x63D2;&#x4EF6;<ul>
+<li>&#x521B;&#x5EFA;&#x63D2;&#x4EF6;&#x5B9E;&#x4F8B;<code>filter = std::shared_ptr&lt;Layer&gt;</code></li>
+<li>&#x63D2;&#x4EF6;&#x5B9E;&#x4F8B;&#x6DFB;&#x52A0;&#x5230;&#x4E3B;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x5C42;<code>layered_costmap_-&gt;addFilter(filter)</code></li>
+<li>&#x63D2;&#x4EF6;&#x521D;&#x59CB;&#x5316;<code>filter-&gt;initialize()</code></li>
+</ul>
+</li>
+<li>&#x521B;&#x5EFA;&#x8BDD;&#x9898;&#x53D1;&#x5E03;&#x548C;&#x8BA2;&#x9605;<ul>
+<li>&#x673A;&#x5668;&#x4EBA;&#x8DB3;&#x8FF9;<code>footprint</code>&#x8BA2;&#x9605;<code>footprint_sub_</code>&#xFF1A;&#x7ED1;&#x5B9A;<code>setRobotFootprintPolygon</code></li>
+<li>&#x673A;&#x5668;&#x4EBA;&#x8DB3;&#x8FF9;<code>published_footprint</code>&#x53D1;&#x5E03;<code>footprint_pub_</code></li>
+<li>&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<code>costmap</code>&#x53D1;&#x5E03;<code>costmap_publisher_ = std::make_unique&lt;Costmap2DPublisher&gt;</code>&#xFF0C;&#x8BDD;&#x9898;&#x540D;<code>costmap</code>&#xFF0C;<code>frame_id</code>-&gt;<code>map</code></li>
+</ul>
+</li>
+<li>&#x8BBE;&#x7F6E;<code>footprint</code><ul>
+<li>&#x5706;&#xFF1A;<code>setRobotFootprint(makeFootprintFromRadius(robot_radius_));</code></li>
+<li>&#x591A;&#x8FB9;&#x5F62;&#xFF1A;<ul>
+<li>&#x8C03;&#x7528;<code>makeFootprintFromString(footprint_, new_footprint);</code></li>
+<li>&#x8C03;&#x7528;<code>setRobotFootprint(new_footprint);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x6E05;&#x9664;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x670D;&#x52A1;<code>clear_costmap_service_ = std::make_unique&lt;ClearCostmapService&gt;</code></li>
+</ul>
+</li>
+<li><code>on_activate</code>&#xFF1A;<ul>
+<li>&#x8C03;&#x7528;<code>costmap_publisher_-&gt;on_activate()</code></li>
+<li>&#x8C03;&#x7528;<code>footprint_pub_-&gt;on_activate()</code></li>
+<li>&#x68C0;&#x9A8C;<code>tf</code>&#x662F;&#x5426;&#x6B63;&#x5E38;&#x8FD0;&#x8F6C;</li>
+<li>&#x5F00;&#x7EBF;&#x7A0B;&#x66F4;&#x65B0;&#x5730;&#x56FE;&#xFF0C;&#x7ED1;&#x5B9A;<code>mapUpdateLoop</code></li>
+<li>&#x8C03;&#x7528;<code>start()</code></li>
+<li>&#x6DFB;&#x52A0;&#x53C2;&#x6570;&#x53D8;&#x66F4;&#x56DE;&#x8C03;<code>dynamicParametersCallback</code></li>
+</ul>
+</li>
+<li><code>on_deactivate</code>&#xFF1A;<ul>
+<li>&#x8C03;&#x7528;<code>stop()</code></li>
+<li>&#x5730;&#x56FE;&#x66F4;&#x65B0;&#x7EBF;&#x7A0B;&#x505C;&#x6389;&#xFF0C;<code>map_update_thread_-&gt;join()</code></li>
+<li>&#x8C03;&#x7528;<code>costmap_publisher_-&gt;on_deactivate()</code></li>
+<li>&#x8C03;&#x7528;<code>footprint_pub_-&gt;on_deactivate()</code></li>
+</ul>
+</li>
+<li><code>on_cleanup</code>&#xFF1A;&#x5C5E;&#x6027;&#x6307;&#x9488;&#x91CD;&#x7F6E;</li>
+<li><code>on_shutdown</code>&#xFF1A;</li>
+<li><code>start</code>&#xFF1A;&#x8C03;&#x7528;&#x4E86;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x7684;<code>stop</code>&#x548C;<code>pause</code>&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x8BA2;&#x9605;&#x8BDD;&#x9898;&#x66F4;&#x65B0;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<ul>
+<li>&#x83B7;&#x53D6;&#x9ED8;&#x8BA4;&#x63D2;&#x4EF6;&#x548C;&#x8FC7;&#x6EE4;&#x63D2;&#x4EF6;<code>layered_costmap_-&gt;getPlugins()&#x548C;getFilters()</code>&#xFF0C;&#x4F9D;&#x6B21;&#x8C03;&#x7528;&#x63D2;&#x4EF6;&#x7684;<code>-&gt;activate()</code>&#xFF0C;&#x7136;&#x540E;&#x7B49;&#x5F85;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;</li>
+</ul>
+</li>
+<li><code>stop</code>&#xFF1A;&#x505C;&#x6B62;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x66F4;&#x65B0;&#x5E76;&#x4E14;&#x505C;&#x6B62;&#x8BDD;&#x9898;&#x8BA2;&#x9605;&#xFF0C;&#x4F9D;&#x6B21;&#x8C03;&#x7528;&#x63D2;&#x4EF6;&#x7684;<code>deactivate</code>&#xFF0C;&#x5E76;&#x4E14;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#x5207;&#x6362;</li>
+<li><code>pause</code>&#xFF1A;&#x6682;&#x505C;&#x5730;&#x56FE;&#x66F4;&#x65B0;&#xFF0C;&#x4F46;&#x8BDD;&#x9898;&#x6570;&#x636E;&#x8FD8;&#x662F;&#x4F1A;&#x4F20;&#x8F93;</li>
+<li><code>resume</code>&#xFF1A;&#x6062;&#x590D;&#x5730;&#x56FE;&#x66F4;&#x65B0;&#xFF0C;&#x77E5;&#x9053;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;</li>
+<li><code>updateMap</code>&#xFF1A;&#x66F4;&#x65B0;&#x5206;&#x5C42;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;/&#x63D2;&#x4EF6;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>getRobotPose</code></li>
+<li>&#x8C03;&#x7528;<code>layered_costmap_-&gt;updateMap</code></li>
+<li>&#x8C03;&#x7528;<code>transformFootprint</code>&#x66F4;&#x65B0;&#x6700;&#x65B0;&#x7684;<code>footprint</code></li>
+<li>&#x8C03;&#x7528;<code>footprint_pub_-&gt;publish</code>&#x53D1;&#x5E03;<code>footprint</code></li>
+</ul>
+</li>
+<li><code>resetLayers</code>&#xFF1A;&#x91CD;&#x7F6E;&#x5730;&#x56FE;<ul>
+<li>&#x91CD;&#x7F6E;&#x4E3B;&#x5730;&#x56FE;<code>layered_costmap_-&gt;getCostmap()-&gt;resetMap</code></li>
+<li>&#x91CD;&#x7F6E;&#x6240;&#x6709;&#x63D2;&#x4EF6;&#x5730;&#x56FE;<code>-&gt;reset()</code></li>
+</ul>
+</li>
+<li><code>isCurrent</code>&#xFF1A;&#x662F;&#x5426;&#x5F53;&#x524D;&#x5C42;&#x5730;&#x56FE;</li>
+<li><code>getRobotPose</code>&#xFF1A;&#x83B7;&#x53D6;&#x5C0F;&#x8F66;&#x4F4D;&#x59FF;&#xFF0C;&#x8C03;&#x7528;<code>nav2_util::getCurrentPose</code></li>
+<li><code>transformPoseToGlobalFrame</code>&#xFF1A;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x5750;&#x6807;&#x8F6C;&#x6362;&#x6210;&#x5168;&#x5C40;&#x5750;&#x6807;&#xFF0C;&#x5E27;ID&#x76F8;&#x7B49;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x5426;&#x5219;&#x8C03;&#x7528;<code>nav2_util::transformPoseInTargetFrame</code></li>
+<li><code>getName</code>&#xFF1A;&#x83B7;&#x53D6;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x540D;&#x79F0;</li>
+<li><code>getTransformTolerance</code>&#xFF1A;&#x83B7;&#x53D6;tf&#x8F6C;&#x6362;&#x5BB9;&#x5DEE;&#xFF08;&#x5355;&#x4F4D;&#x79D2;&#xFF09;</li>
+<li><code>getCostmap</code>&#xFF1A;&#x8FD4;&#x56DE;&#x6307;&#x5411;&#x201C;&#x4E3B;&#x201D;&#x6210;&#x672C;&#x5730;&#x56FE;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x8BE5;&#x6210;&#x672C;&#x56FE;&#x63A5;&#x6536;&#x6765;&#x81EA;&#x6240;&#x6709;&#x5C42;&#x7684;&#x66F4;&#x65B0;&#x3002;</li>
+<li><code>getGlobalFrameID</code>&#xFF1A;&#x8FD4;&#x56DE;&#x4E3B;&#x6210;&#x672C;&#x5730;&#x56FE;&#x7684;&#x5E27;ID</li>
+<li><code>getBaseFrameID</code>&#xFF1A;&#x8FD4;&#x56DE;&#x672C;&#x5730;&#x6210;&#x672C;&#x5730;&#x56FE;&#x7684;&#x5E27;ID</li>
+<li><code>getLayeredCostmap</code>&#xFF1A;&#x83B7;&#x53D6;&#x5355;&#x5C42;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;&#x6307;&#x9488;</li>
+<li><code>getRobotFootprintPolygon</code>&#xFF1A;&#x83B7;&#x53D6;&#x673A;&#x5668;&#x4EBA;<code>footprint</code>&#x7684;&#x591A;&#x8FB9;&#x5F62;<code>msg</code>&#xFF0C;<code>std::vector&lt;geometry_msgs::msg::Point&gt;</code>
+-&gt;<code>geometry_msgs::msg::Polygon</code></li>
+<li><code>getRobotFootprint</code>&#xFF1A;&#x83B7;&#x53D6;&#x673A;&#x5668;&#x4EBA;<code>footprint</code>&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x589E;&#x8865;&#x540E;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x91CD;&#x5199;&#x6216;&#x53D1;&#x5E03;<code>footprint</code>&#x8BDD;&#x9898;&#x4FEE;&#x6539;</li>
+<li><code>getUnpaddedRobotFootprint</code>&#xFF1A;&#x83B7;&#x53D6;&#x673A;&#x5668;&#x4EBA;<code>footprint</code>&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x672A;&#x589E;&#x8865;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x91CD;&#x5199;&#x6216;&#x53D1;&#x5E03;<code>footprint</code>&#x8BDD;&#x9898;&#x4FEE;&#x6539;</li>
+<li><code>getOrientedFootprint</code>&#xFF1A;&#x83B7;&#x53D6;&#x6709;&#x65B9;&#x5411;&#x7684;&#x8DB3;&#x8FF9;&#xFF0C;&#x8C03;&#x7528;<code>getRobotPose</code>&#x548C;<code>transformFootprint</code></li>
+<li><code>setRobotFootprint</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x8DB3;&#x8FF9;<ul>
+<li>&#x8C03;&#x7528;<code>padFootprint</code></li>
+<li>&#x8C03;&#x7528;<code>layered_costmap_-&gt;setFootprint(padded_footprint_)</code></li>
+</ul>
+</li>
+<li><code>setRobotFootprintPolygon</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x673A;&#x5668;&#x4EBA;&#x8DB3;&#x8FF9;&#x591A;&#x8FB9;&#x5F62;&#xFF0C;&#x8C03;&#x7528;<code>setRobotFootprint(toPointVector(footprint))</code></li>
+<li><code>getTfBuffer</code>&#xFF1A;&#x8FD4;&#x56DE;<code>tf</code>&#x6307;&#x9488;</li>
+<li><code>getUseRadius</code>&#xFF1A;&#x83B7;&#x53D6;<code>use_radius_</code>&#x53C2;&#x6570;&#xFF0C;&#x673A;&#x5668;&#x4EBA;&#x8DB3;&#x8FF9;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x5706;</li>
+<li><code>getRobotRadius</code>&#xFF1A;&#x83B7;&#x53D6;<code>robot_radius_</code>&#xFF0C;&#x5982;&#x679C;<code>use_radius_ == true</code>&#x5219;&#x6709;&#x503C;</li>
+<li><code>mapUpdateLoop</code>&#xFF1A;&#x5730;&#x56FE;&#x66F4;&#x65B0;&#x5FAA;&#x73AF;<ul>
+<li><code>start()</code>&#x8C03;&#x7528;&#x540E;&#x6240;&#x6709;&#x7684;&#x63D2;&#x4EF6;&#x6FC0;&#x6D3B;&#xFF0C;&#x8C03;&#x7528;<code>updateMap()</code></li>
+<li>&#x8C03;&#x7528;&#x83B7;&#x53D6;&#x5730;&#x56FE;&#x8FB9;&#x754C;<code>layered_costmap_-&gt;getBounds()</code></li>
+<li>&#x66F4;&#x65B0;&#x5730;&#x56FE;&#x8FB9;&#x754C;<code>costmap_publisher_-&gt;updateBounds()</code></li>
+<li>&#x53D1;&#x5E03;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<code>costmap_publisher_-&gt;publishCostmap()</code></li>
+</ul>
+</li>
+<li><code>getParameters</code>&#xFF1A;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x53C2;&#x6570;<ul>
+<li>&#x83B7;&#x53D6;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x90A3;&#x4E9B;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x53CA;<code>filters</code>&#x5730;&#x56FE;&#x8FC7;&#x6EE4;&#x63D2;&#x4EF6;</li>
+<li>&#x8BBE;&#x7F6E;&#x63D2;&#x4EF6;&#x4FE1;&#x606F;&#x5230;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x91CC;&#x9762;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>static_layer.plugin</code>-&gt;<code>nav2_costmap_2d::StaticLayer</code></li>
+<li>&#x83B7;&#x53D6;&#x5730;&#x56FE;&#x8FC7;&#x6EE4;&#x63D2;&#x4EF6;</li>
+<li>&#x53C2;&#x6570;&#x6821;&#x9A8C;</li>
+<li>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;<code>footprint</code>&#xFF0C;&#x8C03;&#x7528;<code>makeFootprintFromString</code>&#x751F;&#x6210;&#x673A;&#x5668;&#x4EBA;&#x8DB3;&#x8FF9;&#xFF0C;&#x5426;&#x5219;&#x4F7F;&#x7528;&#x5706;</li>
+</ul>
+</li>
+<li><code>dynamicParametersCallback</code>&#xFF1A;&#x53C2;&#x6570;&#x53D8;&#x66F4;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x6839;&#x636E;&#x53D8;&#x66F4;&#x7684;&#x53C2;&#x6570;&#x505A;&#x5BF9;&#x5E94;&#x7684;&#x64CD;&#x4F5C;</li>
+</ul>
+</li>
+<li><p><strong>costmap_2d_cloud</strong>&#x8282;&#x70B9;</p>
+<ul>
+<li>&#x521B;&#x5EFA;<code>pub_marked</code>&#x53D1;&#x5E03;<code>voxel_marked_cloud</code>&#x8BDD;&#x9898;</li>
+<li>&#x521B;&#x5EFA;<code>pub_unknown</code>&#x53D1;&#x5E03;<code>voxel_unknown_cloud</code>&#x8BDD;&#x9898;</li>
+<li>&#x8BA2;&#x9605;&#x4F53;&#x7D20;&#x7F51;&#x683C;<code>voxel_grid</code>&#x8BDD;&#x9898;&#xFF0C;&#x56DE;&#x8C03;<code>voxelCallback</code></li>
+<li><code>voxelCallback</code>&#xFF1A;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x56DE;&#x8C03;<ul>
+<li>&#x8C03;&#x7528;<code>nav2_voxel_grid::VoxelGrid::getVoxel</code>&#x83B7;&#x53D6;&#x4F53;&#x7D20;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>mapToWorld3D</code>&#x8F6C;&#x6210;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x6700;&#x540E;&#x52A0;&#x5165;&#x5BF9;&#x5E94;&#x72B6;&#x6001;&#x6570;&#x7EC4;</li>
+<li>&#x8C03;&#x7528;<code>pointCloud2Helper</code>&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>pub_marked-&gt;publish</code>&#xFF0C;&#x53D1;&#x5E03;<code>voxel_marked_cloud</code></li>
+<li>&#x8C03;&#x7528;<code>pointCloud2Helper</code>&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>pub_unknown-&gt;publish</code>&#xFF0C;&#x53D1;&#x5E03;<code>voxel_unknown_cloud</code></li>
+</ul>
+</li>
+<li><code>pointCloud2Helper</code>&#xFF1A;&#x7528;&#x4E8E;&#x8BDD;&#x9898;&#x6570;&#x636E;&#x586B;&#x5145; <code>voxel_grid</code> &#x4E2D;&#x6807;&#x8BB0;&#x70B9;&#x548C;&#x672A;&#x77E5;&#x70B9;&#x7684; <code>pointcloud2</code> &#x7684;&#x8F85;&#x52A9;&#x51FD;&#x6570;</li>
+</ul>
+</li>
+<li><p><strong>costmap_2d_marker</strong>&#x8282;&#x70B9;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x53D1;&#x5E03;<code>visualization_marker</code>&#x8BDD;&#x9898;</li>
+<li>&#x8BA2;&#x9605;&#x4F53;&#x7D20;&#x7F51;&#x683C;<code>voxel_grid</code>&#x8BDD;&#x9898;&#xFF0C;&#x56DE;&#x8C03;<code>voxelCallback</code></li>
+<li><code>voxelCallback</code>&#xFF1A;&#x4F53;&#x7D20;&#x7F51;&#x683C;&#x56DE;&#x8C03;&#xFF0C;&#x8C03;&#x7528;<code>nav2_voxel_grid::VoxelGrid::getVoxel</code>&#x83B7;&#x53D6;&#x4F53;&#x7D20;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x8F6C;&#x6210;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x6700;&#x540E;&#x52A0;&#x5165;&#x6570;&#x7EC4;&#xFF0C;&#x53D1;&#x5E03;&#x51FA;&#x6765;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5DE5;&#x5177;">&#x5DE5;&#x5177;</h3>
+<ul>
+<li><p><code>array_parser.hpp</code></p>
+<ul>
+<li><strong>parseVVF</strong>&#x51FD;&#x6570;&#xFF0C;&#x89E3;&#x6790;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x5B57;&#x7B26;&#x4E32;<ul>
+<li>&#x89E3;&#x6790;&#x5B57;&#x7B26;&#x4E32;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x4F8B;&#x5982;<code>[[1.0, 2.0], [3.3, 4.4, 5.5], ...]</code></li>
+<li><code>input_ss.peek()</code>&#xFF1A;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x4F46;&#x4E0D;&#x6D88;&#x8D39;</li>
+<li><code>input_ss.get()</code>&#xFF1A;&#x7528;&#x4E8E;&#x4ECE;&#x6D41;&#x4E2D;&#x83B7;&#x53D6;&#x5B57;&#x7B26;</li>
+<li>&#x78B0;&#x5230;<code>[</code>&#xFF0C;&#x6DF1;&#x5EA6;&#x589E;&#x52A0;1&#xFF0C;</li>
+<li>&#x78B0;&#x5230;<code>]</code>&#x6DF1;&#x5EA6;&#x51CF;&#x4E00;&#xFF0C;&#x5982;&#x679C;&#x6DF1;&#x5EA6;&#x4E3A;1&#xFF0C;&#x5185;&#x5C42;&#x6570;&#x7EC4;&#x5DF2;&#x7ED3;&#x675F;</li>
+<li>&#x78B0;&#x5230;<code>,</code>&#x3001;<code>\t</code>&#x548C;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8DF3;&#x8FC7;<code>get()</code>&#x8DF3;&#x8FC7;</li>
+<li>&#x5176;&#x4ED6;&#x5219;&#x662F;&#x6570;&#x5B57;&#xFF0C;<code>peek()</code>&#x4E00;&#x76F4;&#x79FB;&#xFF0C;&#x4E00;&#x76F4;<code>input_ss &gt;&gt; value</code>&#xFF0C;&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x5C42;&#x6570;&#x7EC4;&#xFF0C;&#x76F4;&#x5230;&#x78B0;&#x5230;&#x4E0A;&#x9762;&#x60C5;&#x51B5;&#xFF0C;<code>get()</code>&#x51FA;&#x53BB;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>footprint.hpp</code></p>
+<ul>
+<li><strong>makeFootprintFromString</strong>&#x51FD;&#x6570;&#xFF1A;&#x6839;&#x636E;&#x5B57;&#x7B26;&#x4E32;&#x751F;&#x6210;&#x8DB3;&#x8FF9;<code>footprint</code>&#xFF0C;&#x8C03;&#x7528;<code>parseVVF()</code></li>
+<li><strong>makeFootprintFromRadius</strong>&#x51FD;&#x6570;&#xFF1A;&#x6839;&#x636E;&#x534A;&#x5F84;&#x751F;&#x6210;&#xFF0C;16&#x4E2A;&#x70B9;&#x7684;&#x56ED;</li>
+<li><strong>padFootprint</strong>&#x51FD;&#x6570;&#xFF1A;&#x8DB3;&#x8FF9;&#x589E;&#x8865;</li>
+<li><strong>transformFootprint</strong>&#x51FD;&#x6570;&#xFF1A;&#x8F6C;&#x6362;&#x673A;&#x5668;&#x4EBA;&#x8DB3;&#x8FF9;&#xFF0C;&#x66F4;&#x65B0;&#x5230;&#x673A;&#x5668;&#x4EBA;&#x6700;&#x65B0;&#x4F4D;&#x7F6E;</li>
+<li><strong>toPointVector</strong>&#x51FD;&#x6570;&#xFF1A;&#x8F6C;&#x6362;&#x591A;&#x8FB9;&#x5F62;&#x5230;&#x70B9;&#xFF0C;<code>geometry_msgs::msg::Polygon</code>-&gt;<code>std::vector&lt;geometry_msgs::msg::Point&gt;</code></li>
+</ul>
+</li>
+<li><p><code>costmap_math.hpp</code></p>
+<ul>
+<li><strong>sign</strong>&#x51FD;&#x6570;&#xFF1A;<code>x &lt; 0.0 ? -1.0 : 1.0;</code></li>
+<li><strong>sign0</strong>&#x51FD;&#x6570;&#xFF1A;<code>x &lt; 0.0 ? -1.0 : (x &gt; 0.0 ? 1.0 : 0.0);</code></li>
+<li><strong>distance</strong>&#x51FD;&#x6570;&#xFF1A;<code>hypot(x1 - x0, y1 - y0)</code></li>
+<li><strong>distanceToLine</strong>&#x51FD;&#x6570;&#xFF1A;&#x70B9;&#x5230;&#x7EBF;&#x8DDD;&#x79BB;</li>
+</ul>
+</li>
+<li><p><strong>&#x5E38;&#x91CF;</strong></p>
+<ul>
+<li><code>NO_INFORMATION = 255;</code>&#xFF1A;&#x672A;&#x77E5;</li>
+<li><code>LETHAL_OBSTACLE = 254;</code>&#x81F4;&#x547D;&#x969C;&#x788D;&#x7269;</li>
+<li><code>INSCRIBED_INFLATED_OBSTACLE = 253;</code>&#xFF1A;&#x81A8;&#x80C0;&#x5C42;&#x969C;&#x788D;&#x7269;</li>
+<li><code>MAX_NON_OBSTACLE = 252;</code>&#xFF1A;&#x65E0;&#x969C;&#x788D;&#x7269;&#x7684;&#x9608;&#x503C;&#x4E0A;&#x9650;&#xFF0C;&#x53EA;&#x8981;&#x4F4E;&#x4E8E;&#x8BE5;&#x503C;&#x90FD;&#x4E0D;&#x7B97;&#x969C;&#x788D;&#x7269;</li>
+<li><code>FREE_SPACE = 0;</code>&#xFF1A;&#x65E0;&#x969C;&#x788D;&#x7269;</li>
+</ul>
+</li>
+</ul>
 <h2 id="nav2amcl">nav2_amcl</h2>
 <blockquote>
 <p>TODO&#xFF0C;&#x5148;&#x4E86;&#x89E3;&#x5DE5;&#x4F5C;&#x6D41;&#x4EE5;&#x53CA;&#x6709;&#x54EA;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x9700;&#x8981;&#x518D;&#x6DF1;&#x5165;&#xFF0C;&#x6BD4;&#x8F83;&#x96BE;&#x61C2;</p>
@@ -8086,7 +8422,7 @@ nav_msgs::msg::OccupancyGrid &#x7684;data&#x7684;&#x662F;&#x4E00;&#x7EF4;&#x6570
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"地图和定位","level":"10.1.4","depth":2,"next":{"title":"Docker","level":"11.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"11.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"11.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"11.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"11.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"11.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"行为树及节点","level":"10.1.3","depth":2,"path":"Navigation2/源码分析/003-行为树及节点.md","ref":"Navigation2/源码分析/003-行为树及节点.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/004-地图和定位.md","mtime":"2024-01-15T11:45:32.265Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-19T11:01:08.020Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"地图和定位","level":"10.1.4","depth":2,"next":{"title":"Docker","level":"11.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"11.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"11.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"11.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"11.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"11.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"行为树及节点","level":"10.1.3","depth":2,"path":"Navigation2/源码分析/003-行为树及节点.md","ref":"Navigation2/源码分析/003-行为树及节点.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/004-地图和定位.md","mtime":"2024-01-26T09:27:38.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-26T11:46:17.266Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
