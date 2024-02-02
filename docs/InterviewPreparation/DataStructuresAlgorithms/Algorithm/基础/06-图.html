@@ -7656,6 +7656,19 @@
             
         </li>
     
+        <li class="chapter " data-level="12.3.1.1.9" data-path="08-暴力递归.html">
+            
+                <a href="08-暴力递归.html">
+            
+                    
+                    暴力递归
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -8485,6 +8498,236 @@ data = dijkstra(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>])
 <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items():
     print(k.value, v)
 </code></pre>
+<ul>
+<li>&#x5806;&#x7ED3;&#x6784;&#x6539;&#x5199;<code>Dijkstra</code>&#x7B97;&#x6CD5;</li>
+</ul>
+<blockquote>
+<p>&#x6307;&#x6807;&#x4E0D;&#x53D8;&#xFF0C;&#x53EA;&#x662F;&#x52A0;&#x5FEB;&#x4E86;&#x5E38;&#x6570;&#x65F6;&#x95F4;</p>
+</blockquote>
+<pre><code class="lang-python">
+<span class="hljs-keyword">import</span> typing
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, value: typing.Any)</span>:</span>
+        self.value = value
+        <span class="hljs-comment"># &#x65E0;&#x5411;&#x56FE;&#x7684;&#x5165;&#x5EA6;&#x548C;&#x51FA;&#x5EA6;&#x76F8;&#x7B49;</span>
+        self.node_in: int = <span class="hljs-number">0</span>  <span class="hljs-comment"># &#x70B9;&#x7684;&#x5165;&#x5EA6;</span>
+        self.node_out: int = <span class="hljs-number">0</span>  <span class="hljs-comment"># &#x70B9;&#x7684;&#x51FA;&#x5EA6;</span>
+        self.next_nodes: typing.List[Node] = list()  <span class="hljs-comment"># &#x6307;&#x5411;&#x7684;&#x90BB;&#x5C45;&#xFF0C;&#x53EA;&#x5173;&#x5FC3;&#x53D1;&#x6563;&#x51FA;&#x53BB;&#x7684;</span>
+        self.edges: typing.List[Edge] = list()  <span class="hljs-comment"># &#x6709;&#x54EA;&#x4E9B;&#x8FB9;&#x5C5E;&#x4E8E;&#x8BE5;&#x70B9;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Edge</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, weight: int, from_node: Node, to_node: Node)</span>:</span>
+        self.weight: int = weight
+        self.from_node: Node = from_node
+        self.to_node: Node = to_node
+
+        <span class="hljs-comment"># &#x5B9E;&#x73B0; __hash__ &#x65B9;&#x6CD5;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__hash__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x54C8;&#x5E0C;&#x503C;</span>
+        <span class="hljs-keyword">return</span> hash((self.from_node, self.to_node, self.weight))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__lt__</span><span class="hljs-params">(self, other)</span>:</span>
+        <span class="hljs-keyword">return</span> self.weight &lt; other.weight
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__eq__</span><span class="hljs-params">(self, other)</span>:</span>
+        <span class="hljs-keyword">return</span> self.weight == other.weight
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__gt__</span><span class="hljs-params">(self, other)</span>:</span>
+        <span class="hljs-keyword">return</span> self.weight &gt; other.weight
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.nodes: typing.Dict[int, Node] = dict()  <span class="hljs-comment"># key: &#x70B9;&#x7F16;&#x53F7;&#xFF0C;node&#x70B9;&#x5B9E;&#x4F8B;</span>
+        self.edges: typing.Set[Edge] = set()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create_graph</span><span class="hljs-params">(graph_data: list)</span>:</span>
+    graph = Graph()
+    <span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> graph_data:
+        weight = it[<span class="hljs-number">0</span>]
+        from_node = it[<span class="hljs-number">1</span>]
+        to_node = it[<span class="hljs-number">2</span>]
+        <span class="hljs-keyword">if</span> from_node <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> graph.nodes:
+            graph.nodes[from_node] = Node(from_node)
+        <span class="hljs-keyword">if</span> to_node <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> graph.nodes:
+            graph.nodes[to_node] = Node(to_node)
+
+        from_node_ins = graph.nodes.get(from_node)
+        to_node_ins = graph.nodes.get(to_node)
+        edge = Edge(weight, from_node_ins, to_node_ins)
+        from_node_ins.next_nodes.append(to_node_ins)
+        from_node_ins.node_out += <span class="hljs-number">1</span>
+        to_node_ins.node_in += <span class="hljs-number">1</span>
+        from_node_ins.edges.append(edge)
+        graph.edges.add(edge)
+    <span class="hljs-keyword">return</span> graph
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeRecord</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, node: Node, distance: int)</span>:</span>
+        self.node = node
+        self.distance = distance
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeHeap</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, node_size: int)</span>:</span>
+        self.nodes: typing.List[Node] = [<span class="hljs-keyword">None</span>] * node_size  <span class="hljs-comment"># &#x5806;</span>
+        self.heap_index_map: typing.Dict[Node, int] = dict()  <span class="hljs-comment"># &#x5728;&#x5806;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;</span>
+        self.distance_map: typing.Dict[Node, int] = dict()
+        self.size = <span class="hljs-number">0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_or_update_or_ignore</span><span class="hljs-params">(self, node: Node, distance: int)</span>:</span>
+        <span class="hljs-comment"># &#x5728;&#x5806;&#x4E0A;&#xFF0C;&#x66F4;&#x65B0;</span>
+        <span class="hljs-keyword">if</span> self._in_heap(node):
+            self.distance_map.update({node: min(self.distance_map[node], distance)})  <span class="hljs-comment"># &#x66F4;&#x65B0;&#x6700;&#x5C0F;&#x8DDD;&#x79BB;</span>
+            <span class="hljs-comment"># &#x53D8;&#x5C0F;&#x4E86;&#xFF0C;&#x53EF;&#x80FD;&#x7ECF;&#x5386;&#x4E00;&#x4E2A;&#x5F80;&#x4E0A;&#x7684;&#x8FC7;&#x7A0B;</span>
+            self._heap_insert(self.heap_index_map[node])
+        <span class="hljs-comment"># &#x6CA1;&#x8FDB;&#x6765;&#x8FC7;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self._is_entered(node):
+            self.nodes[self.size] = node  <span class="hljs-comment"># &#x65B0;&#x589E;</span>
+            self.heap_index_map[node] = self.size
+            self.distance_map[node] = distance
+            <span class="hljs-comment"># &#x53EF;&#x80FD;&#x7ECF;&#x5386;&#x4E00;&#x4E2A;&#x5F80;&#x4E0A;&#x7684;&#x8FC7;&#x7A0B;</span>
+            self._heap_insert(self.size)
+            self.size += <span class="hljs-number">1</span>
+        <span class="hljs-comment"># &#x5DF2;&#x7ECF;&#x5F39;&#x51FA;&#x8FC7;&#x7684;&#xFF0C;-1&#x7684;&#x5FFD;&#x7565;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.size == <span class="hljs-number">0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pop</span><span class="hljs-params">(self)</span> -&gt; NodeRecord:</span>
+        node_record = NodeRecord(self.nodes[<span class="hljs-number">0</span>], self.distance_map[self.nodes[<span class="hljs-number">0</span>]])
+        self._swap(<span class="hljs-number">0</span>, self.size - <span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x653E;&#x5230;&#x5806;&#x9876;</span>
+        self.heap_index_map[self.nodes[self.size - <span class="hljs-number">1</span>]] = <span class="hljs-number">-1</span>  <span class="hljs-comment"># &#x56E0;&#x4E3A;&#x4E0A;&#x9762;&#x4EA4;&#x6362;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x5F39;&#x51FA;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x7F6E;&#x4E3A;-1</span>
+        self.distance_map.pop(self.nodes[self.size - <span class="hljs-number">1</span>])  <span class="hljs-comment"># &#x5220;&#x6389;&#x5BF9;&#x5E94;&#x8282;&#x70B9;&#x8DDD;&#x79BB;&#x4FE1;&#x606F;</span>
+        self.nodes[self.size - <span class="hljs-number">1</span>] = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x91CA;&#x653E;&#x6389;</span>
+        self.size -= <span class="hljs-number">1</span>
+        self._heapify(<span class="hljs-number">0</span>, self.size)
+        <span class="hljs-keyword">return</span> node_record
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_is_entered</span><span class="hljs-params">(self, node: Node)</span> -&gt; bool:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        node&#x662F;&#x5426;&#x8FDB;&#x8FC7;&#x5806;
+        :param node:
+        :return: &#x8FDB;&#x8FC7;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7D22;&#x5F15;&#x6216;-1&#xFF0C;&#x5426;&#x5219;&#x672A;&#x8FDB;&#x5165;
+        -1 &#x4EE3;&#x529E;&#x8FDB;&#x6765;&#x8FC7;&#xFF0C;&#x4F46;&#x5904;&#x7406;&#x5B8C;&#x4E86;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># return self.heap_index_map.get(node)  # &#x7D22;&#x5F15;&#x4E3A;0 &#x4F1A;&#x88AB;&#x5F53;&#x6210;False</span>
+        <span class="hljs-keyword">return</span> node <span class="hljs-keyword">in</span> self.heap_index_map
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_in_heap</span><span class="hljs-params">(self, node: Node)</span> -&gt; bool:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x5728;&#x4E0D;&#x5728;&#x5806;&#x4E0A;
+        &#x8FDB;&#x6765;&#x8FC7;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x7B49;&#x4E8E;-1
+        -1 &#x8868;&#x793A;(&#x5F39;&#x51FA;&#x4E86;)&#x4E0D;&#x5728;&#x5806;&#x4E0A;
+        :param node:
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self._is_entered(node) <span class="hljs-keyword">and</span> self.heap_index_map.get(node, <span class="hljs-number">-1</span>) != <span class="hljs-number">-1</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_swap</span><span class="hljs-params">(self, index1: int, index2: int)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x8C03;&#x6574;&#x5806;
+        :param index1:
+        :param index2:
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># &#x7D22;&#x5F15;&#x5BF9;&#x6362;&#x66F4;&#x65B0;</span>
+        self.heap_index_map.update({self.nodes[index1]: index2, self.nodes[index2]: index1})
+        <span class="hljs-comment"># self.heap_index_map[self.nodes[index1]], self.heap_index_map[self.nodes[index2]] = index2, index1</span>
+        <span class="hljs-comment"># &#x5806;&#x5143;&#x7D20;&#x5BF9;&#x6362;</span>
+        self.nodes[index1], self.nodes[index2] = self.nodes[index2], self.nodes[index1]
+
+    <span class="hljs-comment"># &#x5C0F;&#x6839;&#x5806;&#x8C03;&#x6574;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_heap_insert</span><span class="hljs-params">(self, index: int)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x6839;&#x636E;&#x8DDD;&#x79BB;&#x5F80;&#x4E0A;&#x8C03;&#x6574;
+        :param index:
+        :return:
+        &quot;&quot;&quot;</span>
+        parent_idx = max(<span class="hljs-number">0</span>, (index - <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">while</span> self.distance_map[self.nodes[index]] &lt; self.distance_map[self.nodes[parent_idx]]:
+            self._swap(index, parent_idx)
+            index, parent_idx = parent_idx, max(<span class="hljs-number">0</span>, (index - <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_heapify</span><span class="hljs-params">(self, index: int, size: int)</span>:</span>
+        left = <span class="hljs-number">2</span> * index + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> left &lt; size:
+            smallest = left + <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> left + <span class="hljs-number">1</span> &lt; size <span class="hljs-keyword">and</span> self.distance_map[self.nodes[left + <span class="hljs-number">1</span>]] &lt; self.distance_map[
+                self.nodes[left]] <span class="hljs-keyword">else</span> left
+            <span class="hljs-comment"># &#x6700;&#x5C0F;&#x7684;&#x90FD;&#x6BD4;&#x7236;&#x5927;&#xFF0C;&#x5B8C;&#x6210;&#x8C03;&#x6574;</span>
+            <span class="hljs-keyword">if</span> self.distance_map[self.nodes[smallest]] &gt;= self.distance_map[self.nodes[index]]:
+                <span class="hljs-keyword">break</span>
+            self._swap(index, smallest)
+            index, left = smallest, <span class="hljs-number">2</span> * index + <span class="hljs-number">1</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dijkstra_heap</span><span class="hljs-params">(head: Node, size: int)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5229;&#x7528;&#x5C0F;&#x6839;&#x5806;&#x6539;&#x8FDB;dijkstra&#x7B97;&#x6CD5;
+    &#x4ECE;head&#x51FA;&#x53D1;&#xFF0C;&#x6240;&#x6709;head&#x80FD;&#x5230;&#x5230;&#x8FBE;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x751F;&#x6210;&#x5230;&#x8FBE;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6700;&#x5C0F;&#x8DEF;&#x5F84;&#x8BB0;&#x5F55;&#x5E76;&#x8FD4;&#x56DE;
+    :param head:
+    :param size:
+    :return:
+    &quot;&quot;&quot;</span>
+    node_heap = NodeHeap(size)
+    node_heap.add_or_update_or_ignore(head, <span class="hljs-number">0</span>)
+    result: typing.Dict[Node, int] = dict()
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> node_heap.is_empty():
+        cur = node_heap.pop()
+        <span class="hljs-keyword">for</span> edge <span class="hljs-keyword">in</span> cur.node.edges:
+            node_heap.add_or_update_or_ignore(edge.to_node, cur.distance + edge.weight)
+        result[cur.node] = cur.distance
+    <span class="hljs-keyword">return</span> result
+
+
+<span class="hljs-comment">#         D</span>
+<span class="hljs-comment">#       / | \</span>
+<span class="hljs-comment">#      /  |  \</span>
+<span class="hljs-comment">#     /   |   \</span>
+<span class="hljs-comment">#   9/    |7   \16</span>
+<span class="hljs-comment">#   /     |     \</span>
+<span class="hljs-comment">#  A--15--C--14--E</span>
+<span class="hljs-comment">#   \     |     /</span>
+<span class="hljs-comment">#   3\    |2   /200</span>
+<span class="hljs-comment">#     \   |   /</span>
+<span class="hljs-comment">#      \  |  /</span>
+<span class="hljs-comment">#       \ | /</span>
+<span class="hljs-comment">#         B</span>
+
+data = [
+    [<span class="hljs-number">3</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>],
+    [<span class="hljs-number">9</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>],
+    [<span class="hljs-number">15</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>],
+    [<span class="hljs-number">3</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>],
+    [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>],
+    [<span class="hljs-number">200</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;E&quot;</span>],
+    [<span class="hljs-number">15</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>],
+    [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>],
+    [<span class="hljs-number">14</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;E&quot;</span>],
+    [<span class="hljs-number">7</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>],
+    [<span class="hljs-number">9</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>],
+    [<span class="hljs-number">7</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>],
+    [<span class="hljs-number">16</span>, <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;E&quot;</span>],
+    [<span class="hljs-number">16</span>, <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;D&quot;</span>],
+    [<span class="hljs-number">14</span>, <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>],
+    [<span class="hljs-number">200</span>, <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>]
+]
+
+graph = create_graph(data)
+
+data = dijkstra_heap(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>], size=len(graph.nodes))
+<span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items():
+    print(k.value, v)
+</code></pre>
 
                                 
                                 </section>
@@ -8528,7 +8771,7 @@ data = dijkstra(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>])
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-01-23T02:19:24.847Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-26T11:46:17.266Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-01-29T08:37:23.932Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-02T09:34:38.891Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

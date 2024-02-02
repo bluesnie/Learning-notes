@@ -744,6 +744,7 @@
             - [二叉树](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md)
             - [图](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md)
             - [前缀树和贪心算法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md)
+            - [暴力递归](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/08-暴力递归.md)
             - [算法图解](InterviewPreparation/DataStructuresAlgorithms/Algorithm/算法图解.pdf)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
