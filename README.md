@@ -746,6 +746,8 @@
             - [前缀树和贪心算法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md)
             - [暴力递归](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/08-暴力递归.md)
             - [算法图解](InterviewPreparation/DataStructuresAlgorithms/Algorithm/算法图解.pdf)
+        - 基础提升
+            - [哈希函数和哈希表](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/01-哈希函数和哈希表.md)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
