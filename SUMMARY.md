@@ -629,7 +629,7 @@
             - [字符串匹配算法](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/02-字符串匹配算法.md)
             - [滑动窗口-单调栈](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/03-滑动窗口-单调栈-非常重要.md)
             - [Morris遍历](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/04-Morris遍历.md)
-            - [大数据题目](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目.md)
+            - [大数据题目-资源限制类](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目-资源限制类.md)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
