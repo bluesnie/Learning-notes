@@ -21,6 +21,9 @@ class DecoratorNode : public TreeNode {
 
 ![](./imgs/decorate_node.png)
 
+- `executeTick()`
+    - 如果子节点状态为`SUCCESS`或`FAILURE`，调用子节点的`resetStatus()`，子节点状态变为`IDEL`
+
 ## BlackboardPreconditionNode
 
 细分为3个节点：`BlackboardCheckInt`、`BlackboardCheckDouble`、`BlackboardCheckString`。顾名思义，该节点是检查`blackboard`的某个`port`的值是否符合预期的。
@@ -130,13 +133,15 @@ static PortsList providedPorts() {
 </Repeat>
 ```
 
-## RetryNode
+## RetryNode(RetryUntilSuccessful)
 
-如果子节点执行后返回`RUNNING`，该节点返回`RUNNING`；
+- 如果子节点执行后返回`RUNNING`，该节点返回`RUNNING`；
 
-如果子节点执行后返回`SUCCESS`，该节点返回`SUCCESS`，不再执行；
+- 如果子节点执行后返回`SUCCESS`，重置子节点`resetChild()`，该节点返回`SUCCESS`，不再执行；
 
-如果子节点执行后返回`FAILURE`，该节点再次尝试执行子节点，直到尝试了`num_attempts`次；
+- 如果子节点执行后返回`FAILURE`
+  - 重置子节点`resetChild()`，子节点变回`IDLE`
+  - 再次尝试执行子节点，直到尝试了`num_attempts`次或`-1`直到成功；
 
 ```cpp
 static PortsList providedPorts() {
@@ -233,6 +238,19 @@ static PortsList providedPorts() {
    <KeepYourBreath/>
 </Timeout>
 ```
+
+## RateController
+
+- 频率控制
+- 参数：`hz`
+- `tick`子节点条件
+    - 第一次节点处于`IDLE`状态
+    - 子节点是`RUNNING`状态
+    - 达到频率设置周期
+- 返回
+    - 如果子节点执行后返回`RUNNING`，该节点返回`RUNNING`；
+    - 如果子节点执行后返回`SUCCESS`，该节点返回`SUCCESS`，重置开始时间；
+    - 如果子节点执行后返回`FAILURE`，该节点返回`FAILURE`；
 
 
 

@@ -630,6 +630,9 @@
             - [滑动窗口-单调栈](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/03-滑动窗口-单调栈-非常重要.md)
             - [Morris遍历](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/04-Morris遍历.md)
             - [大数据题目-资源限制类](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目-资源限制类.md)
+            - [位运算](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/06-位运算.md)
+            - [暴力递归到动态规划](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/07-暴力递归到动态规划.md)
+            - [有序表](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/08-有序表.md)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)

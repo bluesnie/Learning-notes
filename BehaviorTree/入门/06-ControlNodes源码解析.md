@@ -137,6 +137,14 @@ static PortsList providedPorts() {
 有2或3个子节点，`node1`就是`if`判断的条件。如果`node1`返回`SUCCESS`，那么`node2`执行；否则，`node3`执行。如果没有`node3`，返回`FAILURE`。 该结点`not reactive`
 ，体现在一旦`node1`不返回`RUNNING`了，就进入了`node2`或`node3`的执行，以后`tick()`不会再执行`node1`了，也即不会再检查`if`条件的变化。
 
+- 条件`node1`
+    - `node1`条件为`RUNNING`，该节点返回`RUNNING`
+    - `node1`条件为`SUCCESS`，执行`node2`
+    - `node1`条件为`FAILURE`，执行`node3`
+- `node2`和`node2`
+    - 返回`RUNNING`，该节点返回`RUNNING`，下次直接`tick`该节点，不会再`tick` `node1`
+    - 否则`resetChildren()`和重置`child_idx`，返回对应状态
+
 ```cpp
 NodeStatus IfThenElseNode::tick() {
     const size_t children_count = children_nodes_.size();
@@ -188,8 +196,14 @@ NodeStatus IfThenElseNode::tick() {
 
 ## WhileDoElseNode
 
-是`IfThenElseNode`的`reactive`版本。功能同上，`reactive`体现在每次`tick()`都会执行`node1`，即检查`if`条件的变化。若n`ode1`返回值有`SUCCESS`、`FAILURE`
+是`IfThenElseNode`的`reactive`版本。功能同上，`reactive`体现在每次`tick()`都会执行 `node1`，即检查`if`条件的变化。若`node1`返回值有`SUCCESS`、`FAILURE`
 的切换变化， 就会打断`node2`或`node3`的执行，重新选择对应的`node`。
+
+- `node1`条件为`RUNNING`，该节点返回`RUNNING`
+- `node1`条件为`SUCCESS`，`halt`掉`node3`，执行`node2`
+- `node1`条件为`FAILURE`，`halt`掉`node2`，执行`node3`
+- 如果`node2`和`node2`返回`RUNNING`，该节点返回`RUNNING`，否则`resetChildren()`，返回对应状态
+- 每次都会执行`node1`条件
 
 ```cpp
 NodeStatus WhileDoElseNode::tick() {
