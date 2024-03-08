@@ -7740,12 +7740,51 @@
             
         </li>
     
-        <li class="chapter " data-level="12.3.1.2.5" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目.html">
+        <li class="chapter " data-level="12.3.1.2.5" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目-资源限制类.html">
             
-                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目.html">
+                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/05-大数据题目-资源限制类.html">
             
                     
-                    大数据题目
+                    大数据题目-资源限制类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3.1.2.6" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/06-位运算.html">
+            
+                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/06-位运算.html">
+            
+                    
+                    位运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3.1.2.7" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/07-暴力递归到动态规划.html">
+            
+                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/07-暴力递归到动态规划.html">
+            
+                    
+                    暴力递归到动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3.1.2.8" data-path="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/08-有序表.html">
+            
+                <a href="../../InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/08-有序表.html">
+            
+                    
+                    有序表
             
                 </a>
             
@@ -8050,6 +8089,19 @@
 <h2 id="ifthenelsenode">IfThenElseNode</h2>
 <p>&#x6709;2&#x6216;3&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF0C;<code>node1</code>&#x5C31;&#x662F;<code>if</code>&#x5224;&#x65AD;&#x7684;&#x6761;&#x4EF6;&#x3002;&#x5982;&#x679C;<code>node1</code>&#x8FD4;&#x56DE;<code>SUCCESS</code>&#xFF0C;&#x90A3;&#x4E48;<code>node2</code>&#x6267;&#x884C;&#xFF1B;&#x5426;&#x5219;&#xFF0C;<code>node3</code>&#x6267;&#x884C;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;<code>node3</code>&#xFF0C;&#x8FD4;&#x56DE;<code>FAILURE</code>&#x3002; &#x8BE5;&#x7ED3;&#x70B9;<code>not reactive</code>
 &#xFF0C;&#x4F53;&#x73B0;&#x5728;&#x4E00;&#x65E6;<code>node1</code>&#x4E0D;&#x8FD4;&#x56DE;<code>RUNNING</code>&#x4E86;&#xFF0C;&#x5C31;&#x8FDB;&#x5165;&#x4E86;<code>node2</code>&#x6216;<code>node3</code>&#x7684;&#x6267;&#x884C;&#xFF0C;&#x4EE5;&#x540E;<code>tick()</code>&#x4E0D;&#x4F1A;&#x518D;&#x6267;&#x884C;<code>node1</code>&#x4E86;&#xFF0C;&#x4E5F;&#x5373;&#x4E0D;&#x4F1A;&#x518D;&#x68C0;&#x67E5;<code>if</code>&#x6761;&#x4EF6;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<ul>
+<li>&#x6761;&#x4EF6;<code>node1</code><ul>
+<li><code>node1</code>&#x6761;&#x4EF6;&#x4E3A;<code>RUNNING</code>&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x8FD4;&#x56DE;<code>RUNNING</code></li>
+<li><code>node1</code>&#x6761;&#x4EF6;&#x4E3A;<code>SUCCESS</code>&#xFF0C;&#x6267;&#x884C;<code>node2</code></li>
+<li><code>node1</code>&#x6761;&#x4EF6;&#x4E3A;<code>FAILURE</code>&#xFF0C;&#x6267;&#x884C;<code>node3</code></li>
+</ul>
+</li>
+<li><code>node2</code>&#x548C;<code>node2</code><ul>
+<li>&#x8FD4;&#x56DE;<code>RUNNING</code>&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x8FD4;&#x56DE;<code>RUNNING</code>&#xFF0C;&#x4E0B;&#x6B21;&#x76F4;&#x63A5;<code>tick</code>&#x8BE5;&#x8282;&#x70B9;&#xFF0C;&#x4E0D;&#x4F1A;&#x518D;<code>tick</code> <code>node1</code></li>
+<li>&#x5426;&#x5219;<code>resetChildren()</code>&#x548C;&#x91CD;&#x7F6E;<code>child_idx</code>&#xFF0C;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x72B6;&#x6001;</li>
+</ul>
+</li>
+</ul>
 <pre><code class="lang-cpp">NodeStatus IfThenElseNode::tick() {
     <span class="hljs-keyword">const</span> <span class="hljs-keyword">size_t</span> children_count = children_nodes_.size();
     <span class="hljs-keyword">if</span> (children_count != <span class="hljs-number">2</span> &amp;&amp; children_count != <span class="hljs-number">3</span>) {
@@ -8095,8 +8147,15 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">IfThenElse</span>&gt;</span>
 </code></pre>
 <h2 id="whiledoelsenode">WhileDoElseNode</h2>
-<p>&#x662F;<code>IfThenElseNode</code>&#x7684;<code>reactive</code>&#x7248;&#x672C;&#x3002;&#x529F;&#x80FD;&#x540C;&#x4E0A;&#xFF0C;<code>reactive</code>&#x4F53;&#x73B0;&#x5728;&#x6BCF;&#x6B21;<code>tick()</code>&#x90FD;&#x4F1A;&#x6267;&#x884C;<code>node1</code>&#xFF0C;&#x5373;&#x68C0;&#x67E5;<code>if</code>&#x6761;&#x4EF6;&#x7684;&#x53D8;&#x5316;&#x3002;&#x82E5;n<code>ode1</code>&#x8FD4;&#x56DE;&#x503C;&#x6709;<code>SUCCESS</code>&#x3001;<code>FAILURE</code>
+<p>&#x662F;<code>IfThenElseNode</code>&#x7684;<code>reactive</code>&#x7248;&#x672C;&#x3002;&#x529F;&#x80FD;&#x540C;&#x4E0A;&#xFF0C;<code>reactive</code>&#x4F53;&#x73B0;&#x5728;&#x6BCF;&#x6B21;<code>tick()</code>&#x90FD;&#x4F1A;&#x6267;&#x884C; <code>node1</code>&#xFF0C;&#x5373;&#x68C0;&#x67E5;<code>if</code>&#x6761;&#x4EF6;&#x7684;&#x53D8;&#x5316;&#x3002;&#x82E5;<code>node1</code>&#x8FD4;&#x56DE;&#x503C;&#x6709;<code>SUCCESS</code>&#x3001;<code>FAILURE</code>
 &#x7684;&#x5207;&#x6362;&#x53D8;&#x5316;&#xFF0C; &#x5C31;&#x4F1A;&#x6253;&#x65AD;<code>node2</code>&#x6216;<code>node3</code>&#x7684;&#x6267;&#x884C;&#xFF0C;&#x91CD;&#x65B0;&#x9009;&#x62E9;&#x5BF9;&#x5E94;&#x7684;<code>node</code>&#x3002;</p>
+<ul>
+<li><code>node1</code>&#x6761;&#x4EF6;&#x4E3A;<code>RUNNING</code>&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x8FD4;&#x56DE;<code>RUNNING</code></li>
+<li><code>node1</code>&#x6761;&#x4EF6;&#x4E3A;<code>SUCCESS</code>&#xFF0C;<code>halt</code>&#x6389;<code>node3</code>&#xFF0C;&#x6267;&#x884C;<code>node2</code></li>
+<li><code>node1</code>&#x6761;&#x4EF6;&#x4E3A;<code>FAILURE</code>&#xFF0C;<code>halt</code>&#x6389;<code>node2</code>&#xFF0C;&#x6267;&#x884C;<code>node3</code></li>
+<li>&#x5982;&#x679C;<code>node2</code>&#x548C;<code>node2</code>&#x8FD4;&#x56DE;<code>RUNNING</code>&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x8FD4;&#x56DE;<code>RUNNING</code>&#xFF0C;&#x5426;&#x5219;<code>resetChildren()</code>&#xFF0C;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x72B6;&#x6001;</li>
+<li>&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x6267;&#x884C;<code>node1</code>&#x6761;&#x4EF6;</li>
+</ul>
 <pre><code class="lang-cpp">NodeStatus WhileDoElseNode::tick() {
   <span class="hljs-keyword">const</span> <span class="hljs-keyword">size_t</span> children_count = children_nodes_.size();
   <span class="hljs-comment">// &#x6E90;&#x4EE3;&#x7801;&#x9519;&#x8BEF;&#xFF0C;&#x5E94;&#x8BE5;&#x662F; if (children_count != 2 &amp;&amp; children_count != 3) {}</span>
@@ -8195,7 +8254,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ControlNodes源码解析","level":"5.1.6","depth":2,"next":{"title":"ControlNodes源码解析之Sequence","level":"5.1.7","depth":2,"path":"BehaviorTree/入门/07-ControlNodes源码解析之Sequence.md","ref":"./BehaviorTree/入门/07-ControlNodes源码解析之Sequence.md","articles":[]},"previous":{"title":"DecoratorNodes源码解析","level":"5.1.5","depth":2,"path":"BehaviorTree/入门/05-DecoratorNodes源码解析.md","ref":"./BehaviorTree/入门/05-DecoratorNodes源码解析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"BehaviorTree/入门/06-ControlNodes源码解析.md","mtime":"2023-05-11T11:49:53.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-29T10:37:11.059Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ControlNodes源码解析","level":"5.1.6","depth":2,"next":{"title":"ControlNodes源码解析之Sequence","level":"5.1.7","depth":2,"path":"BehaviorTree/入门/07-ControlNodes源码解析之Sequence.md","ref":"./BehaviorTree/入门/07-ControlNodes源码解析之Sequence.md","articles":[]},"previous":{"title":"DecoratorNodes源码解析","level":"5.1.5","depth":2,"path":"BehaviorTree/入门/05-DecoratorNodes源码解析.md","ref":"./BehaviorTree/入门/05-DecoratorNodes源码解析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"BehaviorTree/入门/06-ControlNodes源码解析.md","mtime":"2024-03-07T06:39:19.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-03-08T09:49:47.276Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
