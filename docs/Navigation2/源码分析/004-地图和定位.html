@@ -69,6 +69,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="005-规划器服务.html" />
+    
     
     <link rel="prev" href="003-行为树及节点.html" />
     
@@ -7250,6 +7252,45 @@
             
         </li>
     
+        <li class="chapter " data-level="10.1.5" data-path="005-规划器服务.html">
+            
+                <a href="005-规划器服务.html">
+            
+                    
+                    规划器服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.6" data-path="006-平滑器服务.html">
+            
+                <a href="006-平滑器服务.html">
+            
+                    
+                    平滑器服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.7" data-path="007-控制器服务.html">
+            
+                <a href="007-控制器服务.html">
+            
+                    
+                    控制器服务
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -8592,7 +8633,7 @@ nav_msgs::msg::OccupancyGrid &#x7684;data&#x7684;&#x662F;&#x4E00;&#x7EF4;&#x6570
 -&gt;<code>{&quot;nav2_costmap_2d::StaticLayer&quot;, &quot;nav2_costmap_2d::ObstacleLayer&quot;, &quot;nav2_costmap_2d::InflationLayer&quot;}</code></li>
 <li><code>clearable_layers</code>-&gt;<code>{&quot;obstacle_layer&quot;, &quot;voxel_layer&quot;, &quot;range_layer&quot;}</code>&#xFF0C;&#x53EF;&#x6E05;&#x9664;&#x7684;&#x5C42;&#xFF0C;&#x5305;&#x62EC;&#x907F;&#x969C;&#x5C42;&#x3001;&#x4F53;&#x7D20;&#x5C42;&#x3001;&#x6D4B;&#x8DDD;&#x5C42;
 -
-| &#x53C2;&#x6570; | &#x9ED8;&#x8BA4;&#x503C; | &#x8BF4;&#x660E; |<pre><code>                                                                                                                                                        |--- | ---| --- |
+| &#x53C2;&#x6570; | &#x9ED8;&#x8BA4;&#x503C; | &#x8BF4;&#x660E; |<pre><code>                                                                                                                                                                  |--- | ---| --- |
 </code></pre>| <code>always_send_full_costmap</code> | <code>false</code> |  |
 | <code>footprint_padding</code> | <code>0.01</code> | &#x8DB3;&#x8FF9;&#x8865;&#x507F;&#x503C; |
 | <code>footprint</code> | <code>&quot;[]&quot;</code> |  |
@@ -9201,7 +9242,8 @@ map_topic_ + &quot;_updates&quot;,...)</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>incom
 <li><code>maskCallback</code>&#xFF1A;&#x63A9;&#x7801;&#x8BDD;&#x9898;&#x56DE;&#x8C03;&#xFF0C;&#x66F4;&#x65B0;&#x6570;&#x636E;<code>filter_mask_</code></li>
 </ul>
 </li>
-<li><strong>KeepoutFilter</strong>&#xFF1A;&#x7981;&#x533A;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x7EE7;&#x627F;&#x4E8E;<code>CostmapFilter</code>&#xFF0C;&#x8BFB;&#x53D6;&#x7981;&#x533A;&#x63A9;&#x7801;&#x5E76;&#x5728;&#x5730;&#x56FE;&#x4E2D;&#x6807;&#x8BB0;&#x7981;&#x533A;&#x533A;&#x57DF;&#xFF0C;&#x9632;&#x6B62;&#x9650;&#x5236;&#x533A;&#x57DF;&#x5185;&#x7684;&#x89C4;&#x5212;&#x6216;&#x63A7;&#x5236;<ul>
+<li><p><strong>KeepoutFilter</strong>&#xFF1A;&#x7981;&#x533A;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x7EE7;&#x627F;&#x4E8E;<code>CostmapFilter</code>&#xFF0C;&#x8BFB;&#x53D6;&#x7981;&#x533A;&#x63A9;&#x7801;&#x5E76;&#x5728;&#x5730;&#x56FE;&#x4E2D;&#x6807;&#x8BB0;&#x7981;&#x533A;&#x533A;&#x57DF;&#xFF0C;&#x9632;&#x6B62;&#x9650;&#x5236;&#x533A;&#x57DF;&#x5185;&#x7684;&#x89C4;&#x5212;&#x6216;&#x63A7;&#x5236;</p>
+<ul>
 <li><code>initializeFilter</code><ul>
 <li>&#x521B;&#x5EFA;&#x8BA2;&#x9605;&#x8005;&#xFF0C;<code>filter_info_sub_ = node-&gt;create_subscription&lt;nav2_msgs::msg::CostmapFilterInfo&gt;(filter_info_topic_)</code>
 &#x7ED1;&#x5B9A;<code>filterInfoCallback</code></li>
@@ -9294,10 +9336,14 @@ map_topic_ + &quot;_updates&quot;,...)</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>incom
 
             
                 
-                <a href="003-行为树及节点.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 行为树及节点">
+                <a href="003-行为树及节点.html" class="navigation navigation-prev " aria-label="Previous page: 行为树及节点">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="005-规划器服务.html" class="navigation navigation-next " aria-label="Next page: 规划器服务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -9306,7 +9352,7 @@ map_topic_ + &quot;_updates&quot;,...)</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>incom
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"地图和定位","level":"10.1.4","depth":2,"next":{"title":"Docker","level":"11.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"11.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"11.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"11.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"11.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"11.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"行为树及节点","level":"10.1.3","depth":2,"path":"Navigation2/源码分析/003-行为树及节点.md","ref":"Navigation2/源码分析/003-行为树及节点.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/004-地图和定位.md","mtime":"2024-02-21T06:50:13.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-03-08T09:49:47.276Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"地图和定位","level":"10.1.4","depth":2,"next":{"title":"规划器服务","level":"10.1.5","depth":2,"path":"Navigation2/源码分析/005-规划器服务.md","ref":"Navigation2/源码分析/005-规划器服务.md","articles":[]},"previous":{"title":"行为树及节点","level":"10.1.3","depth":2,"path":"Navigation2/源码分析/003-行为树及节点.md","ref":"Navigation2/源码分析/003-行为树及节点.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/004-地图和定位.md","mtime":"2024-03-11T03:32:11.679Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-03-15T07:57:22.896Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
