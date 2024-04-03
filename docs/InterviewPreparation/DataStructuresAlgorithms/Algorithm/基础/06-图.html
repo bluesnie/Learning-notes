@@ -8093,6 +8093,7 @@ D: A(3), C(5)
         self.to_node: Node = to_node
 
         <span class="hljs-comment"># &#x5B9E;&#x73B0; __hash__ &#x65B9;&#x6CD5;</span>
+
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__hash__</span><span class="hljs-params">(self)</span>:</span>
         <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x54C8;&#x5E0C;&#x503C;</span>
         <span class="hljs-keyword">return</span> hash((self.from_node, self.to_node, self.weight))
@@ -8148,6 +8149,7 @@ print(res)
 <h2 id="&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;">&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</h2>
 <blockquote>
 <p>&#x8DDF;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#xFF0C;&#x4E8C;&#x53C9;&#x6811;&#x6CA1;&#x6709;&#x73AF;&#xFF0C;&#x800C;&#x56FE;&#x6709;&#xFF0C;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x5C31;&#x662F;&#x4E0D;&#x8FDB;&#x5165;&#x73AF;&#xFF0C;&#x51FA;&#x4E0D;&#x6765;&#x7684;&#x95EE;&#x9898;</p>
+</blockquote>
 <ul>
 <li>1&#xFF0C;&#x5229;&#x7528;&#x961F;&#x5217;&#x5B9E;&#x73B0;</li>
 <li>2&#xFF0C;&#x4ECE;&#x6E90;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x4F9D;&#x6B21;&#x6309;&#x7167;&#x5BBD;&#x5EA6;&#x8FDB;&#x961F;&#x5217;&#xFF0C;&#x7136;&#x540E;&#x5F39;&#x51FA;</li>
@@ -8155,7 +8157,6 @@ print(res)
 <li>4&#xFF0C;&#x76F4;&#x5230;&#x961F;&#x5217;&#x53D8;&#x7A7A;</li>
 <li>5&#xFF0C;&#x6CE8;&#x610F;&#x5904;&#x7406;&#x6709;&#x73AF;&#x56FE;</li>
 </ul>
-</blockquote>
 <pre><code class="lang-python">
 <span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
 
@@ -8370,6 +8371,7 @@ graph = create_graph(data)
 <span class="hljs-comment"># &#x5DEE;&#x4E0D;&#x591A;&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x6784;</span>
 <span class="hljs-keyword">import</span> typing
 
+
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnionFind</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, nodes: typing.List[Node])</span>:</span>
         self.node_map = {}
@@ -8451,8 +8453,8 @@ graph = create_graph(data)
         heapq.heappush(hq, value)  <span class="hljs-comment"># O(logM)</span>
 
     result: typing.List[Edge] = []
-    <span class="hljs-keyword">while</span> hq: <span class="hljs-comment"># M&#x6761;&#x8FB9;</span>
-        cur_edge = heapq.heappop(hq) <span class="hljs-comment"># O(logM)</span>
+    <span class="hljs-keyword">while</span> hq:  <span class="hljs-comment"># M&#x6761;&#x8FB9;</span>
+        cur_edge = heapq.heappop(hq)  <span class="hljs-comment"># O(logM)</span>
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> union_find.find(cur_edge.from_node, cur_edge.to_node):  <span class="hljs-comment"># &#x67E5;</span>
             result.append(cur_edge)
             union_find.union(cur_edge.from_node, cur_edge.to_node)  <span class="hljs-comment"># &#x5408;&#x5E76;</span>
@@ -8490,6 +8492,7 @@ graph = create_graph(data)
 <span class="hljs-keyword">import</span> typing
 <span class="hljs-keyword">import</span> heapq
 
+
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">primMST</span><span class="hljs-params">(graph: Graph)</span>:</span>
     hq = []
     node_set: typing.Set[Node] = set()  <span class="hljs-comment"># &#x662F;&#x5426;&#x662F;&#x65B0;&#x70B9;</span>
@@ -8517,6 +8520,12 @@ res = primMST(graph)
     print(it.weight)
 </code></pre>
 <h2 id="dijkstra&#x7B97;&#x6CD5;">Dijkstra&#x7B97;&#x6CD5;</h2>
+<ul>
+<li><code>A*</code>&#x7B97;&#x6CD5;&#x4E0E;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x542F;&#x53D1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x7ED3;&#x5408;&#x5DF2;&#x7ECF;&#x8D70;&#x8FC7;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x548C;&#x542F;&#x53D1;&#x51FD;&#x6570;&#x7684;&#x4F30;&#x8BA1;&#x503C;&#xFF0C;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x8D70;&#x7684;&#x8DEF;&#xFF1B;</li>
+<li>&#x800C;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x8D2A;&#x5FC3;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x53EA;&#x8003;&#x8651;&#x5DF2;&#x77E5;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;</li>
+<li><code>A*</code>&#x7B97;&#x6CD5;&#x56E0;&#x4E3A;&#x63D0;&#x4F9B;&#x4E86;&#x542F;&#x53D1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6BD4;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5FEB;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x8DDD;&#x79BB;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x8F83;&#x8FDC;&#xFF0C;&#x6709;&#x591A;&#x6761;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x7684;&#x60C5;&#x51B5;</li>
+<li><code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x80FD;&#x6BD4;<code>A*</code>&#x7B97;&#x6CD5;&#x5FEB;&#xFF0C;&#x6BD4;&#x5982;&#x8DEF;&#x5F84;&#x4EE3;&#x4EF7;&#x5747;&#x5300;&#x5206;&#x5E03;&#xFF0C;&#x5BFC;&#x81F4;&#x542F;&#x53D1;&#x51FD;&#x6570;&#x4F30;&#x8BA1;&#x503C;&#x4E0D;&#x591F;&#x7CBE;&#x786E;&#xFF0C;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&#x7684;&#x8DEF;&#x5F84;&#x904D;&#x5386;</li>
+</ul>
 <p>&#x9002;&#x7528;&#x8303;&#x56F4;&#xFF1A;&#x6CA1;&#x6709;&#x6743;&#x503C;&#x4E3A;&#x8D1F;&#x6570;&#x7684;&#x8FB9;</p>
 <pre><code class="lang-python"><span class="hljs-comment">#         D</span>
 <span class="hljs-comment">#       / | \</span>
@@ -8933,7 +8942,7 @@ data = dijkstra_heap(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-01-29T08:37:23.932Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-02T09:36:09.594Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-04-03T10:04:11.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-03T10:04:20.761Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

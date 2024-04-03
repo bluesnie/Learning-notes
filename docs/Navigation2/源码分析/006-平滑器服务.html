@@ -8063,9 +8063,11 @@
 </li>
 </ul>
 </li>
+</ul>
+</li>
 <li><code>smoothImpl</code>&#xFF1A;&#x5E73;&#x6ED1;&#x5B9E;&#x73B0;<ul>
 <li>&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x5E73;&#x6ED1;&#x7684;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;<ul>
-<li>&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x90FD;&#x4F1A;&#x68C0;&#x67E5;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x662F;&#x5426;&#x8D85;&#x8FC7;&#x4E86;&#x8BBE;&#x5B9A;&#x7684;&#x6700;&#x5927;&#x8FED;&#x4EE3;&#x6B21;&#x6570; <code>max_its</code>_&#x3002;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x4E86;&#x6700;&#x5927;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x5E76;&#x5C06;&#x8DEF;&#x5F84;&#x6062;&#x590D;&#x5230;&#x4E0A;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x7684;&#x72B6;&#x6001;<code>last_path</code>
+<li>&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x90FD;&#x4F1A;&#x68C0;&#x67E5;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x662F;&#x5426;&#x8D85;&#x8FC7;&#x4E86;&#x8BBE;&#x5B9A;&#x7684;&#x6700;&#x5927;&#x8FED;&#x4EE3;&#x6B21;&#x6570; <code>max_its_</code>&#x3002;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x4E86;&#x6700;&#x5927;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x5E76;&#x5C06;&#x8DEF;&#x5F84;&#x6062;&#x590D;&#x5230;&#x4E0A;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x7684;&#x72B6;&#x6001;<code>last_path</code>
 &#xFF0C;&#x5E76;&#x8C03;&#x7528; <code>updateApproximatePathOrientations</code> &#x51FD;&#x6570;&#x66F4;&#x65B0;&#x8DEF;&#x5F84;&#x7684;&#x65B9;&#x5411;&#x3002;</li>
 <li>&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x90FD;&#x4F1A;&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x4E0E;&#x5E73;&#x6ED1;&#x64CD;&#x4F5C;&#x5F00;&#x59CB;&#x65F6;&#x95F4;&#x7684;&#x5DEE;&#x503C;&#x662F;&#x5426;&#x8D85;&#x8FC7;&#x4E86;&#x8BBE;&#x5B9A;&#x7684;&#x6700;&#x5927;&#x5E73;&#x6ED1;&#x65F6;&#x95F4;&#x3002;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x4E86;&#x6700;&#x5927;&#x65F6;&#x95F4;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x5E76;&#x5C06;&#x8DEF;&#x5F84;&#x6062;&#x590D;&#x5230;&#x4E0A;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x7684;&#x72B6;&#x6001;<code>last_path</code>
 &#xFF0C;&#x5E76;&#x8C03;&#x7528; <code>updateApproximatePathOrientations</code> &#x51FD;&#x6570;&#x66F4;&#x65B0;&#x8DEF;&#x5F84;&#x7684;&#x65B9;&#x5411;&#x3002;</li>
@@ -8081,8 +8083,6 @@
 </li>
 <li><code>getFieldByDim</code>&#xFF1A;&#x83B7;&#x53D6;&#x7EF4;&#x5EA6;&#x4FE1;&#x606F;<code>xyz</code>&#x7684;&#x503C;</li>
 <li><code>setFieldByDim</code>&#xFF1A;&#x8BBE;&#x7F6E;&#x7EF4;&#x5EA6;&#x4FE1;&#x606F;<code>xyz</code>&#x7684;&#x503C;</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p><strong>SmootherServer</strong>&#xFF1A;&#x7528;&#x4E8E;&#x6258;&#x7BA1;&#x4E0D;&#x540C;&#x7B97;&#x6CD5;&#x7684;&#x5E73;&#x6ED1;&#x5668;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;&#x4E8E;<code>nav2_util::LifecycleNode</code></p>
@@ -8179,6 +8179,82 @@
 </li>
 </ul>
 <h2 id="nav2velocitysmoother">nav2_velocity_smoother</h2>
+<ul>
+<li><strong>VelocitySmoother</strong>&#xFF1A;&#x901F;&#x5EA6;&#x5E73;&#x6ED1;&#x5668;&#xFF0C;&#x7EE7;&#x627F;&#x4E8E;<code>nav2_util::LifecycleNode</code><ul>
+<li><code>VelocitySmoother</code>&#xFF1A;&#x6784;&#x9020;&#x51FD;&#x6570;<ul>
+<li>&#x8282;&#x70B9;&#x540D;&#x79F0;&#xFF1A;<code>velocity_smoother</code></li>
+</ul>
+</li>
+<li><code>findEtaConstraint</code>&#xFF1A;&#x6C42;&#x6BD4;&#x4F8B;&#x56E0;&#x5B50;&#xFF0C;&#x5B83;&#x5C06;&#x8F74;&#x7F29;&#x653E;&#x5230;&#x52A0;&#x901F;&#x5EA6;&#x8303;&#x56F4;&#x5185;<ul>
+<li>&#x8BA1;&#x7B97;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x4E0E;&#x5F53;&#x524D;&#x901F;&#x5EA6;&#x4E4B;&#x95F4;&#x7684;&#x901F;&#x5EA6;&#x5DEE;<code>dv = v_cmd - v_curr</code>&#x3002;&#x8FD9;&#x4E2A;&#x901F;&#x5EA6;&#x5DEE;&#x4EE3;&#x8868;&#x4E86;&#x9700;&#x8981;&#x8C03;&#x6574;&#x7684;&#x901F;&#x5EA6;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x901F;&#x5EA6;&#x5DEE;&#x7684;&#x6B63;&#x8D1F;&#x4EE5;&#x53CA;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x548C;&#x5F53;&#x524D;&#x901F;&#x5EA6;&#x7684;&#x5927;&#x5C0F;&#x5173;&#x7CFB;&#xFF0C;&#x786E;&#x5B9A;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x52A0;&#x901F;&#x5EA6;&#x8FD8;&#x662F;&#x51CF;&#x901F;&#x5EA6;&#x6765;&#x5E73;&#x6ED1;&#x901F;&#x5EA6;&#x8FC7;&#x6E21;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x5F53;&#x524D;&#x901F;&#x5EA6;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x76EE;&#x6807;&#x901F;&#x5EA6;&#x4E0E;&#x5F53;&#x524D;&#x901F;&#x5EA6;&#x7684;&#x7B26;&#x53F7;&#x76F8;&#x540C;&#xFF08;&#x5373;&#x901F;&#x5EA6;&#x4E0D;&#x4F1A;&#x7ECF;&#x8FC7;<code>0.0</code>&#xFF09;&#xFF0C;&#x5219;&#x9009;&#x62E9;&#x52A0;&#x901F;&#x5EA6;&#x6765;&#x5E73;&#x6ED1;&#x8FC7;&#x6E21;&#x3002;&#x5426;&#x5219;&#x9009;&#x62E9;&#x51CF;&#x901F;&#x5EA6;&#x6765;&#x5E73;&#x6ED1;&#x8FC7;&#x6E21;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x9009;&#x5B9A;&#x7684;&#x52A0;&#x901F;&#x5EA6;&#x6216;&#x51CF;&#x901F;&#x5EA6;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x901F;&#x5EA6;&#x7684;&#x6700;&#x5927;&#x53D8;&#x5316;&#x91CF; <code>v_component_max</code> &#x548C;&#x6700;&#x5C0F;&#x53D8;&#x5316;&#x91CF; <code>v_component_min</code>&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x5206;&#x522B;&#x8868;&#x793A;&#x4E86;&#x901F;&#x5EA6;&#x53D8;&#x5316;&#x7684;&#x4E0A;&#x9650;&#x548C;&#x4E0B;&#x9650;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x901F;&#x5EA6;&#x5DEE;&#x8D85;&#x8FC7;&#x4E86;&#x6700;&#x5927;&#x53D8;&#x5316;&#x91CF; <code>v_component_max</code>&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6700;&#x5927;&#x53D8;&#x5316;&#x91CF;&#x4E0E;&#x901F;&#x5EA6;&#x5DEE;&#x4E4B;&#x6BD4;&#x4F5C;&#x4E3A;&#x7EA6;&#x675F;&#x7CFB;&#x6570; <code>eta</code>&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x901F;&#x5EA6;&#x53D8;&#x5316;&#x4E0D;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x53D8;&#x5316;&#x91CF;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x901F;&#x5EA6;&#x5DEE;&#x4F4E;&#x4E8E;&#x6700;&#x5C0F;&#x53D8;&#x5316;&#x91CF; <code>v_component_min</code>&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6700;&#x5C0F;&#x53D8;&#x5316;&#x91CF;&#x4E0E;&#x901F;&#x5EA6;&#x5DEE;&#x4E4B;&#x6BD4;&#x4F5C;&#x4E3A;&#x7EA6;&#x675F;&#x7CFB;&#x6570; <code>eta</code>&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x901F;&#x5EA6;&#x53D8;&#x5316;&#x4E0D;&#x4F4E;&#x4E8E;&#x6700;&#x5C0F;&#x53D8;&#x5316;&#x91CF;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x901F;&#x5EA6;&#x53D8;&#x5316;&#x5728;&#x6700;&#x5927;&#x53D8;&#x5316;&#x91CF;&#x548C;&#x6700;&#x5C0F;&#x53D8;&#x5316;&#x91CF;&#x4E4B;&#x95F4;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; <code>-1.0</code>&#xFF0C;&#x8868;&#x793A;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x901F;&#x5EA6;&#x8C03;&#x6574;&#x3002;</li>
+</ul>
+</li>
+<li><code>applyConstraints</code>&#xFF1A;&#x5E94;&#x7528;&#x52A0;&#x901F;&#x5EA6;&#x548C;&#x6BD4;&#x4F8B;&#x56E0;&#x5B50;&#x7EA6;&#x675F;&#xFF0C;<code>return v_curr + std::clamp(eta * dv, v_component_min, v_component_max)</code></li>
+<li><code>on_configure</code>&#xFF1A;&#x91CD;&#x5199;&#x51FD;&#x6570;<ul>
+<li>&#x521D;&#x59CB;&#x5316;&#x548C;&#x58F0;&#x660E;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x53C2;&#x6570;<ul>
+<li><code>smoothing_frequency</code> -&gt; <code>20.0</code></li>
+<li><code>feedback</code> -&gt; <code>OPEN_LOOP</code>&#xFF1A;&#x5F00;&#x73AF;&#x95ED;&#x73AF;</li>
+<li><code>scale_velocities</code> -&gt; <code>false</code></li>
+<li><code>max_velocity</code> -&gt; <code>{0.50, 0.0, 2.5}</code></li>
+<li><code>min_velocity</code> -&gt; <code>{-0.50, 0.0, -2.5}</code></li>
+<li><code>max_accel</code> -&gt; <code>{2.5, 0.0, 3.2}</code></li>
+<li><code>max_decel</code> -&gt; <code>{-2.5, 0.0, -3.2}</code></li>
+<li><code>odom_topic</code> -&gt; <code>odom</code></li>
+<li><code>odom_duration</code> -&gt; <code>0.1</code></li>
+<li><code>deadband_velocity</code> -&gt; <code>{0.0, 0.0, 0.0}</code></li>
+<li><code>velocity_timeout</code> -&gt; <code>1.0</code></li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;<code>feedback == CLOSED_LOOP</code>&#xFF1A;&#x521D;&#x59CB;&#x5316;<code>odom</code>
+&#x5E73;&#x6ED1;&#x5B9E;&#x4F8B;<code>odom_smoother_ = std::make_unique&lt;nav2_util::OdomSmoother&gt;(node, odom_duration_, odom_topic_)</code></li>
+<li>&#x521D;&#x59CB;&#x5316;&#x5E73;&#x6ED1;&#x540E;&#x901F;&#x5EA6;&#x53D1;&#x5E03;&#x5B9E;&#x4F8B;&#xFF1A;<code>smoothed_cmd_pub_ = create_publisher&lt;geometry_msgs::msg::Twist&gt;(&quot;cmd_vel_smoothed&quot;, 1)</code></li>
+<li>&#x521D;&#x59CB;&#x5316;&#x901F;&#x5EA6;&#x8BA2;&#x9605;&#xFF1A;<code>cmd_sub_ = create_subscription&lt;geometry_msgs::msg::Twist&gt;(&quot;cmd_vel&quot;,...)</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>inputCommandCallback</code>&#x51FD;&#x6570;</li>
+</ul>
+</li>
+<li><code>on_activate</code>&#xFF1A;&#x91CD;&#x5199;&#x51FD;&#x6570;<ul>
+<li><code>smoothed_cmd_pub_-&gt;on_activate()</code></li>
+<li>&#x521B;&#x5EFA;&#x5B9A;&#x65F6;&#x5668;&#xFF1A;<code>timer_ = create_wall_timer()</code>&#x7ED1;&#x5B9A;<code>smootherTimer</code>&#x51FD;&#x6570;</li>
+<li>&#x7ED1;&#x5B9A;&#x53C2;&#x6570;&#x53D8;&#x66F4;&#x56DE;&#x8C03;<code>dynamicParametersCallback</code></li>
+<li>&#x8C03;&#x7528;<code>createBond()</code></li>
+</ul>
+</li>
+<li><code>on_deactivate</code>&#xFF1A;&#x91CD;&#x5199;&#x51FD;&#x6570;<ul>
+<li>&#x5B9A;&#x65F6;&#x5668;&#x91CD;&#x7F6E;</li>
+<li>&#x8C03;&#x7528;<code>smoothed_cmd_pub_-&gt;on_deactivate()</code></li>
+<li>&#x8C03;&#x7528;<code>destroyBond()</code></li>
+</ul>
+</li>
+<li><code>on_cleanup</code>&#xFF1A;&#x91CD;&#x5199;&#x51FD;&#x6570;&#xFF0C;&#x5C5E;&#x6027;&#x5B9E;&#x4F8B;&#x91CD;&#x7F6E;</li>
+<li><code>on_shutdown</code>&#xFF1A;&#x91CD;&#x5199;&#x51FD;&#x6570;</li>
+<li><code>inputCommandCallback</code>&#xFF1A;&#x901F;&#x5EA6;&#x6307;&#x4EE4;&#x56DE;&#x8C03;<ul>
+<li>&#x6821;&#x9A8C;&#x6570;&#x636E;&#xFF1A;<code>nav2_util::validateTwist(*msg)</code></li>
+<li>&#x5C5E;&#x6027;&#x8D4B;&#x503C;</li>
+</ul>
+</li>
+<li><code>smootherTimer</code>&#xFF1A;&#x5E73;&#x6ED1;&#x5B9A;&#x65F6;&#x5668;<ul>
+<li>&#x7B49;&#x5F85;&#x7B2C;&#x4E00;&#x6761;&#x901F;&#x5EA6;&#x8FBE;&#x5230;</li>
+<li>&#x68C0;&#x6D4B;&#x8BA2;&#x9605;&#x63A5;&#x6536;&#x7684;&#x901F;&#x5EA6;&#x662F;&#x5426;&#x8D85;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x65F6;&#xFF0C;&#x53D1;&#x5E03;0&#x51CF;&#x901F;</li>
+<li>&#x6839;&#x636E;&#x53CD;&#x9988;&#x63A7;&#x5236;&#x7C7B;&#x578B;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x901F;&#x5EA6;<ul>
+<li>&#x5F00;&#x73AF;&#xFF1A;&#x7B49;&#x4E8E;&#x6700;&#x540E;&#x7684;&#x901F;&#x5EA6;<code>last_cmd_</code></li>
+<li>&#x95ED;&#x73AF;&#xFF1A;<code>odom_smoother_-&gt;getTwist()</code></li>
+</ul>
+</li>
+<li>&#x8C03;&#x7528;<code>std::clamp</code>&#x9650;&#x5236;<code>x,y,z</code>&#x901F;&#x5EA6;&#x5728;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x5185;</li>
+<li>&#x5982;&#x679C;<code>scale_velocities_==true</code>&#x5206;&#x5E03;&#x8C03;&#x7528;<code>findEtaConstraint</code>&#x8BA1;&#x7B97;<code>x,y,z</code>&#x7684;&#x56E0;&#x5B50;</li>
+<li>&#x8C03;&#x7528;<code>applyConstraints</code>&#x8BA1;&#x7B97;<code>x,y,z</code>&#x7684;&#x901F;&#x5EA6;</li>
+<li>&#x5E94;&#x7528;&#x6B7B;&#x533A;&#x901F;&#x5EA6;&#x9650;&#x5236;&#x5E76;&#x53D1;&#x5E03;<code>smoothed_cmd_pub_-&gt;publish(std::move(cmd_vel))</code></li>
+</ul>
+</li>
+<li><code>dynamicParametersCallback</code>&#xFF1A;&#x53C2;&#x6570;&#x53D8;&#x66F4;&#x56DE;&#x8C03;</li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -8222,7 +8298,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"平滑器服务","level":"10.1.6","depth":2,"next":{"title":"控制器服务","level":"10.1.7","depth":2,"path":"Navigation2/源码分析/007-控制器服务.md","ref":"Navigation2/源码分析/007-控制器服务.md","articles":[]},"previous":{"title":"规划器服务","level":"10.1.5","depth":2,"path":"Navigation2/源码分析/005-规划器服务.md","ref":"Navigation2/源码分析/005-规划器服务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/006-平滑器服务.md","mtime":"2024-03-14T08:53:53.427Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-02T09:36:09.594Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"平滑器服务","level":"10.1.6","depth":2,"next":{"title":"控制器服务","level":"10.1.7","depth":2,"path":"Navigation2/源码分析/007-控制器服务.md","ref":"Navigation2/源码分析/007-控制器服务.md","articles":[]},"previous":{"title":"规划器服务","level":"10.1.5","depth":2,"path":"Navigation2/源码分析/005-规划器服务.md","ref":"Navigation2/源码分析/005-规划器服务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/006-平滑器服务.md","mtime":"2024-04-03T07:53:50.561Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-03T10:04:20.761Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
