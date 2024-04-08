@@ -8520,12 +8520,7 @@ res = primMST(graph)
     print(it.weight)
 </code></pre>
 <h2 id="dijkstra&#x7B97;&#x6CD5;">Dijkstra&#x7B97;&#x6CD5;</h2>
-<ul>
-<li><code>A*</code>&#x7B97;&#x6CD5;&#x4E0E;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x542F;&#x53D1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x7ED3;&#x5408;&#x5DF2;&#x7ECF;&#x8D70;&#x8FC7;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x548C;&#x542F;&#x53D1;&#x51FD;&#x6570;&#x7684;&#x4F30;&#x8BA1;&#x503C;&#xFF0C;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x8D70;&#x7684;&#x8DEF;&#xFF1B;</li>
-<li>&#x800C;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x8D2A;&#x5FC3;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x53EA;&#x8003;&#x8651;&#x5DF2;&#x77E5;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;</li>
-<li><code>A*</code>&#x7B97;&#x6CD5;&#x56E0;&#x4E3A;&#x63D0;&#x4F9B;&#x4E86;&#x542F;&#x53D1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6BD4;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5FEB;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x8DDD;&#x79BB;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x8F83;&#x8FDC;&#xFF0C;&#x6709;&#x591A;&#x6761;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x7684;&#x60C5;&#x51B5;</li>
-<li><code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x80FD;&#x6BD4;<code>A*</code>&#x7B97;&#x6CD5;&#x5FEB;&#xFF0C;&#x6BD4;&#x5982;&#x8DEF;&#x5F84;&#x4EE3;&#x4EF7;&#x5747;&#x5300;&#x5206;&#x5E03;&#xFF0C;&#x5BFC;&#x81F4;&#x542F;&#x53D1;&#x51FD;&#x6570;&#x4F30;&#x8BA1;&#x503C;&#x4E0D;&#x591F;&#x7CBE;&#x786E;&#xFF0C;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&#x7684;&#x8DEF;&#x5F84;&#x904D;&#x5386;</li>
-</ul>
+<p>&#x89E3;&#x51B3;&#x4E00;&#x4E2A;&#x70B9;&#x5230;&#x6240;&#x6709;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</p>
 <p>&#x9002;&#x7528;&#x8303;&#x56F4;&#xFF1A;&#x6CA1;&#x6709;&#x6743;&#x503C;&#x4E3A;&#x8D1F;&#x6570;&#x7684;&#x8FB9;</p>
 <pre><code class="lang-python"><span class="hljs-comment">#         D</span>
 <span class="hljs-comment">#       / | \</span>
@@ -8674,6 +8669,12 @@ data = dijkstra(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>])
 </ul>
 <blockquote>
 <p>&#x6307;&#x6807;&#x4E0D;&#x53D8;&#xFF0C;&#x53EA;&#x662F;&#x52A0;&#x5FEB;&#x4E86;&#x5E38;&#x6570;&#x65F6;&#x95F4;</p>
+<ul>
+<li>&#x4ECE;&#x6E90;&#x70B9;&#x51FA;&#x53D1;&#xFF0C;&#x6E90;&#x70B9;&#x653E;&#x5165;&#x5C0F;&#x6839;&#x5806;</li>
+<li>&#x6E90;&#x70B9;&#x5F39;&#x51FA;&#xFF0C;&#x4ECE;&#x8BE5;&#x70B9;&#x51FA;&#x53D1;&#x7684;&#x5230;&#x7684;&#x70B9;&#x548C;&#x8DDD;&#x79BB;&#x653E;&#x5165;&#x5C0F;&#x6839;&#x5806;</li>
+<li>&#x518D;&#x5F39;&#x51FA;&#x5806;&#x9876;&#xFF0C;&#x67E5;&#x770B;&#x4ECE;&#x8BE5;&#x70B9;&#x51FA;&#x53D1;&#x5230;&#x7684;&#x70B9;&#x6709;&#x6CA1;&#x6709;&#x8BA9;&#x8DDD;&#x79BB;&#x53D8;&#x5C0F;&#xFF0C;&#x53D8;&#x5C0F;&#x653E;&#x5165;&#x5C0F;&#x6839;&#x5806;</li>
+<li>&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x4E0B;&#x53BB;&#xFF0C;&#x5229;&#x7528;&#x5C0F;&#x6839;&#x5806;&#x4F9D;&#x6B21;&#x5F39;&#x51FA;&#x6570;&#x636E;&#xFF0C;&#x6E90;&#x70B9;&#x51FA;&#x53D1;&#x5230;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#x5C31;&#x51FA;&#x6765;&#x4E86;</li>
+</ul>
 </blockquote>
 <pre><code class="lang-python">
 <span class="hljs-keyword">import</span> typing
@@ -8899,6 +8900,211 @@ data = dijkstra_heap(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>]
 <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> data.items():
     print(k.value, v)
 </code></pre>
+<h2 id="a&#x7B97;&#x6CD5;">A*&#x7B97;&#x6CD5;</h2>
+<ul>
+<li><code>A*</code>&#x89E3;&#x51B3;&#x7684;&#x662F;&#x6307;&#x5B9A;&#x6E90;&#x70B9;&#xFF0C;&#x6307;&#x5B9A;&#x76EE;&#x6807;&#x70B9;&#xFF0C;&#x6C42;&#x6E90;&#x70B9;&#x5230;&#x8FBE;&#x76EE;&#x6807;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x5F53;&#x524D;&#x70B9;&#x5230;&#x7EC8;&#x70B9;&#x7684;&#x542F;&#x53D1;&#x51FD;&#x6570;(&#x9884;&#x4F30;&#x51FD;&#x6570;)</li>
+<li><code>Dijkstra</code>&#x7684;&#x5C0F;&#x6839;&#x5806;&#x662F;&#x6839;&#x636E;&#x6E90;&#x70B9;&#x5230;&#x5F53;&#x524D;&#x70B9;&#x7684;&#x4EE3;&#x4EF7;&#x6392;&#x5E8F;&#x7684;&#xFF0C; &#x800C;<code>A*</code>&#x6839;&#x636E;<strong>&#x4ECE;&#x6E90;&#x70B9;&#x5230;&#x5F53;&#x524D;&#x70B9;&#x7684;&#x8DDD;&#x79BB; + &#x5F53;&#x524D;&#x70B9;&#x5230;&#x76EE;&#x6807;&#x70B9;&#x7684;&#x4F30;&#x8BA1;&#x8DDD;&#x79BB;</strong>&#x6765;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7EC6;&#x8282;&#x548C;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x4E00;&#x81F4;</li>
+<li><code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;<code>A*</code>&#x7B97;&#x6CD5;&#xFF0C;&#x53EA;&#x662F;&#x5F53;&#x524D;&#x70B9;&#x5230;&#x76EE;&#x6807;&#x70B9;&#x7684;&#x4F30;&#x8BA1;&#x8DDD;&#x79BB;&#x90FD;&#x662F;<code>0</code></li>
+</ul>
+<h3 id="&#x542F;&#x53D1;&#x51FD;&#x6570;&#x8981;&#x6C42;">&#x542F;&#x53D1;&#x51FD;&#x6570;&#x8981;&#x6C42;</h3>
+<p>&#x5F53;&#x524D;&#x70B9;&#x5230;&#x7EC8;&#x70B9;&#x7684;&#x9884;&#x4F30;&#x8DDD;&#x79BB; &lt;= &#x5F53;&#x524D;&#x70B9;&#x5230;&#x7EC8;&#x70B9;&#x7684;&#x771F;&#x5B9E;&#x6700;&#x77ED;&#x8DDD;&#x79BB;(&#x5982;&#x679C;&#x6709;&#x969C;&#x788D;&#x7269;&#xFF0C;&#x771F;&#x5B9E;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#x56E0;&#x4E3A;&#x9700;&#x8981;&#x7ED5;&#x969C;&#x80AF;&#x5B9A;&#x5C31;&#x53D8;&#x957F;)</p>
+<p>&#x9884;&#x4F30;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x79CD;&#x5438;&#x5F15;&#x529B;</p>
+<ul>
+<li>&#x5408;&#x9002;&#x7684;&#x5438;&#x5F15;&#x529B;&#x53EF;&#x4EE5;&#x63D0;&#x5347;&#x7B97;&#x6CD5;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x5438;&#x5F15;&#x529B;&#x8FC7;&#x5F3A;&#x4F1A;&#x51FA;&#x73B0;&#x9519;&#x8BEF;</li>
+<li>&#x4FDD;&#x8BC1;&#x9884;&#x4F30;&#x8DDD;&#x79BB; &lt;= &#x771F;&#x5B9E;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C3D;&#x91CF;&#x63A5;&#x8FD1;&#x771F;&#x5B9E;&#x6700;&#x77ED;&#x8DDD;&#x79BB;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x529F;&#x80FD;&#x6B63;&#x786E;&#x4E14;&#x6700;&#x5FEB;</li>
+</ul>
+<h3 id="&#x9884;&#x4F30;&#x7EC8;&#x70B9;&#x8DDD;&#x79BB;&#x7ECF;&#x5E38;&#x9009;&#x62E9;">&#x9884;&#x4F30;&#x7EC8;&#x70B9;&#x8DDD;&#x79BB;&#x7ECF;&#x5E38;&#x9009;&#x62E9;</h3>
+<ul>
+<li>&#x66FC;&#x54C8;&#x987F;&#x8DDD;&#x79BB;(&#x9002;&#x7528;&#x4E8C;&#x7EF4;&#x7F51;&#x683C;&#x56FE;&#xFF0C;&#x53EA;&#x80FD;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#xFF0C;&#x4E0D;&#x80FD;&#x659C;&#x7EBF;&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x8D70;&#x659C;&#x7EBF;&#x5C31;&#x4E0D;&#x9002;&#x7528;)</li>
+<li>&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;</li>
+<li>&#x5BF9;&#x89D2;&#x7EBF;&#x8DDD;&#x79BB;&#xFF1A;<code>max(|&#x884C; - &#x884C;|, |&#x5217; - &#x5217;|)</code>(&#x9002;&#x7528;&#x53EF;&#x4EE5;&#x8D70;&#x659C;&#x7EBF;&#x7684;&#x4E8C;&#x7EF4;&#x7F51;&#x683C;)</li>
+</ul>
+<pre><code class="lang-text">
+Q R S T U
+J K L M V
+E F G N W
+B C H O X
+A D I P Y
+
+&#x76EE;&#x6807;&#xFF1A;&#x4ECE; G &#x5230; U
+&#x9650;&#x5236;&#xFF1A;&#x53EA;&#x80FD;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;
+
+BFS:&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;
+&#x7B2C;&#x4E00;&#x5C42;&#xFF1A;L F H N
+&#x7B2C;&#x4E8C;&#x5C42;&#xFF1A;K S M E C ...
+...
+
+Dijkstra&#xFF1A;&#x5F15;&#x5165;&#x4E86;&#x5806;&#x53EF;&#x80FD;&#x6BD4;BFS&#x5DEE;
+&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x6682;&#x5F00;&#xFF0C;&#x8DDD;&#x79BB;&#x90FD;&#x662F;1&#x653E;&#x5165;&#x5C0F;&#x6839;&#x5806;
+&#x5F39;&#x51FA;&#xFF0C;&#x7EE7;&#x7EED;&#x5F80;&#x590D;
+
+
+A*
+
+      &#x539F;&#x70B9;G&#x5230;&#x5F53;&#x524D;&#x70B9;&#x8DDD;&#x79BB;   &#x9884;&#x4F30;&#x5230;&#x76EE;&#x6807;&#x8DDD;&#x79BB;(&#x66FC;&#x54C8;&#x987F;&#x8DDD;&#x79BB;)      &#x5806;           
+G           0               4                   G(0+4)    &#x7B2C;1&#x6B21;&#x5F39;&#x51FA;     
+L           1               3                   L(1+3)    &#x7B2C;2&#x6B21;&#x5F39;&#x51FA;
+F           1               5                   F(1+5)
+S           2               2                   S(2+2)    &#x7B2C;3&#x6B21;&#x5F39;&#x51FA;
+...
+
+
+&#x771F;&#x5B9E;&#x8DDD;&#x79BB;
+
+G  L  F  S
+0  1  1  2
+</code></pre>
+<pre><code class="lang-python">
+<span class="hljs-keyword">import</span> heapq
+<span class="hljs-keyword">import</span> random
+<span class="hljs-keyword">import</span> math
+<span class="hljs-keyword">import</span> time
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AStarAlgorithm</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># x&#x5750;&#x6807;&#x53D8;&#x5316;&#x503C;&#xFF0C;0: &#x4E0A;&#xFF0C;1: &#x53F3;&#xFF0C;2: &#x4E0B;&#xFF0C;3: &#x5DE6;</span>
+        <span class="hljs-comment"># y&#x5750;&#x6807;&#x53D8;&#x5316;&#x503C;&#xFF0C;&#x7D22;&#x5F15;&#x52A0;&#x4E00;</span>
+        self.move_direction = (<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dijkstra</span><span class="hljs-params">(self, grid, start_x, start_y, target_x, target_y)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x7279;&#x6B8A;&#x7684;A*&#x7B97;&#x6CD5;
+        grid[i][j] == 0 &#x4EE3;&#x8868;&#x969C;&#x788D;&#x7269;
+        grid[i][j] == 1 &#x4EE3;&#x8868;&#x9053;&#x8DEF;
+        &#x53EA;&#x80FD;&#x8D70;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#xFF0C;&#x4E0D;&#x80FD;&#x8D70;&#x659C;&#x7EBF;
+        &#x8FD4;&#x56DE;&#x4ECE;(start_x, start_y)&#x5230;(target_x, target_y)&#x7684;&#x6700;&#x77ED;&#x8DDD;&#x79BB;
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> grid[start_x][start_y] == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> grid[target_x][target_y] == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+        m, n = len(grid), len(grid[<span class="hljs-number">0</span>])
+        distance = [[float(<span class="hljs-string">&quot;inf&quot;</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
+        visited = [[<span class="hljs-keyword">False</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
+
+        distance[start_x][start_y] = <span class="hljs-number">1</span>
+        hq = []  <span class="hljs-comment"># &#x5C0F;&#x6839;&#x5806;</span>
+        heapq.heappush(hq, (<span class="hljs-number">1</span>, start_x, start_y))  <span class="hljs-comment"># (&#x4ECE;&#x6E90;&#x70B9;&#x51FA;&#x53D1;&#x5230;&#x5F53;&#x524D;&#x70B9;&#x8DDD;&#x79BB;, &#x884C;, &#x5217;)</span>
+
+        <span class="hljs-keyword">while</span> hq:
+            _, x, y = heapq.heappop(hq)
+            <span class="hljs-keyword">if</span> visited[x][y]:
+                <span class="hljs-keyword">continue</span>
+            visited[x][y] = <span class="hljs-keyword">True</span>
+
+            <span class="hljs-keyword">if</span> x == target_x <span class="hljs-keyword">and</span> y == target_y:  <span class="hljs-comment"># &#x627E;&#x5230;&#x76EE;&#x6807;&#x70B9;</span>
+                <span class="hljs-keyword">return</span> distance[x][y]
+
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
+                nx = x + self.move_direction[i]
+                ny = y + self.move_direction[i + <span class="hljs-number">1</span>]
+                <span class="hljs-comment"># &#x672A;&#x8D8A;&#x754C;&#xFF0C;&#x53EF;&#x8D70;&#xFF0C;&#x672A;&#x8BBF;&#x95EE;&#x8FC7;&#xFF0C;&#x8DDD;&#x79BB;&#x5C0F;&#x4E8E;&#x5B58;&#x5728;&#x7684;&#x8DDD;&#x79BB;</span>
+                <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= nx &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= ny &lt; n <span class="hljs-keyword">and</span> grid[nx][ny] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> visited[nx][ny] \
+                        <span class="hljs-keyword">and</span> distance[x][y] + <span class="hljs-number">1</span> &lt; distance[nx][ny]:
+                    distance[nx][ny] = distance[x][y] + <span class="hljs-number">1</span>
+                    heapq.heappush(hq, (distance[x][y] + <span class="hljs-number">1</span>, nx, ny))
+        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">a_star</span><span class="hljs-params">(self, grid, start_x, start_y, target_x, target_y)</span>:</span>
+        <span class="hljs-keyword">if</span> grid[start_x][start_y] == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> grid[target_x][target_y] == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+        m, n = len(grid), len(grid[<span class="hljs-number">0</span>])
+        distance = [[float(<span class="hljs-string">&quot;inf&quot;</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
+        visited = [[<span class="hljs-keyword">False</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
+        distance[start_x][start_y] = <span class="hljs-number">1</span>
+
+        hq = []
+        heapq.heappush(hq, (<span class="hljs-number">1</span> + self.manhattan_distance(start_x, start_y, target_x, target_y), start_x, start_y))
+
+        <span class="hljs-keyword">while</span> hq:
+            _, x, y = heapq.heappop(hq)
+            <span class="hljs-keyword">if</span> visited[x][y]:
+                <span class="hljs-keyword">continue</span>
+            visited[x][y] = <span class="hljs-keyword">True</span>
+
+            <span class="hljs-keyword">if</span> x == target_x <span class="hljs-keyword">and</span> y == target_y:
+                <span class="hljs-keyword">return</span> distance[x][y]
+
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
+                nx = x + self.move_direction[i]
+                ny = y + self.move_direction[i + <span class="hljs-number">1</span>]
+                <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= nx &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= ny &lt; n <span class="hljs-keyword">and</span> grid[nx][ny] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> visited[nx][ny] \
+                        <span class="hljs-keyword">and</span> distance[x][y] + <span class="hljs-number">1</span> &lt; distance[nx][ny]:
+                    distance[nx][ny] = distance[x][y] + <span class="hljs-number">1</span>
+                    heapq.heappush(hq,
+                                   (distance[x][y] + <span class="hljs-number">1</span> + self.manhattan_distance(nx, ny, target_x, target_y), nx, ny))
+        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">manhattan_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x66FC;&#x54C8;&#x987F;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> abs(tx - sx) + abs(ty - sy)
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">diagonal_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5BF9;&#x89D2;&#x7EBF;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> max(abs(tx - sx), abs(ty - sy))
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">euclidean_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> math.hypot(tx - sx, ty - sy)
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">random_grid</span><span class="hljs-params">(n)</span>:</span>
+        grid = [[<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n):
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(n):
+                <span class="hljs-keyword">if</span> random.random() &lt; <span class="hljs-number">0.3</span>:  <span class="hljs-comment"># 30%&#x6982;&#x7387;&#x4E3A;0</span>
+                    grid[i][j] = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">return</span> grid
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    ins = AStarAlgorithm()
+
+    <span class="hljs-comment"># length = 100</span>
+    <span class="hljs-comment"># test_times = 10000</span>
+    <span class="hljs-comment"># print(&quot;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;&#x5F00;&#x59CB;&quot;)</span>
+    <span class="hljs-comment"># for _ in range(test_times):</span>
+    <span class="hljs-comment">#     n = int(random.random() * length) + 2</span>
+    <span class="hljs-comment">#     grid = ins.random_grid(n)</span>
+    <span class="hljs-comment">#     start_x, start_y = int(random.random() * n), int(random.random() * n)</span>
+    <span class="hljs-comment">#     target_x, target_y = int(random.random() * n), int(random.random() * n)</span>
+    <span class="hljs-comment">#     ans1 = ins.dijkstra(grid, start_x, start_y, target_x, target_y)</span>
+    <span class="hljs-comment">#     ans2 = ins.a_star(grid, start_x, start_y, target_x, target_y)</span>
+    <span class="hljs-comment">#     if ans1 != ans2:</span>
+    <span class="hljs-comment">#         print(&quot;Oops, It&apos;s wrong&quot;)</span>
+    <span class="hljs-comment"># print(&quot;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;&#x7ED3;&#x675F;&quot;)</span>
+
+    print(<span class="hljs-string">&quot;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x5F00;&#x59CB;&quot;</span>)
+    grid = ins.random_grid(<span class="hljs-number">1000</span>)
+    sx, sy, tx, ty = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">990</span>, <span class="hljs-number">990</span>
+    start_time = time.time()
+    ans1 = ins.dijkstra(grid, sx, sy, tx, ty)
+    print(f<span class="hljs-string">&quot;Dijkstra&#x7B97;&#x6CD5;&#x7ED3;&#x679C;&#xFF1A;{ans1}, &#x8FD0;&#x884C;&#x65F6;&#x95F4;: {int((time.time() - start_time) * 1e3)} ms&quot;</span>)
+
+    start_time = time.time()
+    ans2 = ins.a_star(grid, sx, sy, tx, ty)
+    print(f<span class="hljs-string">&quot;A*&#x7B97;&#x6CD5;&#x7ED3;&#x679C;&#xFF1A;{ans2}, &#x8FD0;&#x884C;&#x65F6;&#x95F4;: {int((time.time() - start_time) * 1e3)} ms&quot;</span>)
+    print(<span class="hljs-string">&quot;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x7ED3;&#x675F;&quot;</span>)
+    <span class="hljs-comment"># &#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x5F00;&#x59CB;</span>
+    <span class="hljs-comment"># Dijkstra&#x7B97;&#x6CD5;&#x7ED3;&#x679C;&#xFF1A;1985, &#x8FD0;&#x884C;&#x65F6;&#x95F4;: 6829 ms</span>
+    <span class="hljs-comment"># A*&#x7B97;&#x6CD5;&#x7ED3;&#x679C;&#xFF1A;1985, &#x8FD0;&#x884C;&#x65F6;&#x95F4;: 1204 ms</span>
+    <span class="hljs-comment"># &#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x7ED3;&#x675F;</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h2 id="dijkstra&#x7B97;&#x6CD5;&#x548C;a&#x7B97;&#x6CD5;&#x533A;&#x522B;">Dijkstra&#x7B97;&#x6CD5;&#x548C;A*&#x7B97;&#x6CD5;&#x533A;&#x522B;</h2>
+<ul>
+<li><code>A*</code>&#x7B97;&#x6CD5;&#x4E0E;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x542F;&#x53D1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x7ED3;&#x5408;&#x5DF2;&#x7ECF;&#x8D70;&#x8FC7;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x548C;&#x542F;&#x53D1;&#x51FD;&#x6570;&#x7684;&#x4F30;&#x8BA1;&#x503C;&#xFF0C;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x8D70;&#x7684;&#x8DEF;&#xFF1B;</li>
+<li>&#x800C;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x8D2A;&#x5FC3;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x53EA;&#x8003;&#x8651;&#x5DF2;&#x77E5;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;</li>
+<li><code>A*</code>&#x7B97;&#x6CD5;&#x56E0;&#x4E3A;&#x63D0;&#x4F9B;&#x4E86;&#x542F;&#x53D1;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x6BD4;<code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5FEB;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x8DDD;&#x79BB;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x8F83;&#x8FDC;&#xFF0C;&#x6709;&#x591A;&#x6761;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x7684;&#x60C5;&#x51B5;</li>
+<li><code>Dijkstra</code>&#x7B97;&#x6CD5;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x80FD;&#x6BD4;<code>A*</code>&#x7B97;&#x6CD5;&#x5FEB;&#xFF0C;&#x6BD4;&#x5982;&#x8DEF;&#x5F84;&#x4EE3;&#x4EF7;&#x5747;&#x5300;&#x5206;&#x5E03;&#xFF0C;&#x5BFC;&#x81F4;&#x542F;&#x53D1;&#x51FD;&#x6570;&#x4F30;&#x8BA1;&#x503C;&#x4E0D;&#x591F;&#x7CBE;&#x786E;&#xFF0C;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&#x7684;&#x8DEF;&#x5F84;&#x904D;&#x5386;</li>
+</ul>
 
                                 
                                 </section>
@@ -8942,7 +9148,7 @@ data = dijkstra_heap(graph.nodes[<span class="hljs-string">&quot;A&quot;</span>]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-04-03T10:04:11.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-03T10:04:20.761Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-04-08T02:19:09.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-08T02:20:05.470Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
