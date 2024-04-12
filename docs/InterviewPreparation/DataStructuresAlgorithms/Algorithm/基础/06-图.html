@@ -9000,65 +9000,69 @@ G  L  F  S
                 nx = x + self.move_direction[i]
                 ny = y + self.move_direction[i + <span class="hljs-number">1</span>]
                 <span class="hljs-comment"># &#x672A;&#x8D8A;&#x754C;&#xFF0C;&#x53EF;&#x8D70;&#xFF0C;&#x672A;&#x8BBF;&#x95EE;&#x8FC7;&#xFF0C;&#x8DDD;&#x79BB;&#x5C0F;&#x4E8E;&#x5B58;&#x5728;&#x7684;&#x8DDD;&#x79BB;</span>
-                <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= nx &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= ny &lt; n <span class="hljs-keyword">and</span> grid[nx][ny] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> visited[nx][ny] \
-                        <span class="hljs-keyword">and</span> distance[x][y] + <span class="hljs-number">1</span> &lt; distance[nx][ny]:
-                    distance[nx][ny] = distance[x][y] + <span class="hljs-number">1</span>
-                    heapq.heappush(hq, (distance[x][y] + <span class="hljs-number">1</span>, nx, ny))
+                <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= nx &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= ny &lt; n <span class="hljs-keyword">and</span> grid[nx][ny] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> visited[nx][ny]
+                    <span class="hljs-keyword">and</span> distance[x][y] + <span class="hljs-number">1</span> &lt; distance[nx][ny]:
+                distance[nx][ny] = distance[x][y] + <span class="hljs-number">1</span>
+                heapq.heappush(hq, (distance[x][y] + <span class="hljs-number">1</span>, nx, ny))
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">a_star</span><span class="hljs-params">(self, grid, start_x, start_y, target_x, target_y)</span>:</span>
+    <span class="hljs-keyword">if</span> grid[start_x][start_y] == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> grid[target_x][target_y] == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+    m, n = len(grid), len(grid[<span class="hljs-number">0</span>])
+    distance = [[float(<span class="hljs-string">&quot;inf&quot;</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
+    visited = [[<span class="hljs-keyword">False</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
+    distance[start_x][start_y] = <span class="hljs-number">1</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">a_star</span><span class="hljs-params">(self, grid, start_x, start_y, target_x, target_y)</span>:</span>
-        <span class="hljs-keyword">if</span> grid[start_x][start_y] == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> grid[target_x][target_y] == <span class="hljs-number">0</span>:
-            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
-        m, n = len(grid), len(grid[<span class="hljs-number">0</span>])
-        distance = [[float(<span class="hljs-string">&quot;inf&quot;</span>) <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
-        visited = [[<span class="hljs-keyword">False</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(m)]
-        distance[start_x][start_y] = <span class="hljs-number">1</span>
+    hq = []
+    heapq.heappush(hq, (<span class="hljs-number">1</span> + self.manhattan_distance(start_x, start_y, target_x, target_y), start_x, start_y))
 
-        hq = []
-        heapq.heappush(hq, (<span class="hljs-number">1</span> + self.manhattan_distance(start_x, start_y, target_x, target_y), start_x, start_y))
+    <span class="hljs-keyword">while</span> hq:
+        _, x, y = heapq.heappop(hq)
+        <span class="hljs-keyword">if</span> visited[x][y]:
+            <span class="hljs-keyword">continue</span>
+        visited[x][y] = <span class="hljs-keyword">True</span>
 
-        <span class="hljs-keyword">while</span> hq:
-            _, x, y = heapq.heappop(hq)
-            <span class="hljs-keyword">if</span> visited[x][y]:
-                <span class="hljs-keyword">continue</span>
-            visited[x][y] = <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">if</span> x == target_x <span class="hljs-keyword">and</span> y == target_y:
+            <span class="hljs-keyword">return</span> distance[x][y]
 
-            <span class="hljs-keyword">if</span> x == target_x <span class="hljs-keyword">and</span> y == target_y:
-                <span class="hljs-keyword">return</span> distance[x][y]
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
+            nx = x + self.move_direction[i]
+            ny = y + self.move_direction[i + <span class="hljs-number">1</span>]
+            <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= nx &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= ny &lt; n <span class="hljs-keyword">and</span> grid[nx][ny] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> visited[nx][ny]
+                <span class="hljs-keyword">and</span> distance[x][y] + <span class="hljs-number">1</span> &lt; distance[nx][ny]:
+            distance[nx][ny] = distance[x][y] + <span class="hljs-number">1</span>
+            heapq.heappush(hq,
+                           (distance[x][y] + <span class="hljs-number">1</span> + self.manhattan_distance(nx, ny, target_x, target_y), nx, ny))
 
-            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
-                nx = x + self.move_direction[i]
-                ny = y + self.move_direction[i + <span class="hljs-number">1</span>]
-                <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= nx &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= ny &lt; n <span class="hljs-keyword">and</span> grid[nx][ny] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> visited[nx][ny] \
-                        <span class="hljs-keyword">and</span> distance[x][y] + <span class="hljs-number">1</span> &lt; distance[nx][ny]:
-                    distance[nx][ny] = distance[x][y] + <span class="hljs-number">1</span>
-                    heapq.heappush(hq,
-                                   (distance[x][y] + <span class="hljs-number">1</span> + self.manhattan_distance(nx, ny, target_x, target_y), nx, ny))
-        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
 
-<span class="hljs-meta">    @staticmethod</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">manhattan_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;&#x66FC;&#x54C8;&#x987F;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
-        <span class="hljs-keyword">return</span> abs(tx - sx) + abs(ty - sy)
+<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
 
-<span class="hljs-meta">    @staticmethod</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">diagonal_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;&#x5BF9;&#x89D2;&#x7EBF;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
-        <span class="hljs-keyword">return</span> max(abs(tx - sx), abs(ty - sy))
 
-<span class="hljs-meta">    @staticmethod</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">euclidean_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
-        <span class="hljs-string">&quot;&quot;&quot;&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
-        <span class="hljs-keyword">return</span> math.hypot(tx - sx, ty - sy)
+<span class="hljs-meta">@staticmethod</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">manhattan_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x66FC;&#x54C8;&#x987F;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> abs(tx - sx) + abs(ty - sy)
 
-<span class="hljs-meta">    @staticmethod</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">random_grid</span><span class="hljs-params">(n)</span>:</span>
-        grid = [[<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)]
-        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n):
-            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(n):
-                <span class="hljs-keyword">if</span> random.random() &lt; <span class="hljs-number">0.3</span>:  <span class="hljs-comment"># 30%&#x6982;&#x7387;&#x4E3A;0</span>
-                    grid[i][j] = <span class="hljs-number">0</span>
-        <span class="hljs-keyword">return</span> grid
+
+<span class="hljs-meta">@staticmethod</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">diagonal_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5BF9;&#x89D2;&#x7EBF;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> max(abs(tx - sx), abs(ty - sy))
+
+
+<span class="hljs-meta">@staticmethod</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">euclidean_distance</span><span class="hljs-params">(sx, sy, tx, ty)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> math.hypot(tx - sx, ty - sy)
+
+
+<span class="hljs-meta">@staticmethod</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">random_grid</span><span class="hljs-params">(n)</span>:</span>
+    <span class="hljs-comment"># 30%&#x6982;&#x7387;&#x4E3A;0</span>
+    <span class="hljs-keyword">return</span> [[<span class="hljs-number">0</span> <span class="hljs-keyword">if</span> random.random() &lt; <span class="hljs-number">0.3</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(n)]
 
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
@@ -9148,7 +9152,7 @@ G  L  F  S
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-04-08T02:19:09.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-08T02:20:05.470Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图","level":"12.3.1.1.7","depth":4,"next":{"title":"前缀树和贪心算法","level":"12.3.1.1.8","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/07-前缀树和贪心算法.md","articles":[]},"previous":{"title":"二叉树","level":"12.3.1.1.6","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/05-二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/06-图.md","mtime":"2024-04-10T06:00:43.125Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T07:59:51.698Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
