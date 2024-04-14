@@ -8104,6 +8104,8 @@ arr = [3,5,2,7,1,9,6]
     <span class="hljs-keyword">while</span> arr[index] &gt; arr[parent_idx]:  <span class="hljs-comment"># &#x5230;&#x5934;&#x7ED3;&#x70B9;&#xFF0C;arr[0] &gt; arr[0] &#x80AF;&#x5B9A;&#x4E0D;&#x6EE1;&#x8DB3;</span>
         arr[index], arr[parent_idx] = arr[parent_idx], arr[index]
         index, parent_idx = parent_idx, max((index - <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
+
+
 <span class="hljs-comment"># &#x5927;&#x6839;&#x5806;&#x8C03;&#x6574;</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heapify</span><span class="hljs-params">(arr: list, index: int, heap_size: int)</span>:</span>
     <span class="hljs-string">&quot;&quot;&quot;&#x67D0;&#x4E2A;&#x6570;&#x5728;index&#x4F4D;&#x7F6E;&#xFF0C;&#x80FD;&#x5426;&#x5F80;&#x4E0B;&#x79FB;&#x52A8;&quot;&quot;&quot;</span>
@@ -8174,7 +8176,7 @@ print(data)
         <span class="hljs-comment"># &#x6700;&#x5C0F;&#x7684;&#x90FD;&#x6BD4;&#x7236;&#x5927;&#xFF0C;&#x5B8C;&#x6210;&#x8C03;&#x6574;</span>
         <span class="hljs-keyword">if</span> arr[smallest_idx] &gt;= arr[index]:
             <span class="hljs-keyword">break</span>
-        arr[index], arr[smallest_idx] =  arr[smallest_idx], arr[index]
+        arr[index], arr[smallest_idx] = arr[smallest_idx], arr[index]
         index, left_idx = smallest_idx, <span class="hljs-number">2</span> * index + <span class="hljs-number">1</span>
 </code></pre>
 <h3 id="&#x5806;&#x6392;&#x5E8F;&#x6269;&#x5C55;&#x9898;&#x76EE;">&#x5806;&#x6392;&#x5E8F;&#x6269;&#x5C55;&#x9898;&#x76EE;</h3>
@@ -8255,7 +8257,7 @@ print(data)
     <span class="hljs-keyword">if</span> (len(hq_max) + len(hq_min)) % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> (-hq_max[<span class="hljs-number">0</span>] + hq_min[<span class="hljs-number">0</span>]) / <span class="hljs-number">2</span>
     <span class="hljs-keyword">else</span>:
-        <span class="hljs-keyword">return</span> -heapq.heappop(hq_max) <span class="hljs-keyword">if</span> len(hq_max) &gt; len(hq_min) <span class="hljs-keyword">else</span> heapq.heappop(hq_min)
+        <span class="hljs-keyword">return</span> -hq_max[<span class="hljs-number">0</span>] <span class="hljs-keyword">if</span> len(hq_max) &gt; len(hq_min) <span class="hljs-keyword">else</span> hq_min[<span class="hljs-number">0</span>]
 
 
 print(middle_num([]))
@@ -8460,7 +8462,7 @@ print(middle_num([<span class="hljs-number">1</span>, <span class="hljs-number">
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"堆和桶排序以及排序总结","level":"12.3.1.1.4","depth":4,"next":{"title":"链表","level":"12.3.1.1.5","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/04-链表.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/04-链表.md","articles":[]},"previous":{"title":"归并、快速排序","level":"12.3.1.1.3","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-归并、快速排序.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-归并、快速排序.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/03-堆、桶排序以及排序总结.md","mtime":"2024-01-29T08:37:23.930Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-03T10:04:20.761Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"堆和桶排序以及排序总结","level":"12.3.1.1.4","depth":4,"next":{"title":"链表","level":"12.3.1.1.5","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/04-链表.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/04-链表.md","articles":[]},"previous":{"title":"归并、快速排序","level":"12.3.1.1.3","depth":4,"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-归并、快速排序.md","ref":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/02-归并、快速排序.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础/03-堆、桶排序以及排序总结.md","mtime":"2024-04-11T07:35:41.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T07:59:51.698Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
