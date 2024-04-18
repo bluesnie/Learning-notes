@@ -38,6 +38,7 @@
     - [ps和pstree](Linux/命令指北/02-ps和pstree.md)
     - [top](Linux/命令指北/03-top.md)
     - [py-spy](Linux/命令指北/04-性能分析工具-py-spy.md)
+    - [nc-ncat](Linux/命令指北/05-网络工具nc-ncat命令.md)
 
 ## [Python](./Python)
 
