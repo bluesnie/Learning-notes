@@ -2,6 +2,8 @@
 
 ###### author:nzb
 
+[Software Defined Networking](https://tonydeng.github.io/sdn-handbook/)
+
 ## nc(ncat)
 
 Ncat is a feature-packed networking utility which reads and writes data across networks from the command line；
@@ -49,6 +51,11 @@ $ nc -nvv 192.168.3.1 80
 Server$ nc -l 20000
 
 Client$ nc [Server-IP] 20000
+
+# 打印接收的时间
+Server$ nc -l 20000 | ts '[%Y-%m-%d %H:%M:%S]'
+
+Client$ nc [Server-IP] 20000 | ts '[%Y-%m-%d %H:%M:%S]'
 ```
 
 - 文件传输
