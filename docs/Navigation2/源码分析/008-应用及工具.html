@@ -8362,6 +8362,260 @@ result = nav.getResult()
 </ul>
 </li>
 </ul>
+<h3 id="basicnavigator">BasicNavigator</h3>
+<ul>
+<li><code>__init__</code>&#xFF1A;&#x8282;&#x70B9;&#x540D;&#x79F0;<code>basic_navigator</code><ul>
+<li>&#x52A8;&#x4F5C;<ul>
+<li><code>navigate_through_poses</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>nav_through_poses_client</code></li>
+<li><code>navigate_to_pose</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>nav_to_pose_client</code></li>
+<li><code>follow_waypoints</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>follow_waypoints_client</code></li>
+<li><code>follow_path</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>follow_path_client</code></li>
+<li><code>compute_path_to_pose</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>compute_path_to_pose_client</code></li>
+<li><code>compute_path_through_poses</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>compute_path_through_poses_client</code></li>
+<li><code>smooth_path</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>smoother_client</code></li>
+<li><code>spin</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>spin_client</code></li>
+<li><code>backup</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>backup_client</code></li>
+<li><code>assisted_teleop</code>&#x52A8;&#x4F5C;&#x5BA2;&#x6237;&#x7AEF;<code>assisted_teleop_client</code></li>
+</ul>
+</li>
+<li>&#x8BDD;&#x9898;<ul>
+<li><code>amcl_pose</code>&#x8BDD;&#x9898;&#x8BA2;&#x9605;<code>localization_pose_sub</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>_amclPoseCallback</code></li>
+<li><code>initialpose</code>&#x8BDD;&#x9898;&#x53D1;&#x5E03;<code>initial_pose_pub</code></li>
+</ul>
+</li>
+<li>&#x670D;&#x52A1;<ul>
+<li><code>map_server/load_map</code>&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x7AEF;<code>change_maps_srv</code></li>
+<li><code>global_costmap/clear_entirely_global_costmap</code>&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x7AEF;<code>clear_costmap_global_srv</code></li>
+<li><code>local_costmap/clear_entirely_local_costmap</code>&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x7AEF;<code>clear_costmap_local_srv</code></li>
+<li><code>global_costmap/get_costmap</code>&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x7AEF;<code>get_costmap_global_srv</code></li>
+<li><code>local_costmap/get_costmap</code>&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x7AEF;<code>get_costmap_local_srv</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>destroyNode()</code>&#xFF1A;&#x9500;&#x6BC1;&#x8282;&#x70B9;&#xFF0C;&#x8C03;&#x7528;<code>destroyNode()</code></li>
+<li><code>destroyNode()</code>&#xFF1A;&#x8C03;&#x7528;&#x52A8;&#x4F5C;&#xFF0C;&#x670D;&#x52A1;&#x548C;&#x8BDD;&#x9898;&#x8282;&#x70B9;&#x7684;<code>destroy()</code></li>
+<li><code>setInitialPose(self, initial_pose)</code>&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x4F4D;&#x59FF;<ul>
+<li><code>initial_pose_received</code>&#x7F6E;&#x4E3A;<code>False</code>&#xFF0C;&#x76F4;&#x5230;<code>_amclPoseCallback</code>&#x56DE;&#x8C03;&#x7F6E;&#x4E3A;<code>True</code></li>
+<li>&#x8C03;&#x7528;<code>self._setInitialPose()</code></li>
+</ul>
+</li>
+<li><code>goThroughPoses(self, poses, behavior_tree=&apos;&apos;)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>NavThroughPoses</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.nav_through_poses_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.nav_through_poses_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>goToPose(self, pose, behavior_tree=&apos;&apos;)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>NavToPose</code>&#x7684;&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.nav_to_pose_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.nav_to_pose_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>followWaypoints(self, poses)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>FollowWaypoints</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.follow_waypoints_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.follow_waypoints_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>spin(self, spin_dist=1.57, time_allowance=10)</code>&#xFF1A;&#x65CB;&#x8F6C;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.spin_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.spin_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>backup(self, backup_dist=0.15, backup_speed=0.025, time_allowance=10)</code>&#xFF1A;&#x540E;&#x9000;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.backup_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.backup_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>assistedTeleop(self, time_allowance=30)</code>&#xFF1A;&#x8F85;&#x52A9;&#x8FDC;&#x7A0B;&#x63A7;&#x5236;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.assisted_teleop_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.assisted_teleop_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>followPath(self, path, controller_id=&apos;&apos;, goal_checker_id=&apos;&apos;)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>FollowPath</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.follow_path_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.follow_path_client.send_goal_async</code>&#xFF0C;&#x7ED1;&#x5B9A;<code>self._feedbackCallback</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>False</code></li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;<code>True</code></li>
+</ul>
+</li>
+<li><code>cancelTask(self)</code>&#xFF1A;&#x53D6;&#x6D88;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x4EFB;&#x52A1;<ul>
+<li>&#x5B58;&#x5728;<code>self.result_future</code><ul>
+<li>&#x8C03;&#x7528;<code>future = self.goal_handle.cancel_goal_async()</code></li>
+<li>&#x8C03;&#x7528;<code>rclpy.spin_until_future_complete(self, future)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>isTaskComplete(self)</code>&#xFF1A;&#x68C0;&#x6D4B;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x5B8C;&#x6210;<ul>
+<li>&#x5B58;&#x5728;<code>self.result_future</code><ul>
+<li>&#x8C03;&#x7528;<code>rclpy.spin_until_future_complete(self, self.result_future, timeout_sec=0.10)</code><ul>
+<li>&#x672A;&#x8D85;&#x65F6;&#xFF0C;&#x83B7;&#x53D6;&#x72B6;&#x6001;&#xFF0C;&#x4E0D;&#x7B49;&#x4E8E;<code>GoalStatus.STATUS_SUCCEEDED</code>&#xFF0C;&#x4EFB;&#x52A1;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;<code>True</code></li>
+<li>&#x8D85;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;<code>False</code>&#xFF0C;&#x8868;&#x793A;&#x8FD8;&#x5728;&#x6267;&#x884C;&#x4E2D;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4E0D;&#x5B58;&#x5728;&#x6216;&#x72B6;&#x6001;&#x7B49;&#x4E8E;<code>STATUS_SUCCEEDED</code>&#x8FD4;&#x56DE;<code>True</code>&#xFF0C;&#x6267;&#x884C;&#x6210;&#x529F;</li>
+</ul>
+</li>
+<li><code>getFeedback(self)</code>&#xFF1A;&#x8FD4;&#x56DE;&#x53CD;&#x9988;&#x6570;&#x636E;&#xFF0C;<code>return self.feedback</code></li>
+<li><code>getResult(self)</code>&#xFF1A;&#x6839;&#x636E;&#x72B6;&#x6001;&#x8FD4;&#x56DE;&#x6620;&#x5C04;&#x7684;&#x65B0;&#x7684;&#x4EFB;&#x52A1;&#x72B6;&#x6001;</li>
+<li><code>waitUntilNav2Active(self, navigator=&apos;bt_navigator&apos;, localizer=&apos;amcl&apos;)</code>&#xFF1A;&#x963B;&#x585E;&#x7B49;&#x5F85;&#x5BFC;&#x822A;&#x6FC0;&#x6D3B;&#x5E76;&#x8FD0;&#x884C;<ul>
+<li>&#x8C03;&#x7528;<code>self._waitForNodeToActivate(localizer)</code></li>
+<li>&#x5982;&#x679C;<code>localizer == &apos;amcl&apos;</code>&#x8C03;&#x7528;<code>self._waitForInitialPose()</code></li>
+<li>&#x8C03;&#x7528;<code>self._waitForNodeToActivate(navigator)</code></li>
+</ul>
+</li>
+<li><code>_getPathImpl(self, start, goal, planner_id=&apos;&apos;, use_start=False)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>ComputePathToPose</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.compute_path_to_pose_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.compute_path_to_pose_client.send_goal_async</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>None</code></li>
+<li>&#x8C03;&#x7528;<code>self.goal_handle.get_result_async()</code>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x72B6;&#x6001;&#x4E0D;&#x7B49;&#x4E8E;<code>GoalStatus.STATUS_SUCCEEDED</code>&#xFF0C;&#x83B7;&#x53D6;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;<code>None</code></li>
+<li>&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;&#x7ED3;&#x679C;</li>
+</ul>
+</li>
+<li><code>getPath(self, start, goal, planner_id=&apos;&apos;, use_start=False)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>ComputePathToPose</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;<ul>
+<li>&#x8C03;&#x7528;<code>self._getPathImpl</code>&#xFF0C;&#x6839;&#x636E;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;</li>
+</ul>
+</li>
+<li><code>getPathThroughPoses(self, start, goals, planner_id=&apos;&apos;, use_start=False)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>ComputePathThroughPoses</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.compute_path_through_poses_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.compute_path_through_poses_client.send_goal_async</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>None</code></li>
+<li>&#x8C03;&#x7528;<code>self.goal_handle.get_result_async()</code>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x72B6;&#x6001;&#x4E0D;&#x7B49;&#x4E8E;<code>GoalStatus.STATUS_SUCCEEDED</code>&#xFF0C;&#x83B7;&#x53D6;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;<code>None</code></li>
+<li>&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;&#x7ED3;&#x679C;</li>
+</ul>
+</li>
+<li><code>_smoothPathImpl(self, path, smoother_id=&apos;&apos;, max_duration=2.0, check_for_collision=False)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>SmoothPath</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.smoother_client.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>self.smoother_client.send_goal_async</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF0C;&#x672A;&#x63A5;&#x6536;&#x8FD4;&#x56DE;<code>None</code></li>
+<li>&#x8C03;&#x7528;<code>self.goal_handle.get_result_async()</code>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x72B6;&#x6001;&#x4E0D;&#x7B49;&#x4E8E;<code>GoalStatus.STATUS_SUCCEEDED</code>&#xFF0C;&#x83B7;&#x53D6;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;<code>None</code></li>
+<li>&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;&#x7ED3;&#x679C;</li>
+</ul>
+</li>
+<li><code>smoothPath(self, path, smoother_id=&apos;&apos;, max_duration=2.0, check_for_collision=False)</code>&#xFF1A;&#x53D1;&#x9001;&#x4E00;&#x4E2A;<code>SmoothPath</code>&#x52A8;&#x4F5C;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x8DEF;&#x5F84;<ul>
+<li>&#x8C03;&#x7528;<code>self._smoothPathImpl</code>&#xFF0C;&#x6839;&#x636E;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;</li>
+</ul>
+</li>
+<li><code>changeMap(self, map_filepath)</code>&#xFF1A;&#x5728;&#x5730;&#x56FE;&#x670D;&#x52A1;&#x66F4;&#x6539;&#x5F53;&#x524D;&#x9759;&#x6001;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.change_maps_srv.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>future = self.change_maps_srv.call_async(req)</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+<li>&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x72B6;&#x6001;&#xFF0C;&#x6253;&#x5370;&#x76F8;&#x5173;&#x65E5;&#x5FD7;</li>
+</ul>
+</li>
+<li><code>clearAllCostmaps(self)</code>&#xFF1A;&#x6E05;&#x9664;&#x6240;&#x6709;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>self.clearLocalCostmap()</code></li>
+<li>&#x8C03;&#x7528;<code>self.clearGlobalCostmap()</code></li>
+</ul>
+</li>
+<li><code>clearLocalCostmap()</code>&#xFF1A;&#x6E05;&#x9664;&#x5C40;&#x90E8;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.clear_costmap_local_srv.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>future = self.clear_costmap_local_srv.call_async(req)</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+</ul>
+</li>
+<li><code>clearGlobalCostmap()</code>&#xFF1A;&#x6E05;&#x9664;&#x5168;&#x5C40;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.clear_costmap_global_srv.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>future = self.clear_costmap_global_srv.call_async(req)</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;</li>
+</ul>
+</li>
+<li><code>getGlobalCostmap(self)</code>&#xFF1A;&#x83B7;&#x53D6;&#x5168;&#x5C40;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.get_costmap_global_srv.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>future = self.get_costmap_global_srv.call_async(req)</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;&#xFF0C;&#x8FD4;&#x56DE;&#x5730;&#x56FE;&#x7ED3;&#x679C;</li>
+</ul>
+</li>
+<li><code>getLocalCostmap(self)</code>&#xFF1A;&#x83B7;&#x53D6;&#x5C40;&#x90E8;&#x4EE3;&#x4EF7;&#x5730;&#x56FE;<ul>
+<li>&#x8C03;&#x7528;<code>while not self.get_costmap_local_srv.wait_for_server(timeout_sec=1.0)</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x8FBE;</li>
+<li>&#x8C03;&#x7528;&#x53D1;&#x9001;&#x8BF7;&#x6C42;<code>future = self.get_costmap_local_srv.call_async(req)</code></li>
+<li><code>rclpy.spin_until_future_complete</code>&#xFF1A;&#x8F6E;&#x8BE2;&#x76F4;&#x5230;&#x5B8C;&#x6210;&#xFF0C;&#x8FD4;&#x56DE;&#x5730;&#x56FE;&#x7ED3;&#x679C;</li>
+</ul>
+</li>
+<li><code>lifecycleStartup(self)</code>&#xFF1A;&#x751F;&#x547D;&#x5468;&#x671F;&#x542F;&#x52A8;&#xFF0C;&#x542F;&#x52A8;&#x5BFC;&#x822A;&#x751F;&#x547D;&#x5468;&#x671F;&#x7CFB;&#x7EDF;<ul>
+<li><code>for srv_name, srv_type in self.get_service_names_and_types()</code><ul>
+<li><code>srv_type[0] == &apos;nav2_msgs/srv/ManageLifecycleNodes&apos;</code><ul>
+<li>&#x521B;&#x5EFA;&#x5BA2;&#x6237;&#x7AEF;<code>mgr_client = self.create_client(ManageLifecycleNodes, srv_name)</code></li>
+<li><code>while not mgr_client.wait_for_service(timeout_sec=1.0)</code>&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x7528;</li>
+<li>&#x53D1;&#x9001;&#x542F;&#x52A8;<code>STARTUP</code>&#x8BF7;&#x6C42;<code>future = mgr_client.call_async(req)</code></li>
+<li><code>while</code>&#x5FAA;&#x73AF;&#xFF0C;&#x542F;&#x52A8;&#x9700;&#x8981;&#x5B8C;&#x6574;&#x7684;<code>map-&gt;odom-&gt;base_link</code> TF&#x6811;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x8BF7;&#x5C1D;&#x8BD5;&#x521D;&#x59CB;&#x5316;&#x521D;&#x59CB;&#x59FF;&#x52BF;<ul>
+<li>&#x8C03;&#x7528;<code>rclpy.spin_until_future_complete(self, future, timeout_sec=0.10)</code></li>
+<li>&#x5982;&#x679C;<code>not future</code>&#x8C03;&#x7528;<code>self._waitForInitialPose()</code>&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4F4D;&#x59FF;</li>
+<li>&#x5426;&#x5219;<code>break</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x542F;&#x52A8;&#x6210;&#x529F;</li>
+</ul>
+</li>
+<li><code>lifecycleShutdown(self)</code>&#xFF1A;&#x751F;&#x547D;&#x5468;&#x671F;&#x5173;&#x95ED;&#xFF0C;&#x5173;&#x95ED;&#x5BFC;&#x822A;&#x751F;&#x547D;&#x5468;&#x671F;&#x7CFB;&#x7EDF;<ul>
+<li><code>for srv_name, srv_type in self.get_service_names_and_types()</code><ul>
+<li><code>srv_type[0] == &apos;nav2_msgs/srv/ManageLifecycleNodes&apos;</code><ul>
+<li>&#x521B;&#x5EFA;&#x5BA2;&#x6237;&#x7AEF;<code>mgr_client = self.create_client(ManageLifecycleNodes, srv_name)</code></li>
+<li><code>while not mgr_client.wait_for_service(timeout_sec=1.0)</code>&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x7528;</li>
+<li>&#x53D1;&#x9001;&#x5173;&#x95ED;<code>SHUTDOWN</code>&#x8BF7;&#x6C42;<code>future = mgr_client.call_async(req)</code></li>
+<li>&#x8C03;&#x7528;<code>rclpy.spin_until_future_complete(self, future, timeout_sec=0.10)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5173;&#x95ED;&#x6210;&#x529F;</li>
+</ul>
+</li>
+<li><code>_waitForNodeToActivate(self, node_name)</code>&#xFF1A;&#x7B49;&#x5F85;&#x8282;&#x70B9;&#x6FC0;&#x6D3B;<ul>
+<li>&#x521B;&#x5EFA;<code>{node_name}/get_state</code>&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x7AEF;</li>
+<li><code>while</code>&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#x670D;&#x52A1;&#x53EF;&#x7528;</li>
+<li><code>while</code>&#x5FAA;&#x73AF;&#x83B7;&#x53D6;<code>state</code>&#xFF0C;&#x76F4;&#x5230;<code>state == active</code>&#x8DF3;&#x51FA;&#x8FD4;&#x56DE;</li>
+</ul>
+</li>
+<li><code>_waitForInitialPose(self)</code>&#xFF1A;&#x7B49;&#x5F85;&#x521D;&#x59CB;&#x4F4D;&#x7F6E;&#x8BBE;&#x7F6E;&#x6210;&#x529F;<ul>
+<li><code>while not self.initial_pose_received</code><ul>
+<li>&#x8C03;&#x7528;<code>self._setInitialPose()</code></li>
+<li>&#x8C03;&#x7528;<code>rclpy.spin_once(self, timeout_sec=1.0)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>_amclPoseCallback(self, msg)</code>&#xFF1A;<code>amcl_pose</code>&#x8BDD;&#x9898;&#x8BA2;&#x9605;&#x56DE;&#x8C03;&#xFF0C;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;<code>self.initial_pose_received = True</code></li>
+<li><code>_feedbackCallback(self, msg)</code>&#xFF1A;&#x52A8;&#x4F5C;&#x53CD;&#x9988;&#x56DE;&#x8C03;&#xFF0C;&#x7B80;&#x5355;&#x8D4B;&#x503C;<code>self.feedback = msg.feedback</code></li>
+<li><code>_setInitialPose(self)</code>&#xFF1A;&#x53D1;&#x5E03;&#x521D;&#x59CB;&#x4F4D;&#x59FF;&#xFF1A;<code>self.initial_pose_pub.publish(msg)</code></li>
+<li><code>info(self, msg)</code>&#xFF1A;&#x6253;&#x5370;<code>info</code>&#x65E5;&#x5FD7;</li>
+<li><code>warn(self, msg)</code>&#xFF1A;&#x6253;&#x5370;<code>warn</code>&#x65E5;&#x5FD7;</li>
+<li><code>error(self, msg)</code>&#xFF1A;&#x6253;&#x5370;<code>error</code>&#x65E5;&#x5FD7;</li>
+<li><code>debug(self, msg)</code>&#xFF1A;&#x6253;&#x5370;<code>debug</code>&#x65E5;&#x5FD7;</li>
+</ul>
+<h3 id="examplenavtoposepy">example_nav_to_pose.py</h3>
+<ul>
+<li>&#x5B9E;&#x4F8B;&#x5316;<code>navigator = BasicNavigator()</code></li>
+<li>&#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x5316;&#x4F4D;&#x59FF;&#xFF0C;<code>navigator.setInitialPose(initial_pose)</code></li>
+<li>&#x963B;&#x585E;&#x7B49;&#x5F85;&#x5BFC;&#x822A;&#x6A21;&#x5757;&#x8D77;&#x6765;&#x5E76;&#x8FD0;&#x884C;&#x4E2D;&#xFF0C;<code>navigator.waitUntilNav2Active()</code>&#xFF0C;&#x5982;&#x679C;&#x5BFC;&#x822A;&#x6A21;&#x5757;&#x672A;&#x914D;&#x7F6E;<code>autostart</code>&#x5219;&#x9700;&#x8981;&#x8C03;&#x7528;<code>navigator.lifecycleStartup()</code></li>
+</ul>
 
                                 
                                 </section>
@@ -8401,7 +8655,7 @@ result = nav.getResult()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"应用及工具","level":"10.1.8","depth":2,"next":{"title":"Docker","level":"11.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"11.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"11.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"11.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"11.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"11.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"控制器服务","level":"10.1.7","depth":2,"path":"Navigation2/源码分析/007-控制器服务.md","ref":"Navigation2/源码分析/007-控制器服务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/008-应用及工具.md","mtime":"2024-04-28T08:23:21.471Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-28T10:02:21.344Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"应用及工具","level":"10.1.8","depth":2,"next":{"title":"Docker","level":"11.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"11.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"11.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"11.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"11.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"11.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"控制器服务","level":"10.1.7","depth":2,"path":"Navigation2/源码分析/007-控制器服务.md","ref":"Navigation2/源码分析/007-控制器服务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Navigation2/源码分析/008-应用及工具.md","mtime":"2024-05-08T09:04:40.005Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-10T06:04:59.808Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
