@@ -610,6 +610,8 @@
 - Nginx
     - [Nginx基础](Utils/Nginx/Nginx基础.md)
     - [Nginx进阶](Utils/Nginx/Nginx进阶.md)
+- IDE
+  - [VSCode](./Utils/IDE/vscode.md)
 
 ## 面试
 

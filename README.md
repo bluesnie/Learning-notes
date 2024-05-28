@@ -728,6 +728,10 @@
 - [基础](Utils/Nginx/Nginx基础.md)
 - [进阶](Utils/Nginx/Nginx进阶.md)
 
+### [IDE](./Utils//IDE/)
+
+- [VSCode](./Utils/IDE/vscode.md)
+
 ### [工作所学技能或知识](Works)
 
 - [福建路阳有限公司](Works/01-贞仕.md)
