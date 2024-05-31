@@ -8296,6 +8296,108 @@ rm -rf .git/modules/&lt;path&gt;
 </ul>
 <pre><code class="lang-shell">git clone --recurse-submodules &lt;repository&gt;
 </code></pre>
+<h2 id="&#x591A;&#x4E2A;github&#x8D26;&#x53F7;&#x514B;&#x9686;">&#x591A;&#x4E2A;github&#x8D26;&#x53F7;&#x514B;&#x9686;</h2>
+<ul>
+<li><a href="https://blog.csdn.net/meng_feng12/article/details/131866917" target="_blank">&#x914D;&#x7F6E;&#x8FDE;&#x63A5;</a></li>
+<li><code>clone</code>&#x4F7F;&#x7528;(<code>submodule</code>&#x4E0D;&#x652F;&#x6301;)&#xFF1A; <code>git clone git@github.com:test/hello.git --config=core.sshCommand=&quot;ssh -i ~/.ssh/id_rsa&quot;</code></li>
+</ul>
+<h3 id="&#x914D;&#x7F6E;&#x6B65;&#x9AA4;">&#x914D;&#x7F6E;&#x6B65;&#x9AA4;</h3>
+<ul>
+<li><p>&#x5220;&#x9664;&#x5168;&#x5C40;<code>github</code>&#x8D26;&#x53F7;</p>
+<ul>
+<li>&#x67E5;&#x770B;&#xFF1A;<code>git config --list</code></li>
+<li>&#x5220;&#x9664;&#xFF1A;<code>git config --global --unset user.name</code></li>
+<li>&#x5220;&#x9664;&#xFF1A;<code>git config --global --unset user.email</code></li>
+</ul>
+</li>
+<li><p>&#x8FDB;&#x5165;&#x6216;&#x521B;&#x5EFA;<code>.ssh</code></p>
+<ul>
+<li>&#x8FDB;&#x5165;&#xFF1A;<code>cd ~/.ssh</code></li>
+<li>&#x521B;&#x5EFA;&#xFF1A;<code>mkdir ~/.ssh</code></li>
+</ul>
+</li>
+<li><p>&#x751F;&#x6210;<code>ssh</code>&#x5BC6;&#x94A5;</p>
+<ul>
+<li>&#x751F;&#x6210;&#xFF1A;<code>ssh-keygen -t rsa -f ~/.ssh/id_rsa_user1 -C &quot;yourmail1@xxx.com&quot;</code></li>
+<li>&#x751F;&#x6210;&#xFF1A;<code>ssh-keygen -t rsa -f ~/.ssh/id_rsa_user2 -C &quot;yourmail2@xxx.com&quot;</code></li>
+</ul>
+<p>&#x7136;&#x540E;&#x56DE;&#x8F66;&#x540E;&#x6309;&#x7167;&#x63D0;&#x793A;&#x5373;&#x53EF;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x662F;<code>id_rsa_user1</code>&#x3002;&#x5176;&#x4E2D;<code>id_rsa_user1</code>&#x4E3A;&#x79C1;&#x94A5;&#xFF0C;<code>id_rsa_user1.pub</code>&#x4E3A;&#x516C;&#x94A5;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;<code>git</code>&#x8D26;&#x6237;&#xFF0C;&#x8FD9;&#x91CC;&#x4FEE;&#x6539;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#x540D;&#x4E3A;&#xFF1A;<code>id_rsa_user1</code></p>
+</li>
+<li><p>&#x5C06;&#x79C1;&#x94A5;&#x6DFB;&#x52A0;&#x5230;&#x672C;&#x5730;</p>
+</li>
+</ul>
+<p><code>SSH</code>&#x534F;&#x8BAE;&#x7684;&#x539F;&#x7406;&#x5C31;&#x662F;&#x5728;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#x4E0A;&#x4F7F;&#x7528;&#x516C;&#x94A5;&#xFF0C;&#x5728;&#x672C;&#x5730;&#x4F7F;&#x7528;&#x79C1;&#x94A5;&#xFF0C;&#x8FD9;&#x6837;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5C31;&#x53EF;&#x4EE5;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;&#x5728;&#x4E0A;&#x4E00;&#x6B65;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x5BF9;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x9700;&#x8981;&#x628A;&#x79C1;&#x94A5;&#x6DFB;&#x52A0;&#x5230;&#x672C;&#x5730;&#xFF1A;</p>
+<pre><code class="lang-shell">ssh-add ~/.ssh/id_rsa_user1 // &#x5C06;&#x79C1;&#x94A5;&#x6DFB;&#x52A0;&#x5230;&#x672C;&#x5730;
+ssh-add ~/.ssh/id_rsa_user2 // &#x5C06;&#x79C1;&#x94A5;&#x6DFB;&#x52A0;&#x5230;&#x672C;&#x5730;
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x68C0;&#x9A8C;&#x672C;&#x5730;&#x662F;&#x5426;&#x6DFB;&#x52A0;&#x6210;&#x529F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>ssh-add -l</code> &#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x67E5;&#x770B;</p>
+<ul>
+<li><code>git</code>&#x6258;&#x7BA1;&#x8D26;&#x6237;&#x7ED1;&#x5B9A;<code>ssh</code></li>
+</ul>
+<p>&#x4EE5;<code>github</code>&#x4E3A;&#x4F8B;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#x7C7B;&#x4F3C;&#xFF1A;
+&#x590D;&#x5236; <code>id_rsa_github.pub</code> &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x6253;&#x5F00;<code>github</code>&#x7F51;&#x7AD9;&#xFF0C;&#x53F3;&#x4E0A;&#x89D2;&#x70B9;&#x51FB;&#x5934;&#x50CF;&#xFF0C;&#x7136;&#x540E;&#x627E;&#x5230; <code>Settings</code> &#x5E76;&#x70B9;&#x51FB;&#xFF0C;&#x7136;&#x540E;&#x627E;&#x5230; <code>SSH keys and GPG keys</code> &#xFF0C;&#x70B9;&#x51FB; <code>New SSH Key</code>&#xFF0C;&#x5C06;&#x590D;&#x5236;&#x7684;&#x5185;&#x5BB9;&#x7C98;&#x8D34;&#x5230;&#x8F93;&#x5165;&#x6846;&#x5185;&#xFF0C;&#x7136;&#x540E;&#x70B9;&#x51FB;&#x6DFB;&#x52A0;&#x6309;&#x94AE;&#x5373;&#x53EF;&#x3002;</p>
+<ul>
+<li>&#x914D;&#x7F6E;&#x8D26;&#x6237;&#x5BC6;&#x5319;&#x7BA1;&#x7406;&#x6587;&#x4EF6;</li>
+</ul>
+<p>&#x7531;&#x4E8E;&#x6DFB;&#x52A0;&#x4E86;&#x591A;&#x4E2A;&#x5E73;&#x53F0;&#x7684;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E9B;&#x5BC6;&#x94A5;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;&#x5728; <code>.ssh</code> &#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A; <code>config</code> &#x6587;&#x4EF6;&#xFF08;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;<code>config</code>&#x6587;&#x4EF6;&#x5E76;&#x4E0D;&#x662F;<code>.txt</code>&#x7B49;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x4EFB;&#x4F55;&#x540E;&#x7F00;&#x540D;&#x7684;&#x6587;&#x4EF6;&#xFF09;&#xFF1A;
+&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF1A;<code>touch ~/.ssh/config</code></p>
+<pre><code class="lang-text"># user1
+Host user1.github.com // &#x7F51;&#x7AD9;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x968F;&#x610F;&#x53D6;
+HostName github.com // &#x6258;&#x7BA1;&#x7F51;&#x7AD9;&#x7684;&#x57DF;&#x540D;
+User user1 // github&#x4E0A;&#x7684;&#x7528;&#x6237;&#x540D;
+IdentityFile ~/.ssh/id_rsa_user1 // &#x4F7F;&#x7528;&#x7684;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;
+
+# user2
+Host user2.github.com // &#x7F51;&#x7AD9;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x968F;&#x610F;&#x53D6;
+HostName github.com
+User user2
+IdentityFile ~/.ssh/id_rsa_user2
+</code></pre>
+<ul>
+<li>&#x6D4B;&#x8BD5;&#x8FDE;&#x63A5;</li>
+</ul>
+<pre><code class="lang-shell">ssh -T git@github.com  // &#x4F7F;&#x7528;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#x57DF;&#x540D;(&#x5982;&#x679C;&#x591A;&#x4E2A;github&#x8D26;&#x53F7;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x522B;&#x540D;)
+
+ssh -T git@user1.github.com     // &#x4F7F;&#x7528;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#x522B;&#x540D;
+ssh -T git@user2.github.com
+#  Hi user1! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<ul>
+<li>&#x7BA1;&#x7406;git&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;</li>
+</ul>
+<pre><code class="lang-shell">&#x67E5;&#x770B;&#x5168;&#x5C40;&#x914D;&#x7F6E;
+git config --global user.name
+git config --global user.email
+
+&#x67E5;&#x770B;&#x672C;&#x5730;&#x914D;&#x7F6E;(&#x53EA;&#x80FD;&#x5728;git&#x4ED3;&#x5E93;&#x4E2D;&#x4F7F;&#x7528;)
+git config --local user.name
+git config --local user.email
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528; <code>git</code> &#x91CD;&#x8981;<ul>
+<li><code>git</code> &#x7684;&#x4F7F;&#x7528;&#x4E00;&#x822C;&#x662F;&#x4ECE;&#x5176;&#x4ED6;&#x4ED3;&#x5E93;&#x76F4;&#x63A5; <code>clone</code> &#x6216;&#x672C;&#x5730;&#x65B0;&#x5EFA;&#xFF0C;&#x6CE8;&#x610F;&#x914D;&#x7F6E;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;&#x3002;<ul>
+<li><code>clone</code> &#x5230;&#x672C;&#x5730; &#x539F;&#x6765;&#x5199;&#x6CD5; <code>git clone git@github.com:&#x7528;&#x6237;&#x540D;/learngit.git</code></li>
+<li>&#x73B0;&#x5728;&#x5199;&#x6CD5;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-shell">git clone git@user1.github.com:user1/learngit.git
+git clone git@user2.github.com:user2/learngit.git
+</code></pre>
+<ul>
+<li>&#x5982;&#x4F55;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;</li>
+</ul>
+<pre><code class="lang-shell"># push &#x5230; github&#x4E0A;&#x53BB;
+git remote rm origin //&#x6E05;&#x7A7A;&#x539F;&#x6709;&#x7684;
+git remote add origin git@user1.github.com:user1/test.git
+# git remote add &#x662F; Git &#x547D;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x3002;
+
+
+git push --set-upstream origin main
+git push
+</code></pre>
 
                                 
                                 </section>
@@ -8335,7 +8437,7 @@ rm -rf .git/modules/&lt;path&gt;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"11.2","depth":1,"next":{"title":"Nginx","level":"11.3","depth":1,"ref":"","articles":[{"title":"Nginx基础","level":"11.3.1","depth":2,"path":"Utils/Nginx/Nginx基础.md","ref":"Utils/Nginx/Nginx基础.md","articles":[]},{"title":"Nginx进阶","level":"11.3.2","depth":2,"path":"Utils/Nginx/Nginx进阶.md","ref":"Utils/Nginx/Nginx进阶.md","articles":[]}]},"previous":{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Utils/Git基本命令.md","mtime":"2024-05-27T02:26:33.818Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-28T03:44:37.971Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"11.2","depth":1,"next":{"title":"Nginx","level":"11.3","depth":1,"ref":"","articles":[{"title":"Nginx基础","level":"11.3.1","depth":2,"path":"Utils/Nginx/Nginx基础.md","ref":"Utils/Nginx/Nginx基础.md","articles":[]},{"title":"Nginx进阶","level":"11.3.2","depth":2,"path":"Utils/Nginx/Nginx进阶.md","ref":"Utils/Nginx/Nginx进阶.md","articles":[]}]},"previous":{"title":"FastDFS","level":"11.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Utils/Git基本命令.md","mtime":"2024-05-31T08:28:17.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-31T11:07:08.534Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

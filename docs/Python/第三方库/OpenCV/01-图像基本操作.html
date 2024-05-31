@@ -8106,56 +8106,69 @@
 <h6 id="authornzb">author:nzb</h6>
 <h1 id="&#x56FE;&#x50CF;&#x57FA;&#x672C;&#x64CD;&#x4F5C;">&#x56FE;&#x50CF;&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h1>
 <h2 id="&#x6570;&#x636E;&#x8BFB;&#x53D6;">&#x6570;&#x636E;&#x8BFB;&#x53D6;</h2>
-<ul>
-<li><p>&#x56FE;&#x50CF;</p>
+<h3 id="&#x56FE;&#x50CF;">&#x56FE;&#x50CF;</h3>
 <ul>
 <li><p>&#x8BFB;&#x53D6;&#x56FE;&#x50CF;&#x4F7F;&#x7528;<code>imread()</code>&#x51FD;&#x6570;</p>
 <ul>
-<li>img = cv2.imread(&quot;test.jpg&quot;)</li>
-<li>opencv&#x8BFB;&#x53D6;&#x7684;&#x683C;&#x5F0F;&#x662F;&#xFF1A;<code>BGR</code></li>
+<li><code>img = cv2.imread(&quot;test.jpg&quot;)</code></li>
+<li><code>opencv</code> &#x8BFB;&#x53D6;&#x7684;&#x683C;&#x5F0F;&#x662F;&#xFF1A;<code>BGR</code></li>
 </ul>
 </li>
 <li><p><code>img.shape</code>&#xFF1A;&#x83B7;&#x5F97;&#x56FE;&#x50CF;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x5143;&#x7EC4;&#xFF08;tuple&#xFF09;&#x4E2D;&#x7684;&#x4E09;&#x4E2A;&#x6570;&#x4F9D;&#x6B21;&#x8868;&#x793A;&#x9AD8;&#x5EA6;&#x3001;&#x5BBD;&#x5EA6;&#x548C;&#x901A;&#x9053;&#x6570;&#xFF08;&#x84DD;&#x901A;&#x9053;&#x3001;&#x7EFF;&#x901A;&#x9053;&#x3001;&#x7EA2;&#x901A;&#x9053;&#xFF09;&#x3002;</p>
 </li>
-<li><p><code>img.dtype</code>&#xFF1A;&#x83B7;&#x5F97;&#x56FE;&#x7247;&#x7684;&#x7C7B;&#x578B;&#x3002;uint8&#x662F;&#x4E00;&#x4E2A; 8 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x3002;&#x56FE;&#x50CF;&#x7684;RGB&#x5206;&#x91CF;&#x901A;&#x5E38;&#x7528; 0 &#x5230; 255 &#x7684; 256 &#x4E2A;&#x7070;&#x5EA6;&#x8868;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x7EA2;&#x8272;&#x50CF;&#x7D20;&#x4E3A; (R,G,B)=(255,0,0) &#xFF0C;&#x767D;&#x8272;&#x662F; (R,G,B)=(
-255,255,255) &#x3002;&#x5982;&#x679C;&#x56FE;&#x50CF;&#x4E0D;&#x4EE5;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x4FDD;&#x5B58;&#x7684;&#x8BDD;&#xFF0C;&#x56FE;&#x50CF;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5947;&#x602A;&#x3002;</p>
+<li><p><code>img.dtype</code>&#xFF1A;&#x83B7;&#x5F97;&#x56FE;&#x7247;&#x7684;&#x7C7B;&#x578B;&#x3002;<code>uint8</code>&#x662F;&#x4E00;&#x4E2A; 8 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x3002;&#x56FE;&#x50CF;&#x7684;<code>RGB</code>&#x5206;&#x91CF;&#x901A;&#x5E38;&#x7528; <code>0</code> &#x5230; <code>255</code> &#x7684; <code>256</code> &#x4E2A;&#x7070;&#x5EA6;&#x8868;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x7EA2;&#x8272;&#x50CF;&#x7D20;&#x4E3A; <code>(R,G,B)=(255,0,0)</code> &#xFF0C;&#x767D;&#x8272;&#x662F; <code>(R,G,B)=(255,255,255)</code> &#x3002;&#x5982;&#x679C;&#x56FE;&#x50CF;&#x4E0D;&#x4EE5;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x4FDD;&#x5B58;&#x7684;&#x8BDD;&#xFF0C;&#x56FE;&#x50CF;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5947;&#x602A;&#x3002;</p>
 </li>
-<li><p><code>cv2.imshow()</code>&#xFF1A;&#x6765;&#x663E;&#x793A;&#x56FE;&#x50CF;&#x3002;cv2.imshow()&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x7A97;&#x53E3;&#x7684;&#x540D;&#x5B57;&#xFF08;&#x4E0D;&#x5199;&#x4E5F;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF09;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x8981;&#x663E;&#x793A;&#x7684;&#x56FE;&#x50CF;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x5199;&#x3002;</p>
+<li><p><code>cv2.imshow()</code>&#xFF1A;&#x6765;&#x663E;&#x793A;&#x56FE;&#x50CF;&#x3002;<code>cv2.imshow()</code>&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x7A97;&#x53E3;&#x7684;&#x540D;&#x5B57;&#xFF08;&#x4E0D;&#x5199;&#x4E5F;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF09;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x8981;&#x663E;&#x793A;&#x7684;&#x56FE;&#x50CF;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x5199;&#x3002;</p>
 <pre><code class="lang-python">      cv2.imshow(<span class="hljs-string">&apos;image&apos;</span>, img)
       cv2.waitKey(<span class="hljs-number">0</span>)
       cv2.destroyAllWindows()
+
+      <span class="hljs-comment"># &#x5C01;&#x88C5;&#x663E;&#x793A;</span>
+      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show_img</span><span class="hljs-params">(img,name=<span class="hljs-string">&apos;img&apos;</span>, hstack=False)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> hstack:
+            <span class="hljs-keyword">if</span> isinstance(img, list):
+                <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(img)):
+                    cv2.imshow(name + str(i), img[i])
+            <span class="hljs-keyword">else</span>:
+                cv2.imshow(<span class="hljs-string">&quot;res&quot;</span>, img)
+        <span class="hljs-keyword">else</span>:
+            res = np.hstack(img)
+            cv2.imshow(<span class="hljs-string">&quot;res&quot;</span>, res)
+        cv2.waitKey(<span class="hljs-number">0</span>)
+        cv2.destroyAllWindows()
 </code></pre>
 </li>
-<li><p><code>img.astype(np.float32)</code>&#xFF1A;&#x8BA9;img&#x7684;&#x7C7B;&#x578B;&#x53D8;&#x66F4;&#x4E3A;float32&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;astype()&#x3002;</p>
+<li><p><code>img.astype(np.float32)</code>&#xFF1A;&#x8BA9;<code>img</code>&#x7684;&#x7C7B;&#x578B;&#x53D8;&#x66F4;&#x4E3A;<code>float32</code>&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>astype()</code>&#x3002;</p>
 <ul>
 <li><p>&#x5982;&#x679C;&#x7528;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x663E;&#x793A;&#x56FE;&#x7247;&#xFF0C;&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x5F97;&#x5F88;&#x5947;&#x602A;&#x3002;&#x6240;&#x4EE5;&#x5F53;&#x4F60;&#x60F3;&#x8981;&#x64CD;&#x4F5C;&#x56FE;&#x50CF;&#x65F6;&#xFF1A;</p>
 <ul>
-<li><p>&#x4F7F;&#x7528;cv2.imread&#x8BFB;&#x53D6;&#x56FE;&#x50CF;&#xFF1B;</p>
+<li><p>&#x4F7F;&#x7528;<code>cv2.imread</code>&#x8BFB;&#x53D6;&#x56FE;&#x50CF;&#xFF1B;</p>
 </li>
-<li><p>&#x5C06;&#x56FE;&#x50CF;&#x7684;&#x7C7B;&#x578B;&#x53D8;&#x4E3A;&#x6D6E;&#x70B9;&#x578B;np.float32&#xFF1B;</p>
+<li><p>&#x5C06;&#x56FE;&#x50CF;&#x7684;&#x7C7B;&#x578B;&#x53D8;&#x4E3A;&#x6D6E;&#x70B9;&#x578B;<code>np.float32</code>&#xFF1B;</p>
 </li>
 <li><p>&#x64CD;&#x4F5C;&#x56FE;&#x50CF;&#xFF1B;</p>
 </li>
-<li><p>&#x50CF;&#x7D20;&#x503C;&#x4E0D;&#x6EE1; 0 &#x7684;&#x5C06;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; 0 &#xFF0C;&#x50CF;&#x7D20;&#x503C;&#x8D85;&#x8FC7; 255 &#x7684;&#x5C06;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; 255 &#xFF08;&#x8D85;&#x91CD;&#x8981;&#xFF09;&#xFF1B;</p>
+<li><p>&#x50CF;&#x7D20;&#x503C;&#x4E0D;&#x6EE1; <code>0</code> &#x7684;&#x5C06;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; <code>0</code> &#xFF0C;&#x50CF;&#x7D20;&#x503C;&#x8D85;&#x8FC7; <code>255</code> &#x7684;&#x5C06;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A; <code>255</code> &#xFF08;<strong>&#x8D85;&#x91CD;&#x8981;</strong>&#xFF09;&#xFF1B;</p>
 <p><code>img = np.clip&#xFF08;img, 0 , 255&#xFF09; &#x6216;&#x8005; img.clip&#xFF08;0&#xFF0C;255&#xFF09;</code></p>
 </li>
-<li><p>&#x5C06;&#x56FE;&#x50CF;&#x7C7B;&#x578B;&#x53D8;&#x66F4;&#x4E3A;np.uint8&#x5E76;&#x4FDD;&#x5B58;&#xFF1B;</p>
+<li><p>&#x5C06;&#x56FE;&#x50CF;&#x7C7B;&#x578B;&#x53D8;&#x66F4;&#x4E3A;n<code>p.uint8</code>&#x5E76;&#x4FDD;&#x5B58;&#xFF1B;</p>
 <p><code>astype(np.uint8)</code></p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>img2 = img.copy()&#xFF1A;&#x62F7;&#x8D1D;&#x56FE;&#x50CF;</p>
+<li><p><code>img2 = img.copy()</code>&#xFF1A;&#x62F7;&#x8D1D;&#x56FE;&#x50CF;</p>
 </li>
 <li><p><code>cv2.imwrite()</code>&#xFF1A;&#x4FDD;&#x5B58;&#x56FE;&#x50CF;</p>
-<p><code>cv2.imwrite(&quot;sample.jpg&quot;, img2)&#xFF1A;&#x4F8B;&#x5982;&#x4E4B;&#x524D;&#x7684;&#x88AB;&#x4FDD;&#x5B58;&#x4E3A;&#x540D;&#x79F0;&#x4E3A;&#x7684;&#x56FE;&#x50CF;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x5C31;&#x8BF4;&#x660E;&#x8BE5;&#x56FE;&#x50CF;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#xFF0C;&#x6587;&#x4EF6;&#x540D;&#x4E3A;&#x3002;</code></p>
-</li>
+<ul>
+<li><code>cv2.imwrite(&quot;sample.jpg&quot;, img2)</code>&#xFF1A;&#x4F8B;&#x5982;&#x4E4B;&#x524D;&#x7684;&#x88AB;&#x4FDD;&#x5B58;&#x4E3A;&#x540D;&#x79F0;&#x4E3A;&#x7684;&#x56FE;&#x50CF;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x5C31;&#x8BF4;&#x660E;&#x8BE5;&#x56FE;&#x50CF;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#xFF0C;&#x6587;&#x4EF6;&#x540D;&#x4E3A;&#x3002;</li>
 </ul>
 </li>
-<li><p>&#x89C6;&#x9891;</p>
+</ul>
+<h3 id="&#x89C6;&#x9891;">&#x89C6;&#x9891;</h3>
 <ul>
-<li><p>cv2.VideoCapture&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x6444;&#x50CF;&#x5934;&#xFF0C;&#x7528;&#x6570;&#x5B57;&#x6765;&#x63A7;&#x5236;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#xFF0C;&#x4F8B;&#x5982;0,1&#x3002;</p>
+<li><p><code>cv2.VideoCapture</code>&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x6444;&#x50CF;&#x5934;&#xFF0C;&#x7528;&#x6570;&#x5B57;&#x6765;&#x63A7;&#x5236;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#xFF0C;&#x4F8B;&#x5982;<code>0,1</code>&#x3002;</p>
 <p><code>vc = cv2.VideoCapture(&quot;../img/test.mp4&quot;)</code></p>
 </li>
 <li><p>&#x5982;&#x679C;&#x662F;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#xFF0C;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x597D;&#x8DEF;&#x5F84;&#x5373;&#x53EF;&#x3002;</p>
@@ -8163,23 +8176,19 @@
 <li><p><img src="imgs/bd2d3624-026d-4514-bfe6-5e3bcd1c1d6f-5771924.jpg" alt=""></p>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="&#x64CD;&#x4F5C;&#x50CF;&#x7D20;">&#x64CD;&#x4F5C;&#x50CF;&#x7D20;</h2>
 <ul>
-<li><p>&#x4F8B;&#x5982;&#xFF0C;&#x64CD;&#x4F5C; x=30,y=20 &#x7684;&#x50CF;&#x7D20;&#x503C;&#x65F6;&#xFF0C;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x50CF;&#x7D20;&#x503C;&#x662F;&#x6309; BGR &#x7684;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x3002;array() &#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x56FE;&#x50CF;&#x662F; NumPy &#x683C;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;OpenCV &#x662F; NumPy &#x7684;&#x9AD8;&#x5C42;&#x5C01;&#x88C5;&#x3002;</p>
+<li><p>&#x4F8B;&#x5982;&#xFF0C;&#x64CD;&#x4F5C; <code>x=30,y=20</code> &#x7684;&#x50CF;&#x7D20;&#x503C;&#x65F6;&#xFF0C;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x50CF;&#x7D20;&#x503C;&#x662F;&#x6309; <code>BGR</code> &#x7684;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x3002;<code>array()</code> &#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x56FE;&#x50CF;&#x662F; <code>NumPy</code> &#x683C;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;<code>OpenCV</code> &#x662F; <code>NumPy</code> &#x7684;&#x9AD8;&#x5C42;&#x5C01;&#x88C5;&#x3002;</p>
 <p><code>img[20,30]</code></p>
 </li>
-<li><p>&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;&#x8981;&#x5F97;&#x5230; x=30,y=20 &#x5904;&#x7684; G &#x5206;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;</p>
-<p><code>img[20,30,1]</code></p>
+<li><p>&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;&#x8981;&#x5F97;&#x5230; <code>x=30,y=20</code> &#x5904;&#x7684; <code>G</code> &#x5206;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE3;&#x7801;<code>img[20,30,1]</code></p>
 </li>
 <li><p>&#x5207;&#x7247;</p>
 <ul>
-<li><p>&#x4F8B;&#x5982;&#x8981;&#x67E5;&#x770B; y=20, x=[30, 32] &#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x4E4B;&#x5185;&#xFF08;&#x7684;&#x50CF;&#x7D20;&#xFF09;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;30:33&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;a:b&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x5728; a &lt; v &lt; b &#x8303;&#x56F4;&#x5185;&#x7684;&#x503C;&#x3002;&#x987A;&#x4FBF;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;:30&#x53EF;&#x4EE5;&#x83B7;&#x5F97; [0, 30]
-&#x8303;&#x56F4;&#x5185;&#x7684;&#x50CF;&#x7D20;&#xFF1B;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;30:&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97; [30,&#x6700;&#x540E;] &#x50CF;&#x7D20;&#x7684;&#x503C;&#x3002;</p>
+<li><p>&#x4F8B;&#x5982;&#x8981;&#x67E5;&#x770B; <code>y=20, x=[30, 32]</code> &#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x4E4B;&#x5185;&#xFF08;&#x7684;&#x50CF;&#x7D20;&#xFF09;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;<code>30:33</code>&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;<code>a:b</code>&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x5728; <code>a &lt; v &lt; b</code> &#x8303;&#x56F4;&#x5185;&#x7684;&#x503C;&#x3002;&#x987A;&#x4FBF;&#x8BF4;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;<code>:30</code>&#x53EF;&#x4EE5;&#x83B7;&#x5F97; <code>[0, 30]</code>&#x8303;&#x56F4;&#x5185;&#x7684;&#x50CF;&#x7D20;&#xFF1B;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;30:&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97; [30,&#x6700;&#x540E;] &#x50CF;&#x7D20;&#x7684;&#x503C;&#x3002;</p>
 <p><code>img[20, 30:33]</code></p>
 </li>
-<li><p>&#x4F8B;&#x5982;&#x5C06;&#x56FE;&#x7247;&#x5DE6;&#x4E0A;&#x89D2;&#xFF08; x=[0, 50], y = [0, 50] &#xFF09;&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED1;&#x8272;&#xFF0C;&#x662F;&#x7167;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x505A;&#x3002;copy()&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x540E;&#x9762;&#x4ECB;&#x7ECD;&#x3002;</p>
+<li><p>&#x4F8B;&#x5982;&#x5C06;&#x56FE;&#x7247;&#x5DE6;&#x4E0A;&#x89D2;<code>&#xFF08; x=[0, 50], y = [0, 50] &#xFF09;</code>&#x8BBE;&#x7F6E;&#x4E3A;&#x9ED1;&#x8272;&#xFF0C;&#x662F;&#x7167;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x505A;&#x3002;<code>copy()</code>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x540E;&#x9762;&#x4ECB;&#x7ECD;&#x3002;</p>
 <p><code>img2[:50, :50] = 0</code></p>
 <ul>
 <li><img src="imgs/d4b11d2a-c2db-492b-b150-4d6611572029-5771924.jpg" alt=""></li>
@@ -8187,17 +8196,26 @@
 </li>
 </ul>
 </li>
-<li><p>&#x83B7;&#x53D6;&#x989C;&#x8272;&#x901A;&#x9053;</p>
-<p><code>b,g,r = cv2.split(img)</code></p>
+<li><p>&#x83B7;&#x53D6;&#x989C;&#x8272;&#x901A;&#x9053;&#xFF1A;<code>b,g,r = cv2.split(img)</code></p>
 </li>
-<li><p>&#x5408;&#x5E76;&#x989C;&#x8272;&#x901A;&#x9053;</p>
-<p><code>cv2.merge((b,g,r)) # &#x5408;&#x5E76;</code></p>
+<li><p>&#x5408;&#x5E76;&#x989C;&#x8272;&#x901A;&#x9053;&#xFF1A;<code>cv2.merge((b,g,r)) # &#x5408;&#x5E76;</code></p>
 </li>
-<li><p>&#x4E4B;&#x524D;&#x6709;&#x63D0;&#x5230;&#xFF1A;&#x50CF;&#x7D20;&#x7684;&#x503C;&#x5C0F;&#x4E8E; 0 &#x7684;&#x65F6;&#x5019;&#x8BBE;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x8D85;&#x8FC7; 255 &#x7684;&#x65F6;&#x5019;&#x4FEE;&#x6539;&#x4E3A; 255&#x3002;</p>
+<li><p>&#x53EA;&#x4FDD;&#x7559;<code>R</code>&#x901A;&#x9053;(&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x53EA;&#x4FDD;&#x7559;<code>G</code>&#xFF0C;&#x53EA;&#x4FDD;&#x7559;<code>B</code>)</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x53EA;&#x4FDD;&#x7559;R</span>
+<span class="hljs-comment"># &#x901A;&#x9053;&#x4E3A; BGR</span>
+only_R_img = img.copy()
+<span class="hljs-comment"># only_R_img[...,0] = 0</span>
+<span class="hljs-comment"># only_R_img[...,1] = 0</span>
+only_R_img[:, :, <span class="hljs-number">0</span>] = <span class="hljs-number">0</span>  <span class="hljs-comment"># B &#x901A;&#x9053;</span>
+only_R_img[:, :, <span class="hljs-number">1</span>] = <span class="hljs-number">0</span>  <span class="hljs-comment"># G &#x901A;&#x9053;</span>
+cv_show(<span class="hljs-string">&apos;ret&apos;</span>, [img, only_R_img])
+</code></pre>
+</li>
+<li><p>&#x4E4B;&#x524D;&#x6709;&#x63D0;&#x5230;&#xFF1A;&#x50CF;&#x7D20;&#x7684;&#x503C;&#x5C0F;&#x4E8E; <code>0</code> &#x7684;&#x65F6;&#x5019;&#x8BBE;&#x7F6E;&#x4E3A; <code>0</code>&#xFF0C;&#x8D85;&#x8FC7; <code>255</code> &#x7684;&#x65F6;&#x5019;&#x4FEE;&#x6539;&#x4E3A; <code>255</code>&#x3002;</p>
 <ul>
-<li><p>&#x4F8B;&#x5982;&#xFF0C;&#x56FE;&#x50CF;&#x7684;&#x7C7B;&#x578B;&#x4E3A;float32&#xFF0C;&#x5C06;&#x4E00;&#x90E8;&#x5206;&#x7684;B&#x5206;&#x91CF;&#x6539;&#x4E3A; 260&#x3002;uint8&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#x8303;&#x56F4;&#x53EA;&#x80FD;&#x53D6; [0,255] &#xFF0C;&#x5982;&#x679C;&#x53D8;&#x6210;uint8&#x578B;&#x7684;&#x8BDD;&#x877E;&#x8788;&#x7684;&#x989C;&#x8272;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x9EC4;&#x8272;&#x7684;&#x3002;</p>
+<li><p>&#x4F8B;&#x5982;&#xFF0C;&#x56FE;&#x50CF;&#x7684;&#x7C7B;&#x578B;&#x4E3A;<code>float32</code>&#xFF0C;&#x5C06;&#x4E00;&#x90E8;&#x5206;&#x7684;<code>B</code>&#x5206;&#x91CF;&#x6539;&#x4E3A; <code>260</code>&#x3002;<code>uint8</code>&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#x8303;&#x56F4;&#x53EA;&#x80FD;&#x53D6; <code>[0,255]</code> &#xFF0C;&#x5982;&#x679C;&#x53D8;&#x6210;<code>uint8</code>&#x578B;&#x7684;&#x8BDD;&#x877E;&#x8788;&#x7684;&#x989C;&#x8272;&#x4E00;&#x90E8;&#x5206;&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x9EC4;&#x8272;&#x7684;&#x3002;</p>
 </li>
-<li><p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x5982;&#x679C;&#x5C06; 260 &#x53D8;&#x4E3A;uint8&#x578B;&#x7684;&#x8BDD;&#xFF0C;&#x56E0;&#x4E3A; 260-256&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x8BA9;B&#x7684;&#x503C;&#x4E3A; 4&#x3002;&#x7ECF;&#x5E38;&#x4F1A;&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#x8BA9;&#x50CF;&#x7D20;&#x7684;&#x503C;&#x53D8;&#x5F97;&#x4E0D;&#x6B63;&#x786E;&#x3002;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x7B2C;&#x56DB;&#x6B65;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x9650;&#x5B9A;&#x503C;&#x7684;&#x8303;&#x56F4;&#x5728;[0,255]&#x4E4B;&#x95F4;&#xFF09;&#x662F;&#x5FC5;&#x8981;&#x7684;&#x3002;</p>
+<li><p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x5982;&#x679C;&#x5C06; <code>260</code> &#x53D8;&#x4E3A;<code>uint8</code>&#x578B;&#x7684;&#x8BDD;&#xFF0C;&#x56E0;&#x4E3A; <code>260-256</code>&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x8BA9;<code>B</code>&#x7684;&#x503C;&#x4E3A; <code>4</code>&#x3002;&#x7ECF;&#x5E38;&#x4F1A;&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#x8BA9;&#x50CF;&#x7D20;&#x7684;&#x503C;&#x53D8;&#x5F97;&#x4E0D;&#x6B63;&#x786E;&#x3002;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x7B2C;&#x56DB;&#x6B65;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x9650;&#x5B9A;&#x503C;&#x7684;&#x8303;&#x56F4;&#x5728;<code>[0,255]</code>&#x4E4B;&#x95F4;&#xFF09;&#x662F;&#x5FC5;&#x8981;&#x7684;&#x3002;</p>
 </li>
 <li><p><img src="imgs/04678b48-8deb-4609-abac-e6999ffb70df-5771924.jpg" alt=""></p>
 </li>
@@ -8206,20 +8224,17 @@
 </ul>
 <h2 id="&#x8FB9;&#x754C;&#x586B;&#x5145;">&#x8FB9;&#x754C;&#x586B;&#x5145;</h2>
 <ul>
-<li><p>cv2.copyMakeBorder&#xFF08;&#xFF09;</p>
+<li><p><code>cv2.copyMakeBorder&#xFF08;&#xFF09;</code></p>
 </li>
 <li><p>&#x9009;&#x9879;</p>
 <ul>
 <li><p><code>BORDER_REPLICATE</code>&#xFF1A;&#x590D;&#x5236;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x590D;&#x5236;&#x6700;&#x8FB9;&#x7F18;&#x50CF;&#x7D20;&#x3002;</p>
 </li>
-<li><p><code>BORDER_REFLECT</code>&#xFF1A;&#x53CD;&#x5C04;&#x6CD5;&#xFF0C;&#x5BF9;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x50CF;&#x7D20;&#x5728;&#x4E24;&#x8FB9;&#x8FDB;&#x884C;&#x590D;&#x5236;</p>
-<p><code>&#x4F8B;&#x5982;&#xFF1A;fedcba|abcdefgh|hgfedcb</code></p>
+<li><p><code>BORDER_REFLECT</code>&#xFF1A;&#x53CD;&#x5C04;&#x6CD5;&#xFF0C;&#x5BF9;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x50CF;&#x7D20;&#x5728;&#x4E24;&#x8FB9;&#x8FDB;&#x884C;&#x590D;&#x5236;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>fedcba|abcdefgh|hgfedcb</code></p>
 </li>
-<li><p><code>BORDER_REFLECT_101</code>&#xFF1A;&#x53CD;&#x5C04;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4EE5;&#x6700;&#x8FB9;&#x7F18;&#x50CF;&#x7D20;&#x4E3A;&#x8F74;&#xFF0C;&#x5BF9;&#x79F0;</p>
-<p><code>gfedcb|abcdefgh|gfedcba</code></p>
+<li><p><code>BORDER_REFLECT_101</code>&#xFF1A;&#x53CD;&#x5C04;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4EE5;&#x6700;&#x8FB9;&#x7F18;&#x50CF;&#x7D20;&#x4E3A;&#x8F74;&#xFF0C;&#x5BF9;&#x79F0;<code>gfedcb|abcdefgh|gfedcba</code></p>
 </li>
-<li><p><code>BORDER_WRAP</code>&#xFF1A;&#x5916;&#x5305;&#x88C5;&#x6CD5;</p>
-<p><code>cdefgh|abcdefgh|abcdefg</code></p>
+<li><p><code>BORDER_WRAP</code>&#xFF1A;&#x5916;&#x5305;&#x88C5;&#x6CD5;&#xFF0C;<code>cdefgh|abcdefgh|abcdefg</code></p>
 </li>
 <li><p><code>BORDER_CONSTANT</code>&#xFF1A;&#x5E38;&#x91CF;&#x6CD5;&#xFF0C;&#x5E38;&#x6570;&#x503C;&#x586B;&#x5145;&#x3002;</p>
 </li>
@@ -8230,28 +8245,28 @@
 </ul>
 <h2 id="&#x56FE;&#x50CF;&#x7F29;&#x653E;">&#x56FE;&#x50CF;&#x7F29;&#x653E;</h2>
 <ul>
-<li><p>cv2.resize(src&#xFF0C; dsize[&#xFF0C; dst[&#xFF0C; fx[&#xFF0C; fy[&#xFF0C;interpolation]]]])</p>
+<li><p><code>cv2.resize(src&#xFF0C; dsize[&#xFF0C; dst[&#xFF0C; fx[&#xFF0C; fy[&#xFF0C;interpolation]]]])</code></p>
 <ul>
 <li><p>&#x9009;&#x9879;</p>
 <ul>
-<li><p>src&#xFF1A;&#x5FC5;&#x987B;&#xFF0C;&#x539F;&#x56FE;&#x50CF;</p>
+<li><p><code>src</code>&#xFF1A;&#x5FC5;&#x987B;&#xFF0C;&#x539F;&#x56FE;&#x50CF;</p>
 </li>
-<li><p>dsize&#xFF1A;&#x5FC5;&#x987B;&#xFF0C;&#x8F93;&#x51FA;&#x56FE;&#x50CF;&#x6240;&#x9700;&#x5927;&#x5C0F;</p>
+<li><p><code>dsize</code>&#xFF1A;&#x5FC5;&#x987B;&#xFF0C;&#x8F93;&#x51FA;&#x56FE;&#x50CF;&#x6240;&#x9700;&#x5927;&#x5C0F;</p>
 </li>
-<li><p>fx&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x6CBF;&#x6C34;&#x5E73;&#x8F74;&#x7684;&#x6BD4;&#x4F8B;&#x56E0;&#x5B50;</p>
+<li><p><code>fx</code>&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x6CBF;&#x6C34;&#x5E73;&#x8F74;&#x7684;&#x6BD4;&#x4F8B;&#x56E0;&#x5B50;</p>
 </li>
-<li><p>fy&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x6CBF;&#x5782;&#x76F4;&#x8F74;&#x7684;&#x6BD4;&#x4F8B;&#x56E0;&#x5B50;</p>
+<li><p><code>fy</code>&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x6CBF;&#x5782;&#x76F4;&#x8F74;&#x7684;&#x6BD4;&#x4F8B;&#x56E0;&#x5B50;</p>
 </li>
-<li><p>interpolation&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x63D2;&#x503C;&#x65B9;&#x5F0F;</p>
+<li><p><code>interpolation</code>&#xFF1A;&#x53EF;&#x9009;&#xFF0C;&#x63D2;&#x503C;&#x65B9;&#x5F0F;</p>
 <p><code>&#x901A;&#x5E38;&#x7684;&#xFF0C;&#x7F29;&#x5C0F;&#x4F7F;&#x7528;cv.INTER_AREA&#xFF0C;&#x653E;&#x7F29;&#x4F7F;&#x7528;cv.INTER_CUBIC(&#x8F83;&#x6162;)&#x548C;cv.INTER_LINEAR(&#x8F83;&#x5FEB;&#x6548;&#x679C;&#x4E5F;&#x4E0D;&#x9519;)&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x653E;&#x7F29;&#x90FD;&#x4F7F;&#x7528;cv.INTER_LINEAR&#x3002;</code></p>
 <ul>
-<li><p>cv2.INTER_NEAREST&#xFF1A;&#x6700;&#x8FD1;&#x90BB;&#x63D2;&#x503C;</p>
+<li><p><code>cv2.INTER_NEAREST</code>&#xFF1A;&#x6700;&#x8FD1;&#x90BB;&#x63D2;&#x503C;</p>
 </li>
-<li><p>cv2.INTER_LINEAR&#xFF1A;&#x53CC;&#x7EBF;&#x6027;&#x63D2;&#x503C;</p>
+<li><p><code>cv2.INTER_LINEAR</code>&#xFF1A;&#x53CC;&#x7EBF;&#x6027;&#x63D2;&#x503C;</p>
 </li>
-<li><p>cv2.INTER_CUBIC&#xFF1A;&#x53CC;&#x7EBF;&#x6027;&#x63D2;&#x503C;</p>
+<li><p><code>cv2.INTER_CUBIC</code>&#xFF1A;&#x53CC;&#x7EBF;&#x6027;&#x63D2;&#x503C;</p>
 </li>
-<li><p>cv2.INTER_AREA&#xFF1A;&#x4F7F;&#x7528;&#x50CF;&#x7D20;&#x533A;&#x57DF;&#x5173;&#x7CFB;&#x91CD;&#x65B0;&#x91C7;&#x6837;&#x3002;&#x5B83;&#x53EF;&#x80FD;&#x662F;&#x56FE;&#x50CF;&#x62BD;&#x53D6;&#x7684;&#x9996;&#x9009;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x65E0;&#x83AB;&#x5C14;&#x6761;&#x7EB9;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4F46;&#x662F;&#x5F53;&#x56FE;&#x50CF;&#x88AB;&#x7F29;&#x653E;&#x65F6;&#xFF0C;&#x5B83;&#x7C7B;&#x4F3C;&#x4E8E;INTER_NEAREST&#x65B9;&#x6CD5;&#x3002;</p>
+<li><p><code>cv2.INTER_AREA</code>&#xFF1A;&#x4F7F;&#x7528;&#x50CF;&#x7D20;&#x533A;&#x57DF;&#x5173;&#x7CFB;&#x91CD;&#x65B0;&#x91C7;&#x6837;&#x3002;&#x5B83;&#x53EF;&#x80FD;&#x662F;&#x56FE;&#x50CF;&#x62BD;&#x53D6;&#x7684;&#x9996;&#x9009;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x65E0;&#x83AB;&#x5C14;&#x6761;&#x7EB9;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4F46;&#x662F;&#x5F53;&#x56FE;&#x50CF;&#x88AB;&#x7F29;&#x653E;&#x65F6;&#xFF0C;&#x5B83;&#x7C7B;&#x4F3C;&#x4E8E;<code>INTER_NEAREST</code>&#x65B9;&#x6CD5;&#x3002;</p>
 </li>
 </ul>
 </li>
@@ -8261,9 +8276,9 @@
 </li>
 <li><p>&#x793A;&#x4F8B;</p>
 <ul>
-<li><p>cv2.resize&#xFF08;img&#xFF0C;&#xFF08;0&#xFF0C;0&#xFF09;&#xFF0C;fx=5&#xFF0C;fy=5&#xFF09;&#xFF1A;&#x6309;&#x4E0D;&#x540C;&#x6BD4;&#x4F8B;&#x7F29;&#x653E;</p>
+<li><p><code>cv2.resize&#xFF08;img&#xFF0C;&#xFF08;0&#xFF0C;0&#xFF09;&#xFF0C;fx=5&#xFF0C;fy=5&#xFF09;</code>&#xFF1A;&#x4E0D;&#x6307;&#x5B9A;&#x50CF;&#x7D20;&#x5927;&#x5C0F;&#xFF0C;<code>xy</code>&#x6309;&#x4E0D;&#x540C;&#x6BD4;&#x4F8B;&#x7F29;&#x653E;</p>
 </li>
-<li><p>cv2.resize&#xFF08;img&#xFF0C;&#xFF08;400&#xFF0C;500&#xFF09;&#xFF09;&#xFF1A;&#x7F29;&#x653E;&#x6210;&#x9AD8;400&#xFF0C;&#x5BBD;500&#x7684;&#x5927;&#x5C0F;</p>
+<li><p><code>cv2.resize&#xFF08;img&#xFF0C;&#xFF08;400&#xFF0C;500&#xFF09;&#xFF09;-</code>&#xFF1A;&#x7F29;&#x653E;&#x6210;&#x9AD8;<code>400</code>&#xFF0C;&#x5BBD;<code>500</code>&#x7684;&#x5927;&#x5C0F;</p>
 </li>
 </ul>
 </li>
@@ -8271,11 +8286,16 @@
 <h2 id="&#x56FE;&#x50CF;&#x878D;&#x5408;">&#x56FE;&#x50CF;&#x878D;&#x5408;</h2>
 <p><code>&#x4E24;&#x5F20;&#x56FE;&#x7247;&#x7EF4;&#x5EA6;&#x9700;&#x8981;&#x4E00;&#x6837;</code></p>
 <ul>
-<li><p>cv2.addWeighted()</p>
+<li><p><code>cv2.addWeighted()</code></p>
 <ul>
-<li><p>cv2.addWeighted&#xFF08;img_cat&#xFF0C; 0.4&#xFF0C;img_dog&#xFF0C; 0.6&#xFF0C;0&#xFF09;</p>
-<p><code>R = &#x3B1;x + &#x3B2;y + b&#xFF1B;&#x5176;&#x4E2D;&#x3B1;&#x548C;&#x3B2;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x6743;&#x91CD;&#xFF0C;&#x54EA;&#x4E2A;&#x503C;&#x5927;&#x5C31;&#x66F4;&#x660E;&#x663E;&#xFF0C;b&#x662F;&#x4EAE;&#x5EA6;&#x7EA7;&#x4E0A;&#x63D0;&#x4EAE;</code></p>
+<li><p><code>cv2.addWeighted&#xFF08;img_cat&#xFF0C; 0.4&#xFF0C;img_dog&#xFF0C; 0.6&#xFF0C;0&#xFF09;</code></p>
+<ul>
+<li><code>R = &#x3B1;x + &#x3B2;y + b</code>&#xFF1B;&#x5176;&#x4E2D;<code>&#x3B1;</code>&#x548C;<code>&#x3B2;</code>&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x6743;&#x91CD;&#xFF0C;&#x54EA;&#x4E2A;&#x503C;&#x5927;&#x5C31;&#x66F4;&#x660E;&#x663E;&#xFF0C;<code>b</code>&#x662F;&#x4EAE;&#x5EA6;&#x7EA7;&#x4E0A;&#x63D0;&#x4EAE;</li>
+</ul>
 </li>
+</ul>
+<ul>
+<li><img src="imgs/cat_dog.png" alt=""></li>
 </ul>
 </li>
 </ul>
@@ -8298,11 +8318,17 @@
 </ul>
 <h2 id="x-y-w-h&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#x83B7;&#x53D6;&#x56FE;&#x50CF;">x, y, w, h&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#x83B7;&#x53D6;&#x56FE;&#x50CF;</h2>
 <ul>
-<li><p>&#x64CD;&#x4F5C;&#x50CF;&#x7D20;&#xFF1A;img [ y &#xFF1A;y + h&#xFF0C; x&#xFF1A;x + w ]</p>
+<li><p>&#x64CD;&#x4F5C;&#x50CF;&#x7D20;&#xFF1A;<code>img [ y &#xFF1A;y + h&#xFF0C; x&#xFF1A;x + w ]</code></p>
 </li>
-<li><p>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x65F6;&#xFF1A;&#xFF08;x&#xFF0C;y&#xFF09;&#x6216;&#x8005;&#xFF08;x + w&#xFF0C;y + h&#xFF09;</p>
+<li><p>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x65F6;&#xFF1A;<code>&#xFF08;x&#xFF0C;y&#xFF09;</code>&#x6216;&#x8005;<code>&#xFF08;x + w&#xFF0C;y + h&#xFF09;</code></p>
 </li>
 </ul>
+<h2 id="&#x6570;&#x503C;&#x8BA1;&#x7B97;">&#x6570;&#x503C;&#x8BA1;&#x7B97;</h2>
+<ul>
+<li>&#x56E0;&#x4E3A;&#x989C;&#x8272;&#x6570;&#x503C;&#x4E3A;&#xFF1A;<code>0-255</code>&#xFF0C;&#x6240;&#x4EE5;&#x8BA1;&#x7B97;&#x7684;&#x65F6;&#x5019;&#x8D85;&#x8FC7;&#x540E;&#x4F1A;&#x53D8;&#x6210;&#xFF1A; <code>&#x8BA1;&#x7B97;&#x540E;&#x7684;&#x6570;&#x503C; % 256&#xFF08;&#x53D6;&#x6A21;&#xFF09;</code></li>
+<li>&#x56E0;&#x6B64;&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x6210;<code>float</code>&#x540E;&#xFF0C;&#x4E4B;&#x540E;&#x5C0F;&#x4E8E;<code>0</code>&#x7684;&#x8F6C;&#x6362;&#x4E3A;<code>0</code>&#xFF0C;&#x5927;&#x4E8E;<code>255</code>&#x7684;&#x8F6C;&#x6362;&#x4E3A;<code>255</code></li>
+</ul>
+<p><img src="imgs/screenshot-20240530-180237.png" alt=""></p>
 
                                 
                                 </section>
@@ -8342,7 +8368,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图像基本操作","level":"2.3.5.1","depth":3,"next":{"title":"图像处理","level":"2.3.5.2","depth":3,"path":"Python/第三方库/OpenCV/02-图像处理.md","ref":"./Python/第三方库/OpenCV/02-图像处理.md","articles":[]},"previous":{"title":"OpenCV","level":"2.3.5","depth":2,"ref":"","articles":[{"title":"图像基本操作","level":"2.3.5.1","depth":3,"path":"Python/第三方库/OpenCV/01-图像基本操作.md","ref":"./Python/第三方库/OpenCV/01-图像基本操作.md","articles":[]},{"title":"图像处理","level":"2.3.5.2","depth":3,"path":"Python/第三方库/OpenCV/02-图像处理.md","ref":"./Python/第三方库/OpenCV/02-图像处理.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/第三方库/OpenCV/01-图像基本操作.md","mtime":"2024-05-27T02:26:33.570Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-28T03:44:37.971Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图像基本操作","level":"2.3.5.1","depth":3,"next":{"title":"图像处理","level":"2.3.5.2","depth":3,"path":"Python/第三方库/OpenCV/02-图像处理.md","ref":"./Python/第三方库/OpenCV/02-图像处理.md","articles":[]},"previous":{"title":"OpenCV","level":"2.3.5","depth":2,"ref":"","articles":[{"title":"图像基本操作","level":"2.3.5.1","depth":3,"path":"Python/第三方库/OpenCV/01-图像基本操作.md","ref":"./Python/第三方库/OpenCV/01-图像基本操作.md","articles":[]},{"title":"图像处理","level":"2.3.5.2","depth":3,"path":"Python/第三方库/OpenCV/02-图像处理.md","ref":"./Python/第三方库/OpenCV/02-图像处理.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/第三方库/OpenCV/01-图像基本操作.md","mtime":"2024-05-30T10:09:47.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-31T11:07:08.534Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
