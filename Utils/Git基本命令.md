@@ -258,13 +258,103 @@ git submodule foreach -q 'git checkout <branch_name>'
 git clone --recurse-submodules <repository>
 ```
 
+## 多个github账号克隆
+
+- [配置连接](https://blog.csdn.net/meng_feng12/article/details/131866917)
+- `clone`使用(`submodule`不支持)： `git clone git@github.com:test/hello.git --config=core.sshCommand="ssh -i ~/.ssh/id_rsa"`
+
+### 配置步骤
+
+- 删除全局`github`账号
+  - 查看：`git config --list`
+  - 删除：`git config --global --unset user.name`
+  - 删除：`git config --global --unset user.email`
+
+- 进入或创建`.ssh`
+  - 进入：`cd ~/.ssh`
+  - 创建：`mkdir ~/.ssh`
+- 生成`ssh`密钥
+  - 生成：`ssh-keygen -t rsa -f ~/.ssh/id_rsa_user1 -C "yourmail1@xxx.com"`
+  - 生成：`ssh-keygen -t rsa -f ~/.ssh/id_rsa_user2 -C "yourmail2@xxx.com"`
+  
+  然后回车后按照提示即可生成密钥，默认的文件名是`id_rsa_user1`。其中`id_rsa_user1`为私钥，`id_rsa_user1.pub`为公钥。为了方便区分不同的`git`账户，这里修改密钥文件名为：`id_rsa_user1`
+
+- 将私钥添加到本地
+
+`SSH`协议的原理就是在托管平台上使用公钥，在本地使用私钥，这样本地仓库就可以和远程仓库进行通信。在上一步已经生成密钥对，接下来需要把私钥添加到本地：
+
+```shell
+ssh-add ~/.ssh/id_rsa_user1 // 将私钥添加到本地
+ssh-add ~/.ssh/id_rsa_user2 // 将私钥添加到本地
+```
+为了检验本地是否添加成功，可以使用 `ssh-add -l` 命令进行查看
+
+- `git`托管账户绑定`ssh`
+
+以`github`为例，其他的托管平台类似：
+复制 `id_rsa_github.pub` 文件中的内容，然后打开`github`网站，右上角点击头像，然后找到 `Settings` 并点击，然后找到 `SSH keys and GPG keys` ，点击 `New SSH Key`，将复制的内容粘贴到输入框内，然后点击添加按钮即可。
+
+- 配置账户密匙管理文件
+
+由于添加了多个平台的密钥文件，所以需要对这些密钥进行管理。在 `.ssh` 目录下新建一个 `config` 文件（注意这个`config`文件并不是`.txt`等文件，而是一个不带任何后缀名的文件）：
+执行命令：`touch ~/.ssh/config`
+
+```text
+# user1
+Host user1.github.com // 网站的别名，随意取
+HostName github.com // 托管网站的域名
+User user1 // github上的用户名
+IdentityFile ~/.ssh/id_rsa_user1 // 使用的密钥文件
+
+# user2
+Host user2.github.com // 网站的别名，随意取
+HostName github.com
+User user2
+IdentityFile ~/.ssh/id_rsa_user2
+
+```
+
+- 测试连接
+
+```shell
+ssh -T git@github.com  // 使用托管平台域名(如果多个github账号，需要使用别名)
+
+ssh -T git@user1.github.com     // 使用托管平台别名
+ssh -T git@user2.github.com
+#  Hi user1! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+- 管理git的用户名和邮箱
+
+```shell
+查看全局配置
+git config --global user.name
+git config --global user.email
+
+查看本地配置(只能在git仓库中使用)
+git config --local user.name
+git config --local user.email
+```
+
+- 使用 `git` 重要
+  - `git` 的使用一般是从其他仓库直接 `clone` 或本地新建，注意配置用户名和邮箱。
+    - `clone` 到本地 原来写法 `git clone git@github.com:用户名/learngit.git`
+    - 现在写法
+    
+```shell
+git clone git@user1.github.com:user1/learngit.git
+git clone git@user2.github.com:user2/learngit.git
+``` 
+
+- 如何提交代码
+
+```shell
+# push 到 github上去
+git remote rm origin //清空原有的
+git remote add origin git@user1.github.com:user1/test.git
+# git remote add 是 Git 命令，用于添加一个新的远程仓库。
 
 
-
-
-
-
-
-
-
-
+git push --set-upstream origin main
+git push 
+```
