@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>图像处理 · GitBook</title>
+        <title>图像梯度-边缘检测-图像金字塔 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,8 +69,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="05-图像处理-图像轮廓及绘制图形.html" />
     
-    <link rel="prev" href="01-图像基本操作.html" />
+    
+    <link rel="prev" href="03-图像处理-滤波-形态学处理.html" />
     
 
     </head>
@@ -2074,12 +2076,64 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3.5.2" data-path="02-图像处理.html">
+        <li class="chapter " data-level="2.3.5.2" data-path="02-图像处理-灰度二值化HSV.html">
             
-                <a href="02-图像处理.html">
+                <a href="02-图像处理-灰度二值化HSV.html">
             
                     
-                    图像处理
+                    灰度二值化HSV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.3" data-path="03-图像处理-滤波-形态学处理.html">
+            
+                <a href="03-图像处理-滤波-形态学处理.html">
+            
+                    
+                    滤波-形态学处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.5.4" data-path="04-图像处理-图像梯度-边缘检测-图像金字塔.html">
+            
+                <a href="04-图像处理-图像梯度-边缘检测-图像金字塔.html">
+            
+                    
+                    图像梯度-边缘检测-图像金字塔
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.5" data-path="05-图像处理-图像轮廓及绘制图形.html">
+            
+                <a href="05-图像处理-图像轮廓及绘制图形.html">
+            
+                    
+                    图像轮廓及绘制图形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.6" data-path="06-图像处理-图像模板匹配.html">
+            
+                <a href="06-图像处理-图像模板匹配.html">
+            
+                    
+                    图像模板匹配
             
                 </a>
             
@@ -8087,7 +8141,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >图像处理</a>
+        <a href="../../.." >图像梯度-边缘检测-图像金字塔</a>
     </h1>
 </div>
 
@@ -8105,235 +8159,41 @@
                                 <h6 id="datetime20220411-1507">datetime:2022/04/11 15:07</h6>
 <h6 id="authornzb">author:nzb</h6>
 <h1 id="&#x56FE;&#x50CF;&#x5904;&#x7406;">&#x56FE;&#x50CF;&#x5904;&#x7406;</h1>
-<h2 id="&#x7070;&#x5EA6;&#x56FE;">&#x7070;&#x5EA6;&#x56FE;</h2>
+<h2 id="&#x56FE;&#x50CF;&#x68AF;&#x5EA6;&#xFF08;&#x89D2;&#x70B9;&#x68C0;&#x6D4B;&#xFF0C;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;&#x6B65;&#x9AA4;&#xFF09;">&#x56FE;&#x50CF;&#x68AF;&#x5EA6;&#xFF08;&#x89D2;&#x70B9;&#x68C0;&#x6D4B;&#xFF0C;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;&#x6B65;&#x9AA4;&#xFF09;</h2>
 <ul>
-<li><p>&#x7070;&#x5EA6;&#x662F;&#x4E00;&#x79CD;&#x56FE;&#x50CF;&#x4EAE;&#x5EA6;&#x7684;&#x8868;&#x793A;&#x65B9;&#x6CD5;</p>
-</li>
-<li><p>gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY )</p>
-</li>
-</ul>
-<h2 id="&#x4E8C;&#x503C;&#x5316;&#xFF08;&#x56FE;&#x50CF;&#x9608;&#x503C;&#xFF09;">&#x4E8C;&#x503C;&#x5316;&#xFF08;&#x56FE;&#x50CF;&#x9608;&#x503C;&#xFF09;</h2>
-<ul>
-<li><p>ret, dst = cv2.threshold(src, thresh, maxval, type)</p>
-<p><code>&#x7B80;&#x5355;&#x4E8C;&#x503C;&#x5316;</code></p>
-<ul>
-<li><p>src&#xFF1A; &#x8F93;&#x5165;&#x56FE;&#xFF0C;&#x53EA;&#x80FD;&#x8F93;&#x5165;&#x5355;&#x901A;&#x9053;&#x56FE;&#x50CF;&#xFF0C;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x4E3A;&#x7070;&#x5EA6;&#x56FE;</p>
-</li>
-<li><p>dst&#xFF1A; &#x8F93;&#x51FA;&#x56FE;</p>
-</li>
-<li><p>thresh&#xFF08;ret&#xFF09;&#xFF1A; &#x9608;&#x503C;</p>
-</li>
-<li><p>maxval&#xFF1A; &#x5F53;&#x50CF;&#x7D20;&#x503C;&#x8D85;&#x8FC7;&#x4E86;&#x9608;&#x503C;&#xFF08;&#x6216;&#x8005;&#x5C0F;&#x4E8E;&#x9608;&#x503C;&#xFF0C;&#x6839;&#x636E;type&#x6765;&#x51B3;&#x5B9A;&#xFF09;&#xFF0C;&#x6240;&#x8D4B;&#x4E88;&#x7684;&#x503C;</p>
-<p><code>&#x6700;&#x5927;&#xFF1A;255</code></p>
-</li>
-<li><p>type&#xFF1A;&#x4E8C;&#x503C;&#x5316;&#x64CD;&#x4F5C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x542B;&#x4EE5;&#x4E0B;5&#x79CD;&#x7C7B;&#x578B;</p>
-<ul>
-<li><p>cv2.THRESH_BINARY&#xFF1A;&#x8D85;&#x8FC7;&#x9608;&#x503C;&#x90E8;&#x5206;&#x53D6;maxval&#xFF08;&#x6700;&#x5927;&#x503C;&#xFF09;&#xFF0C;&#x5426;&#x5219;&#x53D6;0</p>
-</li>
-<li><p>cv2.THRESH_BINARY_INV&#xFF1A;THRESH_BINARY&#x7684;&#x53CD;&#x8F6C;</p>
-</li>
-<li><p>cv2.THRESH_TRUNC&#xFF1A;&#x5927;&#x4E8E;&#x9608;&#x503C;&#x90E8;&#x5206;&#x8BBE;&#x4E3A;&#x9608;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x53D8;</p>
-</li>
-<li><p>cv2.THRESH_TOZERO&#xFF1A;&#x5927;&#x4E8E;&#x9608;&#x503C;&#x90E8;&#x5206;&#x4E0D;&#x6539;&#x53D8;&#xFF0C;&#x5426;&#x5219;&#x8BBE;&#x4E3A;0</p>
-</li>
-<li><p>cv2.THRESH_TOZERO_INV&#xFF1A;THRESH_TOZERO&#x7684;&#x53CD;&#x8F6C;</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>ret2,dst2= cv2.threshold(img, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)</p>
-<p><code>Otsu &#xFF08;&#x5927;&#x6D25;&#xFF09;&#x4E8C;&#x503C;&#x5316;&#xFF1A;&#x627E;&#x5230;&#x6700;&#x5408;&#x9002;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x5176;&#x4E2D;threshold&#x8BBE;&#x7F6E;&#x4E3A;0&#x914D;&#x5408;cv2.THRESH_OTSU&#xFF0C;&#x5BFB;&#x627E;&#x6700;&#x9002;&#x5408;&#x7684;&#x9608;&#x503C;</code></p>
-</li>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li><img src="imgs/32bc41e6-fb13-4b25-8de6-cd57629a9fd4-5771924.jpg" alt=""></li>
-</ul>
-</li>
-</ul>
-<h2 id="hsv&#x53D8;&#x6362;">HSV&#x53D8;&#x6362;</h2>
-<ul>
-<li><p>HSV&#x5373;&#x4F7F;&#x7528;&#xFF1A;&#x8272;&#x76F8;&#xFF08;Hue&#xFF09;&#x3001;&#x9971;&#x548C;&#x5EA6;&#xFF08;Saturation&#xFF09;&#x3001;&#x660E;&#x5EA6;&#xFF08;Value&#xFF09;&#x6765;&#x8868;&#x793A;&#x8272;&#x5F69;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
-<ul>
-<li><p>&#x8272;&#x76F8;&#xFF1A;&#x5C06;&#x989C;&#x8272;&#x4F7F;&#x7528;0&#x2218;&#x5230;360&#x2218;&#x8868;&#x793A;&#xFF0C;&#x5C31;&#x662F;&#x5E73;&#x5E38;&#x6240;&#x8BF4;&#x7684;&#x989C;&#x8272;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x7EA2;&#x8272;&#x3001;&#x84DD;&#x8272;&#x3002;</p>
-</li>
-<li><p>&#x9971;&#x548C;&#x5EA6;&#xFF1A;&#x662F;&#x6307;&#x8272;&#x5F69;&#x7684;&#x7EAF;&#x5EA6;&#xFF0C;&#x9971;&#x548C;&#x5EA6;&#x8D8A;&#x4F4E;&#x5219;&#x989C;&#x8272;&#x8D8A;&#x9EEF;&#x6DE1;&#xFF08;0&#x2264;S&lt;1&#xFF09;&#xFF1B;</p>
-</li>
-<li><p>&#x660E;&#x5EA6;&#xFF1A;&#x5373;&#x989C;&#x8272;&#x7684;&#x660E;&#x6697;&#x7A0B;&#x5EA6;&#x3002;&#x6570;&#x503C;&#x8D8A;&#x9AD8;&#x8D8A;&#x63A5;&#x8FD1;&#x767D;&#x8272;&#xFF0C;&#x6570;&#x503C;&#x8D8A;&#x4F4E;&#x8D8A;&#x63A5;&#x8FD1;&#x9ED1;&#x8272;&#xFF08;0&#x2264;V&lt;1&#xFF09;&#xFF1B;</p>
-</li>
-</ul>
-</li>
-<li><p>hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)</p>
-</li>
-</ul>
-<h2 id="&#x56FE;&#x50CF;&#x6EE4;&#x6CE2;">&#x56FE;&#x50CF;&#x6EE4;&#x6CE2;</h2>
-<p><code>&#x56FE;&#x50CF;&#x964D;&#x566A;&#xFF0C;&#x4F7F;&#x56FE;&#x50CF;&#x66F4;&#x6E05;&#x6670;&#xFF0C;&#x66F4;&#x5E73;&#x6ED1;</code></p>
-<ul>
-<li><p>&#x5747;&#x503C;&#x6EE4;&#x6CE2;</p>
-<ul>
-<li><p>blur1 = cv2.blur(noise_img, (3,3))</p>
-<p><code>3 * 3&#x7684;&#x5377;&#x79EF;&#x6838;</code></p>
-</li>
-<li><p>&#x65B9;&#x6846;&#x6EE4;&#x6CE2;</p>
-<p><code>&#x57FA;&#x672C;&#x548C;&#x5747;&#x503C;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5F52;&#x4E00;&#x5316;</code></p>
-<ul>
-<li><p>&#x5F52;&#x4E00;&#x5316;</p>
-<p><code>&#x8BA1;&#x7B97;&#x5747;&#x503C;&#x6EE4;&#x6CE2;</code></p>
-<ul>
-<li><p>blur2 = cv2.boxFilter(noise_img,-1, (3,3), normalize=True)</p>
-<p><code>-1&#x662F;&#x56FA;&#x5B9A;&#x503C;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x53D8;</code></p>
-</li>
-</ul>
-</li>
-<li><p>&#x672A;&#x5F52;&#x4E00;&#x5316;</p>
-<p><code>&#x5BB9;&#x6613;&#x8D8A;&#x754C;&#xFF08;&#x672A;&#x53D6;&#x5747;&#x503C;&#xFF0C;&#x8D85;&#x8FC7;255&#xFF0C;&#x4E00;&#x65E6;&#x8D8A;&#x754C;&#x5C31;&#x53D6;255&#xFF09;</code></p>
-<ul>
-<li>blur3 = cv2.boxFilter(noise_img,-1, (3,3), normalize=False)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x9AD8;&#x65AF;&#x6EE4;&#x6CE2;</p>
-<p><code>&#x66F4;&#x770B;&#x91CD;&#x6743;&#x91CD;&#xFF0C;&#x79BB;&#x76EE;&#x6807;&#x8FDC;&#x7684;&#x6743;&#x91CD;&#x5C0F;&#xFF0C;&#x79BB;&#x76EE;&#x6807;&#x8FD1;&#x7684;&#x6743;&#x91CD;&#x5927;</code></p>
-<ul>
-<li><p>gussian = cv2.GaussianBlur(noise_img, (5, 5), 1)</p>
-<p><code>5*5&#x7684;&#x5377;&#x79EF;&#x6838;</code></p>
-</li>
-</ul>
-</li>
-<li><p>&#x4E2D;&#x503C;&#x6EE4;&#x6CE2;</p>
-<ul>
-<li><p>median = cv2.medianBlur(noise_img, 5)</p>
-<p><code>5*5&#x7684;&#x5377;&#x79EF;&#x6838;</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#x5F62;&#x6001;&#x5B66;&#x5904;&#x7406;">&#x5F62;&#x6001;&#x5B66;&#x5904;&#x7406;</h2>
-<p><code>&#x5904;&#x7406;&#x4E8C;&#x503C;&#x5316;&#x56FE;&#x50CF;&#xFF0C;&#x83B7;&#x53D6;&#x8F6E;&#x5ED3; &#x8150;&#x8680;=&#x7626;&#x8EAB;&#xFF0C;&#x81A8;&#x80C0;=&#x589E;</code></p>
-<ul>
-<li><p>&#x8150;&#x8680;&#xFF08;Erode&#xFF09;</p>
-<ul>
-<li><p>kernel = np.ones((3,3), dtype=np.uint8)</p>
-<p><code>&#x6838;</code></p>
-</li>
-<li><p>erode_img = cv2.erode(img, kernel, iterations=1)</p>
-<p><code>iterations&#xFF1A;&#x8FED;&#x4EE3;&#xFF08;&#x8150;&#x8680;&#xFF09;&#x6B21;&#x6570;</code></p>
-</li>
-<li><p>&#x4E0D;&#x540C;&#x8150;&#x8680;&#x6B21;&#x6570;&#x7684;&#x53D8;&#x5316;</p>
-<ul>
-<li><img src="imgs/ad175a77-9463-43ef-a7d6-32fc52b09eea-5771924.jpg" alt=""></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x81A8;&#x80C0;&#xFF08;Dilate&#xFF09;</p>
-<ul>
-<li><p>kernel = np.ones((3,3), dtype=np.uint8)</p>
-<p><code>&#x6838;</code></p>
-</li>
-<li><p>dilate_img = cv2.dilate(erosion, kernel, iterations=1)</p>
-</li>
-<li><p>&#x4E0D;&#x540C;&#x81A8;&#x80C0;&#x6B21;&#x6570;&#x7684;&#x53D8;&#x5316;</p>
-<ul>
-<li><img src="imgs/93066a62-417d-44d1-a392-709f0a43281f-5771924.jpg" alt=""></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x5F00;&#x8FD0;&#x7B97;&#x4E0E;&#x95ED;&#x8FD0;&#x7B97;</p>
-<p><code>open_close_kernel = np.ones((5,5), np.uint8)</code></p>
-<ul>
-<li><p>&#x5F00;&#x8FD0;&#x7B97;&#xFF1A;&#x5148;&#x8150;&#x8680;&#xFF0C;&#x540E;&#x81A8;&#x80C0;</p>
-<p><code>&#x5F00;&#x8FD0;&#x7B97;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x53BB;&#x9664;&#x4EC5;&#x5B58;&#x7684;&#x5C0F;&#x5757;&#x50CF;&#x7D20;&#x3002;</code></p>
-<ul>
-<li>openimg = cv2.morphologyEx(img, cv2.MORPH_OPEN, open_close_kernel)</li>
-</ul>
-</li>
-<li><p>&#x95ED;&#x8FD0;&#x7B97;&#xFF1A;&#x5148;&#x81A8;&#x80C0;&#xFF0C;&#x540E;&#x8150;&#x8680;</p>
-<ul>
-<li>closeimg = cv2.morphologyEx(img, cv2.MORPH_CLOSE, open_close_kernel)</li>
-</ul>
-</li>
-<li><p><img src="imgs/17791656-d330-483e-a62f-2f4d1721c2b7-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>&#x68AF;&#x5EA6;&#x8FD0;&#x7B97;</p>
-<p><code>kernel = np.ones((7,7), np.uint8)</code></p>
-<ul>
-<li><p>&#x68AF;&#x5EA6; = &#x81A8;&#x80C0; - &#x8150;&#x8680;</p>
-</li>
-<li><p>&#x5F62;&#x6001;&#x5B66;&#x68AF;&#x5EA6;&#x4E3A;&#x7ECF;&#x8FC7;&#x81A8;&#x80C0;&#x64CD;&#x4F5C;&#xFF08;dilate&#xFF09;&#x7684;&#x56FE;&#x50CF;&#x4E0E;&#x7ECF;&#x8FC7;&#x8150;&#x8680;&#x64CD;&#x4F5C;&#xFF08;erode&#xFF09;&#x7684;&#x56FE;&#x50CF;&#x7684;&#x5DEE;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x62BD;&#x51FA;&#x7269;&#x4F53;&#x7684;&#x8FB9;&#x7F18;&#x3002;</p>
-</li>
-<li><p>gradient = cv2.morphologyEx(pie, cv2.MORPH_GRADIENT, kernel)</p>
-</li>
-<li><p><img src="imgs/b2c2d109-5bc8-427a-bf70-f9fc3f791aa9-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>&#x9876;&#x5E3D;&#x548C;&#x9ED1;&#x5E3D;</p>
-<p><code>kernel = np.ones((7,7), np.uint8)</code></p>
-<ul>
-<li><p>&#x9876;&#x5E3D;</p>
-<p><code>&#x9876;&#x5E3D; = &#x539F;&#x59CB;&#x8F93;&#x5165; - &#x5F00;&#x8FD0;&#x7B97;</code></p>
-<ul>
-<li>tophat = cv2.morphologyEx(img1, cv2.MORPH_TOPHAT, kernel)</li>
-</ul>
-</li>
-<li><p>&#x9ED1;&#x5E3D;</p>
-<p><code>&#x9ED1;&#x5E3D; = &#x95ED;&#x8FD0;&#x7B97; - &#x539F;&#x59CB;&#x8F93;&#x5165;</code></p>
-<ul>
-<li>blackhat = cv2.morphologyEx(img1, cv2.MORPH_BLACKHAT, kernel)</li>
-</ul>
-</li>
-<li><p><img src="imgs/1b1c2c99-054e-407e-a9fe-2fd494d27e2c-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#x89D2;&#x70B9;&#x68C0;&#x6D4B;&#xFF08;&#x56FE;&#x50CF;&#x68AF;&#x5EA6;&#xFF0C;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;&#x6B65;&#x9AA4;&#xFF09;">&#x89D2;&#x70B9;&#x68C0;&#x6D4B;&#xFF08;&#x56FE;&#x50CF;&#x68AF;&#x5EA6;&#xFF0C;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;&#x6B65;&#x9AA4;&#xFF09;</h2>
-<ul>
-<li><p>Sobel&#x7B97;&#x5B50;</p>
+<li><p><strong>Sobel&#x7B97;&#x5B50;</strong></p>
 <ul>
 <li><p>&#x5377;&#x79EF;&#x6838;</p>
 <ul>
 <li><img src="imgs/32767563-ec1a-4568-9dad-f93ee9b570d9-5771924.jpg" alt=""></li>
 </ul>
 </li>
-<li><p>dst = cv2.Sobel(src, ddepth, dx, dy, ksize)</p>
-<blockquote>
-<p>dx=0&#xFF0C;dy=1&#xFF0C;&#x53EA;&#x8BA1;&#x7B97;&#x5782;&#x76F4;&#x65B9;&#x5411;<br>dx=1&#xFF0C;dy=0&#xFF0C;&#x53EA;&#x8BA1;&#x7B97;&#x6C34;&#x5E73;&#x65B9;&#x5411;<br>dx=1&#xFF0C;dy=1&#xFF0C;&#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#xFF08;&#x4E0D;&#x5EFA;&#x8BAE;&#xFF0C;&#x6548;&#x679C;&#x4E0D;&#x597D;&#xFF0C;&#x5EFA;&#x8BAE;&#x5206;&#x5F00;&#x8BA1;&#x7B97;&#x518D;&#xFF09;</p>
-</blockquote>
+<li><p><code>dst = cv2.Sobel(src, ddepth, dx, dy, ksize)</code></p>
 <ul>
-<li><p>ddepth&#xFF1A;&#x56FE;&#x50CF;&#x7684;&#x6DF1;&#x5EA6;</p>
+<li><p><code>ddepth</code>&#xFF1A;&#x56FE;&#x50CF;&#x7684;&#x6DF1;&#x5EA6;</p>
 </li>
-<li><p>dx&#x548C;dy&#xFF1A;&#x5206;&#x522B;&#x8868;&#x793A;&#x6C34;&#x5E73;&#x548C;&#x7AD6;&#x76F4;&#x65B9;&#x5411;</p>
+<li><p><code>dx</code>&#x548C;<code>dy</code>&#xFF1A;&#x5206;&#x522B;&#x8868;&#x793A;&#x6C34;&#x5E73;&#x548C;&#x7AD6;&#x76F4;&#x65B9;&#x5411;</p>
 </li>
-<li><p>ksize&#xFF1A;&#x662F;Sobel&#x7B97;&#x5B50;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x6838;&#x5927;&#x5C0F;&#xFF09;</p>
+<li><p><code>ksize</code>&#xFF1A;&#x662F;<code>Sobel</code>&#x7B97;&#x5B50;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x6838;&#x5927;&#x5C0F;&#xFF09;</p>
 </li>
 </ul>
 </li>
-<li><p>sobel = cv2.convertScaleAbs(sobel)</p>
-<p><code>&#x767D;&#x5230;&#x9ED1;&#x662F;&#x6B63;&#x6570;&#xFF0C;&#x9ED1;&#x5230;&#x767D;&#x5C31;&#x662F;&#x8D1F;&#x6570;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8D1F;&#x6570;&#x4F1A;&#x88AB;&#x622A;&#x65AD;&#x6210;0&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x53D6;&#x7EDD;&#x5BF9;&#x503C;</code></p>
+<li><p><code>sobel = cv2.convertScaleAbs(sobel)</code>&#xFF0C;&#x767D;&#x5230;&#x9ED1;&#x662F;&#x6B63;&#x6570;&#xFF0C;&#x9ED1;&#x5230;&#x767D;&#x5C31;&#x662F;&#x8D1F;&#x6570;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8D1F;&#x6570;&#x4F1A;&#x88AB;&#x622A;&#x65AD;&#x6210;0&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x53D6;&#x7EDD;&#x5BF9;&#x503C;</p>
 </li>
-<li><p>sobelxy = cv2.addWeighted(sobelx, 0.5, sobely, 0.5, 0)</p>
-<p><code>&#x5206;&#x522B;&#x8BA1;&#x7B97;x&#x548C;y&#xFF0C;&#x518D;&#x6C42;&#x548C; 0.5&#xFF1A;&#x4E3A;&#x6743;&#x91CD;</code></p>
+<li><p><code>sobelxy = cv2.addWeighted(sobelx, 0.5, sobely, 0.5, 0)</code>&#xFF0C;&#x5206;&#x522B;&#x8BA1;&#x7B97;<code>x</code>&#x548C;<code>y</code>&#xFF0C;&#x518D;&#x6C42;&#x548C;&#xFF0C;<code>0.5</code>&#xFF1A;&#x4E3A;&#x6743;&#x91CD;</p>
 </li>
 <li><p>&#x793A;&#x4F8B;</p>
 <ul>
 <li><p>&#x4EE3;&#x7801;</p>
 <pre><code class="lang-python">      lena = cv2.imread(<span class="hljs-string">&quot;../img/lena.jpg&quot;</span>, cv2.IMREAD_GRAYSCALE) 
       <span class="hljs-comment"># &#x5206;&#x5F00;&#x8BA1;&#x7B97; </span>
-      sobelx = cv2.Sobel(lena, cv2.CV_64F, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, ksize=<span class="hljs-number">3</span>) 
-      sobelx = cv2.convertScaleAbs(sobelx) 
-      sobely = cv2.Sobel(lena, cv2.CV_64F, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, ksize=<span class="hljs-number">3</span>) 
+      sobelx = cv2.Sobel(lena, cv2.CV_64F, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, ksize=<span class="hljs-number">3</span>)  <span class="hljs-comment"># dx=1&#xFF0C;dy=0&#xFF0C;&#x53EA;&#x8BA1;&#x7B97;&#x6C34;&#x5E73;&#x65B9;&#x5411;  </span>
+      sobelx = cv2.convertScaleAbs(sobelx)                 <span class="hljs-comment"># &#x4E0D;&#x80FD;&#x4E22;&#x5F03;&#x8D1F;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x53BB;&#x7EDD;&#x5BF9;&#x503C;</span>
+      sobely = cv2.Sobel(lena, cv2.CV_64F, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, ksize=<span class="hljs-number">3</span>)  <span class="hljs-comment"># dx=0&#xFF0C;dy=1&#xFF0C;&#x53EA;&#x8BA1;&#x7B97;&#x5782;&#x76F4;&#x65B9;&#x5411;  </span>
       sobely = cv2.convertScaleAbs(sobely) 
       sobelxy1 = cv2.addWeighted(sobelx, <span class="hljs-number">0.5</span>, sobely, <span class="hljs-number">0.5</span>, <span class="hljs-number">0</span>) 
       <span class="hljs-comment"># &#x76F4;&#x63A5;&#x8BA1;&#x7B97; </span>
-      sobelxy2 = cv2.Sobel(lena, cv2.CV_64F, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, ksize=<span class="hljs-number">3</span>) 
+      sobelxy2 = cv2.Sobel(lena, cv2.CV_64F, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, ksize=<span class="hljs-number">3</span>) <span class="hljs-comment"># dx=1&#xFF0C;dy=1&#xFF0C;&#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#xFF08;&#x4E0D;&#x5EFA;&#x8BAE;&#xFF0C;&#x6548;&#x679C;&#x4E0D;&#x597D;&#xFF0C;&#x5EFA;&#x8BAE;&#x5206;&#x5F00;&#x8BA1;&#x7B97;&#x518D;&#xFF09;</span>
       sobelxy2 = cv2.convertScaleAbs(sobelxy2)
       show_img([lena, sobelxy1, sobelxy2], hstack=<span class="hljs-keyword">True</span>)
 </code></pre>
@@ -8344,15 +8204,14 @@
 </li>
 </ul>
 </li>
-<li><p>Scharr&#x7B97;&#x5B50;</p>
-<p><code>&#x66F4;&#x654F;&#x611F;</code></p>
+<li><p><strong>Scharr&#x7B97;&#x5B50;</strong>&#x66F4;&#x654F;&#x611F;</p>
 <ul>
 <li><p>&#x5377;&#x79EF;&#x6838;</p>
 <ul>
 <li><img src="imgs/ab47725b-1dae-42ac-8604-ad29cebb2b79-5771924.jpg" alt=""></li>
 </ul>
 </li>
-<li><p>dst = cv2.Scharr(src, ddepth, dx, dy)</p>
+<li><p><code>dst = cv2.Scharr(src, ddepth, dx, dy)</code></p>
 </li>
 <li><p>&#x793A;&#x4F8B;</p>
 <ul>
@@ -8370,15 +8229,16 @@
 </li>
 </ul>
 </li>
-<li><p>Laplacian&#x7B97;&#x5B50;</p>
-<p><code>&#x4E8C;&#x9636;&#x5BFC;&#xFF0C;&#x53CD;&#x5E94;&#x4E00;&#x9636;&#x5BFC;&#x7684;&#x53D8;&#x5316;&#x7387;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x53D8;&#x5316;&#x66F4;&#x654F;&#x611F;&#xFF08;&#x5BF9;&#x566A;&#x97F3;&#x70B9;&#x654F;&#x611F;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x566A;&#x97F3;&#x70B9;&#x5C31;&#x4E0D;&#x597D;&#x68C0;&#x6D4B;&#x4E86;&#xFF09;</code></p>
+<li><p><strong>Laplacian&#x7B97;&#x5B50;</strong></p>
 <ul>
+<li><p>&#x4E8C;&#x9636;&#x5BFC;&#xFF0C;&#x53CD;&#x5E94;&#x4E00;&#x9636;&#x5BFC;&#x7684;&#x53D8;&#x5316;&#x7387;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x53D8;&#x5316;&#x66F4;&#x654F;&#x611F;&#xFF08;&#x5BF9;&#x566A;&#x97F3;&#x70B9;&#x654F;&#x611F;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x566A;&#x97F3;&#x70B9;&#x5C31;&#x4E0D;&#x597D;&#x68C0;&#x6D4B;&#x4E86;&#xFF09;</p>
+</li>
 <li><p>&#x5377;&#x79EF;&#x6838;</p>
 <ul>
 <li><img src="imgs/80fadc6e-e489-4774-8385-5e1c5e8333cd-5771924.jpg" alt=""></li>
 </ul>
 </li>
-<li><p>dst = cv2.Laplacian(src, ddepth)</p>
+<li><p><code>dst = cv2.Laplacian(src, ddepth)</code></p>
 </li>
 <li><p>&#x793A;&#x4F8B;</p>
 <ul>
@@ -8434,8 +8294,9 @@
 </ul>
 </li>
 <li><p>2&#x3001; &#x8BA1;&#x7B97;&#x56FE;&#x50CF;&#x4E2D;&#x6BCF;&#x4E2A;&#x50CF;&#x7D20;&#x70B9;&#x7684;&#x68AF;&#x5EA6;&#x5F3A;&#x5EA6;&#x548C;&#x65B9;&#x5411;&#x3002;</p>
-<p><code>&#x5728;x&#x65B9;&#x5411;&#x548C;y&#x65B9;&#x5411;&#x4E0A;&#x4F7F;&#x7528;Sobel&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x5728;&#x6B64;&#x4E4B;&#x4E0A;&#x6C42;&#x51FA;&#x8FB9;&#x7F18;&#x7684;&#x5F3A;&#x5EA6;&#x548C;&#x8FB9;&#x7F18;&#x7684;&#x68AF;&#x5EA6;</code></p>
 <ul>
+<li><p>&#x5728;x&#x65B9;&#x5411;&#x548C;y&#x65B9;&#x5411;&#x4E0A;&#x4F7F;&#x7528;Sobel&#x6EE4;&#x6CE2;&#x5668;&#xFF0C;&#x5728;&#x6B64;&#x4E4B;&#x4E0A;&#x6C42;&#x51FA;&#x8FB9;&#x7F18;&#x7684;&#x5F3A;&#x5EA6;&#x548C;&#x8FB9;&#x7F18;&#x7684;&#x68AF;&#x5EA6;</p>
+</li>
 <li><p>&#x68AF;&#x5EA6;&#x548C;&#x65B9;&#x5411;</p>
 <ul>
 <li><img src="imgs/0817348c-e7ea-4206-a81e-7ce666e3ec1b-5771924.jpg" alt=""></li>
@@ -8486,12 +8347,12 @@
 <li><p>&#x9AD8;&#x65AF;&#x91D1;&#x5B57;&#x5854;</p>
 <ul>
 <li><img src="imgs/d52b8497-fb88-4e8c-839b-33640866d955-5771924.jpg" alt=""></li>
-<li><p>&#x9AD8;&#x65AF;&#x91D1;&#x5B57;&#x5854;&#xFF1A;&#x5411;&#x4E0B;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#xFF08;&#x7F29;&#x5C0F;&#xFF09;</p>
+<li><p>&#x9AD8;&#x65AF;&#x91D1;&#x5B57;&#x5854;&#xFF1A;&#x5411;&#x4E0B;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#xFF08;&#x7F29;&#x5C0F;&#xFF0C;&#x4ECE;&#x4E0B;&#x5F80;&#x4E0A;&#xFF09;</p>
 <ul>
 <li><img src="imgs/d721b35f-9483-4be4-a913-f9b1de9b39e5-5771924.jpg" alt=""></li>
 </ul>
 </li>
-<li><p>&#x9AD8;&#x65AF;&#x91D1;&#x5B57;&#x5854;&#xFF1A;&#x5411;&#x4E0A;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#xFF08;&#x653E;&#x5927;&#xFF09;</p>
+<li><p>&#x9AD8;&#x65AF;&#x91D1;&#x5B57;&#x5854;&#xFF1A;&#x5411;&#x4E0A;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#xFF08;&#x653E;&#x5927;&#xFF0C;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#xFF09;</p>
 <ul>
 <li><img src="imgs/34212d83-a751-4b91-8a05-7a0f1c1a33ee-5771924.jpg" alt=""></li>
 </ul>
@@ -8500,8 +8361,8 @@
 <ul>
 <li><p>&#x4EE3;&#x7801;</p>
 <pre><code class="lang-python">      AM = cv2.imread(<span class="hljs-string">&quot;../img/AM.png&quot;</span>) 
-      up = cv2.pyrUp(AM) 
-      down = cv2.pyrDown(AM)
+      up = cv2.pyrUp(AM)      <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x4E00;&#x76F4;&#x4E0A;&#x4E0B;&#x91C7;&#x6837;&#x4E0B;&#x53BB;</span>
+      down = cv2.pyrDown(AM)  <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x4E00;&#x76F4;&#x4E0A;&#x4E0B;&#x91C7;&#x6837;&#x4E0B;&#x53BB;</span>
       show_img([AM,up,down])
 </code></pre>
 </li>
@@ -8551,273 +8412,6 @@
 </ul>
 </li>
 </ul>
-<h2 id="&#x56FE;&#x50CF;&#x8F6E;&#x5ED3;">&#x56FE;&#x50CF;&#x8F6E;&#x5ED3;</h2>
-<ul>
-<li><p>contours, hierarchy = cv2.findContours(img,mode,method)</p>
-<p><code>&#x4E3A;&#x4E86;&#x66F4;&#x9AD8;&#x7684;&#x51C6;&#x786E;&#x7387;&#xFF0C;&#x4F7F;&#x7528;&#x4E8C;&#x503C;&#x56FE;&#x50CF;&#x3002; contours&#xFF1A;&#x8F6E;&#x5ED3;&#x4FE1;&#x606F;&#xFF08;&#x7528;&#x5F97;&#x8F83;&#x591A;&#x7684;&#x6570;&#x636E;&#xFF09; hierarchy&#xFF1A;&#x5C42;&#x7EA7;</code></p>
-<ul>
-<li><p>mode&#xFF1A;&#x8F6E;&#x5ED3;&#x68C0;&#x7D22;&#x6A21;&#x5F0F;</p>
-<ul>
-<li><p><code>RETR_EXTERNAL</code> &#xFF1A;&#x53EA;&#x68C0;&#x7D22;&#x6700;&#x5916;&#x9762;&#x7684;&#x8F6E;&#x5ED3;&#xFF1B;</p>
-</li>
-<li><p><code>RETR_LIST</code>&#xFF1A;&#x68C0;&#x7D22;&#x6240;&#x6709;&#x7684;&#x8F6E;&#x5ED3;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x5230;&#x4E00;&#x6761;&#x94FE;&#x8868;&#x5F53;&#x4E2D;&#xFF1B;</p>
-</li>
-<li><p><code>RETR_CCOMP</code>&#xFF1A;&#x68C0;&#x7D22;&#x6240;&#x6709;&#x7684;&#x8F6E;&#x5ED3;&#xFF0C;&#x5E76;&#x5C06;&#x4ED6;&#x4EEC;&#x7EC4;&#x7EC7;&#x4E3A;&#x4E24;&#x5C42;&#xFF1A;&#x9876;&#x5C42;&#x662F;&#x5404;&#x90E8;&#x5206;&#x7684;&#x5916;&#x90E8;&#x8FB9;&#x754C;&#xFF0C;&#x7B2C;&#x4E8C;&#x5C42;&#x662F;&#x7A7A;&#x6D1E;&#x7684;&#x8FB9;&#x754C;;</p>
-</li>
-<li><p><code>RETR_TREE</code>&#xFF1A;&#x68C0;&#x7D22;&#x6240;&#x6709;&#x7684;&#x8F6E;&#x5ED3;&#xFF0C;&#x5E76;&#x91CD;&#x6784;&#x5D4C;&#x5957;&#x8F6E;&#x5ED3;&#x7684;&#x6574;&#x4E2A;&#x5C42;&#x6B21;;</p>
-<p><code>&#x5E38;&#x7528;</code></p>
-</li>
-</ul>
-</li>
-<li><p>method&#xFF1A;&#x8F6E;&#x5ED3;&#x903C;&#x8FD1;&#x65B9;&#x6CD5;</p>
-<ul>
-<li><p><code>CHAIN_APPROX_NONE</code>&#xFF1A;&#x4EE5;Freeman&#x94FE;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;&#x8F6E;&#x5ED3;&#xFF0C;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x8F93;&#x51FA;&#x591A;&#x8FB9;&#x5F62;&#xFF08;&#x9876;&#x70B9;&#x7684;&#x5E8F;&#x5217;&#xFF09;&#x3002;</p>
-<p><code>&#x5E38;&#x7528;</code></p>
-</li>
-<li><p><code>CHAIN_APPROX_SIMPLE</code>:&#x538B;&#x7F29;&#x6C34;&#x5E73;&#x7684;&#x3001;&#x5782;&#x76F4;&#x7684;&#x548C;&#x659C;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#xFF0C;&#x51FD;&#x6570;&#x53EA;&#x4FDD;&#x7559;&#x4ED6;&#x4EEC;&#x7684;&#x7EC8;&#x70B9;&#x90E8;&#x5206;&#x3002;</p>
-</li>
-<li><p><img src="imgs/f1a2522f-1d12-4a6a-8fc9-4628ffbd3a0d-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li>&#x4EE3;&#x7801;<pre><code class="lang-python"><span class="hljs-comment"># &#x4E3A;&#x4E86;&#x66F4;&#x9AD8;&#x7684;&#x51C6;&#x786E;&#x7387;&#xFF0C;&#x4F7F;&#x7528;&#x4E8C;&#x503C;&#x56FE;&#x50CF;&#x3002; </span>
-img = cv2.imread(<span class="hljs-string">&quot;../img/car.png&quot;</span>) 
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
-ret, thresh = cv2.threshold(gray, <span class="hljs-number">127</span>, <span class="hljs-number">255</span>, cv2.THRESH_BINARY) 
-contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) 
-show_img([img, thresh])
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#x7ED8;&#x5236;&#x8F6E;&#x5ED3;">&#x7ED8;&#x5236;&#x8F6E;&#x5ED3;</h2>
-<ul>
-<li><p>res = cv2.drawContours(copy_img, contours, -1, (0,0,255), 2)</p>
-<ul>
-<li>&#x4F20;&#x5165;&#x7ED8;&#x5236;&#x56FE;&#x50CF;&#xFF0C; &#x8F6E;&#x5ED3;&#xFF0C; &#x8F6E;&#x5ED3;&#x7D22;&#x5F15;&#xFF0C; &#x989C;&#x8272;&#x6A21;&#x5F0F;&#xFF0C; &#x7EBF;&#x6761;&#x539A;&#x5EA6;</li>
-<li>-1&#xFF1A;&#x6240;&#x6709;&#x7684;&#x8F6E;&#x5ED3;&#x90FD;&#x753B;&#x51FA;&#x6765;&#xFF0C;0&#xFF1A;&#x5BF9;&#x5E94;&#x7684;&#x7B2C;0&#x4E2A;&#x8F6E;&#x5ED3;&#xFF0C;1&#xFF1A;&#x5BF9;&#x5E94;&#x7684;&#x7B2C;1&#x4E2A;&#x8F6E;&#x5ED3;</li>
-<li>&#xFF08;0,0,255&#xFF09;&#xFF1A;&#x5BF9;&#x5E94;&#xFF1A;B,G,R&#xFF0C;&#x8F6E;&#x5ED3;&#x7684;&#x989C;&#x8272;&#xFF08;&#x8FD9;&#x91CC;&#x662F;&#x7EA2;&#x8272;&#xFF09;</li>
-<li>2&#xFF1A;&#x7EBF;&#x6761;&#x5BBD;&#x5EA6;</li>
-</ul>
-</li>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python">    <span class="hljs-comment"># &#x6CE8;&#x610F;&#x9700;&#x8981;copy,&#x8981;&#x4E0D;&#x539F;&#x56FE;&#x4F1A;&#x53D8; </span>
-    copy_img = img.copy() 
-    res = cv2.drawContours(copy_img, contours, <span class="hljs-number">-1</span>, (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>), <span class="hljs-number">2</span>) 
-    show_img([img, res])
-</code></pre>
-</li>
-<li><p><img src="imgs/3e7560de-25ab-4248-8b8d-67b2364c7324-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>&#x8F6E;&#x5ED3;&#x7279;&#x5F81;</p>
-<pre><code class="lang-python">      <span class="hljs-comment"># &#x7B2C;&#x4E00;&#x4E2A;&#x8F6E;&#x5ED3; </span>
-      cnt = contours[<span class="hljs-number">0</span>] 
-      <span class="hljs-comment"># &#x9762;&#x79EF; </span>
-      area = cv2.contourArea(cnt) 
-      <span class="hljs-comment"># &#x5468;&#x957F;&#xFF0C;True&#xFF1A;&#x8868;&#x793A;&#x95ED;&#x5408;&#x7684;</span>
-      perimeter = cv2.arcLength(cnt, <span class="hljs-keyword">True</span>) 
-      print(<span class="hljs-string">&quot;&#x9762;&#x79EF;&#xFF1A;&quot;</span>,area) 
-      print(<span class="hljs-string">&quot;&#x5468;&#x957F;&#xFF1A;&quot;</span>, perimeter)
-</code></pre>
-</li>
-<li><p>&#x8F6E;&#x5ED3;&#x8FD1;&#x4F3C;</p>
-<ul>
-<li><img src="imgs/3b36af14-a172-4e6c-acfa-a79c2cef5484-5771924.jpg" alt=""></li>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python">      img = cv2.imread(<span class="hljs-string">&quot;../img/contours2.png&quot;</span>) 
-
-      gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
-      ret, thresh = cv2.threshold(gray, <span class="hljs-number">127</span>,<span class="hljs-number">255</span>, cv2.THRESH_BINARY) 
-      contours,hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) 
-      cnt = contours[<span class="hljs-number">0</span>]  
-
-      <span class="hljs-comment"># &#x7ED8;&#x5236;&#x8F6E;&#x5ED3; </span>
-      draw_img = img.copy() 
-      res1 = cv2.drawContours(draw_img, [cnt], <span class="hljs-number">-1</span>, (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>), <span class="hljs-number">2</span>) 
-
-      <span class="hljs-comment"># &#x8F6E;&#x5ED3;&#x8FD1;&#x4F3C;</span>
-      epsilon = <span class="hljs-number">0.1</span> * cv2.arcLength(cnt, <span class="hljs-keyword">True</span>) <span class="hljs-comment"># &#x6309;&#x5468;&#x957F;&#x6BD4;&#x4F8B; </span>
-      approx = cv2.approxPolyDP(cnt, epsilon, <span class="hljs-keyword">True</span>) <span class="hljs-comment"># &#x8FD1;&#x4F3C; </span>
-
-      draw_img = img.copy() 
-      res2 = cv2.drawContours(draw_img, [approx], <span class="hljs-number">-1</span>, (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>), <span class="hljs-number">2</span>) 
-      show_img([img, res1,res2], hstack=<span class="hljs-keyword">True</span>)
-</code></pre>
-</li>
-<li><p><img src="imgs/64baa43e-1763-4ab6-a07e-2dc96919a1a4-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x8FB9;&#x754C;&#x77E9;&#x5F62;</p>
-<ul>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python">      img = cv2.imread(<span class="hljs-string">&quot;../img/contours.png&quot;</span>) 
-      gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
-      ret, thresh = cv2.threshold(gray, <span class="hljs-number">127</span>,<span class="hljs-number">255</span>, cv2.THRESH_BINARY) 
-      contours,hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) 
-      cnt = contours[<span class="hljs-number">0</span>] <span class="hljs-comment"># 0&#xFF1A;&#x7B2C;0&#x4E2A;&#x8F6E;&#x5ED3;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x7684;&#x5916;&#x63A5;&#x77E9;&#x5F62;&#xFF08;&#x5916;&#x8F6E;&#x5ED3;&#xFF09;; 1&#xFF1A;&#x5185;&#x8F6E;&#x5ED3;&#xFF08;&#x5185;&#x63A5;&#x77E9;&#x5F62;&#xFF09;..... </span>
-      x,y,w,h = cv2.boundingRect(cnt)
-      img = cv2.rectangle(img, (x,y), (x+w, y+h), (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>), <span class="hljs-number">2</span>) 
-      show_img([img])
-</code></pre>
-</li>
-<li><p><img src="imgs/3f7397a5-35e2-4955-ac75-ba809dae0428-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>&#x5E94;&#x7528;</p>
-<ul>
-<li><p>&#x8BA1;&#x7B97;&#x9762;&#x79EF;&#x6BD4;</p>
-<pre><code class="lang-python">      area = cv2.contourArea(cnt) 
-      x, y, w, h = cv2.boundingRect(cnt) 
-      rect_area = w * h 
-      extent = float(area) / rect_area 
-      <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;&#x8F6E;&#x5ED3;&#x9762;&#x79EF;&#x4E0E;&#x8FB9;&#x754C;&#x77E9;&#x5F62;&#x6BD4;&apos;</span>,extent)
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x5916;&#x63A5;&#x5706;</p>
-<ul>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python">      (x,y),radius = cv2.minEnclosingCircle(cnt) 
-      center = (int(x),int(y)) 
-      radius = int(radius) 
-      img =cv2.circle(img,center,radius,(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>),<span class="hljs-number">2</span>)
-      show_img([img])
-</code></pre>
-</li>
-<li><p><img src="imgs/31fb49ea-4001-419f-9da7-62ecf517a8da-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#x56FE;&#x50CF;&#x6A21;&#x677F;&#x5339;&#x914D;">&#x56FE;&#x50CF;&#x6A21;&#x677F;&#x5339;&#x914D;</h2>
-<p>*</p>
-<p>&#x6A21;&#x677F;&#x5339;&#x914D;&#x548C;&#x5377;&#x79EF;&#x539F;&#x7406;&#x5F88;&#x50CF;&#xFF0C;&#x6A21;&#x677F;&#x5728;&#x539F;&#x56FE;&#x50CF;&#x4E0A;&#x4ECE;&#x539F;&#x70B9;&#x5F00;&#x59CB;&#x6ED1;&#x52A8;&#xFF0C;&#x8BA1;&#x7B97;&#x6A21;&#x677F;&#x4E0E;&#xFF08;&#x56FE;&#x50CF;&#x88AB;&#x6A21;&#x677F;&#x8986;&#x76D6;&#x7684;&#x5730;&#x65B9;&#xFF09;&#x7684;&#x5DEE;&#x522B;&#x7A0B;&#x5EA6;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DEE;&#x522B;&#x7A0B;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x5728;opencv&#x91CC;&#x6709;6&#x79CD;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6BCF;&#x6B21;&#x8BA1;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x653E;&#x5165;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x91CC;&#xFF0C;&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;&#x8F93;&#x51FA;&#x3002;&#x5047;&#x5982;&#x539F;&#x56FE;&#x5F62;&#x662F;AxB&#x5927;&#x5C0F;&#xFF0C;&#x800C;&#x6A21;&#x677F;&#x662F;axb&#x5927;&#x5C0F;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x7684;&#x77E9;&#x9635;&#x662F;(
-A-a+1)x(B-b+1)</p>
-<ul>
-<li><p>res = cv2.matchTemplate(img, template, cv2.TM_SQDIFF)</p>
-<p><code>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x5305;&#x542B;&#x5F52;&#x4E00;&#x5316;&#x7684;</code></p>
-<ul>
-<li><p>TM_SQDIFF&#xFF1A;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x4E0D;&#x540C;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x8D8A;&#x5C0F;&#xFF0C;&#x8D8A;&#x76F8;&#x5173;</p>
-</li>
-<li><p>TM_CCORR&#xFF1A;&#x8BA1;&#x7B97;&#x76F8;&#x5173;&#x6027;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x8D8A;&#x76F8;&#x5173;</p>
-</li>
-<li><p>TM_CCOEFF&#xFF1A;&#x8BA1;&#x7B97;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x8D8A;&#x76F8;&#x5173;</p>
-</li>
-<li><p>TM_SQDIFF_NORMED&#xFF1A;&#x8BA1;&#x7B97;&#x5F52;&#x4E00;&#x5316;&#x5E73;&#x65B9;&#x4E0D;&#x540C;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x8D8A;&#x63A5;&#x8FD1;0&#xFF0C;&#x8D8A;&#x76F8;&#x5173;</p>
-</li>
-<li><p>TM_CCORR_NORMED&#xFF1A;&#x8BA1;&#x7B97;&#x5F52;&#x4E00;&#x5316;&#x76F8;&#x5173;&#x6027;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x8D8A;&#x63A5;&#x8FD1;1&#xFF0C;&#x8D8A;&#x76F8;&#x5173;</p>
-</li>
-<li><p>TM_CCOEFF_NORMED&#xFF1A;&#x8BA1;&#x7B97;&#x5F52;&#x4E00;&#x5316;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x8D8A;&#x63A5;&#x8FD1;1&#xFF0C;&#x8D8A;&#x76F8;&#x5173;</p>
-</li>
-<li><p><a href="https://docs.opencv.org/3.3.1/df/dfb/group__imgproc__object.html#ga3a7850640f1fe1f58fe91a2d7583695d" target="_blank">&#x516C;&#x5F0F;</a></p>
-</li>
-</ul>
-</li>
-<li><p>min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)</p>
-<p><code>&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4F4D;&#x7F6E;&#xFF0C;&#x6700;&#x5927;&#x503C;&#x4F4D;&#x7F6E;</code></p>
-</li>
-<li><p>&#x793A;&#x4F8B;</p>
-<ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python">    img = cv2.imread(<span class="hljs-string">&apos;../img/lena.jpg&apos;</span>, <span class="hljs-number">0</span>)
-    template = cv2.imread(<span class="hljs-string">&apos;../img/face.jpg&apos;</span>,<span class="hljs-number">0</span>)
-    h,w = template.shape[:<span class="hljs-number">2</span>]
-    methods = [<span class="hljs-string">&apos;cv2.TM_CCOEFF&apos;</span>, <span class="hljs-string">&apos;cv2.TM_CCOEFF_NORMED&apos;</span>, <span class="hljs-string">&apos;cv2.TM_CCORR&apos;</span>,
-               <span class="hljs-string">&apos;cv2.TM_CCORR_NORMED&apos;</span>, <span class="hljs-string">&apos;cv2.TM_SQDIFF&apos;</span>, <span class="hljs-string">&apos;cv2.TM_SQDIFF_NORMED&apos;</span>]
-    <span class="hljs-comment"># &#x6A21;&#x677F;&#x5339;&#x914D;</span>
-    res = cv2.matchTemplate(img, template, cv2.TM_SQDIFF)
-    <span class="hljs-comment"># &#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4F4D;&#x7F6E;&#xFF0C;&#x6700;&#x5927;&#x503C;&#x4F4D;&#x7F6E;</span>
-    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
-    <span class="hljs-comment"># &#x7ED8;&#x56FE;&#x6BD4;&#x8F83;</span>
-    <span class="hljs-keyword">for</span> meth <span class="hljs-keyword">in</span> methods:
-        img2 = img.copy()
-
-        <span class="hljs-comment"># &#x5339;&#x914D;&#x65B9;&#x6CD5;&#x7684;&#x771F;&#x503C;</span>
-        method = eval(meth)   <span class="hljs-comment"># &#x4E0D;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;</span>
-        res = cv2.matchTemplate(img, template, method)
-        min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
-
-        <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;&#x5E73;&#x65B9;&#x5DEE;&#x5339;&#x914D;TM_SQDIFF&#x6216;&#x5F52;&#x4E00;&#x5316;&#x5E73;&#x65B9;&#x5DEE;&#x5339;&#x914D;TM_SQDIFF_NORMED&#xFF0C;&#x53D6;&#x6700;&#x5C0F;&#x503C;</span>
-        <span class="hljs-keyword">if</span> method <span class="hljs-keyword">in</span> [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
-            top_left = min_loc
-        <span class="hljs-keyword">else</span>:
-            top_left = max_loc
-        bottom_right = (top_left[<span class="hljs-number">0</span>] + w, top_left[<span class="hljs-number">1</span>] + h)
-
-        <span class="hljs-comment"># &#x753B;&#x77E9;&#x5F62;</span>
-        cv2.rectangle(img2, top_left, bottom_right, <span class="hljs-number">255</span>, <span class="hljs-number">2</span>)
-
-        plt.subplot(<span class="hljs-number">121</span>), plt.imshow(res, cmap=<span class="hljs-string">&apos;gray&apos;</span>)
-        plt.xticks([]), plt.yticks([])  <span class="hljs-comment"># &#x9690;&#x85CF;&#x5750;&#x6807;&#x8F74;</span>
-        plt.subplot(<span class="hljs-number">122</span>), plt.imshow(img2, cmap=<span class="hljs-string">&apos;gray&apos;</span>)
-        plt.xticks([]), plt.yticks([])
-        plt.suptitle(meth)
-        plt.show()
-</code></pre>
-</li>
-<li><p>&#x5C55;&#x793A;</p>
-<ul>
-<li>&#x6A21;&#x677F;</li>
-<li><img src="imgs/1fcdfce7-ee1a-4165-8410-28039a3b25ab-5771924.jpg" alt=""></li>
-<li><img src="imgs/4fbf89b7-0da4-4e66-9a85-3c8ab6876f16-5771924.jpg" alt=""></li>
-<li><img src="imgs/a6e78eed-5ee2-4041-8650-6684fab83a55-5771924.jpg" alt=""></li>
-<li><img src="imgs/0cc615a5-ec58-4825-acdf-8241a321ac48-5771924.jpg" alt=""></li>
-<li><img src="imgs/d666f295-484f-4591-8813-d733630a2bb1-5771924.jpg" alt=""></li>
-<li><img src="imgs/436a2770-f064-49c8-9816-63d40075f5e9-5771924.jpg" alt=""></li>
-<li><img src="imgs/73cb1479-9f49-47c1-82a8-11fcf71b7202-5771924.jpg" alt=""></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>&#x5339;&#x914D;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;</p>
-<ul>
-<li><p>&#x4EE3;&#x7801;</p>
-<pre><code class="lang-python">    img_rgb = cv2.imread(<span class="hljs-string">&apos;../img/mario.jpg&apos;</span>)
-    img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
-    template = cv2.imread(<span class="hljs-string">&apos;../img/mario_coin.jpg&apos;</span>, <span class="hljs-number">0</span>)
-    h, w = template.shape[:<span class="hljs-number">2</span>]
-
-    res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
-    threshold = <span class="hljs-number">0.8</span>
-    <span class="hljs-comment"># &#x53D6;&#x5339;&#x914D;&#x7A0B;&#x5EA6;&#x5927;&#x4E8E;%80&#x7684;&#x5750;&#x6807;</span>
-    loc = np.where(res &gt;= threshold)
-    <span class="hljs-comment"># *&#x53F7;&#x8868;&#x793A;&#x53EF;&#x9009;&#x53C2;&#x6570;</span>
-    <span class="hljs-keyword">for</span> pt <span class="hljs-keyword">in</span> zip(*loc[::<span class="hljs-number">-1</span>]): 
-        bottom_right = (pt[<span class="hljs-number">0</span>] + w, pt[<span class="hljs-number">1</span>] + h)
-        cv2.rectangle(img_rgb, pt, bottom_right, (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>), <span class="hljs-number">2</span>)
-
-    show_img([template, img_rgb])
-</code></pre>
-</li>
-<li><p><img src="imgs/6e1749e6-220e-4fef-8907-f702b8af2d8e-5771924.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
 
                                 
                                 </section>
@@ -8845,10 +8439,14 @@ A-a+1)x(B-b+1)</p>
 
             
                 
-                <a href="01-图像基本操作.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 图像基本操作">
+                <a href="03-图像处理-滤波-形态学处理.html" class="navigation navigation-prev " aria-label="Previous page: 滤波-形态学处理">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="05-图像处理-图像轮廓及绘制图形.html" class="navigation navigation-next " aria-label="Next page: 图像轮廓及绘制图形">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -8857,7 +8455,7 @@ A-a+1)x(B-b+1)</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图像处理","level":"2.3.5.2","depth":3,"next":{"title":"Pyinstaller","level":"2.3.6","depth":2,"ref":"","articles":[{"title":"pyInstaller打包基础","level":"2.3.6.1","depth":3,"path":"Python/第三方库/PyInstaller/01-pyInstaller打包基础.md","ref":"./Python/第三方库/PyInstaller/01-pyInstaller打包基础.md","articles":[]}]},"previous":{"title":"图像基本操作","level":"2.3.5.1","depth":3,"path":"Python/第三方库/OpenCV/01-图像基本操作.md","ref":"./Python/第三方库/OpenCV/01-图像基本操作.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/第三方库/OpenCV/02-图像处理.md","mtime":"2024-05-30T13:54:19.002Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-05-31T11:07:08.534Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图像梯度-边缘检测-图像金字塔","level":"2.3.5.4","depth":3,"next":{"title":"图像轮廓及绘制图形","level":"2.3.5.5","depth":3,"path":"Python/第三方库/OpenCV/05-图像处理-图像轮廓及绘制图形.md","ref":"./Python/第三方库/OpenCV/05-图像处理-图像轮廓及绘制图形.md","articles":[]},"previous":{"title":"滤波-形态学处理","level":"2.3.5.3","depth":3,"path":"Python/第三方库/OpenCV/03-图像处理-滤波-形态学处理.md","ref":"./Python/第三方库/OpenCV/03-图像处理-滤波-形态学处理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/第三方库/OpenCV/04-图像处理-图像梯度-边缘检测-图像金字塔.md","mtime":"2024-06-03T12:08:40.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-03T12:56:53.881Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

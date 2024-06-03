@@ -165,7 +165,12 @@
 
     - OpenCV
         - [图像基本操作](./Python/第三方库/OpenCV/01-图像基本操作.md)
-        - [图像处理](./Python/第三方库/OpenCV/02-图像处理.md)
+        <!-- - [图像处理](./Python/第三方库/OpenCV/02-图像处理.md) -->
+        - [灰度二值化HSV](./Python/第三方库/OpenCV/02-图像处理-灰度二值化HSV.md)
+        - [滤波-形态学处理](./Python/第三方库/OpenCV/03-图像处理-滤波-形态学处理.md)
+        - [图像梯度-边缘检测-图像金字塔](./Python/第三方库/OpenCV/04-图像处理-图像梯度-边缘检测-图像金字塔.md)
+        - [图像轮廓及绘制图形](./Python/第三方库/OpenCV/05-图像处理-图像轮廓及绘制图形.md)
+        - [图像模板匹配](./Python/第三方库/OpenCV/06-图像处理-图像模板匹配.md)
     - Pyinstaller
         - [pyInstaller打包基础](./Python/第三方库/PyInstaller/01-pyInstaller打包基础.md)
     - ZeroMQ
