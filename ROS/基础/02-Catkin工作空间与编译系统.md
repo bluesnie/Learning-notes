@@ -82,53 +82,42 @@ package还有launch文件，配置文件（yaml）。launch用于每次可以运
 
 ![](./imgs/20210719004601253.png)
 
+## 在ROS的noetic版本中通过rosrun运行python文件
 
+- 不要将`python`文件放入`src`目录中，否则后续编译工作空间会报如图所示的错误。首先要在功能包文件夹（`catkin_ws/src/learnning_topic`）中创建一个`scripts`(文件夹名可任意，但默认为`scripts`)目录来存放`python`脚本文件
 
+    ![](./imgs/f1a57a7f6c9dfef65fad9763161e5b51.png)
 
+- 将以下内容添加到`CMakeLists.txt`文件中，确保正确安装`Python`脚本，并使用合适的`Python`解释器：
 
+    ```text
+    catkin_install_python(PROGRAMS
+    scripts/pose_subscriber.py #代码文件夹/py文件名
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+    )
+    ```
 
+- 多个python文件则为：
 
+    ```text
+    catkin_install_python(PROGRAMS
+    scripts/pose_subscriber.py scripts/velocity_publisher.py #代码文件夹/py文件名 代码文件夹/py文件名
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+    )
+    ```
 
+- 编译启动
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ```shell
+    cd ~/catkin_ws/
+    catkin_make
+    source devel/setup.bash
+    rosrun learnning_topic pose_subscriber.py
+    ```
 
 # Metapackage
 
 把一系列包组织起来，安装使用方便
 
 ![](./imgs/20210719015915250.png)
+
