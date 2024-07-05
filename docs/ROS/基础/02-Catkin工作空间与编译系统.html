@@ -8261,6 +8261,33 @@ $ echo $ROS_PACKAGE_PATH
 <img src="imgs/20210719004425791.png" alt=""></p>
 <h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
 <p><img src="imgs/20210719004601253.png" alt=""></p>
+<h2 id="&#x5728;ros&#x7684;noetic&#x7248;&#x672C;&#x4E2D;&#x901A;&#x8FC7;rosrun&#x8FD0;&#x884C;python&#x6587;&#x4EF6;">&#x5728;ROS&#x7684;noetic&#x7248;&#x672C;&#x4E2D;&#x901A;&#x8FC7;rosrun&#x8FD0;&#x884C;python&#x6587;&#x4EF6;</h2>
+<ul>
+<li><p>&#x4E0D;&#x8981;&#x5C06;<code>python</code>&#x6587;&#x4EF6;&#x653E;&#x5165;<code>src</code>&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x5426;&#x5219;&#x540E;&#x7EED;&#x7F16;&#x8BD1;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x4F1A;&#x62A5;&#x5982;&#x56FE;&#x6240;&#x793A;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x9996;&#x5148;&#x8981;&#x5728;&#x529F;&#x80FD;&#x5305;&#x6587;&#x4EF6;&#x5939;&#xFF08;<code>catkin_ws/src/learnning_topic</code>&#xFF09;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>scripts</code>(&#x6587;&#x4EF6;&#x5939;&#x540D;&#x53EF;&#x4EFB;&#x610F;&#xFF0C;&#x4F46;&#x9ED8;&#x8BA4;&#x4E3A;<code>scripts</code>)&#x76EE;&#x5F55;&#x6765;&#x5B58;&#x653E;<code>python</code>&#x811A;&#x672C;&#x6587;&#x4EF6;</p>
+<p>  <img src="imgs/f1a57a7f6c9dfef65fad9763161e5b51.png" alt=""></p>
+</li>
+<li><p>&#x5C06;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x6DFB;&#x52A0;&#x5230;<code>CMakeLists.txt</code>&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x786E;&#x4FDD;&#x6B63;&#x786E;&#x5B89;&#x88C5;<code>Python</code>&#x811A;&#x672C;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;<code>Python</code>&#x89E3;&#x91CA;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-text">  catkin_install_python(PROGRAMS
+  scripts/pose_subscriber.py #&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x5939;/py&#x6587;&#x4EF6;&#x540D;
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
+</code></pre>
+</li>
+<li><p>&#x591A;&#x4E2A;python&#x6587;&#x4EF6;&#x5219;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-text">  catkin_install_python(PROGRAMS
+  scripts/pose_subscriber.py scripts/velocity_publisher.py #&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x5939;/py&#x6587;&#x4EF6;&#x540D; &#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x5939;/py&#x6587;&#x4EF6;&#x540D;
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
+</code></pre>
+</li>
+<li><p>&#x7F16;&#x8BD1;&#x542F;&#x52A8;</p>
+<pre><code class="lang-shell">  cd ~/catkin_ws/
+  catkin_make
+  source devel/setup.bash
+  rosrun learnning_topic pose_subscriber.py
+</code></pre>
+</li>
+</ul>
 <h1 id="metapackage">Metapackage</h1>
 <p>&#x628A;&#x4E00;&#x7CFB;&#x5217;&#x5305;&#x7EC4;&#x7EC7;&#x8D77;&#x6765;&#xFF0C;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#x65B9;&#x4FBF;</p>
 <p><img src="imgs/20210719015915250.png" alt=""></p>
@@ -8307,7 +8334,7 @@ $ echo $ROS_PACKAGE_PATH
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Catkin工作空间编译系统","level":"9.1.1.3","depth":3,"next":{"title":"ROS通信架构上","level":"9.1.1.4","depth":3,"path":"ROS/基础/03-ROS通信架构上.md","ref":"ROS/基础/03-ROS通信架构上.md","articles":[]},"previous":{"title":"什么是ROS","level":"9.1.1.2","depth":3,"path":"ROS/基础/01-什么是ROS.md","ref":"ROS/基础/01-什么是ROS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ROS/基础/02-Catkin工作空间与编译系统.md","mtime":"2024-05-27T02:26:33.606Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-20T06:16:54.307Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Catkin工作空间编译系统","level":"9.1.1.3","depth":3,"next":{"title":"ROS通信架构上","level":"9.1.1.4","depth":3,"path":"ROS/基础/03-ROS通信架构上.md","ref":"ROS/基础/03-ROS通信架构上.md","articles":[]},"previous":{"title":"什么是ROS","level":"9.1.1.2","depth":3,"path":"ROS/基础/01-什么是ROS.md","ref":"ROS/基础/01-什么是ROS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ROS/基础/02-Catkin工作空间与编译系统.md","mtime":"2024-06-21T02:25:23.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-05T03:23:03.207Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
