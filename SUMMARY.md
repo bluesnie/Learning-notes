@@ -327,7 +327,7 @@
     - [Redis基础](Database/NoSQL/Redis/01-Redis基础.md)
     - [Redis开发规范](Database/NoSQL/Redis/03-Redis开发规范.md)
 
-## 数据分析
+## 机器学习
 
 [comment]: <> (- 数学基础)
 
@@ -360,6 +360,11 @@
 [comment]: <> (    - [特征值与特征向量]&#40;./MachineLearning/数学基础/特征值与特征向量.pdf&#41;)
 
 [comment]: <> (    - [矩阵]&#40;./MachineLearning/数学基础/矩阵.pdf&#41;)
+
+- 深度学习
+  - [安装](./MachineLearning/DeepLearning/chapter_installation/index.md)
+  - [符号](./MachineLearning/DeepLearning/chapter_notation/index.md)
+  - [引言](./MachineLearning/DeepLearning/chapter_introduction/index.md)
 
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)

@@ -4,6 +4,8 @@
 
 > 笔记格式：`{ { } }` 写成 `{ { } }` ， `{ % % }` 写成 `{ % % }`，空格隔开
 >
+> 数学公式可以先用一个 `$`编写，`vscode`可以显示，然后再替换成两个`$$`，生成的文档才能显示
+>
 > [gitbook 生成文档](https://github.com/bluesnie/git_test)
 >
 > 注意：SUMMARY.md 目录中有的 markdown 才会转成静态 html, 并且才能全局搜索得到
@@ -407,7 +409,7 @@
       | [Redis缓存与数据库Mysql一致性方案](Database/NoSQL/Redis/01-Redis基础.md#redis缓存与数据库mysql一致性方案)
 - [Redis开发规范](Database/NoSQL/Redis/03-Redis开发规范.md)
 
-## [数据分析](./MachineLearning/)
+## [机器学习](./MachineLearning/)
 
 ### [数学基础](./MachineLearning/数学基础)
 
@@ -433,6 +435,11 @@
   | [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
   | [pandas连接合并追加](./MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.md)
   | [matplotlib基础](./MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md)
+
+### [深度学习](./MachineLearning/DeepLearning)
+  - [安装](./MachineLearning/DeepLearning/chapter_installation/index.md)
+  - [符号](./MachineLearning/DeepLearning/chapter_notation/index.md)
+  - [引言](./MachineLearning/DeepLearning/chapter_introduction/index.md)
 
 ## [Web前端](./Web/)
 

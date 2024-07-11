@@ -2,7 +2,7 @@
 
 ###### author:nzb
 
-本项目源于《[动手学深度学习](https://github.com/d2l-ai/d2l-zh)》，添加了一些自己的学习笔记，分别搜索查阅。正版GitHub地址：https://github.com/d2l-ai/d2l-zh
+本项目源于《[动手学深度学习](https://github.com/d2l-ai/d2l-zh)》，添加了一些自己的学习笔记，方便搜索查阅。正版GitHub地址：https://github.com/d2l-ai/d2l-zh
 
 # 安装
 
