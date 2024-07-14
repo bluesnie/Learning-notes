@@ -440,6 +440,10 @@
   - [安装](./MachineLearning/DeepLearning/chapter_installation/index.md)
   - [符号](./MachineLearning/DeepLearning/chapter_notation/index.md)
   - [引言](./MachineLearning/DeepLearning/chapter_introduction/index.md)
+  - 预备知识
+      - [数据操作](./MachineLearning/DeepLearning/chapter_preliminaries/ndarray.md)
+      - [数据预处理](./MachineLearning/DeepLearning/chapter_preliminaries/pandas.md)
+      - [线性代数](./MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md)
 
 ## [Web前端](./Web/)
 
