@@ -369,6 +369,7 @@
       - [数据操作](./MachineLearning/DeepLearning/chapter_preliminaries/ndarray.md)
       - [数据预处理](./MachineLearning/DeepLearning/chapter_preliminaries/pandas.md)
       - [线性代数](./MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md)
+      - [微积分](./MachineLearning/DeepLearning/chapter_preliminaries/calculus.md)
 
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
