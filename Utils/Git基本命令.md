@@ -241,21 +241,52 @@ git commit -m "Update submodule"
 - 删除子模块
 
 ```shell
-git submodule deinit <path>
-git rm <path>
-rm -rf .git/modules/<path>
-```
-
-- 切换全部子项目分支
-
-```shell
-git submodule foreach -q 'git checkout <branch_name>'
+git submodule deinit -f <path/name>  # path 可以在.gitmodule里面查看,使用 -f 选项来放弃子模块目录中的任何本地更改。 如果没有这个选项，子模块中如果有任何未提交的更改，命令可能会失败。
+rm -rf .git/modules/<path/name>
+git config -f .gitmodules --remove-section submodule.<path/name>
+$ git add .gitmodules
+git rm --cached <path/name>
+git add .
+git commit -m 'rm submodule:<path/name>'
 ```
 
 - 递归克隆包含子项目的仓库
 
 ```shell
 git clone --recurse-submodules <repository>
+```
+
+### git submodule foreach 
+- 切换全部子项目分支
+
+```shell
+git submodule foreach 'git checkout <branch_name>'
+```
+
+- 更新拉取所有子项目
+```shell
+git submodule foreach git pull
+```
+
+- 解决 git 在子模块中执行报错后直接退出，而是继续执行
+```shell
+git submodule foreach '其他命令 || :'
+或
+git submodule foreach '其他命令 || true'
+```
+
+- 选择跳过
+```shell
+ git submodule foreach 'case $name in a-Module|b-Module|c-Module) ;; *) git status ;; esac'  
+ # 两个;;前都可以加命令
+ git submodule foreach 'case $name in a-Module|b-Module|c-Module) echo "Processing submodule----------->: $name" ;; *) git status ;; esac'
+```
+这个命令是去批量执行，如果遇到 a-Module，b-Module，c-Module 中的任何一个，什么都不操作，其他的子模块中，执行 git status。
+测试后，的确可以跳过 a-Module|b-Module|c-Module 这三个模块进行处理。
+
+- 选择某些子项目操作
+```shell
+git submodule foreach 'case $name in a-Module|b-Module) git  branch;; esac'
 ```
 
 ## 多个github账号克隆

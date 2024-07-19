@@ -4140,6 +4140,32 @@
             
         </li>
     
+        <li class="chapter " data-level="7.1.4.4" data-path="../MachineLearning/DeepLearning/chapter_preliminaries/calculus.html">
+            
+                <a href="../MachineLearning/DeepLearning/chapter_preliminaries/calculus.html">
+            
+                    
+                    微积分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4.5" data-path="../MachineLearning/DeepLearning/chapter_preliminaries/autograd.html">
+            
+                <a href="../MachineLearning/DeepLearning/chapter_preliminaries/autograd.html">
+            
+                    
+                    自动微分
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -8489,20 +8515,49 @@ git commit -m &quot;Update submodule&quot;
 <ul>
 <li>&#x5220;&#x9664;&#x5B50;&#x6A21;&#x5757;</li>
 </ul>
-<pre><code class="lang-shell">git submodule deinit &lt;path&gt;
-git rm &lt;path&gt;
-rm -rf .git/modules/&lt;path&gt;
-</code></pre>
-<ul>
-<li>&#x5207;&#x6362;&#x5168;&#x90E8;&#x5B50;&#x9879;&#x76EE;&#x5206;&#x652F;</li>
-</ul>
-<pre><code class="lang-shell">git submodule foreach -q &apos;git checkout &lt;branch_name&gt;&apos;
+<pre><code class="lang-shell">git submodule deinit -f &lt;path/name&gt;  # path &#x53EF;&#x4EE5;&#x5728;.gitmodule&#x91CC;&#x9762;&#x67E5;&#x770B;,&#x4F7F;&#x7528; -f &#x9009;&#x9879;&#x6765;&#x653E;&#x5F03;&#x5B50;&#x6A21;&#x5757;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x672C;&#x5730;&#x66F4;&#x6539;&#x3002; &#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x5B50;&#x6A21;&#x5757;&#x4E2D;&#x5982;&#x679C;&#x6709;&#x4EFB;&#x4F55;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x66F4;&#x6539;&#xFF0C;&#x547D;&#x4EE4;&#x53EF;&#x80FD;&#x4F1A;&#x5931;&#x8D25;&#x3002;
+rm -rf .git/modules/&lt;path/name&gt;
+git config -f .gitmodules --remove-section submodule.&lt;path/name&gt;
+$ git add .gitmodules
+git rm --cached &lt;path/name&gt;
+git add .
+git commit -m &apos;rm submodule:&lt;path/name&gt;&apos;
 </code></pre>
 <ul>
 <li>&#x9012;&#x5F52;&#x514B;&#x9686;&#x5305;&#x542B;&#x5B50;&#x9879;&#x76EE;&#x7684;&#x4ED3;&#x5E93;</li>
 </ul>
 <pre><code class="lang-shell">git clone --recurse-submodules &lt;repository&gt;
 </code></pre>
+<h3 id="git-submodule-foreach">git submodule foreach</h3>
+<ul>
+<li>&#x5207;&#x6362;&#x5168;&#x90E8;&#x5B50;&#x9879;&#x76EE;&#x5206;&#x652F;</li>
+</ul>
+<pre><code class="lang-shell">git submodule foreach &apos;git checkout &lt;branch_name&gt;&apos;
+</code></pre>
+<ul>
+<li><p>&#x66F4;&#x65B0;&#x62C9;&#x53D6;&#x6240;&#x6709;&#x5B50;&#x9879;&#x76EE;</p>
+<pre><code class="lang-shell">git submodule foreach git pull
+</code></pre>
+</li>
+<li><p>&#x89E3;&#x51B3; git &#x5728;&#x5B50;&#x6A21;&#x5757;&#x4E2D;&#x6267;&#x884C;&#x62A5;&#x9519;&#x540E;&#x76F4;&#x63A5;&#x9000;&#x51FA;&#xFF0C;&#x800C;&#x662F;&#x7EE7;&#x7EED;&#x6267;&#x884C;</p>
+<pre><code class="lang-shell">git submodule foreach &apos;&#x5176;&#x4ED6;&#x547D;&#x4EE4; || :&apos;
+&#x6216;
+git submodule foreach &apos;&#x5176;&#x4ED6;&#x547D;&#x4EE4; || true&apos;
+</code></pre>
+</li>
+<li><p>&#x9009;&#x62E9;&#x8DF3;&#x8FC7;</p>
+<pre><code class="lang-shell">git submodule foreach &apos;case $name in a-Module|b-Module|c-Module) ;; *) git status ;; esac&apos;  
+# &#x4E24;&#x4E2A;;;&#x524D;&#x90FD;&#x53EF;&#x4EE5;&#x52A0;&#x547D;&#x4EE4;
+git submodule foreach &apos;case $name in a-Module|b-Module|c-Module) echo &quot;Processing submodule-----------&gt;: $name&quot; ;; *) git status ;; esac&apos;
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x662F;&#x53BB;&#x6279;&#x91CF;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230; a-Module&#xFF0C;b-Module&#xFF0C;c-Module &#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#xFF0C;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x6267;&#x884C; git status&#x3002;
+&#x6D4B;&#x8BD5;&#x540E;&#xFF0C;&#x7684;&#x786E;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7; a-Module|b-Module|c-Module &#x8FD9;&#x4E09;&#x4E2A;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+</li>
+<li><p>&#x9009;&#x62E9;&#x67D0;&#x4E9B;&#x5B50;&#x9879;&#x76EE;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-shell">git submodule foreach &apos;case $name in a-Module|b-Module) git  branch;; esac&apos;
+</code></pre>
+</li>
+</ul>
 <h2 id="&#x591A;&#x4E2A;github&#x8D26;&#x53F7;&#x514B;&#x9686;">&#x591A;&#x4E2A;github&#x8D26;&#x53F7;&#x514B;&#x9686;</h2>
 <ul>
 <li><a href="https://blog.csdn.net/meng_feng12/article/details/131866917" target="_blank">&#x914D;&#x7F6E;&#x8FDE;&#x63A5;</a></li>
@@ -8644,7 +8699,7 @@ git push
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"12.2","depth":1,"next":{"title":"Nginx","level":"12.3","depth":1,"ref":"","articles":[{"title":"Nginx基础","level":"12.3.1","depth":2,"path":"Utils/Nginx/Nginx基础.md","ref":"Utils/Nginx/Nginx基础.md","articles":[]},{"title":"Nginx进阶","level":"12.3.2","depth":2,"path":"Utils/Nginx/Nginx进阶.md","ref":"Utils/Nginx/Nginx进阶.md","articles":[]}]},"previous":{"title":"FastDFS","level":"12.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Utils/Git基本命令.md","mtime":"2024-07-14T02:35:55.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-14T09:42:39.198Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"12.2","depth":1,"next":{"title":"Nginx","level":"12.3","depth":1,"ref":"","articles":[{"title":"Nginx基础","level":"12.3.1","depth":2,"path":"Utils/Nginx/Nginx基础.md","ref":"Utils/Nginx/Nginx基础.md","articles":[]},{"title":"Nginx进阶","level":"12.3.2","depth":2,"path":"Utils/Nginx/Nginx进阶.md","ref":"Utils/Nginx/Nginx进阶.md","articles":[]}]},"previous":{"title":"FastDFS","level":"12.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Utils/Git基本命令.md","mtime":"2024-07-18T06:53:49.538Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-19T11:21:24.042Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -445,6 +445,7 @@
       - [数据预处理](./MachineLearning/DeepLearning/chapter_preliminaries/pandas.md)
       - [线性代数](./MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md)
       - [微积分](./MachineLearning/DeepLearning/chapter_preliminaries/calculus.md)
+      - [自动微分](./MachineLearning/DeepLearning/chapter_preliminaries/autograd.md)
 
 ## [Web前端](./Web/)
 
