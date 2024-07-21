@@ -373,7 +373,7 @@
       - [自动微分](./MachineLearning/DeepLearning/chapter_preliminaries/autograd.md)
       - [概率](./MachineLearning/DeepLearning/chapter_preliminaries/probability.md)
       - [查阅文档](./MachineLearning/DeepLearning/chapter_preliminaries/lookup-api.md)
-  - 线型神经网络
+  - 线性神经网络
       - [线性回归](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression.md)
 
 - 数据分析库

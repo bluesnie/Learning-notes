@@ -223,7 +223,7 @@ $$\eta$$
 为了实现这一点，需要(**我们对计算进行矢量化，
 从而利用线性代数库，而不是在Python中编写开销高昂的for循环**)。
 
-```{.python .input}
+```python
 #@tab pytorch
 %matplotlib inline
 from d2l import torch as d2l
@@ -238,7 +238,7 @@ import time
 在一种方法中，我们将使用Python的for循环遍历向量；
 在另一种方法中，我们将依赖对`+`的调用。
 
-```{.python .input}
+```python
 #@tab all
 n = 10000
 a = d2l.ones([n])
@@ -247,7 +247,7 @@ b = d2l.ones([n])
 
 由于在本书中我们将频繁地进行运行时间的基准测试，所以[**我们定义一个计时器**]：
 
-```{.python .input}
+```python
 #@tab all
 class Timer:  #@save
     """记录多次运行时间"""
@@ -281,7 +281,7 @@ class Timer:  #@save
 
 首先，[**我们使用for循环，每次执行一位的加法**]。
 
-```{.python .input}
+```python
 #@tab mxnet, pytorch
 c = d2l.zeros(n)
 timer = Timer()
@@ -292,7 +292,7 @@ f'{timer.stop():.5f} sec'
 
 (**或者，我们使用重载的`+`运算符来计算按元素的和**)。
 
-```{.python .input}
+```python
 #@tab all
 timer.start()
 d = a + b
@@ -316,7 +316,7 @@ $$p(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (x - \m
 
 下面[**我们定义一个Python函数来计算正态分布**]。
 
-```{.python .input}
+```python
 #@tab all
 def normal(x, mu, sigma):
     p = 1 / math.sqrt(2 * math.pi * sigma**2)
@@ -325,7 +325,7 @@ def normal(x, mu, sigma):
 
 我们现在(**可视化正态分布**)。
 
-```{.python .input}
+```python
 #@tab pytorch, tensorflow, paddle
 # 再次使用numpy进行可视化
 x = np.arange(-7, 7, 0.01)

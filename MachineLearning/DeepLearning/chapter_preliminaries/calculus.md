@@ -305,7 +305,7 @@ $$  \frac{\partial f(x)}{\partial x}
 = \frac{\partial f}{\partial u} \frac{\partial u}{\partial x} 
 = \frac{1}{2}u^{-\frac{1}{2}}*2*x=\frac{x}{\sqrt{u}}; $$
 
-$$ 因为 f(x) = ||x||_{2} =  \sqrt{{\textstyle \sum_{i=1}^{n}} x^{2}_{i}} = \sqrt{u}; $$
+$$ 因为 f(x) = \left \| x \right \| _{2} =  \sqrt{ {\textstyle \sum_{i=1}^{n} } x^{2}_{i} } = \sqrt{u}; $$
 
 $$ 因此 \nabla x f(x)=(\frac{x_{1}}{\sqrt{ {\textstyle \sum_{i=1}^{n}x^{2}_{i}} } }, ..., \frac{x_{n}}{\sqrt{ {\textstyle \sum_{i=1}^{n}x^{2}_{i}} } } )
-= \frac{x}{||x||_{2}} $$
+= \frac{x}{ \left \| x \right \|_{2}} $$

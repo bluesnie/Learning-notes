@@ -4168,6 +4168,64 @@
             
         </li>
     
+        <li class="chapter " data-level="7.1.4.6" data-path="probability.html">
+            
+                <a href="probability.html">
+            
+                    
+                    概率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4.7" data-path="lookup-api.html">
+            
+                <a href="lookup-api.html">
+            
+                    
+                    查阅文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" >
+            
+                <span>
+            
+                    
+                    线性神经网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.5.1" data-path="../chapter_linear-networks/linear-regression.html">
+            
+                <a href="../chapter_linear-networks/linear-regression.html">
+            
+                    
+                    线性回归
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -8388,7 +8446,7 @@
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(x)</span>:</span>
     <span class="hljs-keyword">return</span> <span class="hljs-number">3</span> * x ** <span class="hljs-number">2</span> - <span class="hljs-number">4</span> * x
 </code></pre>
-<p><a href="2.4.1"><strong>&#x901A;&#x8FC7;&#x4EE4;<script type="math/tex; ">x=1</script>&#x5E76;&#x8BA9;<script type="math/tex; ">h</script>&#x63A5;&#x8FD1;<script type="math/tex; ">0</script>&#xFF0C;</strong></a>&#x4E2D;(<strong><script type="math/tex; ">\frac{f(x+h)-f(x)}{h}</script>&#x7684;&#x6570;&#x503C;&#x7ED3;&#x679C;&#x63A5;&#x8FD1;<script type="math/tex; ">2</script></strong>)&#x3002;
+<p><strong>&#x901A;&#x8FC7;&#x4EE4;<script type="math/tex; ">x=1</script>&#x5E76;&#x8BA9;<script type="math/tex; ">h</script>&#x63A5;&#x8FD1;<script type="math/tex; ">0</script>&#xFF0C;</strong>(2.4.1)&#x4E2D;(<strong><script type="math/tex; ">\frac{f(x+h)-f(x)}{h}</script>&#x7684;&#x6570;&#x503C;&#x7ED3;&#x679C;&#x63A5;&#x8FD1;<script type="math/tex; ">2</script></strong>)&#x3002;
 &#x867D;&#x7136;&#x8FD9;&#x4E2A;&#x5B9E;&#x9A8C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B66;&#x8BC1;&#x660E;&#xFF0C;&#x4F46;&#x7A0D;&#x540E;&#x4F1A;&#x770B;&#x5230;&#xFF0C;&#x5F53;<script type="math/tex; ">x=1</script>&#x65F6;&#xFF0C;&#x5BFC;&#x6570;<script type="math/tex; ">u'</script>&#x662F;<script type="math/tex; ">2</script>&#x3002;</p>
 <pre><code class="lang-python"><span class="hljs-comment">#@tab all</span>
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">numerical_lim</span><span class="hljs-params">(f, x, h)</span>:</span>
@@ -8398,6 +8456,12 @@ h = <span class="hljs-number">0.1</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
     print(f<span class="hljs-string">&apos;h={h:.5f}, numerical limit={numerical_lim(f, 1, h):.5f}&apos;</span>)
     h *= <span class="hljs-number">0.1</span>
+
+<span class="hljs-comment"># h=0.10000, numerical limit=2.30000</span>
+<span class="hljs-comment"># h=0.01000, numerical limit=2.03000</span>
+<span class="hljs-comment"># h=0.00100, numerical limit=2.00300</span>
+<span class="hljs-comment"># h=0.00010, numerical limit=2.00030</span>
+<span class="hljs-comment"># h=0.00001, numerical limit=2.00003</span>
 </code></pre>
 <p>&#x8BA9;&#x6211;&#x4EEC;&#x719F;&#x6089;&#x4E00;&#x4E0B;&#x5BFC;&#x6570;&#x7684;&#x51E0;&#x4E2A;&#x7B49;&#x4EF7;&#x7B26;&#x53F7;&#x3002;
 &#x7ED9;&#x5B9A;<script type="math/tex; ">y=f(x)</script>&#xFF0C;&#x5176;&#x4E2D;<script type="math/tex; ">x</script>&#x548C;<script type="math/tex; ">y</script>&#x5206;&#x522B;&#x662F;&#x51FD;&#x6570;<script type="math/tex; ">f</script>&#x7684;&#x81EA;&#x53D8;&#x91CF;&#x548C;&#x56E0;&#x53D8;&#x91CF;&#x3002;&#x4EE5;&#x4E0B;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF1A;</p>
@@ -8500,6 +8564,7 @@ h = <span class="hljs-number">0.1</span>
 x = np.arange(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0.1</span>)
 plot(x, [f(x), <span class="hljs-number">2</span> * x - <span class="hljs-number">3</span>], <span class="hljs-string">&apos;x&apos;</span>, <span class="hljs-string">&apos;f(x)&apos;</span>, legend=[<span class="hljs-string">&apos;f(x)&apos;</span>, <span class="hljs-string">&apos;Tangent line (x=1)&apos;</span>])
 </code></pre>
+<p><img src="../img/output_calculus_7e7694_41_1.svg" alt=""></p>
 <blockquote>
 <p><script type="math/tex; "> f(x) = 3x ^ 2 - 4x  </script> &#x5728; x=1&#xFF0C;&#x7684;&#x5207;&#x7EBF;&#x4E3A;&#x4EC0;&#x4E48;&#x662F; <script type="math/tex; "> 2x-3 </script></p>
 <p>&#x5BFC;&#x6570;&#xFF1A;<script type="math/tex; "> k = f'(x) = 6x - 4 </script>&#xFF0C;x=1&#x4EE3;&#x5165;&#xFF0C;&#x5373;&#x659C;&#x7387;k = 2</p>
@@ -8563,6 +8628,15 @@ plot(x, [f(x), <span class="hljs-number">2</span> * x - <span class="hljs-number
 </ol>
 <p><img src="../img/2874e9507ba661f92a0636d3fa7abe019e6ffaf3.jpeg" alt=""></p>
 <p><img src="../img/57518e0c345e5b6aa5aa859bc8bc192259751e65.png" alt=""></p>
+<ul>
+<li>&#x7B2C;&#x4E09;&#x9898;</li>
+</ul>
+<p><script type="math/tex; ">  \frac{\partial f(x)}{\partial x}  
+= \frac{\partial f}{\partial u} \frac{\partial u}{\partial x} 
+= \frac{1}{2}u^{-\frac{1}{2}}*2*x=\frac{x}{\sqrt{u}}; </script></p>
+<p><script type="math/tex; "> 因为 f(x) = \left \| x \right \| _{2} =  \sqrt{ {\textstyle \sum_{i=1}^{n} } x^{2}_{i} } = \sqrt{u}; </script></p>
+<p><script type="math/tex; "> 因此 \nabla x f(x)=(\frac{x_{1}}{\sqrt{ {\textstyle \sum_{i=1}^{n}x^{2}_{i}} } }, ..., \frac{x_{n}}{\sqrt{ {\textstyle \sum_{i=1}^{n}x^{2}_{i}} } } )
+= \frac{x}{ \left \| x \right \|_{2}} </script></p>
 
                                 
                                 </section>
@@ -8606,7 +8680,7 @@ plot(x, [f(x), <span class="hljs-number">2</span> * x - <span class="hljs-number
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"微积分","level":"7.1.4.4","depth":3,"next":{"title":"自动微分","level":"7.1.4.5","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/autograd.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/autograd.md","articles":[]},"previous":{"title":"线性代数","level":"7.1.4.3","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"MachineLearning/DeepLearning/chapter_preliminaries/calculus.md","mtime":"2024-07-16T09:49:33.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-19T11:21:24.042Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"微积分","level":"7.1.4.4","depth":3,"next":{"title":"自动微分","level":"7.1.4.5","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/autograd.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/autograd.md","articles":[]},"previous":{"title":"线性代数","level":"7.1.4.3","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"MachineLearning/DeepLearning/chapter_preliminaries/calculus.md","mtime":"2024-07-21T10:38:06.418Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-21T10:39:07.122Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

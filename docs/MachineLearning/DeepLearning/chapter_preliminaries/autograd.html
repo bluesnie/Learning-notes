@@ -69,6 +69,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="probability.html" />
+    
     
     <link rel="prev" href="calculus.html" />
     
@@ -4159,6 +4161,64 @@
             
                     
                     自动微分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4.6" data-path="probability.html">
+            
+                <a href="probability.html">
+            
+                    
+                    概率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4.7" data-path="lookup-api.html">
+            
+                <a href="lookup-api.html">
+            
+                    
+                    查阅文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" >
+            
+                <span>
+            
+                    
+                    线性神经网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.5.1" data-path="../chapter_linear-networks/linear-regression.html">
+            
+                <a href="../chapter_linear-networks/linear-regression.html">
+            
+                    
+                    线性回归
             
                 </a>
             
@@ -8350,83 +8410,73 @@
 <h2 id="&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;">&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;</h2>
 <p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6F14;&#x793A;&#x4F8B;&#x5B50;&#xFF0C;(<strong>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x60F3;&#x5BF9;&#x51FD;&#x6570;$y=2\mathbf{x}^{\top}\mathbf{x}$&#x5173;&#x4E8E;&#x5217;&#x5411;&#x91CF;$\mathbf{x}$&#x6C42;&#x5BFC;</strong>)&#x3002;
 &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x53D8;&#x91CF;<code>x</code>&#x5E76;&#x4E3A;&#x5176;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x503C;&#x3002;</p>
-<p>```{.python .input}</p>
-<h1 id="tab-pytorch">@tab pytorch</h1>
-<p>import torch</p>
-<p>x = torch.arange(4.0)
-x</p>
-<pre><code>
-[**&#x5728;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;$y$&#x5173;&#x4E8E;$\mathbf{x}$&#x7684;&#x68AF;&#x5EA6;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x6765;&#x5B58;&#x50A8;&#x68AF;&#x5EA6;&#x3002;**]
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+<span class="hljs-keyword">import</span> torch
+
+x = torch.arange(<span class="hljs-number">4.0</span>)
+x
+</code></pre>
+<p>[<strong>&#x5728;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;$y$&#x5173;&#x4E8E;$\mathbf{x}$&#x7684;&#x68AF;&#x5EA6;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x6765;&#x5B58;&#x50A8;&#x68AF;&#x5EA6;&#x3002;</strong>]
 &#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x5BF9;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6C42;&#x5BFC;&#x65F6;&#x90FD;&#x5206;&#x914D;&#x65B0;&#x7684;&#x5185;&#x5B58;&#x3002;
 &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x4F1A;&#x6210;&#x5343;&#x4E0A;&#x4E07;&#x6B21;&#x5730;&#x66F4;&#x65B0;&#x76F8;&#x540C;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x5206;&#x914D;&#x65B0;&#x7684;&#x5185;&#x5B58;&#x53EF;&#x80FD;&#x5F88;&#x5FEB;&#x5C31;&#x4F1A;&#x5C06;&#x5185;&#x5B58;&#x8017;&#x5C3D;&#x3002;
-&#x6CE8;&#x610F;&#xFF0C;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#x51FD;&#x6570;&#x5173;&#x4E8E;&#x5411;&#x91CF;$\mathbf{x}$&#x7684;&#x68AF;&#x5EA6;&#x662F;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x4E0E;$\mathbf{x}$&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5F62;&#x72B6;&#x3002;
-
-
-```{.python .input}
-#@tab pytorch
-x.requires_grad_(True)  # &#x7B49;&#x4EF7;&#x4E8E;x=torch.arange(4.0,requires_grad=True)
-x.grad  # &#x9ED8;&#x8BA4;&#x503C;&#x662F;None
-</code></pre><p>(<strong>&#x73B0;&#x5728;&#x8BA1;&#x7B97;$y$&#x3002;</strong>)</p>
-<p>```{.python .input}</p>
-<h1 id="tab-pytorch">@tab pytorch</h1>
-<p>y = 2 * torch.dot(x, x)
-y</p>
-<pre><code>
-
-`x`&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;4&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x8BA1;&#x7B97;`x`&#x548C;`x`&#x7684;&#x70B9;&#x79EF;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x8D4B;&#x503C;&#x7ED9;`y`&#x7684;&#x6807;&#x91CF;&#x8F93;&#x51FA;&#x3002;
-&#x63A5;&#x4E0B;&#x6765;&#xFF0C;[**&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x51FD;&#x6570;&#x6765;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;`y`&#x5173;&#x4E8E;`x`&#x6BCF;&#x4E2A;&#x5206;&#x91CF;&#x7684;&#x68AF;&#x5EA6;**]&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x8FD9;&#x4E9B;&#x68AF;&#x5EA6;&#x3002;
-
-```{.python .input}
-#@tab pytorch
+&#x6CE8;&#x610F;&#xFF0C;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#x51FD;&#x6570;&#x5173;&#x4E8E;&#x5411;&#x91CF;$\mathbf{x}$&#x7684;&#x68AF;&#x5EA6;&#x662F;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x4E0E;$\mathbf{x}$&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5F62;&#x72B6;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+x.requires_grad_(<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x7B49;&#x4EF7;&#x4E8E;x=torch.arange(4.0,requires_grad=True)</span>
+x.grad  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x503C;&#x662F;None</span>
+</code></pre>
+<p>(<strong>&#x73B0;&#x5728;&#x8BA1;&#x7B97;$y$&#x3002;</strong>)</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+y = <span class="hljs-number">2</span> * torch.dot(x, x)
+y
+</code></pre>
+<p><code>x</code>&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;4&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x8BA1;&#x7B97;<code>x</code>&#x548C;<code>x</code>&#x7684;&#x70B9;&#x79EF;&#xFF0C;&#x5F97;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x8D4B;&#x503C;&#x7ED9;<code>y</code>&#x7684;&#x6807;&#x91CF;&#x8F93;&#x51FA;&#x3002;
+&#x63A5;&#x4E0B;&#x6765;&#xFF0C;[<strong>&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x51FD;&#x6570;&#x6765;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;<code>y</code>&#x5173;&#x4E8E;<code>x</code>&#x6BCF;&#x4E2A;&#x5206;&#x91CF;&#x7684;&#x68AF;&#x5EA6;</strong>]&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x8FD9;&#x4E9B;&#x68AF;&#x5EA6;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
 y.backward()
 x.grad
-</code></pre><p>&#x51FD;&#x6570;$y=2\mathbf{x}^{\top}\mathbf{x}$&#x5173;&#x4E8E;$\mathbf{x}$&#x7684;&#x68AF;&#x5EA6;&#x5E94;&#x4E3A;$4\mathbf{x}$&#x3002;
+</code></pre>
+<p>&#x51FD;&#x6570;$y=2\mathbf{x}^{\top}\mathbf{x}$&#x5173;&#x4E8E;$\mathbf{x}$&#x7684;&#x68AF;&#x5EA6;&#x5E94;&#x4E3A;$4\mathbf{x}$&#x3002;
 &#x8BA9;&#x6211;&#x4EEC;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#x8FD9;&#x4E2A;&#x68AF;&#x5EA6;&#x662F;&#x5426;&#x8BA1;&#x7B97;&#x6B63;&#x786E;&#x3002;</p>
-<p>```{.python .input}</p>
-<h1 id="tab-pytorch">@tab pytorch</h1>
-<p>x.grad == 4 * x</p>
-<pre><code>
-[**&#x73B0;&#x5728;&#x8BA1;&#x7B97;`x`&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;**]
-
-
-```{.python .input}
-#@tab pytorch
-# &#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;PyTorch&#x4F1A;&#x7D2F;&#x79EF;&#x68AF;&#x5EA6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6E05;&#x9664;&#x4E4B;&#x524D;&#x7684;&#x503C;
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+x.grad == <span class="hljs-number">4</span> * x
+</code></pre>
+<p>[<strong>&#x73B0;&#x5728;&#x8BA1;&#x7B97;<code>x</code>&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</strong>]</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+<span class="hljs-comment"># &#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;PyTorch&#x4F1A;&#x7D2F;&#x79EF;&#x68AF;&#x5EA6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6E05;&#x9664;&#x4E4B;&#x524D;&#x7684;&#x503C;</span>
 x.grad.zero_()
 y = x.sum()
 y.backward()
 x.grad
-</code></pre><h2 id="&#x975E;&#x6807;&#x91CF;&#x53D8;&#x91CF;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;">&#x975E;&#x6807;&#x91CF;&#x53D8;&#x91CF;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;</h2>
+</code></pre>
+<h2 id="&#x975E;&#x6807;&#x91CF;&#x53D8;&#x91CF;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;">&#x975E;&#x6807;&#x91CF;&#x53D8;&#x91CF;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;</h2>
+<blockquote>
+<p>&#x8BE6;&#x60C5;&#x8BF7;&#x770B;&#x62D3;&#x5C55;&#x77E5;&#x8BC6;&#x70B9;</p>
+</blockquote>
 <p>&#x5F53;<code>y</code>&#x4E0D;&#x662F;&#x6807;&#x91CF;&#x65F6;&#xFF0C;&#x5411;&#x91CF;<code>y</code>&#x5173;&#x4E8E;&#x5411;&#x91CF;<code>x</code>&#x7684;&#x5BFC;&#x6570;&#x7684;&#x6700;&#x81EA;&#x7136;&#x89E3;&#x91CA;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x3002;
 &#x5BF9;&#x4E8E;&#x9AD8;&#x9636;&#x548C;&#x9AD8;&#x7EF4;&#x7684;<code>y</code>&#x548C;<code>x</code>&#xFF0C;&#x6C42;&#x5BFC;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x5F20;&#x91CF;&#x3002;</p>
 <p>&#x7136;&#x800C;&#xFF0C;&#x867D;&#x7136;&#x8FD9;&#x4E9B;&#x66F4;&#x5947;&#x7279;&#x7684;&#x5BF9;&#x8C61;&#x786E;&#x5B9E;&#x51FA;&#x73B0;&#x5728;&#x9AD8;&#x7EA7;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#xFF08;&#x5305;&#x62EC;[<strong>&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;</strong>]&#xFF09;&#xFF0C;
 &#x4F46;&#x5F53;&#x8C03;&#x7528;&#x5411;&#x91CF;&#x7684;&#x53CD;&#x5411;&#x8BA1;&#x7B97;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4F1A;&#x8BD5;&#x56FE;&#x8BA1;&#x7B97;&#x4E00;&#x6279;&#x8BAD;&#x7EC3;&#x6837;&#x672C;&#x4E2D;&#x6BCF;&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x5BFC;&#x6570;&#x3002;
 &#x8FD9;&#x91CC;(<strong>&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x7684;&#x4E0D;&#x662F;&#x8BA1;&#x7B97;&#x5FAE;&#x5206;&#x77E9;&#x9635;&#xFF0C;&#x800C;&#x662F;&#x5355;&#x72EC;&#x8BA1;&#x7B97;&#x6279;&#x91CF;&#x4E2D;&#x6BCF;&#x4E2A;&#x6837;&#x672C;&#x7684;&#x504F;&#x5BFC;&#x6570;&#x4E4B;&#x548C;&#x3002;</strong>)</p>
-<p>```{.python .input}</p>
-<h1 id="tab-pytorch">@tab pytorch</h1>
-<h1 id="&#x5BF9;&#x975E;&#x6807;&#x91CF;&#x8C03;&#x7528;backward&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;gradient&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x5FAE;&#x5206;&#x51FD;&#x6570;&#x5173;&#x4E8E;self&#x7684;&#x68AF;&#x5EA6;&#x3002;">&#x5BF9;&#x975E;&#x6807;&#x91CF;&#x8C03;&#x7528;backward&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;gradient&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x5FAE;&#x5206;&#x51FD;&#x6570;&#x5173;&#x4E8E;self&#x7684;&#x68AF;&#x5EA6;&#x3002;</h1>
-<h1 id="&#x672C;&#x4F8B;&#x53EA;&#x60F3;&#x6C42;&#x504F;&#x5BFC;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x6240;&#x4EE5;&#x4F20;&#x9012;&#x4E00;&#x4E2A;1&#x7684;&#x68AF;&#x5EA6;&#x662F;&#x5408;&#x9002;&#x7684;">&#x672C;&#x4F8B;&#x53EA;&#x60F3;&#x6C42;&#x504F;&#x5BFC;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x6240;&#x4EE5;&#x4F20;&#x9012;&#x4E00;&#x4E2A;1&#x7684;&#x68AF;&#x5EA6;&#x662F;&#x5408;&#x9002;&#x7684;</h1>
-<p>x.grad.zero_()
-y = x * x</p>
-<h1 id="&#x7B49;&#x4EF7;&#x4E8E;ybackwardtorchoneslenx">&#x7B49;&#x4EF7;&#x4E8E;y.backward(torch.ones(len(x)))</h1>
-<p>y.sum().backward()
-x.grad</p>
-<pre><code>
-## &#x5206;&#x79BB;&#x8BA1;&#x7B97;
-
-&#x6709;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;[**&#x5C06;&#x67D0;&#x4E9B;&#x8BA1;&#x7B97;&#x79FB;&#x52A8;&#x5230;&#x8BB0;&#x5F55;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x4E4B;&#x5916;**]&#x3002;
-&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;`y`&#x662F;&#x4F5C;&#x4E3A;`x`&#x7684;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x800C;`z`&#x5219;&#x662F;&#x4F5C;&#x4E3A;`y`&#x548C;`x`&#x7684;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x7684;&#x3002;
-&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8BA1;&#x7B97;`z`&#x5173;&#x4E8E;`x`&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x67D0;&#x79CD;&#x539F;&#x56E0;&#xFF0C;&#x5E0C;&#x671B;&#x5C06;`y`&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x5E38;&#x6570;&#xFF0C;
-&#x5E76;&#x4E14;&#x53EA;&#x8003;&#x8651;&#x5230;`x`&#x5728;`y`&#x88AB;&#x8BA1;&#x7B97;&#x540E;&#x53D1;&#x6325;&#x7684;&#x4F5C;&#x7528;&#x3002;
-
-&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5206;&#x79BB;`y`&#x6765;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x53D8;&#x91CF;`u`&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x4E0E;`y`&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#xFF0C;
-&#x4F46;&#x4E22;&#x5F03;&#x8BA1;&#x7B97;&#x56FE;&#x4E2D;&#x5982;&#x4F55;&#x8BA1;&#x7B97;`y`&#x7684;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#x3002;
-&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x68AF;&#x5EA6;&#x4E0D;&#x4F1A;&#x5411;&#x540E;&#x6D41;&#x7ECF;`u`&#x5230;`x`&#x3002;
-&#x56E0;&#x6B64;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x51FD;&#x6570;&#x8BA1;&#x7B97;`z=u*x`&#x5173;&#x4E8E;`x`&#x7684;&#x504F;&#x5BFC;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x5C06;`u`&#x4F5C;&#x4E3A;&#x5E38;&#x6570;&#x5904;&#x7406;&#xFF0C;
-&#x800C;&#x4E0D;&#x662F;`z=x*x*x`&#x5173;&#x4E8E;`x`&#x7684;&#x504F;&#x5BFC;&#x6570;&#x3002;
-
-```{.python .input}
-#@tab pytorch
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+<span class="hljs-comment"># &#x5BF9;&#x975E;&#x6807;&#x91CF;&#x8C03;&#x7528;backward&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;gradient&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x5FAE;&#x5206;&#x51FD;&#x6570;&#x5173;&#x4E8E;self&#x7684;&#x68AF;&#x5EA6;&#x3002;</span>
+<span class="hljs-comment"># &#x672C;&#x4F8B;&#x53EA;&#x60F3;&#x6C42;&#x504F;&#x5BFC;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x6240;&#x4EE5;&#x4F20;&#x9012;&#x4E00;&#x4E2A;1&#x7684;&#x68AF;&#x5EA6;&#x662F;&#x5408;&#x9002;&#x7684;</span>
+x.grad.zero_()
+y = x * x
+<span class="hljs-comment"># &#x7B49;&#x4EF7;&#x4E8E;y.backward(torch.ones(len(x)))</span>
+y.sum().backward()
+x.grad
+</code></pre>
+<h2 id="&#x5206;&#x79BB;&#x8BA1;&#x7B97;">&#x5206;&#x79BB;&#x8BA1;&#x7B97;</h2>
+<p>&#x6709;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;[<strong>&#x5C06;&#x67D0;&#x4E9B;&#x8BA1;&#x7B97;&#x79FB;&#x52A8;&#x5230;&#x8BB0;&#x5F55;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x4E4B;&#x5916;</strong>]&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;<code>y</code>&#x662F;&#x4F5C;&#x4E3A;<code>x</code>&#x7684;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x800C;<code>z</code>&#x5219;&#x662F;&#x4F5C;&#x4E3A;<code>y</code>&#x548C;<code>x</code>&#x7684;&#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x7684;&#x3002;
+&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8BA1;&#x7B97;<code>z</code>&#x5173;&#x4E8E;<code>x</code>&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x67D0;&#x79CD;&#x539F;&#x56E0;&#xFF0C;&#x5E0C;&#x671B;&#x5C06;<code>y</code>&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x5E38;&#x6570;&#xFF0C;
+&#x5E76;&#x4E14;&#x53EA;&#x8003;&#x8651;&#x5230;<code>x</code>&#x5728;<code>y</code>&#x88AB;&#x8BA1;&#x7B97;&#x540E;&#x53D1;&#x6325;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5206;&#x79BB;<code>y</code>&#x6765;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x53D8;&#x91CF;<code>u</code>&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x4E0E;<code>y</code>&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#xFF0C;
+&#x4F46;&#x4E22;&#x5F03;&#x8BA1;&#x7B97;&#x56FE;&#x4E2D;&#x5982;&#x4F55;&#x8BA1;&#x7B97;<code>y</code>&#x7684;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#x3002;
+&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x68AF;&#x5EA6;&#x4E0D;&#x4F1A;&#x5411;&#x540E;&#x6D41;&#x7ECF;<code>u</code>&#x5230;<code>x</code>&#x3002;
+&#x56E0;&#x6B64;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x51FD;&#x6570;&#x8BA1;&#x7B97;<code>z=u*x</code>&#x5173;&#x4E8E;<code>x</code>&#x7684;&#x504F;&#x5BFC;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x5C06;<code>u</code>&#x4F5C;&#x4E3A;&#x5E38;&#x6570;&#x5904;&#x7406;&#xFF0C;
+&#x800C;&#x4E0D;&#x662F;<code>z=x*x*x</code>&#x5173;&#x4E8E;<code>x</code>&#x7684;&#x504F;&#x5BFC;&#x6570;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
 x.grad.zero_()
 y = x * x
 u = y.detach()
@@ -8434,50 +8484,209 @@ z = u * x
 
 z.sum().backward()
 x.grad == u
-</code></pre><p>&#x7531;&#x4E8E;&#x8BB0;&#x5F55;&#x4E86;<code>y</code>&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x968F;&#x540E;&#x5728;<code>y</code>&#x4E0A;&#x8C03;&#x7528;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#xFF0C;
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x8BB0;&#x5F55;&#x4E86;<code>y</code>&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x968F;&#x540E;&#x5728;<code>y</code>&#x4E0A;&#x8C03;&#x7528;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#xFF0C;
 &#x5F97;&#x5230;<code>y=x*x</code>&#x5173;&#x4E8E;&#x7684;<code>x</code>&#x7684;&#x5BFC;&#x6570;&#xFF0C;&#x5373;<code>2*x</code>&#x3002;</p>
-<p>```{.python .input}</p>
-<h1 id="tab-pytorch">@tab pytorch</h1>
-<p>x.grad.zero_()
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+x.grad.zero_()
 y.sum().backward()
-x.grad == 2 * x</p>
-<pre><code>
-## Python&#x63A7;&#x5236;&#x6D41;&#x7684;&#x68AF;&#x5EA6;&#x8BA1;&#x7B97;
-
-&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x5FAE;&#x5206;&#x7684;&#x4E00;&#x4E2A;&#x597D;&#x5904;&#x662F;&#xFF1A;
-[**&#x5373;&#x4F7F;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x9700;&#x8981;&#x901A;&#x8FC7;Python&#x63A7;&#x5236;&#x6D41;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6761;&#x4EF6;&#x3001;&#x5FAA;&#x73AF;&#x6216;&#x4EFB;&#x610F;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x68AF;&#x5EA6;**]&#x3002;
-&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;`while`&#x5FAA;&#x73AF;&#x7684;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x548C;`if`&#x8BED;&#x53E5;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;`a`&#x7684;&#x503C;&#x3002;
-
-
-```{.python .input}
-#@tab pytorch
-def f(a):
-    b = a * 2
-    while b.norm() &lt; 1000:
-        b = b * 2
-    if b.sum() &gt; 0:
+x.grad == <span class="hljs-number">2</span> * x
+</code></pre>
+<h2 id="python&#x63A7;&#x5236;&#x6D41;&#x7684;&#x68AF;&#x5EA6;&#x8BA1;&#x7B97;">Python&#x63A7;&#x5236;&#x6D41;&#x7684;&#x68AF;&#x5EA6;&#x8BA1;&#x7B97;</h2>
+<p>&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x5FAE;&#x5206;&#x7684;&#x4E00;&#x4E2A;&#x597D;&#x5904;&#x662F;&#xFF1A;
+[<strong>&#x5373;&#x4F7F;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x9700;&#x8981;&#x901A;&#x8FC7;Python&#x63A7;&#x5236;&#x6D41;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6761;&#x4EF6;&#x3001;&#x5FAA;&#x73AF;&#x6216;&#x4EFB;&#x610F;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x68AF;&#x5EA6;</strong>]&#x3002;
+&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>while</code>&#x5FAA;&#x73AF;&#x7684;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x548C;<code>if</code>&#x8BED;&#x53E5;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;<code>a</code>&#x7684;&#x503C;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(a)</span>:</span>
+    b = a * <span class="hljs-number">2</span>
+    <span class="hljs-keyword">while</span> b.norm() &lt; <span class="hljs-number">1000</span>:  <span class="hljs-comment"># &#x6C42;&#x8303;&#x6570;</span>
+        b = b * <span class="hljs-number">2</span>
+    <span class="hljs-keyword">if</span> b.sum() &gt; <span class="hljs-number">0</span>:
         c = b
-    else:
-        c = 100 * b
-    return c
-</code></pre><p>&#x8BA9;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x3002;</p>
-<p>```{.python .input}</p>
-<h1 id="tab-pytorch">@tab pytorch</h1>
-<p>a = torch.randn(size=(), requires_grad=True)
+    <span class="hljs-keyword">else</span>:
+        c = <span class="hljs-number">100</span> * b
+    <span class="hljs-keyword">return</span> c
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
+a = torch.randn(size=(), requires_grad=<span class="hljs-keyword">True</span>)
 d = f(a)
-d.backward()</p>
-<pre><code>
-&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5206;&#x6790;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x7684;`f`&#x51FD;&#x6570;&#x3002;
-&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5B83;&#x5728;&#x5176;&#x8F93;&#x5165;`a`&#x4E2D;&#x662F;&#x5206;&#x6BB5;&#x7EBF;&#x6027;&#x7684;&#x3002;
-&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;`a`&#xFF0C;&#x5B58;&#x5728;&#x67D0;&#x4E2A;&#x5E38;&#x91CF;&#x6807;&#x91CF;`k`&#xFF0C;&#x4F7F;&#x5F97;`f(a)=k*a`&#xFF0C;&#x5176;&#x4E2D;`k`&#x7684;&#x503C;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;`a`&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x7528;`d/a`&#x9A8C;&#x8BC1;&#x68AF;&#x5EA6;&#x662F;&#x5426;&#x6B63;&#x786E;&#x3002;
-
-
-```{.python .input}
-#@tab pytorch
+d.backward()
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5206;&#x6790;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x7684;<code>f</code>&#x51FD;&#x6570;&#x3002;
+&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5B83;&#x5728;&#x5176;&#x8F93;&#x5165;<code>a</code>&#x4E2D;&#x662F;&#x5206;&#x6BB5;&#x7EBF;&#x6027;&#x7684;&#x3002;
+&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;<code>a</code>&#xFF0C;&#x5B58;&#x5728;&#x67D0;&#x4E2A;&#x5E38;&#x91CF;&#x6807;&#x91CF;<code>k</code>&#xFF0C;&#x4F7F;&#x5F97;<code>f(a)=k*a</code>&#xFF0C;&#x5176;&#x4E2D;<code>k</code>&#x7684;&#x503C;&#x53D6;&#x51B3;&#x4E8E;&#x8F93;&#x5165;<code>a</code>&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x7528;<code>d/a</code>&#x9A8C;&#x8BC1;&#x68AF;&#x5EA6;&#x662F;&#x5426;&#x6B63;&#x786E;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#@tab pytorch</span>
 a.grad == d / a
-</code></pre><h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+</code></pre>
+<h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
 <ul>
 <li>&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x5BFC;&#x6570;&#xFF1A;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5C06;&#x68AF;&#x5EA6;&#x9644;&#x52A0;&#x5230;&#x60F3;&#x8981;&#x5BF9;&#x5176;&#x8BA1;&#x7B97;&#x504F;&#x5BFC;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x8BB0;&#x5F55;&#x76EE;&#x6807;&#x503C;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x6267;&#x884C;&#x5B83;&#x7684;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x8BBF;&#x95EE;&#x5F97;&#x5230;&#x7684;&#x68AF;&#x5EA6;&#x3002;</li>
+</ul>
+<h2 id="&#x62D3;&#x5C55;&#x77E5;&#x8BC6;&#x70B9;-pytorch-autogradbackward&#x8BE6;&#x89E3;">&#x62D3;&#x5C55;&#x77E5;&#x8BC6;&#x70B9; Pytorch autograd,backward&#x8BE6;&#x89E3;</h2>
+<blockquote>
+<p>&#x4EE5;&#x4E0B;&#x7B14;&#x8BB0;&#x57FA;&#x4E8E;Pytorch1.0</p>
+</blockquote>
+<h3 id="tensor">Tensor</h3>
+<p>Pytorch&#x4E2D;&#x6240;&#x6709;&#x7684;&#x8BA1;&#x7B97;&#x5176;&#x5B9E;&#x90FD;&#x53EF;&#x4EE5;&#x56DE;&#x5F52;&#x5230;Tensor&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x5FC5;&#x8981;&#x91CD;&#x65B0;&#x8BA4;&#x8BC6;&#x4E00;&#x4E0B;Tensor&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x67D0;&#x4E2A;Tensor&#x7684;&#x5BFC;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x5176;.requires_grad&#x5C5E;&#x6027;&#x4E3A;True&#x3002;&#x4E3A;&#x65B9;&#x4FBF;&#x8BF4;&#x660E;&#xFF0C;&#x5728;&#x672C;&#x6587;&#x4E2D;&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x53F6;&#x5B50;&#x8282;&#x70B9;(leaf nodes)</strong>&#xFF0C;&#x800C;&#x57FA;&#x4E8E;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x5F97;&#x5230;&#x7684;&#x4E2D;&#x95F4;&#x6216;&#x6700;&#x7EC8;&#x53D8;&#x91CF;&#x5219;&#x53EF;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x7ED3;&#x679C;&#x8282;&#x70B9;</strong>&#x3002;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;x&#x5219;&#x662F;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;y&#x5219;&#x662F;&#x7ED3;&#x679C;&#x8282;&#x70B9;&#x3002;</p>
+<pre><code class="lang-python">x = torch.rand(<span class="hljs-number">3</span>, requires_grad=<span class="hljs-keyword">True</span>) 
+y = x**<span class="hljs-number">2</span>
+z = x + x
+</code></pre>
+<p>&#x53E6;&#x5916;&#x4E00;&#x4E2A;Tensor&#x4E2D;&#x901A;&#x5E38;&#x4F1A;&#x8BB0;&#x5F55;&#x5982;&#x4E0B;&#x56FE;&#x4E2D;&#x6240;&#x793A;&#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>data</code>: &#x5373;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;</li>
+<li><code>requires_grad</code>: &#x8BBE;&#x7F6E;&#x4E3A;True&#x5219;&#x8868;&#x793A;&#x8BE5;Tensor&#x9700;&#x8981;&#x6C42;&#x5BFC;</li>
+<li><code>grad</code>: &#x8BE5;Tensor&#x7684;&#x68AF;&#x5EA6;&#x503C;&#xFF0C;&#x6BCF;&#x6B21;&#x5728;&#x8BA1;&#x7B97;backward&#x65F6;&#x90FD;&#x9700;&#x8981;&#x5C06;&#x524D;&#x4E00;&#x65F6;&#x523B;&#x7684;&#x68AF;&#x5EA6;&#x5F52;&#x96F6;&#xFF0C;&#x5426;&#x5219;&#x68AF;&#x5EA6;&#x503C;&#x4F1A;&#x4E00;&#x76F4;&#x7D2F;&#x52A0;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F1A;&#x5728;&#x540E;&#x9762;&#x8BB2;&#x5230;&#x3002;</li>
+<li><code>grad_fn</code>: &#x53F6;&#x5B50;&#x8282;&#x70B9;&#x901A;&#x5E38;&#x4E3A;<code>None</code>&#xFF0C;&#x53EA;&#x6709;&#x7ED3;&#x679C;&#x8282;&#x70B9;&#x7684;<code>grad_fn</code>&#x624D;&#x6709;&#x6548;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x68AF;&#x5EA6;&#x51FD;&#x6570;&#x662F;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#x3002;&#x4F8B;&#x5982;&#x4E0A;&#x9762;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x4E2D;&#x7684;<code>y.grad_fn=&lt;PowBackward0 at 0x213550af048&gt;, z.grad_fn=&lt;AddBackward0 at 0x2135df11be0&gt;</code></li>
+<li><code>is_leaf</code>: &#x7528;&#x6765;&#x6307;&#x793A;&#x8BE5;Tensor&#x662F;&#x5426;&#x662F;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x3002;</li>
+</ul>
+<p><img src="../img/tensor_grad_graph.png" alt=""></p>
+<p><em>&#x56FE;&#x7247;&#x51FA;&#x5904;&#xFF1A;<a href="https://towardsdatascience.com/pytorch-autograd-understanding-the-heart-of-pytorchs-magic-2686cd94ec95" target="_blank">PyTorch Autograd</a></em></p>
+<p>&#x4E0A;&#x56FE;&#x4E2D;&#x7684;<code>z.is_leaf</code>&#x5E94;&#x8BE5;&#x662F;<code>False</code>&#x3002;&#x539F;&#x56FE;&#x4F5C;&#x8005;&#x5E94;&#x8BE5;&#x662F;&#x753B;&#x9519;&#x4E86;&#x3002;</p>
+<h3 id="torchautogradbackward">torch.autograd.backward</h3>
+<p>&#x6709;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python">x = torch.tensor(<span class="hljs-number">1.0</span>, requires_grad=<span class="hljs-keyword">True</span>)
+y = torch.tensor(<span class="hljs-number">2.0</span>, requires_grad=<span class="hljs-keyword">True</span>)
+z = x**<span class="hljs-number">2</span>+y
+z.backward()
+print(z, x.grad, y.grad)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>tensor(<span class="hljs-number">3.</span>, grad_fn=&lt;AddBackward0&gt;) tensor(<span class="hljs-number">2.</span>) tensor(<span class="hljs-number">1.</span>)
+</code></pre>
+<p>&#x53EF;&#x4EE5;z&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x5B83;&#x7684;backward&#x65B9;&#x6CD5;&#x540E;&#x4F1A;&#x6839;&#x636E;&#x94FE;&#x5F0F;&#x6CD5;&#x5219;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x51FA;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x68AF;&#x5EA6;&#x503C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5982;&#x679C;&#x9047;&#x5230;z&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x6216;&#x8005;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53C8;&#x8BE5;&#x600E;&#x4E48;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x5462;&#xFF1F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49;grad_tensor&#x6765;&#x8BA1;&#x7B97;&#x77E9;&#x9635;&#x7684;&#x68AF;&#x5EA6;&#x3002;&#x5728;&#x4ECB;&#x7ECD;&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;backward&#x7684;&#x63A5;&#x53E3;&#x662F;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-python">torch.autograd.backward(
+        tensors, 
+        grad_tensors=<span class="hljs-keyword">None</span>, 
+        retain_graph=<span class="hljs-keyword">None</span>, 
+        create_graph=<span class="hljs-keyword">False</span>, 
+        grad_variables=<span class="hljs-keyword">None</span>)
+</code></pre>
+<ul>
+<li><code>tensor</code>: &#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x7684;tensor&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF1A;<code>torch.autograd.backward(z) == z.backward()</code></li>
+<li><code>grad_tensors</code>: &#x5728;&#x8BA1;&#x7B97;&#x77E9;&#x9635;&#x7684;&#x68AF;&#x5EA6;&#x65F6;&#x4F1A;&#x7528;&#x5230;&#x3002;&#x4ED6;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;tensor&#xFF0C;shape&#x4E00;&#x822C;&#x9700;&#x8981;&#x548C;&#x524D;&#x9762;&#x7684;tensor&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</li>
+<li><code>retain_graph</code>: &#x901A;&#x5E38;&#x5728;&#x8C03;&#x7528;&#x4E00;&#x6B21;backward&#x540E;&#xFF0C;pytorch&#x4F1A;&#x81EA;&#x52A8;&#x628A;&#x8BA1;&#x7B97;&#x56FE;&#x9500;&#x6BC1;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x60F3;&#x5BF9;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;&#x91CD;&#x590D;&#x8C03;&#x7528;backward&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5C06;&#x8BE5;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;True</li>
+<li><code>create_graph</code>: &#x5F53;&#x8BBE;&#x7F6E;&#x4E3A;True&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x66F4;&#x9AD8;&#x9636;&#x7684;&#x68AF;&#x5EA6;</li>
+<li><code>grad_variables</code>: &#x8FD9;&#x4E2A;&#x5B98;&#x65B9;&#x8BF4;&#x6CD5;&#x662F;<code>grad_variables&apos; is deprecated. Use &apos;grad_tensors&apos; instead.</code>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x540E;&#x9762;&#x7248;&#x672C;&#x4E2D;&#x5E94;&#x8BE5;&#x4F1A;&#x4E22;&#x5F03;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;grad_tensors&#x5C31;&#x597D;&#x4E86;&#x3002;</li>
+</ul>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x53C2;&#x6570;&#x5927;&#x81F4;&#x4F5C;&#x7528;&#x90FD;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x770B;&#x770B;pytorch&#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1;&#x4E86;grad_tensors&#x8FD9;&#x4E48;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;&#xFF1F;</p>
+<p>&#x8FD8;&#x662F;&#x7528;&#x4EE3;&#x7801;&#x505A;&#x4E2A;&#x793A;&#x4F8B;</p>
+<pre><code class="lang-python">x = torch.ones(<span class="hljs-number">2</span>,requires_grad=<span class="hljs-keyword">True</span>)
+z = x + <span class="hljs-number">2</span>
+z.backward()
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>...
+RuntimeError: grad can be implicitly created only <span class="hljs-keyword">for</span> scalar outputs
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x8BDD;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x4E3A;<code>RuntimeError: grad can be implicitly created only for scalar outputs&#x3002;</code></p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x610F;&#x601D;&#x662F;&#x53EA;&#x6709;&#x5BF9;&#x6807;&#x91CF;&#x8F93;&#x51FA;&#x5B83;&#x624D;&#x4F1A;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#xFF0C;&#x800C;&#x6C42;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x5BF9;&#x53E6;&#x4E00;&#x77E9;&#x9635;&#x7684;&#x5BFC;&#x6570;&#x675F;&#x624B;&#x65E0;&#x7B56;&#x3002;</p>
+<p><script type="math/tex; "> X = \begin{bmatrix}x_{0},x_{1}\end{bmatrix}Z = X + 2 = \begin{bmatrix}x_{0}+2,x_{1} + 2\end{bmatrix} \Rightarrow \frac{\partial Z}{\partial X} = ? </script></p>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x60F3;&#x529E;&#x6CD5;&#x628A;&#x77E9;&#x9635;&#x8F6C;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#x4E0D;&#x5C31;&#x597D;&#x4E86;&#xFF1F;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;z&#x6C42;&#x548C;&#xFF0C;&#x7136;&#x540E;&#x7528;&#x6C42;&#x548C;&#x5F97;&#x5230;&#x7684;&#x6807;&#x91CF;&#x5728;&#x5BF9;x&#x6C42;&#x5BFC;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4F1A;&#x5BF9;&#x7ED3;&#x679C;&#x6709;&#x5F71;&#x54CD;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><script type="math/tex; "> Z_{sum} = \sum z_{i} = x_{0} + x_{1} + 4;then \frac{\partial Zsum}{\partial x_{0}} = \frac{\partial Zsum}{\partial x_{1}} = 1 </script></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5BF9;z&#x6C42;&#x548C;&#x540E;&#x518D;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#xFF0C;&#x7ED3;&#x679C;&#x4E5F;&#x4E0E;&#x9884;&#x671F;&#x4E00;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-python">x = torch.ones(<span class="hljs-number">2</span>,requires_grad=<span class="hljs-keyword">True</span>)
+z = x + <span class="hljs-number">2</span>
+z.sum().backward()
+print(x.grad)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>tensor([<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>])
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x518D;&#x4ED4;&#x7EC6;&#x60F3;&#x60F3;&#xFF0C;&#x5BF9;z&#x6C42;&#x548C;&#x4E0D;&#x5C31;&#x662F;&#x7B49;&#x4EF7;&#x4E8E;z &#x70B9;&#x4E58;&#x4E00;&#x4E2A;&#x76F8;&#x540C;&#x7EF4;&#x5EA6;&#x7684;&#x5168;&#x4E3A;1&#x7684;&#x77E9;&#x9635;&#x5417;&#xFF1F;&#x5373; <script type="math/tex; "> sum(Z)=dot(Z,I) </script>
+ ,&#x800C;&#x8FD9;&#x4E2A;I&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F20;&#x5165;&#x7684;grad_tensors&#x53C2;&#x6570;&#x3002;(&#x70B9;&#x4E58;&#x53EA;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x4E00;&#x7EF4;&#x5411;&#x91CF;&#x800C;&#x8A00;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;&#x77E9;&#x9635;&#x6216;&#x66F4;&#x9AD8;&#x4E3A;&#x7684;&#x5F20;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x505A;&#x70B9;&#x4E58;)</p>
+<p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python">x = torch.ones(<span class="hljs-number">2</span>,requires_grad=<span class="hljs-keyword">True</span>)
+z = x + <span class="hljs-number">2</span>
+z.backward(torch.ones_like(z)) <span class="hljs-comment"># grad_tensors&#x9700;&#x8981;&#x4E0E;&#x8F93;&#x5165;tensor&#x5927;&#x5C0F;&#x4E00;&#x81F4;</span>
+print(x.grad)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>tensor([<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>])
+</code></pre>
+<p>&#x5F04;&#x4E2A;&#x518D;&#x590D;&#x6742;&#x4E00;&#x70B9;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-python">x = torch.tensor([<span class="hljs-number">2.</span>, <span class="hljs-number">1.</span>], requires_grad=<span class="hljs-keyword">True</span>)
+y = torch.tensor([[<span class="hljs-number">1.</span>, <span class="hljs-number">2.</span>], [<span class="hljs-number">3.</span>, <span class="hljs-number">4.</span>]], requires_grad=<span class="hljs-keyword">True</span>)
+
+z = torch.mm(x.view(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), y)
+print(f<span class="hljs-string">&quot;z:{z}&quot;</span>)
+z.backward(torch.Tensor([[<span class="hljs-number">1.</span>, <span class="hljs-number">0</span>]]), retain_graph=<span class="hljs-keyword">True</span>)
+print(f<span class="hljs-string">&quot;x.grad: {x.grad}&quot;</span>)
+print(f<span class="hljs-string">&quot;y.grad: {y.grad}&quot;</span>)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>z:tensor([[<span class="hljs-number">5.</span>, <span class="hljs-number">8.</span>]], grad_fn=&lt;MmBackward&gt;)
+x.grad: tensor([[<span class="hljs-number">1.</span>, <span class="hljs-number">3.</span>]])
+y.grad: tensor([[<span class="hljs-number">2.</span>, <span class="hljs-number">0.</span>],
+        [<span class="hljs-number">1.</span>, <span class="hljs-number">0.</span>]])
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x89E3;&#x91CA;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><script type="math/tex; "> x = \begin{bmatrix}
+x_{1}  & x_{2}
+\end{bmatrix} = \begin{bmatrix}
+2  & 1
+\end{bmatrix}
+</script>
+<script type="math/tex; "> y = \begin{bmatrix}
+ y_{1} & y_{2} \\
+ y_{3} & y_{4}
+\end{bmatrix} = \begin{bmatrix}
+ 1 & 2 \\
+ 3 & 4
+\end{bmatrix} 
+</script> 
+<script type="math/tex; "> z = torch.mm(x,y) = \begin{bmatrix}
+x_{1}  & x_{2}
+\end{bmatrix} \begin{bmatrix}
+ y_{1} & y_{2} \\
+ y_{3} & y_{4}
+\end{bmatrix} = \begin{bmatrix}
+x_{1}y_{1}+x_{2}y_{3}  & x_{1}y_{2} + x_{2}y_{4}
+\end{bmatrix}
+</script>
+<script type="math/tex; ">grad_tensor = \begin{bmatrix}
+1  & 0
+\end{bmatrix} </script></p>
+<p><script type="math/tex; "> \Rightarrow z^{'} = z^{'}\begin{bmatrix}
+1  & 0
+\end{bmatrix} = (x_{1}y_{1}+x_{2}y_{3}) * 1  + (x_{1}y_{2} + x_{2}y_{4}) *0 = x_{1}y_{1}+x_{2}y_{3}  </script></p>
+<p><script type="math/tex; "> \Rightarrow z^{'}.backward(\begin{bmatrix}
+\begin{bmatrix}
+1  & 0
+\end{bmatrix}
+\end{bmatrix}) 
+\Longleftrightarrow 
+\frac{\partial z^{'}}{\partial x_{1}}  = y_{1} = 1(求偏导数时其他变量看成常量)，
+\frac{\partial z^{'}}{\partial x_{2}}  = y_{3} = 3，
+\frac{\partial z^{'}}{\partial y_{1}}  = x_{1} = 2，
+\frac{\partial z^{'}}{\partial y_{3}}  = x_{2} = 1，
+\frac{\partial z^{'}}{\partial y_{2}}  = \frac{\partial z^{'}}{\partial y_{4}} = 0
+ </script></p>
+<p>&#x603B;&#x7ED3;&#xFF1A;</p>
+<p>&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;grad_tensors&#x7684;&#x4F5C;&#x7528;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x7406;&#x89E3;&#x6210;&#x5728;&#x6C42;&#x68AF;&#x5EA6;&#x65F6;&#x7684;&#x6743;&#x91CD;&#xFF0C;&#x56E0;&#x4E3A;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#x503C;&#x7684;&#x68AF;&#x5EA6;&#x5BF9;&#x7ED3;&#x679C;&#x5F71;&#x54CD;&#x7A0B;&#x5EA6;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;pytorch&#x5F04;&#x4E86;&#x4E2A;&#x8FD9;&#x79CD;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x56FA;&#x5B9A;&#x4E3A;&#x5168;&#x662F;1&#x3002;<a href="https://zhuanlan.zhihu.com/p/29923090" target="_blank">&#x5F15;&#x7528;&#x81EA;&#x77E5;&#x4E4E;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x8BC4;&#x8BBA;</a>&#xFF1A;&#x5982;&#x679C;&#x4ECE;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;(&#x603B;loss)&#x6765;backward&#xFF0C;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;<strong>(torch.sum(y*w))</strong>&#x7684;&#x610F;&#x4E49;&#x5C31;&#x5177;&#x4F53;&#x5316;&#x4E3A; multiple loss term with difference weights &#x8FD9;&#x79CD;&#x9700;&#x6C42;&#x4E86;&#x5427;&#x3002;</p>
+<h3 id="torchautogradgrad">torch.autograd.grad</h3>
+<pre><code class="lang-python">torch.autograd.grad(
+        outputs, 
+        inputs, 
+        grad_outputs=<span class="hljs-keyword">None</span>, 
+        retain_graph=<span class="hljs-keyword">None</span>, 
+        create_graph=<span class="hljs-keyword">False</span>, 
+        only_inputs=<span class="hljs-keyword">True</span>, 
+        allow_unused=<span class="hljs-keyword">False</span>)
+</code></pre>
+<p>&#x770B;&#x4E86;&#x524D;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x540E;&#x5728;&#x770B;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x5F88;&#x597D;&#x7406;&#x89E3;&#x4E86;&#xFF0C;&#x5404;&#x53C2;&#x6570;&#x4F5C;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>outputs</code>: &#x7ED3;&#x679C;&#x8282;&#x70B9;&#xFF0C;&#x5373;&#x88AB;&#x6C42;&#x5BFC;&#x6570;</li>
+<li><code>inputs</code>: &#x53F6;&#x5B50;&#x8282;&#x70B9;</li>
+<li><code>grad_outputs</code>: &#x7C7B;&#x4F3C;&#x4E8E;backward&#x65B9;&#x6CD5;&#x4E2D;&#x7684;grad_tensors</li>
+<li><code>retain_graph</code>: &#x540C;&#x4E0A;</li>
+<li><code>create_graph</code>: &#x540C;&#x4E0A;</li>
+<li><code>only_inputs</code>: &#x9ED8;&#x8BA4;&#x4E3A;True, &#x5982;&#x679C;&#x4E3A;True, &#x5219;&#x53EA;&#x4F1A;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;input&#x7684;&#x68AF;&#x5EA6;&#x503C;&#x3002; &#x82E5;&#x4E3A;False&#xFF0C;&#x5219;&#x4F1A;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x7684;&#x68AF;&#x5EA6;&#x7D2F;&#x52A0;&#x5230;&#x5404;&#x81EA;&#x7684;.grad&#x5C5E;&#x6027;&#x4E0A;&#x53BB;&#x3002;</li>
+<li><code>allow_unused</code>: &#x9ED8;&#x8BA4;&#x4E3A;False, &#x5373;&#x5FC5;&#x987B;&#x8981;&#x6307;&#x5B9A;input,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#x5219;&#x62A5;&#x9519;&#x3002;</li>
+</ul>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.pytorchtutorial.com/pytorch-backward/" target="_blank">PyTorch &#x4E2D; backward() &#x8BE6;&#x89E3;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/29923090" target="_blank">PyTorch &#x7684;backward &#x4E3A;&#x4EC0;&#x4E48;&#x6709;&#x4E00;&#x4E2A;grad_variables &#x53C2;&#x6570;?</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//pytorch.org/docs/stable/autograd.html%23" target="_blank">AUTOMATIC DIFFERENTIATION PACKAGE - TORCH.AUTOGRAD</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/27808095" target="_blank">PyTorch&#x4E2D;&#x7684;backward</a></li>
 </ul>
 <h2 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;</h2>
 <ol>
@@ -8524,10 +8733,14 @@ d2l.plt.show()
 
             
                 
-                <a href="calculus.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 微积分">
+                <a href="calculus.html" class="navigation navigation-prev " aria-label="Previous page: 微积分">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="probability.html" class="navigation navigation-next " aria-label="Next page: 概率">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -8536,7 +8749,7 @@ d2l.plt.show()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"自动微分","level":"7.1.4.5","depth":3,"next":{"title":"数据分析库","level":"7.2","depth":1,"ref":"","articles":[{"title":"numpy基础","level":"7.2.1","depth":2,"path":"MachineLearning/MatplotlibNumpyPandas/numpy基础.md","ref":"./MachineLearning/MatplotlibNumpyPandas/numpy基础.md","articles":[]},{"title":"pandas基础","level":"7.2.2","depth":2,"path":"MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md","ref":"./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md","articles":[]},{"title":"pandas连接合并追加","level":"7.2.3","depth":2,"path":"MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.md","ref":"./MachineLearning/MatplotlibNumpyPandas/Pandas_merge_concat_append.md","articles":[]},{"title":"matplotlib基础","level":"7.2.4","depth":2,"path":"MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md","ref":"./MachineLearning/MatplotlibNumpyPandas/matplotlib基础.md","articles":[]}]},"previous":{"title":"微积分","level":"7.1.4.4","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/calculus.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/calculus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"MachineLearning/DeepLearning/chapter_preliminaries/autograd.md","mtime":"2024-07-19T11:20:14.929Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-19T11:21:24.042Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"自动微分","level":"7.1.4.5","depth":3,"next":{"title":"概率","level":"7.1.4.6","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/probability.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/probability.md","articles":[]},"previous":{"title":"微积分","level":"7.1.4.4","depth":3,"path":"MachineLearning/DeepLearning/chapter_preliminaries/calculus.md","ref":"./MachineLearning/DeepLearning/chapter_preliminaries/calculus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"MachineLearning/DeepLearning/chapter_preliminaries/autograd.md","mtime":"2024-07-20T04:09:43.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-21T10:39:07.122Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
