@@ -65,7 +65,7 @@ def f(x):
     return 3 * x ** 2 - 4 * x
 ```
 
-[**通过令$$x=1$$并让$$h$$接近$$0$$，**](2.4.1)中(**$$\frac{f(x+h)-f(x)}{h}$$的数值结果接近$$2$$**)。
+**通过令$$x=1$$并让$$h$$接近$$0$$，**(2.4.1)中(**$$\frac{f(x+h)-f(x)}{h}$$的数值结果接近$$2$$**)。
 虽然这个实验不是一个数学证明，但稍后会看到，当$$x=1$$时，导数$$u'$$是$$2$$。
 
 ```python
@@ -77,6 +77,12 @@ h = 0.1
 for i in range(5):
     print(f'h={h:.5f}, numerical limit={numerical_lim(f, 1, h):.5f}')
     h *= 0.1
+
+# h=0.10000, numerical limit=2.30000
+# h=0.01000, numerical limit=2.03000
+# h=0.00100, numerical limit=2.00300
+# h=0.00010, numerical limit=2.00030
+# h=0.00001, numerical limit=2.00003
 ```
 
 让我们熟悉一下导数的几个等价符号。
@@ -206,6 +212,8 @@ def plot(X, Y=None, xlabel=None, ylabel=None, legend=None, xlim=None,
 x = np.arange(0, 3, 0.1)
 plot(x, [f(x), 2 * x - 3], 'x', 'f(x)', legend=['f(x)', 'Tangent line (x=1)'])
 ```
+![](../img/output_calculus_7e7694_41_1.svg)
+
 > $$ f(x) = 3x ^ 2 - 4x  $$ 在 x=1，的切线为什么是 $$ 2x-3 $$
 > 
 > 导数：$$ k = f'(x) = 6x - 4 $$，x=1代入，即斜率k = 2
@@ -290,3 +298,14 @@ $$\frac{\partial y}{\partial x_i} = \frac{\partial y}{\partial u_1} \frac{\parti
 ![](../img/2874e9507ba661f92a0636d3fa7abe019e6ffaf3.jpeg)
 
 ![](../img/57518e0c345e5b6aa5aa859bc8bc192259751e65.png)
+
+- 第三题
+
+$$  \frac{\partial f(x)}{\partial x}  
+= \frac{\partial f}{\partial u} \frac{\partial u}{\partial x} 
+= \frac{1}{2}u^{-\frac{1}{2}}*2*x=\frac{x}{\sqrt{u}}; $$
+
+$$ 因为 f(x) = ||x||_{2} =  \sqrt{{\textstyle \sum_{i=1}^{n}} x^{2}_{i}} = \sqrt{u}; $$
+
+$$ 因此 \nabla x f(x)=(\frac{x_{1}}{\sqrt{ {\textstyle \sum_{i=1}^{n}x^{2}_{i}} } }, ..., \frac{x_{n}}{\sqrt{ {\textstyle \sum_{i=1}^{n}x^{2}_{i}} } } )
+= \frac{x}{||x||_{2}} $$

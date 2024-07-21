@@ -446,6 +446,10 @@
       - [线性代数](./MachineLearning/DeepLearning/chapter_preliminaries/linear-algebra.md)
       - [微积分](./MachineLearning/DeepLearning/chapter_preliminaries/calculus.md)
       - [自动微分](./MachineLearning/DeepLearning/chapter_preliminaries/autograd.md)
+      - [概率](./MachineLearning/DeepLearning/chapter_preliminaries/probability.md)
+      - [查阅文档](./MachineLearning/DeepLearning/chapter_preliminaries/lookup-api.md)
+  - 线型神经网络
+      - [线性回归](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression.md)
 
 ## [Web前端](./Web/)
 
