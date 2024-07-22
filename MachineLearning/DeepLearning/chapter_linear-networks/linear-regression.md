@@ -337,6 +337,8 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in params], xlabel='x',
          legend=[f'mean {mu}, std {sigma}' for mu, sigma in params])
 ```
 
+![](../img/output_linear_regression.svg)
+
 就像我们所看到的，改变均值会产生沿$$x$$轴的偏移，增加方差将会分散分布、降低其峰值。
 
 均方误差损失函数（简称均方损失）可以用于线性回归的一个原因是：
