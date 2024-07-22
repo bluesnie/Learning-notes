@@ -450,6 +450,8 @@
       - [查阅文档](./MachineLearning/DeepLearning/chapter_preliminaries/lookup-api.md)
   - 线性神经网络
       - [线性回归](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression.md)
+      - [线性回归的从零开始实现](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression-scratch.md)
+      - [线性回归的简洁实现](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression-concise.md)
 
 ## [Web前端](./Web/)
 
