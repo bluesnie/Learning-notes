@@ -452,6 +452,9 @@
       - [线性回归](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression.md)
       - [线性回归的从零开始实现](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression-scratch.md)
       - [线性回归的简洁实现](./MachineLearning/DeepLearning/chapter_linear-networks/linear-regression-concise.md)
+      - [softmax回归](./MachineLearning/DeepLearning/chapter_linear-networks/softmax-regression.md)
+      - [图像分类数据集](./MachineLearning/DeepLearning/chapter_linear-networks/image-classification-dataset.md)
+      - [softmax回归的从零开始实现](./MachineLearning/DeepLearning/chapter_linear-networks/softmax-regression-scratch.md)
 
 ## [Web前端](./Web/)
 
@@ -478,6 +481,7 @@
 - [常用工具](ROS/基础/05-常用工具.md)
 - [roscpp](ROS/基础/06-roscpp.md)
 - [rospy](ROS/基础/07-rospy.md)
+- [静态和动态参数使用](ROS/基础/08-静态和动态参数使用.md)
 
 #### [进阶](ROS/进阶)
 
@@ -796,6 +800,8 @@
             - [位运算](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/06-位运算.md)
             - [暴力递归到动态规划](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/07-暴力递归到动态规划.md)
             - [有序表](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/08-有序表.md)
+        - 数据滤波
+            - [卡尔曼滤波](InterviewPreparation/DataStructuresAlgorithms/Algorithm/Wavefiltering/KalmanFiltering.md)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)

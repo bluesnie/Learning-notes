@@ -33,7 +33,14 @@
 
 * $$f(\cdot)$$：函数
 * $$\log(\cdot)$$：自然对数
-* $$\exp(\cdot)$$: 指数函数
+  * `log`函数表示以`e`为底的对数函数
+  * 与`exp`互为反函数的关系, `log(exp(x)) = x`
+  * `log(MN) = log(M) + log(N)`
+  * `log(M/N) = log(M) - log(N)`
+  * `log(M^N) = Nlog(M)`
+* $$\exp(\cdot)$$: 指数函数, $$ exp(x) = e^{x} $$
+  * `exp`函数表示以自然常数`e`为底的指数函数
+  * 与`log`互为反函数的关系,`exp(log(x)) = x`
 * $$\mathbf{1}_\mathcal{X}$$: 指示函数
 * $$\mathbf{(\cdot)}^\top$$: 向量或矩阵的转置
 * $$\mathbf{X}^{-1}$$: 矩阵的逆
