@@ -315,6 +315,11 @@ class CustomThreadPoolExecutor(ThreadPoolExecutor):
         """记录线程信息"""
         pid = os.getpid()
         ppid = libc.syscall(SYS_get_tid)
+        if ppid == -1:
+            # only available on some platforms
+            # support ubuntu version:
+            # Linux pasture-10 6.5.0-44-generic #44~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jun 18 14:36:16 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+            ppid = threading.get_native_id()
         name = threading.current_thread().name
         info = f"func name: {name}, pid: {pid}, ppid: {ppid}"
         print(info)
