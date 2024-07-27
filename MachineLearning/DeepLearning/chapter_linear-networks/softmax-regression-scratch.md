@@ -12,21 +12,11 @@
 并设置数据迭代器的批量大小为256。
 
 ```python
-from d2l import mxnet as d2l
-from mxnet import autograd, np, npx, gluon
-from IPython import display
-npx.set_np()
-```
-
-```python
 #@tab pytorch
 from d2l import torch as d2l
 import torch
 from IPython import display
-```
 
-```python
-#@tab all
 batch_size = 256
 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ```
@@ -44,16 +34,6 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 因此，权重将构成一个$$784 \times 10$$的矩阵，
 偏置将构成一个$$1 \times 10$$的行向量。
 与线性回归一样，我们将使用正态分布初始化我们的权重`W`，偏置初始化为0。
-
-```python
-num_inputs = 784
-num_outputs = 10
-
-W = np.random.normal(0, 0.01, (num_inputs, num_outputs))
-b = np.zeros(num_outputs)
-W.attach_grad()
-b.attach_grad()
-```
 
 ```python
 #@tab pytorch
@@ -79,6 +59,7 @@ b = torch.zeros(num_outputs, requires_grad=True)
 #@tab pytorch, paddle
 X = d2l.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
 d2l.reduce_sum(X, 0, keepdim=True), d2l.reduce_sum(X, 1, keepdim=True)
+# X.sum(0, keepdim=True), X.sum(1,keepdim=True)
 ```
 
 回想一下，[**实现softmax**]由三个步骤组成：
@@ -253,6 +234,7 @@ class Accumulator:  #@save
 ```python
 #@tab all
 evaluate_accuracy(net, test_iter)
+# 0.0625
 ```
 
 ## 训练
@@ -381,6 +363,8 @@ num_epochs = 10
 train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 ```
 
+![](../img/output_softmax-regression-scratch_a48321_219_0.svg)
+
 ## 预测
 
 现在训练已经完成，我们的模型已经准备好[**对图像进行分类预测**]。
@@ -413,3 +397,9 @@ predict_ch3(net, test_iter)
 1. 请想一个解决方案来解决上述两个问题。
 1. 返回概率最大的分类标签总是最优解吗？例如，医疗诊断场景下可以这样做吗？
 1. 假设我们使用softmax回归来预测下一个单词，可选取的单词数目过多可能会带来哪些问题?
+
+- 答：
+    - 1.这里对于较大的值会溢出然后针对softmax函数的性质可以尝试对每一个值减去一个最大值，最终结果不会发生改变，但是可以避免溢出。
+    - 2.当概率接近0时，取对数会接近负无穷，所以可以采用logsumexp函数来避免这个问题。
+    - 3.返回概率最大的分类标签不总是最优解，因为有些情况下可能存在多个分类标签的概率接近，此时返回概率最大的分类标签可能会带来误差。
+    - 4.当选取的单词数目过多时，softmax函数的计算量会增大，可能会导致计算速度变慢，同时也会增加模型的复杂度，可能会出现过拟合的问题。
