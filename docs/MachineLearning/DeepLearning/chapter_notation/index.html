@@ -4296,6 +4296,64 @@
             
         </li>
     
+        <li class="chapter " data-level="7.1.6" >
+            
+                <span>
+            
+                    
+                    多层感知机
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.6.1" data-path="../chapter_multilayer-perceptrons/">
+            
+                <a href="../chapter_multilayer-perceptrons/">
+            
+                    
+                    多层感知机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6.2" data-path="../chapter_multilayer-perceptrons/mlp-scratch.html">
+            
+                <a href="../chapter_multilayer-perceptrons/mlp-scratch.html">
+            
+                    
+                    多层感知机的从零开始实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6.3" data-path="../chapter_multilayer-perceptrons/mlp-concise.html">
+            
+                <a href="../chapter_multilayer-perceptrons/mlp-concise.html">
+            
+                    
+                    多层感知机的简洁实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -8534,7 +8592,7 @@
 <h2 id="&#x51FD;&#x6570;&#x548C;&#x8FD0;&#x7B97;&#x7B26;">&#x51FD;&#x6570;&#x548C;&#x8FD0;&#x7B97;&#x7B26;</h2>
 <ul>
 <li><script type="math/tex; ">f(\cdot)</script>&#xFF1A;&#x51FD;&#x6570;</li>
-<li><script type="math/tex; ">\log(\cdot)</script>&#xFF1A;&#x81EA;&#x7136;&#x5BF9;&#x6570;<ul>
+<li><script type="math/tex; ">\log(\cdot)</script>&#xFF1A;&#x81EA;&#x7136;&#x5BF9;&#x6570;&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;&#x4E0B;&#x9762;<ul>
 <li><code>log</code>&#x51FD;&#x6570;&#x8868;&#x793A;&#x4EE5;<code>e</code>&#x4E3A;&#x5E95;&#x7684;&#x5BF9;&#x6570;&#x51FD;&#x6570;</li>
 <li>&#x4E0E;<code>exp</code>&#x4E92;&#x4E3A;&#x53CD;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;, <code>log(exp(x)) = x</code></li>
 <li><code>log(MN) = log(M) + log(N)</code></li>
@@ -8542,7 +8600,7 @@
 <li><code>log(M^N) = Nlog(M)</code></li>
 </ul>
 </li>
-<li><script type="math/tex; ">\exp(\cdot)</script>: &#x6307;&#x6570;&#x51FD;&#x6570;, <script type="math/tex; "> exp(x) = e^{x} </script><ul>
+<li><script type="math/tex; ">\exp(\cdot)</script>: &#x6307;&#x6570;&#x51FD;&#x6570;, <script type="math/tex; "> exp(x) = e^{x} </script>&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;&#x4E0B;&#x9762;<ul>
 <li><code>exp</code>&#x51FD;&#x6570;&#x8868;&#x793A;&#x4EE5;&#x81EA;&#x7136;&#x5E38;&#x6570;<code>e</code>&#x4E3A;&#x5E95;&#x7684;&#x6307;&#x6570;&#x51FD;&#x6570;</li>
 <li>&#x4E0E;<code>log</code>&#x4E92;&#x4E3A;&#x53CD;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;,<code>exp(log(x)) = x</code></li>
 </ul>
@@ -8559,6 +8617,37 @@
 <li><script type="math/tex; ">\sum</script>: &#x8FDE;&#x52A0;</li>
 <li><script type="math/tex; ">\prod</script>: &#x8FDE;&#x4E58;</li>
 <li><script type="math/tex; ">\stackrel{\mathrm{def}}{=}</script>&#xFF1A;&#x5B9A;&#x4E49;</li>
+</ul>
+<h3 id="&#x6307;&#x6570;&#x51FD;&#x6570;">&#x6307;&#x6570;&#x51FD;&#x6570;</h3>
+<p>&#x6307;&#x6570;&#x51FD;&#x6570;&#x516C;&#x5F0F;&#x4E3A; <script type="math/tex; "> y=a^{x} </script>&#xFF0C;&#x5176;&#x51FD;&#x6570;&#x589E;&#x957F;&#x6027;&#x5982;&#x4E0B;</p>
+<p><img src="../img/9d395537cfeb42868d12539d5b5ac6de.png" alt=""></p>
+<ul>
+<li>&#x6307;&#x6570;&#x51FD;&#x6570;&#x7684;&#x5355;&#x8C03;&#x6027;&#x662F;&#x9012;&#x589E;&#x7684;&#xFF0C;&#x5F53;x=0&#x65F6;&#xFF0C;&#x4E0D;&#x7BA1;a&#x4E3A;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x5176;&#x503C;&#x4E3A;1&#x3002;&#x5F53;a&#x5927;&#x4E8E;1&#x65F6;&#xFF0C;&#x968F;&#x7740;a&#x8D8A;&#x5927;&#xFF0C;&#x5176;&#x51FD;&#x6570;&#x503C;&#x589E;&#x957F;&#x8D8A;&#x5FEB; </li>
+</ul>
+<ul>
+<li><p>&#x5728;x&gt;0&#x90E8;&#x5206;&#xFF0C;a&gt;b&#x5176;y&#x503C;&#x4E5F;&#x662F;&#x968F;&#x7740; <script type="math/tex; "> f_{a}(x)>f_{b}(x) </script></p>
+</li>
+<li><p>&#x5728;x<0部分 当a="">b&#x65F6;&#xFF0C;&#x5176; <script type="math/tex; ">f_{a}(x)<f_{b}(x)<1 </script></0部分></p>
+</li>
+</ul>
+<h3 id="&#x5BF9;&#x6570;&#x51FD;&#x6570;">&#x5BF9;&#x6570;&#x51FD;&#x6570;</h3>
+<p>&#x5BF9;&#x6570;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x4E3A;&#xFF1A;<script type="math/tex; "> y=log_{a}x </script>,&#x5176;&#x51FD;&#x6570;&#x56FE;&#x50CF;&#x4E3A;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../img/3c647c5f9b592eb9c2ca61b173401a34.png" alt=""></p>
+<ul>
+<li><p>&#x5F53;x&#x7B49;&#x4E8E;1&#x65F6; y&#x4E3A;0&#xFF0C;</p>
+</li>
+<li><p>&#x5F53;x&lt;1&#x65F6;&#xFF0C;&#x5176;y&#x503C;&#x5C0F;&#x4E8E;0</p>
+</li>
+<li><p>&#x5F53;x &gt;1&#x65F6;&#xFF0C;&#x5176;&#x503C;&#x5927;&#x4E8E;0</p>
+</li>
+<li><p>&#x5BF9;&#x6570;&#x51FD;&#x6570;&#x4E3A;&#x5355;&#x8C03;&#x9012;&#x589E;&#x7684;&#xFF0C;&#x5F53;a&gt;1&#x65F6;&#xFF0C;&#x968F;&#x7740;&#x5E95;&#x6570;a&#x8D8A;&#x5C0F;&#xFF0C;&#x5176;&#x51FD;&#x6570;&#x589E;&#x957F;&#x503C;&#x8D8A;&#x5FEB;</p>
+</li>
+<li><p>&#x5F53;x&gt;1&#x65F6;&#xFF0C; a&lt;b&#xFF0C;<script type="math/tex; "> f_{a}(x)>f_{b}(x) </script></p>
+</li>
+<li><p>&#x5F53;x&lt;1&#x65F6;&#xFF0C; a&lt;b , <script type="math/tex; "> f_{a}(x)<f_{b}(x) </script></p>
+</li>
+<li><p><code>ln</code>&#x662F;&#x4EE5;<code>e</code>&#x4E3A;&#x5E95;&#x7684;&#x5BF9;&#x6570;&#x51FD;&#x6570;</p>
+</li>
 </ul>
 <h2 id="&#x5FAE;&#x79EF;&#x5206;">&#x5FAE;&#x79EF;&#x5206;</h2>
 <ul>
@@ -8680,7 +8769,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"符号","level":"7.1.2","depth":2,"next":{"title":"引言","level":"7.1.3","depth":2,"path":"MachineLearning/DeepLearning/chapter_introduction/index.md","ref":"./MachineLearning/DeepLearning/chapter_introduction/index.md","articles":[]},"previous":{"title":"安装","level":"7.1.1","depth":2,"path":"MachineLearning/DeepLearning/chapter_installation/index.md","ref":"./MachineLearning/DeepLearning/chapter_installation/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"MachineLearning/DeepLearning/chapter_notation/index.md","mtime":"2024-07-23T13:27:18.393Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-26T07:39:19.682Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"符号","level":"7.1.2","depth":2,"next":{"title":"引言","level":"7.1.3","depth":2,"path":"MachineLearning/DeepLearning/chapter_introduction/index.md","ref":"./MachineLearning/DeepLearning/chapter_introduction/index.md","articles":[]},"previous":{"title":"安装","level":"7.1.1","depth":2,"path":"MachineLearning/DeepLearning/chapter_installation/index.md","ref":"./MachineLearning/DeepLearning/chapter_installation/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"MachineLearning/DeepLearning/chapter_notation/index.md","mtime":"2024-07-28T06:19:06.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-28T10:08:50.923Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

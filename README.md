@@ -455,6 +455,10 @@
       - [softmax回归](./MachineLearning/DeepLearning/chapter_linear-networks/softmax-regression.md)
       - [图像分类数据集](./MachineLearning/DeepLearning/chapter_linear-networks/image-classification-dataset.md)
       - [softmax回归的从零开始实现](./MachineLearning/DeepLearning/chapter_linear-networks/softmax-regression-scratch.md)
+  - 多层感知机
+      - [多层感知机](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/index.md)
+      - [多层感知机的从零开始实现](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/mlp-scratch.md)
+      - [多层感知机的简洁实现](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/mlp-concise.md)
 
 ## [Web前端](./Web/)
 
