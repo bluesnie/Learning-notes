@@ -460,6 +460,10 @@
       - [多层感知机的从零开始实现](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/mlp-scratch.md)
       - [多层感知机的简洁实现](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/mlp-concise.md)
       - [模型选择、欠拟合和过拟合](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/underfit-overfit.md)
+      - [权重衰减](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/weight-decay.md)
+      - [暂退法（Dropout）](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/dropout.md)
+      - [前向传播、反向传播和计算图](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/backprop.md)
+      - [数值稳定性和模型初始化](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/numerical-stability-and-init.md)
 
 ## [Web前端](./Web/)
 
