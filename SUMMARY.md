@@ -389,6 +389,15 @@
       - [暂退法（Dropout）](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/dropout.md)
       - [前向传播、反向传播和计算图](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/backprop.md)
       - [数值稳定性和模型初始化](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/numerical-stability-and-init.md)
+      - [环境和分布偏移](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/environment.md)
+      - [实战Kaggle比赛：预测房价](./MachineLearning/DeepLearning/chapter_multilayer-perceptrons/kaggle-house-price.md)
+  - 深度学习计算
+      - [层和块](./MachineLearning/DeepLearning/chapter_deep-learning-computation/model-construction.md)
+      - [参数管理](./MachineLearning/DeepLearning/chapter_deep-learning-computation/parameters.md)
+      - [延后初始化](./MachineLearning/DeepLearning/chapter_deep-learning-computation/deferred-init.md)
+      - [自定义层](./MachineLearning/DeepLearning/chapter_deep-learning-computation/custom-layer.md)
+      - [读写文件](./MachineLearning/DeepLearning/chapter_deep-learning-computation/read-write.md)
+      - [GPU](./MachineLearning/DeepLearning/chapter_deep-learning-computation/use-gpu.md)
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
     - [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
