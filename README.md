@@ -473,6 +473,13 @@
       - [自定义层](./MachineLearning/DeepLearning/chapter_deep-learning-computation/custom-layer.md)
       - [读写文件](./MachineLearning/DeepLearning/chapter_deep-learning-computation/read-write.md)
       - [GPU](./MachineLearning/DeepLearning/chapter_deep-learning-computation/use-gpu.md)
+  - 卷积神经网络
+      - [从全连接层到卷积](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/why-conv.md)
+      - [图像卷积](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/conv-layer.md)
+      - [填充和步幅](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/padding-and-strides.md)
+      - [多输入多输出通道](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/channels.md)
+      - [汇聚层](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/pooling.md)
+      - [卷积神经网络（LeNet）](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/lenet.md)
 
 ## [Web前端](./Web/)
 
