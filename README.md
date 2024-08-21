@@ -480,6 +480,14 @@
       - [多输入多输出通道](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/channels.md)
       - [汇聚层](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/pooling.md)
       - [卷积神经网络（LeNet）](./MachineLearning/DeepLearning/chapter_convolutional-neural-networks/lenet.md)
+  - 现代卷积神经网络
+      - [深度卷积神经网络（AlexNet）](./MachineLearning/DeepLearning/chapter_convolutional-modern/alexnet.md)
+      - [使用块的网络（VGG）](./MachineLearning/DeepLearning/chapter_convolutional-modern/vgg.md)
+      - [网络中的网络（NiN）](./MachineLearning/DeepLearning/chapter_convolutional-modern/nin.md)
+      - [含并行连结的网络（GoogLeNet）](./MachineLearning/DeepLearning/chapter_convolutional-modern/googlenet.md)
+      - [批量规范化](./MachineLearning/DeepLearning/chapter_convolutional-modern/batch-norm.md)
+      - [残差网络（ResNet）](./MachineLearning/DeepLearning/chapter_convolutional-modern/resnet.md)
+      - [稠密连接网络（DenseNet）](./MachineLearning/DeepLearning/chapter_convolutional-modern/densenet.md)
 
 ## [Web前端](./Web/)
 
