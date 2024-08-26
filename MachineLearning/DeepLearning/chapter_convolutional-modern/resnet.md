@@ -190,7 +190,7 @@ net = nn.Sequential(b1, b2, b3, b4, b5,
 在训练ResNet之前，让我们[**观察一下ResNet中不同模块的输入形状是如何变化的**]。
 在之前所有架构中，分辨率降低，通道数量增加，直到全局平均汇聚层聚集所有特征。
 
-```{.python .input}
+```python
 #@tab pytorch
 X = torch.rand(size=(1, 1, 224, 224))
 for layer in net:

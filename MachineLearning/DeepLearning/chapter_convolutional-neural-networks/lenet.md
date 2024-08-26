@@ -103,10 +103,8 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size=batch_size)
 虽然卷积神经网络的参数较少，但与深度的多层感知机相比，它们的计算成本仍然很高，因为每个参数都参与更多的乘法。
 通过使用GPU，可以用它加快训练。
 
-:begin_tab:`mxnet, pytorch`
 为了进行评估，我们需要[**对**]《soft回归从零开始实现》中描述的(**`evaluate_accuracy`函数进行轻微的修改**)。
 由于完整的数据集位于内存中，因此在模型使用GPU计算数据集之前，我们需要将其复制到显存中。
-:end_tab:
 
 ```python
 #@tab pytorch

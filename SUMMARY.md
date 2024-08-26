@@ -413,6 +413,15 @@
       - [批量规范化](./MachineLearning/DeepLearning/chapter_convolutional-modern/batch-norm.md)
       - [残差网络（ResNet）](./MachineLearning/DeepLearning/chapter_convolutional-modern/resnet.md)
       - [稠密连接网络（DenseNet）](./MachineLearning/DeepLearning/chapter_convolutional-modern/densenet.md)
+  - 循环神经网络
+      - [序列模型](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/sequence.md)
+      - [文本预处理](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/text-preprocessing.md)
+      - [语言模型和数据集](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/language-models-and-dataset.md)
+      - [循环神经网络](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/rnn.md)
+      - [循环神经网络的从零开始实现](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/rnn-scratch.md)
+      - [循环神经网络的简洁实现](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/rnn-concise.md)
+      - [通过时间反向传播](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/bptt.md)
+
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
     - [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)

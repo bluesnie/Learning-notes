@@ -54,16 +54,12 @@ conda activate d2l
 如果机器没有任何GPU，没有必要担心，因为CPU在前几章完全够用。
 但是，如果想流畅地学习全部章节，请提早获取GPU并且安装深度学习框架的GPU版本。
 
-:begin_tab:`pytorch`
-
 我们可以按如下方式安装PyTorch的CPU或GPU版本：
 
 ```bash
 pip install torch==1.12.0
 pip install torchvision==0.13.0
 ```
-:end_tab:
-
 
 我们的下一步是安装`d2l`包，以方便调取本书中经常使用的函数和类：
 
@@ -71,13 +67,10 @@ pip install torchvision==0.13.0
 pip install d2l==0.17.6
 ```
 
-
 ## 下载 D2L Notebook
 
 接下来，需要下载这本书的代码。
 可以点击本书HTML页面顶部的“Jupyter 记事本”选项下载后解压代码，或者可以按照如下方式进行下载：
-
-:begin_tab:`pytorch`
 
 ```bash
 mkdir d2l-zh && cd d2l-zh
@@ -87,8 +80,6 @@ cd pytorch
 ```
 
 注意：如果没有安装`unzip`，则可以通过运行`sudo apt install unzip`进行安装。
-
-:end_tab:
 
 安装完成后我们可以通过运行以下命令打开Jupyter笔记本（在Window系统的命令行窗口中运行以下命令前，需先将当前路径定位到刚下载的本书代码解压后的目录）：
 
