@@ -421,7 +421,18 @@
       - [循环神经网络的从零开始实现](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/rnn-scratch.md)
       - [循环神经网络的简洁实现](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/rnn-concise.md)
       - [通过时间反向传播](./MachineLearning/DeepLearning/chapter_recurrent-neural-networks/bptt.md)
-
+  - 现代循环神经网络
+    - [门控循环单元（GRU）](./MachineLearning/DeepLearning/chapter_recurrent-modern/gru.md)
+    - [长短期记忆网络（LSTM）](./MachineLearning/DeepLearning/chapter_recurrent-modern/lstm.md)
+    - [深度循环神经网络](./MachineLearning/DeepLearning/chapter_recurrent-modern/deep-rnn.md)
+    - [双向循环神经网络](./MachineLearning/DeepLearning/chapter_recurrent-modern/bi-rnn.md)
+    - [机器翻译与数据集](./MachineLearning/DeepLearning/chapter_recurrent-modern/machine-translation-and-dataset.md)
+    - [编码器-解码器架构](./MachineLearning/DeepLearning/chapter_recurrent-modern/encoder-decoder.md)
+    - [序列到序列学习（seq2seq）](./MachineLearning/DeepLearning/chapter_recurrent-modern/seq2seq.md)
+    - [束搜索](./MachineLearning/DeepLearning/chapter_recurrent-modern/beam-search.md)
+  - 注意力机制
+    - [注意力提示](./MachineLearning/DeepLearning/chapter_attention-mechanisms/attention-cues.md)
+    - [注意力汇聚：Nadaraya-Watson 核回归](./MachineLearning/DeepLearning/chapter_attention-mechanisms/nadaraya-waston_origin.md)
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
     - [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
