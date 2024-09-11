@@ -433,6 +433,24 @@
   - 注意力机制
     - [注意力提示](./MachineLearning/DeepLearning/chapter_attention-mechanisms/attention-cues.md)
     - [注意力汇聚：Nadaraya-Watson 核回归](./MachineLearning/DeepLearning/chapter_attention-mechanisms/nadaraya-waston_origin.md)
+    - [注意力评分函数](./MachineLearning/DeepLearning/chapter_attention-mechanisms/attention-scoring-functions.md)
+    - [Bahdanau 注意力](./MachineLearning/DeepLearning/chapter_attention-mechanisms/bahdanau-attention.md)
+    - [多头注意力](./MachineLearning/DeepLearning/chapter_attention-mechanisms/multihead-attention.md)
+    - [自注意力和位置编码](./MachineLearning/DeepLearning/chapter_attention-mechanisms/self-attention-and-positional-encoding.md)
+    - [Transformer](./MachineLearning/DeepLearning/chapter_attention-mechanisms/transformer.md)
+  - 优化算法
+    - [优化和深度学习](./MachineLearning/DeepLearning/chapter_optimization/optimization-intro.md)
+    - [凸性](./MachineLearning/DeepLearning/chapter_optimization/convexity.md)
+    - [梯度下降](./MachineLearning/DeepLearning/chapter_optimization/gd.md)
+    - [随机梯度下降](./MachineLearning/DeepLearning/chapter_optimization/sgd.md)
+    - [小批量随机梯度下降](./MachineLearning/DeepLearning/chapter_optimization/minibatch-sgd.md)
+    - [动量法](./MachineLearning/DeepLearning/chapter_optimization/momentum.md)
+    - [AdaGrad算法](./MachineLearning/DeepLearning/chapter_optimization/adagrad.md)
+    - [RMSProp算法](./MachineLearning/DeepLearning/chapter_optimization/rmsprop.md)
+    - [Adadelta](./MachineLearning/DeepLearning/chapter_optimization/adadelta.md)
+    - [Adam算法](./MachineLearning/DeepLearning/chapter_optimization/adam.md)
+    - [学习率调度器](./MachineLearning/DeepLearning/chapter_optimization/lr-scheduler.md)
+
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)
     - [pandas基础](./MachineLearning/MatplotlibNumpyPandas/Pandas快速入门.md)
