@@ -525,7 +525,15 @@
     - [Adadelta](./MachineLearning/DeepLearning/chapter_optimization/adadelta.md)
     - [Adam算法](./MachineLearning/DeepLearning/chapter_optimization/adam.md)
     - [学习率调度器](./MachineLearning/DeepLearning/chapter_optimization/lr-scheduler.md)
-      
+  - 计算性能
+    - [编译器和解释器](./MachineLearning/DeepLearning/chapter_computational-performance/hybridize.md)
+    - [异步计算](./MachineLearning/DeepLearning/chapter_computational-performance/async-computation.md)
+    - [自动并行](./MachineLearning/DeepLearning/chapter_computational-performance/auto-parallelism.md)
+    - [硬件](./MachineLearning/DeepLearning/chapter_computational-performance/hardware.md)
+    - [多GPU训练](./MachineLearning/DeepLearning/chapter_computational-performance/multiple-gpus.md)
+    - [多GPU的简洁实现](./MachineLearning/DeepLearning/chapter_computational-performance/multiple-gpus-concise.md)
+    - [参数服务器](./MachineLearning/DeepLearning/chapter_computational-performance/parameterserver.md)
+
 ## [Web前端](./Web/)
 
 - [Web前端入门](./Web/Web前端概述.md)
