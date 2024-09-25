@@ -458,6 +458,11 @@
     - [多GPU训练](./MachineLearning/DeepLearning/chapter_computational-performance/multiple-gpus.md)
     - [多GPU的简洁实现](./MachineLearning/DeepLearning/chapter_computational-performance/multiple-gpus-concise.md)
     - [参数服务器](./MachineLearning/DeepLearning/chapter_computational-performance/parameterserver.md)
+  - 计算机视觉
+    - [图像增广](./MachineLearning/DeepLearning/chapter_computer-vision/image-augmentation.md)
+    - [微调](./MachineLearning/DeepLearning/chapter_computer-vision/fine-tuning.md)
+    - [目标检测和边界框](./MachineLearning/DeepLearning/chapter_computer-vision/bounding-box.md)
+    - [锚框](./MachineLearning/DeepLearning/chapter_computer-vision/anchor.md)
 
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)

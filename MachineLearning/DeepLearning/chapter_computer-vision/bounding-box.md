@@ -18,7 +18,7 @@
 接下来的几节将介绍几种用于目标检测的深度学习方法。
 我们将首先介绍目标的*位置*。
 
-```{.python .input}
+```python
 #@tab pytorch
 %matplotlib inline
 from d2l import torch as d2l
@@ -28,7 +28,7 @@ import torch
 下面加载本节将使用的示例图像。可以看到图像左边是一只狗，右边是一只猫。
 它们是这张图像里的两个主要目标。
 
-```{.python .input}
+```python
 #@tab pytorch, tensorflow, paddle
 d2l.set_figsize()
 img = d2l.plt.imread('../img/catdog.jpg')
@@ -40,13 +40,13 @@ d2l.plt.imshow(img)
 ## 边界框
 
 在目标检测中，我们通常使用*边界框*（bounding box）来描述对象的空间位置。
-边界框是矩形的，由矩形左上角的以及右下角的$x$和$y$坐标决定。
-另一种常用的边界框表示方法是边界框中心的$(x, y)$轴坐标以及框的宽度和高度。
+边界框是矩形的，由矩形左上角的以及右下角的$$x$$和$$y$$坐标决定。
+另一种常用的边界框表示方法是边界框中心的$$(x, y)$$轴坐标以及框的宽度和高度。
 
 在这里，我们[**定义在这两种表示法之间进行转换的函数**]：`box_corner_to_center`从两角表示法转换为中心宽度表示法，而`box_center_to_corner`反之亦然。
-输入参数`boxes`可以是长度为4的张量，也可以是形状为（$n$，4）的二维张量，其中$n$是边界框的数量。
+输入参数`boxes`可以是长度为4的张量，也可以是形状为（$$n$$，4）的二维张量，其中$$n$$是边界框的数量。
 
-```{.python .input}
+```python
 #@tab all
 #@save
 def box_corner_to_center(boxes):
@@ -72,9 +72,9 @@ def box_center_to_corner(boxes):
 ```
 
 我们将根据坐标信息[**定义图像中狗和猫的边界框**]。
-图像中坐标的原点是图像的左上角，向右的方向为$x$轴的正方向，向下的方向为$y$轴的正方向。
+图像中坐标的原点是图像的左上角，向右的方向为$$x$$轴的正方向，向下的方向为$$y$$轴的正方向。
 
-```{.python .input}
+```python
 #@tab all
 # bbox是边界框的英文缩写
 dog_bbox, cat_bbox = [60.0, 45.0, 378.0, 516.0], [400.0, 112.0, 655.0, 493.0]
@@ -82,7 +82,7 @@ dog_bbox, cat_bbox = [60.0, 45.0, 378.0, 516.0], [400.0, 112.0, 655.0, 493.0]
 
 我们可以通过转换两次来验证边界框转换函数的正确性。
 
-```{.python .input}
+```python
 #@tab all
 boxes = d2l.tensor((dog_bbox, cat_bbox))
 box_center_to_corner(box_corner_to_center(boxes)) == boxes
@@ -95,7 +95,7 @@ box_center_to_corner(box_corner_to_center(boxes)) == boxes
 画之前，我们定义一个辅助函数`bbox_to_rect`。
 它将边界框表示成`matplotlib`的边界框格式。
 
-```{.python .input}
+```python
 #@tab all
 #@save
 def bbox_to_rect(bbox, color):
@@ -108,7 +108,7 @@ def bbox_to_rect(bbox, color):
 
 在图像上添加边界框之后，我们可以看到两个物体的主要轮廓基本上在两个框内。
 
-```{.python .input}
+```python
 #@tab all
 fig = d2l.plt.imshow(img)
 fig.axes.add_patch(bbox_to_rect(dog_bbox, 'blue'))
