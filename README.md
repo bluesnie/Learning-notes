@@ -542,6 +542,8 @@
     - [微调](./MachineLearning/DeepLearning/chapter_computer-vision/fine-tuning.md)
     - [目标检测和边界框](./MachineLearning/DeepLearning/chapter_computer-vision/bounding-box.md)
     - [锚框](./MachineLearning/DeepLearning/chapter_computer-vision/anchor.md)
+    - [多尺度目标检测](./MachineLearning/DeepLearning/chapter_computer-vision/multiscale-object-detection.md)
+    - [目标检测数据集](./MachineLearning/DeepLearning/chapter_computer-vision/object-detection-dataset.md)
 
 ## [Web前端](./Web/)
 
