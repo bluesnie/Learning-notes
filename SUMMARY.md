@@ -37,6 +37,8 @@
     - [nc-ncat](Linux/命令指北/05-网络工具nc-ncat命令.md)
     - [tc网络流量控制](Linux/命令指北/06-tc网络流量控制.md)
     - [iptables](Linux/命令指北/07-iptables.md)
+    - [tmux](Linux/命令指北/08-tmux.md)
+    - [ipdb-python调试器](Linux/命令指北/09-ipdb-python调试器.md)
 
 ## Windows
   - [程序无响应问题排查](Windows/program_debug.md)

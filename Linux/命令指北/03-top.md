@@ -250,7 +250,9 @@ KiB Swap:  3145724 total,  3120012 free,    25712 used.  1829944 avail Mem
 | T | 根据时间/累计时间进行排序 |
 | W | 将当前设置写入~/.toprc文件中 |
 
+## btop
 
+[还在用 top htop? 赶紧换 btop 吧，真香！](https://mp.weixin.qq.com/s/Qr-z0-zL44UjnItmDlsMzg)
 
 
 
