@@ -546,6 +546,11 @@
     - [锚框](./MachineLearning/DeepLearning/chapter_computer-vision/anchor.md)
     - [多尺度目标检测](./MachineLearning/DeepLearning/chapter_computer-vision/multiscale-object-detection.md)
     - [目标检测数据集](./MachineLearning/DeepLearning/chapter_computer-vision/object-detection-dataset.md)
+    - [单发多框检测（SSD）](./MachineLearning/DeepLearning/chapter_computer-vision/ssd.md)
+    - [区域卷积神经网络（R-CNN）系列](./MachineLearning/DeepLearning/chapter_computer-vision/rcnn.md)
+    - [语义分割和数据集](./MachineLearning/DeepLearning/chapter_computer-vision/semantic-segmentation-and-dataset.md)
+    - [转置卷积](./MachineLearning/DeepLearning/chapter_computer-vision/transposed-conv.md)
+    - [全卷积网络](./MachineLearning/DeepLearning/chapter_computer-vision/fcn.md)
 
 ## [Web前端](./Web/)
 
