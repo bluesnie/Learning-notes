@@ -78,6 +78,7 @@
     - [asynico异步编程](./Python/Python语言进阶/06-asyncio异步编程.md)
     - [GIL全局解释器锁](./Python/Python语言进阶/07-GIL全局解释器锁.md)
     - [线程池ThreadPoolExecutor](./Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md)
+    - [虚拟环境venv](./Python/Python语言进阶/09-虚拟环境venv.md)
 
 - Python 第三方库
     - Django
