@@ -87,6 +87,7 @@
 - [GIL全局解释器锁](./Python/Python语言进阶/07-GIL全局解释器锁.md)
 - [线程池ThreadPoolExecutor](./Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md)
 - [虚拟环境venv](./Python/Python语言进阶/09-虚拟环境venv.md)
+- [Python代码程序综合防护](./Python/Python语言进阶/10-Python代码程序综合防护.md)
 
 ### [Python 第三方库](./Python/第三方库)
 
@@ -591,6 +592,9 @@
 - [topic](ROS/进阶/源码分析/04-topic.md)
 - [service](ROS/进阶/源码分析/05-service.md)
 
+##### 其他
+- [ros1源码加密混淆](ROS/进阶/00-ros1源码加密混淆.md)
+
 ### [ROS2](ROS2)
 
 #### ROS2入门篇
@@ -813,6 +817,9 @@
 - [rclcpp](ROS2/ROS2常用代码模板/001-rclcpp.md)
 - [rclpy](ROS2/ROS2常用代码模板/002-rclpy.md)
 - [urdf](ROS2/ROS2常用代码模板/003-urdf.md)
+
+##### 进阶
+- [ros2源码加密混淆](ROS2/进阶/00-ros2源码加密混淆.md)
 
 ## Navigation2
 

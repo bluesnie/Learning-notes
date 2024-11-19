@@ -242,6 +242,7 @@ pdb单步执行太麻烦了，所以第二种方法是import pdb 之后，直接
 修改下上面的实例如下，import pdb, 添加了pdb.set_trace()到可能出错的代码前面：
 
 - test.py
+
 ```python
 import pdb
 

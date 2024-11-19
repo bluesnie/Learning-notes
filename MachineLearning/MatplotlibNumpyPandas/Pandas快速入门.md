@@ -1941,7 +1941,7 @@ df2
 
 用`where`条件赋值：
 
-- 签名`DataFrame.where()`不同于`numpy.where()`。大致相当于。`df1.where(m, df2)``````np.where(m, df1, df2)`
+- `DataFrame.where()`不同于`numpy.where()`。大致相当于。`df1.where(m, df2)`和`np.where(m, df1, df2)`
 
 ```python
 df5 = df2.copy()
