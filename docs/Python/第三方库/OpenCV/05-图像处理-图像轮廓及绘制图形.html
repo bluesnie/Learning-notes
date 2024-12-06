@@ -5593,6 +5593,45 @@
             
         </li>
     
+        <li class="chapter " data-level="8.1.15.12" data-path="../../../MachineLearning/DeepLearning/chapter_computer-vision/neural-style.html">
+            
+                <a href="../../../MachineLearning/DeepLearning/chapter_computer-vision/neural-style.html">
+            
+                    
+                    风格迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.15.13" data-path="../../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-cifar10.html">
+            
+                <a href="../../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-cifar10.html">
+            
+                    
+                    实战 Kaggle 比赛：图像分类 (CIFAR-10)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.15.14" data-path="../../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-dog.html">
+            
+                <a href="../../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-dog.html">
+            
+                    
+                    实战Kaggle比赛：狗的品种识别（ImageNet Dogs）
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -9929,17 +9968,16 @@
 </li>
 </ul>
 <h3 id="&#x8F6E;&#x5ED3;&#x7279;&#x5F81;">&#x8F6E;&#x5ED3;&#x7279;&#x5F81;</h3>
-<pre><code>```python
-    # &#x7B2C;&#x4E00;&#x4E2A;&#x8F6E;&#x5ED3; 
-    cnt = contours[0] 
-    # &#x9762;&#x79EF; 
+<pre><code class="lang-python">    <span class="hljs-comment"># &#x7B2C;&#x4E00;&#x4E2A;&#x8F6E;&#x5ED3; </span>
+    cnt = contours[<span class="hljs-number">0</span>] 
+    <span class="hljs-comment"># &#x9762;&#x79EF; </span>
     area = cv2.contourArea(cnt) 
-    # &#x5468;&#x957F;&#xFF0C;True&#xFF1A;&#x8868;&#x793A;&#x95ED;&#x5408;&#x7684;
-    perimeter = cv2.arcLength(cnt, True) 
-    print(&quot;&#x9762;&#x79EF;&#xFF1A;&quot;,area) 
-    print(&quot;&#x5468;&#x957F;&#xFF1A;&quot;, perimeter)
-```
-</code></pre><h3 id="&#x8F6E;&#x5ED3;&#x8FD1;&#x4F3C;">&#x8F6E;&#x5ED3;&#x8FD1;&#x4F3C;</h3>
+    <span class="hljs-comment"># &#x5468;&#x957F;&#xFF0C;True&#xFF1A;&#x8868;&#x793A;&#x95ED;&#x5408;&#x7684;</span>
+    perimeter = cv2.arcLength(cnt, <span class="hljs-keyword">True</span>) 
+    print(<span class="hljs-string">&quot;&#x9762;&#x79EF;&#xFF1A;&quot;</span>,area) 
+    print(<span class="hljs-string">&quot;&#x5468;&#x957F;&#xFF1A;&quot;</span>, perimeter)
+</code></pre>
+<h3 id="&#x8F6E;&#x5ED3;&#x8FD1;&#x4F3C;">&#x8F6E;&#x5ED3;&#x8FD1;&#x4F3C;</h3>
 <ul>
 <li><p><img src="imgs/3b36af14-a172-4e6c-acfa-a79c2cef5484-5771924.jpg" alt=""></p>
 <ul>
@@ -9971,18 +10009,16 @@
 </ul>
 <h3 id="&#x8FB9;&#x754C;&#x77E9;&#x5F62;">&#x8FB9;&#x754C;&#x77E9;&#x5F62;</h3>
 <pre><code>* &#x793A;&#x4F8B;&#x4EE3;&#x7801;
-
-    ```python
-        img = cv2.imread(&quot;../img/contours.png&quot;) 
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
-        ret, thresh = cv2.threshold(gray, 127,255, cv2.THRESH_BINARY) 
-        contours,hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) 
-        cnt = contours[0] # 0&#xFF1A;&#x7B2C;0&#x4E2A;&#x8F6E;&#x5ED3;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x7684;&#x5916;&#x63A5;&#x77E9;&#x5F62;&#xFF08;&#x5916;&#x8F6E;&#x5ED3;&#xFF09;; 1&#xFF1A;&#x5185;&#x8F6E;&#x5ED3;&#xFF08;&#x5185;&#x63A5;&#x77E9;&#x5F62;&#xFF09;..... 
-        x,y,w,h = cv2.boundingRect(cnt)
-        img = cv2.rectangle(img, (x,y), (x+w, y+h), (0,0,255), 2) 
-        show_img([img])
-    ```
-</code></pre><ul>
+</code></pre><pre><code class="lang-python">    img = cv2.imread(<span class="hljs-string">&quot;../img/contours.png&quot;</span>) 
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
+    ret, thresh = cv2.threshold(gray, <span class="hljs-number">127</span>,<span class="hljs-number">255</span>, cv2.THRESH_BINARY) 
+    contours,hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) 
+    cnt = contours[<span class="hljs-number">0</span>] <span class="hljs-comment"># 0&#xFF1A;&#x7B2C;0&#x4E2A;&#x8F6E;&#x5ED3;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x4E09;&#x89D2;&#x5F62;&#x7684;&#x5916;&#x63A5;&#x77E9;&#x5F62;&#xFF08;&#x5916;&#x8F6E;&#x5ED3;&#xFF09;; 1&#xFF1A;&#x5185;&#x8F6E;&#x5ED3;&#xFF08;&#x5185;&#x63A5;&#x77E9;&#x5F62;&#xFF09;..... </span>
+    x,y,w,h = cv2.boundingRect(cnt)
+    img = cv2.rectangle(img, (x,y), (x+w, y+h), (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>), <span class="hljs-number">2</span>) 
+    show_img([img])
+</code></pre>
+<ul>
 <li><p><img src="imgs/3f7397a5-35e2-4955-ac75-ba809dae0428-5771924.jpg" alt=""></p>
 <ul>
 <li>&#x5E94;&#x7528;&#xFF1A;&#x8BA1;&#x7B97;&#x9762;&#x79EF;&#x6BD4;</li>
@@ -9997,15 +10033,13 @@
 </ul>
 <h3 id="&#x5916;&#x63A5;&#x5706;">&#x5916;&#x63A5;&#x5706;</h3>
 <pre><code>* &#x793A;&#x4F8B;&#x4EE3;&#x7801;
-
-```python
-    (x,y),radius = cv2.minEnclosingCircle(cnt) 
+</code></pre><pre><code class="lang-python">    (x,y),radius = cv2.minEnclosingCircle(cnt) 
     center = (int(x),int(y)) 
     radius = int(radius) 
-    img =cv2.circle(img,center,radius,(0,255,0),2)
+    img =cv2.circle(img,center,radius,(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>),<span class="hljs-number">2</span>)
     show_img([img])
-```
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><img src="imgs/31fb49ea-4001-419f-9da7-62ecf517a8da-5771924.jpg" alt=""></li>
 </ul>
 
@@ -10051,7 +10085,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"图像轮廓及绘制图形","level":"3.3.5.5","depth":3,"next":{"title":"图像模板匹配","level":"3.3.5.6","depth":3,"path":"Python/第三方库/OpenCV/06-图像处理-图像模板匹配.md","ref":"./Python/第三方库/OpenCV/06-图像处理-图像模板匹配.md","articles":[]},"previous":{"title":"图像梯度-边缘检测-图像金字塔","level":"3.3.5.4","depth":3,"path":"Python/第三方库/OpenCV/04-图像处理-图像梯度-边缘检测-图像金字塔.md","ref":"./Python/第三方库/OpenCV/04-图像处理-图像梯度-边缘检测-图像金字塔.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/第三方库/OpenCV/05-图像处理-图像轮廓及绘制图形.md","mtime":"2024-06-03T12:29:38.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-19T09:09:25.414Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"图像轮廓及绘制图形","level":"3.3.5.5","depth":3,"next":{"title":"图像模板匹配","level":"3.3.5.6","depth":3,"path":"Python/第三方库/OpenCV/06-图像处理-图像模板匹配.md","ref":"./Python/第三方库/OpenCV/06-图像处理-图像模板匹配.md","articles":[]},"previous":{"title":"图像梯度-边缘检测-图像金字塔","level":"3.3.5.4","depth":3,"path":"Python/第三方库/OpenCV/04-图像处理-图像梯度-边缘检测-图像金字塔.md","ref":"./Python/第三方库/OpenCV/04-图像处理-图像梯度-边缘检测-图像金字塔.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/第三方库/OpenCV/05-图像处理-图像轮廓及绘制图形.md","mtime":"2024-12-06T08:32:31.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-06T10:48:57.609Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

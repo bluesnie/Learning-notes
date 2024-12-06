@@ -477,6 +477,9 @@
     - [语义分割和数据集](./MachineLearning/DeepLearning/chapter_computer-vision/semantic-segmentation-and-dataset.md)
     - [转置卷积](./MachineLearning/DeepLearning/chapter_computer-vision/transposed-conv.md)
     - [全卷积网络](./MachineLearning/DeepLearning/chapter_computer-vision/fcn.md)
+    - [风格迁移](./MachineLearning/DeepLearning/chapter_computer-vision/neural-style.md)
+    - [实战 Kaggle 比赛：图像分类 (CIFAR-10)](./MachineLearning/DeepLearning/chapter_computer-vision/kaggle-cifar10.md)
+    - [实战Kaggle比赛：狗的品种识别（ImageNet Dogs）](./MachineLearning/DeepLearning/chapter_computer-vision/kaggle-dog.md)
 
 - 数据分析库
     - [numpy基础](./MachineLearning/MatplotlibNumpyPandas/numpy基础.md)

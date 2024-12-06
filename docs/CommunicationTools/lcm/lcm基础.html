@@ -5589,6 +5589,45 @@
             
         </li>
     
+        <li class="chapter " data-level="8.1.15.12" data-path="../../MachineLearning/DeepLearning/chapter_computer-vision/neural-style.html">
+            
+                <a href="../../MachineLearning/DeepLearning/chapter_computer-vision/neural-style.html">
+            
+                    
+                    风格迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.15.13" data-path="../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-cifar10.html">
+            
+                <a href="../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-cifar10.html">
+            
+                    
+                    实战 Kaggle 比赛：图像分类 (CIFAR-10)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.15.14" data-path="../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-dog.html">
+            
+                <a href="../../MachineLearning/DeepLearning/chapter_computer-vision/kaggle-dog.html">
+            
+                    
+                    实战Kaggle比赛：狗的品种识别（ImageNet Dogs）
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -10160,6 +10199,48 @@ subscription = lc.subscribe(<span class="hljs-string">&quot;EXAMPLE&quot;</span>
 </ul>
 <h2 id="&#x6559;&#x7A0B;&#x548C;&#x793A;&#x4F8B;">&#x6559;&#x7A0B;&#x548C;&#x793A;&#x4F8B;</h2>
 <p><a href="https://lcm-proj.github.io/lcm/content/tutorial.html#" target="_blank">&#x5404;&#x4E2A;&#x8BED;&#x8A00;&#x7684;&#x6559;&#x7A0B;&#x548C;&#x793A;&#x4F8B;&#x94FE;&#x63A5;</a></p>
+<h2 id="&#x53EF;&#x89C6;&#x5316;">&#x53EF;&#x89C6;&#x5316;</h2>
+<ul>
+<li><code>make_types.sh</code></li>
+</ul>
+<pre><code class="lang-shell">#!/bin/bash
+
+GREEN=&apos;\033[0;32m&apos;
+NC=&apos;\033[0m&apos; # No Color
+
+echo -e &quot;${GREEN} Starting LCM type generation...${NC}&quot;
+
+cd ../jar_data  # &#x8FDB;&#x5230;&#x9700;&#x8981;&#x751F;&#x6210;jar&#x5305;&#x8DEF;&#x5F84;
+
+# Clean
+rm -rf */*.jar
+rm -rf */*.java
+rm -rf */*.class
+
+# Make
+# &#x751F;&#x6210;java&#x6587;&#x4EF6; -j
+lcm-gen -j ../lcm_types/common/**.lcm 
+lcm-gen -j ../lcm_types/lowlevel_sdk/**.lcm
+lcm-gen -j ../lcm_types/manipulation/**.lcm
+cp /usr/local/share/java/lcm.jar .
+javac -cp lcm.jar */*.java
+jar cf manipulation_types.jar */*.class
+mkdir -p jar_java
+mv lcm.jar manipulation_types.jar jar_java  # &#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;jar&#x5305;
+export CLASSPATH=${DIR}/../jar_data/jar_java/manipulation_types.jar
+
+echo -e &quot;${GREEN} Done with LCM type generation${NC}&quot;
+</code></pre>
+<ul>
+<li><code>launch_lcm_spy.sh</code></li>
+</ul>
+<pre><code class="lang-shell">#!/bin/bash
+DIR=&quot;$( cd &quot;$( dirname &quot;${BASH_SOURCE[0]}&quot; )&quot; &gt;/dev/null 2&gt;&amp;1 &amp;&amp; pwd )&quot;
+cd ${DIR}/../jar_data/jar_java
+export CLASSPATH=${DIR}/../jar_data/jar_java/manipulation_types.jar  # &#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;
+pwd
+lcm-spy
+</code></pre>
 
                                 
                                 </section>
@@ -10195,7 +10276,7 @@ subscription = lc.subscribe(<span class="hljs-string">&quot;EXAMPLE&quot;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"lcm基础","level":"11.1.1","depth":2,"next":{"title":"Docker","level":"12.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"12.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"12.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"12.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"12.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"12.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"12.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"LCM","level":"11.1","depth":1,"ref":"","articles":[{"title":"lcm基础","level":"11.1.1","depth":2,"path":"CommunicationTools/lcm/lcm基础.md","ref":"CommunicationTools/lcm/lcm基础.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"CommunicationTools/lcm/lcm基础.md","mtime":"2024-06-15T06:00:32.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-19T09:09:25.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"lcm基础","level":"11.1.1","depth":2,"next":{"title":"Docker","level":"12.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"12.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"12.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"12.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"12.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"12.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"12.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]}]},"previous":{"title":"LCM","level":"11.1","depth":1,"ref":"","articles":[{"title":"lcm基础","level":"11.1.1","depth":2,"path":"CommunicationTools/lcm/lcm基础.md","ref":"CommunicationTools/lcm/lcm基础.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"CommunicationTools/lcm/lcm基础.md","mtime":"2024-11-20T02:45:24.016Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-06T10:48:57.609Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

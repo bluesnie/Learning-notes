@@ -264,3 +264,51 @@ except KeyboardInterrupt:
 ## 教程和示例
 
 [各个语言的教程和示例链接](https://lcm-proj.github.io/lcm/content/tutorial.html#)
+
+## 可视化
+
+- `make_types.sh`
+
+```shell
+#!/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN} Starting LCM type generation...${NC}"
+
+cd ../jar_data  # 进到需要生成jar包路径
+
+# Clean
+rm -rf */*.jar
+rm -rf */*.java
+rm -rf */*.class
+
+# Make
+# 生成java文件 -j
+lcm-gen -j ../lcm_types/common/**.lcm 
+lcm-gen -j ../lcm_types/lowlevel_sdk/**.lcm
+lcm-gen -j ../lcm_types/manipulation/**.lcm
+cp /usr/local/share/java/lcm.jar .
+javac -cp lcm.jar */*.java
+jar cf manipulation_types.jar */*.class
+mkdir -p jar_java
+mv lcm.jar manipulation_types.jar jar_java  # 生成自定义jar包
+export CLASSPATH=${DIR}/../jar_data/jar_java/manipulation_types.jar
+
+echo -e "${GREEN} Done with LCM type generation${NC}"
+```
+
+
+- `launch_lcm_spy.sh`
+
+```shell
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${DIR}/../jar_data/jar_java
+export CLASSPATH=${DIR}/../jar_data/jar_java/manipulation_types.jar  # 设置环境变量
+pwd
+lcm-spy
+```
+
+
