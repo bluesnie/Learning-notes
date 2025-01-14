@@ -556,6 +556,25 @@
     - [风格迁移](./MachineLearning/DeepLearning/chapter_computer-vision/neural-style.md)
     - [实战 Kaggle 比赛：图像分类 (CIFAR-10)](./MachineLearning/DeepLearning/chapter_computer-vision/kaggle-cifar10.md)
     - [实战Kaggle比赛：狗的品种识别（ImageNet Dogs）](./MachineLearning/DeepLearning/chapter_computer-vision/kaggle-dog.md)
+  - 自然语言处理：预训练
+    - [词嵌入（word2vec）](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/word2vec.md)
+    - [近似训练](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/approx-training.md)
+    - [用于预训练词嵌入的数据集](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/word-embedding-dataset.md)
+    - [预训练word2vec](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/word2vec-pretraining.md)
+    - [全局向量的词嵌入（GloVe）](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/glove.md)
+    - [子词嵌入](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/subword-embedding.md)
+    - [词的相似性和类比任务](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/similarity-analogy.md)
+    - [来自Transformers的双向编码器表示（BERT）](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/bert.md)
+    - [用于预训练BERT的数据集](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/bert-dataset.md)
+    - [预训练BERT](./MachineLearning/DeepLearning/chapter_natural-language-processing-pretraining/bert-pretraining.md)
+  - 自然语言处理：应用
+    - [情感分析及数据集](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.md)
+    - [情感分析：使用循环神经网络](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/sentiment-analysis-rnn.md)
+    - [情感分析：使用卷积神经网络](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/sentiment-analysis-cnn.md)
+    - [自然语言推断与数据集](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/natural-language-inference-and-dataset.md)
+    - [自然语言推断：使用注意力](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/natural-language-inference-attention.md)
+    - [针对序列级和词元级应用微调BERT](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/finetuning-bert.md)
+    - [自然语言推断：微调BERT](./MachineLearning/DeepLearning/chapter_natural-language-processing-applications/natural-language-inference-bert.md)
 
 ## [Web前端](./Web/)
 
