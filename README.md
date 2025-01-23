@@ -843,6 +843,27 @@
 ##### 进阶
 - [ros2源码加密混淆](ROS2/进阶/00-ros2源码加密混淆.md)
 
+## Robot
+
+### 运动控制
+
+- [‌T形速度曲线规划](./Robot/MotionControl/‌T形速度曲线规划.md)
+
+### Moveit2
+
+#### 教程
+
+- [入门](./Robot/Moveit2/tutorials/01-getting_started.md)
+- [在 RViz 中可视化调试](./Robot/Moveit2/tutorials/02-visualizing_in_rviz.md)
+- [在物体周围规划(碰撞规划)](./Robot/Moveit2/tutorials/03-planning_around_object.md)
+- [抓放系统](./Robot/Moveit2/tutorials/04-pick_and_place.md)
+
+#### 示例
+
+- [MoveGroup C++ 接口](./Robot/Moveit2/examples/01-move_group_interface.md)
+- C++接口
+  - [机器人模型和机器人状态](./Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md)
+
 ## Navigation2
 
 ### 源码分析
