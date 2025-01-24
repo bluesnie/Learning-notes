@@ -749,6 +749,8 @@
     - [MoveGroup C++ 接口](./Robot/Moveit2/examples/01-move_group_interface.md)
     - C++接口
       - [机器人模型和机器人状态](./Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md)
+      - [规划场景](./Robot/Moveit2/examples/cplus_interfaces/02-planning_scene.md)
+      - [规划场景监视器](./Robot/Moveit2/examples/cplus_interfaces/03-planning_scene_monitor.md)
 
 ## Navigation2
 
@@ -776,6 +778,7 @@
     - [制作容器镜像的最佳实践](./Utils/docker/03-制作容器镜像的最佳实践.md)
     - [制作Python_Docker镜像的最佳实践](./Utils/docker/04-制作Python_Docker镜像的最佳实践.md)
     - [FastDFS](Utils/docker/FastDFS.md)
+    - [日志管理](Utils/docker/05-日志管理.md)
 - [Git](./Utils/Git基本命令.md)
 - Nginx
     - [Nginx基础](Utils/Nginx/Nginx基础.md)

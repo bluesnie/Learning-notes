@@ -4,11 +4,19 @@
 
 # [机器人模型和机器人状态](https://moveit.picknik.ai/main/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#robot-model-and-robot-state)
 
+## 功能目录
+  - 获取关节值
+  - 关节限位检查
+  - 正向运动学
+  - 逆运动学
+  - 获取雅可比矩阵
 
-机器人模型（[RobotModel](https://github.com/moveit/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.hpp)）类和机器人状态（[RobotState](https://github.com/moveit/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.hpp)）类是可以访问机器人运动学的核心类。 
+## 概念
 
-- 机器人模型（RobotModel）类包含所有链接和关节之间的关系，包括从 URDF 加载的关节限位属性。 RobotModel 还将机器人的链接和关节分成 SRDF 中定义的规划组。 有关 URDF 和 SRDF 的单独教程，请点击此处： [URDF和SRDF教程](https://moveit.picknik.ai/main/doc/examples/urdf_srdf/urdf_srdf_tutorial.html)
-- 机器人状态（RobotState）包含机器人在某个时间点的信息，存储关节位置矢量，以及可选的速度和加速度矢量。 这些信息可用于获取依赖于机器人当前状态的运动学信息，例如末端效应器的雅各布因子。 RobotState 还包含一些辅助函数，用于根据末端效应器的位置（笛卡尔姿态）设置手臂位置和计算笛卡尔轨迹。
+- 机器人模型（[RobotModel](https://github.com/moveit/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.hpp)）类和机器人状态（[RobotState](https://github.com/moveit/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.hpp)）类是可以访问机器人运动学的核心类。 
+
+  - 机器人模型（RobotModel）类包含所有链接和关节之间的关系，包括从 URDF 加载的关节限位属性。 RobotModel 还将机器人的链接和关节分成 SRDF 中定义的规划组。 有关 URDF 和 SRDF 的单独教程，请点击此处： [URDF和SRDF教程](https://moveit.picknik.ai/main/doc/examples/urdf_srdf/urdf_srdf_tutorial.html)
+  - 机器人状态（RobotState）包含机器人在某个时间点的信息，存储关节位置矢量，以及可选的速度和加速度矢量。 这些信息可用于获取依赖于机器人当前状态的运动学信息，例如末端效应器的雅各布因子。 RobotState 还包含一些辅助函数，用于根据末端效应器的位置（笛卡尔姿态）设置手臂位置和计算笛卡尔轨迹。
 
 > 实例：`ros2 launch moveit2_tutorials robot_model_and_robot_state_tutorial.launch.py`
 

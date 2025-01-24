@@ -69,6 +69,8 @@
     <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="02-planning_scene.html" />
+    
     
 
     </head>
@@ -9386,6 +9388,32 @@
             
         </li>
     
+        <li class="chapter " data-level="11.2.2.2.2" data-path="02-planning_scene.html">
+            
+                <a href="02-planning_scene.html">
+            
+                    
+                    规划场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2.2.2.3" data-path="03-planning_scene_monitor.html">
+            
+                <a href="03-planning_scene_monitor.html">
+            
+                    
+                    规划场景监视器
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -9662,6 +9690,19 @@
             
                     
                     FastDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="14.1.7" data-path="../../../../Utils/docker/05-日志管理.html">
+            
+                <a href="../../../../Utils/docker/05-日志管理.html">
+            
+                    
+                    日志管理
             
                 </a>
             
@@ -10361,10 +10402,22 @@
                                 <h6 id="datetime20250123-1615">datetime:2025/01/23 16:15</h6>
 <h6 id="authornzb">author:nzb</h6>
 <h1 id="&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#x548C;&#x673A;&#x5668;&#x4EBA;&#x72B6;&#x6001;"><a href="https://moveit.picknik.ai/main/doc/examples/robot_model_and_robot_state/robot_model_and_robot_state_tutorial.html#robot-model-and-robot-state" target="_blank">&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#x548C;&#x673A;&#x5668;&#x4EBA;&#x72B6;&#x6001;</a></h1>
-<p>&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#xFF08;<a href="https://github.com/moveit/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.hpp" target="_blank">RobotModel</a>&#xFF09;&#x7C7B;&#x548C;&#x673A;&#x5668;&#x4EBA;&#x72B6;&#x6001;&#xFF08;<a href="https://github.com/moveit/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.hpp" target="_blank">RobotState</a>&#xFF09;&#x7C7B;&#x662F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x673A;&#x5668;&#x4EBA;&#x8FD0;&#x52A8;&#x5B66;&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#x3002; </p>
+<h2 id="&#x529F;&#x80FD;&#x76EE;&#x5F55;">&#x529F;&#x80FD;&#x76EE;&#x5F55;</h2>
+<ul>
+<li>&#x83B7;&#x53D6;&#x5173;&#x8282;&#x503C;</li>
+<li>&#x5173;&#x8282;&#x9650;&#x4F4D;&#x68C0;&#x67E5;</li>
+<li>&#x6B63;&#x5411;&#x8FD0;&#x52A8;&#x5B66;</li>
+<li>&#x9006;&#x8FD0;&#x52A8;&#x5B66;</li>
+<li>&#x83B7;&#x53D6;&#x96C5;&#x53EF;&#x6BD4;&#x77E9;&#x9635;</li>
+</ul>
+<h2 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h2>
+<ul>
+<li><p>&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#xFF08;<a href="https://github.com/moveit/moveit2/blob/main/moveit_core/robot_model/include/moveit/robot_model/robot_model.hpp" target="_blank">RobotModel</a>&#xFF09;&#x7C7B;&#x548C;&#x673A;&#x5668;&#x4EBA;&#x72B6;&#x6001;&#xFF08;<a href="https://github.com/moveit/moveit2/blob/main/moveit_core/robot_state/include/moveit/robot_state/robot_state.hpp" target="_blank">RobotState</a>&#xFF09;&#x7C7B;&#x662F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x673A;&#x5668;&#x4EBA;&#x8FD0;&#x52A8;&#x5B66;&#x7684;&#x6838;&#x5FC3;&#x7C7B;&#x3002; </p>
 <ul>
 <li>&#x673A;&#x5668;&#x4EBA;&#x6A21;&#x578B;&#xFF08;RobotModel&#xFF09;&#x7C7B;&#x5305;&#x542B;&#x6240;&#x6709;&#x94FE;&#x63A5;&#x548C;&#x5173;&#x8282;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5305;&#x62EC;&#x4ECE; URDF &#x52A0;&#x8F7D;&#x7684;&#x5173;&#x8282;&#x9650;&#x4F4D;&#x5C5E;&#x6027;&#x3002; RobotModel &#x8FD8;&#x5C06;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x94FE;&#x63A5;&#x548C;&#x5173;&#x8282;&#x5206;&#x6210; SRDF &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x5212;&#x7EC4;&#x3002; &#x6709;&#x5173; URDF &#x548C; SRDF &#x7684;&#x5355;&#x72EC;&#x6559;&#x7A0B;&#xFF0C;&#x8BF7;&#x70B9;&#x51FB;&#x6B64;&#x5904;&#xFF1A; <a href="https://moveit.picknik.ai/main/doc/examples/urdf_srdf/urdf_srdf_tutorial.html" target="_blank">URDF&#x548C;SRDF&#x6559;&#x7A0B;</a></li>
 <li>&#x673A;&#x5668;&#x4EBA;&#x72B6;&#x6001;&#xFF08;RobotState&#xFF09;&#x5305;&#x542B;&#x673A;&#x5668;&#x4EBA;&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5B58;&#x50A8;&#x5173;&#x8282;&#x4F4D;&#x7F6E;&#x77E2;&#x91CF;&#xFF0C;&#x4EE5;&#x53CA;&#x53EF;&#x9009;&#x7684;&#x901F;&#x5EA6;&#x548C;&#x52A0;&#x901F;&#x5EA6;&#x77E2;&#x91CF;&#x3002; &#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x53EF;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x4F9D;&#x8D56;&#x4E8E;&#x673A;&#x5668;&#x4EBA;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684;&#x8FD0;&#x52A8;&#x5B66;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x672B;&#x7AEF;&#x6548;&#x5E94;&#x5668;&#x7684;&#x96C5;&#x5404;&#x5E03;&#x56E0;&#x5B50;&#x3002; RobotState &#x8FD8;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x6839;&#x636E;&#x672B;&#x7AEF;&#x6548;&#x5E94;&#x5668;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x7B1B;&#x5361;&#x5C14;&#x59FF;&#x6001;&#xFF09;&#x8BBE;&#x7F6E;&#x624B;&#x81C2;&#x4F4D;&#x7F6E;&#x548C;&#x8BA1;&#x7B97;&#x7B1B;&#x5361;&#x5C14;&#x8F68;&#x8FF9;&#x3002;</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>&#x5B9E;&#x4F8B;&#xFF1A;<code>ros2 launch moveit2_tutorials robot_model_and_robot_state_tutorial.launch.py</code></p>
@@ -10588,6 +10641,10 @@ int main(int argc, char** argv)
             
                 
                 
+                <a href="02-planning_scene.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 规划场景">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -10595,7 +10652,7 @@ int main(int argc, char** argv)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"机器人模型和机器人状态","level":"11.2.2.2.1","depth":4,"next":{"title":"源码分析","level":"12.1","depth":1,"ref":"","articles":[{"title":"核心定义","level":"12.1.1","depth":2,"path":"Navigation2/源码分析/001-核心定义.md","ref":"Navigation2/源码分析/001-核心定义.md","articles":[]},{"title":"通用插件系统管理","level":"12.1.2","depth":2,"path":"Navigation2/源码分析/002-通用插件系统管理.md","ref":"Navigation2/源码分析/002-通用插件系统管理.md","articles":[]},{"title":"行为树及节点","level":"12.1.3","depth":2,"path":"Navigation2/源码分析/003-行为树及节点.md","ref":"Navigation2/源码分析/003-行为树及节点.md","articles":[]},{"title":"地图和定位","level":"12.1.4","depth":2,"path":"Navigation2/源码分析/004-地图和定位.md","ref":"Navigation2/源码分析/004-地图和定位.md","articles":[]},{"title":"规划器服务","level":"12.1.5","depth":2,"path":"Navigation2/源码分析/005-规划器服务.md","ref":"Navigation2/源码分析/005-规划器服务.md","articles":[]},{"title":"平滑器服务","level":"12.1.6","depth":2,"path":"Navigation2/源码分析/006-平滑器服务.md","ref":"Navigation2/源码分析/006-平滑器服务.md","articles":[]},{"title":"控制器服务","level":"12.1.7","depth":2,"path":"Navigation2/源码分析/007-控制器服务.md","ref":"Navigation2/源码分析/007-控制器服务.md","articles":[]},{"title":"应用及工具","level":"12.1.8","depth":2,"path":"Navigation2/源码分析/008-应用及工具.md","ref":"Navigation2/源码分析/008-应用及工具.md","articles":[]}]},"previous":{"title":"C++接口","level":"11.2.2.2","depth":3,"ref":"","articles":[{"title":"机器人模型和机器人状态","level":"11.2.2.2.1","depth":4,"path":"Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md","ref":"./Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md","mtime":"2025-01-23T09:44:58.180Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-23T10:57:21.729Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"机器人模型和机器人状态","level":"11.2.2.2.1","depth":4,"next":{"title":"规划场景","level":"11.2.2.2.2","depth":4,"path":"Robot/Moveit2/examples/cplus_interfaces/02-planning_scene.md","ref":"./Robot/Moveit2/examples/cplus_interfaces/02-planning_scene.md","articles":[]},"previous":{"title":"C++接口","level":"11.2.2.2","depth":3,"ref":"","articles":[{"title":"机器人模型和机器人状态","level":"11.2.2.2.1","depth":4,"path":"Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md","ref":"./Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md","articles":[]},{"title":"规划场景","level":"11.2.2.2.2","depth":4,"path":"Robot/Moveit2/examples/cplus_interfaces/02-planning_scene.md","ref":"./Robot/Moveit2/examples/cplus_interfaces/02-planning_scene.md","articles":[]},{"title":"规划场景监视器","level":"11.2.2.2.3","depth":4,"path":"Robot/Moveit2/examples/cplus_interfaces/03-planning_scene_monitor.md","ref":"./Robot/Moveit2/examples/cplus_interfaces/03-planning_scene_monitor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Robot/Moveit2/examples/cplus_interfaces/01-robotmodel_robotstate.md","mtime":"2025-01-24T06:25:01.865Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-24T09:15:37.280Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
