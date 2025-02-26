@@ -4,6 +4,8 @@
 
 # [运动规划接口](https://moveit.picknik.ai/main/doc/examples/motion_planning_api/motion_planning_api_tutorial.html#motion-planning-api)
 
+在 MoveIt 中，运动规划器是通过插件基础架构加载的。 这使得 MoveIt 可以在运行时加载运动规划器。 在本示例中，我们将通过 C++ 代码来实现这一功能。
+
 ## 功能目录
 - 运动规划可视化
 - 设置运动规划目标位姿

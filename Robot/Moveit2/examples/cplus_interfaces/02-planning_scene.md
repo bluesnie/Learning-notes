@@ -4,6 +4,8 @@
 
 # [规划场景](https://moveit.picknik.ai/main/doc/examples/planning_scene/planning_scene_tutorial.html#planning-scene)
 
+`PlanningScene` 类提供了您将用于碰撞检查和约束检查的主要接口。 在本教程中，我们将探讨该类的 C++ 接口。
+
 ## 功能目录
   - 碰撞检测
     - 自碰撞检测

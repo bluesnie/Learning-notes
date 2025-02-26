@@ -4,6 +4,10 @@
 
 # [规划场景ROS接口](https://moveit.picknik.ai/main/doc/examples/planning_scene_ros_api/planning_scene_ros_api_tutorial.html#planning-scene-ros-api)
 
+在本教程中，我们将研究如何使用规划场景差异来执行以下两项操作： 
+- 在世界中添加和移除对象 
+- 在机器人上添加和移除对象
+
 ## 功能目录
 
 - 添加一个对象到环境中

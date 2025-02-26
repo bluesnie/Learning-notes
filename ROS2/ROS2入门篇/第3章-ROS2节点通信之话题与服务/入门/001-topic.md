@@ -182,7 +182,27 @@ ros2 topic pub /chatter std_msgs/msg/String 'data: "123"'
 
 ![image-20210803115906116](imgs/image-20210803115906116.png)
 
-## 4.最后
+## 4.话题名设置
+
+- 全局话题
+  - 格式：定义时以`/`开头的名称，和命名空间、节点名称无关。
+  - `rclcpp` 示例：`publisher_ = this->create_publisher<std_msgs::msg::String>("/topic/chatter", 10);`
+  - `rclpy` 示例：`self.publisher_ = self.create_publisher(String, '/topic/chatter', 10)`
+  - 话题：话题名称为 `/topic/chatter`，与命名空间 `xxx` 以及节点名称 `yyy` 无关。
+
+- 相对话题
+  - 格式：非`/`开头的名称，参考命名空间设置话题名称，和节点名称无关。
+  - `rclcpp` 示例：`publisher_ = this->create_publisher<std_msgs::msg::String>("topic/chatter", 10);`
+  - `rclpy` 示例：`self.publisher_ = self.create_publisher(String, 'topic/chatter', 10)`
+  - 话题：话题名称为 `/xxx/topic/chatter`，与命名空间 `xxx` 有关，与节点名称 `yyy` 无关。
+
+- 私有话题
+  - 格式：定义时以`~/`开头的名称，和命名空间、节点名称都有关系。
+  - `rclcpp` 示例：`publisher_ = this->create_publisher<std_msgs::msg::String>("~/topic/chatter", 10);`
+  - `rclpy` 示例：`self.publisher_ = self.create_publisher(String, '~/topic/chatter', 10)`
+  - 话题：话题名称为 `/xxx/yyy/topic/chatter`，使用命名空间 `xxx` 以及节点名称 `yyy` 作为话题名称前缀。
+
+## 5.最后
 
 了解完话题，下一节就会带大家来动手写一写话题通信代码。
 

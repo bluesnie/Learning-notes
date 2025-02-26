@@ -2,8 +2,18 @@
 
 ###### author:nzb
 
-# [运动规划管道](https://moveit.picknik.ai/main/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html#motion-planning-pipeline)
+# [运动规划管道流](https://moveit.picknik.ai/main/doc/examples/motion_planning_pipeline/motion_planning_pipeline_tutorial.html#motion-planning-pipeline)
 
+在 MoveIt 中，运动规划器被设置为规划路径。 然而，有时我们可能需要对运动规划请求进行预处理或对规划路径进行后处理（例如，时间参数化）。 
+在这种情况下，我们使用规划流水线，将运动规划器与预处理和后处理阶段串联起来。 前处理和后处理阶段称为规划请求适配器，可通过 ROS 参数服务器按名称进行配置。 
+在本教程中，我们将通过 C++ 代码来实例化和调用这样一个规划流水线。
+
+## 功能目录
+- 运动规划可视化
+- 设置运动规划目标位姿
+- 可视化结果
+- 关节空间目标
+- 规划请求适配器
 
 ## 代码解读
 
