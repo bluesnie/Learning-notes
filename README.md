@@ -49,6 +49,8 @@
     - [iptables](Linux/命令指北/07-iptables.md)
     - [tmux](Linux/命令指北/08-tmux.md)
     - [ipdb-python调试器](Linux/命令指北/09-ipdb-python调试器.md)
+    - [systemd-自启服务](Linux/命令指北/10-systemd-自启服务.md)
+    - [自启服务-视频播放案例](Linux/命令指北/11-systemd-自启服务-视频播放案例.md)
 
 ## [Windows](./Windows)
 
@@ -887,6 +889,8 @@
   - [URDF 和 SRDF](./Robot/Moveit2/examples/integration_with_a_new_robot/02-URDF_and_SRDF.md)
   - [低级控制器](./Robot/Moveit2/examples/integration_with_a_new_robot/03-low_level_controllers.md)
   - [感知管道教程](./Robot/Moveit2/examples/integration_with_a_new_robot/04-perception_pipeline_tutorial.md)
+  - [手眼标定](./Robot/Moveit2/examples/integration_with_a_new_robot/05-hand_eye_calibration.md)
+  - [IKFast](./Robot/Moveit2/examples/integration_with_a_new_robot/06-IKFast_kinematics_solver.md)
 
 ### 感知
 
