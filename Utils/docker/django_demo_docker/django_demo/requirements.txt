@@ -45,7 +45,7 @@ oauthlib==3.1.0
 packaging==20.1
 pandas==1.0.2
 Pillow==7.0.0
-protobuf==3.12.2
+protobuf==3.18.3
 PyJWT==1.7.1
 pyparsing==2.4.6
 python-crontab==2.5.1
