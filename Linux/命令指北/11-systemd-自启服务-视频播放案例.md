@@ -38,7 +38,8 @@ Mar 26 10:35:31 pasture-10 python[21660]: Available platform plugins are: xcb.
    Restart=on-abort
    User=blues
    Group=blues
-   Environment=DISPLAY=:0
+   Environment=DISPLAY=:0  # 视频播放环境
+   # Environment="PULSE_SERVER=unix:/run/user/1000/pulse/native" # 音频播放环境，1000是用户id，根据实际情况修改
    Environment=XAUTHORITY=/home/blues/.Xauthority
    #Environment=QT_DEBUG_PLUGINS=1
    Environment=QT_QPA_PLATFORM_PLUGIN_PATH=/home/blues/anaconda3/envs/speech_interaction/plugins/platforms

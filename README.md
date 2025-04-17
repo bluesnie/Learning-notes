@@ -94,6 +94,9 @@
 - [线程池ThreadPoolExecutor](./Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md)
 - [虚拟环境venv](./Python/Python语言进阶/09-虚拟环境venv.md)
 - [Python代码程序综合防护](./Python/Python语言进阶/10-Python代码程序综合防护.md)
+- [多进程_subprocess_multiprocess](./Python/Python语言进阶/11-多进程_subprocess_multiprocess.md)
+- [进程同步-信号量-事件-队列](./Python/Python语言进阶/12-多进程扩展-进程同步-信号量-事件-队列.md)
+- [管道-数据共享-进程池](./Python/Python语言进阶/13-多进程扩展-管道-数据共享-进程池.md)
 
 ### [Python 第三方库](./Python/第三方库)
 
@@ -891,6 +894,12 @@
   - [感知管道教程](./Robot/Moveit2/examples/integration_with_a_new_robot/04-perception_pipeline_tutorial.md)
   - [手眼标定](./Robot/Moveit2/examples/integration_with_a_new_robot/05-hand_eye_calibration.md)
   - [IKFast](./Robot/Moveit2/examples/integration_with_a_new_robot/06-IKFast_kinematics_solver.md)
+- 配置
+  - [运动学配置](./Robot/Moveit2/examples/Configuration/01-kinematics_configuration.md)
+- 杂项
+  - [带MoveIt功能的双臂](./Robot/Moveit2/examples/Miscellaneous/00-dual_arms_with_moveIt.md)
+  - [混合规划](./Robot/Moveit2/examples/Miscellaneous/01-hybrid_planning.md)
+  - [信号平滑](./Robot/Moveit2/examples/Miscellaneous/02-realtime_servo.md)
 
 ### 感知
 

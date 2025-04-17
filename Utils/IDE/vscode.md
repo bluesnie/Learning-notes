@@ -120,8 +120,19 @@
   - 选择解释器
     - `Ctrl + Shift + p` -> `Python: Select Interperter` -> 选择对应的环境解释器
 
+# python 导包排序(取消插件格式化)
 
 
+```python
+repo = __file__
+for _ in range(3):
+    repo = os.path.dirname(repo)
+sys.path.append(repo)
+
+# fmt: off 如果不这样，导入语句会跳到最前面
+from lcm_msg.gamepad_lcmt import gamepad_lcmt
+# fmt: on
+```
 
 
 

@@ -296,8 +296,12 @@ NumberParameters: 0
 ```
 
 ### 问题解决
-  - windows 本机发送topic，本机接收不了，也阻塞，但是跨平台(Linux接收)可以，原因未知
-  - 解决方法：windows创建新用户，跑ros2 demo，可以正常发布接收
+  - ~~`windows` 本机发送 `topic` ，本机接收不了，也阻塞，但是跨平台(`Linux`接收)可以，原因未知~~
+  - ~~解决方法： `windows` 创建新用户，跑ros2 demo，可以正常发布接收~~
+  - 原因：`fastrtps` 锁文件问题
+  - 解决方法：
+    - 不启动任何`ros`节点
+    - 删除`C:\\ProgramData\\eprosima\\fastrtps_interprocess`目录下的文件，然后再起程序
 
 ## 无响应端口查看对应什么程序导致
 
