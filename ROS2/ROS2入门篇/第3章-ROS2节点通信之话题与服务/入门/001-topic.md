@@ -142,6 +142,8 @@ ros2 topic echo /chatter
 
 ![image-20210803115124591](imgs/image-20210803115124591.png)
 
+- 输出过滤：`ros2 topic echo /tf --filter "m.transforms[0].child_frame_id == 'vive_command_master'"`
+
 #### 3.2.4 `ros2 topic info <topic_name>` 查看主题信息
 
 命令

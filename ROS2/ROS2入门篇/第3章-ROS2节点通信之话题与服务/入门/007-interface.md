@@ -150,6 +150,8 @@ B  --> C[Python的py,C++的.h头文件]
 
 ### 3.2 定义接口
 
+> **`ros` 自定义的 `msg` 和 `srv` 文件名必须大写字母开头，满足`It should have the pattern '^[A-Z][A-Za-z0-9]*$'`**
+
 服务接口`MoveRobot.srv`
 
 ```

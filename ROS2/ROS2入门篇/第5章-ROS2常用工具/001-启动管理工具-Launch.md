@@ -216,11 +216,11 @@ ld = LaunchDescription()
 然后创建一个`Actions.Node`对象
 
 ```python
-example - node = Node(
+example_node = Node(
     package='package-name',  # 节点所在的功能包
     namespace='package-namespace',  # 命名空间。如果存在同名节点，这一选项会有用
     executable='execute-name/script-name.py',  # 表示要运行的可执行文件名或脚本名字.py
-    parameters=[{'parameter-name': parameter - value}],  # 参数
+    parameters=[{'parameter-name': parameter_value}],  # 参数
     arguments=['-xxx', xxx, '-xxx', xxx],  # 启动参数
     output='screen',  # 用于将话题信息打印到屏幕
     name='node-name'  # 表示启动后的节点名，可以没有
@@ -228,7 +228,7 @@ remappings = [  # 重映射
     ('/xxx/xxx-new', '/xxx/xxx-old'),
 ]
 )
-example - node2 = Node(
+example_node2 = Node(
     ......
 )
 ```
@@ -236,8 +236,8 @@ example - node2 = Node(
 将上面所有的`Node`对象加入`ld`，然后返回
 
 ```python
-ld.add_action(example - node)
-ld.add_action(example - node2)
+ld.add_action(example_node)
+ld.add_action(example_node2)
 return launch_description
 ```
 
@@ -292,14 +292,14 @@ import os
 
 ...
 # 文件
-file - name = 'example-file.xxx'
+file_name = 'example-file.xxx'
 # 字符串前加`f`表示可以在字符串里面使用用花括号括起来的变量和表达式，如定义好的`file-name`
-file - path = os.path.join(package - path, f'example-folder/{file - name}')
+file_path = os.path.join(package_path, f'example-folder/{file_name}')
 # 或者使用逗号隔开
-file - path = os.path.join(package - path, 'example-folder', file - name)
+file_path = os.path.join(package_path, 'example-folder', file_name)
 
 # 路径
-dir - path = os.path.join(package - path, 'example-folder/')
+dir_path = os.path.join(package_path, 'example-folder/')
 ```
 
 - 使用替换
@@ -317,7 +317,7 @@ PathJoinSubstitution([
 
 #### 改变参数
 
-一般需要用到以下两个模块
+- 一般需要用到以下两个模块
 
 ```python
 from launch.substitutions import LaunchConfiguration
@@ -327,20 +327,24 @@ from launch.actions import DeclareLaunchArgument
 `LaunchConfiguration`用于在变量中存储启动参数的值并将它们传递给所需的操作，允许我们在launch文件的任何部分获取启动参数的值。
 
 ```python
-example - cfg = LaunchConfiguration('arg-name', default='true')
+example_cfg = LaunchConfiguration('arg-name', default='true')
 ```
 
 `DeclareLaunchArgument`用于定义可以从上述启动文件或控制台传递的启动参数
 
 ```python
-example - arg = DeclareLaunchArgument(
+example_arg = DeclareLaunchArgument(
     'arg-name',
     default_value='xxx',
     description='some description'
 )
 
-ld.add_action(example - arg)
+ld.add_action(example_arg)
 ```
+
+- 启动的时候可以指定参数
+  - `ros2 launch`里面配置的`params_file = LaunchConfiguration("params_file")`命令行启动时可以重新设置
+  - `ros2 launch manipulator_bringup noitom_launch.py params_file:=/path_to/file`
 
 #### 启动另一个launch文件
 
@@ -356,14 +360,14 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 使用`IncludeLaunchDescription`嵌套launch文件，其中同样可以使用上文所述的传递参数
 
 ```python
-another - launch = IncludeLaunchDescription(
+another_launch = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(
         os.path.join(launch_file_dir, 'launch-file-name.launch.py')
     ),
-    launch_arguments={'arg-name': example - arg}.items()
+    launch_arguments={'arg-name': example_arg}.items()
 )
 
-ld.add_action(another - launch)
+ld.add_action(another_launch)
 ```
 
 #### 在另一个launch文件中使用参数

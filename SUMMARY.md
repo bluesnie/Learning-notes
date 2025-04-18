@@ -45,6 +45,8 @@
     - [ipdb-python调试器](Linux/命令指北/09-ipdb-python调试器.md)
     - [systemd-自启服务](Linux/命令指北/10-systemd-自启服务.md)
     - [自启服务-视频播放案例](Linux/命令指北/11-systemd-自启服务-视频播放案例.md)
+    - [dmesg](Linux/命令指北/12-dmesg.md)
+    - [nmap](Linux/命令指北/13-nmap.md)
 
 ## Windows
   - [程序无响应问题排查](Windows/program_debug.md)

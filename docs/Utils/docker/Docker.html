@@ -511,6 +511,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.12" data-path="../../Linux/命令指北/12-dmesg.html">
+            
+                <a href="../../Linux/命令指北/12-dmesg.html">
+            
+                    
+                    dmesg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../../Linux/命令指北/13-nmap.html">
+            
+                <a href="../../Linux/命令指北/13-nmap.html">
+            
+                    
+                    nmap
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -11063,6 +11089,24 @@
 </li>
 </ul>
 </li>
+<li><p>3&#x3001;<code>docker</code> &#x53C2;&#x6570;<code>--privileged</code>&#x7684;&#x4F5C;&#x7528;</p>
+<p>&#x5728; <code>Docker</code> &#x4E2D;&#xFF0C;<code>--privileged</code> &#x53C2;&#x6570;&#x7ED9;&#x4E88;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x8FDB;&#x7A0B;&#x51E0;&#x4E4E;&#x76F8;&#x540C;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x5C31;&#x50CF;&#x5B83;&#x4EEC;&#x5728;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x4E00;&#x6837;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5BB9;&#x5668;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x6240;&#x6709;&#x8BBE;&#x5907;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x901A;&#x5E38;&#x9700;&#x8981;&#x9AD8;&#x7EA7;&#x6743;&#x9650;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982;&#x52A0;&#x8F7D;&#x5185;&#x6838;&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x4F7F;&#x7528; <code>--privileged</code> &#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x5BB9;&#x5668;&#x5185;&#x7684; <code>root</code> &#x7528;&#x6237;&#x5C06;&#x62E5;&#x6709;&#x4E0E;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x7684; <code>root</code> &#x7528;&#x6237;&#x76F8;&#x540C;&#x7684;&#x80FD;&#x529B;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#x4F46;&#x4E0D;&#x9650;&#x4E8E;&#xFF1A;</p>
+<ul>
+<li>&#x8BBF;&#x95EE;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x6240;&#x6709;&#x8BBE;&#x5907;&#x8282;&#x70B9;&#xFF08;&#x5982;<code>/dev</code>&#x4E0B;&#x7684;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF09;&#x3002;</li>
+<li>&#x4FEE;&#x6539;&#x6216;&#x52A0;&#x8F7D;&#x5185;&#x6838;&#x6A21;&#x5757;&#x3002;</li>
+<li>&#x6302;&#x8F7D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li>&#x8BBF;&#x95EE;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x67D0;&#x4E9B;&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x6743;&#x9650;&#x624D;&#x80FD;&#x8FD0;&#x884C;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x4F8B;&#x5982;&#x90A3;&#x4E9B;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5BBF;&#x4E3B;&#x673A;&#x7279;&#x5B9A;&#x8BBE;&#x5907;&#x6216;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x7684;&#x5BB9;&#x5668;&#x3002;</li>
+</ul>
+<p>&#x7136;&#x800C;&#xFF0C;&#x4F7F;&#x7528;<code>--privileged</code>&#x4E5F;&#x4F1A;&#x5E26;&#x6765;&#x5B89;&#x5168;&#x98CE;&#x9669;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5141;&#x8BB8;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x5BBF;&#x4E3B;&#x673A;&#x7CFB;&#x7EDF;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9664;&#x975E;&#x7EDD;&#x5BF9;&#x5FC5;&#x8981;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x5EFA;&#x8BAE;&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x4F7F;&#x7528;<code>--privileged</code>&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x5982;&#x679C;&#x9700;&#x8981;&#x9650;&#x5236;&#x663E;&#x5361;&#x6570;&#x91CF;&#x7684;&#x4F7F;&#x7528;&#xFF0C;<code>--gpus &apos;&quot;device=0,1&quot;&apos;</code> &#x6B64;&#x65F6;&#x6B64;&#x53C2;&#x6570;&#x5219;&#x4E0D;&#x751F;&#x6548;&#x4E86;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x4E86;&#x5168;&#x90E8;&#x663E;&#x5361;&#x3002;&#x56E0;&#x4E3A;<code>--privileged</code>&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#x3002;</p>
+<p>&#x5728;<code>Docker</code>&#x7684;&#x540E;&#x7EED;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x6743;&#x9650;&#x63A7;&#x5236;&#x6765;&#x66FF;&#x4EE3;<code>--privileged</code>&#xFF0C;&#x4F8B;&#x5982;&#x901A;&#x8FC7;<code>--cap-add</code>&#x53C2;&#x6570;&#x6DFB;&#x52A0;&#x7279;&#x5B9A;&#x7684;<code>Linux</code>&#x80FD;&#x529B;&#xFF08;<code>capabilities</code>&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF08;<code>user namespaces</code>&#xFF09;&#x6765;&#x9650;&#x5236;&#x5BB9;&#x5668;&#x5185;&#x7528;&#x6237;&#x6743;&#x9650;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x5BB9;&#x5668;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x67D0;&#x4E2A;&#x8BBE;&#x5907;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>--device</code>&#x53C2;&#x6570;&#x6765;&#x6307;&#x5B9A;&#x8BBE;&#x5907;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7ED9;&#x4E88;&#x5168;&#x90E8;&#x7279;&#x6743;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>--privileged</code>&#x53C2;&#x6570;&#x7684;&#x793A;&#x4F8B;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x8FD9;&#x5C06;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;my_image&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x5E76;&#x7ED9;&#x4E88;&#x5B83;&#x7279;&#x6743;&#x3002;</span>
+docker run --privileged <span class="hljs-_">-d</span> my_image
+</code></pre>
+</li>
 </ul>
 <h1 id="7&#x3001;&#x5BB9;&#x5668;&#x4E2D;&#x90E8;&#x7F72;&#x9759;&#x6001;&#x7F51;&#x7AD9;">7&#x3001;&#x5BB9;&#x5668;&#x4E2D;&#x90E8;&#x7F72;&#x9759;&#x6001;&#x7F51;&#x7AD9;</h1>
 <ul>
@@ -11725,7 +11769,7 @@ Total reclaimed space: 5.219GB
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker","level":"14.1.1","depth":2,"next":{"title":"docker-history","level":"14.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},"previous":{"title":"Docker","level":"14.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"14.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"14.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"14.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"14.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"14.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"14.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]},{"title":"日志管理","level":"14.1.7","depth":2,"path":"Utils/docker/05-日志管理.md","ref":"Utils/docker/05-日志管理.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Utils/docker/Docker.md","mtime":"2024-05-27T02:26:33.818Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-04-17T10:33:32.997Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Docker","level":"14.1.1","depth":2,"next":{"title":"docker-history","level":"14.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},"previous":{"title":"Docker","level":"14.1","depth":1,"ref":"","articles":[{"title":"Docker","level":"14.1.1","depth":2,"path":"Utils/docker/Docker.md","ref":"./Utils/docker/Docker.md","articles":[]},{"title":"docker-history","level":"14.1.2","depth":2,"path":"Utils/docker/01-docker-history.md","ref":"./Utils/docker/01-docker-history.md","articles":[]},{"title":"container-diff","level":"14.1.3","depth":2,"path":"Utils/docker/02-container-diff.md","ref":"./Utils/docker/02-container-diff.md","articles":[]},{"title":"制作容器镜像的最佳实践","level":"14.1.4","depth":2,"path":"Utils/docker/03-制作容器镜像的最佳实践.md","ref":"./Utils/docker/03-制作容器镜像的最佳实践.md","articles":[]},{"title":"制作Python_Docker镜像的最佳实践","level":"14.1.5","depth":2,"path":"Utils/docker/04-制作Python_Docker镜像的最佳实践.md","ref":"./Utils/docker/04-制作Python_Docker镜像的最佳实践.md","articles":[]},{"title":"FastDFS","level":"14.1.6","depth":2,"path":"Utils/docker/FastDFS.md","ref":"Utils/docker/FastDFS.md","articles":[]},{"title":"日志管理","level":"14.1.7","depth":2,"path":"Utils/docker/05-日志管理.md","ref":"Utils/docker/05-日志管理.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Utils/docker/Docker.md","mtime":"2025-04-18T06:34:10.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-04-18T07:57:54.368Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

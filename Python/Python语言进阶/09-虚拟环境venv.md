@@ -620,6 +620,8 @@ virtualenv 和 conda 都是用于创建和管理 Python 虚拟环境的工具，
 - 环境复制： Conda 创建的环境包含了整个环境的快照，而不仅仅是 Python 环境。这使得在不同系统之间更容易复制整个环境。
 - 包管理： conda 使用自己的包管理系统，因此在使用 conda 环境时，你可以使用conda install 而不仅仅是 pip。
 
+> 直接使用`conda`的虚拟环境`python`,则不用事先激活环境，会自动激活`/home/blues/anaconda3/envs/speech_interaction/bin/python auto_startup.py`
+
 ### 选择虚拟环境类型：
 - 项目需求： 如果你的项目主要依赖于 Python 包，而且你想保持环境相对轻量，virtualenv 是一个不错的选择。
 - 多语言需求或复杂环境： 如果你的项目需要其他语言的库，或者你需要创建包含多个软件包的复杂环境，conda 可能更适合。
@@ -632,4 +634,4 @@ virtualenv 和 conda 都是用于创建和管理 Python 虚拟环境的工具，
 选择哪个取决于你的偏好和项目的需求。如果你的项目已经使用了其中一个，最好保持一致性。
 
 > - conda 可以管理多个环境，每个环境可以包含不同的 **Python 版本**和包。
-> - ros 环境中，conda里面的python版本可能跟ros 的版本不一致，会导致解释器的动态库不匹配，导致程序无法运行，这时可以使用 virtualenv。
+> - ros 环境中，conda里面的python版本可能跟ros 的版本不一致，会导致解释器的动态库不匹配，导致程序无法运行，这时可以使用 `virtualenv`。

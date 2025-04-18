@@ -33,6 +33,8 @@ $ echo $ROS_PACKAGE_PATH
 
 ![](./imgs/20210719002000321.png)
 
+**注意：`catkin build` 和 `catkin_make` 不能混合使用**
+
 # package
 
 - ROS 软件的基本组织形式

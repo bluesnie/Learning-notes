@@ -33,6 +33,9 @@
 
 以上命令中常用的为前三个，在开发调试时经常会需要查看当前node以及node信息，所以请记住这些常用命令。如果你想不起来，也可以通过rosnode help来查看rosnode命令的用法。
 
+- `ros1` 节点运行中修改日志打印级别
+  - `rosconsole set <node> <logger> <level>`
+  - e.g：`rosconsole set test_pub_joint_state rosout debug`
 ### Master
 
 由于机器人的元器件很多，功能庞大，因此实际运行时往往会运行众多的node，负责感知世界、控制运动、决策和计算等功能。那么如何合理的进行调配、管理这些node？这就要利用ROS提供给我们的节点管理器master,
@@ -172,6 +175,8 @@ ROS是一种分布式的架构，一个topic可以被多个节点同时发布，
 | rostopic type topic_name | 查看某个topic的类型(msg) |
 
 如果你一时忘记了命令的写法，可以通过rostopic help或rostopic command -h查看具体用法。
+
+- 获取输出过滤：`rostopic echo /tf --filter "m.transforms[0].child_frame_id == 'vive_command_client'" `
 
 #### Message
 

@@ -511,6 +511,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.12" data-path="../../../Linux/命令指北/12-dmesg.html">
+            
+                <a href="../../../Linux/命令指北/12-dmesg.html">
+            
+                    
+                    dmesg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../../../Linux/命令指北/13-nmap.html">
+            
+                <a href="../../../Linux/命令指北/13-nmap.html">
+            
+                    
+                    nmap
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -10999,11 +11025,11 @@ ros2 node list #&#x5373;&#x53EF;&#x770B;&#x5230;&#x4E24;&#x4E2A;&#x8282;&#x70B9;
 <pre><code class="lang-python">ld = LaunchDescription()
 </code></pre>
 <p>&#x7136;&#x540E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>Actions.Node</code>&#x5BF9;&#x8C61;</p>
-<pre><code class="lang-python">example - node = Node(
+<pre><code class="lang-python">example_node = Node(
     package=<span class="hljs-string">&apos;package-name&apos;</span>,  <span class="hljs-comment"># &#x8282;&#x70B9;&#x6240;&#x5728;&#x7684;&#x529F;&#x80FD;&#x5305;</span>
     namespace=<span class="hljs-string">&apos;package-namespace&apos;</span>,  <span class="hljs-comment"># &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x5982;&#x679C;&#x5B58;&#x5728;&#x540C;&#x540D;&#x8282;&#x70B9;&#xFF0C;&#x8FD9;&#x4E00;&#x9009;&#x9879;&#x4F1A;&#x6709;&#x7528;</span>
     executable=<span class="hljs-string">&apos;execute-name/script-name.py&apos;</span>,  <span class="hljs-comment"># &#x8868;&#x793A;&#x8981;&#x8FD0;&#x884C;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x540D;&#x6216;&#x811A;&#x672C;&#x540D;&#x5B57;.py</span>
-    parameters=[{<span class="hljs-string">&apos;parameter-name&apos;</span>: parameter - value}],  <span class="hljs-comment"># &#x53C2;&#x6570;</span>
+    parameters=[{<span class="hljs-string">&apos;parameter-name&apos;</span>: parameter_value}],  <span class="hljs-comment"># &#x53C2;&#x6570;</span>
     arguments=[<span class="hljs-string">&apos;-xxx&apos;</span>, xxx, <span class="hljs-string">&apos;-xxx&apos;</span>, xxx],  <span class="hljs-comment"># &#x542F;&#x52A8;&#x53C2;&#x6570;</span>
     output=<span class="hljs-string">&apos;screen&apos;</span>,  <span class="hljs-comment"># &#x7528;&#x4E8E;&#x5C06;&#x8BDD;&#x9898;&#x4FE1;&#x606F;&#x6253;&#x5370;&#x5230;&#x5C4F;&#x5E55;</span>
     name=<span class="hljs-string">&apos;node-name&apos;</span>  <span class="hljs-comment"># &#x8868;&#x793A;&#x542F;&#x52A8;&#x540E;&#x7684;&#x8282;&#x70B9;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x6CA1;&#x6709;</span>
@@ -11011,13 +11037,13 @@ remappings = [  <span class="hljs-comment"># &#x91CD;&#x6620;&#x5C04;</span>
     (<span class="hljs-string">&apos;/xxx/xxx-new&apos;</span>, <span class="hljs-string">&apos;/xxx/xxx-old&apos;</span>),
 ]
 )
-example - node2 = Node(
+example_node2 = Node(
     ......
 )
 </code></pre>
 <p>&#x5C06;&#x4E0A;&#x9762;&#x6240;&#x6709;&#x7684;<code>Node</code>&#x5BF9;&#x8C61;&#x52A0;&#x5165;<code>ld</code>&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;</p>
-<pre><code class="lang-python">ld.add_action(example - node)
-ld.add_action(example - node2)
+<pre><code class="lang-python">ld.add_action(example_node)
+ld.add_action(example_node2)
 <span class="hljs-keyword">return</span> launch_description
 </code></pre>
 <h4 id="&#x8C03;&#x7528;shell&#x547D;&#x4EE4;">&#x8C03;&#x7528;shell&#x547D;&#x4EE4;</h4>
@@ -11056,14 +11082,14 @@ package_name_path = get_package_share_directory(package_name)
 
 ...
 <span class="hljs-comment"># &#x6587;&#x4EF6;</span>
-file - name = <span class="hljs-string">&apos;example-file.xxx&apos;</span>
+file_name = <span class="hljs-string">&apos;example-file.xxx&apos;</span>
 <span class="hljs-comment"># &#x5B57;&#x7B26;&#x4E32;&#x524D;&#x52A0;`f`&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x7528;&#x82B1;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5982;&#x5B9A;&#x4E49;&#x597D;&#x7684;`file-name`</span>
-file - path = os.path.join(package - path, f<span class="hljs-string">&apos;example-folder/{file - name}&apos;</span>)
+file_path = os.path.join(package_path, f<span class="hljs-string">&apos;example-folder/{file_name}&apos;</span>)
 <span class="hljs-comment"># &#x6216;&#x8005;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;</span>
-file - path = os.path.join(package - path, <span class="hljs-string">&apos;example-folder&apos;</span>, file - name)
+file_path = os.path.join(package_path, <span class="hljs-string">&apos;example-folder&apos;</span>, file_name)
 
 <span class="hljs-comment"># &#x8DEF;&#x5F84;</span>
-dir - path = os.path.join(package - path, <span class="hljs-string">&apos;example-folder/&apos;</span>)
+dir_path = os.path.join(package_path, <span class="hljs-string">&apos;example-folder/&apos;</span>)
 </code></pre>
 <ul>
 <li>&#x4F7F;&#x7528;&#x66FF;&#x6362;</li>
@@ -11078,22 +11104,31 @@ PathJoinSubstitution([
 ])
 </code></pre>
 <h4 id="&#x6539;&#x53D8;&#x53C2;&#x6570;">&#x6539;&#x53D8;&#x53C2;&#x6570;</h4>
-<p>&#x4E00;&#x822C;&#x9700;&#x8981;&#x7528;&#x5230;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x6A21;&#x5757;</p>
+<ul>
+<li>&#x4E00;&#x822C;&#x9700;&#x8981;&#x7528;&#x5230;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x6A21;&#x5757;</li>
+</ul>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> launch.substitutions <span class="hljs-keyword">import</span> LaunchConfiguration
 <span class="hljs-keyword">from</span> launch.actions <span class="hljs-keyword">import</span> DeclareLaunchArgument
 </code></pre>
 <p><code>LaunchConfiguration</code>&#x7528;&#x4E8E;&#x5728;&#x53D8;&#x91CF;&#x4E2D;&#x5B58;&#x50A8;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x7684;&#x503C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x4F20;&#x9012;&#x7ED9;&#x6240;&#x9700;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5728;launch&#x6587;&#x4EF6;&#x7684;&#x4EFB;&#x4F55;&#x90E8;&#x5206;&#x83B7;&#x53D6;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x7684;&#x503C;&#x3002;</p>
-<pre><code class="lang-python">example - cfg = LaunchConfiguration(<span class="hljs-string">&apos;arg-name&apos;</span>, default=<span class="hljs-string">&apos;true&apos;</span>)
+<pre><code class="lang-python">example_cfg = LaunchConfiguration(<span class="hljs-string">&apos;arg-name&apos;</span>, default=<span class="hljs-string">&apos;true&apos;</span>)
 </code></pre>
 <p><code>DeclareLaunchArgument</code>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0A;&#x8FF0;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#x6216;&#x63A7;&#x5236;&#x53F0;&#x4F20;&#x9012;&#x7684;&#x542F;&#x52A8;&#x53C2;&#x6570;</p>
-<pre><code class="lang-python">example - arg = DeclareLaunchArgument(
+<pre><code class="lang-python">example_arg = DeclareLaunchArgument(
     <span class="hljs-string">&apos;arg-name&apos;</span>,
     default_value=<span class="hljs-string">&apos;xxx&apos;</span>,
     description=<span class="hljs-string">&apos;some description&apos;</span>
 )
 
-ld.add_action(example - arg)
+ld.add_action(example_arg)
 </code></pre>
+<ul>
+<li>&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x53C2;&#x6570;<ul>
+<li><code>ros2 launch</code>&#x91CC;&#x9762;&#x914D;&#x7F6E;&#x7684;<code>params_file = LaunchConfiguration(&quot;params_file&quot;)</code>&#x547D;&#x4EE4;&#x884C;&#x542F;&#x52A8;&#x65F6;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;</li>
+<li><code>ros2 launch manipulator_bringup noitom_launch.py params_file:=/path_to/file</code></li>
+</ul>
+</li>
+</ul>
 <h4 id="&#x542F;&#x52A8;&#x53E6;&#x4E00;&#x4E2A;launch&#x6587;&#x4EF6;">&#x542F;&#x52A8;&#x53E6;&#x4E00;&#x4E2A;launch&#x6587;&#x4EF6;</h4>
 <p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5F88;&#x591A;&#x7684;&#x5355;&#x72EC;&#x7684;launch&#x6587;&#x4EF6;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x540C;&#x65F6;&#x542F;&#x52A8;&#x8FD9;&#x4E9B;launch&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>IncludeLaunchDescription</code>&#x5728;launch&#x6587;&#x4EF6;&#x4E2D;&#x5D4C;&#x5957;&#x542F;&#x52A8;launch&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x590D;&#x7528;&#x7387;&#x3002;</p>
 <p>&#x9700;&#x8981;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x5934;&#x6587;&#x4EF6;</p>
@@ -11101,14 +11136,14 @@ ld.add_action(example - arg)
 <span class="hljs-keyword">from</span> launch.launch_description_sources <span class="hljs-keyword">import</span> PythonLaunchDescriptionSource
 </code></pre>
 <p>&#x4F7F;&#x7528;<code>IncludeLaunchDescription</code>&#x5D4C;&#x5957;launch&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x4E2D;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0A;&#x6587;&#x6240;&#x8FF0;&#x7684;&#x4F20;&#x9012;&#x53C2;&#x6570;</p>
-<pre><code class="lang-python">another - launch = IncludeLaunchDescription(
+<pre><code class="lang-python">another_launch = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(
         os.path.join(launch_file_dir, <span class="hljs-string">&apos;launch-file-name.launch.py&apos;</span>)
     ),
-    launch_arguments={<span class="hljs-string">&apos;arg-name&apos;</span>: example - arg}.items()
+    launch_arguments={<span class="hljs-string">&apos;arg-name&apos;</span>: example_arg}.items()
 )
 
-ld.add_action(another - launch)
+ld.add_action(another_launch)
 </code></pre>
 <h4 id="&#x5728;&#x53E6;&#x4E00;&#x4E2A;launch&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x53C2;&#x6570;">&#x5728;&#x53E6;&#x4E00;&#x4E2A;launch&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x53C2;&#x6570;</h4>
 <p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF1A;&#x8FD9;&#x4E2A;launch&#x6587;&#x4EF6;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#x7684;&#x8DEF;&#x5F84;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x4E2D;&#x7684;<code>robot_state_publisher</code>&#x9700;&#x8981;&#x4F20;&#x5165;<code>robot_description</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>open()</code>&#xFF0C;
@@ -11210,7 +11245,7 @@ ld.add_action(another - launch)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"启动管理工具-Launch","level":"10.2.1.5.1","depth":4,"next":{"title":"ROS2命令行工具","level":"10.2.1.5.2","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","articles":[]},"previous":{"title":"ROS2常用工具","level":"10.2.1.5","depth":3,"ref":"","articles":[{"title":"启动管理工具-Launch","level":"10.2.1.5.1","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/001-启动管理工具-Launch.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/001-启动管理工具-Launch.md","articles":[]},{"title":"ROS2命令行工具","level":"10.2.1.5.2","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","articles":[]},{"title":"RVIZ2","level":"10.2.1.5.3","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/003-RVIZ2.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/003-RVIZ2.md","articles":[]},{"title":"RQT工具","level":"10.2.1.5.4","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/004-RQT工具.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/004-RQT工具.md","articles":[]},{"title":"时光记录仪之rosbag2","level":"10.2.1.5.5","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/005-时光记录仪之rosbag2.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/005-时光记录仪之rosbag2.md","articles":[]},{"title":"兼容仿真工具-Gazebo","level":"10.2.1.5.6","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/006-兼容仿真工具-Gazebo.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/006-兼容仿真工具-Gazebo.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/001-启动管理工具-Launch.md","mtime":"2024-05-27T02:26:33.702Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-04-17T10:33:32.997Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"启动管理工具-Launch","level":"10.2.1.5.1","depth":4,"next":{"title":"ROS2命令行工具","level":"10.2.1.5.2","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","articles":[]},"previous":{"title":"ROS2常用工具","level":"10.2.1.5","depth":3,"ref":"","articles":[{"title":"启动管理工具-Launch","level":"10.2.1.5.1","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/001-启动管理工具-Launch.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/001-启动管理工具-Launch.md","articles":[]},{"title":"ROS2命令行工具","level":"10.2.1.5.2","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/002-ROS2命令行工具.md","articles":[]},{"title":"RVIZ2","level":"10.2.1.5.3","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/003-RVIZ2.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/003-RVIZ2.md","articles":[]},{"title":"RQT工具","level":"10.2.1.5.4","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/004-RQT工具.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/004-RQT工具.md","articles":[]},{"title":"时光记录仪之rosbag2","level":"10.2.1.5.5","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/005-时光记录仪之rosbag2.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/005-时光记录仪之rosbag2.md","articles":[]},{"title":"兼容仿真工具-Gazebo","level":"10.2.1.5.6","depth":4,"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/006-兼容仿真工具-Gazebo.md","ref":"ROS2/ROS2入门篇/第5章-ROS2常用工具/006-兼容仿真工具-Gazebo.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ROS2/ROS2入门篇/第5章-ROS2常用工具/001-启动管理工具-Launch.md","mtime":"2025-04-18T07:31:40.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-04-18T07:57:54.368Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
