@@ -91,6 +91,7 @@
     - [多进程_subprocess_multiprocess](./Python/Python语言进阶/11-多进程_subprocess_multiprocess.md)
     - [进程同步-信号量-事件-队列](./Python/Python语言进阶/12-多进程扩展-进程同步-信号量-事件-队列.md)
     - [管道-数据共享-进程池](./Python/Python语言进阶/13-多进程扩展-管道-数据共享-进程池.md)
+    - [定时器频率控制](./Python/Python语言进阶/14-定时器频率控制.md)
 
 - Python 第三方库
     - Django
@@ -854,7 +855,9 @@
             - [暴力递归到动态规划](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/07-暴力递归到动态规划.md)
             - [有序表](InterviewPreparation/DataStructuresAlgorithms/Algorithm/基础提升/08-有序表.md)
         - 数据滤波
-            - [卡尔曼滤波](InterviewPreparation/DataStructuresAlgorithms/Algorithm/Wavefiltering/KalmanFiltering.md)
+            - [卡尔曼滤波](InterviewPreparation/DataStructuresAlgorithms/Algorithm/Wavefiltering/01-KalmanFiltering.md)
+            - [一阶滤波器](InterviewPreparation/DataStructuresAlgorithms/Algorithm/Wavefiltering/02-FirstOrderFilter.md)
+            - [移动平均滤波器](InterviewPreparation/DataStructuresAlgorithms/Algorithm/Wavefiltering/03-MoveMeanFilter.md)
     - 数据结构
         - [线性表](InterviewPreparation/DataStructuresAlgorithms/02-线性表.md)
         - [栈](InterviewPreparation/DataStructuresAlgorithms/03-栈.md)
