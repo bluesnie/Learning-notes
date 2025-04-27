@@ -2,7 +2,7 @@
 
 ###### author:nzb
 
-# 运动学配置
+# [运动学配置](https://moveit.picknik.ai/main/doc/examples/kinematics_configuration/kinematics_configuration_tutorial.html)
 
 ## `kinematics.yaml` 文件
 

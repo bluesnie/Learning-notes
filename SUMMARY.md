@@ -788,6 +788,20 @@
       - [带MoveIt功能的双臂](./Robot/Moveit2/examples/Miscellaneous/00-dual_arms_with_moveIt.md)
       - [混合规划](./Robot/Moveit2/examples/Miscellaneous/01-hybrid_planning.md)
       - [信号平滑](./Robot/Moveit2/examples/Miscellaneous/02-realtime_servo.md)
+  - 概念
+    - [运动学插件](./Robot/Moveit2/concepts/00-Kinematics.md)
+    - [运动规划](./Robot/Moveit2/concepts/01-Motion_Planning.md)
+    - [混合规划（Hybrid](./Robot/Moveit2/concepts/02-Hybrid_Planning.md)
+    - [move_group](./Robot/Moveit2/concepts/03-move_group_node.md)
+    - [规划场景监控器](./Robot/Moveit2/concepts/04-Planning_Scene_Monitor.md)
+    - [轨迹处理](./Robot/Moveit2/concepts/05-Trajectory_Processing.md)
+    - [任务构造函数](./Robot/Moveit2/concepts/06-MoveIt_Task_Constructor.md)
+    - [生成阶段](./Robot/Moveit2/concepts/07-MTC_generating_stages.md)
+    - [传播阶段](./Robot/Moveit2/concepts/08-MTC_propagating_stages.md)
+    - [连接阶段](./Robot/Moveit2/concepts/09-MTC_connecting_stages.md)
+    - [封装器](./Robot/Moveit2/concepts/10-MTC_wrappers.md)
+    - [平行容器](./Robot/Moveit2/concepts/11-MTC_parallel_containers.md)
+    - [调试MTC任务](./Robot/Moveit2/concepts/12-MTC_debugging_mtc_task.md)
 - 感知
   - [三维空间中的点投影到二维图像平面](./Robot/Perception/01-相机3d投影2d.md) 
 

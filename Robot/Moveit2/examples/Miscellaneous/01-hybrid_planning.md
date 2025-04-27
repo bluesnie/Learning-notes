@@ -2,7 +2,7 @@
 
 ###### author:nzb
 
-# 混合规划
+# [混合规划](https://moveit.picknik.ai/main/doc/examples/hybrid_planning/hybrid_planning_tutorial.html)
 
 在本节中，您将学习如何使用 MoveIt 2 的混合规划功能。
 

@@ -2,7 +2,7 @@
 
 ###### author:nzb
 
-# 带 MoveIt 功能的双臂
+# [带 MoveIt 功能的双臂](https://moveit.picknik.ai/main/doc/examples/dual_arms/dual_arms_tutorial.html)
 
 使用 `MoveIt` 控制两个或更多机械手需要很多配置步骤。幸运的是，随着时间的推移，这些步骤变得越来越简单。在此，我们提供了一个示例，并列出了从 1 个机械手到 X 个机械手所需的所有更改。
 

@@ -2,7 +2,7 @@
 
 ###### author:nzb
 
-# 实时伺服
+# [实时伺服](https://moveit.picknik.ai/main/doc/examples/realtime_servo/realtime_servo_tutorial.html)
 
 `MoveIt Servo` 可实现对机械臂的实时控制。
 
