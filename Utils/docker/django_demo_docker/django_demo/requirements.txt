@@ -2,7 +2,7 @@ amqp==2.6.0
 anyjson==0.3.3
 asgiref==3.2.3
 billiard==3.5.0.5
-celery==4.2.0
+celery==5.2.2
 certifi==2019.11.28
 chardet==3.0.4
 colorama==0.4.3
