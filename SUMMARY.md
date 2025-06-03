@@ -749,6 +749,17 @@
 
 - 运动控制
   - [‌T形速度曲线规划](./Robot/MotionControl/‌T形速度曲线规划.md)
+  - ros2_control
+    - [‌开始使用](./Robot/MotionControl/ros2_control/00-get_started.md)
+    - [控制器管理器‌](./Robot/MotionControl/ros2_control/ros2_control/00-controller_manager.md)
+    - [‌控制器链接/级联控制](./Robot/MotionControl/ros2_control/ros2_control/01-controller_chaining.md)
+    - [ros2_control 的关节运动学‌](./Robot/MotionControl/ros2_control/ros2_control/02-joint_kinematics_for_ros2_control.md)
+    - [硬件组件‌](./Robot/MotionControl/ros2_control/ros2_control/03-hardware_components.md)
+    - [硬件接口类型‌](./Robot/MotionControl/ros2_control/ros2_control/04-hardware_components_ros2_control_hardware_interface_types.md)
+    - [编写硬件组件‌](./Robot/MotionControl/ros2_control/ros2_control/05-hardware_components_writing_new_hardware_component.md)
+    - [硬件组件的不同更新速率‌](./Robot/MotionControl/ros2_control/ros2_control/06-hardware_components_different_update_rates.md)
+    - [‌模拟组件](./Robot/MotionControl/ros2_control/ros2_control/07-mock_components.md)
+    - [调试‌](./Robot/MotionControl/ros2_control/ros2_control/08-debugging.md)
 
 - Moveit2
   - [README](./Robot/Moveit2/README.md)
