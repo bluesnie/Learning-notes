@@ -704,6 +704,7 @@
 - [RQT工具](ROS2/ROS2入门篇/第5章-ROS2常用工具/004-RQT工具.md)
 - [时光记录仪之rosbag2](ROS2/ROS2入门篇/第5章-ROS2常用工具/005-时光记录仪之rosbag2.md)
 - [兼容仿真工具-Gazebo](ROS2/ROS2入门篇/第5章-ROS2常用工具/006-兼容仿真工具-Gazebo.md)
+- [ros2-c++调试工具](ROS2/ROS2入门篇/第5章-ROS2常用工具/007-ros2-c++调试工具.md)
 
 #### 机器人学篇
 
