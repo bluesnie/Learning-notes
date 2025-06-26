@@ -872,6 +872,13 @@
   - [硬件组件的不同更新速率‌](./Robot/MotionControl/ros2_control/ros2_control/06-hardware_components_different_update_rates.md)
   - [‌模拟组件](./Robot/MotionControl/ros2_control/ros2_control/07-mock_components.md)
   - [调试‌](./Robot/MotionControl/ros2_control/ros2_control/08-debugging.md)
+- ros2_controllers
+  - [轮式移动机器人运动学](./Robot/MotionControl/ros2_controllers/00-wheeled_mobile_robot_kinematics.md)
+  - [编写新的控制器](./Robot/MotionControl/ros2_controllers/01-writing_a_new_controller.md)
+  - [差分驱动移动机器人的控制器](./Robot/MotionControl/ros2_controllers/02-controllers_for_wheeled_mobile_robots.md)
+  - [操作臂和其他机器人的控制器](./Robot/MotionControl/ros2_controllers/03-controllers_for_manipulators_and_other_robots.md)
+  - [关节轨迹控制器](./Robot/MotionControl/ros2_controllers/04-joint_trajectory_controller_further_information.md)
+  - [Broadcasters](./Robot/MotionControl/ros2_controllers/05-broadcasters.md)
 
 ### Moveit2
 
