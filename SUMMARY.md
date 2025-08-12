@@ -47,6 +47,7 @@
     - [自启服务-视频播放案例](Linux/命令指北/11-systemd-自启服务-视频播放案例.md)
     - [dmesg](Linux/命令指北/12-dmesg.md)
     - [nmap](Linux/命令指北/13-nmap.md)
+    - [音频播放aplay及声卡选择](Linux/命令指北/14-音频播放aplay及声卡选择.md)
 
 ## Windows
   - [程序无响应问题排查](Windows/program_debug.md)
@@ -768,6 +769,10 @@
     - [操作臂和其他机器人的控制器](./Robot/MotionControl/ros2_controllers/03-controllers_for_manipulators_and_other_robots.md)
     - [关节轨迹控制器](./Robot/MotionControl/ros2_controllers/04-joint_trajectory_controller_further_information.md)
     - [Broadcasters](./Robot/MotionControl/ros2_controllers/05-broadcasters.md)
+  - demo_simulator_integrations
+    - [Demos](./Robot/MotionControl/demo_simulator_integrations/00-demo.md)
+    - [gz_ros2_control](./Robot/MotionControl/demo_simulator_integrations/01-gz_ros2_control.md)
+
 - Moveit2
   - [README](./Robot/Moveit2/README.md)
   - 教程

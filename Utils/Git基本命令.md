@@ -332,13 +332,18 @@ ssh-add ~/.ssh/id_rsa_user2 // 将私钥添加到本地
 
 ```text
 # user1
-Host user1.github.com // 网站的别名，随意取
-HostName github.com // 托管网站的域名
-User user1 // github上的用户名
-IdentityFile ~/.ssh/id_rsa_user1 // 使用的密钥文件
+# 网站的别名，随意取
+Host user1.github.com 
+# 托管网站的域名
+HostName github.com 
+# github上的用户名
+User user1
+# 使用的密钥文件
+IdentityFile ~/.ssh/id_rsa_user1 
 
 # user2
-Host user2.github.com // 网站的别名，随意取
+# 网站的别名，随意取
+Host user2.github.com 
 HostName github.com
 User user2
 IdentityFile ~/.ssh/id_rsa_user2
