@@ -11,6 +11,8 @@
 >  [网页转Markdown](https://devtool.tech/html-md)
 >
 > [在线编辑Markdown](https://upmath.me/)，大模型给出的问题答案可以使用该工具编译一下
+>
+> [数学公式编辑器](https://www.latexlive.com/)
 
 ## Linux
 
@@ -348,38 +350,6 @@
     - [Redis开发规范](Database/NoSQL/Redis/03-Redis开发规范.md)
 
 ## 机器学习
-
-[comment]: <> (- 数学基础)
-
-[comment]: <> (    - [高等数学]&#40;./MachineLearning/数学基础/高等数学.pdf&#41;)
-
-[comment]: <> (    - [概率论]&#40;./MachineLearning/数学基础/概率论.pdf&#41;)
-
-[comment]: <> (    - [微积分]&#40;./MachineLearning/数学基础/微积分.pdf&#41;)
-
-[comment]: <> (    - [SVD]&#40;./MachineLearning/数学基础/SVD.pdf&#41;)
-
-[comment]: <> (    - [似然函数]&#40;./MachineLearning/数学基础/似然函数.pdf&#41;)
-
-[comment]: <> (    - [后验概率估计]&#40;./MachineLearning/数学基础/后验概率估计.pdf&#41;)
-
-[comment]: <> (    - [拉格朗日乘子法]&#40;./MachineLearning/数学基础/拉格朗日乘子法.pdf&#41;)
-
-[comment]: <> (    - [核函数]&#40;./MachineLearning/数学基础/核函数.pdf&#41;)
-
-[comment]: <> (    - [梯度]&#40;./MachineLearning/数学基础/梯度.pdf&#41;)
-
-[comment]: <> (    - [概率分布与概率密度]&#40;./MachineLearning/数学基础/概率分布与概率密度.pdf&#41;)
-
-[comment]: <> (    - [泰勒公式]&#40;./MachineLearning/数学基础/泰勒公式.pdf&#41;)
-
-[comment]: <> (    - [激活函数]&#40;./MachineLearning/数学基础/激活函数.pdf&#41;)
-
-[comment]: <> (    - [熵]&#40;./MachineLearning/数学基础/熵.pdf&#41;)
-
-[comment]: <> (    - [特征值与特征向量]&#40;./MachineLearning/数学基础/特征值与特征向量.pdf&#41;)
-
-[comment]: <> (    - [矩阵]&#40;./MachineLearning/数学基础/矩阵.pdf&#41;)
 
 - 深度学习
   - [安装](./MachineLearning/DeepLearning/chapter_installation/index.md)
@@ -751,6 +721,14 @@
 
 ## Robot
 
+- 机器人基础知识
+  - [运动学1](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-运动学1.md)
+  - [运动学2](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-运动学2.md)
+  - [速度分析和雅可比矩阵](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-速度分析和雅可比矩阵.md)
+  - [静力学分析](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-静力学分析.md)
+  - [动力学](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-动力学.md)
+  - [控制与运动规划](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-控制与运动规划.md)
+
 - 运动控制
   - [‌T形速度曲线规划](./Robot/MotionControl/‌T形速度曲线规划.md)
   - ros2_control
@@ -906,71 +884,3 @@
         - [树与二叉树](InterviewPreparation/DataStructuresAlgorithms/07-树与二叉树.md)
 - 面试题
     - [2020](InterviewPreparation/ClassicQuestion/20201027/README.md)
-
-[comment]: <> (- 工作所学技能或知识)
-
-[comment]: <> (    - [福建路阳有限公司]&#40;Works/01-贞仕.md&#41;)
-
-[comment]: <> (    - [上海快仓自动化有限公司]&#40;Works/02-快仓.md&#41;)
-
-[comment]: <> (## [理财]&#40;FinancialManagement&#41;)
-
-[comment]: <> (- 基金)
-
-[comment]: <> (    - 基金基础)
-
-[comment]: <> (        - [纯债基金]&#40;FinancialManagement/基金/基金基础-货基债基股基/01-纯债基金.md&#41;)
-
-[comment]: <> (        - [股票型基金]&#40;FinancialManagement/基金/基金基础-货基债基股基/02-股票型基金.md&#41;)
-
-[comment]: <> (        - [大数据指数基金]&#40;FinancialManagement/基金/基金基础-货基债基股基/03-大数据指数基金.md&#41;)
-
-[comment]: <> (        - [ETF基金]&#40;FinancialManagement/基金/基金基础-货基债基股基/04-ETF基金.md&#41;)
-
-[comment]: <> (        - [LOF基金]&#40;FinancialManagement/基金/基金基础-货基债基股基/05-LOF基金.md&#41;)
-
-[comment]: <> (        - [四大行业指数]&#40;FinancialManagement/基金/基金基础-货基债基股基/06-四大行业指数.md&#41;)
-
-[comment]: <> (    - 基金进价)
-
-[comment]: <> (        - [分级基金]&#40;FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/01-分级基金.md&#41;)
-
-[comment]: <> (        - [避险基金]&#40;FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/02-避险基金.md&#41;)
-
-[comment]: <> (        - [量化基金]&#40;FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/03-量化基金.md&#41;)
-
-[comment]: <> (        - [QDII基金]&#40;FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/04-QDII基金.md&#41;)
-
-[comment]: <> (        - [FOF基金]&#40;FinancialManagement/基金/基金进价-特种基金：分级基金QDII基金量化基金等/05-FOF基金.md&#41;)
-
-[comment]: <> (    - 其他)
-
-[comment]: <> (        - [基金定投]&#40;FinancialManagement/基金/基金定投/01-基金定投.md&#41;)
-
-[comment]: <> (        - [基金投资术语]&#40;FinancialManagement/基金/00-投资术语.md&#41;)
-
-[comment]: <> (        - [投资误区]&#40;FinancialManagement/基金/00-投资误区.md&#41;)
-
-[comment]: <> (        - [全球配置]&#40;FinancialManagement/基金/基金全球配置大法/01-全球配置.md&#41;)
-
-[comment]: <> (        - [场外基金开户和买卖实操]&#40;FinancialManagement/基金/基金全球配置大法/02-场外基金开户和买卖实操.md&#41;)
-
-[comment]: <> (        - [场内基金开户和买卖实操]&#40;FinancialManagement/基金/基金全球配置大法/03-场内基金开户和买卖实操.md&#41;)
-
-[comment]: <> (        - [看懂股票行情]&#40;FinancialManagement/基金/基金全球配置大法/04-看懂股票行情.md&#41;)
-
-[comment]: <> (        - [基金套牢怎么办]&#40;FinancialManagement/基金/基金全球配置大法/05-基金套牢怎么办.md&#41;)
-
-[comment]: <> (- 股票)
-
-[comment]: <> (    - [股票市场常用名称解释]&#40;FinancialManagement/股票/01-股票市场常用名称解释.md&#41;)
-
-[comment]: <> (    - 看盘)
-
-[comment]: <> (        - [早盘]&#40;FinancialManagement/股票/02-看盘-早盘.md&#41;)
-
-[comment]: <> (        - [盘后]&#40;FinancialManagement/股票/03-看盘-盘后.md&#41;)
-
-[comment]: <> (        - [大盘分时图分析技巧]&#40;FinancialManagement/股票/04-看盘-大盘分时图分析技巧.md&#41;)
-
-[comment]: <> (        - [K线图]&#40;FinancialManagement/股票/05-看盘-K线图.md&#41;)
