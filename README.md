@@ -414,7 +414,7 @@
 
 - NoSQL概述 | Redis概述 | Mongo概述
 
-#### Redeis
+#### Redis
 
 - [Redis安装与配置文件](Database/NoSQL/Redis/02-Redis安装与配置文件.md)
 - [Redis基础](Database/NoSQL/Redis/01-Redis基础.md)
@@ -876,6 +876,10 @@
   - [传感器篇1](./Robot/Basics/08-机器人基础知识学习笔记-传感器篇1.md)
   - [传感器篇2](./Robot/Basics/09-机器人基础知识学习笔记-传感器篇2.md)
   - [控制器篇](./Robot/Basics/10-机器人基础知识学习笔记-控制器篇.md)
+  - [通信篇](./Robot/Basics/11-机器人基础知识学习笔记-通信篇.md)
+  - [电池篇](./Robot/Basics/12-机器人基础知识学习笔记-电池篇.md)
+  - [具身结构篇](./Robot/Basics/13-机器人基础知识学习笔记-具身结构篇.md)
+  - [导航篇](./Robot/Basics/14-机器人基础知识学习笔记-导航篇.md)
 
 ### 运动控制
 
