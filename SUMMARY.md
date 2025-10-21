@@ -50,6 +50,7 @@
     - [dmesg](Linux/命令指北/12-dmesg.md)
     - [nmap](Linux/命令指北/13-nmap.md)
     - [音频播放aplay及声卡选择](Linux/命令指北/14-音频播放aplay及声卡选择.md)
+    - [vnc远程控制工具软件](Linux/命令指北/16-vnc.md)
 
 ## Windows
   - [程序无响应问题排查](Windows/program_debug.md)
@@ -737,6 +738,9 @@
   - [电池篇](./Robot/Basics/12-机器人基础知识学习笔记-电池篇.md)
   - [具身结构篇](./Robot/Basics/13-机器人基础知识学习笔记-具身结构篇.md)
   - [导航篇](./Robot/Basics/14-机器人基础知识学习笔记-导航篇.md)
+  - [操作篇](./Robot/Basics/15-机器人基础知识学习笔记-操作篇.md)
+  - [大模型篇](./Robot/Basics/16-机器人基础知识学习笔记-大模型篇.md)
+  - [知识拓展](./Robot/Basics/17-知识拓展.md)
   
 - 运动控制
   - [‌T形速度曲线规划](./Robot/MotionControl/‌T形速度曲线规划.md)
@@ -850,6 +854,9 @@
     - [Nginx进阶](Utils/Nginx/Nginx进阶.md)
 - IDE
   - [VSCode](./Utils/IDE/vscode.md)
+## 杂项
+
+- [github项目](./杂项/github项目/目录.md)
 
 ## 面试
 
