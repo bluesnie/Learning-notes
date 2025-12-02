@@ -57,6 +57,7 @@
     - [nmap](Linux/命令指北/13-nmap.md)
     - [音频播放aplay及声卡选择](Linux/命令指北/14-音频播放aplay及声卡选择.md)
     - [vnc远程控制工具软件](Linux/命令指北/16-vnc.md)
+    - [rsync文件同步](Linux/命令指北/17-rsync.md)
 
 ## [Windows](./Windows)
 

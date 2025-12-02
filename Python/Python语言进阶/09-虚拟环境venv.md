@@ -620,7 +620,8 @@ virtualenv 和 conda 都是用于创建和管理 Python 虚拟环境的工具，
 - 环境复制： Conda 创建的环境包含了整个环境的快照，而不仅仅是 Python 环境。这使得在不同系统之间更容易复制整个环境。
 - 包管理： conda 使用自己的包管理系统，因此在使用 conda 环境时，你可以使用conda install 而不仅仅是 pip。
 
-> 直接使用`conda`的虚拟环境`python`,则不用事先激活环境，会自动激活`/home/blues/anaconda3/envs/speech_interaction/bin/python auto_startup.py`
+> - 直接使用`conda`的虚拟环境`python`,则不用事先激活环境，会自动激活`/home/blues/anaconda3/envs/speech_interaction/bin/python auto_startup.py`
+> - 创建虚拟环境后，`pip list`包含很多包，原因可能是用户目录下存在`/home/blues/.local/lib/python3.10/site-packages`，删除后重新创建。
 
 ### 选择虚拟环境类型：
 - 项目需求： 如果你的项目主要依赖于 Python 包，而且你想保持环境相对轻量，virtualenv 是一个不错的选择。

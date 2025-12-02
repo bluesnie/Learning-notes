@@ -46,10 +46,23 @@ vncserver :2102 -geometry 1920x1080 -depth 24
 vncserver -kill :1
 vncserver -kill :2
 
-5. 在本地执行
+5. 在本地命令行执行(Windows, Linux, macOS)
 # 安装gvncviewer
 sudo apt install -y gvncviewer 
 gvncviewer 106.54.226.43:2102
+
+6. 通过浏览器访问(安卓设备，使用NoVNC)
+  
+# 在服务器上安装和启动NoVNC
+sudo apt install novnc websockify
+vncserver :2102 -geometry 1920x1080 -depth 24  # 确保VNC服务器运行
+websockify -D --web=/usr/share/novnc/ 8003 localhost:8002  # 5900 + 2102
+
+# 杀掉 websockify 进程
+sudo pkill -f websockify
+
+# 然后在本地浏览器访问
+http://106.54.226.43:8003/vnc.html
 ```
 
 - 设置 `vnc` 开机自启
