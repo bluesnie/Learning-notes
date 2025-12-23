@@ -4,22 +4,14 @@
 
 > 用来查看单个文档是否出错
 
-- 机器人基础知识
-  - 理论篇
-    - [运动学1](./Robot/Basics/01-机器人基础知识学习笔记-理论篇-运动学1.md)
-    - [运动学2](./Robot/Basics/02-机器人基础知识学习笔记-理论篇-运动学2.md)
-    - [速度分析和雅可比矩阵](./Robot/Basics/03-机器人基础知识学习笔记-理论篇-速度分析和雅可比矩阵.md)
-    - [静力学分析](./Robot/Basics/04-机器人基础知识学习笔记-理论篇-静力学分析.md)
-    - [动力学](./Robot/Basics/05-机器人基础知识学习笔记-理论篇-动力学.md)
-    - [控制与运动规划](./Robot/Basics/06-机器人基础知识学习笔记-理论篇-控制与运动规划.md)
-  - [执行器篇](./Robot/Basics/07-机器人基础知识学习笔记-执行器篇.md)
-  - [传感器篇1](./Robot/Basics/08-机器人基础知识学习笔记-传感器篇1.md)
-  - [传感器篇2](./Robot/Basics/09-机器人基础知识学习笔记-传感器篇2.md)
-  - [控制器篇](./Robot/Basics/10-机器人基础知识学习笔记-控制器篇.md)
-  - [通信篇](./Robot/Basics/11-机器人基础知识学习笔记-通信篇.md)
-  - [电池篇](./Robot/Basics/12-机器人基础知识学习笔记-电池篇.md)
-  - [具身结构篇](./Robot/Basics/13-机器人基础知识学习笔记-具身结构篇.md)
-  - [导航篇](./Robot/Basics/14-机器人基础知识学习笔记-导航篇.md)
-  - [操作篇](./Robot/Basics/15-机器人基础知识学习笔记-操作篇.md)
-  - [大模型篇](./Robot/Basics/16-机器人基础知识学习笔记-大模型篇.md)
-  - [知识拓展](./Robot/Basics/17-知识拓展.md)
+- 仿真
+  - IR-SIM
+    - [README](./Robot/Simulation/ir-sim/00-README.md)
+    - [创建环境](./Robot/Simulation/ir-sim/01-创建环境.md)
+    - [配置机器人与障碍物](./Robot/Simulation/ir-sim/02-配置机器人与障碍物.md)
+    - [为机器人配置传感器](./Robot/Simulation/ir-sim/03-为机器人配置传感器.md)
+    - [为对象配置行为](./Robot/Simulation/ir-sim/04-为对象配置行为.md)
+    - [配置网格地图环境](./Robot/Simulation/ir-sim/05-配置网格地图环境.md)
+    - [配置键盘鼠标控制](./Robot/Simulation/ir-sim/06-配置键盘鼠标控制.md)
+    - [配置动态随机环境](./Robot/Simulation/ir-sim/07-配置动态随机环境.md)
+    - [渲染并保存动画](./Robot/Simulation/ir-sim/08-渲染并保存动画.md)
