@@ -636,3 +636,29 @@ virtualenv 和 conda 都是用于创建和管理 Python 虚拟环境的工具，
 
 > - conda 可以管理多个环境，每个环境可以包含不同的 **Python 版本**和包。
 > - ros 环境中，conda里面的python版本可能跟ros 的版本不一致，会导致解释器的动态库不匹配，导致程序无法运行，这时可以使用 `virtualenv`。
+
+
+## 虚拟环境和 ROS 环境一起使用
+
+- 创建虚拟环境：
+
+```bash
+python3 -m venv test_venv/ # 创建虚拟环境
+source .venv/bin/activate # 激活虚拟环境
+pip install -r requirements_venv.txt
+```
+
+- 编译 ROS 源代码：
+
+```bash
+cd ~/ros2_ws
+source /opt/ros/humble/setup.bash
+colcon build --mixin release
+```
+
+- 运行：
+```bash
+source install/setup.bash
+export PYTHONPATH=/path-to-your-env/lib/python3.10/site-packages:$PYTHONPATH
+ros2 run test_venv test_venv_node
+```

@@ -278,3 +278,54 @@ $ tmux info
 # 重新加载当前的 Tmux 配置
 $ tmux source-file ~/.tmux.conf
 ```
+
+## 八、示例
+
+```shell
+#!/bin/bash
+
+arg=$1
+
+if [ -z "$arg" ]; then
+    # Create a new tmux session
+    tmux new-session -d -s locomotion
+
+    # Launch the first script in the first terminal
+    tmux new-window -t locomotion:0 -n 'sdk'
+    tmux send-keys -t locomotion:0.0 'cd /home/sunrise/callum_sdk/Cyan_Lowlevel_sdk_mini && taskset -c 0 ./launch_lowsdk.sh' C-m
+
+    # Create a new window for the second script
+    tmux new-window -t locomotion:1 -n 'wbc'
+    tmux send-keys -t locomotion:1.0 'source /opt/ros/humble/setup.bash' C-m
+    tmux send-keys -t locomotion:1.0 'cd ~/callum_dev_ws && source install/setup.bash' C-m
+    tmux send-keys -t locomotion:1.0 'taskset -c 4-7 ros2 launch cy_humanoid_wbc stand_wbc.launch.py' C-m
+
+    tmux new-window -t locomotion:2 -n 'rl'
+    tmux send-keys -t locomotion:2.0 'source /opt/ros/humble/setup.bash' C-m
+    tmux send-keys -t locomotion:2.0 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/sunrise/multi_policy_ctrl_ws/src/sim2real_cyan/lib/onnxruntime_arm64' C-m
+    tmux send-keys -t locomotion:2.0 'cd ~/multi_policy_ctrl_ws && source install/setup.bash' C-m
+    tmux send-keys -t locomotion:2.0 'taskset -c 1-3 ros2 run sim2real_cyan sim2real_cyan --cfg_dir /home/sunrise/multi_policy_ctrl_ws/src/sim2real_cyan/config/multi_policy.yaml' C-m
+
+    tmux new-window -t locomotion:3 -n 'locomotion_action_manager'
+    tmux send-keys -t locomotion:3.0 'source /opt/ros/humble/setup.bash' C-m
+    tmux send-keys -t locomotion:3.0 'cd ~/multi_policy_ctrl_ws && source install/setup.bash' C-m
+    tmux send-keys -t locomotion:3.0 'ros2 run locomotion_action_manager_pkg locomotion_action_manager' C-m
+
+    # Attach to the tmux session to view the terminals
+    tmux attach-session -t locomotion
+fi
+
+if [ "$arg" = "behavior" ]; then
+    # Create a new tmux session
+    tmux new-session -d -s behavior
+
+    # Launch the first script in the first terminal
+    tmux new-window -t behavior:0 -n 'wbc'
+    tmux send-keys -t behavior:0.0 'source /opt/ros/humble/setup.bash' C-m
+    tmux send-keys -t behavior:0.0 'cd ~/bot_app/ros2_ws && source install/setup.bash' C-m
+    tmux send-keys -t behavior:0.0 'ros2 run behavior_manager behavior_manager_node' C-m
+
+    # Attach to the tmux session to view the terminals
+    tmux attach-session -t behavior
+fi
+```
