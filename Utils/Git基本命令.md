@@ -89,6 +89,10 @@
         - 如果进行两次的commit，想要都撤回，可以使用HEAD~2
         git reset HEAD XXX/XXX/XXX.java 就是对某个文件进行撤销了
 
+## 当你在另一个分支执行 git pull origin master 遇到冲突时
+
+如果你还在合并冲突的状态中，可以直接中止合并：`git merge --abort`
+
 ## 查看/创建/切换分支
 
         git branch -a               查看分支

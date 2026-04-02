@@ -329,3 +329,99 @@ if [ "$arg" = "behavior" ]; then
     tmux attach-session -t behavior
 fi
 ```
+
+```shell
+#!/usr/bin/env bash
+set -e
+
+SESSION1="bridge"
+SESSION2="haptic"
+SESSION3="interaction"
+SESSION4="alsamixer"
+SESSION5="htop"
+
+CMD1=$(cat <<'EOF'
+source /opt/tros/humble/setup.bash
+source /home/sunrise/Documents/cyan-master_3141f38/ros/install/setup.bash
+ros2 run python_socket_bridge runner --ros-args -p translator_sub_topic:="speech_interaction_in" --ros-args --log-level debug
+EOF
+)
+
+CMD2=$(cat <<'EOF'
+sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0
+source /opt/tros/humble/setup.bash
+cd ~/Documents/cyan-dev_tactile/ros
+source ./install/setup.bash
+ros2 run tactile haptic_feedback_publisher
+EOF
+)
+
+CMD3=$(cat <<'EOF'
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate interaction
+cd ~/Documents/motion_speech_interaction_combined_sound_stream/
+python process_audio.py
+EOF
+)
+
+CMD4=$(cat <<'EOF'
+alsamixer
+EOF
+)
+
+CMD5=$(cat <<'EOF'
+htop
+EOF
+)
+
+start_session () {
+    local session="$1"
+    local cmd="$2"
+
+    if ! tmux has-session -t "$session" 2>/dev/null; then
+        tmux new-session -d -s "$session" bash -lc "$cmd"
+        echo "Started session: $session"
+    else
+        echo "Session already exists: $session"
+    fi
+}
+
+start_session "$SESSION1" "$CMD1"
+start_session "$SESSION2" "$CMD2"
+start_session "$SESSION3" "$CMD3"
+start_session "$SESSION4" "$CMD4"
+start_session "$SESSION5" "$CMD5"
+
+echo "All tmux sessions started."
+```
+
+> `sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0` 可以改成开机就配置路由
+> - `vim /etc/netplan/*.yaml`
+> - 添加
+> ```yaml
+>   - routes:
+>       - to: 224.0.0.0/4
+>         via: 0.0.0.0
+>         scope: link
+> ```
+> - `sudo netplan apply`
+
+
+```yaml
+network:
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wlan0:
+      dhcp4: yes
+      access-points:
+        Farmerhouse:
+          password: montecarlo2024$$$$
+  ethernets:
+    eth0:
+      addresses: [192.168.21.20/24]
+      routes:
+        - to: 224.0.0.0/4
+          via: 0.0.0.0
+          scope: link
+```
