@@ -12918,6 +12918,28 @@ $ du -hs venv/
 <li>ros &#x73AF;&#x5883;&#x4E2D;&#xFF0C;conda&#x91CC;&#x9762;&#x7684;python&#x7248;&#x672C;&#x53EF;&#x80FD;&#x8DDF;ros &#x7684;&#x7248;&#x672C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x52A8;&#x6001;&#x5E93;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>virtualenv</code>&#x3002;</li>
 </ul>
 </blockquote>
+<h2 id="&#x865A;&#x62DF;&#x73AF;&#x5883;&#x548C;-ros-&#x73AF;&#x5883;&#x4E00;&#x8D77;&#x4F7F;&#x7528;">&#x865A;&#x62DF;&#x73AF;&#x5883;&#x548C; ROS &#x73AF;&#x5883;&#x4E00;&#x8D77;&#x4F7F;&#x7528;</h2>
+<ul>
+<li>&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash">python3 -m venv <span class="hljs-built_in">test</span>_venv/ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+<span class="hljs-built_in">source</span> .venv/bin/activate <span class="hljs-comment"># &#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+pip install -r requirements_venv.txt
+</code></pre>
+<ul>
+<li>&#x7F16;&#x8BD1; ROS &#x6E90;&#x4EE3;&#x7801;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> ~/ros2_ws
+<span class="hljs-built_in">source</span> /opt/ros/humble/setup.bash
+colcon build --mixin release
+</code></pre>
+<ul>
+<li>&#x8FD0;&#x884C;&#xFF1A;<pre><code class="lang-bash"><span class="hljs-built_in">source</span> install/setup.bash
+<span class="hljs-built_in">export</span> PYTHONPATH=/path-to-your-env/lib/python3.10/site-packages:<span class="hljs-variable">$PYTHONPATH</span>
+ros2 run <span class="hljs-built_in">test</span>_venv <span class="hljs-built_in">test</span>_venv_node
+</code></pre>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -12961,7 +12983,7 @@ $ du -hs venv/
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"虚拟环境venv","level":"3.2.9","depth":2,"next":{"title":"Python代码程序综合防护","level":"3.2.10","depth":2,"path":"Python/Python语言进阶/10-Python代码程序综合防护.md","ref":"./Python/Python语言进阶/10-Python代码程序综合防护.md","articles":[]},"previous":{"title":"线程池ThreadPoolExecutor","level":"3.2.8","depth":2,"path":"Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md","ref":"./Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/Python语言进阶/09-虚拟环境venv.md","mtime":"2025-12-27T04:43:05.398Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-01-12T16:05:39.039Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"虚拟环境venv","level":"3.2.9","depth":2,"next":{"title":"Python代码程序综合防护","level":"3.2.10","depth":2,"path":"Python/Python语言进阶/10-Python代码程序综合防护.md","ref":"./Python/Python语言进阶/10-Python代码程序综合防护.md","articles":[]},"previous":{"title":"线程池ThreadPoolExecutor","level":"3.2.8","depth":2,"path":"Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md","ref":"./Python/Python语言进阶/08-线程池_ThreadPoolExecutor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro","mathjax-pro","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"search-pro":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"mermaid-gb3":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"cache":"./_book/.gitbook_cache","theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"Python/Python语言进阶/09-虚拟环境venv.md","mtime":"2026-01-04T07:33:30.721Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-04-02T03:16:16.336Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
