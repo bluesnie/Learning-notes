@@ -114,6 +114,12 @@
         手动解决冲突
         Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 
+## 同步远程分支信息
+
+```bash
+git fetch --prune origin
+```
+
 ## 重命名/删除分支
 
         git branch -m 原分支名 新分支名
@@ -160,6 +166,19 @@
     - `git rm --cached <file>`：取消对文件的跟踪，文件的跟踪状态将变为未跟踪状态
 
 - 取消对文件或文件夹的跟踪之后，`.gitignore`文件中的忽略规则将会对取消了跟踪状态的文件或文件夹生效
+
+## 忽略本地文件或文件夹（项目级个人配置）
+
+```bash
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+.vscode/
+ros/src/backward_ros/
+```
 
 ## 创建远程版本库
 
